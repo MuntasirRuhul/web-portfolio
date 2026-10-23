@@ -28,7 +28,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | ~~Colour palette~~ | **Decided:** Original, with plum instead of blue. Other palettes and the picker removed in v7. | Done. |
-| D2 | **Student section layout** | v7 shows three options one after another: **A** colour blocks, **B** white cards, **C** quotes on dark. Gallery is decided (Salon wall). | Keep one, delete the other two sections and the `.opt-tag` labels. Only option A has `id="students"`; move it to the one you keep. |
+| D2 | **Student section layout** | v7 shows three options one after another: **A** colour blocks on sand, **C** quotes on dark, **D** colour blocks on dark (B, white cards, was dropped). Gallery is decided (Salon wall). | Keep one, delete the other two sections and the `.opt-tag` labels. Only option A has `id="students"`; move it to the one you keep. |
 | D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
 
 ---
@@ -46,7 +46,7 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 | 03 | **Method** | `section.method` | Look · Sketch · Paint | Rounded panel on the signature band. Three step cards, solid colour blocks in the new palettes. Icons are inline SVG that draw in on scroll. |
 | 04 | **Courses** | `section.courses#courses` | The catalogue (6 courses) | Poster cards on the signature band. See section 6.3. |
 | 05 | **Gallery** | `section.gw#gallery` | Her work, linked to courses | **Salon wall.** Seven works in two rows, hung on a dashed centre line (`.gw-row::before`). Each `a.gw-w` sets its width with `--w`, image ratio with `--r` and course colour with `--pc`; frames are a white mat (`.gw-f`) or mat + ink border (`.gw-f.dark`). Museum label under each (`.gw-l`): title, medium · year · size, course dot. No filters, no JS. At ≤ 760px it becomes a 2-column grid, first work full width. |
-| 06 | **Students** | `section.rl#students` | Social proof | Three short quotes, each with only name + course, then a 4-up stats row and "Read all reviews". **Three options pending (D2):** A `.rv-block` solid ochre / rose / plum blocks; B `.rv-white` white cards with the quote in the course colour; C `.rv-dark` + `.rv-quotes`, no cards, quotes on the dark ground with coloured quote marks. 3 → 1 columns at 860px. |
+| 06 | **Students** | `section.rl#students` | Social proof | Three short quotes, each with only name + course, then a 4-up stats row and "Read all reviews". **Three options pending (D2):** A `.rv-block` solid ochre / rose / plum blocks on the sand band; C `.rv-dark` + `.rv-quotes`, no cards, quotes on the dark ground with coloured quote marks; D `.rv-dark` + `.rv-block`, ochre / rose / terracotta blocks on the dark ground. 3 → 1 columns at 860px. |
 | 07 | **FAQ** | `section.faq#faq` | Objections | Native `<details>`, first open. |
 | 08 | **Join** | `section.join#join` | Conversion | Dark panel with two action cards (portfolio review, live class) + photo, then the newsletter strip. |
 | | Footer | `footer` | Links | 3 columns + base row. |

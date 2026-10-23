@@ -294,12 +294,6 @@ main{margin-left:var(--rail)}
 .rv-block{display:flex;flex-direction:column;justify-content:space-between;gap:44px;min-height:clamp(300px,26vw,380px);padding:clamp(22px,2.2vw,32px);background:var(--bg);color:var(--fg);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .rv-block:hover{transform:translateY(-6px) rotate(-.6deg)}
 .rv-block blockquote{font-size:clamp(22px,2vw,28px);font-weight:500;line-height:1.15;letter-spacing:-.03em;margin-top:18px}
-/* B: white cards, quote in the course colour */
-.rv-white{display:flex;flex-direction:column;justify-content:space-between;gap:40px;background:var(--card);color:var(--ink);padding:clamp(22px,2.2vw,30px);border-top:4px solid var(--pc);box-shadow:0 1px 2px rgba(var(--ink-rgb),.08),0 16px 32px -16px rgba(var(--ink-rgb),.32);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-.rv-white:hover{transform:translateY(-6px)}
-.rv-white blockquote{font-family:"Inter",var(--sans);font-weight:700;font-size:clamp(24px,2.1vw,30px);line-height:1;letter-spacing:-.05em;color:var(--pc)}
-.rv-white .who{display:flex;gap:10px;align-items:baseline}
-.rv-white .who::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--pc)}
 /* C: no cards, big quotes on the dark ground */
 .rl.rv-dark{background:var(--night);color:var(--paper)}
 .rv-dark .lbl,.rv-dark .txt{color:var(--dim)}
@@ -315,6 +309,9 @@ main{margin-left:var(--rail)}
 .rv-dark .rl-stats div+div{border-left-color:rgba(var(--on-dark-rgb),.14)}
 .rv-dark .rl-stats span{color:var(--dim)}
 .rv-dark .rl-foot a:hover{color:var(--accent-lt)}
+/* D: colour blocks on the dark ground */
+.rv-dark + .rv-dark{border-top:1px solid rgba(var(--on-dark-rgb),.14)}
+.rv-dark .rv-block{box-shadow:0 24px 40px -24px rgba(0,0,0,.6)}
 @media (max-width:860px){
   .rv-grid,.rv-quotes{grid-template-columns:1fr}
   .rv-block{min-height:0}
@@ -659,7 +656,7 @@ summary{font-weight:500;letter-spacing:-.02em}
   </div>
 </section>
 
-  <!-- 06 STUDENTS: three options shown one after another; keep one, delete the other two -->
+  <!-- 06 STUDENTS: options A, C and D shown one after another; keep one, delete the others -->
   <section class="rl sec g6" id="students">
   <div class="vhead">
     <div>
@@ -683,29 +680,6 @@ summary{font-weight:500;letter-spacing:-.02em}
   <div class="rl-foot reveal d2"><a href="#">Read all reviews →</a></div>
 </section>
 
-  <section class="rl sec g6">
-  <div class="vhead">
-    <div>
-      <span class="opt-tag">Option B · White cards</span>
-      <span class="lbl reveal"><b>06</b>Students</span>
-      <h2 class="reveal d1">Letters from <em>the wall.</em></h2>
-    </div>
-    <p class="txt reveal d2">Written by students after their final critique. Every one of them started with a pencil and no experience.</p>
-  </div>
-  <div class="rv-grid">
-    <figure class="rv-white reveal" style="--pc:var(--c1)"><blockquote>“Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.”</blockquote><figcaption class="who"><div><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></div></figcaption></figure>
-    <figure class="rv-white reveal d1" style="--pc:var(--c4)"><blockquote>“I finally stopped erasing. Ink taught me to commit to the line.”</blockquote><figcaption class="who"><div><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></div></figcaption></figure>
-    <figure class="rv-white reveal d2" style="--pc:var(--c3)"><blockquote>“My washes used to turn to mud. Now I know exactly when to stop.”</blockquote><figcaption class="who"><div><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></div></figcaption></figure>
-  </div>
-  <div class="rl-stats reveal d1">
-    <div><b>4.9</b><span>Average rating · 2,870 reviews</span></div>
-    <div><b>12,400</b><span>Students since 2016</span></div>
-    <div><b>3,100</b><span>Pieces shared this year</span></div>
-    <div><b>64</b><span>Countries</span></div>
-  </div>
-  <div class="rl-foot reveal d2"><a href="#">Read all reviews →</a></div>
-</section>
-
   <section class="rl sec g6 rv-dark">
   <div class="vhead">
     <div>
@@ -719,6 +693,29 @@ summary{font-weight:500;letter-spacing:-.02em}
     <figure style="--mk:var(--ochre)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
     <figure style="--mk:var(--rose)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
     <figure style="--mk:var(--accent-lt)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
+  </div>
+  <div class="rl-stats reveal d1">
+    <div><b>4.9</b><span>Average rating · 2,870 reviews</span></div>
+    <div><b>12,400</b><span>Students since 2016</span></div>
+    <div><b>3,100</b><span>Pieces shared this year</span></div>
+    <div><b>64</b><span>Countries</span></div>
+  </div>
+  <div class="rl-foot reveal d2"><a href="#">Read all reviews →</a></div>
+</section>
+
+  <section class="rl sec g6 rv-dark">
+  <div class="vhead">
+    <div>
+      <span class="opt-tag">Option D · Colour blocks on dark</span>
+      <span class="lbl reveal"><b>06</b>Students</span>
+      <h2 class="reveal d1">Letters from <em>the wall.</em></h2>
+    </div>
+    <p class="txt reveal d2">Written by students after their final critique. Every one of them started with a pencil and no experience.</p>
+  </div>
+  <div class="rv-grid">
+    <figure class="rv-block reveal" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure class="rv-block reveal d1" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
+    <figure class="rv-block reveal d2" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
   </div>
   <div class="rl-stats reveal d1">
     <div><b>4.9</b><span>Average rating · 2,870 reviews</span></div>
