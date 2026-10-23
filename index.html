@@ -401,11 +401,52 @@
 
         <!-- contact -->
         <section id="contact" class="contact section">
-            <div class="cta">
+            <div class="contact-copy">
+                <p class="contact-eyebrow"><span class="onair-dot"></span> Got a project?</p>
+                <h2 class="contact-title">Let's create something beautiful</h2>
                 <p class="lead lead-large"><b>Helping startups</b> <span>and small companies with beautiful, functional, and timeless design interfaces.</span></p>
-                <a href="#top" class="talk-link talk-link-large">lets talk</a>
+                <div class="contact-actions">
+                    <a href="#top" class="schedule-call">
+                        <span class="avatar avatar-sm avatar-orange"></span>
+                        <span class="schedule-call-text">
+                            <strong>Schedule Call</strong>
+                            <small><img src="assets/dot-black.svg" width="4" height="4" alt=""> with susan</small>
+                        </span>
+                    </a>
+                    <a href="#top" class="start-project start-project-dark">
+                        <img src="assets/dot-white.svg" width="8" height="8" alt="">
+                        Start Project
+                    </a>
+                </div>
+                <!-- PLACEHOLDER email -->
+                <a href="mailto:hello@yourdomain.com" class="contact-email">hello@yourdomain.com</a>
             </div>
-            <img class="cta-graphic" src="assets/cta-graphic.svg" width="868" height="671" alt="" aria-hidden="true">
+
+            <div class="contact-scene" aria-hidden="true">
+                <div class="contact-tv">
+                    <div class="tv tv-orange">
+                        <img class="tv-screen" src="assets/hero-tv-screen.svg" alt="">
+                        <div class="tv-display tv-display-hero">
+                            <div class="ch-word ch-talk"><span>Let's talk</span></div>
+                            <div class="tv-noise tv-noise-slow"></div>
+                            <div class="tv-scanlines"></div>
+                        </div>
+                        <div class="tv-controls">
+                            <img class="tv-knob" src="assets/hero-tv-knob-1.svg" alt="">
+                            <img class="tv-knob" src="assets/hero-tv-knob-2.svg" alt="">
+                            <div class="tv-slots">
+                                <img src="assets/tv-slot-1.svg" alt="">
+                                <img src="assets/tv-slot-2.svg" alt="">
+                            </div>
+                            <img class="tv-dots" src="assets/hero-tv-dots.svg" alt="">
+                        </div>
+                    </div>
+                    <span class="tv-leg"></span><span class="tv-leg"></span>
+                </div>
+                <div class="contact-table">
+                    <img src="assets/cta-graphic.svg" width="868" height="671" alt="">
+                </div>
+            </div>
         </section>
     </main>
 
@@ -472,7 +513,7 @@
         const revealTargets = document.querySelectorAll(
             '.section-title, .split-row, .project, .features > li, .founder-profile, .founder-quote, .circles, ' +
             '.stats-grid li, .clients, .service-row, .process-steps li, .testimonial, .faq-intro, .faq-list details, ' +
-            '.cta, .cta-graphic, .footer-cols > div'
+            '.contact-copy, .contact-scene, .footer-cols > div'
         );
 
         const countUp = (el) => {

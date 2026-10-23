@@ -798,20 +798,6 @@ a {
     gap: 30px;
 }
 
-.cta {
-    align-self: center;
-    max-width: 428px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-}
-
-.cta-graphic {
-    width: 868px;
-    height: auto;
-    margin: 0 auto;
-}
 
 
 /* full-bleed section backgrounds while content stays on the grid */
@@ -1162,8 +1148,144 @@ a {
 /* ---------- contact ---------- */
 
 .contact {
+    flex-direction: row;
     align-items: center;
-    padding-bottom: 0;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.contact-copy {
+    flex: 0 1 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.contact-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+.contact-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(64px, 7.5vw, 112px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+}
+
+.contact .lead-large {
+    max-width: 460px;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.start-project-dark {
+    padding: 15px 22px;
+    background: var(--black);
+    border-color: var(--black);
+}
+
+.start-project-dark:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+}
+
+.contact-email {
+    font-weight: 500;
+    font-size: clamp(22px, 2.2vw, 32px);
+    line-height: 1.2;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    transition: color 0.2s;
+}
+
+.contact-email:hover {
+    color: var(--orange);
+}
+
+/* small TV standing on the tabletop graphic */
+.contact-scene {
+    flex: 0 1 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-tv {
+    position: relative;
+    z-index: 1;
+    width: 74%;
+    margin-bottom: -1%;
+    animation: tv-bob 4s ease-in-out infinite;
+}
+
+@keyframes tv-bob {
+    0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+    50% { transform: translateY(-6px) rotate(-1.5deg); }
+}
+
+.contact-tv .tv {
+    box-shadow: 0 24px 40px -20px rgba(0, 0, 0, 0.45);
+}
+
+.tv-leg {
+    position: absolute;
+    bottom: -9%;
+    width: 4%;
+    height: 10%;
+    background: var(--tv-dark);
+    border-radius: 0 0 4px 4px;
+}
+
+.tv-leg:first-of-type { left: 14%; transform: skewX(8deg); }
+.tv-leg:last-of-type { right: 14%; transform: skewX(-8deg); }
+
+/* crop the empty top of the tabletop svg (416 of 868 units) */
+.contact-table {
+    width: 100%;
+    overflow: hidden;
+}
+
+.contact-table img {
+    width: 100%;
+    height: auto;
+    margin-top: -47.93%;
+}
+
+.contact-tv .ch-talk {
+    position: absolute;
+    inset: 0;
+    background: var(--black);
+    color: var(--orange);
+    font-size: 20cqw;
+}
+
+.contact-tv .ch-talk span {
+    animation: talk-blink 3s steps(1) infinite;
+}
+
+@keyframes talk-blink {
+    0%, 85% { opacity: 1; }
+    86%, 92% { opacity: 0.2; }
+    93%, 100% { opacity: 1; }
+}
+
+.tv-noise-slow {
+    animation: noise-flash 6s infinite, noise-jitter 0.25s steps(4) infinite;
 }
 
 
@@ -1851,6 +1973,17 @@ a {
     .faq-intro,
     .faq-list {
         flex: none;
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-copy,
+    .contact-scene {
+        flex: none;
+        width: 100%;
     }
 }
 
