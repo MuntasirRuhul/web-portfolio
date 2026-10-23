@@ -12,398 +12,479 @@
 </head>
 <body>
 
+  <!-- Announcement -->
   <div class="announce">
-    <p><span class="dot dot--lime"></span><strong>Growth Sprint cohort #08</strong> starts Nov 18. 14 of 40 seats left. <a href="#pricing">Reserve a seat →</a></p>
+    <div class="container announce__inner">
+      <span class="dot dot--lime"></span>
+      <p><strong>Growth Sprint cohort #08</strong> starts Nov 18 — only 14 seats left.</p>
+      <a href="#pricing" class="announce__link">Reserve a seat →</a>
+    </div>
   </div>
 
-  <!-- Header: logo, nav and actions are cells divided by rules -->
+  <!-- Header -->
   <header class="header" id="top">
-    <div class="frame header__row">
-      <a href="#top" class="header__cell logo" aria-label="Leoprado Academy home">
-        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="2.4"/>
-          <path d="M4 30 L36 10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-        </svg>
-        <span>Leoprado</span>
-      </a>
-      <nav class="header__cell nav" id="nav" aria-label="Primary">
-        <a href="#courses">Courses</a>
-        <a href="#program">Program</a>
-        <a href="#instructor">About</a>
-        <a href="#results">Results</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <div class="nav__mobile-actions">
-          <a href="#" class="btn btn--outline">Log in</a>
-          <a href="#pricing" class="btn btn--dark">Enroll now</a>
-        </div>
-      </nav>
-      <a href="#" class="header__cell header__login">Log in</a>
-      <a href="#pricing" class="header__cell header__cta">Enroll now <span aria-hidden="true">→</span></a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section class="band band--blue hero" aria-labelledby="hero-title">
-      <div class="grain" aria-hidden="true"></div>
-      <div class="frame grid">
-        <div class="cell rail hero__rail">
-          <p class="label">Cohort #08</p>
-          <dl class="specs">
-            <div><dt>Starts</dt><dd>Nov 18</dd></div>
-            <div><dt>Format</dt><dd>6 weeks, live</dd></div>
-            <div><dt>Seats</dt><dd>14 of 40 left</dd></div>
-          </dl>
-        </div>
-        <div class="cell hero__head">
-          <h1 class="t-display hero__title" id="hero-title">Scale smart.</h1>
-        </div>
-
-        <div class="cell rail hero__intro">
-          <p class="lead">Strategy, pricing and finance courses from a founder who has scaled three companies.</p>
-          <div class="stack">
-            <a href="#pricing" class="btn btn--lime btn--block">Reserve a seat</a>
-            <a href="#courses" class="btn btn--line btn--block">Explore courses</a>
-          </div>
-        </div>
-        <figure class="cell hero__photo">
-          <figcaption class="label hero__name">Daniel Leoprado · Founder &amp; instructor</figcaption>
-          <img src="assets/img/instructor.webp" alt="Daniel Leoprado, founder and lead instructor" width="747" height="850">
-        </figure>
-        <div class="cell hero__program">
-          <p class="label">Flagship program</p>
-          <h2 class="t-h3">Growth Sprint</h2>
-          <ol class="phases">
-            <li><span class="num">01–02</span>Diagnose</li>
-            <li><span class="num">03</span>Position</li>
-            <li><span class="num">04</span>Price</li>
-            <li><span class="num">05–06</span>Scale</li>
-          </ol>
-          <a href="#program" class="arrow-link">See the program <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="cell hero__stat"><p class="t-stat num">12.4k</p><p class="label">Students taught</p></div>
-        <div class="cell hero__stat"><p class="t-stat num">4.9</p><p class="label">Average rating</p></div>
-        <div class="cell hero__stat"><p class="t-stat num">40+</p><p class="label">Countries</p></div>
-        <div class="cell hero__stat"><p class="t-stat num">+38%</p><p class="label">Median revenue lift</p></div>
-      </div>
-    </section>
-
-    <!-- Logos -->
-    <section class="band band--open" aria-labelledby="logos-title">
-      <div class="frame grid">
-        <div class="cell rail"><p class="label" id="logos-title">Students lead teams at</p></div>
-        <ul class="body logos">
-          <li class="cell"><span class="wm wm--serif">Northwind</span></li>
-          <li class="cell"><span class="wm wm--mono">HALCYON</span></li>
-          <li class="cell"><span class="wm wm--round">arcadia</span></li>
-          <li class="cell"><span class="wm wm--bold">Vertexa</span></li>
-          <li class="cell"><span class="wm wm--serif"><i>Monarch</i></span></li>
-          <li class="cell"><span class="wm wm--mono">BRIGHTLINE</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="band band--open band--joined" id="about" aria-labelledby="about-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">About the academy</p>
-          <p class="rail__text">Each lesson ends with one worksheet you fill in for your own business, so nothing stays theory.</p>
-        </div>
-        <div class="body body--split">
-          <div class="cell about__statement">
-            <h2 class="t-h2" id="about-title">Every lesson, <span class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>applied.</span></h2>
-          </div>
-          <div class="cell about__meter">
-            <div class="meter reveal" role="img" aria-label="Median revenue after the course is 38% higher than before">
-              <p class="label">Median revenue, 90 days after</p>
-              <div class="meter__bars">
-                <div class="meter__bar meter__bar--win"><span class="t-stat num">+38%</span></div>
-                <div class="meter__bar meter__bar--base"><span class="label">Before</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Courses -->
-    <section class="band" id="courses" aria-labelledby="courses-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">Flagship courses</p>
-          <p class="rail__text">Each course stands on its own. Together they cover the full arc.</p>
-          <div class="tabs" role="tablist" aria-label="Filter courses">
-            <button class="tab is-active" data-filter="all" role="tab" aria-selected="true">All <span class="num">03</span></button>
-            <button class="tab" data-filter="strategy" role="tab" aria-selected="false">Strategy <span class="num">01</span></button>
-            <button class="tab" data-filter="finance" role="tab" aria-selected="false">Finance <span class="num">01</span></button>
-            <button class="tab" data-filter="growth" role="tab" aria-selected="false">Growth <span class="num">01</span></button>
-          </div>
-          <a href="#" class="arrow-link rail__foot">Browse all 12 courses <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="body">
-          <div class="cell body__head"><h2 class="t-h2" id="courses-title">Three courses. One growth system.</h2></div>
-          <div class="courses">
-            <article class="cell course" data-cat="strategy">
-              <a href="#" class="course__thumb" style="--tint:#b9b4d8"><img src="assets/img/course-1.jpg" alt="" loading="lazy"><span class="tag">Bestseller</span></a>
-              <p class="label">Strategy · Beginner</p>
-              <h3 class="t-h3"><a href="#">Positioning &amp; Offer Design</a></h3>
-              <p class="small muted">Find the market you can win, then shape an offer clients say yes to.</p>
-              <dl class="course__facts">
-                <div><dt>Lessons</dt><dd class="num">24</dd></div>
-                <div><dt>Hours</dt><dd class="num">6.7</dd></div>
-                <div><dt>Rating</dt><dd class="num">4.9</dd></div>
-              </dl>
-              <div class="course__foot"><p class="t-h3 num">$249</p><a href="#" class="btn btn--dark btn--sm">Enroll</a></div>
-            </article>
-            <article class="cell course" data-cat="finance">
-              <a href="#" class="course__thumb" style="--tint:#a9bba9"><img src="assets/img/course-2.jpg" alt="" loading="lazy"><span class="tag">New</span></a>
-              <p class="label">Finance · Intermediate</p>
-              <h3 class="t-h3"><a href="#">Finance for Founders</a></h3>
-              <p class="small muted">Cash flow, unit economics and a simple model you'll use every month.</p>
-              <dl class="course__facts">
-                <div><dt>Lessons</dt><dd class="num">31</dd></div>
-                <div><dt>Hours</dt><dd class="num">8.3</dd></div>
-                <div><dt>Rating</dt><dd class="num">4.8</dd></div>
-              </dl>
-              <div class="course__foot"><p class="t-h3 num">$299</p><a href="#" class="btn btn--dark btn--sm">Enroll</a></div>
-            </article>
-            <article class="cell course" data-cat="growth">
-              <a href="#" class="course__thumb" style="--tint:#a9c3d4"><img src="assets/img/course-3.jpg" alt="" loading="lazy"><span class="tag tag--lime">Live cohort</span></a>
-              <p class="label">Growth · Advanced</p>
-              <h3 class="t-h3"><a href="#">The 90-Day Growth Sprint</a></h3>
-              <p class="small muted">Six live weeks to build your growth engine, with weekly reviews from me.</p>
-              <dl class="course__facts">
-                <div><dt>Weeks</dt><dd class="num">6</dd></div>
-                <div><dt>Seats</dt><dd class="num">40</dd></div>
-                <div><dt>Rating</dt><dd class="num">5.0</dd></div>
-              </dl>
-              <div class="course__foot"><p class="t-h3 num">$990</p><a href="#" class="btn btn--dark btn--sm">Apply</a></div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Results -->
-    <section class="band" id="results" aria-labelledby="results-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">Student results</p>
-          <p class="rail__text">Every cohort is surveyed 90 days after finishing. These are medians, not hand-picked cases.</p>
-        </div>
-        <div class="body">
-          <div class="cell body__head"><h2 class="t-h2" id="results-title">Measured in revenue, not certificates.</h2></div>
-          <div class="results">
-            <figure class="cell results__image">
-              <img src="assets/img/results-bg.jpg" alt="" loading="lazy">
-              <p class="results__word" aria-hidden="true">Results</p>
-            </figure>
-            <div class="cell stat stat--yellow"><p class="t-title">Median revenue lift after 90 days</p><p class="t-stat num">38%</p></div>
-            <div class="cell stat stat--cyan"><p class="t-title">Average course completion rate</p><p class="t-stat num">87%</p></div>
-            <div class="cell stat stat--mint"><p class="t-title">Revenue generated by alumni</p><p class="t-stat num">$4.2M</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="band band--soft" id="program" aria-labelledby="steps-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">How it works</p>
-          <p class="rail__text">One live call a week. One thing shipped. Each phase builds on the last.</p>
-        </div>
-        <div class="body">
-          <div class="cell body__head"><h2 class="t-h2" id="steps-title">4 moves. 6 weeks.</h2></div>
-          <div class="steps reveal">
-            <span class="cell steps__empty" style="grid-area:1/1"></span>
-            <span class="cell steps__empty" style="grid-area:1/2"></span>
-            <span class="cell steps__empty" style="grid-area:1/3"></span>
-            <span class="cell steps__empty" style="grid-area:2/1"></span>
-            <span class="cell steps__empty" style="grid-area:2/2"></span>
-            <span class="cell steps__empty" style="grid-area:3/1"></span>
-            <article class="cell bar bar--1"><p class="label">Weeks</p><p class="t-stat num">1–2</p><h3 class="t-h3">Diagnose</h3><p class="bar__ship"><span class="label">Ships</span>Market map</p></article>
-            <article class="cell bar bar--2"><p class="label">Week</p><p class="t-stat num">3</p><h3 class="t-h3">Position</h3><p class="bar__ship"><span class="label">Ships</span>Messaging doc</p></article>
-            <article class="cell bar bar--3"><p class="label">Week</p><p class="t-stat num">4</p><h3 class="t-h3">Price</h3><p class="bar__ship"><span class="label">Ships</span>Price sheet</p></article>
-            <article class="cell bar bar--4"><p class="label">Weeks</p><p class="t-stat num">5–6</p><h3 class="t-h3">Scale</h3><p class="bar__ship"><span class="label">Ships</span>90-day plan</p></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Instructor -->
-    <section class="band band--dark" id="instructor" aria-labelledby="instructor-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">Your instructor</p>
-          <blockquote class="t-h3 rail__quote">“Strategy is a weekly decision, not a document.”</blockquote>
-          <a href="#" class="btn btn--lime rail__foot">Read my story</a>
-        </div>
-        <div class="body instructor">
-          <div class="cell instructor__mast"><h2 class="t-mega" id="instructor-title"><span class="sr-only">Daniel </span>Leoprado</h2></div>
-          <figure class="cell instructor__photo"><img src="assets/img/instructor.webp" alt="Portrait of Daniel Leoprado" width="747" height="850" loading="lazy"></figure>
-          <div class="cell instructor__stat"><p class="t-stat num">15</p><p class="label">Years building businesses</p></div>
-          <div class="cell instructor__stat"><p class="t-stat num accent">3</p><p class="label">Companies co-founded</p></div>
-          <div class="cell instructor__stat"><p class="t-stat num">60+</p><p class="label">Owners advised 1:1</p></div>
-          <div class="cell instructor__stat"><p class="t-stat num accent">12.4k</p><p class="label">Students taught</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="band band--lime" id="reviews" aria-labelledby="reviews-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">Reviews</p>
-          <p class="t-stat num">4.9</p>
-          <p class="rail__text">Average from 2,542 reviews across all courses.</p>
-        </div>
-        <div class="body reviews">
-          <figure class="cell reviews__main">
-            <blockquote class="t-display" id="reviews-title">“I raised my prices <mark>40%</mark> and kept every client.”</blockquote>
-            <figcaption class="who"><span class="avatar" style="--h:28">AK</span><span><strong>Amara K.</strong> Brand studio owner</span></figcaption>
-          </figure>
-          <figure class="cell note">
-            <p class="t-stat num">4 h</p>
-            <p class="label">To a working cash model</p>
-            <blockquote class="t-title">“Built my first real cash-flow model in an afternoon.”</blockquote>
-            <figcaption class="small">Marco S. · SaaS founder</figcaption>
-          </figure>
-          <figure class="cell note">
-            <p class="t-stat num">2×</p>
-            <p class="label">Revenue within a year</p>
-            <blockquote class="t-title">“A weekly rhythm I still follow a year later.”</blockquote>
-            <figcaption class="small">Julia R. · Agency founder</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="band band--soft" id="pricing" aria-labelledby="pricing-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">Pricing</p>
-          <p class="rail__text">Every plan includes a 30-day money-back guarantee.</p>
-          <div class="toggle" role="group" aria-label="Billing period">
-            <button class="toggle__btn" data-billing="monthly">Monthly</button>
-            <button class="toggle__btn is-active" data-billing="yearly">Yearly −30%</button>
-          </div>
-        </div>
-        <div class="body">
-          <div class="cell body__head"><h2 class="t-h2" id="pricing-title">Pick how you want to learn.</h2></div>
-          <div class="plans">
-            <article class="cell plan">
-              <p class="label">01 · Own one</p>
-              <h3 class="t-h3">Single course</h3>
-              <p class="plan__price"><span class="t-stat num">$249</span><span class="small muted">one-time</span></p>
-              <ul class="checks">
-                <li>Lifetime access to 1 course</li>
-                <li>Worksheets &amp; templates</li>
-                <li>Certificate of completion</li>
-                <li>Community access</li>
-              </ul>
-              <a href="#courses" class="btn btn--outline btn--block">Choose a course</a>
-            </article>
-            <article class="cell plan plan--featured">
-              <p class="label">02 · Most popular</p>
-              <h3 class="t-h3">All-access</h3>
-              <p class="plan__price"><span class="t-stat num" data-monthly="$49" data-yearly="$34">$34</span><span class="small" data-monthly="/ month, billed monthly" data-yearly="/ month, billed $408 yearly">/ month, billed $408 yearly</span></p>
-              <ul class="checks">
-                <li>All 12 courses + new releases</li>
-                <li>Monthly live Q&amp;A calls</li>
-                <li>Full template library</li>
-                <li>Priority community support</li>
-              </ul>
-              <a href="#" class="btn btn--lime btn--block">Get all-access</a>
-            </article>
-            <article class="cell plan">
-              <p class="label">03 · Work with me</p>
-              <h3 class="t-h3">1:1 Coaching</h3>
-              <p class="plan__price"><span class="t-stat num">$1,500</span><span class="small muted">/ 3 months</span></p>
-              <ul class="checks">
-                <li>Everything in All-access</li>
-                <li>6 private strategy calls</li>
-                <li>Async feedback on your plan</li>
-                <li>5 clients per quarter</li>
-              </ul>
-              <a href="#" class="btn btn--outline btn--block">Book a consultation</a>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="band" id="faq" aria-labelledby="faq-title">
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">FAQ</p>
-          <p class="rail__text">Still unsure? Email me at <span class="u">hello@leoprado.com</span>. I reply within a day.</p>
-        </div>
-        <div class="body">
-          <div class="cell body__head"><h2 class="t-h2" id="faq-title">Questions, answered.</h2></div>
-          <div class="faq">
-            <details class="cell" open><summary class="t-title">Who are these courses for?</summary><p class="muted">Founders, freelancers and small-business owners doing roughly $50k–$2M a year who want a clearer strategy and healthier margins. No MBA required.</p></details>
-            <details class="cell"><summary class="t-title">How long do I have access?</summary><p class="muted">Forever. Buy a course once and you keep it, including every future update.</p></details>
-            <details class="cell"><summary class="t-title">How much time do I need each week?</summary><p class="muted">Plan on 2–3 hours: about an hour of lessons and the rest applying the worksheet to your own business.</p></details>
-            <details class="cell"><summary class="t-title">What if it isn't right for me?</summary><p class="muted">Email within 30 days and you'll get a full refund. No forms, no hoops.</p></details>
-            <details class="cell"><summary class="t-title">Do you offer team licenses?</summary><p class="muted">Yes. Teams of 5 or more get 25% off All-access.</p></details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="band band--blue cta" aria-labelledby="cta-title">
-      <div class="grain" aria-hidden="true"></div>
-      <div class="frame grid">
-        <div class="cell rail">
-          <p class="label">Cohort #08</p>
-          <dl class="specs">
-            <div><dt>Starts</dt><dd>Nov 18</dd></div>
-            <div><dt>Price</dt><dd>$990 or 3 × $340</dd></div>
-            <div><dt>Seats</dt><dd>14 of 40 left</dd></div>
-          </dl>
-        </div>
-        <div class="body cta__body">
-          <div class="cell cta__copy">
-            <h2 class="t-display" id="cta-title">Ready to scale?</h2>
-            <p class="lead">Six live weeks with me and 39 other founders. You leave with a priced offer, a finance model and a 90-day plan.</p>
-            <div class="row">
-              <a href="#pricing" class="btn btn--lime btn--lg">Reserve your seat →</a>
-              <a href="#" class="btn btn--line btn--lg">Book a free call</a>
-            </div>
-          </div>
-          <figure class="cell cta__photo">
-            <img src="assets/img/instructor.webp" alt="Daniel Leoprado" width="747" height="850" loading="lazy">
-          </figure>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="band band--dark footer">
-    <div class="frame grid">
-      <div class="cell rail">
-        <a href="#top" class="logo">
+    <div class="container header__inner">
+      <div class="header__left">
+        <a href="#top" class="logo" aria-label="Leoprado Academy home">
           <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
             <circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="2.4"/>
             <path d="M4 30 L36 10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
           </svg>
           <span>Leoprado</span>
         </a>
-        <p class="rail__text">Business strategy courses for founders who'd rather build than guess.</p>
+        <span class="header__divider" aria-hidden="true"></span>
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="#courses" class="is-active">Courses</a>
+          <a href="#program">Program</a>
+          <a href="#instructor">About</a>
+          <a href="#results">Results</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <div class="nav__mobile-actions">
+            <a href="#" class="btn btn--ghost">Log in</a>
+            <a href="#pricing" class="btn btn--dark">Enroll now</a>
+          </div>
+        </nav>
       </div>
-      <div class="body footer__cols">
-        <nav class="cell" aria-label="Learn"><p class="label">Learn</p><a href="#courses">All courses</a><a href="#program">Growth Sprint</a><a href="#pricing">All-access</a><a href="#">Free resources</a></nav>
-        <nav class="cell" aria-label="Academy"><p class="label">Academy</p><a href="#instructor">About</a><a href="#reviews">Reviews</a><a href="#">Blog</a><a href="#">Affiliates</a></nav>
-        <nav class="cell" aria-label="Support"><p class="label">Support</p><a href="#faq">FAQ</a><a href="#">Student login</a><a href="#">Contact</a><a href="#">Refund policy</a></nav>
-        <p class="cell footer__legal small">© 2026 Leoprado Academy · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      <div class="header__actions">
+        <a href="#" class="header__login">Log in</a>
+        <a href="#pricing" class="btn btn--dark">Enroll now</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero (poster) -->
+    <section class="poster" aria-labelledby="hero-title">
+      <div class="poster__bolt" aria-hidden="true"></div>
+      <div class="poster__grain" aria-hidden="true"></div>
+      <div class="container poster__grid">
+        <div class="poster__copy">
+          <div class="poster__head">
+            <p class="dateline"><span>Cohort #08</span><i aria-hidden="true"></i><span>Starts Nov 18</span></p>
+            <h1 class="poster__title" id="hero-title"><span>Scale</span> <span>smart.</span></h1>
+          </div>
+          <p class="poster__lead">Strategy, pricing and finance courses from a founder who has scaled three companies.</p>
+          <div class="poster__ctas">
+            <a href="#pricing" class="btn btn--lime btn--lg">Reserve a seat</a>
+            <a href="#courses" class="btn btn--line btn--lg">Explore courses</a>
+          </div>
+          <p class="poster__proof"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.9</strong> from 12,400+ founders</p>
+        </div>
+
+        <div class="poster__collage">
+          <span class="tape" aria-hidden="true"></span>
+          <figure class="poster__photo">
+            <img src="assets/img/instructor.webp" alt="Daniel Leoprado, founder and lead instructor" width="747" height="850">
+            <figcaption class="nametag"><span>Daniel</span><strong>Leoprado</strong></figcaption>
+          </figure>
+          <div class="poster__label" aria-hidden="true">
+            <span class="poster__label-a">Growth</span>
+            <span class="poster__label-b">Sprint</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="logos" aria-labelledby="logos-title">
+      <div class="container">
+        <p class="label" id="logos-title">My students lead teams at</p>
+      </div>
+      <div class="logos__track">
+        <div class="logos__row">
+          <div class="logo-tile"><span class="wm wm--serif">Northwind</span></div>
+          <div class="logo-tile"><span class="wm wm--mono">HALCYON</span></div>
+          <div class="logo-tile"><span class="wm wm--round">arcadia</span></div>
+          <div class="logo-tile logo-tile--stat"><strong>40+</strong><span>Countries represented</span></div>
+          <div class="logo-tile"><span class="wm wm--bold">Vertexa</span></div>
+          <div class="logo-tile"><span class="wm wm--serif"><i>Monarch</i></span></div>
+          <div class="logo-tile"><span class="wm wm--mono">BRIGHTLINE</span></div>
+          <div class="logo-tile"><span class="wm wm--round">lumen.co</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / impact -->
+    <section class="impact" id="about" aria-labelledby="impact-title">
+      <div class="container">
+        <p class="label impact__label">About the academy</p>
+        <h2 class="impact__kicker" id="impact-title">Every lesson, <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>applied.</span></h2>
+        <p class="impact__note">Each lesson ends with one worksheet you fill in for your own business, so nothing stays theory.</p>
+
+        <div class="meter reveal" role="img" aria-label="Median revenue after the course is 38% higher than before">
+          <div class="meter__bars">
+            <div class="meter__bar meter__bar--win">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="meter__value" data-count="38">+38%</span>
+            </div>
+            <div class="meter__bar meter__bar--base">
+              <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+            </div>
+            <div class="meter__ticks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="meter__legend">
+            <span class="meter__key meter__key--win">Revenue after 90 days</span>
+            <span class="meter__key">Before the course</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">Flagship courses</p>
+            <h2 class="h2">Three courses. One complete growth system.</h2>
+          </div>
+          <p class="section-head__text">Each course stands on its own, but together they cover the full arc: find your edge, price it properly, then build the finances to scale it.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Filter courses">
+          <button class="tab is-active" data-filter="all" role="tab" aria-selected="true">All courses</button>
+          <button class="tab" data-filter="strategy" role="tab" aria-selected="false">Strategy</button>
+          <button class="tab" data-filter="finance" role="tab" aria-selected="false">Finance</button>
+          <button class="tab" data-filter="growth" role="tab" aria-selected="false">Growth</button>
+        </div>
+
+        <div class="course-grid">
+          <article class="course reveal" data-cat="strategy">
+            <a href="#" class="course__thumb" style="--tint: #b9b4d8">
+              <img src="assets/img/course-1.jpg" alt="" loading="lazy">
+              <span class="badge badge--light">Bestseller</span>
+              <span class="course__level">Beginner</span>
+            </a>
+            <div class="course__body">
+              <p class="course__cat">Strategy</p>
+              <h3 class="course__title"><a href="#">Positioning &amp; Offer Design</a></h3>
+              <p class="course__desc">Find the market you can win, then shape an offer clients say yes to.</p>
+              <ul class="course__meta">
+                <li><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z M4 9h16"/></svg>24 lessons</li>
+                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>6h 40m</li>
+                <li class="rating">★ 4.9 <span>(1,284)</span></li>
+              </ul>
+              <div class="course__foot">
+                <div class="price"><strong>$249</strong><s>$349</s></div>
+                <a href="#" class="btn btn--dark btn--sm">Enroll</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course reveal" data-cat="finance">
+            <a href="#" class="course__thumb" style="--tint: #a9bba9">
+              <img src="assets/img/course-2.jpg" alt="" loading="lazy">
+              <span class="badge badge--light">New</span>
+              <span class="course__level">Intermediate</span>
+            </a>
+            <div class="course__body">
+              <p class="course__cat">Finance</p>
+              <h3 class="course__title"><a href="#">Finance for Founders</a></h3>
+              <p class="course__desc">Cash flow, unit economics and a simple model you'll actually use every month.</p>
+              <ul class="course__meta">
+                <li><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z M4 9h16"/></svg>31 lessons</li>
+                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>8h 15m</li>
+                <li class="rating">★ 4.8 <span>(946)</span></li>
+              </ul>
+              <div class="course__foot">
+                <div class="price"><strong>$299</strong></div>
+                <a href="#" class="btn btn--dark btn--sm">Enroll</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course reveal" data-cat="growth">
+            <a href="#" class="course__thumb" style="--tint: #a9c3d4">
+              <img src="assets/img/course-3.jpg" alt="" loading="lazy">
+              <span class="badge badge--lime">Live cohort</span>
+              <span class="course__level">Advanced</span>
+            </a>
+            <div class="course__body">
+              <p class="course__cat">Growth</p>
+              <h3 class="course__title"><a href="#">The 90-Day Growth Sprint</a></h3>
+              <p class="course__desc">Six live weeks to build your growth engine — with weekly reviews from me.</p>
+              <ul class="course__meta">
+                <li><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z M4 9h16"/></svg>6 live weeks</li>
+                <li><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3 19c1-3 3.5-4.5 6-4.5s5 1.5 6 4.5 M16 6.5a3 3 0 0 1 0 5.5 M18 14.5c1.5.6 2.6 2 3 4.5"/></svg>Max 40 seats</li>
+                <li class="rating">★ 5.0 <span>(312)</span></li>
+              </ul>
+              <div class="course__foot">
+                <div class="price"><strong>$990</strong></div>
+                <a href="#" class="btn btn--dark btn--sm">Apply</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="center">
+          <a href="#" class="link-arrow">Browse all 12 courses <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section section--tight section--flush" id="results">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">Student results</p>
+            <h2 class="h2">Measured in revenue, not certificates.</h2>
+          </div>
+          <p class="section-head__text">Every cohort is surveyed 90 days after finishing. These are the median numbers — no cherry-picked case studies.</p>
+        </div>
+
+      </div>
+      <div class="results">
+        <img src="assets/img/results-bg.jpg" alt="" class="results__bg" loading="lazy">
+        <p class="results__word" aria-hidden="true">Results</p>
+        <div class="container results__inner">
+          <div class="stat stat--yellow reveal">
+            <p class="stat__label">Median revenue lift after 90 days</p>
+            <p class="stat__num" data-count="38" data-suffix="%">38%</p>
+          </div>
+          <div class="stat stat--cyan reveal">
+            <p class="stat__label">Average course completion rate</p>
+            <p class="stat__num" data-count="87" data-suffix="%">87%</p>
+          </div>
+          <div class="stat stat--mint reveal">
+            <p class="stat__label">Revenue generated by alumni</p>
+            <p class="stat__num">$4.2M</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works: growth staircase -->
+    <section class="steps" id="program" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="steps__grid reveal">
+          <div class="steps__head">
+            <p class="label">How it works</p>
+            <h2 class="steps__title" id="steps-title"><span>4 moves.</span> <span>6 weeks.</span></h2>
+            <p class="steps__sub">One live call a week. One thing shipped.</p>
+          </div>
+
+          <article class="bar bar--1">
+            <p class="bar__wk"><span>Weeks</span>01–02</p>
+            <h3 class="bar__name">Diagnose</h3>
+            <p class="bar__ship">Market map</p>
+          </article>
+          <article class="bar bar--2">
+            <p class="bar__wk"><span>Week</span>03</p>
+            <h3 class="bar__name">Position</h3>
+            <p class="bar__ship">Messaging doc</p>
+          </article>
+          <article class="bar bar--3">
+            <p class="bar__wk"><span>Week</span>04</p>
+            <h3 class="bar__name">Price</h3>
+            <p class="bar__ship">Price sheet</p>
+          </article>
+          <article class="bar bar--4">
+            <p class="bar__wk"><span>Weeks</span>05–06</p>
+            <h3 class="bar__name">Scale</h3>
+            <p class="bar__ship">90-day plan</p>
+            <svg class="bar__arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 36L36 12M16 12h20v20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructor: magazine cover -->
+    <section class="cover" id="instructor" aria-labelledby="cover-title">
+      <div class="container cover__frame">
+        <p class="cover__kicker"><span>Your instructor</span><span>Daniel</span></p>
+        <h2 class="cover__mast" id="cover-title">Leoprado</h2>
+        <img class="cover__img" src="assets/img/instructor.webp" alt="Daniel Leoprado" width="747" height="850" loading="lazy">
+
+        <dl class="cover__line cover__line--a"><dt class="num">15</dt><dd>Years building businesses</dd></dl>
+        <dl class="cover__line cover__line--b"><dt class="num">3</dt><dd>Companies co-founded</dd></dl>
+        <dl class="cover__line cover__line--c"><dt class="num">60+</dt><dd>Owners advised 1:1</dd></dl>
+        <dl class="cover__line cover__line--d"><dt class="num">12.4k</dt><dd>Students taught</dd></dl>
+
+        <p class="cover__quote">“Strategy is a weekly decision, not a document.”</p>
+        <a href="#" class="btn btn--lime btn--lg cover__btn">Read my story</a>
+      </div>
+    </section>
+
+    <!-- Reviews: results wall -->
+    <section class="wall" id="reviews" aria-labelledby="wall-title">
+      <div class="poster__grain" aria-hidden="true"></div>
+      <div class="container wall__grid">
+        <figure class="wall__main reveal">
+          <p class="label wall__label">Reviews <span class="stars">★★★★★</span> 4.9 / 2,542 reviews</p>
+          <blockquote class="wall__quote" id="wall-title">“I raised my prices <mark>40%</mark> and kept every client.”</blockquote>
+          <figcaption class="wall__who"><span class="avatar" style="--h:28">AK</span><span><strong>Amara K.</strong> Brand studio owner</span></figcaption>
+        </figure>
+
+        <figure class="note note--a reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note__result">4 h</p>
+          <p class="note__unit">To a working cash model</p>
+          <blockquote>“Built my first real cash-flow model in an afternoon.”</blockquote>
+          <figcaption>Marco S. · SaaS founder</figcaption>
+        </figure>
+        <figure class="note note--b reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note__result">2×</p>
+          <p class="note__unit">Revenue within a year</p>
+          <blockquote>“A weekly rhythm I still follow a year later.”</blockquote>
+          <figcaption>Julia R. · Agency founder</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section--soft" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">Pricing</p>
+            <h2 class="h2">Pick how you want to learn.</h2>
+          </div>
+          <div class="toggle" role="group" aria-label="Billing period">
+            <button class="toggle__btn" data-billing="monthly">Monthly</button>
+            <button class="toggle__btn is-active" data-billing="yearly">Yearly <span class="save">Save 30%</span></button>
+          </div>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3>Single course</h3>
+            <p class="plan__desc">Own one course for life.</p>
+            <p class="plan__price"><strong>$249</strong><span>one-time</span></p>
+            <ul class="checks">
+              <li>Lifetime access to 1 course</li>
+              <li>Worksheets &amp; templates</li>
+              <li>Certificate of completion</li>
+              <li>Community access</li>
+            </ul>
+            <a href="#courses" class="btn btn--outline btn--block">Choose a course</a>
+          </article>
+
+          <article class="plan plan--featured reveal">
+            <span class="plan__tag">Most popular</span>
+            <h3>All-access</h3>
+            <p class="plan__desc">Every course, every update.</p>
+            <p class="plan__price"><strong data-monthly="$49" data-yearly="$34">$34</strong><span>/ month</span><em data-monthly="billed monthly, cancel anytime" data-yearly="billed $408 yearly">billed $408 yearly</em></p>
+            <ul class="checks">
+              <li>All 12 courses + new releases</li>
+              <li>Monthly live Q&amp;A calls</li>
+              <li>Full template library</li>
+              <li>Priority community support</li>
+            </ul>
+            <a href="#" class="btn btn--lime btn--block">Get all-access</a>
+          </article>
+
+          <article class="plan reveal">
+            <h3>1:1 Coaching</h3>
+            <p class="plan__desc">Work directly with me.</p>
+            <p class="plan__price"><strong>$1,500</strong><span>/ 3 months</span></p>
+            <ul class="checks">
+              <li>Everything in All-access</li>
+              <li>6 private strategy calls</li>
+              <li>Async feedback on your plan</li>
+              <li>Limited to 5 clients / quarter</li>
+            </ul>
+            <a href="#" class="btn btn--outline btn--block">Book a consultation</a>
+          </article>
+        </div>
+        <p class="guarantee">🛡 30-day money-back guarantee on every course. No questions asked.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq">
+        <div class="faq__head">
+          <p class="label">FAQ</p>
+          <h2 class="h2">Questions, answered.</h2>
+          <p>Still unsure? <a href="#" class="u">Email me</a> — I reply personally within a day.</p>
+        </div>
+        <div class="faq__list">
+          <details open>
+            <summary>Who are these courses for?</summary>
+            <p>Founders, freelancers and small-business owners doing roughly $50k–$2M a year who want a clearer strategy and healthier margins. No MBA required.</p>
+          </details>
+          <details>
+            <summary>How long do I have access?</summary>
+            <p>Forever. Buy a course once and you keep it, including every future update.</p>
+          </details>
+          <details>
+            <summary>How much time do I need each week?</summary>
+            <p>Plan on 2–3 hours: about an hour of lessons and the rest applying the worksheet to your own business.</p>
+          </details>
+          <details>
+            <summary>What if it isn't right for me?</summary>
+            <p>Email within 30 days and you'll get a full refund. No forms, no hoops.</p>
+          </details>
+          <details>
+            <summary>Do you offer team licenses?</summary>
+            <p>Yes — teams of 5 or more get 25% off All-access. Get in touch and I'll set it up.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA (poster) -->
+    <section class="poster poster--cta" aria-labelledby="cta-title">
+      <div class="poster__grain" aria-hidden="true"></div>
+      <div class="container cta-poster">
+        <div class="cta-poster__copy">
+          <div class="poster__head">
+            <p class="dateline"><span>Cohort #08</span><i aria-hidden="true"></i><span>14 of 40 seats left</span></p>
+            <h2 class="poster__title cta-poster__title" id="cta-title"><span>Ready to</span> <span>scale?</span></h2>
+          </div>
+          <p class="poster__lead">Six live weeks with me and 39 other founders. You leave with a priced offer, a finance model and a 90-day plan.</p>
+          <div class="poster__ctas">
+            <a href="#pricing" class="btn btn--lime btn--xl">Reserve your seat <span aria-hidden="true">→</span></a>
+            <a href="#" class="btn btn--line btn--xl">Book a free call</a>
+          </div>
+          <p class="cta-poster__fine">Starts Nov 18 · $990 or 3 × $340 · 30-day refund</p>
+        </div>
+
+        <figure class="cutout">
+          <div class="cutout__block" aria-hidden="true"></div>
+          <img src="assets/img/instructor.webp" alt="Daniel Leoprado" class="cutout__img" width="747" height="850" loading="lazy">
+          <figcaption class="cutout__tag"><span>Your instructor</span><strong>Daniel Leoprado</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="logo logo--light">
+          <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="2.4"/>
+            <path d="M4 30 L36 10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span>Leoprado</span>
+        </a>
+        <p class="footer__about">Business strategy courses for founders who'd rather build than guess.</p>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <a href="#courses">All courses</a><a href="#program">Growth Sprint</a><a href="#pricing">All-access</a><a href="#">Free resources</a>
+      </div>
+      <div>
+        <h4>Academy</h4>
+        <a href="#instructor">About</a><a href="#reviews">Reviews</a><a href="#">Blog</a><a href="#">Affiliates</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#faq">FAQ</a><a href="#">Student login</a><a href="#">Contact</a><a href="#">Refund policy</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer__bottom">
+        <p>© 2026 Leoprado Academy. All rights reserved.</p>
+        <p><a href="#">Privacy</a> · <a href="#">Terms</a></p>
       </div>
     </div>
   </footer>
