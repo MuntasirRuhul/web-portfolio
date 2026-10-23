@@ -263,8 +263,9 @@ button { font: inherit; cursor: pointer; }
 .impact { padding: clamp(90px, 11vw, 150px) 0 0; text-align: center; }
 .impact__label { margin-bottom: 22px; }
 .impact__title {
+  font-family: var(--font-display);
   font-size: clamp(28px, 3.4vw, 44px); font-weight: 500; letter-spacing: -.025em; line-height: 1.15;
-  max-width: 42ch; margin: 0 auto; text-wrap: balance;
+  max-width: 42ch; margin: clamp(72px, 8vw, 110px) auto 0; text-wrap: balance;
 }
 .meter { width: min(100%, 560px); margin: 56px auto 0; text-align: left; }
 .meter__bars { display: flex; align-items: stretch; height: 108px; gap: 0; }
@@ -283,7 +284,7 @@ button { font: inherit; cursor: pointer; }
 .meter__key--win { flex: 0 0 64%; }
 .js-anim .meter:not(.is-in) .meter__bar--win { clip-path: inset(0 82% 0 0); }
 .impact__kicker {
-  margin-top: clamp(80px, 9vw, 120px); font-family: var(--font-display);
+  font-family: var(--font-display);
   font-size: clamp(40px, 5.4vw, 72px); font-weight: 500; letter-spacing: -.035em; line-height: 1.05;
 }
 .impact__kicker span { display: inline-flex; align-items: center; gap: .08em; color: var(--blue); }
