@@ -84,9 +84,6 @@ main,header,footer,section{position:relative;z-index:1}
 /* ============ Rail ============ */
 .rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:12px 0 26px;pointer-events:none}
 .rail>*{pointer-events:auto}
-.burger{width:34px;height:34px;border-radius:10px;background:var(--ink);display:grid;place-items:center;transition:background .25s}
-.burger:hover{background:var(--terra)}
-.burger span{display:block;width:14px;height:1.5px;background:var(--paper);box-shadow:0 -4.5px 0 var(--paper),0 4.5px 0 var(--paper)}
 .vt{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--wide);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .soc{display:flex;flex-direction:column;gap:16px}
 .soc a{width:18px;height:18px;display:grid;place-items:center;color:var(--ink-2);transition:color .2s}
@@ -137,13 +134,26 @@ main{margin-left:var(--rail)}
 .hn a{color:rgba(var(--on-dark-rgb),.82);transition:color .2s}
 .hn a:hover{color:#fff}
 .hn .on{color:var(--accent-lt)}
+/* phone menu: only shown at ≤ 980px, where the left-hand links are hidden */
+.hn-menu{display:none;align-items:center;gap:10px;background:none;border:0;color:rgba(var(--on-dark-rgb),.9);font:inherit;font-size:15px;cursor:pointer;padding:0}
+.hn-menu i{position:relative;display:block;width:16px;height:1.5px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;transition:box-shadow .25s,transform .25s}
+.hn-menu i::after{content:"";position:absolute;inset:0;background:currentColor;opacity:0;transform:rotate(90deg);transition:opacity .2s}
+.hn-menu[aria-expanded="true"] i{box-shadow:none;transform:rotate(45deg)}
+.hn-menu[aria-expanded="true"] i::after{opacity:1}
+.hn-panel{position:absolute;top:58px;left:20px;right:20px;list-style:none;background:var(--card);color:var(--ink);border-radius:12px;padding:10px 20px;box-shadow:0 24px 50px -20px rgba(0,0,0,.5)}
+.hn-panel[hidden]{display:none}
+.hn-panel li+li{border-top:1px solid var(--rule)}
+.hn-panel a{display:flex;justify-content:space-between;padding:14px 0;font-size:20px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.hn-panel a::after{content:"→";color:var(--terra)}
+.hn-panel a:hover{color:var(--terra)}
 .vline{position:absolute;left:var(--vx);top:0;bottom:0;width:1px;background:var(--hl)}
 .hline{position:absolute;top:var(--hy);left:calc(var(--x0) + 12%);right:22%;height:1px;
   background:linear-gradient(90deg,var(--hl) 0 30%,transparent 30% 38%,var(--hl) 38% 55%,transparent 55% 66%,var(--hl) 66% 100%)}
 .ring{position:absolute;left:var(--vx);top:var(--hy);height:70%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;z-index:2}
 .ring svg{width:100%;height:100%;overflow:visible}
-.ring circle{fill:none;stroke:rgba(var(--on-dark-rgb),.34);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.6,.1,.2,1) .3s}
-.hero.is-in .ring circle{stroke-dashoffset:0}
+.ring circle{fill:none;stroke:rgba(var(--on-dark-rgb),.34);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1}
+/* drawn each time the hero enters the viewport; resets instantly when it leaves */
+.hero.ring-on .ring circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s cubic-bezier(.6,.1,.2,1) .3s}
 .mini{position:absolute;left:var(--x0);top:20%;width:12.4%;height:calc(var(--hy) - 20%);overflow:hidden;z-index:1}
 .big{position:absolute;left:var(--vx);right:var(--x1);top:20%;bottom:22%;overflow:hidden}
 .mini img,.big img{filter:grayscale(1) contrast(1.05)}
@@ -168,7 +178,6 @@ main{margin-left:var(--rail)}
 .tabv b{font-size:15px;font-weight:700;letter-spacing:-.04em}
 .tabv span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;font-weight:600}
 /* rail sits on the dark hero, so give it contrast */
-.burger{background:var(--terra)}
 .soc a{color:var(--muted)}
 
 /* ============ 03 Method ============ */
@@ -274,22 +283,43 @@ main{margin-left:var(--rail)}
 .rl .lbl{color:var(--on-band-2)}
 .rl .lbl b,.rl h2 em{color:var(--band-accent)}
 .rl .txt{color:var(--on-band-2)}
-.rl-grid{grid-column:1/7;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.6vw,36px)}
-.rl-card{display:flex;flex-direction:column;background:var(--card);color:var(--ink);padding:18px;box-shadow:0 1px 2px rgba(var(--ink-rgb),.08),0 16px 32px -16px rgba(var(--ink-rgb),.32);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-.rl-card:hover{transform:translateY(-6px)}
-.rl-card .pt{display:flex;justify-content:space-between;font-family:var(--wide);font-size:9.5px;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:8px}
-.rl-card .pt b{color:var(--pc);font-weight:400}
-.rl-card blockquote{font-family:"Inter",var(--sans);font-weight:700;font-size:clamp(24px,2.1vw,30px);line-height:.98;letter-spacing:-.055em;color:var(--pc);margin:16px 0 26px}
-.rl-card .btm{display:grid;grid-template-columns:76px 1fr;gap:14px;margin-top:auto}
-.rl-card .pic{aspect-ratio:3/4;overflow:hidden;background:var(--pc)}
-.rl-card .pic img{filter:grayscale(1) contrast(1.1);mix-blend-mode:screen;opacity:.95;transition:filter .6s}
-.rl-card:hover .pic img{filter:none;mix-blend-mode:normal;opacity:1}
-.rl-card dl{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;align-content:end}
-.rl-card dl div{border-top:1px solid var(--pc);padding:6px 0 4px}
-.rl-card dl div:nth-child(-n+2){border-top-width:2px}
-.rl-card dt{font-family:var(--wide);font-size:9px;color:var(--muted)}
-.rl-card dd{font-size:14px;font-weight:600;letter-spacing:-.01em}
-.rl-card .stars{color:var(--pc);letter-spacing:.08em}
+/* three review options, shown one after another until one is chosen */
+.opt-tag{display:inline-block;font-family:var(--wide);font-size:10px;letter-spacing:.06em;text-transform:uppercase;border:1px dashed currentColor;border-radius:999px;padding:5px 12px;margin-bottom:22px;opacity:.7}
+.rv-grid{grid-column:1/7;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,32px)}
+.who{font-size:14px;line-height:1.4}
+.who b{font-weight:600}
+.who span{display:block;font-family:var(--wide);font-size:10px;opacity:.72;margin-top:2px}
+.qm{display:block;font-family:"Inter",var(--sans);font-weight:700;line-height:1;height:.5em;font-size:96px;letter-spacing:-.05em}
+/* A: solid colour blocks */
+.rv-block{display:flex;flex-direction:column;justify-content:space-between;gap:44px;min-height:clamp(300px,26vw,380px);padding:clamp(22px,2.2vw,32px);background:var(--bg);color:var(--fg);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.rv-block:hover{transform:translateY(-6px) rotate(-.6deg)}
+.rv-block blockquote{font-size:clamp(22px,2vw,28px);font-weight:500;line-height:1.15;letter-spacing:-.03em;margin-top:18px}
+/* B: white cards, quote in the course colour */
+.rv-white{display:flex;flex-direction:column;justify-content:space-between;gap:40px;background:var(--card);color:var(--ink);padding:clamp(22px,2.2vw,30px);border-top:4px solid var(--pc);box-shadow:0 1px 2px rgba(var(--ink-rgb),.08),0 16px 32px -16px rgba(var(--ink-rgb),.32);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.rv-white:hover{transform:translateY(-6px)}
+.rv-white blockquote{font-family:"Inter",var(--sans);font-weight:700;font-size:clamp(24px,2.1vw,30px);line-height:1;letter-spacing:-.05em;color:var(--pc)}
+.rv-white .who{display:flex;gap:10px;align-items:baseline}
+.rv-white .who::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--pc)}
+/* C: no cards, big quotes on the dark ground */
+.rl.rv-dark{background:var(--night);color:var(--paper)}
+.rv-dark .lbl,.rv-dark .txt{color:var(--dim)}
+.rv-dark .lbl b,.rv-dark h2 em{color:var(--accent-lt)}
+.rv-quotes{grid-column:1/7;margin:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(var(--on-dark-rgb),.3)}
+.rv-quotes figure{display:flex;flex-direction:column;justify-content:space-between;gap:36px;padding:30px clamp(18px,2.4vw,36px) 0 0}
+.rv-quotes figure+figure{border-left:1px solid rgba(var(--on-dark-rgb),.14);padding-left:clamp(18px,2.4vw,36px)}
+.rv-quotes .qm{color:var(--mk)}
+.rv-quotes blockquote{font-size:clamp(22px,2vw,28px);font-weight:500;line-height:1.15;letter-spacing:-.03em;margin-top:18px}
+.rv-quotes .who{color:var(--dim)}
+.rv-quotes .who b{color:var(--paper)}
+.rv-dark .rl-stats{border-top-color:rgba(var(--on-dark-rgb),.3)}
+.rv-dark .rl-stats div+div{border-left-color:rgba(var(--on-dark-rgb),.14)}
+.rv-dark .rl-stats span{color:var(--dim)}
+.rv-dark .rl-foot a:hover{color:var(--accent-lt)}
+@media (max-width:860px){
+  .rv-grid,.rv-quotes{grid-template-columns:1fr}
+  .rv-block{min-height:0}
+  .rv-quotes figure,.rv-quotes figure+figure{border-left:0;padding:26px 0;border-bottom:1px solid rgba(var(--on-dark-rgb),.14)}
+}
 .rl-stats{grid-column:1/7;margin:clamp(48px,6vw,80px) var(--pad) 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
 .rl-stats div{padding:18px 18px 0 0}
 .rl-stats div+div{border-left:1px solid var(--rule);padding-left:18px}
@@ -298,9 +328,7 @@ main{margin-left:var(--rail)}
 .rl-foot{grid-column:1/7;margin:32px var(--pad) 0}
 .rl-foot a{font-size:14px;font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px}
 .rl-foot a:hover{color:var(--band-accent)}
-@media (max-width:980px){.rl-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){
-  .rl-grid{grid-template-columns:1fr}
   .rl-stats{grid-template-columns:1fr 1fr}
   .rl-stats div:nth-child(3){border-left:0;padding-left:0}
   .rl-stats div{padding-bottom:18px}
@@ -406,8 +434,11 @@ summary{font-weight:500;letter-spacing:-.02em}
   .hero{padding:36px 0 70px}
   .hero .copy{padding:0 20px}
   .hero{height:auto;max-height:none;min-height:0;margin-left:0;display:flex;flex-direction:column;padding:76px 20px 48px;gap:22px}
-  .hn{padding:22px 20px 0 64px}
-  .hn div:first-child{display:none}
+  .hn{padding:22px 20px 0;align-items:center;z-index:6}
+  .hn div:first-of-type{display:none}
+  .hn div:last-of-type a:not(.on){display:none}
+  .hn-menu{display:inline-flex}
+  .rail{display:none}
   .vline,.hline,.ring,.mini{display:none}
   .big,.hero h1,.roles,.year,.hcta{position:static;max-width:none}
   .big{aspect-ratio:4/3.2}
@@ -438,7 +469,6 @@ summary{font-weight:500;letter-spacing:-.02em}
 <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
 <aside class="rail">
-  <a class="burger" href="#" aria-label="Open menu"><span></span></a>
   <span class="vt">Elena Varga — school of drawing — Lisbon</span>
   <div class="soc">
     <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.2 2.3 2.3 4.2 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.2 3.7 2.1 5.6 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.7-.2 5.6-2.1 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.2-3.7-2.1-5.6-5.8-5.8C15 2 14.7 2 12 2z"/></svg></a>
@@ -453,9 +483,14 @@ summary{font-weight:500;letter-spacing:-.02em}
 
   <!-- 01 HERO -->
   <section class="hero" id="top">
-    <nav class="hn">
-      <div><a href="#courses">Drawing</a><a href="#courses">Ink</a><a href="#courses">Watercolour</a></div>
-      <div><a href="#courses">Oil</a><a href="#about">About</a><a class="on" href="#">Log in</a></div>
+    <nav class="hn" aria-label="Main">
+      <button class="hn-menu" type="button" aria-expanded="false" aria-controls="hnPanel"><i></i>Menu</button>
+      <div><a href="#about">About</a><a href="#courses">Courses</a><a href="#gallery">Gallery</a><a href="#students">Students</a></div>
+      <div><a href="#faq">FAQ</a><a href="#join">Free lesson</a><a class="on" href="#">Log in</a></div>
+      <ul class="hn-panel" id="hnPanel" hidden>
+        <li><a href="#about">About Elena</a></li><li><a href="#courses">Courses</a></li><li><a href="#gallery">Gallery</a></li>
+        <li><a href="#students">Students</a></li><li><a href="#faq">Questions</a></li><li><a href="#join">Free lesson</a></li>
+      </ul>
     </nav>
     <span class="vline" aria-hidden="true"></span>
     <span class="hline" aria-hidden="true"></span>
@@ -624,34 +659,66 @@ summary{font-weight:500;letter-spacing:-.02em}
   </div>
 </section>
 
-  <!-- 06 STUDENTS -->
+  <!-- 06 STUDENTS: three options shown one after another; keep one, delete the other two -->
   <section class="rl sec g6" id="students">
   <div class="vhead">
     <div>
+      <span class="opt-tag">Option A · Colour blocks</span>
       <span class="lbl reveal"><b>06</b>Students</span>
       <h2 class="reveal d1">Letters from <em>the wall.</em></h2>
     </div>
     <p class="txt reveal d2">Written by students after their final critique. Every one of them started with a pencil and no experience.</p>
   </div>
-  <div class="rl-grid">
-    <a href="#" class="rl-card reveal" style="--pc:var(--c1)">
-      <div class="pt"><span>Elena Varga Atelier</span><b>Letter No. 01 · Pencil</b></div>
-      <blockquote>“Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.”</blockquote>
-      <div class="btm"><div class="pic"><img src="https://images.unsplash.com/photo-1774196405737-9ba4db3712ca?auto=format&fit=crop&w=300&q=80" alt="Marta's drawing" loading="lazy"></div>
-        <dl><div><dt>Student</dt><dd>Marta K.</dd></div><div><dt>Course</dt><dd>01</dd></div><div><dt>Took</dt><dd>6 weeks</dd></div><div><dt>Rating</dt><dd class="stars">★★★★★</dd></div></dl></div>
-    </a>
-    <a href="#" class="rl-card reveal d1" style="--pc:var(--c4)">
-      <div class="pt"><span>Elena Varga Atelier</span><b>Letter No. 02 · Ink</b></div>
-      <blockquote>“I finally stopped erasing. Ink taught me to commit to the line.”</blockquote>
-      <div class="btm"><div class="pic"><img src="https://images.unsplash.com/photo-1789822348533-7fd5bbd72051?auto=format&fit=crop&w=300&q=80" alt="Ana's ink drawing" loading="lazy"></div>
-        <dl><div><dt>Student</dt><dd>Ana R.</dd></div><div><dt>Course</dt><dd>04</dd></div><div><dt>Took</dt><dd>3 weeks</dd></div><div><dt>Rating</dt><dd class="stars">★★★★★</dd></div></dl></div>
-    </a>
-    <a href="#" class="rl-card reveal d2" style="--pc:var(--c3)">
-      <div class="pt"><span>Elena Varga Atelier</span><b>Letter No. 03 · Watercolour</b></div>
-      <blockquote>“My washes used to turn to mud. Now I know exactly when to stop.”</blockquote>
-      <div class="btm"><div class="pic"><img src="https://images.unsplash.com/photo-1629654858857-615c2c8be8a8?auto=format&fit=crop&w=300&q=80" alt="Tom's watercolour" loading="lazy"></div>
-        <dl><div><dt>Student</dt><dd>Tom H.</dd></div><div><dt>Course</dt><dd>03</dd></div><div><dt>Took</dt><dd>5 weeks</dd></div><div><dt>Rating</dt><dd class="stars">★★★★★</dd></div></dl></div>
-    </a>
+  <div class="rv-grid">
+    <figure class="rv-block reveal" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure class="rv-block reveal d1" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
+    <figure class="rv-block reveal d2" style="--bg:var(--c3);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
+  </div>
+  <div class="rl-stats reveal d1">
+    <div><b>4.9</b><span>Average rating · 2,870 reviews</span></div>
+    <div><b>12,400</b><span>Students since 2016</span></div>
+    <div><b>3,100</b><span>Pieces shared this year</span></div>
+    <div><b>64</b><span>Countries</span></div>
+  </div>
+  <div class="rl-foot reveal d2"><a href="#">Read all reviews →</a></div>
+</section>
+
+  <section class="rl sec g6">
+  <div class="vhead">
+    <div>
+      <span class="opt-tag">Option B · White cards</span>
+      <span class="lbl reveal"><b>06</b>Students</span>
+      <h2 class="reveal d1">Letters from <em>the wall.</em></h2>
+    </div>
+    <p class="txt reveal d2">Written by students after their final critique. Every one of them started with a pencil and no experience.</p>
+  </div>
+  <div class="rv-grid">
+    <figure class="rv-white reveal" style="--pc:var(--c1)"><blockquote>“Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.”</blockquote><figcaption class="who"><div><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></div></figcaption></figure>
+    <figure class="rv-white reveal d1" style="--pc:var(--c4)"><blockquote>“I finally stopped erasing. Ink taught me to commit to the line.”</blockquote><figcaption class="who"><div><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></div></figcaption></figure>
+    <figure class="rv-white reveal d2" style="--pc:var(--c3)"><blockquote>“My washes used to turn to mud. Now I know exactly when to stop.”</blockquote><figcaption class="who"><div><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></div></figcaption></figure>
+  </div>
+  <div class="rl-stats reveal d1">
+    <div><b>4.9</b><span>Average rating · 2,870 reviews</span></div>
+    <div><b>12,400</b><span>Students since 2016</span></div>
+    <div><b>3,100</b><span>Pieces shared this year</span></div>
+    <div><b>64</b><span>Countries</span></div>
+  </div>
+  <div class="rl-foot reveal d2"><a href="#">Read all reviews →</a></div>
+</section>
+
+  <section class="rl sec g6 rv-dark">
+  <div class="vhead">
+    <div>
+      <span class="opt-tag">Option C · Quotes on dark</span>
+      <span class="lbl reveal"><b>06</b>Students</span>
+      <h2 class="reveal d1">Letters from <em>the wall.</em></h2>
+    </div>
+    <p class="txt reveal d2">Written by students after their final critique. Every one of them started with a pencil and no experience.</p>
+  </div>
+  <div class="rv-quotes reveal">
+    <figure style="--mk:var(--ochre)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure style="--mk:var(--rose)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
+    <figure style="--mk:var(--accent-lt)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
   </div>
   <div class="rl-stats reveal d1">
     <div><b>4.9</b><span>Average rating · 2,870 reviews</span></div>
@@ -713,6 +780,16 @@ summary{font-weight:500;letter-spacing:-.02em}
   const hero = document.querySelector('.hero');
   requestAnimationFrame(() => hero.classList.add('is-in'));
   setTimeout(() => hero.classList.add('is-in'), 400);
+
+  // Hero circle: draw it again whenever the hero scrolls back into view.
+  new IntersectionObserver(([e]) => hero.classList.toggle('ring-on', e.isIntersecting), { threshold: .35 }).observe(hero);
+
+  // Phone menu.
+  const menuBtn = document.querySelector('.hn-menu'), menu = document.getElementById('hnPanel');
+  const setMenu = open => { menuBtn.setAttribute('aria-expanded', open); menu.hidden = !open; };
+  menuBtn.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
 </script>
 </body>
 </html>

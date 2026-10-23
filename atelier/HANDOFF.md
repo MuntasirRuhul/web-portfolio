@@ -28,7 +28,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | ~~Colour palette~~ | **Decided:** Original, with plum instead of blue. Other palettes and the picker removed in v7. | Done. |
-| D2 | ~~Student section layout~~ | **Decided:** Letters (poster cards + stats) in v7. Gallery decided too: Salon wall. | Done. |
+| D2 | **Student section layout** | v7 shows three options one after another: **A** colour blocks, **B** white cards, **C** quotes on dark. Gallery is decided (Salon wall). | Keep one, delete the other two sections and the `.opt-tag` labels. Only option A has `id="students"`; move it to the one you keep. |
 | D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
 
 ---
@@ -39,14 +39,14 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 
 | # | Section | Element / id | Purpose | Notes |
 |---|---|---|---|---|
-| | Left rail | `aside.rail` | Menu button, vertical tagline, socials | Fixed, 56px wide. Collapses to a floating menu button at ≤ 980px. Menu button has **no menu yet**. |
-| 01 | **Hero** | `section.hero#top` | Who she is, entry to courses | Dark full-height band. Construction lines: a vertical rule at 38%, a broken horizontal rule at 48%, and an SVG circle that draws itself once. Small portrait left, large photo right, roles list, "Since 2006", "Explore the courses" link with a painted underline. Own split nav (mediums left, About / Log in right). |
+| | Left rail | `aside.rail` | Vertical tagline, socials | Fixed, 56px wide, desktop only (hidden at ≤ 980px). No hamburger: navigation lives in the hero. |
+| 01 | **Hero** | `section.hero#top` | Who she is, entry to courses | Dark full-height band. Construction lines: a vertical rule at 38%, a broken horizontal rule at 48%, and an SVG circle that draws itself once. Small portrait left, large photo right, roles list, "Since 2006", "Explore the courses" link with a painted underline. Own split nav: About · Courses · Gallery · Students left, FAQ · Free lesson · Log in right. At ≤ 980px the links collapse into a **Menu** button (left) that opens a dropdown panel (`.hn-panel`, `aria-expanded`, closes on link click and Esc); Log in stays visible. The circle redraws every time the hero scrolls back into view. |
 | | Side tab | `a.tabv` | Shortcut to free lesson | Fixed to the right edge: "EV. Free lesson" → `#join`. |
 | 02 | **About** | `section.about#about` | The artist | Centred 880px column: statement heading, two paragraphs, signature. Two **cut-out** images (shot on white, `mix-blend-mode: multiply`). Section needs a solid background for the blend to work. |
 | 03 | **Method** | `section.method` | Look · Sketch · Paint | Rounded panel on the signature band. Three step cards, solid colour blocks in the new palettes. Icons are inline SVG that draw in on scroll. |
 | 04 | **Courses** | `section.courses#courses` | The catalogue (6 courses) | Poster cards on the signature band. See section 6.3. |
 | 05 | **Gallery** | `section.gw#gallery` | Her work, linked to courses | **Salon wall.** Seven works in two rows, hung on a dashed centre line (`.gw-row::before`). Each `a.gw-w` sets its width with `--w`, image ratio with `--r` and course colour with `--pc`; frames are a white mat (`.gw-f`) or mat + ink border (`.gw-f.dark`). Museum label under each (`.gw-l`): title, medium · year · size, course dot. No filters, no JS. At ≤ 760px it becomes a 2-column grid, first work full width. |
-| 06 | **Students** | `section.rl#students` | Social proof | **Letters.** Three white poster cards on the signature band (`.rl-card`, same anatomy as course cards): quote in the course accent, tinted student work, 2×2 facts (Student, Course, Took, Rating). Then a 4-up stats row (rating, students, pieces, countries) and "Read all reviews". 3 → 2 → 1 columns at 980 / 600px. |
+| 06 | **Students** | `section.rl#students` | Social proof | Three short quotes, each with only name + course, then a 4-up stats row and "Read all reviews". **Three options pending (D2):** A `.rv-block` solid ochre / rose / plum blocks; B `.rv-white` white cards with the quote in the course colour; C `.rv-dark` + `.rv-quotes`, no cards, quotes on the dark ground with coloured quote marks. 3 → 1 columns at 860px. |
 | 07 | **FAQ** | `section.faq#faq` | Objections | Native `<details>`, first open. |
 | 08 | **Join** | `section.join#join` | Conversion | Dark panel with two action cards (portfolio review, live class) + photo, then the newsletter strip. |
 | | Footer | `footer` | Links | 3 columns + base row. |
@@ -168,6 +168,8 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 | Reveal on scroll | `.reveal` → `.is-in` via one `IntersectionObserver` (threshold .15). Opacity + 28px rise, .9s. Content is visible without JS (`.js` class gate). |
 | Line drawing | `.draw` SVG paths with `pathLength="1"` and dash offset. Hero circle 2.4s, hero underline 1.3s after a .9s delay, method icons 1.4s. |
 | Hero load | `.hero.is-in` added on load (rAF + 400ms fallback). |
+| Hero circle | A second observer toggles `.hero.ring-on` (threshold .35): the circle draws on entry and resets instantly on exit, so it redraws on every return to the top. |
+| Phone menu | Menu button toggles `.hn-panel` (`hidden`) and `aria-expanded`; Esc closes and returns focus. |
 | Hover | Card lift −6px, image zoom 1.04–1.06, tinted/B&W photos return to colour, button fill. |
 | Reduced motion | `prefers-reduced-motion: reduce` disables all animation and transitions and shows everything. |
 
@@ -181,8 +183,8 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 - [x] Reduced motion respected.
 - [ ] **Alt text:** many placeholder images have `alt=""`. Write real alt text when real artwork goes in.
 - [ ] **Focus styles:** rely on browser defaults; add a visible `:focus-visible` ring in the accent.
-- [ ] **Menu button** (rail) needs a real menu, `aria-expanded` and a keyboard trap while open.
-- [ ] Hero split nav hides its left links on phones; make sure the menu covers them.
+- [x] Phone menu covers every hero link, uses `aria-expanded`, closes on Esc.
+- [ ] Hero nav is not sticky: once you scroll past the hero there is no navigation on desktop. Decide if that's fine or add a small sticky bar.
 
 ---
 
@@ -205,7 +207,6 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 - **Newsletter form**: front-end only (shows "Thanks!"). Connect to the email provider.
 - **CTA cards**: "Schedule now" → booking tool; "Reserve a seat" → live-class signup.
 - **Courses**: each card → course page and checkout (video platform / LMS).
-- **Menu**: overlay or drawer for the rail button.
 - **Images**: self-host and serve responsive sizes (`srcset`), keep `loading="lazy"` below the fold.
 - If building as a **WordPress theme**: each section maps cleanly to a block or template part, courses and gallery works to custom post types (fields: medium, level, lessons, duration, price, accent, tag, image).
 
