@@ -28,7 +28,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | ~~Colour palette~~ | **Decided:** Original, with plum instead of blue. Other palettes and the picker removed in v7. | Done. |
-| D2 | **Student section layout** | v7 shows three options one after another: **A** colour blocks on sand, **C** quotes on dark, **D** colour blocks on dark (B, white cards, was dropped). Gallery is decided (Salon wall). | Keep one, delete the other two sections and the `.opt-tag` labels. Only option A has `id="students"`; move it to the one you keep. |
+| D2 | ~~Student section layout~~ | **Decided:** colour blocks on the dark ground (ochre, rose, terracotta). Gallery decided too: Salon wall. | Done. |
 | D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
 
 ---
@@ -46,7 +46,7 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 | 03 | **Method** | `section.method` | Look · Sketch · Paint | Rounded panel on the signature band. Three step cards, solid colour blocks in the new palettes. Icons are inline SVG that draw in on scroll. |
 | 04 | **Courses** | `section.courses#courses` | The catalogue (6 courses) | Poster cards on the signature band. See section 6.3. |
 | 05 | **Gallery** | `section.gw#gallery` | Her work, linked to courses | **Salon wall.** Seven works in two rows, hung on a dashed centre line (`.gw-row::before`). Each `a.gw-w` sets its width with `--w`, image ratio with `--r` and course colour with `--pc`; frames are a white mat (`.gw-f`) or mat + ink border (`.gw-f.dark`). Museum label under each (`.gw-l`): title, medium · year · size, course dot. No filters, no JS. At ≤ 760px it becomes a 2-column grid, first work full width. |
-| 06 | **Students** | `section.rl#students` | Social proof | Three short quotes, each with only name + course, then a 4-up stats row and "Read all reviews". **Three options pending (D2):** A `.rv-block` solid ochre / rose / plum blocks on the sand band; C `.rv-dark` + `.rv-quotes`, no cards, quotes on the dark ground with coloured quote marks; D `.rv-dark` + `.rv-block`, ochre / rose / terracotta blocks on the dark ground. 3 → 1 columns at 860px. |
+| 06 | **Students** | `section.rl.rv-dark#students` | Social proof | Dark ground (`--night`). Three solid colour blocks (`.rv-block`, `--bg`/`--fg` per card: ochre, rose, terracotta), each with a big quote mark, the quote, and name · course. Then a 4-up stats row and "Read all reviews". 3 → 1 columns at 860px. |
 | 07 | **FAQ** | `section.faq#faq` | Objections | Native `<details>`, first open. |
 | 08 | **Join** | `section.join#join` | Conversion | Dark panel with two action cards (portfolio review, live class) + photo, then the newsletter strip. |
 | | Footer | `footer` | Links | 3 columns + base row. |
@@ -55,15 +55,16 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 
 ## 4. Colour tokens
 
-**Palette decided: Original** (warm cream paper, near-black hero and panels, terracotta accent, sand band). It is the only palette in v7: the other four palettes, the picker, its CSS and its script have been removed. No blue anywhere: the Original palette's one blue (Watercolour course accent and `--ultra`) is now garden plum `#7A3E5E`.
+**Palette decided: Original, on white.** The page background is pure white (`--page:#FFFFFF`); the former cream paper `#F3ECDF` is now the surface colour (`--band`) for the method panel, courses section, newsletter strip, footer column and the gallery mats. Cards on it are white. Near-black hero, students section and CTA panel; terracotta accent. It is the only palette in v7: the other four palettes, the picker, its CSS and its script have been removed. No blue anywhere: the Original palette's one blue (Watercolour course accent and `--ultra`) is now garden plum `#7A3E5E`.
 
 ### 4.1 Token roles
 
 | Token | Role |
 |---|---|
-| `--paper` | Page background |
-| `--card` | Cards (warm white) |
-| `--band` | **Signature colour**: courses section, method panel, students section, newsletter strip |
+| `--page` | Page background (white) |
+| `--paper` | Light text on dark surfaces (cream) |
+| `--card` | Cards (white) |
+| `--band` | **Surface** (cream): method panel, courses section, newsletter strip, gallery mats |
 | `--band-soft` | Footer column and image placeholders (same as `--band`) |
 | `--on-band` / `--on-band-2` / `--band-accent` | Text, secondary text and accent **on** the band |
 | `--ink` / `--ink-2` / `--muted` | Text: primary, secondary, labels |
@@ -77,7 +78,7 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 ### 4.2 Values (all on `:root`)
 
 ```css
---paper:#F3ECDF; --band:#EAE0CE; --card:#FBF7F0;
+--page:#FFFFFF; --paper:#F3ECDF; --band:#F3ECDF; --card:#FFFFFF;
 --ink:#1D1A16; --ink-2:#4A443B; --muted:#8A8172; --ink-rgb:29,26,22;
 --terra:#C0512F; --ochre:#DDA43C; --ultra:#7A3E5E; --sage:#7E9271; --rose:#D9A7A0;
 --band-soft:var(--band); --on-band:var(--ink); --on-band-2:var(--ink-2); --band-accent:var(--terra);
@@ -85,7 +86,7 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 --c1:#8F6511; --c2:#A55C52; --c3:#7A3E5E; --c4:#1D1A16; --c5:#C0512F; --c6:#56694A;
 ```
 
-Method step cards are warm-white cards on the band with ink text and terracotta step numbers (the colour-blocked cards only existed in the removed palettes). The paper grain stays sepia.
+Method step cards are warm-white cards on the band with ink text and terracotta step numbers (the colour-blocked cards only existed in the removed palettes). The paper grain is neutral grey at 14% so white stays white. **No shadows anywhere:** cards, gallery frames, colour blocks and the side tab are flat; separation comes from colour, the cream mats and 1px rules.
 
 ### 4.3 Course accents (`--pc` on each card)
 
@@ -153,7 +154,7 @@ Rules: emphasis is **colour, never italics** (one phrase per heading). Facts (le
 3. **Photo**: 3:4, right-aligned, fills remaining height. Grayscale + `mix-blend-mode: screen` over the accent = tinted. Full colour on hover.
 4. **Tag** (optional): "New" / "Bestseller", small mono on the photo corner.
 5. **Facts**: 2×2 `<dl>` (Level with meter, Lessons, Running, Admission). Top rules 2px, bottom row 1px, in accent.
-6. **Card**: ratio **1 : 1.18**, padding 18px, square corners, single soft shadow, lifts 6px on hover; price shows "→ Enrol" on hover.
+6. **Card**: ratio **1 : 1.18**, padding 18px, square corners, no shadow, lifts 6px on hover; price shows "→ Enrol" on hover.
 
 Figma equivalent: component **Course card / Poster white** (380×448) + **Level meter** variants; colour via the **Course accent** variable collection (one mode per course).
 
