@@ -316,6 +316,23 @@ a {
     background: var(--gray-100);
 }
 
+.avatar {
+    flex: none;
+    display: block;
+    border-radius: 50%;
+    background: var(--tv-gray);
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+}
+
+.avatar-lg {
+    width: 95px;
+    height: 95px;
+}
+
 .schedule-call-text {
     display: flex;
     flex-direction: column;
@@ -360,7 +377,6 @@ a {
     top: 0;
     width: 70.67%;
     height: 100%;
-    transform: scaleX(-1);
 }
 
 .tv-stand-side {
@@ -423,10 +439,6 @@ a {
 .start-project:hover {
     background: var(--white);
     color: var(--black);
-}
-
-.start-project:hover img {
-    filter: invert(1);
 }
 
 .stripes {
