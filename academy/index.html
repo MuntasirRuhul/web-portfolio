@@ -455,19 +455,39 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container cta__inner reveal">
-        <h2>Ready to build with intent?</h2>
-        <p>Get my free 5-day email course, <strong>“The One-Page Strategy”</strong>, and a template to go with it.</p>
-        <form class="subscribe" onsubmit="event.preventDefault(); this.classList.add('is-done');">
-          <label for="email" class="sr-only">Email address</label>
-          <input id="email" type="email" placeholder="you@company.com" required>
-          <button class="btn btn--lime" type="submit">Send me lesson 1</button>
-          <p class="subscribe__ok">✓ Check your inbox — lesson 1 is on its way.</p>
-        </form>
+    <!-- CTA (poster) -->
+    <section class="poster poster--cta" aria-labelledby="cta-title">
+      <div class="poster__bolt" aria-hidden="true"></div>
+      <div class="poster__grain" aria-hidden="true"></div>
+      <div class="container cta-poster">
+        <div class="cta-poster__copy">
+          <div class="poster__head">
+            <p class="dateline"><span>Free course</span><i aria-hidden="true"></i><span>5 days</span></p>
+            <h2 class="poster__title cta-poster__title" id="cta-title"><span>Build with</span> <span>intent.</span></h2>
+          </div>
+          <p class="poster__lead">One short lesson a day on writing a strategy that fits on a single page. Free, and the template comes with it.</p>
+        </div>
+
+        <div class="cta-card">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="cta-card__sticker" aria-hidden="true">Free</span>
+          <p class="cta-card__kicker">Email course</p>
+          <h3 class="cta-card__title">The One-Page Strategy</h3>
+          <ul class="cta-card__days">
+            <li><b>01</b>Where you actually win</li>
+            <li><b>02</b>Who it's for</li>
+            <li><b>03</b>What you charge</li>
+            <li><b>04</b>The three numbers to watch</li>
+            <li><b>05</b>Your 90-day plan</li>
+          </ul>
+          <form class="cta-form" onsubmit="event.preventDefault(); this.classList.add('is-done');">
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" type="email" placeholder="you@company.com" required>
+            <button class="btn btn--dark" type="submit">Send me lesson 1</button>
+            <p class="cta-form__ok">✓ Check your inbox. Lesson 1 is on its way.</p>
+          </form>
+        </div>
       </div>
-      <p class="cta__word" aria-hidden="true">Build with intent</p>
     </section>
   </main>
 

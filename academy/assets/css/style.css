@@ -485,21 +485,41 @@ button { font: inherit; cursor: pointer; }
 .faq__list details[open] summary::after { content: "−"; background: var(--lime); border-color: var(--lime); }
 .faq__list details p { color: var(--muted); padding: 0 48px 26px 0; font-size: 16px; }
 
-/* ---------- CTA ---------- */
-.cta { background: var(--soft); position: relative; overflow: hidden; padding: clamp(80px, 10vw, 130px) 0 0; }
-.cta__inner { text-align: center; max-width: 720px; position: relative; z-index: 1; }
-.cta h2 { font-size: clamp(36px, 5vw, 64px); font-weight: 600; }
-.cta__inner > p { color: var(--muted); font-size: 18px; margin: 20px auto 32px; max-width: 48ch; }
-.subscribe { display: flex; gap: 8px; max-width: 520px; margin: 0 auto; padding: 6px; background: #fff; border-radius: 999px; border: 1px solid var(--line); position: relative; }
-.subscribe input { flex: 1; min-width: 0; border: 0; outline: 0; padding: 0 20px; font: inherit; font-size: 15px; background: transparent; }
-.subscribe__ok { display: none; position: absolute; left: 0; right: 0; top: calc(100% + 14px); font-size: 14px; color: #3a7d00; font-weight: 500; }
-.subscribe.is-done .subscribe__ok { display: block; }
-.cta__word {
-  font-family: var(--font-display); font-weight: 800; white-space: nowrap; text-align: center;
-  font-size: clamp(70px, 13vw, 200px); line-height: .9; letter-spacing: -.04em; margin-top: 80px;
-  color: #e4e4df;
-  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent); mask-image: linear-gradient(to bottom, #000 40%, transparent);
+/* ---------- CTA (poster) ---------- */
+.poster--cta .poster__bolt { clip-path: polygon(74% 0, 94% 0, 84% 38%, 100% 38%, 100% 56%, 70% 100%, 50% 100%, 64% 56%, 54% 56%); }
+.cta-poster { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; padding-block: clamp(80px, 9vw, 128px); }
+.cta-poster__copy { min-width: 0; }
+.cta-poster__title { font-size: clamp(84px, 9.5vw, 150px); }
+
+.cta-card {
+  position: relative; justify-self: center; width: min(100%, 440px);
+  background: #ecece6; color: var(--ink); padding: 36px 32px 32px;
+  transform: rotate(2deg); box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .55);
 }
+.cta-card::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .3; mix-blend-mode: multiply;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.cta-card .tape { left: 30%; transform: rotate(-4deg); }
+.cta-card__sticker {
+  position: absolute; top: -22px; right: -18px; z-index: 2; transform: rotate(8deg);
+  font-family: "Archivo Black", var(--font-display); text-transform: uppercase; font-size: 30px; line-height: 1;
+  background: var(--lime); padding: 10px 16px 8px;
+}
+.cta-card__kicker { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.cta-card__title { font-family: "Archivo Black", var(--font-display); font-weight: 400; text-transform: uppercase; font-size: 30px; line-height: 1; letter-spacing: 0; margin-top: 8px; }
+.cta-card__days { list-style: none; padding: 0; margin: 22px 0 24px; border-top: 2px solid var(--ink); }
+.cta-card__days li { display: flex; gap: 14px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid rgba(13, 13, 14, .14); font-size: 15px; }
+.cta-card__days b { font-family: ui-monospace, Menlo, monospace; font-size: 12px; font-weight: 600; color: var(--muted); }
+.cta-form { position: relative; z-index: 1; display: grid; gap: 8px; }
+.cta-form input {
+  height: 50px; padding: 0 16px; border: 2px solid var(--ink); background: #fff; border-radius: 0;
+  font: inherit; font-size: 15px; outline: 0;
+}
+.cta-form input:focus { box-shadow: 0 0 0 3px var(--lime); }
+.cta-form .btn { border-radius: 0; height: 50px; }
+.cta-form__ok { display: none; font-size: 14px; color: #2f6b00; font-weight: 600; }
+.cta-form.is-done .cta-form__ok { display: block; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: #fff; padding: 80px 0 32px; }
@@ -546,6 +566,8 @@ button { font: inherit; cursor: pointer; }
 
 
   .poster__grid { grid-template-columns: 1fr; padding-block: 56px 72px; gap: 64px; }
+  .cta-poster { grid-template-columns: 1fr; gap: 56px; }
+  .poster--cta .poster__bolt { clip-path: polygon(0 55%, 40% 55%, 26% 72%, 60% 72%, 20% 100%, 0 100%); }
   .poster__bolt { clip-path: polygon(70% 50%, 96% 50%, 80% 70%, 100% 70%, 100% 76%, 34% 100%, 12% 100%, 50% 80%, 34% 80%); }
   .poster__collage { max-width: 460px; width: 100%; margin: 0 auto; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -574,6 +596,9 @@ button { font: inherit; cursor: pointer; }
   .poster__lead { font-size: 17px; }
   .poster__ctas .btn { flex: 1 1 100%; }
   .poster__lead { margin-top: 24px; }
+  .cta-poster__title { font-size: clamp(72px, 24vw, 104px); }
+  .cta-card { padding: 32px 22px 24px; transform: rotate(1deg); }
+  .cta-card__sticker { right: -6px; font-size: 24px; }
   .dateline { font-size: 12px; gap: 12px; }
   .header__inner { height: 68px; }
   .nav { top: 68px; }
@@ -595,8 +620,6 @@ button { font: inherit; cursor: pointer; }
   .philosophy__quote { padding: 22px; left: 5%; right: 5%; }
   .features { grid-template-columns: 1fr; }
   .creds dt { font-size: 28px; }
-  .subscribe { flex-direction: column; border-radius: 20px; padding: 8px; }
-  .subscribe input { height: 48px; }
   .faq__list summary { font-size: 17px; }
   .footer__grid { grid-template-columns: 1fr; }
 }
