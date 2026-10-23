@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-palette="klein">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,7 @@
   --rule:rgba(var(--ink-rgb),.14);
   --terra:#C0512F;
   --ochre:#DDA43C;
-  --ultra:#2E47A0;
+  --ultra:#7A3E5E;
   --sage:#7E9271;
   --rose:#D9A7A0;
 
@@ -42,52 +42,9 @@
   --on-dark-rgb:243,236,223;
   --band-soft:var(--band); --on-band:var(--ink); --on-band-2:var(--ink-2); --band-accent:var(--terra);
   --s1:var(--ochre); --s1t:var(--ink); --s2:var(--ultra); --s2t:#fff; --s3:var(--terra); --s3t:#fff;
-  --c1:#8F6511; --c2:#A55C52; --c3:#2E47A0; --c4:#1D1A16; --c5:#C0512F; --c6:#56694A;
+  --c1:#8F6511; --c2:#A55C52; --c3:#7A3E5E; --c4:#1D1A16; --c5:#C0512F; --c6:#56694A;
   --shadow:0 1px 2px rgba(var(--ink-rgb),.08), 0 14px 30px -14px rgba(var(--ink-rgb),.3);
 }
-/* ============ Palettes (pick one, delete the others for production) ============ */
-/* Klein: International Klein Blue, vermilion, pink */
-html[data-palette="klein"]{
-  --paper:#F2F2EE; --band-soft:#E4E6EE; --card:#FFFFFF;
-  --ink:#0B0B14; --ink-2:#3C3D4C; --muted:#73748A; --ink-rgb:11,11,20;
-  --terra:#E8401C; --ochre:#FFD84D; --ultra:#002FA7; --sage:#00875A; --rose:#FFB3C7;
-  --band:#002FA7; --on-band:#FFFFFF; --on-band-2:rgba(255,255,255,.74); --band-accent:#FFB3C7;
-  --night:#002FA7; --night-2:#0A2A8A; --accent-lt:#FFB3C7; --dim:#AFC0FF; --dimmer:#8EA2EE; --on-dark-rgb:255,255,255;
-  --s1:#FFD84D; --s1t:#0B0B14; --s2:#FFB3C7; --s2t:#0B0B14; --s3:#E8401C; --s3t:#FFFFFF;
-  --c1:#002FA7; --c2:#D4006A; --c3:#3355FF; --c4:#0B0B14; --c5:#E8401C; --c6:#00875A;
-}
-/* Fauve: Matisse's teal, magenta, chartreuse, aubergine */
-html[data-palette="fauve"]{
-  --paper:#EEF0EC; --band-soft:#E1E6E2; --card:#FFFFFF;
-  --ink:#141414; --ink-2:#424542; --muted:#747A75; --ink-rgb:20,20,20;
-  --terra:#C81D63; --ochre:#D9F23A; --ultra:#00575E; --sage:#3C8A00; --rose:#FF7AB8;
-  --band:#00575E; --on-band:#FFFFFF; --on-band-2:rgba(255,255,255,.74); --band-accent:#D9F23A;
-  --night:#2B0F2E; --night-2:#3F1A43; --accent-lt:#FF7AB8; --dim:#CDB3D0; --dimmer:#A88AAC; --on-dark-rgb:255,255,255;
-  --s1:#D9F23A; --s1t:#141414; --s2:#C81D63; --s2t:#FFFFFF; --s3:#FF7A1A; --s3t:#141414;
-  --c1:#00575E; --c2:#C81D63; --c3:#5B3BD6; --c4:#141414; --c5:#E2421B; --c6:#3C8A00;
-}
-/* Viridian: botanical green, blush, lemon */
-html[data-palette="viridian"]{
-  --paper:#F1F4F0; --band-soft:#E1E9E3; --card:#FFFFFF;
-  --ink:#0E1A15; --ink-2:#3B4A43; --muted:#6F7E77; --ink-rgb:14,26,21;
-  --terra:#D6336C; --ochre:#F4E04D; --ultra:#0B6E4F; --sage:#0B6E4F; --rose:#FFC7D4;
-  --band:#0B6E4F; --on-band:#FFFFFF; --on-band-2:rgba(255,255,255,.76); --band-accent:#FFC7D4;
-  --night:#0B2E24; --night-2:#123F32; --accent-lt:#FF9EB5; --dim:#A7C7BA; --dimmer:#82A698; --on-dark-rgb:255,255,255;
-  --s1:#F4E04D; --s1t:#0E1A15; --s2:#FFC7D4; --s2t:#0E1A15; --s3:#D6336C; --s3t:#FFFFFF;
-  --c1:#0B6E4F; --c2:#D6336C; --c3:#3F51D9; --c4:#0E1A15; --c5:#E4472A; --c6:#007E8A;
-}
-/* Marigold: marigold yellow, Payne's-grey ink, electric indigo */
-html[data-palette="marigold"]{
-  --paper:#F2F3F5; --band-soft:#E6E8EC; --card:#FFFFFF;
-  --ink:#14161F; --ink-2:#41444F; --muted:#737684; --ink-rgb:20,22,31;
-  --terra:#3D2DFF; --ochre:#FFB01F; --ultra:#3D2DFF; --sage:#00805C; --rose:#FF5C8A;
-  --band:#FFB01F; --on-band:#14161F; --on-band-2:rgba(20,22,31,.72); --band-accent:#3D2DFF;
-  --night:#14161F; --night-2:#232634; --accent-lt:#FFB01F; --dim:#A9ACBA; --dimmer:#868A99; --on-dark-rgb:255,255,255;
-  --s1:#3D2DFF; --s1t:#FFFFFF; --s2:#14161F; --s2t:#FFFFFF; --s3:#FF5C8A; --s3t:#14161F;
-  --c1:#3D2DFF; --c2:#D81B60; --c3:#0067D6; --c4:#14161F; --c5:#E8461F; --c6:#00805C;
-}
-/* neutral grain on the new palettes (the original grain is sepia) */
-html:not([data-palette="original"]) body::before{filter:grayscale(1);opacity:.28}
 
 /* text that sits on the signature band */
 .courses,.panel,.nl{color:var(--on-band)}
@@ -96,25 +53,6 @@ html:not([data-palette="original"]) body::before{filter:grayscale(1);opacity:.28
 .panel .more{color:var(--on-band);border-color:currentColor}
 .panel .more:hover{color:var(--band-accent);border-color:var(--band-accent)}
 .nl p{color:var(--on-band)}
-
-/* colour blocking: only in the new palettes */
-html:not([data-palette="original"]) .step:nth-child(1){background:var(--s1);color:var(--s1t)}
-html:not([data-palette="original"]) .step:nth-child(2){background:var(--s2);color:var(--s2t)}
-html:not([data-palette="original"]) .step:nth-child(3){background:var(--s3);color:var(--s3t)}
-html:not([data-palette="original"]) .step .n,html:not([data-palette="original"]) .step p,html:not([data-palette="original"]) .step h3{color:inherit}
-html:not([data-palette="original"]) .step p{opacity:.85}
-html:not([data-palette="original"]) .step svg path{stroke:currentColor}
-html:not([data-palette="original"]) .step{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-html:not([data-palette="original"]) .step:hover{transform:translateY(-6px) rotate(-.6deg)}
-
-/* palette picker (design-review only) */
-.pal-pick{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:6px;padding:6px 8px 6px 14px;background:var(--card);border:1px solid var(--rule);border-radius:999px;box-shadow:var(--shadow);font-family:var(--wide);font-size:10px;color:var(--ink-2)}
-.pal-pick button{display:flex;gap:2px;padding:5px 7px;border-radius:999px;border:1px solid transparent;background:none;cursor:pointer;align-items:center}
-.pal-pick button i{width:10px;height:10px;border-radius:50%;display:block}
-.pal-pick button span{font-family:var(--wide);font-size:10px;color:var(--ink-2);margin-left:5px}
-.pal-pick button[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
-@media (max-width:600px){.pal-pick span.t,.pal-pick button span{display:none}}
-
 
 /* ============ Base ============ */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -352,9 +290,9 @@ main{margin-left:var(--rail)}
 .rl-card dt{font-family:var(--wide);font-size:9px;color:var(--muted)}
 .rl-card dd{font-size:14px;font-weight:600;letter-spacing:-.01em}
 .rl-card .stars{color:var(--pc);letter-spacing:.08em}
-.rl-stats{grid-column:1/7;margin:clamp(48px,6vw,80px) var(--pad) 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.35)}
+.rl-stats{grid-column:1/7;margin:clamp(48px,6vw,80px) var(--pad) 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
 .rl-stats div{padding:18px 18px 0 0}
-.rl-stats div+div{border-left:1px solid rgba(255,255,255,.2);padding-left:18px}
+.rl-stats div+div{border-left:1px solid var(--rule);padding-left:18px}
 .rl-stats b{display:block;font-size:clamp(32px,3.6vw,52px);font-weight:600;letter-spacing:-.045em;line-height:1}
 .rl-stats span{display:block;font-family:var(--wide);font-size:10px;color:var(--on-band-2);margin-top:8px}
 .rl-foot{grid-column:1/7;margin:32px var(--pad) 0}
@@ -766,19 +704,7 @@ summary{font-weight:500;letter-spacing:-.02em}
   <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span>Made by hand in Lisbon</span></div>
 </footer>
 
-<div class="pal-pick" role="group" aria-label="Colour palette"><span class="t">Palette</span>
-  <button type="button" data-p="klein" aria-pressed="true"><i style="background:#002FA7"></i><i style="background:#E8401C"></i><i style="background:#FFB3C7"></i><span>Klein</span></button>
-  <button type="button" data-p="fauve" aria-pressed="false"><i style="background:#00575E"></i><i style="background:#C81D63"></i><i style="background:#D9F23A"></i><span>Fauve</span></button>
-  <button type="button" data-p="viridian" aria-pressed="false"><i style="background:#0B6E4F"></i><i style="background:#D6336C"></i><i style="background:#F4E04D"></i><span>Viridian</span></button>
-  <button type="button" data-p="marigold" aria-pressed="false"><i style="background:#FFB01F"></i><i style="background:#14161F"></i><i style="background:#3D2DFF"></i><span>Marigold</span></button>
-  <button type="button" data-p="original" aria-pressed="false"><i style="background:#C0512F"></i><i style="background:#DDA43C"></i><i style="background:#2E47A0"></i><span>Original</span></button>
-</div>
 <script>
-  // Palette picker (design review only): remembers the choice in this browser.
-  const setPal = p => { document.documentElement.dataset.palette = p; document.querySelectorAll('.pal-pick button').forEach(b => b.setAttribute('aria-pressed', b.dataset.p === p)); try { localStorage.setItem('ev-palette', p); } catch (e) {} };
-  try { const saved = localStorage.getItem('ev-palette'); if (saved && document.querySelector('.pal-pick [data-p="' + saved + '"]')) setPal(saved); } catch (e) {}
-  document.querySelectorAll('.pal-pick button').forEach(b => b.addEventListener('click', () => setPal(b.dataset.p)));
-
   // Reveal on scroll.
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });

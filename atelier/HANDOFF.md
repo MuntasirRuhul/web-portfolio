@@ -27,7 +27,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
-| D1 | **Colour palette** | Klein · Fauve · Viridian · Marigold · Original (live picker, bottom-right of v6) | **Klein**. Then delete the other palette blocks and the picker. |
+| D1 | ~~Colour palette~~ | **Decided:** Original, with plum instead of blue. Other palettes and the picker removed in v7. | Done. |
 | D2 | ~~Student section layout~~ | **Decided:** Letters (poster cards + stats) in v7. Gallery decided too: Salon wall. | Done. |
 | D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
 
@@ -50,45 +50,42 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 | 07 | **FAQ** | `section.faq#faq` | Objections | Native `<details>`, first open. |
 | 08 | **Join** | `section.join#join` | Conversion | Dark panel with two action cards (portfolio review, live class) + photo, then the newsletter strip. |
 | | Footer | `footer` | Links | 3 columns + base row. |
-| | Palette picker | `div.pal-pick` | **Design review only** | Remove for production (see D1). |
 
 ---
 
 ## 4. Colour tokens
 
-All colours are CSS custom properties on `:root`. A palette is a block that overrides them on `html[data-palette="…"]`. **For production:** keep `:root` + the chosen palette's values (merge them into `:root`), delete the other palette blocks, the picker markup, its CSS and its script.
+**Palette decided: Original** (warm cream paper, near-black hero and panels, terracotta accent, sand band). It is the only palette in v7: the other four palettes, the picker, its CSS and its script have been removed. No blue anywhere: the Original palette's one blue (Watercolour course accent and `--ultra`) is now garden plum `#7A3E5E`.
 
 ### 4.1 Token roles
 
 | Token | Role |
 |---|---|
 | `--paper` | Page background |
-| `--card` | Cards (white) |
-| `--band` | **Signature colour**: courses section, method panel, newsletter strip |
-| `--band-soft` | Light neutral for footer column and image placeholders |
+| `--card` | Cards (warm white) |
+| `--band` | **Signature colour**: courses section, method panel, students section, newsletter strip |
+| `--band-soft` | Footer column and image placeholders (same as `--band`) |
 | `--on-band` / `--on-band-2` / `--band-accent` | Text, secondary text and accent **on** the band |
 | `--ink` / `--ink-2` / `--muted` | Text: primary, secondary, labels |
-| `--terra` | Brand accent: emphasis words, button hover fill, active filter |
-| `--night` / `--night-2` | Dark surfaces: hero, student section, CTA panel |
+| `--terra` | Brand accent: emphasis words, button hover fill |
+| `--night` / `--night-2` | Dark surfaces: hero, CTA panel |
 | `--accent-lt` | Accent on dark surfaces |
 | `--dim` / `--dimmer` | Secondary text on dark |
-| `--s1…--s3` + `--s1t…--s3t` | Method card backgrounds and their text colours |
 | `--c1…--c6` | Course card accents (one per course) |
 | `--ink-rgb`, `--on-dark-rgb` | RGB triplets used in `rgba()` for lines and shadows |
 
-### 4.2 Recommended palette: Klein
+### 4.2 Values (all on `:root`)
 
 ```css
---paper:#F2F2EE; --band-soft:#E4E6EE; --card:#FFFFFF;
---ink:#0B0B14; --ink-2:#3C3D4C; --muted:#73748A; --ink-rgb:11,11,20;
---terra:#E8401C; --ochre:#FFD84D; --ultra:#002FA7; --sage:#00875A; --rose:#FFB3C7;
---band:#002FA7; --on-band:#FFFFFF; --on-band-2:rgba(255,255,255,.74); --band-accent:#FFB3C7;
---night:#002FA7; --night-2:#0A2A8A; --accent-lt:#FFB3C7; --dim:#AFC0FF; --dimmer:#8EA2EE; --on-dark-rgb:255,255,255;
---s1:#FFD84D; --s1t:#0B0B14; --s2:#FFB3C7; --s2t:#0B0B14; --s3:#E8401C; --s3t:#FFFFFF;
---c1:#002FA7; --c2:#D4006A; --c3:#3355FF; --c4:#0B0B14; --c5:#E8401C; --c6:#00875A;
+--paper:#F3ECDF; --band:#EAE0CE; --card:#FBF7F0;
+--ink:#1D1A16; --ink-2:#4A443B; --muted:#8A8172; --ink-rgb:29,26,22;
+--terra:#C0512F; --ochre:#DDA43C; --ultra:#7A3E5E; --sage:#7E9271; --rose:#D9A7A0;
+--band-soft:var(--band); --on-band:var(--ink); --on-band-2:var(--ink-2); --band-accent:var(--terra);
+--night:#161412; --night-2:#2A2522; --accent-lt:#E8724A; --dim:#A9A092; --dimmer:#8F877A; --on-dark-rgb:243,236,223;
+--c1:#8F6511; --c2:#A55C52; --c3:#7A3E5E; --c4:#1D1A16; --c5:#C0512F; --c6:#56694A;
 ```
 
-The other palettes (Fauve, Viridian, Marigold, Original) are defined in full in `atelier-v6.html`.
+Method step cards are warm-white cards on the band with ink text and terracotta step numbers (the colour-blocked cards only existed in the removed palettes). The paper grain stays sepia.
 
 ### 4.3 Course accents (`--pc` on each card)
 
@@ -96,14 +93,14 @@ The other palettes (Fauve, Viridian, Marigold, Original) are defined in full in 
 |---|---|---|
 | 01 Foundations of Drawing | Pencil | `--c1` |
 | 02 The Portrait in Pencil | Graphite | `--c2` |
-| 03 Watercolour Gardens | Watercolour | `--c3` |
+| 03 Watercolour Gardens | Watercolour | `--c3` (plum) |
 | 04 Ink, Line & Silence | Ink | `--c4` |
 | 05 Plein Air in Oil | Oil | `--c5` |
 | 06 Abstract Colour | Acrylic | `--c6` |
 
 ### 4.4 Contrast (checked)
 
-All palettes: body text ≥ 15:1, text on the signature band 6.3–10.7:1, course titles on white ≥ 3:1 (large text). Accent fills with white text are fine for large text and icons. **Don't put small body text in `--terra`.**
+Original palette: body text ≥ 15:1, text on the signature band 6.3–10.7:1, course titles on white ≥ 3:1 (large text). Accent fills with white text are fine for large text and icons. **Don't put small body text in `--terra`.**
 
 ---
 
@@ -171,7 +168,6 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 | Reveal on scroll | `.reveal` → `.is-in` via one `IntersectionObserver` (threshold .15). Opacity + 28px rise, .9s. Content is visible without JS (`.js` class gate). |
 | Line drawing | `.draw` SVG paths with `pathLength="1"` and dash offset. Hero circle 2.4s, hero underline 1.3s after a .9s delay, method icons 1.4s. |
 | Hero load | `.hero.is-in` added on load (rAF + 400ms fallback). |
-| Palette picker | Review only: sets `html[data-palette]`, remembers in `localStorage`. **Remove.** |
 | Hover | Card lift −6px, image zoom 1.04–1.06, tinted/B&W photos return to colour, button fill. |
 | Reduced motion | `prefers-reduced-motion: reduce` disables all animation and transitions and shows everything. |
 
@@ -180,7 +176,7 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 ## 8. Accessibility checklist
 
 - [x] Landmarks: `main`, `nav`, `footer`, headings in order per section.
-- [x] Palette buttons use `aria-pressed`; decorative SVGs are `aria-hidden`.
+- [x] Decorative SVGs are `aria-hidden`.
 - [x] Contrast checked (section 4.4).
 - [x] Reduced motion respected.
 - [ ] **Alt text:** many placeholder images have `alt=""`. Write real alt text when real artwork goes in.
@@ -227,7 +223,7 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 
 ## 12. QA before launch
 
-- [ ] Chosen palette merged into `:root`; picker and other palettes removed.
+- [x] Chosen palette merged into `:root`; picker and other palettes removed.
 - [ ] Desktop 1440, laptop 1280, tablet 768, phone 375: no horizontal scroll.
 - [ ] All images real, compressed, with alt text; no Unsplash hotlinks.
 - [ ] Every `#` link wired; forms submit.
