@@ -7,6 +7,7 @@
     --muted: #9f9ba1;
     --tv-gray: #dcdcdc;
     --tv-dark: #1e1e1e;
+    --cream: #f6f0e8;
     --gutter: 80px;
     --max: 1440px;
 }
@@ -813,6 +814,13 @@ a {
 }
 
 
+/* full-bleed section backgrounds while content stays on the grid */
+.bg-cream {
+    background: var(--cream);
+    box-shadow: 0 0 0 100vmax var(--cream);
+    clip-path: inset(0 -100vmax);
+}
+
 /* ---------- stats + clients ---------- */
 
 .stats {
@@ -823,29 +831,48 @@ a {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    gap: 16px;
 }
 
 .stats-grid li {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: space-between;
+    gap: 48px;
+    min-height: 260px;
+    padding: 32px;
+    border-radius: 18.616px;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.stats-grid li:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+.stats-grid li:nth-child(1) { background: #325baa; color: var(--white); }
+.stats-grid li:nth-child(2) { background: #fff847; }
+.stats-grid li:nth-child(3) { background: #f947ff; }
+.stats-grid li:nth-child(4) { background: #46f4fc; }
+
 .stats-grid strong {
+    order: 2;
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 900;
     font-size: clamp(64px, 8.89vw, 128px);
-    line-height: 1;
+    line-height: 0.85;
     letter-spacing: -0.03em;
-    color: var(--orange);
 }
 
 .stats-grid span {
-    font-weight: 600;
-    font-size: 20px;
+    order: 1;
+    font-size: 22px;
     line-height: 1;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
+
+
 
 .clients {
     display: flex;
@@ -1040,7 +1067,7 @@ a {
     justify-content: space-between;
     gap: 48px;
     padding: 40px;
-    background: var(--gray-100);
+    background: var(--white);
     border-radius: 18.616px;
 }
 
@@ -1800,6 +1827,10 @@ a {
         row-gap: 56px;
     }
 
+    .stats-grid {
+        row-gap: 16px;
+    }
+
     .process-steps li:nth-child(odd) {
         padding-left: 0;
         border-left: 0;
@@ -1930,6 +1961,17 @@ a {
     .process-steps {
         grid-template-columns: 1fr;
         row-gap: 40px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stats-grid li {
+        min-height: 180px;
+        padding: 20px;
+        gap: 24px;
     }
 
     .process-steps li {
