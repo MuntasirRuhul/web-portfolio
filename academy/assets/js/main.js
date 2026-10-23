@@ -77,7 +77,7 @@
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { revealer.observe(el); });
+    document.querySelectorAll('.reveal, .ed').forEach(function (el) { revealer.observe(el); });
 
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
