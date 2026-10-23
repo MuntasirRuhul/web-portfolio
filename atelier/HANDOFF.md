@@ -19,7 +19,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 
 **Run locally:** from this folder, `python3 -m http.server 8000`, then open <http://localhost:8000/atelier-v7.html>.
 
-**External dependencies:** Google Fonts (Inter, Inter Tight, JetBrains Mono, Caveat) and Unsplash images (placeholders). No frameworks, no build step.
+**External dependencies:** Google Fonts (Inter, Inter Tight, JetBrains Mono, Caveat) only. Photos are self-hosted placeholder copies in `img/` (downloaded from Unsplash by the `Fetch Atelier images` workflow from the list in `images.txt`). No frameworks, no build step.
 
 ---
 
@@ -192,7 +192,7 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 
 | Item | Now | Needed |
 |---|---|---|
-| **Images** | 25 Unsplash placeholders, hotlinked | Elena's real portrait (hero, About), studio photos, her **own artwork** for the gallery, real **student work** with permission. About cut-outs: full-length, shot on a white sweep (or transparent PNG). Never present someone else's work as hers. |
+| **Images** | 18 Unsplash placeholders, self-hosted in `img/` | Elena's real portrait (hero, About), studio photos, her **own artwork** for the gallery, real **student work** with permission. About cut-outs: full-length, shot on a white sweep (or transparent PNG). Never present someone else's work as hers. |
 | Copy | Written in her voice as a draft | Elena to approve bio, course descriptions and FAQ. |
 | Students | Fictional names, quotes, weeks | Real quotes and consent. |
 | Numbers | 12,400 students · 3,100 pieces · 4.9 rating / 2,870 reviews · 18 courses · 340h · 64 countries · prices | Real figures. |
@@ -226,7 +226,8 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 
 - [x] Chosen palette merged into `:root`; picker and other palettes removed.
 - [ ] Desktop 1440, laptop 1280, tablet 768, phone 375: no horizontal scroll.
-- [ ] All images real, compressed, with alt text; no Unsplash hotlinks.
+- [x] No Unsplash hotlinks (placeholders self-hosted in `img/`).
+- [ ] All images real, compressed, with alt text.
 - [ ] Every `#` link wired; forms submit.
 - [ ] Lighthouse: performance and accessibility ≥ 90.
 - [ ] Reduced-motion and keyboard-only pass.
