@@ -139,7 +139,7 @@
       </div>
     </section>
 
-    <!-- Courses -->
+    <!-- Courses: three poster cards, one colour each, geometric art instead of photos -->
     <section class="section" id="courses">
       <div class="container">
         <div class="section-head">
@@ -147,85 +147,67 @@
             <p class="label">Flagship courses</p>
             <h2 class="h2">Three courses. One complete growth system.</h2>
           </div>
-          <p class="section-head__text">Each course stands on its own, but together they cover the full arc: find your edge, price it properly, then build the finances to scale it.</p>
+          <p class="section-head__text">Each course stands on its own. Together they cover the full arc: find your edge, price it, then build the finances to scale it.</p>
         </div>
 
-        <div class="tabs" role="tablist" aria-label="Filter courses">
-          <button class="tab is-active" data-filter="all" role="tab" aria-selected="true">All courses</button>
-          <button class="tab" data-filter="strategy" role="tab" aria-selected="false">Strategy</button>
-          <button class="tab" data-filter="finance" role="tab" aria-selected="false">Finance</button>
-          <button class="tab" data-filter="growth" role="tab" aria-selected="false">Growth</button>
-        </div>
-
-        <div class="course-grid">
-          <article class="course reveal" data-cat="strategy">
-            <a href="#" class="course__thumb" style="--tint: #b9b4d8">
-              <img src="assets/img/course-1.jpg" alt="" loading="lazy">
-              <span class="badge badge--light">Bestseller</span>
-              <span class="course__level">Beginner</span>
-            </a>
-            <div class="course__body">
-              <p class="course__cat">Strategy</p>
-              <h3 class="course__title"><a href="#">Positioning &amp; Offer Design</a></h3>
-              <p class="course__desc">Find the market you can win, then shape an offer clients say yes to.</p>
-              <ul class="course__meta">
-                <li><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z M4 9h16"/></svg>24 lessons</li>
-                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>6h 40m</li>
-                <li class="rating">★ 4.9 <span>(1,284)</span></li>
-              </ul>
-              <div class="course__foot">
-                <div class="price"><strong>$249</strong><s>$349</s></div>
-                <a href="#" class="btn btn--dark btn--sm">Enroll</a>
-              </div>
+        <div class="cc">
+          <article class="cc__card cc__card--ink">
+            <div class="cc__art" aria-hidden="true">
+              <i class="sh sh--q-tl"></i><i class="sh sh--dot"></i>
+              <i class="sh sh--half-b"></i><i class="sh sh--q-br"></i>
+            </div>
+            <div class="cc__body">
+              <p class="cc__meta"><span>01 · Strategy</span><span>Beginner</span></p>
+              <h3 class="cc__title"><a href="#">Positioning &amp; Offer Design</a></h3>
+              <p class="cc__desc">Find the market you can win, then shape an offer clients say yes to.</p>
+              <dl class="cc__facts">
+                <div><dt>Lessons</dt><dd class="num">24</dd></div>
+                <div><dt>Hours</dt><dd class="num">6.7</dd></div>
+                <div><dt>Rating</dt><dd class="num">4.9</dd></div>
+              </dl>
+              <div class="cc__foot"><p class="cc__price num">$249 <s>$349</s></p><a href="#" class="cc__go" aria-label="Enroll in Positioning & Offer Design">→</a></div>
             </div>
           </article>
 
-          <article class="course reveal" data-cat="finance">
-            <a href="#" class="course__thumb" style="--tint: #a9bba9">
-              <img src="assets/img/course-2.jpg" alt="" loading="lazy">
-              <span class="badge badge--light">New</span>
-              <span class="course__level">Intermediate</span>
-            </a>
-            <div class="course__body">
-              <p class="course__cat">Finance</p>
-              <h3 class="course__title"><a href="#">Finance for Founders</a></h3>
-              <p class="course__desc">Cash flow, unit economics and a simple model you'll actually use every month.</p>
-              <ul class="course__meta">
-                <li><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z M4 9h16"/></svg>31 lessons</li>
-                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>8h 15m</li>
-                <li class="rating">★ 4.8 <span>(946)</span></li>
-              </ul>
-              <div class="course__foot">
-                <div class="price"><strong>$299</strong></div>
-                <a href="#" class="btn btn--dark btn--sm">Enroll</a>
-              </div>
+          <article class="cc__card cc__card--blue">
+            <div class="cc__art" aria-hidden="true">
+              <i class="sh sh--half-t"></i><i class="sh sh--ring"></i>
+              <i class="sh sh--q-bl"></i><i class="sh sh--half-r"></i>
+            </div>
+            <div class="cc__body">
+              <p class="cc__meta"><span>02 · Finance</span><span>Intermediate</span></p>
+              <h3 class="cc__title"><a href="#">Finance for Founders</a></h3>
+              <p class="cc__desc">Cash flow, unit economics and a simple model you'll use every month.</p>
+              <dl class="cc__facts">
+                <div><dt>Lessons</dt><dd class="num">31</dd></div>
+                <div><dt>Hours</dt><dd class="num">8.3</dd></div>
+                <div><dt>Rating</dt><dd class="num">4.8</dd></div>
+              </dl>
+              <div class="cc__foot"><p class="cc__price num">$299</p><a href="#" class="cc__go" aria-label="Enroll in Finance for Founders">→</a></div>
             </div>
           </article>
 
-          <article class="course reveal" data-cat="growth">
-            <a href="#" class="course__thumb" style="--tint: #a9c3d4">
-              <img src="assets/img/course-3.jpg" alt="" loading="lazy">
-              <span class="badge badge--lime">Live cohort</span>
-              <span class="course__level">Advanced</span>
-            </a>
-            <div class="course__body">
-              <p class="course__cat">Growth</p>
-              <h3 class="course__title"><a href="#">The 90-Day Growth Sprint</a></h3>
-              <p class="course__desc">Six live weeks to build your growth engine — with weekly reviews from me.</p>
-              <ul class="course__meta">
-                <li><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z M4 9h16"/></svg>6 live weeks</li>
-                <li><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3 19c1-3 3.5-4.5 6-4.5s5 1.5 6 4.5 M16 6.5a3 3 0 0 1 0 5.5 M18 14.5c1.5.6 2.6 2 3 4.5"/></svg>Max 40 seats</li>
-                <li class="rating">★ 5.0 <span>(312)</span></li>
-              </ul>
-              <div class="course__foot">
-                <div class="price"><strong>$990</strong></div>
-                <a href="#" class="btn btn--dark btn--sm">Apply</a>
-              </div>
+          <article class="cc__card cc__card--lime">
+            <span class="cc__tag">Live cohort · 14 seats left</span>
+            <div class="cc__art" aria-hidden="true">
+              <i class="sh sh--arch"></i><i class="sh sh--dot"></i>
+              <i class="sh sh--q-tr"></i><i class="sh sh--half-b"></i>
+            </div>
+            <div class="cc__body">
+              <p class="cc__meta"><span>03 · Growth</span><span>Advanced</span></p>
+              <h3 class="cc__title"><a href="#">The 90-Day Growth Sprint</a></h3>
+              <p class="cc__desc">Six live weeks to build your growth engine, with weekly reviews from me.</p>
+              <dl class="cc__facts">
+                <div><dt>Weeks</dt><dd class="num">6</dd></div>
+                <div><dt>Seats</dt><dd class="num">40</dd></div>
+                <div><dt>Rating</dt><dd class="num">5.0</dd></div>
+              </dl>
+              <div class="cc__foot"><p class="cc__price num">$990</p><a href="#" class="cc__go" aria-label="Apply to the 90-Day Growth Sprint">→</a></div>
             </div>
           </article>
         </div>
 
-        <div class="center">
+        <div class="cc__more">
           <a href="#" class="link-arrow">Browse all 12 courses <span>→</span></a>
         </div>
       </div>
