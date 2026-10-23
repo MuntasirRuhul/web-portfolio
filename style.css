@@ -616,6 +616,351 @@ a {
 }
 
 
+/* ---------- stats + clients ---------- */
+
+.stats {
+    padding-top: 0;
+    gap: 72px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.stats-grid li {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stats-grid strong {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(64px, 8.89vw, 128px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--orange);
+}
+
+.stats-grid span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px 48px;
+    padding: 32px 0;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* ---------- services list ---------- */
+
+.service-list .split-row {
+    align-items: flex-end;
+}
+
+.service-rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--black);
+}
+
+.service-rows li {
+    display: grid;
+    grid-template-columns: 80px 1fr 370px;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 0;
+    border-top: 1px solid var(--black);
+}
+
+.service-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    color: var(--orange);
+}
+
+.service-name {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.33vw, 48px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.service-rows li:hover .service-name {
+    color: var(--orange);
+}
+
+
+/* ---------- process ---------- */
+
+.process {
+    background: var(--black);
+    color: var(--white);
+}
+
+.process .split-row {
+    align-items: flex-end;
+}
+
+.process-steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.process-steps li {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 32px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.process-steps li:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.process-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--orange);
+}
+
+.process-steps h3 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.process-steps p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ---------- testimonials ---------- */
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+    padding: 40px;
+    background: var(--gray-100);
+    border-radius: 18.616px;
+}
+
+.testimonial-quote {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.testimonial-author .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.testimonial-author p + p {
+    opacity: 0.6;
+}
+
+
+/* ---------- faq ---------- */
+
+.faq {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.faq-intro {
+    flex: 0 1 370px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.faq-list {
+    flex: 0 1 760px;
+    border-top: 1px solid var(--black);
+}
+
+.faq-list details {
+    border-bottom: 1px solid var(--black);
+}
+
+.faq-list summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 0;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    content: '+';
+    flex: none;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--orange);
+    transition: transform 0.2s;
+}
+
+.faq-list details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-list details .lead {
+    max-width: 600px;
+    padding-bottom: 28px;
+    line-height: 1.3;
+}
+
+
+/* ---------- contact ---------- */
+
+.contact {
+    align-items: center;
+    padding-bottom: 0;
+}
+
+
+/* ---------- footer ---------- */
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+    color: var(--white);
+}
+
+.stripes-static {
+    position: relative;
+    z-index: auto;
+    top: auto;
+    margin-bottom: 0;
+}
+
+.footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 96px var(--gutter) 32px;
+}
+
+.footer-cols {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+}
+
+.footer-label {
+    margin-bottom: 20px;
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+.footer-email {
+    font-weight: 500;
+    font-size: clamp(24px, 2.5vw, 36px);
+    line-height: 1.2;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.footer-email:hover,
+.footer-links a:hover,
+.footer-bottom a:hover {
+    color: var(--orange);
+}
+
+.footer-logo {
+    margin: 64px 0 24px;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: clamp(96px, 22vw, 320px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--orange);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 1200px) {
@@ -642,6 +987,38 @@ a {
 
     .feature-divider {
         display: none;
+    }
+
+    .process-steps,
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 56px;
+    }
+
+    .process-steps li:nth-child(odd) {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-rows li {
+        grid-template-columns: 60px 1fr;
+    }
+
+    .service-rows .lead {
+        grid-column: 2;
+    }
+
+    .faq {
+        flex-direction: column;
+    }
+
+    .faq-intro,
+    .faq-list {
+        flex: none;
     }
 }
 
@@ -715,6 +1092,11 @@ a {
         flex-direction: column;
     }
 
+    .service-list .split-row,
+    .process .split-row {
+        align-items: flex-start;
+    }
+
     .tags {
         justify-content: flex-start;
         gap: 20px;
@@ -736,5 +1118,52 @@ a {
 
     .site-header {
         height: 64px;
+    }
+
+    .stats-grid,
+    .process-steps {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+
+    .process-steps li {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .service-rows li {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 28px 0;
+    }
+
+    .service-rows .lead {
+        grid-column: auto;
+    }
+
+    .testimonial {
+        padding: 28px;
+    }
+
+    .testimonial-quote,
+    .faq-list summary {
+        font-size: 20px;
+    }
+
+    .clients {
+        justify-content: flex-start;
+        font-size: 22px;
+    }
+
+    .footer-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .stripes-static {
+        margin: 0 0 0 -46px;
     }
 }
