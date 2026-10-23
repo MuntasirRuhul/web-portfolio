@@ -1,0 +1,35 @@
+# Downloads every Unsplash placeholder photo used by the Atelier pages into
+# atelier/img/ so the pages (and previews) can use self-hosted copies.
+name: Fetch Atelier images
+
+on:
+  push:
+    branches: [claude/gracious-fermat-bqbft2]
+    paths:
+      - .github/workflows/fetch-atelier-images.yml
+      - atelier/images.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download images
+        run: |
+          mkdir -p atelier/img
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            [ -f "atelier/img/$name" ] && continue
+            curl -fsSL --retry 3 -o "atelier/img/$name" "$url" || echo "FAILED $name $url"
+          done < atelier/images.txt
+          ls -la atelier/img
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add atelier/img
+          git diff --cached --quiet || { git commit -m "Fetch Atelier placeholder images"; git push; }
