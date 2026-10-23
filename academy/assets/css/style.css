@@ -171,11 +171,6 @@ button { font: inherit; cursor: pointer; }
   position: relative; overflow: hidden; isolation: isolate;
   background: var(--poster-blue); color: #fff;
 }
-/* Lime lightning bolt cutting diagonally through the poster */
-.poster__bolt {
-  position: absolute; inset: 0; z-index: -2; background: var(--lime);
-  clip-path: polygon(68% 0, 90% 0, 76% 46%, 100% 46%, 100% 60%, 56% 100%, 40% 100%, 54% 58%, 44% 58%);
-}
 /* Paper grain + fold creases */
 .poster__grain {
   position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
@@ -208,39 +203,38 @@ button { font: inherit; cursor: pointer; }
 .poster__proof .stars { font-size: 13px; margin-right: 4px; }
 .poster__proof strong { color: #fff; }
 
-.poster__collage { position: relative; display: grid; justify-items: center; }
-.poster__photo {
-  position: relative; margin: 0; width: min(100%, 420px); aspect-ratio: 4 / 5;
-  background: #e8e8e4; transform: rotate(-3deg); overflow: hidden;
-  box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .55);
+/* Geometric portrait: a 4 x 5 grid of square tiles; the arch takes the lower-right 3 x 4 block */
+.geo {
+  --tile: clamp(72px, 7.4vw, 112px);
+  display: grid; grid-template-columns: repeat(4, var(--tile)); grid-template-rows: repeat(5, var(--tile));
+  justify-self: center; position: relative;
 }
-.poster__photo::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35; mix-blend-mode: multiply;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.geo__tile { display: block; transition: transform 1.2s cubic-bezier(.6, 0, .2, 1); }
+.geo__tile--q1 { background: var(--ink); border-radius: 100% 0 0 0; }
+.geo__tile--half-w { background: #fff; border-radius: 999px 999px 0 0; height: 50%; align-self: end; }
+.geo__tile--dot { background: var(--lime); border-radius: 50%; transform: scale(.72); }
+.geo__tile--ring { border: 2px solid rgba(255, 255, 255, .7); border-radius: 50%; transform: scale(.72); }
+.geo__tile--q-lime { background: var(--lime); border-radius: 0 0 0 100%; }
+.geo__tile--half-ink { background: var(--ink); border-radius: 0 999px 999px 0; width: 50%; }
+.geo__tile--q-white { background: #fff; border-radius: 0 100% 0 0; }
+.geo__tile.is-turning { transform: rotate(90deg); }
+.geo__tile--dot.is-turning, .geo__tile--ring.is-turning { transform: scale(.72) translateY(-12%); }
+.geo__info {
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 12px;
+  background: var(--ink); color: #fff; font: var(--t-h3); letter-spacing: var(--ls-h3);
 }
-.poster__photo img {
-  position: absolute; left: 50%; bottom: 0; width: 94%; height: auto; max-width: none; transform: translateX(-50%);
-  filter: grayscale(1) contrast(1.18) brightness(1.04);
+.geo__info span { font: var(--t-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--lime); }
+.geo__arch {
+  grid-area: 2 / 2 / 6 / 5; margin: 0; position: relative; overflow: hidden;
+  background: var(--lime); border-radius: 999px 999px 0 0;
+  display: flex; align-items: flex-end; justify-content: center;
 }
-.nametag {
-  position: absolute; right: 0; top: 18%; z-index: 1;
-  background: var(--ink); color: #fff; padding: 10px 14px;
+.geo__arch img { width: 92%; height: auto; filter: grayscale(1) contrast(1.15); }
+.geo__name {
+  position: absolute; left: 0; bottom: 0; background: var(--ink); color: #fff; padding: 10px 14px;
+  font: var(--t-title); letter-spacing: var(--ls-title);
 }
-.nametag span, .nametag strong { display: block; }
-.nametag span { font: var(--t-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--lime); }
-.nametag strong { font: var(--t-title); letter-spacing: var(--ls-title); margin-top: 2px; }
-
-.poster__label {
-  position: relative; z-index: 2; margin-top: -52px; display: grid; justify-items: center;
-}
-.poster__label-a {
-  font: var(--t-h2); letter-spacing: var(--ls-h2); color: var(--ink); background: var(--lime);
-  padding: .1em .3em .14em; transform: rotate(-2deg);
-}
-.poster__label-b {
-  font: var(--t-h3); letter-spacing: var(--ls-h3); color: #fff; background: var(--ink);
-  padding: .3em .7em .36em; margin-top: -4px; transform: translate(22%, 0) rotate(-2deg);
-}
+.geo__name span { display: block; font: var(--t-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--lime); }
 
 .tape {
   position: absolute; z-index: 3; top: -14px; left: 50%; width: 110px; height: 30px; transform: translateX(-30%) rotate(-6deg);
@@ -576,8 +570,6 @@ button { font: inherit; cursor: pointer; }
   .poster__grid { grid-template-columns: 1fr; padding-block: 56px 72px; gap: 64px; }
   .cta-poster { grid-template-columns: 1fr; gap: 8px; }
   .cta-poster__copy { padding-bottom: 24px; }
-  .poster__bolt { clip-path: polygon(70% 50%, 96% 50%, 80% 70%, 100% 70%, 100% 76%, 34% 100%, 12% 100%, 50% 80%, 34% 80%); }
-  .poster__collage { max-width: 460px; width: 100%; margin: 0 auto; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 16px; }
   .course-grid { grid-template-columns: 1fr 1fr; }
   .steps__grid { grid-template-rows: auto repeat(4, 112px); }
@@ -615,6 +607,7 @@ button { font: inherit; cursor: pointer; }
   .announce__link { display: none; }
   .poster__head { width: 100%; }
   .poster__ctas .btn { flex: 1 1 100%; }
+  .geo { --tile: calc((100vw - 32px) / 4); }
   .poster__lead { margin-top: 24px; }
   .btn--xl { flex: 1 1 100%; }
   .cutout__tag { left: 0; }

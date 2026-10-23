@@ -25,6 +25,19 @@
     });
   }
 
+  // Hero geometry: turn one tile at a time, gently
+  var tiles = document.querySelectorAll('.geo__tile');
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (tiles.length && !calm) {
+    var last = -1;
+    setInterval(function () {
+      var i;
+      do { i = Math.floor(Math.random() * tiles.length); } while (i === last && tiles.length > 1);
+      last = i;
+      tiles[i].classList.toggle('is-turning');
+    }, 2600);
+  }
+
   // Course filter tabs
   var tabs = document.querySelectorAll('.tab');
   var courses = document.querySelectorAll('.course');
