@@ -10,13 +10,14 @@ A one-page website for an artist who sells online drawing and painting courses. 
 
 | What | File | Notes |
 |---|---|---|
-| **Final page** | `atelier-v6.html` | Build from this. Single self-contained file: HTML, CSS and a little vanilla JS. |
-| Previous version | `atelier-v5.html` | Same layout, original warm palette, no palette tokens. Reference only. |
+| **Final page** | `atelier-v7.html` | Build from this. Single self-contained file: HTML, CSS and a little vanilla JS. |
+| Previous version | `atelier-v6.html` | Same page with the old gallery (filters + featured work) and the old student story. Reference only. |
+| Section options | `gallery-reviews-options.html` | The three gallery and three review directions that v7 chose from (A · Salon wall and C · Letters). |
 | Style guide | `style-guide.html` | Type, spacing, components, imagery, motion, voice. **Colours in it are the original palette;** see section 4 here for the new ones. |
 | Course card (copy-paste) | `poster-card-c.html` | The white poster card used on the site, standalone with all six courses. |
 | Figma | [art and potery](https://www.figma.com/design/0wA3LYabKVP9Jl4FMLjYKH/art-and-potery?node-id=0-1) | Course card component, level-meter variants, colour variables, text styles. |
 
-**Run locally:** from this folder, `python3 -m http.server 8000`, then open <http://localhost:8000/atelier-v6.html>.
+**Run locally:** from this folder, `python3 -m http.server 8000`, then open <http://localhost:8000/atelier-v7.html>.
 
 **External dependencies:** Google Fonts (Inter, Inter Tight, JetBrains Mono, Caveat) and Unsplash images (placeholders). No frameworks, no build step.
 
@@ -27,7 +28,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | **Colour palette** | Klein · Fauve · Viridian · Marigold · Original (live picker, bottom-right of v6) | **Klein**. Then delete the other palette blocks and the picker. |
-| D2 | **Student section layout** | Current "Spotlight" in v6, or one of 12 explored in `student-section-variations.html` and `student-section-variations-2.html` | 08 **Critique** or 07 **By course**; current Spotlight is fine to ship. |
+| D2 | ~~Student section layout~~ | **Decided:** Letters (poster cards + stats) in v7. Gallery decided too: Salon wall. | Done. |
 | D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
 
 ---
@@ -44,8 +45,8 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 | 02 | **About** | `section.about#about` | The artist | Centred 880px column: statement heading, two paragraphs, signature. Two **cut-out** images (shot on white, `mix-blend-mode: multiply`). Section needs a solid background for the blend to work. |
 | 03 | **Method** | `section.method` | Look · Sketch · Paint | Rounded panel on the signature band. Three step cards, solid colour blocks in the new palettes. Icons are inline SVG that draw in on scroll. |
 | 04 | **Courses** | `section.courses#courses` | The catalogue (6 courses) | Poster cards on the signature band. See section 6.3. |
-| 05 | **Gallery** | `section.gallery#gallery` | Her work, linked to courses | Filter chips (All / Ink / Watercolour / Acrylic), a featured work, then a 3-column grid. Every work links to the course that teaches it. |
-| 06 | **Student story** | `section.quote` | Social proof | Marta's piece large + her quote + 6 other students in a 2×3 grid + "3,100 pieces" line. On phones the order becomes: quote → Marta's piece → grid. |
+| 05 | **Gallery** | `section.gw#gallery` | Her work, linked to courses | **Salon wall.** Seven works in two rows, hung on a dashed centre line (`.gw-row::before`). Each `a.gw-w` sets its width with `--w`, image ratio with `--r` and course colour with `--pc`; frames are a white mat (`.gw-f`) or mat + ink border (`.gw-f.dark`). Museum label under each (`.gw-l`): title, medium · year · size, course dot. No filters, no JS. At ≤ 760px it becomes a 2-column grid, first work full width. |
+| 06 | **Students** | `section.rl#students` | Social proof | **Letters.** Three white poster cards on the signature band (`.rl-card`, same anatomy as course cards): quote in the course accent, tinted student work, 2×2 facts (Student, Course, Took, Rating). Then a 4-up stats row (rating, students, pieces, countries) and "Read all reviews". 3 → 2 → 1 columns at 980 / 600px. |
 | 07 | **FAQ** | `section.faq#faq` | Objections | Native `<details>`, first open. |
 | 08 | **Join** | `section.join#join` | Conversion | Dark panel with two action cards (portfolio review, live class) + photo, then the newsletter strip. |
 | | Footer | `footer` | Links | 3 columns + base row. |
@@ -141,7 +142,6 @@ Rules: emphasis is **colour, never italics** (one phrase per heading). Facts (le
 | Nav pill | `.login` style | Ink pill, 8×16px, hover terracotta. |
 | Text link | `.link`, `.ulink` | 1px underline, hover accent. |
 | Section label | `.lbl` | Mono uppercase, number in accent + 34px rule after. |
-| Filter chip | `.filters button` | Pill, `aria-pressed` drives the active state (accent fill). |
 | Level meter | `.meter[data-l]` | Three 3px bars (100 / 72 / 44%). Fills from the bottom: `1` beginner, `2` intermediate, `3` advanced. Uses the card accent. |
 | Newsletter | `.nl` | White input 60px tall + square accent submit button. |
 | CTA card | `.cta-card` | Outlined dark card, 6px radius, underlined action at the bottom. |
@@ -171,7 +171,6 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 | Reveal on scroll | `.reveal` → `.is-in` via one `IntersectionObserver` (threshold .15). Opacity + 28px rise, .9s. Content is visible without JS (`.js` class gate). |
 | Line drawing | `.draw` SVG paths with `pathLength="1"` and dash offset. Hero circle 2.4s, hero underline 1.3s after a .9s delay, method icons 1.4s. |
 | Hero load | `.hero.is-in` added on load (rAF + 400ms fallback). |
-| Gallery filter | ~10 lines of JS: toggles `.off` on `.work` items by `data-medium` and updates the count. |
 | Palette picker | Review only: sets `html[data-palette]`, remembers in `localStorage`. **Remove.** |
 | Hover | Card lift −6px, image zoom 1.04–1.06, tinted/B&W photos return to colour, button fill. |
 | Reduced motion | `prefers-reduced-motion: reduce` disables all animation and transitions and shows everything. |
@@ -181,7 +180,7 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 ## 8. Accessibility checklist
 
 - [x] Landmarks: `main`, `nav`, `footer`, headings in order per section.
-- [x] Filter chips and palette buttons use `aria-pressed`; decorative SVGs are `aria-hidden`.
+- [x] Palette buttons use `aria-pressed`; decorative SVGs are `aria-hidden`.
 - [x] Contrast checked (section 4.4).
 - [x] Reduced motion respected.
 - [ ] **Alt text:** many placeholder images have `alt=""`. Write real alt text when real artwork goes in.
@@ -198,7 +197,7 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 | **Images** | 25 Unsplash placeholders, hotlinked | Elena's real portrait (hero, About), studio photos, her **own artwork** for the gallery, real **student work** with permission. About cut-outs: full-length, shot on a white sweep (or transparent PNG). Never present someone else's work as hers. |
 | Copy | Written in her voice as a draft | Elena to approve bio, course descriptions and FAQ. |
 | Students | Fictional names, quotes, weeks | Real quotes and consent. |
-| Numbers | 12,400 students · 3,100 pieces · 18 courses · 340h · 64 countries · prices | Real figures. |
+| Numbers | 12,400 students · 3,100 pieces · 4.9 rating / 2,870 reviews · 18 courses · 340h · 64 countries · prices | Real figures. |
 | Contact | `hello@elenavarga.art`, Lisbon address | Real details. |
 | Favicon | Missing (404 in console) | Add `favicon.ico` / SVG icon. |
 
@@ -220,7 +219,7 @@ Everything is hover / scroll based. Nothing autoplays or loops.
 
 | Deliverable | Exploration / history (don't build from) |
 |---|---|
-| `atelier-v6.html`, `style-guide.html`, `poster-card-c.html`, `HANDOFF.md` | `atelier.html`, `atelier-v2…v5.html`, `course-cards*.html`, `poster-card-a/b.html`, `student-section-variations*.html`, `selvedge-grid*.html`, `pattern*.html`, `scher*.html`, `concepts.html`, `wireframe.html`, `workflow.html` |
+| `atelier-v7.html`, `style-guide.html`, `poster-card-c.html`, `HANDOFF.md` | `atelier.html`, `atelier-v2…v6.html`, `gallery-reviews-options.html`, `course-cards*.html`, `poster-card-a/b.html`, `student-section-variations*.html`, `selvedge-grid*.html`, `pattern*.html`, `scher*.html`, `concepts.html`, `wireframe.html`, `workflow.html` |
 
 `img/` holds old-master paintings from the first drafts; **v6 doesn't use them.**
 
