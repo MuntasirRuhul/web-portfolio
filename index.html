@@ -89,31 +89,22 @@
                 </div>
             </div>
 
-            <div class="stripes" aria-hidden="true">
-                <span class="stripe-blue"></span>
-                <span class="stripe-yellow"></span>
-                <span class="stripe-pink"></span>
-                <span class="stripe-cyan"></span>
-                <span class="stripe-blue"></span>
-            </div>
-
-            <!-- on-air bar, channel label stays in sync with the hero TV -->
-            <div class="onair">
-                <div class="onair-inner">
-                    <p class="onair-live">
-                        <span class="onair-dot"></span> On air
-                        <span class="onair-channels" aria-hidden="true">
-                            <span class="onair-ch" style="--i:0">CH 01 — Colour bars</span>
-                            <span class="onair-ch" style="--i:1">CH 02 — ninona</span>
-                            <span class="onair-ch" style="--i:2">CH 03 — Branding</span>
-                            <span class="onair-ch" style="--i:3">CH 04 — UI / UX</span>
-                            <span class="onair-ch" style="--i:4">CH 05 — Web app</span>
-                        </span>
-                    </p>
-                    <!-- PLACEHOLDER numbers, same as the stats section -->
-                    <p class="onair-proof">120+ projects · 14 countries</p>
-                    <a href="#about" class="onair-scroll">Scroll <span aria-hidden="true">↓</span></a>
-                </div>
+            <!-- colour bars double as an on-air bar; the channel stays in sync with the hero TV -->
+            <div class="stripes stripes-onair">
+                <span class="stripe-blue"><span class="onair-live"><span class="onair-dot"></span> On air</span></span>
+                <span class="stripe-yellow">
+                    <span class="onair-channels" aria-hidden="true">
+                        <span class="onair-ch" style="--i:0">CH 01 — Colour bars</span>
+                        <span class="onair-ch" style="--i:1">CH 02 — ninona</span>
+                        <span class="onair-ch" style="--i:2">CH 03 — Branding</span>
+                        <span class="onair-ch" style="--i:3">CH 04 — UI / UX</span>
+                        <span class="onair-ch" style="--i:4">CH 05 — Web app</span>
+                    </span>
+                </span>
+                <!-- PLACEHOLDER numbers, same as the stats section -->
+                <span class="stripe-pink"><span>120+ projects</span></span>
+                <span class="stripe-cyan"><span>14 countries</span></span>
+                <span class="stripe-blue"><a href="#about" class="onair-scroll">Scroll <span aria-hidden="true">↓</span></a></span>
             </div>
         </section>
 
