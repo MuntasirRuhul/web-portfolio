@@ -1128,7 +1128,7 @@ a {
 .contact-title {
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 900;
-    font-size: clamp(64px, 7.5vw, 112px);
+    font-size: clamp(80px, 11vw, 168px);
     line-height: 0.9;
     letter-spacing: -0.03em;
 }
@@ -1142,6 +1142,27 @@ a {
     flex-wrap: wrap;
     align-items: center;
     gap: 16px;
+}
+
+.start-project-cta {
+    padding: 22px 34px;
+    background: var(--orange);
+    border-color: var(--orange);
+    font-size: 28px;
+}
+
+.start-project-cta span {
+    transition: transform 0.25s;
+}
+
+.start-project-cta:hover {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+.start-project-cta:hover span {
+    transform: translateX(6px);
 }
 
 .start-project-dark {
