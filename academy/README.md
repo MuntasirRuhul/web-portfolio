@@ -43,7 +43,11 @@ family directly on a component — use a role.
 
 Headlines are sentence case. Only labels are uppercase.
 
-**Spacing:** sections use `--space-section` top and bottom; label → title is
-`--gap-label`; title → lead is `--gap-text`; section head → content is
-`--space-head`. Section heads are left-aligned (label + title on the left,
-lead or control on the right); the About statement is the one centered block.
+**Structure:** every band uses one 12-column frame with hairline outer edges.
+Columns 1–3 are the rail (label, a short intro, controls or specs); columns
+4–12 are the body. All content sits in cells that share 1px rules (`gap: 1px`
+over a rule-coloured background), so the grid is always visible. Content has
+no radii, shadows or tilts. Below 960px the rail stacks above the body.
+
+**Spacing:** `--cell` pads every cell, `--cell-lg` pads head and statement
+cells, `--gap` separates items inside a cell.
