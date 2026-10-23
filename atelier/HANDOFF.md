@@ -1,0 +1,237 @@
+# Elena Varga Atelier: theme handoff
+
+**Date:** 23 October 2026 · **Status:** design complete, ready to build · **Owner:** hellomuntasir@gmail.com
+
+A one-page website for an artist who sells online drawing and painting courses. The page should feel like a piece of artwork, but stay calm: almost no complex interaction.
+
+---
+
+## 1. Source of truth
+
+| What | File | Notes |
+|---|---|---|
+| **Final page** | `atelier-v6.html` | Build from this. Single self-contained file: HTML, CSS and a little vanilla JS. |
+| Previous version | `atelier-v5.html` | Same layout, original warm palette, no palette tokens. Reference only. |
+| Style guide | `style-guide.html` | Type, spacing, components, imagery, motion, voice. **Colours in it are the original palette;** see section 4 here for the new ones. |
+| Course card (copy-paste) | `poster-card-c.html` | The white poster card used on the site, standalone with all six courses. |
+| Figma | [art and potery](https://www.figma.com/design/0wA3LYabKVP9Jl4FMLjYKH/art-and-potery?node-id=0-1) | Course card component, level-meter variants, colour variables, text styles. |
+
+**Run locally:** from this folder, `python3 -m http.server 8000`, then open <http://localhost:8000/atelier-v6.html>.
+
+**External dependencies:** Google Fonts (Inter, Inter Tight, JetBrains Mono, Caveat) and Unsplash images (placeholders). No frameworks, no build step.
+
+---
+
+## 2. Decisions still open (resolve before or during build)
+
+| # | Decision | Options | Recommendation |
+|---|---|---|---|
+| D1 | **Colour palette** | Klein · Fauve · Viridian · Marigold · Original (live picker, bottom-right of v6) | **Klein**. Then delete the other palette blocks and the picker. |
+| D2 | **Student section layout** | Current "Spotlight" in v6, or one of 12 explored in `student-section-variations.html` and `student-section-variations-2.html` | 08 **Critique** or 07 **By course**; current Spotlight is fine to ship. |
+| D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
+
+---
+
+## 3. Page structure
+
+Order top to bottom. `g6` = the 6-column grid wrapper.
+
+| # | Section | Element / id | Purpose | Notes |
+|---|---|---|---|---|
+| | Left rail | `aside.rail` | Menu button, vertical tagline, socials | Fixed, 56px wide. Collapses to a floating menu button at ≤ 980px. Menu button has **no menu yet**. |
+| 01 | **Hero** | `section.hero#top` | Who she is, entry to courses | Dark full-height band. Construction lines: a vertical rule at 38%, a broken horizontal rule at 48%, and an SVG circle that draws itself once. Small portrait left, large photo right, roles list, "Since 2006", "Explore the courses" link with a painted underline. Own split nav (mediums left, About / Log in right). |
+| | Side tab | `a.tabv` | Shortcut to free lesson | Fixed to the right edge: "EV. Free lesson" → `#join`. |
+| 02 | **About** | `section.about#about` | The artist | Centred 880px column: statement heading, two paragraphs, signature. Two **cut-out** images (shot on white, `mix-blend-mode: multiply`). Section needs a solid background for the blend to work. |
+| 03 | **Method** | `section.method` | Look · Sketch · Paint | Rounded panel on the signature band. Three step cards, solid colour blocks in the new palettes. Icons are inline SVG that draw in on scroll. |
+| 04 | **Courses** | `section.courses#courses` | The catalogue (6 courses) | Poster cards on the signature band. See section 6.3. |
+| 05 | **Gallery** | `section.gallery#gallery` | Her work, linked to courses | Filter chips (All / Ink / Watercolour / Acrylic), a featured work, then a 3-column grid. Every work links to the course that teaches it. |
+| 06 | **Student story** | `section.quote` | Social proof | Marta's piece large + her quote + 6 other students in a 2×3 grid + "3,100 pieces" line. On phones the order becomes: quote → Marta's piece → grid. |
+| 07 | **FAQ** | `section.faq#faq` | Objections | Native `<details>`, first open. |
+| 08 | **Join** | `section.join#join` | Conversion | Dark panel with two action cards (portfolio review, live class) + photo, then the newsletter strip. |
+| | Footer | `footer` | Links | 3 columns + base row. |
+| | Palette picker | `div.pal-pick` | **Design review only** | Remove for production (see D1). |
+
+---
+
+## 4. Colour tokens
+
+All colours are CSS custom properties on `:root`. A palette is a block that overrides them on `html[data-palette="…"]`. **For production:** keep `:root` + the chosen palette's values (merge them into `:root`), delete the other palette blocks, the picker markup, its CSS and its script.
+
+### 4.1 Token roles
+
+| Token | Role |
+|---|---|
+| `--paper` | Page background |
+| `--card` | Cards (white) |
+| `--band` | **Signature colour**: courses section, method panel, newsletter strip |
+| `--band-soft` | Light neutral for footer column and image placeholders |
+| `--on-band` / `--on-band-2` / `--band-accent` | Text, secondary text and accent **on** the band |
+| `--ink` / `--ink-2` / `--muted` | Text: primary, secondary, labels |
+| `--terra` | Brand accent: emphasis words, button hover fill, active filter |
+| `--night` / `--night-2` | Dark surfaces: hero, student section, CTA panel |
+| `--accent-lt` | Accent on dark surfaces |
+| `--dim` / `--dimmer` | Secondary text on dark |
+| `--s1…--s3` + `--s1t…--s3t` | Method card backgrounds and their text colours |
+| `--c1…--c6` | Course card accents (one per course) |
+| `--ink-rgb`, `--on-dark-rgb` | RGB triplets used in `rgba()` for lines and shadows |
+
+### 4.2 Recommended palette: Klein
+
+```css
+--paper:#F2F2EE; --band-soft:#E4E6EE; --card:#FFFFFF;
+--ink:#0B0B14; --ink-2:#3C3D4C; --muted:#73748A; --ink-rgb:11,11,20;
+--terra:#E8401C; --ochre:#FFD84D; --ultra:#002FA7; --sage:#00875A; --rose:#FFB3C7;
+--band:#002FA7; --on-band:#FFFFFF; --on-band-2:rgba(255,255,255,.74); --band-accent:#FFB3C7;
+--night:#002FA7; --night-2:#0A2A8A; --accent-lt:#FFB3C7; --dim:#AFC0FF; --dimmer:#8EA2EE; --on-dark-rgb:255,255,255;
+--s1:#FFD84D; --s1t:#0B0B14; --s2:#FFB3C7; --s2t:#0B0B14; --s3:#E8401C; --s3t:#FFFFFF;
+--c1:#002FA7; --c2:#D4006A; --c3:#3355FF; --c4:#0B0B14; --c5:#E8401C; --c6:#00875A;
+```
+
+The other palettes (Fauve, Viridian, Marigold, Original) are defined in full in `atelier-v6.html`.
+
+### 4.3 Course accents (`--pc` on each card)
+
+| Course | Medium | Token |
+|---|---|---|
+| 01 Foundations of Drawing | Pencil | `--c1` |
+| 02 The Portrait in Pencil | Graphite | `--c2` |
+| 03 Watercolour Gardens | Watercolour | `--c3` |
+| 04 Ink, Line & Silence | Ink | `--c4` |
+| 05 Plein Air in Oil | Oil | `--c5` |
+| 06 Abstract Colour | Acrylic | `--c6` |
+
+### 4.4 Contrast (checked)
+
+All palettes: body text ≥ 15:1, text on the signature band 6.3–10.7:1, course titles on white ≥ 3:1 (large text). Accent fills with white text are fine for large text and icons. **Don't put small body text in `--terra`.**
+
+---
+
+## 5. Typography
+
+| Use | Font | Weight / size / line-height / tracking |
+|---|---|---|
+| Hero name + line | Inter Tight | 500 · clamp(30, 3.3vw, 56px) · 1.0 · −4.5% |
+| Section headings (H2) | Inter Tight | 600 · clamp(40, 5vw, 68px) · 1.0 · −4% |
+| About statement | Inter Tight | 500 · clamp(30, 3.5vw, 48px) · 1.08 · −4% |
+| **Course card title** | **Inter** | **700 · 36px · 0.86 · −6.5%** (matches Figma) |
+| Featured work title | Inter | 700 · clamp(40, 4.6vw, 68px) · 0.88 · −6% |
+| Quote | Inter Tight | 500 · clamp(24, 2.4vw, 36px) · 1.12 · −3.5% |
+| Body | Inter Tight | 400 · 16px · 1.65 |
+| Small body | Inter Tight | 400 · 14–14.5px · 1.5 |
+| Labels, facts, captions | JetBrains Mono | 400–500 · 9–10.5px · labels uppercase +6% |
+| Signature only | Caveat | 500 · 32–48px |
+
+Rules: emphasis is **colour, never italics** (one phrase per heading). Facts (level, length, dates, prices in cards) always in mono labels + Inter Tight 600 values.
+
+---
+
+## 6. Layout & components
+
+### 6.1 Grid
+
+- Fixed left rail **56px** + **6 columns** with visible 1px lines at 7.5% ink (`.cols`). Side padding `--pad` **48px**, **20px** at ≤ 980px.
+- Section padding `clamp(80px, 10vw, 140px)` top and bottom.
+- Breakpoints: **1100** (story tweak), **980** (rail hides, single-column sections, 2-up cards), **860 / 760** (two-column layouts stack), **700 / 600** (1-up cards, horizontal swipe rows).
+
+### 6.2 Core components
+
+| Component | Class | Spec |
+|---|---|---|
+| Primary button | `.btn.btn-ink` | Ink pill, padding 6/6/6/22, 36px round arrow chip. Hover: terracotta fills from the left (.45s), arrow rotates −45°. |
+| Nav pill | `.login` style | Ink pill, 8×16px, hover terracotta. |
+| Text link | `.link`, `.ulink` | 1px underline, hover accent. |
+| Section label | `.lbl` | Mono uppercase, number in accent + 34px rule after. |
+| Filter chip | `.filters button` | Pill, `aria-pressed` drives the active state (accent fill). |
+| Level meter | `.meter[data-l]` | Three 3px bars (100 / 72 / 44%). Fills from the bottom: `1` beginner, `2` intermediate, `3` advanced. Uses the card accent. |
+| Newsletter | `.nl` | White input 60px tall + square accent submit button. |
+| CTA card | `.cta-card` | Outlined dark card, 6px radius, underlined action at the bottom. |
+| Side tab | `.tabv` | Fixed right, white, vertical text. |
+
+### 6.3 Course card ("Poster white")
+
+`a.pcard` with `style="--pc:var(--cN)"`
+
+1. **Top row**: brand in muted mono, "No. 01 · Pencil" in accent, 1px rule.
+2. **Title**: Inter 700 36px, accent colour, always two lines (`<br>`).
+3. **Photo**: 3:4, right-aligned, fills remaining height. Grayscale + `mix-blend-mode: screen` over the accent = tinted. Full colour on hover.
+4. **Tag** (optional): "New" / "Bestseller", small mono on the photo corner.
+5. **Facts**: 2×2 `<dl>` (Level with meter, Lessons, Running, Admission). Top rules 2px, bottom row 1px, in accent.
+6. **Card**: ratio **1 : 1.18**, padding 18px, square corners, single soft shadow, lifts 6px on hover; price shows "→ Enrol" on hover.
+
+Figma equivalent: component **Course card / Poster white** (380×448) + **Level meter** variants; colour via the **Course accent** variable collection (one mode per course).
+
+---
+
+## 7. Interaction & motion
+
+Everything is hover / scroll based. Nothing autoplays or loops.
+
+| Behaviour | Implementation |
+|---|---|
+| Reveal on scroll | `.reveal` → `.is-in` via one `IntersectionObserver` (threshold .15). Opacity + 28px rise, .9s. Content is visible without JS (`.js` class gate). |
+| Line drawing | `.draw` SVG paths with `pathLength="1"` and dash offset. Hero circle 2.4s, hero underline 1.3s after a .9s delay, method icons 1.4s. |
+| Hero load | `.hero.is-in` added on load (rAF + 400ms fallback). |
+| Gallery filter | ~10 lines of JS: toggles `.off` on `.work` items by `data-medium` and updates the count. |
+| Palette picker | Review only: sets `html[data-palette]`, remembers in `localStorage`. **Remove.** |
+| Hover | Card lift −6px, image zoom 1.04–1.06, tinted/B&W photos return to colour, button fill. |
+| Reduced motion | `prefers-reduced-motion: reduce` disables all animation and transitions and shows everything. |
+
+---
+
+## 8. Accessibility checklist
+
+- [x] Landmarks: `main`, `nav`, `footer`, headings in order per section.
+- [x] Filter chips and palette buttons use `aria-pressed`; decorative SVGs are `aria-hidden`.
+- [x] Contrast checked (section 4.4).
+- [x] Reduced motion respected.
+- [ ] **Alt text:** many placeholder images have `alt=""`. Write real alt text when real artwork goes in.
+- [ ] **Focus styles:** rely on browser defaults; add a visible `:focus-visible` ring in the accent.
+- [ ] **Menu button** (rail) needs a real menu, `aria-expanded` and a keyboard trap while open.
+- [ ] Hero split nav hides its left links on phones; make sure the menu covers them.
+
+---
+
+## 9. Content & assets to replace
+
+| Item | Now | Needed |
+|---|---|---|
+| **Images** | 25 Unsplash placeholders, hotlinked | Elena's real portrait (hero, About), studio photos, her **own artwork** for the gallery, real **student work** with permission. About cut-outs: full-length, shot on a white sweep (or transparent PNG). Never present someone else's work as hers. |
+| Copy | Written in her voice as a draft | Elena to approve bio, course descriptions and FAQ. |
+| Students | Fictional names, quotes, weeks | Real quotes and consent. |
+| Numbers | 12,400 students · 3,100 pieces · 18 courses · 340h · 64 countries · prices | Real figures. |
+| Contact | `hello@elenavarga.art`, Lisbon address | Real details. |
+| Favicon | Missing (404 in console) | Add `favicon.ico` / SVG icon. |
+
+---
+
+## 10. Integration work (not designed, needs building)
+
+- **34 links are `href="#"`**: course detail pages, Log in, socials, "See the full wall", gallery works, footer links.
+- **Newsletter form**: front-end only (shows "Thanks!"). Connect to the email provider.
+- **CTA cards**: "Schedule now" → booking tool; "Reserve a seat" → live-class signup.
+- **Courses**: each card → course page and checkout (video platform / LMS).
+- **Menu**: overlay or drawer for the rail button.
+- **Images**: self-host and serve responsive sizes (`srcset`), keep `loading="lazy"` below the fold.
+- If building as a **WordPress theme**: each section maps cleanly to a block or template part, courses and gallery works to custom post types (fields: medium, level, lessons, duration, price, accent, tag, image).
+
+---
+
+## 11. Files in this folder
+
+| Deliverable | Exploration / history (don't build from) |
+|---|---|
+| `atelier-v6.html`, `style-guide.html`, `poster-card-c.html`, `HANDOFF.md` | `atelier.html`, `atelier-v2…v5.html`, `course-cards*.html`, `poster-card-a/b.html`, `student-section-variations*.html`, `selvedge-grid*.html`, `pattern*.html`, `scher*.html`, `concepts.html`, `wireframe.html`, `workflow.html` |
+
+`img/` holds old-master paintings from the first drafts; **v6 doesn't use them.**
+
+---
+
+## 12. QA before launch
+
+- [ ] Chosen palette merged into `:root`; picker and other palettes removed.
+- [ ] Desktop 1440, laptop 1280, tablet 768, phone 375: no horizontal scroll.
+- [ ] All images real, compressed, with alt text; no Unsplash hotlinks.
+- [ ] Every `#` link wired; forms submit.
+- [ ] Lighthouse: performance and accessibility ≥ 90.
+- [ ] Reduced-motion and keyboard-only pass.
+- [ ] Favicon and social share image added.
