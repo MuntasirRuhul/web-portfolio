@@ -20,3 +20,30 @@ Sections: announcement bar, header, hero, student-company logos, course grid
 
 Next: course archive, single course, lesson, dashboard and checkout pages, then
 port to a WordPress theme with TutorLMS template overrides.
+
+## Style guide
+
+All tokens live at the top of `assets/css/style.css`. Never set a font size or
+family directly on a component — use a role.
+
+**Typeface:** Geist for everything, Geist Mono for labels. No other faces.
+
+| Role      | Token          | Use for                                              |
+|-----------|----------------|------------------------------------------------------|
+| mega      | `--t-mega`     | Masthead and giant background word only              |
+| display   | `--t-display`  | Hero headline, closing CTA headline, featured quote  |
+| h2        | `--t-h2`       | Every section title                                  |
+| h3        | `--t-h3`       | Card, phase, plan and sticker titles                 |
+| stat      | `--t-stat`     | Every big number                                     |
+| title     | `--t-title`    | List items, FAQ questions, short quotes, captions     |
+| lead      | `--t-lead`     | Intro paragraph under a title                        |
+| body      | `--t-body`     | Running text                                         |
+| small     | `--t-small`    | Meta, captions, fine print                           |
+| label     | `--t-label`    | Eyebrows, datelines, tags (mono, uppercase)          |
+
+Headlines are sentence case. Only labels are uppercase.
+
+**Spacing:** sections use `--space-section` top and bottom; label → title is
+`--gap-label`; title → lead is `--gap-text`; section head → content is
+`--space-head`. Section heads are left-aligned (label + title on the left,
+lead or control on the right); the About statement is the one centered block.
