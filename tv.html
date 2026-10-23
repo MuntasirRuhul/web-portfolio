@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ninona (TV network) — Branding and UI / UX Design Agency</title>
+    <meta name="description" content="ninona is a global branding and UI / UX design agency helping startups and small companies with beautiful, functional, and timeless design interfaces.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23000%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Arial%27 font-weight=%27700%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27%23fa580d%27%3En%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@900&family=Geist:wght@500&family=Inter:wght@400;600;700&family=Livvic:wght@700&family=Mona+Sans:wght@600&family=Plus+Jakarta+Sans:wght@500;600;700&family=Sora:wght@400;700&family=Urbanist:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="variants/tv.css">
+</head>
+<body class="v-tv">
+
+    <!-- header -->
+    <header class="site-header">
+        <a href="#top" class="logo">ninona</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+            <img src="assets/menu-icon.svg" width="36" height="36" alt="">
+        </button>
+        <span class="scroll-progress" aria-hidden="true"></span>
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="top">
+
+        <!-- hero -->
+        <section class="hero">
+            <div class="hero-intro">
+                <h1 class="hero-title">ninona <span class="muted">is</span> <span class="muted">a global branding and UI / UX design agency</span></h1>
+                <a href="#contact" class="schedule-call">
+                    <span class="avatar avatar-sm avatar-orange"></span>
+                    <span class="schedule-call-text">
+                        <strong>Schedule Call</strong>
+                        <small><img src="assets/dot-black.svg" width="4" height="4" alt=""> with susan</small>
+                    </span>
+                </a>
+            </div>
+
+            <div class="hero-tv" aria-hidden="true">
+                <span class="tv-shadow"></span>
+                <div class="tv-stand">
+                    <img class="tv-stand-front" src="assets/tv-stand-front.svg" alt="">
+                    <img class="tv-stand-side" src="assets/tv-stand-side.svg" alt="">
+                    <span class="tv-stand-top"></span>
+                </div>
+                <div class="tv tv-orange">
+                    <img class="tv-screen" src="assets/hero-tv-screen.svg" alt="">
+                    <div class="tv-display tv-display-hero">
+                        <div class="channel ch-bars" style="--i:0">
+                            <div class="bars-top"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                            <div class="bars-bottom"><i></i><i></i><i></i><i></i></div>
+                        </div>
+                        <div class="channel ch-logo" style="--i:1"><span>ninona</span></div>
+                        <div class="channel ch-word" style="--i:2"><span>Branding</span></div>
+                        <div class="channel ch-word ch-word-light" style="--i:3"><span>UI / UX</span></div>
+                        <div class="channel ch-word ch-word-blue" style="--i:4"><span>Web app</span></div>
+                        <div class="tv-noise"></div>
+                        <div class="tv-scanlines"></div>
+                    </div>
+                    <div class="tv-controls">
+                        <img class="tv-knob" src="assets/hero-tv-knob-1.svg" alt="">
+                        <img class="tv-knob" src="assets/hero-tv-knob-2.svg" alt="">
+                        <div class="tv-slots">
+                            <img src="assets/tv-slot-1.svg" alt="">
+                            <img src="assets/tv-slot-2.svg" alt="">
+                        </div>
+                        <img class="tv-dots" src="assets/hero-tv-dots.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-band">
+                <div class="hero-band-content">
+                    <p class="lead lead-light"><b>Helping startups</b> <span>and small companies with beautiful, functional, and timeless design interfaces.</span></p>
+                    <a href="#contact" class="start-project">
+                        <img src="assets/dot-white.svg" width="8" height="8" alt="">
+                        Start Project
+                    </a>
+                </div>
+            </div>
+
+            <!-- colour bars double as an on-air bar; the channel stays in sync with the hero TV -->
+            <div class="stripes stripes-onair">
+                <span class="stripe-blue"><span class="onair-live"><span class="onair-dot"></span> On air</span></span>
+                <span class="stripe-yellow">
+                    <span class="onair-channels" aria-hidden="true">
+                        <span class="onair-ch" style="--i:0">CH 01 — Colour bars</span>
+                        <span class="onair-ch" style="--i:1">CH 02 — ninona</span>
+                        <span class="onair-ch" style="--i:2">CH 03 — Branding</span>
+                        <span class="onair-ch" style="--i:3">CH 04 — UI / UX</span>
+                        <span class="onair-ch" style="--i:4">CH 05 — Web app</span>
+                    </span>
+                </span>
+                <!-- PLACEHOLDER numbers, same as the stats section -->
+                <span class="stripe-pink"><span>120+ projects</span></span>
+                <span class="stripe-cyan"><span>14 countries</span></span>
+                <span class="stripe-blue"><a href="#about" class="onair-scroll">Scroll <span aria-hidden="true">↓</span></a></span>
+            </div>
+        </section>
+
+        <!-- work -->
+        <section id="work" class="services section bg-cream">
+            <h2 class="section-title section-title-xl">Creating Beautiful</h2>
+
+            <article class="project">
+                <div class="project-info">
+                    <div>
+                        <p class="project-client">FitPro</p>
+                        <h3 class="project-name">Multi-Platform Advertising</h3>
+                    </div>
+                    <p class="project-scope">Paid Social,<br>Google Ads,<br>Landing Page Optimization</p>
+                </div>
+                <div class="tv tv-gray" aria-hidden="true">
+                    <img class="tv-screen" src="assets/tv-screen.svg" alt="">
+                    <div class="tv-display tv-display-dash">
+                        <div class="dash-side"><i></i><i></i><i></i><i></i></div>
+                        <div class="dash-main">
+                            <p class="dash-title">Campaigns</p>
+                            <div class="dash-kpis"><span></span><span></span><span></span></div>
+                            <div class="dash-chart">
+                                <i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:46%"></i><i style="--h:64%"></i><i style="--h:58%"></i><i style="--h:76%"></i><i style="--h:70%"></i><i style="--h:88%"></i>
+                            </div>
+                            <div class="dash-legend"><span>Paid Social</span><span>Google Ads</span><span>Landing</span></div>
+                        </div>
+                        <div class="tv-scanlines"></div>
+                    </div>
+                    <div class="tv-controls">
+                        <img class="tv-knob" src="assets/tv-knob-1.svg" alt="">
+                        <img class="tv-knob" src="assets/tv-knob-2b.svg" alt="">
+                        <div class="tv-slots">
+                            <img src="assets/tv-slot-1.svg" alt="">
+                            <img src="assets/tv-slot-2.svg" alt="">
+                        </div>
+                        <img class="tv-dots" src="assets/tv-dots-b.svg" alt="">
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- TV network: chapters scroll on the left, the pinned TV changes channel -->
+        <section class="v1-channels">
+            <div class="v1-chapters">
+                <article class="v1-chapter" data-ch="0" id="about">
+                    <p class="v1-ch-label">CH 01 · Why ninona</p>
+                    <h2 class="v1-ch-title">Design that moves people.</h2>
+                    <p class="v1-ch-text">We help startups and small companies look sharp, ship faster and win customers.</p>
+                    <div class="v1-sign">
+                        <span class="avatar avatar-md avatar-blue"></span>
+                        <div><p class="founder-name">Sujon Hossain</p><p>Founder &amp; Head of Design</p></div>
+                    </div>
+                </article>
+                <article class="v1-chapter" data-ch="1" id="services">
+                    <p class="v1-ch-label">CH 02 · Service</p>
+                    <h3 class="v1-ch-title">Branding</h3>
+                    <p class="v1-ch-text">Brands people remember: logo, identity systems and guidelines.</p>
+                    <ul class="v1-chips"><li>Logo</li><li>Identity</li><li>Guidelines</li></ul>
+                </article>
+                <article class="v1-chapter" data-ch="2">
+                    <p class="v1-ch-label">CH 03 · Service</p>
+                    <h3 class="v1-ch-title">UI / UX</h3>
+                    <p class="v1-ch-text">Interfaces built around real users, from flows to polished screens.</p>
+                    <ul class="v1-chips"><li>Research</li><li>Prototyping</li><li>Design system</li></ul>
+                </article>
+                <article class="v1-chapter" data-ch="3">
+                    <p class="v1-ch-label">CH 04 · Service</p>
+                    <h3 class="v1-ch-title">Web Design</h3>
+                    <p class="v1-ch-text">Websites that convert, responsive and ready for development.</p>
+                    <ul class="v1-chips"><li>Landing</li><li>Website</li><li>Web app</li></ul>
+                </article>
+                <article class="v1-chapter" data-ch="4">
+                    <p class="v1-ch-label">CH 05 · Service</p>
+                    <h3 class="v1-ch-title">Mobile App</h3>
+                    <p class="v1-ch-text">Apps that feel native, fast and intuitive.</p>
+                    <ul class="v1-chips"><li>iOS</li><li>Android</li><li>Onboarding</li></ul>
+                </article>
+                <article class="v1-chapter" data-ch="5">
+                    <p class="v1-ch-label">CH 06 · Service</p>
+                    <h3 class="v1-ch-title">MVP &amp; No Code</h3>
+                    <p class="v1-ch-text">Launch faster and test your idea with real customers.</p>
+                    <ul class="v1-chips"><li>MVP</li><li>Webflow</li><li>Framer</li></ul>
+                </article>
+                <article class="v1-chapter" data-ch="6" id="process">
+                    <p class="v1-ch-label">CH 07 · How we work</p>
+                    <h3 class="v1-ch-title">01 — Discover</h3>
+                    <p class="v1-ch-text">We learn your business, users and goals.</p>
+                </article>
+                <article class="v1-chapter" data-ch="7">
+                    <p class="v1-ch-label">CH 08 · How we work</p>
+                    <h3 class="v1-ch-title">02 — Design</h3>
+                    <p class="v1-ch-text">Concepts and iterations, shaped with your feedback every week.</p>
+                </article>
+                <article class="v1-chapter" data-ch="8">
+                    <p class="v1-ch-label">CH 09 · How we work</p>
+                    <h3 class="v1-ch-title">03 — Build</h3>
+                    <p class="v1-ch-text">Clean hand-off files, or we build it with you.</p>
+                </article>
+                <article class="v1-chapter" data-ch="9">
+                    <p class="v1-ch-label">CH 10 · How we work</p>
+                    <h3 class="v1-ch-title">04 — Launch</h3>
+                    <p class="v1-ch-text">We ship, measure and stay around to help you grow.</p>
+                </article>
+                <article class="v1-chapter" data-ch="10">
+                    <p class="v1-ch-label">CH 11 · Reviews</p>
+                    <blockquote class="v1-quote">“Placeholder quote. The team turned a rough idea into a product our users understood from the first screen.”</blockquote>
+                    <div class="v1-sign">
+                        <span class="avatar avatar-md avatar-yellow"></span>
+                        <div><p class="founder-name">Client Name</p><p>Role, Company</p></div>
+                    </div>
+                </article>
+                <article class="v1-chapter" data-ch="11">
+                    <p class="v1-ch-label">CH 12 · Reviews</p>
+                    <blockquote class="v1-quote">“Placeholder quote. Clear communication, fast iterations and a brand we are proud of.”</blockquote>
+                    <div class="v1-sign">
+                        <span class="avatar avatar-md avatar-pink"></span>
+                        <div><p class="founder-name">Client Name</p><p>Role, Company</p></div>
+                    </div>
+                </article>
+                <article class="v1-chapter" data-ch="12">
+                    <p class="v1-ch-label">CH 13 · Reviews</p>
+                    <blockquote class="v1-quote">“Placeholder quote. Our MVP launched on time and helped us win our first customers.”</blockquote>
+                    <div class="v1-sign">
+                        <span class="avatar avatar-md avatar-cyan"></span>
+                        <div><p class="founder-name">Client Name</p><p>Role, Company</p></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="v1-sticky" aria-hidden="true">
+                <div class="v1-tv">
+                    <div class="tv tv-orange">
+                        <img class="tv-screen" src="assets/hero-tv-screen.svg" alt="">
+                        <div class="tv-display tv-display-hero">
+                            <div class="v1-screen v1-screen-logo"><span>ninona</span></div>
+                            <div class="v1-screen v1-screen-service" style="--bg:#325baa;--fg:#fff847"><b>Branding</b><span class="v1-pills"><i style="--d:0.0s">Logo</i><i style="--d:0.4s">Identity</i><i style="--d:0.8s">Guidelines</i></span></div>
+                            <div class="v1-screen v1-screen-service" style="--bg:#fff847;--fg:#000"><b>UI / UX</b><span class="v1-pills"><i style="--d:0.0s">Research</i><i style="--d:0.4s">Prototyping</i><i style="--d:0.8s">Design system</i></span></div>
+                            <div class="v1-screen v1-screen-service" style="--bg:#f947ff;--fg:#000"><b>Web Design</b><span class="v1-pills"><i style="--d:0.0s">Landing</i><i style="--d:0.4s">Website</i><i style="--d:0.8s">Web app</i></span></div>
+                            <div class="v1-screen v1-screen-service" style="--bg:#46f4fc;--fg:#000"><b>Mobile App</b><span class="v1-pills"><i style="--d:0.0s">iOS</i><i style="--d:0.4s">Android</i><i style="--d:0.8s">Onboarding</i></span></div>
+                            <div class="v1-screen v1-screen-service" style="--bg:#fa580d;--fg:#000"><b>MVP &amp; No Code</b><span class="v1-pills"><i style="--d:0.0s">MVP</i><i style="--d:0.4s">Webflow</i><i style="--d:0.8s">Framer</i></span></div>
+                            <div class="v1-screen v1-screen-step"><b>01</b><span>Discover</span></div>
+                            <div class="v1-screen v1-screen-step"><b>02</b><span>Design</span></div>
+                            <div class="v1-screen v1-screen-step"><b>03</b><span>Build</span></div>
+                            <div class="v1-screen v1-screen-step"><b>04</b><span>Launch</span></div>
+                            <div class="v1-screen v1-screen-quote"><b>“</b><span>The team turned a rough idea into a product our users understood from the first screen.</span></div>
+                            <div class="v1-screen v1-screen-quote"><b>“</b><span>Clear communication, fast iterations and a brand we are proud of.</span></div>
+                            <div class="v1-screen v1-screen-quote"><b>“</b><span>Our MVP launched on time and helped us win our first customers.</span></div>
+                            <div class="v1-osd"><span class="v1-osd-ch">CH 01</span><span class="v1-osd-live">● Live</span></div>
+                            <div class="v1-static"></div>
+                            <div class="tv-scanlines"></div>
+                        </div>
+                        <div class="tv-controls">
+                            <img class="tv-knob v1-knob" src="assets/hero-tv-knob-1.svg" alt="">
+                            <img class="tv-knob" src="assets/hero-tv-knob-2.svg" alt="">
+                            <div class="tv-slots">
+                                <img src="assets/tv-slot-1.svg" alt="">
+                                <img src="assets/tv-slot-2.svg" alt="">
+                            </div>
+                            <img class="tv-dots" src="assets/hero-tv-dots.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="v1-remote">
+                    <button type="button" class="v1-remote-step" data-step="-1">CH −</button>
+                    <button type="button" class="v1-remote-btn" data-go="0">About</button><button type="button" class="v1-remote-btn" data-go="1">Services</button><button type="button" class="v1-remote-btn" data-go="6">Process</button><button type="button" class="v1-remote-btn" data-go="10">Reviews</button>
+                    <button type="button" class="v1-remote-step" data-step="1">CH +</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ratings + sponsors (PLACEHOLDER numbers and client names) -->
+        <section class="v1-ratings">
+            <div class="v1-ratings-inner">
+                <p class="v1-band-label">Tonight's ratings</p>
+                <ul class="v1-scores" data-reveal>
+                    <li><strong data-count="120" data-suffix="+">120+</strong><span>Projects</span></li>
+                    <li><strong data-count="8">8</strong><span>Years on air</span></li>
+                    <li><strong data-count="60" data-suffix="+">60+</strong><span>Startups</span></li>
+                    <li><strong data-count="14">14</strong><span>Countries</span></li>
+                </ul>
+            </div>
+            <div class="v1-sponsors">
+                <span class="v1-band-label">Sponsored by</span>
+                <div class="v1-sponsors-track">
+                    <span>FitPro</span><span>Client 02</span><span>Client 03</span><span>Client 04</span><span>Client 05</span><span>Client 06</span>
+                    <span aria-hidden="true">FitPro</span><span aria-hidden="true">Client 02</span><span aria-hidden="true">Client 03</span><span aria-hidden="true">Client 04</span><span aria-hidden="true">Client 05</span><span aria-hidden="true">Client 06</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- viewer mail (FAQ) -->
+        <section id="faq" class="v1-mail section">
+            <h2 class="section-title">Viewer mail</h2>
+            <div class="v1-letters">
+                <details data-reveal><summary><span>Letter 01</span>How long does a project take?</summary><p>Branding takes 3–4 weeks, product design 6–10 weeks, depending on scope.</p></details>
+                <details data-reveal><summary><span>Letter 02</span>How much does it cost?</summary><p>Every project is priced on scope. After a short call you get a clear fixed quote.</p></details>
+                <details data-reveal><summary><span>Letter 03</span>Do you work with early-stage startups?</summary><p>Yes, from first idea to MVP. It's what we do best.</p></details>
+                <details data-reveal><summary><span>Letter 04</span>Can you build what you design?</summary><p>Yes. Developer-ready files, or we build web apps and no-code products ourselves.</p></details>
+            </div>
+        </section>
+
+        <!-- call in now (contact) -->
+        <section id="contact" class="v1-callin">
+            <div class="v1-callin-static" aria-hidden="true"></div>
+            <div class="v1-callin-inner">
+                <p class="v1-onair"><span class="onair-dot"></span> Lines are open</p>
+                <h2 class="v1-callin-title">Call in now</h2>
+                <div class="v1-callin-actions">
+                    <a href="#top" class="start-project start-project-cta">Start a project <span aria-hidden="true">→</span></a>
+                    <a href="#top" class="schedule-call schedule-call-light">
+                        <span class="avatar avatar-sm avatar-orange"></span>
+                        <span class="schedule-call-text"><strong>Schedule Call</strong><small><img src="assets/dot-black.svg" width="4" height="4" alt=""> with susan</small></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="stripes stripes-static" aria-hidden="true">
+            <span class="stripe-blue"></span>
+            <span class="stripe-yellow"></span>
+            <span class="stripe-pink"></span>
+            <span class="stripe-cyan"></span>
+            <span class="stripe-blue"></span>
+        </div>
+        <div class="footer-inner">
+            <div class="footer-cols">
+                <div>
+                    <p class="footer-label">Contact</p>
+                    <!-- PLACEHOLDER email -->
+                    <a href="mailto:hello@yourdomain.com" class="footer-email">hello@yourdomain.com</a>
+                </div>
+                <div>
+                    <p class="footer-label">Social</p>
+                    <ul class="footer-links">
+                        <li><a href="#">Dribbble</a></li>
+                        <li><a href="#">Behance</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer-label">Navigate</p>
+                    <ul class="footer-links">
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-logo" aria-hidden="true"><span style="--i:0">n</span><span style="--i:1">i</span><span style="--i:2">n</span><span style="--i:3">o</span><span style="--i:4">n</span><span style="--i:5">a</span></p>
+            <div class="footer-bottom">
+                <span>© 2026 ninona. All rights reserved.</span>
+                <a href="#top">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="version-switch" aria-label="Design versions"><a href="index.html">Current</a><a href="tv.html" class="is-active">TV network</a><a href="playful.html">Playful</a><a href="editorial.html">Editorial</a></nav>
+    <script src="variants/common.js"></script>
+    <script src="variants/tv.js"></script>
+</body>
+</html>
