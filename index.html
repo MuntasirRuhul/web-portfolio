@@ -21,6 +21,7 @@
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
             <img src="assets/menu-icon.svg" width="36" height="36" alt="">
         </button>
+        <span class="scroll-progress" aria-hidden="true"></span>
         <nav id="site-nav" class="site-nav" aria-label="Main">
             <a href="#work">Work</a>
             <a href="#services">Services</a>
@@ -110,6 +111,19 @@
 
         <!-- about -->
         <section id="about" class="about section">
+            <div class="manifesto-wrap">
+                <p class="eyebrow"><span class="onair-dot"></span> Why ninona</p>
+                <p class="manifesto">Design shapes first impressions, guides customer decisions, and makes your brand impossible to ignore. Great design is clear, purposeful, and built to move people toward action.</p>
+                <div class="manifesto-sign">
+                    <span class="avatar avatar-lg avatar-blue"></span>
+                    <div>
+                        <p class="founder-name">Sujon Hossain</p>
+                        <p class="founder-role">Founder &amp; Head of Design</p>
+                    </div>
+                    <a href="#contact" class="talk-link">lets talk</a>
+                </div>
+            </div>
+
             <ul class="features">
                 <li class="feature">
                     <span class="feature-icon"><svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><path d="M10 13h12M10 17h8"/></svg></span>
@@ -127,20 +141,6 @@
                 </li>
             </ul>
 
-            <div class="founder">
-                <div class="founder-profile">
-                    <span class="avatar avatar-lg avatar-blue"></span>
-                    <div>
-                        <p class="founder-name">Sujon Hossain</p>
-                        <p class="founder-role">Founder &amp; Head of Design</p>
-                    </div>
-                </div>
-                <div class="founder-quote">
-                    <p>It shapes first impressions, guides customer decisions, and makes your brand impossible to ignore. Great design is clear, purposeful, and built to move people toward action.</p>
-                    <a href="#contact" class="talk-link">lets talk</a>
-                </div>
-            </div>
-
             <svg class="circles" viewBox="0 0 1281 338" width="1280" height="336" fill="none" aria-hidden="true">
                 <g style="--i:0"><circle cx="168.5" cy="169" r="168"/><text x="168.5" y="169">Strategy</text></g>
                 <g style="--i:1"><circle cx="483.5" cy="169" r="168"/><text x="483.5" y="169">Identity</text></g>
@@ -157,14 +157,9 @@
                 <li><strong data-count="60" data-suffix="+">60+</strong> <span>Startups helped</span></li>
                 <li><strong data-count="14" data-suffix="">14</strong> <span>Countries served</span></li>
             </ul>
-            <ul class="clients" aria-label="Clients">
-                <li>FitPro</li>
-                <li>Client 02</li>
-                <li>Client 03</li>
-                <li>Client 04</li>
-                <li>Client 05</li>
-                <li>Client 06</li>
-            </ul>
+            <div class="clients" aria-label="Clients">
+                <ul class="clients-track"><li>FitPro</li><li>Client 02</li><li>Client 03</li><li>Client 04</li><li>Client 05</li><li>Client 06</li><li aria-hidden="true">FitPro</li><li aria-hidden="true">Client 02</li><li aria-hidden="true">Client 03</li><li aria-hidden="true">Client 04</li><li aria-hidden="true">Client 05</li><li aria-hidden="true">Client 06</li></ul>
+            </div>
         </section>
 
         <!-- work -->
@@ -207,11 +202,13 @@
 
         </section>
 
-        <!-- marquee -->
-        <div class="marquee" aria-hidden="true">
-            <div class="marquee-track">
-                <span>Branding</span><span>UI / UX</span><span>Web app</span><span>Mobile app</span><span>MVP</span><span>No code</span>
-                <span>Branding</span><span>UI / UX</span><span>Web app</span><span>Mobile app</span><span>MVP</span><span>No code</span>
+        <!-- crossing marquees -->
+        <div class="marquee-cross" aria-hidden="true">
+            <div class="marquee marquee-back">
+                <div class="marquee-track"><span>Branding</span><span>UI / UX</span><span>Web app</span><span>Mobile app</span><span>MVP</span><span>No code</span><span>Branding</span><span>UI / UX</span><span>Web app</span><span>Mobile app</span><span>MVP</span><span>No code</span></div>
+            </div>
+            <div class="marquee">
+                <div class="marquee-track"><span>Branding</span><span>UI / UX</span><span>Web app</span><span>Mobile app</span><span>MVP</span><span>No code</span><span>Branding</span><span>UI / UX</span><span>Web app</span><span>Mobile app</span><span>MVP</span><span>No code</span></div>
             </div>
         </div>
 
@@ -307,73 +304,107 @@
                     <h2 class="section-title">How we work</h2>
                     <p class="lead lead-light lead-narrow"><b>A clear, simple process</b> <span>so you always know what happens next and when.</span></p>
                 </div>
-                <ol class="process-steps">
+                <div class="process-timeline">
+                    <div class="process-track"><span class="process-fill"></span></div>
+                    <ol class="process-steps">
                     <li>
+                        <span class="process-dot"></span>
+                        <span class="process-ch">CH 01</span>
                         <span class="process-num">01</span>
                         <h3>Discover</h3>
                         <p>We learn your business, users and goals, and agree on what success looks like.</p>
                     </li>
                     <li>
+                        <span class="process-dot"></span>
+                        <span class="process-ch">CH 02</span>
                         <span class="process-num">02</span>
                         <h3>Design</h3>
                         <p>Concepts, iterations and a design system, shaped with your feedback every week.</p>
                     </li>
                     <li>
+                        <span class="process-dot"></span>
+                        <span class="process-ch">CH 03</span>
                         <span class="process-num">03</span>
                         <h3>Build</h3>
                         <p>We hand off clean files or build it with you, so nothing gets lost in translation.</p>
                     </li>
                     <li>
+                        <span class="process-dot"></span>
+                        <span class="process-ch">CH 04</span>
                         <span class="process-num">04</span>
                         <h3>Launch</h3>
                         <p>We ship, measure and refine, and stay around to help you grow after launch.</p>
                     </li>
-                </ol>
+                    </ol>
+                </div>
             </div>
         </section>
 
         <!-- testimonials (PLACEHOLDER quotes and names, replace with real client feedback) -->
         <section class="testimonials section bg-cream">
             <h2 class="section-title">What clients say</h2>
-            <ul class="testimonial-grid">
-                <li class="testimonial">
-                    <p class="testimonial-quote">“Placeholder quote. The team turned a rough idea into a product our users understood from the first screen.”</p>
-                    <div class="testimonial-author">
+            <div class="t-stage" aria-live="polite">
+                <span class="t-mark" aria-hidden="true">“</span>
+                <figure class="t-slide is-active">
+                    <blockquote class="t-quote">Placeholder quote. The team turned a rough idea into a product our users understood from the very first screen.</blockquote>
+                    <figcaption class="testimonial-author">
                         <span class="avatar avatar-md avatar-yellow"></span>
                         <div>
                             <p class="founder-name">Client Name</p>
                             <p>Role, Company</p>
                         </div>
-                    </div>
-                </li>
-                <li class="testimonial">
-                    <p class="testimonial-quote">“Placeholder quote. Clear communication, fast iterations and a brand we are genuinely proud of.”</p>
-                    <div class="testimonial-author">
+                    </figcaption>
+                </figure>
+                <figure class="t-slide">
+                    <blockquote class="t-quote">Placeholder quote. Clear communication, fast iterations and a brand we are genuinely proud to show.</blockquote>
+                    <figcaption class="testimonial-author">
                         <span class="avatar avatar-md avatar-pink"></span>
                         <div>
                             <p class="founder-name">Client Name</p>
                             <p>Role, Company</p>
                         </div>
-                    </div>
-                </li>
-                <li class="testimonial">
-                    <p class="testimonial-quote">“Placeholder quote. Our MVP launched on time and the design helped us win our first customers.”</p>
-                    <div class="testimonial-author">
+                    </figcaption>
+                </figure>
+                <figure class="t-slide">
+                    <blockquote class="t-quote">Placeholder quote. Our MVP launched on time and the design helped us win our first customers.</blockquote>
+                    <figcaption class="testimonial-author">
                         <span class="avatar avatar-md avatar-cyan"></span>
                         <div>
                             <p class="founder-name">Client Name</p>
                             <p>Role, Company</p>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="t-nav">
+                <div class="t-progress">
+                    <button type="button" class="t-bar is-active" aria-label="Show quote 1"><span></span></button>
+                    <button type="button" class="t-bar" aria-label="Show quote 2"><span></span></button>
+                    <button type="button" class="t-bar" aria-label="Show quote 3"><span></span></button>
+                </div>
+                <div class="t-arrows">
+                    <button type="button" class="t-arrow" data-dir="-1" aria-label="Previous quote">←</button>
+                    <button type="button" class="t-arrow" data-dir="1" aria-label="Next quote">→</button>
+                </div>
+            </div>
         </section>
 
         <!-- faq -->
         <section id="faq" class="faq section">
             <div class="faq-intro">
                 <h2 class="section-title">Questions</h2>
-                <p class="lead"><b>Can't find your answer?</b> <span>Schedule a call and we will walk you through it.</span></p>
+                <p class="lead"><b>Everything you need to know</b> <span>about working with us, from timelines to pricing.</span></p>
+                <div class="faq-card">
+                    <p class="faq-card-title">Still unsure?</p>
+                    <p>Book a free 20-minute call and we'll walk you through it.</p>
+                    <a href="#contact" class="schedule-call schedule-call-light">
+                        <span class="avatar avatar-sm avatar-orange"></span>
+                        <span class="schedule-call-text">
+                            <strong>Schedule Call</strong>
+                            <small><img src="assets/dot-black.svg" width="4" height="4" alt=""> with susan</small>
+                        </span>
+                    </a>
+                </div>
             </div>
             <div class="faq-list">
                 <details>
@@ -485,7 +516,7 @@
                     </ul>
                 </div>
             </div>
-            <p class="footer-logo" aria-hidden="true">ninona</p>
+            <p class="footer-logo" aria-hidden="true"><span style="--i:0">n</span><span style="--i:1">i</span><span style="--i:2">n</span><span style="--i:3">o</span><span style="--i:4">n</span><span style="--i:5">a</span></p>
             <div class="footer-bottom">
                 <span>© 2026 ninona. All rights reserved.</span>
                 <a href="#top">Back to top ↑</a>
@@ -511,8 +542,8 @@
         // scroll reveal + stat count-up
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const revealTargets = document.querySelectorAll(
-            '.section-title, .split-row, .project, .features > li, .founder-profile, .founder-quote, .circles, ' +
-            '.stats-grid li, .clients, .service-row, .process-steps li, .testimonial, .faq-intro, .faq-list details, ' +
+            '.section-title, .split-row, .project, .features > li, .manifesto-wrap .eyebrow, .manifesto-sign, .circles, ' +
+            '.stats-grid li, .clients, .service-row, .process-steps li, .t-stage, .faq-list details, ' +
             '.contact-copy, .contact-scene, .footer-cols > div'
         );
 
@@ -527,6 +558,52 @@
             };
             requestAnimationFrame(tick);
         };
+
+        // manifesto words fill in, process timeline fills, scroll progress bar
+        const manifesto = document.querySelector('.manifesto');
+        const words = manifesto.textContent.trim().split(/\s+/);
+        manifesto.innerHTML = words.map((w) => '<span>' + w + '</span>').join(' ');
+        const wordEls = manifesto.querySelectorAll('span');
+        const timeline = document.querySelector('.process-timeline');
+        const steps = timeline.querySelectorAll('.process-steps li');
+        const progressBar = document.querySelector('.scroll-progress');
+        const clamp = (v) => Math.min(Math.max(v, 0), 1);
+
+        const onScroll = () => {
+            const vh = window.innerHeight;
+            const doc = document.documentElement;
+            progressBar.style.transform = 'scaleX(' + clamp(scrollY / (doc.scrollHeight - vh)) + ')';
+
+            const m = manifesto.getBoundingClientRect();
+            const mp = reduceMotion ? 1 : clamp((vh * 0.8 - m.top) / (m.height + vh * 0.3));
+            const lit = Math.round(mp * wordEls.length);
+            wordEls.forEach((el, i) => el.classList.toggle('is-lit', i < lit));
+
+            const t = timeline.getBoundingClientRect();
+            const tp = reduceMotion ? 1 : clamp((vh * 0.85 - t.top) / (t.height + vh * 0.25));
+            timeline.style.setProperty('--progress', tp);
+            steps.forEach((el, i) => el.classList.toggle('is-active', tp >= i / steps.length + 0.02));
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
+
+        // testimonial slider
+        const slides = document.querySelectorAll('.t-slide');
+        const bars = document.querySelectorAll('.t-bar');
+        let current = 0;
+        let timer;
+        const show = (i) => {
+            current = (i + slides.length) % slides.length;
+            slides.forEach((el, n) => el.classList.toggle('is-active', n === current));
+            bars.forEach((el, n) => el.classList.toggle('is-active', n === current));
+            clearTimeout(timer);
+            if (!reduceMotion) timer = setTimeout(() => show(current + 1), 6000);
+        };
+        bars.forEach((el, n) => el.addEventListener('click', () => show(n)));
+        document.querySelectorAll('.t-arrow').forEach((el) =>
+            el.addEventListener('click', () => show(current + Number(el.dataset.dir))));
+        show(0);
 
         if (!reduceMotion && 'IntersectionObserver' in window) {
             revealTargets.forEach((el) => {
