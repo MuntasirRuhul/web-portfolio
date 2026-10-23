@@ -2298,118 +2298,230 @@ a {
     font-size: clamp(22px, 2vw, 28px);
 }
 
-.bubbles-title {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+/* shelf: the title is the first tape */
+.tape-title {
+    background: var(--black);
+    color: var(--orange);
 }
 
-/* ---------- faq: horizon ---------- */
-
-.horizon-head {
-    padding-bottom: 72px;
+.tape-title .tape-label {
+    background: var(--orange);
+    height: 24px;
 }
 
-.horizon-head {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
+.tape-title .tape-name {
+    font-size: 64px;
+    letter-spacing: -0.02em;
 }
 
-.horizon {
+.tape-title .tape-meta {
+    color: var(--white);
+}
+
+/* testimonials: vertical title beside the bubbles */
+.bubbles-sec {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 56px;
     max-width: var(--max);
     margin: 0 auto;
-    padding: 0 var(--gutter);
+    padding: 150px var(--gutter);
+}
+
+.bubbles-sec.bg-cream {
+    max-width: none;
+    padding-left: max(var(--gutter), calc(50vw - 640px));
+    padding-right: max(var(--gutter), calc(50vw - 640px));
+}
+
+.bubbles-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(72px, 8vw, 128px);
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+.bubbles {
+    height: 600px;
+}
+
+.bubble-b1 { width: 62%; }
+.bubble-b2 { width: 40%; }
+.bubble-b3 { top: 330px; right: 4%; width: 48%; }
+
+/* ---------- faq: rotary dial ---------- */
+
+.dial-sec {
+    align-items: center;
+    gap: 24px;
+}
+
+.dial-eyebrow {
+    align-self: flex-start;
+}
+
+.dial-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 24px;
+    aspect-ratio: 1100 / 760;
+}
+
+.dial {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 54%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #f6f6f6, var(--tv-gray) 70%);
+    box-shadow: inset 0 -14px 0 rgba(0, 0, 0, 0.08), 0 40px 60px -30px rgba(0, 0, 0, 0.4);
+    transform: translate(-50%, -50%);
+}
+
+.dial-hole {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: 15%;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.18);
+    transform: translate(-50%, -50%);
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    color: var(--black);
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dial-hole:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.dial-hole.is-active {
+    background: var(--orange);
+    color: var(--black);
+    box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.dial-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    grid-template-rows: auto auto;
-    grid-auto-flow: column;
+    width: 44%;
+    aspect-ratio: 1;
+    padding: 9%;
+    border-radius: 50%;
+    background: var(--black);
+    transform: translate(-50%, -50%);
+    place-items: center;
 }
 
-.hz-q {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 14px;
-    padding: 0 24px 32px;
-    border-left: 1px solid rgba(0, 0, 0, 0.14);
+.dial-a {
+    grid-area: 1 / 1;
+    font-weight: 500;
+    font-size: clamp(14px, 1.15vw, 17px);
+    line-height: 1.4;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
-.hz-q:first-child {
-    padding-left: 0;
-    border-left: 0;
+.dial-a.is-active {
+    opacity: 1;
+    visibility: visible;
 }
 
-.hz-num {
+.dial-a b {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 1.15em;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+.dial-stop {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    padding: 14px 18px;
+    border-radius: 30px;
+    background: var(--black);
+    transform: translate(-30%, -40%) rotate(-12deg);
     font-family: 'Anton', sans-serif;
     font-size: 15px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--white);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dial-stop:hover {
+    background: var(--orange);
+    color: var(--black);
+}
+
+.dial-q {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 230px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: clamp(17px, 1.6vw, 22px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: rgba(0, 0, 0, 0.62);
+    cursor: pointer;
+    transition: color 0.25s;
+}
+
+.dial-q span {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.04em;
     color: var(--orange-text);
 }
 
-.hz-q h3 {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: clamp(22px, 2vw, 28px);
-    line-height: 1.1;
-    letter-spacing: -0.04em;
+.dial-q-left { transform: translate(-100%, -50%); text-align: right; align-items: flex-end; }
+.dial-q-right { transform: translate(0, -50%); text-align: left; }
+.dial-q-mid { transform: translate(-50%, -100%); text-align: center; align-items: center; }
+
+.dial-q:hover,
+.dial-q.is-active {
+    color: var(--black);
 }
 
-/* answers sit on a full-bleed black band, like the hero */
-.hz-a {
-    position: relative;
-    padding: 32px 24px 110px;
-    background: var(--black);
-    color: rgba(255, 255, 255, 0.8);
-    border-left: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-/* the first answer carries one band that runs edge to edge behind the whole row */
-.hz-a:nth-child(2) {
-    z-index: 0;
-    padding-left: 0;
-    border-left: 0;
-}
-
-.hz-a:nth-child(2)::before {
+.dial-q.is-active::after {
     content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: -100vmax;
-    right: -100vmax;
-    background: var(--black);
-}
-
-.hz-a p {
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 1.45;
-}
-
-.hz-phone {
-    position: relative;
-    z-index: 2;
-    padding-bottom: 0;
-}
-
-.hz-phone .illo {
-    width: 120%;
-    margin: 0 0 -70px -10%;
-    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.35));
-}
-
-.hz-call {
-    padding-top: 90px;
-}
-
-.hz-call-title {
-    margin-bottom: 18px;
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 0.9;
-    color: var(--white);
+    width: 40px;
+    height: 3px;
+    margin-top: 6px;
+    background: var(--orange);
 }
 
 
@@ -2833,11 +2945,6 @@ a {
         overflow-x: auto;
         padding-top: 30px;
     }
-
-    .horizon {
-        grid-template-columns: repeat(5, minmax(180px, 1fr));
-        overflow-x: auto;
-    }
 }
 
 @media (max-width: 900px) {
@@ -2974,50 +3081,94 @@ a {
         width: auto;
         padding: 28px;
     }
+}
+
+@media (max-width: 900px) {
+    .bubbles-sec,
+    .bubbles-sec.bg-cream {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
 
     .bubbles-title {
-        position: static;
-        order: -1;
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 56px;
     }
 
-    .horizon-head {
+    .bubbles {
+        height: auto;
+    }
+
+    .tape-title .tape-name {
+        font-size: 40px;
+    }
+
+    .dial-stage {
+        aspect-ratio: auto;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding-bottom: 40px;
+        gap: 10px;
     }
 
-    .horizon {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-        grid-auto-flow: row;
-        overflow: visible;
+    .dial {
+        position: relative;
+        left: auto;
+        top: auto;
+        order: -1;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto 32px;
+        transform: none;
     }
 
-    .hz-q,
-    .hz-q:first-child {
-        padding: 32px 0 20px;
-        border-left: 0;
+    .dial-hole {
+        font-size: 16px;
     }
 
-    .hz-a,
-    .hz-a:nth-child(2) {
-        padding: 24px 0 32px;
-        border-left: 0;
-        box-shadow: 0 0 0 100vmax var(--black);
-        clip-path: inset(0 -100vmax);
+    .dial-center {
+        width: 54%;
+        height: 54%;
+        aspect-ratio: auto;
+        padding: 8%;
+        overflow: hidden;
     }
 
-    .hz-a:nth-child(2)::before {
+    .dial-a {
+        font-size: 11.5px;
+        line-height: 1.3;
+    }
+
+    .dial-a b {
+        margin-bottom: 4px;
+    }
+
+    .dial-stop {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .dial-q,
+    .dial-q-left,
+    .dial-q-right,
+    .dial-q-mid {
+        position: relative;
+        left: auto;
+        top: auto;
+        max-width: none;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 12px;
+        padding: 14px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.14);
+        transform: none;
+        text-align: left;
+    }
+
+    .dial-q.is-active::after {
         display: none;
-    }
-
-    .hz-phone .illo {
-        width: 220px;
-        margin: 0 0 -40px;
-    }
-
-    .hz-call {
-        padding-top: 60px;
     }
 }
 
