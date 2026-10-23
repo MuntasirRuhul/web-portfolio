@@ -773,37 +773,92 @@ a {
     margin: 0;
     padding: 0;
     list-style: none;
-    border-bottom: 1px solid var(--black);
 }
 
-.service-rows li {
-    display: grid;
-    grid-template-columns: 80px 1fr 370px;
-    align-items: center;
-    gap: 32px;
-    padding: 40px 0;
-    border-top: 1px solid var(--black);
-}
-
-.service-num {
-    font-family: 'Anton', sans-serif;
-    font-size: 22px;
-    line-height: 28px;
-    color: var(--orange);
+.service-row {
+    display: flex;
+    margin-bottom: -1px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 }
 
 .service-name {
-    font-family: 'Sora', sans-serif;
+    flex: 1 0 0;
+    padding: 48px 24px 48px 0;
     font-weight: 700;
-    font-size: clamp(28px, 3.33vw, 48px);
-    line-height: 1;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    transition: color 0.2s;
+    font-size: 36px;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.service-rows li:hover .service-name {
+.service-row:hover .service-name {
     color: var(--orange);
+    transform: translateX(12px);
+}
+
+.service-detail {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 48px 0 48px 80px;
+    border-left: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.service-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.service-chips li {
+    padding: 10px 16px;
+    border-radius: 24px;
+    background: #c3c3c3;
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.8);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.service-chips li:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.service-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.service-lead,
+.service-points li {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.service-lead b,
+.service-points b {
+    font-weight: 600;
+}
+
+.service-lead span,
+.service-points span {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.service-points {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 36px;
+    list-style: disc;
 }
 
 
@@ -1647,12 +1702,8 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .service-rows li {
-        grid-template-columns: 60px 1fr;
-    }
-
-    .service-rows .lead {
-        grid-column: 2;
+    .service-detail {
+        padding-left: 48px;
     }
 
     .faq {
@@ -1774,14 +1825,33 @@ a {
         border-left: 0;
     }
 
-    .service-rows li {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 28px 0;
+    .service-row {
+        flex-direction: column;
     }
 
-    .service-rows .lead {
-        grid-column: auto;
+    .service-name {
+        padding: 32px 0 20px;
+        font-size: 28px;
+    }
+
+    .service-detail {
+        gap: 28px;
+        padding: 0 0 32px;
+        border-left: 0;
+    }
+
+    .service-chips li {
+        font-size: 16px;
+    }
+
+    .service-lead,
+    .service-points li {
+        font-size: 20px;
+    }
+
+    .service-body,
+    .service-points {
+        gap: 20px;
     }
 
     .testimonial {
