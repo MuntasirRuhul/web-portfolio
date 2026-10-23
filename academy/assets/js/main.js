@@ -1,4 +1,6 @@
 (function () {
+  document.documentElement.classList.add('js-anim');
+
   // Mobile navigation
   var burger = document.getElementById('burger');
   var nav = document.getElementById('nav');

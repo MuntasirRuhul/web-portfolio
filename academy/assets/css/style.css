@@ -15,6 +15,8 @@
   --cyan: #7ff6f2;
   --mint: #5ff2bd;
   --red: #ff4d4d;
+  --blue: #3d47e6;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -207,6 +209,37 @@ button { font: inherit; cursor: pointer; }
 .section-head__text { max-width: 440px; color: var(--muted); font-size: 17px; }
 .section-head--center { flex-direction: column; align-items: center; text-align: center; gap: 0; }
 .section-head--center .h2 { max-width: 18ch; }
+
+/* ---------- Impact / about ---------- */
+.impact { padding: clamp(90px, 11vw, 150px) 0 0; text-align: center; }
+.impact__label { margin-bottom: 22px; }
+.impact__title {
+  font-size: clamp(28px, 3.4vw, 44px); font-weight: 500; letter-spacing: -.025em; line-height: 1.15;
+  max-width: 22ch; margin: 0 auto; text-wrap: balance;
+}
+.meter { width: min(100%, 560px); margin: 56px auto 0; text-align: left; }
+.meter__bars { display: flex; align-items: stretch; height: 108px; gap: 0; }
+.meter__bar { display: flex; align-items: center; padding: 0 14px; }
+.meter__bar--win {
+  flex: 0 0 64%; background: var(--blue); color: #fff; justify-content: space-between;
+  font-family: var(--mono); font-size: 14px; letter-spacing: .04em;
+  clip-path: inset(0 0 0 0); transition: clip-path 1.2s cubic-bezier(.2, .8, .2, 1);
+}
+.meter__bar--base { flex: 0 0 9%; background: #dfe6e2; color: var(--ink); justify-content: center; padding: 0; }
+.meter__ticks { flex: 1; display: flex; justify-content: space-evenly; }
+.meter__ticks i { width: 1px; background: linear-gradient(var(--line), transparent); }
+.meter__ticks i:nth-child(odd) { background: linear-gradient(#f3d6d6, transparent); }
+.meter__legend { display: flex; margin-top: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.meter__key { border-left: 1px solid currentColor; padding: 10px 0 0 6px; }
+.meter__key--win { flex: 0 0 64%; }
+.js-anim .meter:not(.is-in) .meter__bar--win { clip-path: inset(0 82% 0 0); }
+.impact__kicker {
+  margin-top: clamp(80px, 9vw, 120px); font-family: var(--font-display);
+  font-size: clamp(40px, 5.4vw, 72px); font-weight: 500; letter-spacing: -.035em; line-height: 1.05;
+}
+.impact__kicker span { display: inline-flex; align-items: center; gap: .08em; color: var(--blue); }
+.impact__kicker svg { width: .7em; height: .7em; }
+.impact__note { color: var(--muted); font-size: 17px; max-width: 46ch; margin: 20px auto 0; }
 
 /* ---------- Courses ---------- */
 .tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
@@ -494,6 +527,8 @@ button { font: inherit; cursor: pointer; }
   .float-card__num { font-size: 26px; }
   .float-card--cert { left: 0; bottom: 6%; font-size: 13px; }
   .logo-tile { width: 160px; height: 110px; }
+  .meter__bars { height: 84px; }
+  .meter__legend { font-size: 9.5px; }
   .logo-tile--stat { width: 200px; }
   .wm { font-size: 20px; }
   .course-grid, .reviews { grid-template-columns: 1fr; }
