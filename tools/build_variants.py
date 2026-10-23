@@ -36,7 +36,7 @@ def main():
     index = (ROOT / "index.html").read_text()
     head = index[: index.index("<body>")]
     header = cut(index, "    <!-- header -->", "    <main")
-    hero = cut(index, "        <!-- hero -->", "        <!-- about -->")
+    hero = cut(index, "        <!-- hero -->", "        <!-- about")
     work = cut(index, "        <!-- work -->", "        <!-- crossing marquees -->")
     footer = cut(index, "    <!-- footer -->", "    <!-- review-only")
 
