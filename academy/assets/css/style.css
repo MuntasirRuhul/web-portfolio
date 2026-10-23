@@ -155,36 +155,34 @@ button { font: inherit; cursor: pointer; }
     linear-gradient(0deg, transparent 49.6%, rgba(0, 0, 0, .12) 49.8%, transparent 50.2%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.poster__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; padding-block: 64px 80px; }
-.poster__copy { position: relative; min-width: 0; }
+.poster__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-block: 72px 88px; }
+.poster__copy { min-width: 0; }
 
+/* Dateline and headline share one width so they read as a single lockup */
+.poster__head { width: max-content; max-width: 100%; }
 .dateline {
-  display: flex; align-items: center; gap: 18px; max-width: 520px;
-  font-family: "Archivo Black", var(--font-display); font-size: 15px; letter-spacing: .06em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 16px;
+  font-family: "Archivo Black", var(--font-display); font-size: 14px; letter-spacing: .08em; text-transform: uppercase;
 }
-.dateline i { flex: 1; height: 3px; background: currentColor; }
-
+.dateline i { flex: 1; height: 2px; background: currentColor; opacity: .9; }
 .poster__title {
   font-family: "Anton", "Impact", "Arial Narrow", sans-serif; font-weight: 400; text-transform: uppercase;
-  font-size: clamp(110px, 15vw, 232px); line-height: .84; letter-spacing: -.005em;
-  margin: 28px 0 30px; color: #fff;
+  font-size: clamp(104px, 12vw, 184px); line-height: .9; letter-spacing: .01em;
+  margin-top: 18px; color: #fff;
 }
 .poster__title span { display: block; }
-.poster__lead { font-size: 18px; max-width: 42ch; color: rgba(255, 255, 255, .86); }
-.poster__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-.btn--line { border-color: rgba(255, 255, 255, .7); color: #fff; }
-.btn--line:hover { background: #fff; color: var(--poster-blue, var(--ink)); }
-.poster__proof { display: flex; align-items: center; gap: 10px; margin-top: 28px; font-size: 14px; color: rgba(255, 255, 255, .8); }
-.poster__proof strong { color: #fff; }
-.poster__note {
-  position: absolute; right: -9%; top: 120px; transform: rotate(-9deg);
-  font-family: "Permanent Marker", "Comic Sans MS", cursive; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.05;
-  color: var(--lime); text-align: center;
-}
 
-.poster__collage { position: relative; display: grid; justify-items: center; padding: 20px 0 40px; }
+.poster__lead { margin-top: 32px; font-size: 19px; line-height: 1.5; max-width: 34ch; text-wrap: pretty; color: rgba(255, 255, 255, .88); }
+.poster__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.btn--line { border-color: rgba(255, 255, 255, .6); color: #fff; }
+.btn--line:hover { background: #fff; color: var(--poster-blue, var(--ink)); }
+.poster__proof { margin-top: 18px; font-size: 14px; color: rgba(255, 255, 255, .72); }
+.poster__proof .stars { font-size: 13px; margin-right: 4px; }
+.poster__proof strong { color: #fff; }
+
+.poster__collage { position: relative; display: grid; justify-items: center; }
 .poster__photo {
-  position: relative; margin: 0; width: min(100%, 440px); aspect-ratio: 4 / 5;
+  position: relative; margin: 0; width: min(100%, 420px); aspect-ratio: 4 / 5;
   background: #e8e8e4; transform: rotate(-3deg); overflow: hidden;
   box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .55);
 }
@@ -197,46 +195,29 @@ button { font: inherit; cursor: pointer; }
   filter: grayscale(1) contrast(1.18) brightness(1.04);
 }
 .nametag {
-  position: absolute; right: -2px; bottom: 26%; z-index: 1;
-  background: #1f4a8a; color: #fff; padding: 12px 18px; text-transform: uppercase; line-height: 1.15;
-  font-size: 18px; letter-spacing: .03em;
+  position: absolute; right: 0; top: 18%; z-index: 1;
+  background: var(--ink); color: #fff; padding: 10px 14px; text-transform: uppercase; line-height: 1.15;
+  font-size: 13px; letter-spacing: .08em;
 }
 .nametag span, .nametag strong { display: block; }
-.nametag strong { font-family: "Archivo Black", var(--font-display); font-weight: 400; }
-
-.poster__vert {
-  position: absolute; left: calc(50% - min(50%, 220px) - 54px); top: 50%;
-  transform: translateY(-50%) rotate(-90deg); transform-origin: center;
-  font-family: "Archivo Black", var(--font-display); font-size: clamp(56px, 6vw, 92px); line-height: 1;
-  color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, .85); white-space: nowrap; pointer-events: none;
-  width: 0; display: flex; justify-content: center;
-}
+.nametag strong { font-family: "Archivo Black", var(--font-display); font-weight: 400; font-size: 16px; letter-spacing: .02em; }
 
 .poster__label {
-  position: relative; z-index: 2; margin-top: -56px; display: grid; justify-items: center;
+  position: relative; z-index: 2; margin-top: -52px; display: grid; justify-items: center;
   font-family: "Archivo Black", var(--font-display); text-transform: uppercase; line-height: .9;
 }
 .poster__label-a {
-  font-size: clamp(54px, 6.6vw, 104px); color: var(--ink); background: var(--lime);
-  padding: .06em .14em 0; transform: rotate(-2deg); box-shadow: 0 0 0 2px var(--ink) inset;
+  font-size: clamp(52px, 6vw, 92px); color: var(--ink); background: var(--lime);
+  padding: .08em .16em .02em; transform: rotate(-2deg);
 }
 .poster__label-b {
-  font-size: clamp(30px, 3.4vw, 52px); color: #fff; background: var(--ink);
-  padding: .14em .5em .08em; margin-top: -4px; transform: translate(18%, 0) rotate(-2deg);
+  font-size: clamp(28px, 3vw, 46px); color: #fff; background: var(--ink);
+  padding: .16em .5em .08em; margin-top: -4px; transform: translate(22%, 0) rotate(-2deg);
 }
 
 .tape {
-  position: absolute; z-index: 3; width: 120px; height: 34px;
+  position: absolute; z-index: 3; top: -14px; left: 50%; width: 110px; height: 30px; transform: translateX(-30%) rotate(-6deg);
   background: rgba(240, 240, 232, .72); box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
-  backdrop-filter: blur(1px);
-}
-.tape--a { top: 8px; left: calc(50% - 150px); transform: rotate(-22deg); }
-.tape--b { top: 34%; right: 4%; transform: rotate(68deg); width: 90px; }
-.ticket {
-  position: absolute; right: 0; top: 4%; z-index: 3; transform: rotate(8deg);
-  font-family: ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: .14em;
-  background: var(--ink); color: #fff; padding: 10px 12px;
-  border-left: 6px dashed var(--lime);
 }
 
 .avatar {
@@ -544,7 +525,7 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 1100px) {
   .nav { gap: 20px; }
   .header__divider { display: none; }
-  .poster__title { font-size: clamp(96px, 13vw, 170px); }
+  .poster__title { font-size: clamp(96px, 11vw, 150px); }
   .header__left { gap: 24px; }
   .features { grid-template-columns: repeat(2, 1fr); }
 }
@@ -564,10 +545,9 @@ button { font: inherit; cursor: pointer; }
   .nav__mobile-actions .btn { flex: 1; }
 
 
-  .poster__grid { grid-template-columns: 1fr; padding-block: 48px 64px; gap: 24px; }
+  .poster__grid { grid-template-columns: 1fr; padding-block: 56px 72px; gap: 64px; }
   .poster__bolt { clip-path: polygon(70% 50%, 96% 50%, 80% 70%, 100% 70%, 100% 76%, 34% 100%, 12% 100%, 50% 80%, 34% 80%); }
-  .poster__note { right: 4%; top: 96px; }
-  .poster__collage { max-width: 520px; width: 100%; margin: 24px auto 0; }
+  .poster__collage { max-width: 460px; width: 100%; margin: 0 auto; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 16px; }
   .section-head--center { align-items: center; }
   .course-grid, .reviews { grid-template-columns: 1fr 1fr; }
@@ -589,14 +569,12 @@ button { font: inherit; cursor: pointer; }
 
 @media (max-width: 640px) {
   .announce__link { display: none; }
-  .poster__title { font-size: clamp(84px, 30vw, 130px); margin: 22px 0 22px; }
-  .poster__lead { font-size: 16px; }
+  .poster__title { font-size: clamp(88px, 31vw, 128px); margin-top: 14px; }
+  .poster__head { width: 100%; }
+  .poster__lead { font-size: 17px; }
   .poster__ctas .btn { flex: 1 1 100%; }
-  .poster__note { position: static; transform: rotate(-6deg); margin-top: 28px; text-align: left; }
+  .poster__lead { margin-top: 24px; }
   .dateline { font-size: 12px; gap: 12px; }
-  .poster__vert { display: none; }
-  .ticket { right: -4px; font-size: 10px; }
-  .nametag { font-size: 14px; padding: 9px 14px; }
   .header__inner { height: 68px; }
   .nav { top: 68px; }
   .logo-tile { width: 160px; height: 110px; }
