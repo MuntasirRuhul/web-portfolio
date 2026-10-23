@@ -1,0 +1,40 @@
+# Captures the reference Tutor LMS demo sites (screenshots + page text) into research/tutorlms/.
+name: Capture Tutor LMS references
+
+on:
+  push:
+    branches: [claude/gracious-fermat-bqbft2]
+    paths:
+      - .github/workflows/capture-tutorlms.yml
+      - research/tutorlms/capture.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null
+          npm install playwright@1.47.2
+          npx playwright install --with-deps chromium
+      - name: Capture
+        run: node research/tutorlms/capture.mjs
+      - name: Get Tutor LMS plugin templates list
+        run: |
+          git clone --depth 1 https://github.com/themeum/tutor.git /tmp/tutor || true
+          if [ -d /tmp/tutor/templates ]; then (cd /tmp/tutor && find templates -name '*.php' | sort) > research/tutorlms/plugin-templates.txt; fi
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add research/tutorlms
+          git diff --cached --quiet || { git commit -m "Capture Tutor LMS reference sites"; git pull --rebase; git push; }
