@@ -1,108 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ninona — Branding and UI / UX Design Agency</title>
+    <meta name="description" content="ninona is a global branding and UI / UX design agency helping startups and small companies with beautiful, functional, and timeless design interfaces.">
 
-        <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Display:wght@900&family=Inter:wght@400;600;700&family=Livvic:wght@700&family=Mona+Sans:wght@600&family=Plus+Jakarta+Sans:wght@500;600;700&family=Sora:wght@400;700&family=Urbanist:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!--main navigation bar-->
-    <div class="container">
-           
-            <img src="images/navbar.png" alt="Snow" style="width:100%;">
-            <div class="top-left">
-                <h4>VISEROY IMIGRESEN AGENCY</h4>
-                <h6>LOCAL AGECNY FOR VISA, eVISA PROCESSOR</h6>
-            </div>
-            <div class="textlogo">
-                <img src="images/textlogo.png" alt="">
-            </div>
-            <div class="bottom-right">
-                <h6>Malaysia Electronic Visa Facititation & Services</h6>
-            </div>
-            <div class="centered">Centered</div>
-            <div class="logo"> 
-                <img src="images/logo.svg" alt="">
-            </div>
-      
-    </div>
-    <!--main navigation endend here-->
+    <!-- header -->
+    <header class="site-header">
+        <a href="#top" class="logo">ninona</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+            <img src="assets/menu-icon.svg" width="36" height="36" alt="">
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    
-    <!--body start here-->
-    <div class="body">
-       
-        
-        <!--main BG image-->
-        <img src="images/building.png" alt="">
-        
-        <div class="leftslider">
-                <img src="images/leftslider.png" alt="">
-            </div>
-            <div class="boxinfo">
-                <div class="boxtitle">
-                <b>Application for eVISA for student,<br> eVISA for Expatriate and eVISA for <br> Medical traveller  are now open</b>
-                </div>
-                <br>
-                <ul>eVISA facilities for:<br>
-                    - eVISA for Student <br>
-                    - eVISA for Expatriate <br>
-                    - eVISA for Medical traveller <br>
-                </ul> 
-                <br>
-                <b>now made available effective 30th June <br> 2020. Please note that all visa applicant is <br> required to follow all the terms and conditions <br> issued by the Malaysian Government.</b>  
-                <br>
-                <small class="boxfooter">Updated 15th November 2021</small>
-                </div>
+    <main id="top">
 
-                 
-              <!--authenticity button and language button -->
-                    <div class="authenticity">
-                        <img src="images/home.svg" alt="">
-                        <div class="divider"></div>
-                        <a href="website-link-goes-here" target="_blank"> Check eVISA/eNTRI Authenticity</a>
-                        <div class="searchicon">
-                            <img src="images/search.svg" alt="">
+        <!-- hero -->
+        <section class="hero">
+            <div class="hero-intro">
+                <h1 class="hero-title">ninona <span class="muted">is</span> <span class="muted">a global branding and UI / UX design agency</span></h1>
+                <a href="#contact" class="schedule-call">
+                    <img src="assets/avatar-susan.svg" width="32" height="32" alt="">
+                    <span class="schedule-call-text">
+                        <strong>Schedule Call</strong>
+                        <small><img src="assets/dot-black.svg" width="4" height="4" alt=""> with susan</small>
+                    </span>
+                </a>
+            </div>
+
+            <div class="hero-tv" aria-hidden="true">
+                <div class="tv-stand">
+                    <img class="tv-stand-front" src="assets/tv-stand-front.svg" alt="">
+                    <img class="tv-stand-side" src="assets/tv-stand-side.svg" alt="">
+                    <span class="tv-stand-top"></span>
+                </div>
+                <div class="tv tv-orange">
+                    <img class="tv-screen" src="assets/hero-tv-screen.svg" alt="">
+                    <div class="tv-controls">
+                        <img class="tv-knob" src="assets/hero-tv-knob-1.svg" alt="">
+                        <img class="tv-knob" src="assets/hero-tv-knob-2.svg" alt="">
+                        <div class="tv-slots">
+                            <img src="assets/tv-slot-1.svg" alt="">
+                            <img src="assets/tv-slot-2.svg" alt="">
                         </div>
+                        <img class="tv-dots" src="assets/hero-tv-dots.svg" alt="">
                     </div>
+                </div>
+            </div>
 
+            <div class="hero-band">
+                <div class="hero-band-content">
+                    <p class="lead lead-light"><b>Helping startups</b> <span>and small companies with beautiful, functional, and timeless design interfaces.</span></p>
+                    <a href="#contact" class="start-project">
+                        <img src="assets/dot-white.svg" width="8" height="8" alt="">
+                        Start Project
+                    </a>
+                </div>
+            </div>
 
-                    <div class="language">
-                        
-                        <div class="divider"></div>
-                        <p> English</p>
-                        
-                           
+            <div class="stripes" aria-hidden="true">
+                <span class="stripe-blue"></span>
+                <span class="stripe-yellow"></span>
+                <span class="stripe-pink"></span>
+                <span class="stripe-cyan"></span>
+                <span class="stripe-blue"></span>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section id="about" class="about section">
+            <ul class="features">
+                <li class="feature">
+                    <span class="feature-icon"></span>
+                    Seamless Communication
+                </li>
+                <li class="feature-divider" aria-hidden="true"></li>
+                <li class="feature">
+                    <span class="feature-icon"></span>
+                    Scalable Solution
+                </li>
+                <li class="feature-divider" aria-hidden="true"></li>
+                <li class="feature">
+                    <span class="feature-icon"></span>
+                    Satisfaction Guaranteed
+                </li>
+            </ul>
+
+            <div class="founder">
+                <div class="founder-profile">
+                    <img src="assets/avatar-founder.svg" width="95" height="95" alt="Sujon Hossain">
+                    <div>
+                        <p class="founder-name">Sujon Hossain</p>
+                        <p class="founder-role">Founder &amp; Head of Design</p>
+                    </div>
+                </div>
+                <div class="founder-quote">
+                    <p>It shapes first impressions, guides customer decisions, and makes your brand impossible to ignore. Great design is clear, purposeful, and built to move people toward action.</p>
+                    <a href="#contact" class="talk-link">lets talk</a>
+                </div>
+            </div>
+
+            <img class="circles" src="assets/circles.svg" width="1280" height="336" alt="" aria-hidden="true">
+        </section>
+
+        <!-- work -->
+        <section id="work" class="work section">
+            <h2 class="section-title">Aesthetic meets the functionality</h2>
+
+            <article class="project">
+                <div class="project-info">
+                    <div>
+                        <p class="project-client">FitPro</p>
+                        <h3 class="project-name">Multi-Platform Advertising</h3>
+                    </div>
+                    <p class="lead"><b>Helping startups</b> <span>and small companies with beautiful, functional, and timeless design interfaces.</span></p>
+                </div>
+                <div class="tv tv-gray" aria-hidden="true">
+                    <img class="tv-screen" src="assets/tv-screen.svg" alt="">
+                    <div class="tv-controls">
+                        <img class="tv-knob" src="assets/tv-knob-1.svg" alt="">
+                        <img class="tv-knob" src="assets/tv-knob-2a.svg" alt="">
+                        <div class="tv-slots">
+                            <img src="assets/tv-slot-1.svg" alt="">
+                            <img src="assets/tv-slot-2.svg" alt="">
                         </div>
+                        <img class="tv-dots" src="assets/tv-dots-a.svg" alt="">
+                    </div>
+                </div>
+            </article>
 
+            <div class="split-row">
+                <p class="lead lead-narrow"><b>Helping startups</b> <span>and small companies with beautiful, functional, and timeless design interfaces.</span></p>
+                <ul class="tags">
+                    <li>mobile app</li>
+                    <li>mvp</li>
+                    <li>no code</li>
+                    <li>web app</li>
+                </ul>
+            </div>
+        </section>
 
-                    
+        <!-- services -->
+        <section id="services" class="services section">
+            <div class="services-head">
+                <h2 class="section-title section-title-xl">Creating Beautiful</h2>
+                <div class="split-row">
+                    <p class="lead lead-narrow"><b>Helping startups</b> <span>and small companies with beautiful, functional, and timeless design interfaces.</span></p>
+                    <ul class="tags">
+                        <li>mobile app</li>
+                        <li>mvp</li>
+                        <li>no code</li>
+                        <li>web app</li>
+                    </ul>
+                </div>
+            </div>
 
-                    
-            
-              <!--authenticity button and language button end here -->
+            <article class="project">
+                <div class="project-info">
+                    <div>
+                        <p class="project-client">FitPro</p>
+                        <h3 class="project-name">Multi-Platform Advertising</h3>
+                    </div>
+                    <p class="project-scope">Paid Social,<br>Google Ads,<br>Landing Page Optimization</p>
+                </div>
+                <div class="tv tv-gray" aria-hidden="true">
+                    <img class="tv-screen" src="assets/tv-screen.svg" alt="">
+                    <div class="tv-controls">
+                        <img class="tv-knob" src="assets/tv-knob-1.svg" alt="">
+                        <img class="tv-knob" src="assets/tv-knob-2b.svg" alt="">
+                        <div class="tv-slots">
+                            <img src="assets/tv-slot-1.svg" alt="">
+                            <img src="assets/tv-slot-2.svg" alt="">
+                        </div>
+                        <img class="tv-dots" src="assets/tv-dots-b.svg" alt="">
+                    </div>
+                </div>
+            </article>
 
-    </div>
-    <!--body end here-->
+            <div id="contact" class="cta">
+                <p class="lead lead-large"><b>Helping startups</b> <span>and small companies with beautiful, functional, and timeless design interfaces.</span></p>
+                <a href="#top" class="talk-link talk-link-large">lets talk</a>
+            </div>
+        </section>
 
+        <img class="cta-graphic" src="assets/cta-graphic.svg" width="868" height="671" alt="" aria-hidden="true">
+    </main>
 
-    
-   
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.getElementById('site-nav');
 
+        toggle.addEventListener('click', () => {
+            const open = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!open));
+            toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+            nav.classList.toggle('is-open', !open);
+        });
 
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        nav.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') toggle.click();
+        });
+    </script>
 </body>
 </html>
