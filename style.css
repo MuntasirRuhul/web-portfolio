@@ -775,6 +775,13 @@ a {
     list-style: none;
 }
 
+/* lines run edge to edge, content stays on the grid */
+.service-row,
+.clients {
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
+}
+
 .service-row {
     display: flex;
     margin-bottom: -1px;
