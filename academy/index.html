@@ -259,81 +259,110 @@
       </div>
     </section>
 
-    <!-- Program / roadmap -->
+    <!-- Program map -->
     <section class="section section--soft" id="program">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="label">03 / How it works</p>
-            <h2 class="h2">A clear path from stuck to scaling.</h2>
+            <p class="label">How it works</p>
+            <h2 class="h2">Six weeks. Four moves. One plan you'll use.</h2>
           </div>
-          <p class="section-head__text">No 80-hour video libraries. Short lessons, real worksheets and one decision to make each week — so you finish, and it sticks.</p>
+          <p class="section-head__text">Every week has one live call, one decision and one thing you ship. Here's the whole cohort on one page.</p>
         </div>
 
-        <div class="program">
-          <figure class="philosophy reveal">
-            <img src="assets/img/student.jpg" alt="Smiling student looking up at the sky" loading="lazy">
-            <blockquote class="philosophy__quote">
-              <p>“Strategy isn't a document. It's the handful of decisions you make every week — I teach you to make them well.”</p>
-              <cite>Daniel Leoprado</cite>
-            </blockquote>
-            <p class="philosophy__word" aria-hidden="true">PHILOSOPHY</p>
-          </figure>
+        <div class="map reveal" role="table" aria-label="Six-week program schedule">
+          <p class="map__label map__label--weeks">Week</p>
+          <p class="map__label map__label--phase">Phase</p>
+          <p class="map__label map__label--call">Live call</p>
+          <p class="map__label map__label--ship">You ship</p>
+          <p class="map__label map__label--hrs">Time / week</p>
 
-          <div class="roadmap reveal" aria-label="Program roadmap">
-            <div class="node node--dark">
-              <p class="node__week"><span class="dot dot--lime"></span>Week 01–02</p>
-              <h3>Diagnose</h3>
-              <div class="chips"><span>Market audit</span><span>Offer teardown</span></div>
-            </div>
-            <div class="node node--light node--left">
-              <p class="node__week"><span class="dot"></span>Week 03</p>
-              <h3>Position</h3>
-              <div class="chips"><span>Ideal client</span><span>Messaging</span></div>
-            </div>
-            <div class="node node--light node--right">
-              <p class="node__week"><span class="dot"></span>Week 04</p>
-              <h3>Price</h3>
-              <div class="chips"><span>Value pricing</span><span>Packaging</span></div>
-            </div>
-            <div class="node node--lime">
-              <p class="node__week"><span class="dot"></span>Week 05–06</p>
-              <h3>Scale</h3>
-              <div class="chips"><span>Finance model</span><span>Growth plan</span></div>
-            </div>
+          <div class="map__phases" aria-hidden="true">
+            <span class="ph ph--diagnose" style="--from:1;--to:3">Diagnose</span>
+            <span class="ph ph--position" style="--from:3;--to:4">Position</span>
+            <span class="ph ph--price" style="--from:4;--to:5">Price</span>
+            <span class="ph ph--scale" style="--from:5;--to:7">Scale</span>
+          </div>
+
+          <div class="wk wk--diagnose">
+            <p class="wk__head"><span class="wk__num">W01</span><span class="wk__date">Nov 18</span><span class="wk__phase">Diagnose</span></p>
+            <div class="wk__call"><strong>Market audit</strong><span>Where you actually win, with numbers</span></div>
+            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Market map</p>
+            <p class="wk__hrs"><span class="wk__bar" style="--w:62%"></span><span class="num">2.5 h</span></p>
+          </div>
+          <div class="wk wk--diagnose">
+            <p class="wk__head"><span class="wk__num">W02</span><span class="wk__date">Nov 25</span><span class="wk__phase">Diagnose</span></p>
+            <div class="wk__call"><strong>Offer teardown</strong><span>Strip your offer back to what sells</span></div>
+            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Offer v1</p>
+            <p class="wk__hrs"><span class="wk__bar" style="--w:75%"></span><span class="num">3 h</span></p>
+          </div>
+          <div class="wk wk--position">
+            <p class="wk__head"><span class="wk__num">W03</span><span class="wk__date">Dec 2</span><span class="wk__phase">Position</span></p>
+            <div class="wk__call"><strong>Ideal client</strong><span>Pick the buyer you can serve best</span></div>
+            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Messaging doc</p>
+            <p class="wk__hrs"><span class="wk__bar" style="--w:62%"></span><span class="num">2.5 h</span></p>
+          </div>
+          <div class="wk wk--price">
+            <p class="wk__head"><span class="wk__num">W04</span><span class="wk__date">Dec 9</span><span class="wk__phase">Price</span></p>
+            <div class="wk__call"><strong>Value pricing</strong><span>Price on outcomes, not hours</span></div>
+            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Price sheet</p>
+            <p class="wk__hrs"><span class="wk__bar" style="--w:88%"></span><span class="num">3.5 h</span></p>
+          </div>
+          <div class="wk wk--scale">
+            <p class="wk__head"><span class="wk__num">W05</span><span class="wk__date">Dec 16</span><span class="wk__phase">Scale</span></p>
+            <div class="wk__call"><strong>Finance model</strong><span>The three numbers that run the business</span></div>
+            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Cash model</p>
+            <p class="wk__hrs"><span class="wk__bar" style="--w:75%"></span><span class="num">3 h</span></p>
+          </div>
+          <div class="wk wk--scale">
+            <p class="wk__head"><span class="wk__num">W06</span><span class="wk__date">Dec 23</span><span class="wk__phase">Scale</span></p>
+            <div class="wk__call"><strong>Growth plan</strong><span>Turn it all into a 90-day plan</span></div>
+            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>90-day plan</p>
+            <p class="wk__hrs"><span class="wk__bar" style="--w:62%"></span><span class="num">2.5 h</span></p>
           </div>
         </div>
 
-        <ul class="features">
-          <li><strong>Bite-size lessons</strong><span>8–12 min videos with transcripts</span></li>
-          <li><strong>Templates &amp; models</strong><span>Notion, Sheets &amp; Excel included</span></li>
-          <li><strong>Private community</strong><span>Ask questions, share wins</span></li>
-          <li><strong>Lifetime access</strong><span>Including all future updates</span></li>
-        </ul>
+        <div class="outcome">
+          <p class="outcome__label">By Dec 23 you have</p>
+          <ul class="outcome__list">
+            <li>A priced, positioned offer</li>
+            <li>A cash model you update monthly</li>
+            <li>A 90-day growth plan</li>
+          </ul>
+          <p class="outcome__total"><span class="num">≈ 17 h</span> total, live calls recorded</p>
+        </div>
       </div>
     </section>
 
     <!-- Instructor -->
-    <section class="section instructor" id="instructor">
-      <div class="container instructor__grid">
-        <div class="instructor__media reveal">
-          <div class="instructor__frame">
-            <img src="assets/img/instructor.webp" alt="Portrait of Daniel Leoprado" loading="lazy">
+    <section class="instructor" id="instructor">
+      <div class="container">
+        <div class="profile">
+          <p class="label label--light profile__label">Your instructor</p>
+          <figure class="profile__photo reveal">
+            <img src="assets/img/instructor.webp" alt="Portrait of Daniel Leoprado" width="747" height="850" loading="lazy">
+          </figure>
+          <h2 class="profile__name"><span>Daniel</span><span>Leoprado</span></h2>
+          <div class="profile__body">
+            <p class="profile__role">Founder · Operator · Strategy consultant</p>
+            <blockquote class="profile__quote">“Strategy isn't a document. It's the handful of decisions you make every week. I teach you to make them well.”</blockquote>
+            <p class="profile__bio">I started my first company at 24 and nearly ran it out of cash twice. Since then I've co-founded three businesses and advised 60+ owners on strategy and pricing. This academy is the course I wish I'd had.</p>
+            <dl class="creds">
+              <div><dt class="num">15</dt><dd>Years operating &amp; consulting</dd></div>
+              <div><dt class="num">60+</dt><dd>Owners advised 1:1</dd></div>
+              <div><dt class="num">12.4k</dt><dd>Students taught</dd></div>
+            </dl>
           </div>
-          <div class="instructor__sig">Daniel Leoprado<span>Founder &amp; instructor</span></div>
         </div>
-        <div class="instructor__copy reveal">
-          <p class="label label--light">04 / Your instructor</p>
-          <h2 class="h2">I've built, broken and fixed businesses for 15 years. Now I teach what works.</h2>
-          <p>I started my first company at 24 and nearly ran it out of cash twice. Since then I've co-founded three businesses, advised 60+ owners on strategy and pricing, and spent a decade as a growth consultant.</p>
-          <p>Leoprado Academy is the course I wish I'd had — no theory for its own sake, just the frameworks I still use every week.</p>
-          <dl class="creds">
-            <div><dt>15 yrs</dt><dd>Operator &amp; consultant</dd></div>
-            <div><dt>3</dt><dd>Companies co-founded</dd></div>
-            <div><dt>12.4k</dt><dd>Students taught</dd></div>
-          </dl>
-          <a href="#" class="btn btn--light btn--lg">Read my story</a>
-        </div>
+
+        <ol class="career" aria-label="Career timeline">
+          <li><span class="num">2011</span>First company, a two-person agency</li>
+          <li><span class="num">2013</span>Two months from running out of cash</li>
+          <li><span class="num">2016</span>Co-founded a B2B SaaS, sold in 2020</li>
+          <li><span class="num">2018</span>Started consulting on strategy &amp; pricing</li>
+          <li><span class="num">2022</span>Launched Leoprado Academy</li>
+          <li class="is-now"><span class="num">2026</span>Cohort #08, 12.4k students</li>
+        </ol>
       </div>
     </section>
 
