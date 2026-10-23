@@ -259,137 +259,80 @@
       </div>
     </section>
 
-    <!-- Program map -->
-    <section class="section section--soft" id="program">
+    <!-- How it works: growth staircase -->
+    <section class="steps" id="program" aria-labelledby="steps-title">
       <div class="container">
-        <div class="section-head">
-          <div>
+        <div class="steps__grid reveal">
+          <div class="steps__head">
             <p class="label">How it works</p>
-            <h2 class="h2">Six weeks. Four moves. One plan you'll use.</h2>
-          </div>
-          <p class="section-head__text">Every week has one live call, one decision and one thing you ship. Here's the whole cohort on one page.</p>
-        </div>
-
-        <div class="map reveal" role="table" aria-label="Six-week program schedule">
-          <p class="map__label map__label--weeks">Week</p>
-          <p class="map__label map__label--phase">Phase</p>
-          <p class="map__label map__label--call">Live call</p>
-          <p class="map__label map__label--ship">You ship</p>
-          <p class="map__label map__label--hrs">Time / week</p>
-
-          <div class="map__phases" aria-hidden="true">
-            <span class="ph ph--diagnose" style="--from:1;--to:3">Diagnose</span>
-            <span class="ph ph--position" style="--from:3;--to:4">Position</span>
-            <span class="ph ph--price" style="--from:4;--to:5">Price</span>
-            <span class="ph ph--scale" style="--from:5;--to:7">Scale</span>
+            <h2 class="steps__title" id="steps-title"><span>4 moves.</span> <span>6 weeks.</span></h2>
+            <p class="steps__sub">One live call a week. One thing shipped.</p>
           </div>
 
-          <div class="wk wk--diagnose">
-            <p class="wk__head"><span class="wk__num">W01</span><span class="wk__date">Nov 18</span><span class="wk__phase">Diagnose</span></p>
-            <div class="wk__call"><strong>Market audit</strong><span>Where you actually win, with numbers</span></div>
-            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Market map</p>
-            <p class="wk__hrs"><span class="wk__bar" style="--w:62%"></span><span class="num">2.5 h</span></p>
-          </div>
-          <div class="wk wk--diagnose">
-            <p class="wk__head"><span class="wk__num">W02</span><span class="wk__date">Nov 25</span><span class="wk__phase">Diagnose</span></p>
-            <div class="wk__call"><strong>Offer teardown</strong><span>Strip your offer back to what sells</span></div>
-            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Offer v1</p>
-            <p class="wk__hrs"><span class="wk__bar" style="--w:75%"></span><span class="num">3 h</span></p>
-          </div>
-          <div class="wk wk--position">
-            <p class="wk__head"><span class="wk__num">W03</span><span class="wk__date">Dec 2</span><span class="wk__phase">Position</span></p>
-            <div class="wk__call"><strong>Ideal client</strong><span>Pick the buyer you can serve best</span></div>
-            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Messaging doc</p>
-            <p class="wk__hrs"><span class="wk__bar" style="--w:62%"></span><span class="num">2.5 h</span></p>
-          </div>
-          <div class="wk wk--price">
-            <p class="wk__head"><span class="wk__num">W04</span><span class="wk__date">Dec 9</span><span class="wk__phase">Price</span></p>
-            <div class="wk__call"><strong>Value pricing</strong><span>Price on outcomes, not hours</span></div>
-            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Price sheet</p>
-            <p class="wk__hrs"><span class="wk__bar" style="--w:88%"></span><span class="num">3.5 h</span></p>
-          </div>
-          <div class="wk wk--scale">
-            <p class="wk__head"><span class="wk__num">W05</span><span class="wk__date">Dec 16</span><span class="wk__phase">Scale</span></p>
-            <div class="wk__call"><strong>Finance model</strong><span>The three numbers that run the business</span></div>
-            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>Cash model</p>
-            <p class="wk__hrs"><span class="wk__bar" style="--w:75%"></span><span class="num">3 h</span></p>
-          </div>
-          <div class="wk wk--scale">
-            <p class="wk__head"><span class="wk__num">W06</span><span class="wk__date">Dec 23</span><span class="wk__phase">Scale</span></p>
-            <div class="wk__call"><strong>Growth plan</strong><span>Turn it all into a 90-day plan</span></div>
-            <p class="wk__ship"><span class="wk__tick" aria-hidden="true"></span>90-day plan</p>
-            <p class="wk__hrs"><span class="wk__bar" style="--w:62%"></span><span class="num">2.5 h</span></p>
-          </div>
-        </div>
-
-        <div class="outcome">
-          <p class="outcome__label">By Dec 23 you have</p>
-          <ul class="outcome__list">
-            <li>A priced, positioned offer</li>
-            <li>A cash model you update monthly</li>
-            <li>A 90-day growth plan</li>
-          </ul>
-          <p class="outcome__total"><span class="num">≈ 17 h</span> total, live calls recorded</p>
+          <article class="bar bar--1">
+            <p class="bar__wk">W01–02</p>
+            <h3 class="bar__name">Diagnose</h3>
+            <p class="bar__ship">Market map</p>
+          </article>
+          <article class="bar bar--2">
+            <p class="bar__wk">W03</p>
+            <h3 class="bar__name">Position</h3>
+            <p class="bar__ship">Messaging doc</p>
+          </article>
+          <article class="bar bar--3">
+            <p class="bar__wk">W04</p>
+            <h3 class="bar__name">Price</h3>
+            <p class="bar__ship">Price sheet</p>
+          </article>
+          <article class="bar bar--4">
+            <p class="bar__wk">W05–06</p>
+            <h3 class="bar__name">Scale</h3>
+            <p class="bar__ship">90-day plan</p>
+            <svg class="bar__arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 36L36 12M16 12h20v20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/></svg>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Instructor -->
-    <section class="instructor" id="instructor">
-      <div class="container">
-        <div class="profile">
-          <p class="label label--light profile__label">Your instructor</p>
-          <figure class="profile__photo reveal">
-            <img src="assets/img/instructor.webp" alt="Portrait of Daniel Leoprado" width="747" height="850" loading="lazy">
-          </figure>
-          <h2 class="profile__name"><span>Daniel</span><span>Leoprado</span></h2>
-          <div class="profile__body">
-            <p class="profile__role">Founder · Operator · Strategy consultant</p>
-            <blockquote class="profile__quote">“Strategy isn't a document. It's the handful of decisions you make every week. I teach you to make them well.”</blockquote>
-            <p class="profile__bio">I started my first company at 24 and nearly ran it out of cash twice. Since then I've co-founded three businesses and advised 60+ owners on strategy and pricing. This academy is the course I wish I'd had.</p>
-            <dl class="creds">
-              <div><dt class="num">15</dt><dd>Years operating &amp; consulting</dd></div>
-              <div><dt class="num">60+</dt><dd>Owners advised 1:1</dd></div>
-              <div><dt class="num">12.4k</dt><dd>Students taught</dd></div>
-            </dl>
-          </div>
-        </div>
+    <!-- Instructor: magazine cover -->
+    <section class="cover" id="instructor" aria-labelledby="cover-title">
+      <div class="container cover__frame">
+        <p class="cover__kicker"><span>Your instructor</span><span>Daniel</span></p>
+        <h2 class="cover__mast" id="cover-title">Leoprado</h2>
+        <img class="cover__img" src="assets/img/instructor.webp" alt="Daniel Leoprado" width="747" height="850" loading="lazy">
 
-        <ol class="career" aria-label="Career timeline">
-          <li><span class="num">2011</span>First company, a two-person agency</li>
-          <li><span class="num">2013</span>Two months from running out of cash</li>
-          <li><span class="num">2016</span>Co-founded a B2B SaaS, sold in 2020</li>
-          <li><span class="num">2018</span>Started consulting on strategy &amp; pricing</li>
-          <li><span class="num">2022</span>Launched Leoprado Academy</li>
-          <li class="is-now"><span class="num">2026</span>Cohort #08, 12.4k students</li>
-        </ol>
+        <dl class="cover__line cover__line--a"><dt class="num">15</dt><dd>Years building businesses</dd></dl>
+        <dl class="cover__line cover__line--b"><dt class="num">3</dt><dd>Companies co-founded</dd></dl>
+        <dl class="cover__line cover__line--c"><dt class="num">60+</dt><dd>Owners advised 1:1</dd></dl>
+        <dl class="cover__line cover__line--d"><dt class="num">12.4k</dt><dd>Students taught</dd></dl>
+
+        <p class="cover__quote">“Strategy is a weekly decision, not a document.”</p>
+        <a href="#" class="btn btn--lime btn--lg cover__btn">Read my story</a>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section" id="reviews">
-      <div class="container">
-        <div class="section-head section-head--center">
-          <p class="label">05 / Reviews</p>
-          <h2 class="h2">What founders say after the course.</h2>
-        </div>
-        <div class="reviews">
-          <figure class="review reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>“I raised my prices 40% in week three and didn't lose a single client. The pricing module paid for the whole program ten times over.”</blockquote>
-            <figcaption><span class="avatar" style="--h:28">AK</span><div><strong>Amara K.</strong><span>Brand studio owner</span></div></figcaption>
-          </figure>
-          <figure class="review review--dark reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>“Finally, finance explained by someone who's actually run a business. I built my first real cash-flow model in an afternoon.”</blockquote>
-            <figcaption><span class="avatar" style="--h:200">MS</span><div><strong>Marco S.</strong><span>SaaS founder</span></div></figcaption>
-          </figure>
-          <figure class="review reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>“The Growth Sprint gave me a weekly rhythm I still follow a year later. Daniel's feedback calls were worth the price alone.”</blockquote>
-            <figcaption><span class="avatar" style="--h:140">JR</span><div><strong>Julia R.</strong><span>Agency founder</span></div></figcaption>
-          </figure>
-        </div>
+    <!-- Reviews: results wall -->
+    <section class="wall" id="reviews" aria-labelledby="wall-title">
+      <div class="poster__grain" aria-hidden="true"></div>
+      <div class="container wall__grid">
+        <figure class="wall__main reveal">
+          <p class="label wall__label">Student results <span class="stars">★★★★★</span> 4.9 / 2,542 reviews</p>
+          <blockquote class="wall__quote" id="wall-title">“I raised my prices <mark>40%</mark> and kept every client.”</blockquote>
+          <figcaption class="wall__who"><span class="avatar" style="--h:28">AK</span><span><strong>Amara K.</strong> Brand studio owner</span></figcaption>
+        </figure>
+
+        <figure class="note note--a reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note__result">1 afternoon</p>
+          <blockquote>“Built my first real cash-flow model.”</blockquote>
+          <figcaption>Marco S. · SaaS founder</figcaption>
+        </figure>
+        <figure class="note note--b reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="note__result">2× revenue</p>
+          <blockquote>“A weekly rhythm I still follow a year later.”</blockquote>
+          <figcaption>Julia R. · Agency founder</figcaption>
+        </figure>
       </div>
     </section>
 
