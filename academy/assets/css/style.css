@@ -179,7 +179,8 @@ button { font: inherit; cursor: pointer; }
     linear-gradient(0deg, transparent 49.6%, rgba(0, 0, 0, .12) 49.8%, transparent 50.2%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.poster__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-block: 72px 88px; }
+.poster__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-block: 72px 0; }
+.poster__copy { padding-bottom: 88px; }
 .poster__copy { min-width: 0; }
 
 /* Dateline and headline share one width so they read as a single lockup */
@@ -205,9 +206,9 @@ button { font: inherit; cursor: pointer; }
 
 /* Geometric portrait: a 4 x 5 grid of square tiles; the arch takes the lower-right 3 x 4 block */
 .geo {
-  --tile: clamp(72px, 7.4vw, 112px);
+  --tile: clamp(80px, 9vw, 138px);
   display: grid; grid-template-columns: repeat(4, var(--tile)); grid-template-rows: repeat(5, var(--tile));
-  justify-self: center; position: relative;
+  justify-self: end; align-self: end; position: relative;
 }
 .geo__tile { display: block; transition: transform 1.2s cubic-bezier(.6, 0, .2, 1); }
 .geo__tile--q1 { background: var(--ink); border-radius: 100% 0 0 0; }
@@ -220,19 +221,22 @@ button { font: inherit; cursor: pointer; }
 .geo__tile.is-turning { transform: rotate(90deg); }
 .geo__tile--dot.is-turning, .geo__tile--ring.is-turning { transform: scale(.72) translateY(-12%); }
 .geo__info {
-  display: flex; flex-direction: column; justify-content: flex-end; padding: 12px;
+  position: relative; z-index: 3; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px;
   background: var(--ink); color: #fff; font: var(--t-h3); letter-spacing: var(--ls-h3);
 }
 .geo__info span { font: var(--t-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--lime); }
 .geo__arch {
-  grid-area: 2 / 2 / 6 / 5; margin: 0; position: relative; overflow: hidden;
-  background: var(--lime); border-radius: 999px 999px 0 0;
-  display: flex; align-items: flex-end; justify-content: center;
+  grid-area: 2 / 2 / 6 / 5; margin: 0; position: relative; z-index: 2;
 }
-.geo__arch img { width: 92%; height: auto; filter: grayscale(1) contrast(1.15); }
+/* The arch is the backdrop; the portrait is larger than it, so his head rises above and his shoulders spill past */
+.geo__arch::before { content: ""; position: absolute; inset: 0; background: var(--lime); border-radius: 999px 999px 0 0; }
+.geo__arch img {
+  position: absolute; left: 50%; bottom: -4%; width: 132%; max-width: none; height: auto; transform: translateX(-52%);
+  filter: grayscale(1) contrast(1.35) brightness(1.04) drop-shadow(0 30px 40px rgba(0, 0, 0, .35));
+}
 .geo__name {
-  position: absolute; left: 0; bottom: 0; background: var(--ink); color: #fff; padding: 10px 14px;
-  font: var(--t-title); letter-spacing: var(--ls-title);
+  position: absolute; left: calc(var(--tile) * -1); bottom: 28px; z-index: 3; background: var(--ink); color: #fff; padding: 14px 18px;
+  font: var(--t-h3); letter-spacing: var(--ls-h3);
 }
 .geo__name span { display: block; font: var(--t-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--lime); }
 
@@ -567,7 +571,9 @@ button { font: inherit; cursor: pointer; }
   .nav__mobile-actions .btn { flex: 1; }
 
 
-  .poster__grid { grid-template-columns: 1fr; padding-block: 56px 72px; gap: 64px; }
+  .poster__grid { grid-template-columns: 1fr; padding-block: 56px 0; gap: 72px; }
+  .poster__copy { padding-bottom: 0; }
+  .geo { justify-self: center; }
   .cta-poster { grid-template-columns: 1fr; gap: 8px; }
   .cta-poster__copy { padding-bottom: 24px; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -607,7 +613,8 @@ button { font: inherit; cursor: pointer; }
   .announce__link { display: none; }
   .poster__head { width: 100%; }
   .poster__ctas .btn { flex: 1 1 100%; }
-  .geo { --tile: calc((100vw - 32px) / 4); }
+  .geo { --tile: calc((100vw - 40px) / 4); }
+  .geo__name { left: -8px; bottom: 16px; }
   .poster__lead { margin-top: 24px; }
   .btn--xl { flex: 1 1 100%; }
   .cutout__tag { left: 0; }
