@@ -27,7 +27,7 @@ Verification for every visual task: Playwright screenshots of `atelier/course.ht
 
 - [x] 4.1 Audit both views at 1440px and 390px against the design system rules (no shadows, line ticks, no pill badges for counts or tags, palette only). Verify by grepping the new CSS for `box-shadow` and by reviewing the screenshots.
 - [x] 4.2 Update `atelier/HANDOFF-NEXT.md`: the course page section, open decision 1 closed as Cinema (with Cover in `course-heroes.html`), the Visitor / Enrolled switch, the shared 12/24 state and the placeholder drawings. Verify the file no longer mentions the Cinema/Cover switch as current.
-- [ ] 4.3 Commit, push, run `tools/build-artifact.py` from a scratch folder, and republish the main artifact with `home.html`, `course.html` and `lesson.html`. Verify the publish result reports a new version.
+- [x] 4.3 Commit, push, run `tools/build-artifact.py` from a scratch folder, and republish the main artifact with `home.html`, `course.html` and `lesson.html`. Verify the publish result reports a new version.
 
 ## Workflow follow-up
 
