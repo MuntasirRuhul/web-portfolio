@@ -44,6 +44,7 @@
      lead 18px · body 16px (v7:60) · small 14px · mono 10.5px (v7:457)
      component exceptions: poster captions 9–9.5px (v7:221, v7:231), poster title 36px (v7:223), meta 12–15.5px,
      block title clamp(24px,2.2vw,30px) (v7:198), FAQ question clamp(20px,2vw,25px) (v7:353) */
+  --t-statement:clamp(56px,6.4vw,96px);   /* one per page at most: the About statement */
   --t-display:clamp(40px,5vw,68px);
   --t-h2:clamp(30px,3.5vw,48px);
   --t-h3:clamp(22px,2vw,28px);

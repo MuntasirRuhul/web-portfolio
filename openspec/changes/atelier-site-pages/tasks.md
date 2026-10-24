@@ -14,7 +14,7 @@
 ## 2. Courses and teaching pages
 
 - [x] 2.1 Build `courses.html`: header, intro, medium and level filter rows, sort select, count line, six poster cards with `data-*` attributes, empty state, footer; academy teacher filter and teacher lines. Verify that Watercolour + Beginner shows 1, Oil + Beginner shows the empty state, Clear filters restores 6, Price low to high orders $69 → $129, the count is announced, and the standard check passes.
-- [ ] 2.2 Build `about.html` with the solo section order and the academy variant (we-voice, teachers preview, Elena as founder). Verify the solo order matches the spec, the academy shows three teachers and a link to `teachers.html`, and the standard check passes.
+- [x] 2.2 Build `about.html` with the solo section order and the academy variant (we-voice, teachers preview, Elena as founder). Verify the solo order matches the spec, the academy shows three teachers and a link to `teachers.html`, and the standard check passes.
 - [ ] 2.3 Build `teachers.html`: four teacher cards, a medium filter, an in-page profile with bio, courses and quote, and a solo-mode notice with a switch link. Verify that opening a card moves focus to its profile, the course links go to `course.html`, solo mode shows the notice, and the standard check passes.
 - [ ] 2.4 Add academy teacher lines to the poster cards on `atelier-v7.html` and `course.html` ("Where students go next"), and add Teachers / About us to the shared header in academy mode. Verify the solo audit (no other teacher names, no `teachers.html` links) and the academy header order.
 - [ ] 2.5 Build, publish, and update `HANDOFF-NEXT.md` (page list and the mode switch). Verify the publish reports a new version and the handoff lists the new pages.

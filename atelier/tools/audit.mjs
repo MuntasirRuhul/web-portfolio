@@ -42,7 +42,7 @@ const ALLOW_RADIUS = {
 const clamp = (min, vw, max, w) => Math.min(max, Math.max(min, vw * w / 100));
 const scale = w => [clamp(40, 5, 68, w), clamp(30, 3.5, 48, w), clamp(22, 2, 28, w), 18, 16, 14, 10.5];
 // Component titles measured on the home page: block title (v7:198) and FAQ question (v7:353).
-const componentSteps = w => [clamp(24, 2.2, 30, w), clamp(20, 2, 25, w)];
+const componentSteps = w => [clamp(24, 2.2, 30, w), clamp(20, 2, 25, w), clamp(56, 6.4, 96, w)];   // + statement step (one per page)
 // Documented component exceptions (reported as WARN if outside both lists).
 const EXCEPTIONS = [9, 9.5, 10, 11, 12, 12.5, 13, 13.5, 14.5, 15, 15.5, 17, 20, 36];
 

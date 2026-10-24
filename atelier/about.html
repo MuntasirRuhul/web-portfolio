@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var m=new URLSearchParams(location.search).get('mode')||localStorage.getItem('atelier-mode');document.documentElement.dataset.mode=m==='academy'?'academy':'solo'}catch(e){document.documentElement.dataset.mode='solo'}document.documentElement.classList.add('js')</script>
+<title>About · Elena Varga Atelier</title>
+<meta name="description" content="Elena Varga is a painter and teacher in Lisbon. Twenty years of painting, ten of teaching, and 3,900 private critiques: this is how she teaches people to look.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* About (solo: Elena's own page · academy: the Atelier's page) · Gallery archetype · desktop first. */
+main{position:relative;z-index:1}
+section{padding:var(--section) 0}
+.head2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--s7);margin-bottom:var(--s8)}
+.head2 .txt{max-width:460px;align-self:end}
+
+/* 01 · statement + portrait */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--s8);align-items:end;padding-top:clamp(64px,8vw,120px)}
+.hero h1{font-size:var(--t-statement);line-height:.95;letter-spacing:var(--track-display)}
+.hero .lead{margin-top:28px;color:var(--ink-2);max-width:560px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:32px;padding-top:14px;border-top:1px solid var(--ink)}
+.hero .meta span{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink-2)}
+.hero .meta b{color:var(--ink);font-weight:500}
+.portrait{position:relative;margin:0}
+.portrait .cut{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--paper)}   /* white in the photo multiplies into paper */
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 80%;transform:scale(1.25);transform-origin:46% 78%;filter:grayscale(1) contrast(1.18) brightness(1.04);mix-blend-mode:multiply}
+.portrait .ring{position:absolute;left:52%;top:30%;width:62%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.portrait .ring circle{fill:none;stroke:var(--accent);stroke-width:.35;stroke-dasharray:1;stroke-dashoffset:1}
+.portrait.is-in .ring circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s var(--ease-line) .4s}
+.portrait .cross{position:absolute;inset:0;pointer-events:none}
+.portrait .cross i{position:absolute;background:rgba(var(--ink-rgb),.18)}
+.portrait .cross i:nth-child(1){left:52%;top:0;bottom:0;width:1px}
+.portrait .cross i:nth-child(2){top:30%;left:0;right:0;height:1px}
+.portrait figcaption{display:flex;justify-content:space-between;margin-top:10px;padding-top:8px;border-top:1px solid var(--rule)}
+.portrait .sig{position:absolute;right:6%;bottom:16%;font-size:44px;transform:rotate(-6deg)}
+
+/* 02 · a life as one line */
+.line{position:relative;padding-top:40px}
+.line svg.path{position:absolute;left:0;right:0;top:0;width:100%;height:72px;overflow:visible}
+.line svg.path path{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round}
+.stops{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.stops li{position:relative;padding-top:52px}
+.stops li::before{content:"";position:absolute;left:0;top:28px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink)}
+.stops li.now::before{background:var(--accent);border-color:var(--accent)}
+.stops .yr{display:block;font-family:var(--display);font-size:36px;font-weight:700;letter-spacing:-.065em;line-height:.9}
+.stops li.now .yr{color:var(--accent)}
+.stops b{display:block;margin-top:14px;font-size:16px;font-weight:600;letter-spacing:-.015em;line-height:1.3}
+.stops p{font-size:var(--t-small);color:var(--ink-2);margin-top:6px}
+.stops .cap{display:block;margin-top:12px;padding-top:8px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--muted)}
+
+/* 03 · notes pinned above the desk */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;align-items:start;padding-top:12px}
+.note{position:relative;background:var(--object);padding:34px 24px 22px;min-height:250px;display:flex;flex-direction:column;transition:transform var(--t-lift) var(--ease-object)}
+.note:nth-child(1){transform:rotate(-1.4deg)}
+.note:nth-child(2){transform:rotate(.9deg);margin-top:28px}
+.note:nth-child(3){transform:rotate(-.5deg);margin-top:8px}
+.note:nth-child(4){transform:rotate(1.6deg);margin-top:36px}
+.note:hover{transform:translateY(-6px) rotate(-.6deg)}
+.note::before{content:"";position:absolute;left:50%;top:-12px;width:84px;height:24px;margin-left:-42px;background:rgba(217,167,160,.55);transform:rotate(-3deg)}
+.note:nth-child(even)::before{background:rgba(221,164,60,.45);transform:rotate(4deg)}
+.note q{quotes:none;font-size:var(--t-h3);font-weight:600;letter-spacing:-.03em;line-height:1.12}
+.note p{margin-top:auto;padding-top:24px;font-size:13.5px;color:var(--ink-2)}
+.note .mono{display:block;margin-top:10px}
+
+/* 04 · method room (from the home page) */
+.method{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:var(--s7)}
+.method .txt{margin-top:18px}
+.method .more{color:var(--on-room);margin-top:28px}
+
+/* 05 · CV, as a gallery prints it */
+.cv{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s6);border-top:1px solid var(--ink)}
+.cv h3{font-family:var(--mono);font-size:var(--t-mono);font-weight:500;letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink);padding:14px 0 10px}
+.cv li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid var(--rule);font-size:var(--t-small);line-height:1.45}
+.cv li span{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+.cv li i{font-style:normal;color:var(--ink-2)}
+/* academy: the teachers preview */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.team li{background:var(--object);border-radius:var(--r-card);padding:22px;display:flex;flex-direction:column;min-height:260px}
+.team .av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-weight:600;font-size:18px;background:var(--paper);border:1px solid var(--rule);overflow:hidden}
+.team .av img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.team b{display:block;margin-top:auto;padding-top:24px;font-size:20px;font-weight:600;letter-spacing:-.025em}
+.team .role{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--accent-text);margin-top:6px}
+.team p{font-size:13.5px;color:var(--ink-2);margin-top:8px}
+.team-link{margin-top:var(--s6);display:inline-flex}
+
+/* 06 · the table (studio with numbered spots) */
+.table{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:var(--s7);align-items:start}
+.photo{position:relative;border-radius:var(--r-card);overflow:hidden;aspect-ratio:3/2;background:var(--room)}
+.photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .8s}
+.photo:hover img,.photo:focus-within img{filter:grayscale(.2) contrast(1.05)}
+.spot{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:var(--object);color:var(--ink);font-family:var(--mono);font-size:12px;font-weight:500;display:grid;place-items:center;transition:background .2s,color .2s}
+.spot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(255,255,255,.7)}
+.spot:hover,.spot:focus-visible,.spot[aria-expanded="true"]{background:var(--accent);color:#fff}
+.legend li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;padding:14px 0;border-top:1px solid var(--rule);cursor:default;transition:color .2s}
+.legend li:last-child{border-bottom:1px solid var(--rule)}
+.legend li i{width:24px;height:24px;border-radius:50%;border:1px solid var(--ink);font-style:normal;font-family:var(--mono);font-size:11px;display:grid;place-items:center}
+.legend li b{display:block;font-weight:600}
+.legend li span{font-size:var(--t-small);color:var(--ink-2)}
+.legend li.on i{background:var(--accent);border-color:var(--accent);color:#fff}
+.legend li.on b{color:var(--accent-text)}
+.table .cap{margin-top:12px}
+
+/* 07 · numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.nums div{padding:18px 18px 0 0}
+.nums div + div{border-left:1px solid var(--rule);padding-left:18px}
+.nums b{display:block;font-size:var(--t-display);font-weight:600;letter-spacing:-.045em;line-height:1}
+.nums span{display:block;font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink-2);margin-top:10px}
+.nums p{font-size:13.5px;color:var(--ink-2);margin-top:6px;max-width:220px}
+
+/* 08 · a letter */
+.letter{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:var(--s7);align-items:end;background:var(--object);border-radius:var(--r-card);padding:clamp(32px,4vw,56px)}
+.letter blockquote{font-size:clamp(26px,2.6vw,36px);font-weight:500;letter-spacing:-.03em;line-height:1.18}
+.letter blockquote::before{content:"“";display:block;font-family:var(--display);font-weight:700;font-size:96px;line-height:.6;color:var(--accent);margin-bottom:12px}
+.letter .who{font-size:var(--t-small)}
+.letter .who b{display:block;font-size:16px}
+.letter .who span{display:block;color:var(--ink-2);margin-top:2px}
+.letter .who a{display:inline-block;margin-top:16px}
+
+/* 09 · invitation */
+.invite{text-align:center;padding-bottom:var(--s9)}
+.invite .chapter{justify-content:center}
+.invite .lead{margin:20px auto 0;color:var(--ink-2)}
+.invite .acts{display:flex;justify-content:center;gap:12px;margin-top:32px}
+.invite .sig{font-size:44px;margin-top:28px}
+
+.foot-band{padding-bottom:64px}
+</style>
+</head>
+<body data-archetype="gallery">
+<div class="gridlines" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="atelier-v7.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a>
+    <nav aria-label="Main">
+      <a href="courses.html">Courses</a>
+      <a class="m-academy" href="about.html#teachers">Teachers</a>
+      <a href="about.html" aria-current="page"><span class="m-solo">About</span><span class="m-academy">About us</span></a>
+      <a href="atelier-v7.html#join">Services</a>
+      <a href="atelier-v7.html#faq">Questions</a>
+      <a class="login" href="lesson.html">Log in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 01 · statement -->
+  <section class="hero" aria-labelledby="h-hero">
+    <div>
+      <p class="chapter reveal"><b>01</b><span class="m-solo">About Elena</span><span class="m-academy">About the Atelier</span></p>
+      <h1 class="headline reveal" id="h-hero"><span class="m-solo">I teach people <em>to look.</em></span><span class="m-academy">We teach people <em>to look.</em></span></h1>
+      <p class="lead reveal"><span class="m-solo">I’ve painted for twenty years and taught for ten. Most people who say they can’t draw were never shown how to see. That is the only thing I really teach; the pencil comes after.</span><span class="m-academy">The Atelier began at Elena Varga’s kitchen table in Lisbon. Today four painters teach here, but the first lesson is still the same: most people who say they can’t draw were never shown how to see.</span></p>
+      <p class="meta reveal"><span>Born <b>Budapest, 1984</b></span><span>Lisbon <b>since 2012</b></span><span>Painting <b>since 2006</b></span><span>Teaching <b>since 2016</b></span></p>
+    </div>
+    <figure class="portrait draw" id="portrait">
+      <div class="cut"><img src="img/1631002724711-d1ae3cf651b0-w1100.jpg" alt="Elena Varga sitting on a studio chair in Lisbon"></div>
+      <div class="cross" aria-hidden="true"><i></i><i></i></div>
+      <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+      <p class="sig" aria-hidden="true">Elena V.</p>
+      <figcaption class="mono"><span><span class="m-solo">Elena Varga · painter and teacher</span><span class="m-academy">Elena Varga · founder</span></span><span>The studio, Graça</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- 02 · story as one line -->
+  <section aria-labelledby="h-story">
+    <div class="head2"><div><p class="chapter"><b>02</b>The story</p><h2 class="headline h2" id="h-story">A life, drawn as <em>one line.</em></h2></div><p class="txt"><span class="m-solo">No straight path, and no shortcut. Every turn ended up in the way I teach.</span><span class="m-academy">How one painter’s table became a small school, one year at a time.</span></p></div>
+    <div class="line">
+      <svg class="path draw" viewBox="0 0 1200 72" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 34 C 120 18, 180 46, 300 33 S 480 22, 600 34 S 790 48, 900 33 S 1080 20, 1198 30"/></svg>
+      <ol class="stops">
+        <li><span class="yr">2006</span><b>A borrowed room in Budapest</b><p>First studio, shared with a sculptor. Drew the same chair for a year.</p><span class="cap">Charcoal on newsprint</span></li>
+        <li><span class="yr">2010</span><b>Lisbon, for the light</b><p>A residency that was meant to last three months. The north light made me stay.</p><span class="cap">Residency · Fundação</span></li>
+        <li><span class="yr">2014</span><b>First solo show</b><p>Twenty-two small studies of one kitchen table, at different hours.</p><span class="cap">“Mesa”, Galeria Graça</span></li>
+        <li><span class="yr">2016</span><b>The first lesson, filmed</b><p>A student asked how I “actually see” a shadow. I answered on camera.</p><span class="cap">12 minutes · 1 pencil</span></li>
+        <li><span class="yr">2020</span><b>The Atelier opens online</b><p>Six weeks, one pencil, one finished drawing, and a private critique for every student.</p><span class="cap">Course 01 · Foundations</span></li>
+        <li class="now"><span class="yr">2026</span><b>12,400 students later</b><p><span class="m-solo">Still at the same table. Still answering the same question.</span><span class="m-academy">Four teachers, six courses, the same table.</span></p><span class="cap">64 countries</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 03 · beliefs -->
+  <section aria-labelledby="h-believe">
+    <div class="head2"><div><p class="chapter"><b>03</b><span class="m-solo">What I believe</span><span class="m-academy">What we believe</span></p><h2 class="headline h2" id="h-believe">Notes pinned <em>above the desk.</em></h2></div><p class="txt">Four sentences that have survived every move, every course, and every student who told me they couldn’t draw.</p></div>
+    <ul class="wall">
+      <li class="note"><q>Look for longer than feels comfortable.</q><p>Most mistakes happen in the first three seconds of looking, not in the hand.</p><span class="mono">Pinned 2006</span></li>
+      <li class="note"><q>Three values, not seven.</q><p>Light, shadow, dark. Everything else is detail the drawing didn’t need.</p><span class="mono">Pinned 2012</span></li>
+      <li class="note"><q>Draw the shadow’s shape, not the thing.</q><p>A cup is hard. A dark crescent next to a light oval is easy.</p><span class="mono">Pinned 2016</span></li>
+      <li class="note"><q>Finished beats perfect.</q><p>Every course ends with one drawing you finish, not ten you abandon.</p><span class="mono">Pinned 2020</span></li>
+    </ul>
+  </section>
+
+  <!-- 04 · method -->
+  <section class="room method reveal" aria-labelledby="h-method" style="padding:clamp(28px,4vw,52px) clamp(22px,3.4vw,44px)">
+    <div>
+      <p class="chapter"><b>04</b>How I teach</p>
+      <h2 class="headline h2" id="h-method">Look. Sketch. <em>Paint.</em></h2>
+      <p class="txt"><span class="m-solo">Every course I make follows the same three steps, whatever the medium. You always know what you’re doing, and why.</span><span class="m-academy">Every Atelier course follows the same three steps, whoever teaches it. You always know what you’re doing, and why.</span></p>
+      <a class="more" href="courses.html">See the courses →</a>
+    </div>
+    <div class="steps">
+      <div class="block"><span class="n">01</span><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M6 42 C 20 20, 64 20, 78 42 C 64 64, 20 64, 6 42 Z"/><path d="M42 30 a12 12 0 1 0 .1 0 Z"/></svg><h3>Look</h3><p>Short exercises that train your eye to see shapes, values and edges before you make a mark.</p></div>
+      <div class="block"><span class="n">02</span><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M58 8 L76 26 L30 72 L10 76 L14 56 Z M52 14 L70 32"/><path d="M8 82 C 30 74, 50 84, 80 76"/></svg><h3>Sketch</h3><p>Draw along in real time while every decision is explained as it’s made.</p></div>
+      <div class="block"><span class="n">03</span><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M70 6 L44 44 M38 46 C 28 46, 24 56, 18 66 C 30 66, 40 60, 44 50 Z"/><circle cx="62" cy="62" r="4"/><circle cx="72" cy="52" r="2.5"/></svg><h3>Paint</h3><p>Finish a real piece, then get a private video critique on what to try next.</p></div>
+    </div>
+  </section>
+
+  <!-- 05 · CV (solo) / teachers (academy) -->
+  <section class="m-solo" aria-labelledby="h-cv">
+    <div class="head2"><div><p class="chapter"><b>05</b>Background</p><h2 class="headline h2" id="h-cv">The CV, as a gallery <em>would print it.</em></h2></div><p class="txt">Credentials matter less than the drawings, but you should know who is teaching you.</p></div>
+    <div class="cv">
+      <div><h3>Education</h3><ul><li><span>2008</span><div>MA Fine Art, Painting<br><i>Hungarian University of Fine Arts</i></div></li><li><span>2006</span><div>BA Drawing and Printmaking<br><i>Budapest</i></div></li><li><span>2010</span><div>Painting residency<br><i>Lisbon, three months that became twelve years</i></div></li></ul></div>
+      <div><h3>Selected shows</h3><ul><li><span>2024</span><div>“North Light”<br><i>Galeria Graça, Lisbon</i></div></li><li><span>2019</span><div>“Still, Life”<br><i>Group show, Porto</i></div></li><li><span>2014</span><div>“Mesa”, first solo show<br><i>Galeria Graça, Lisbon</i></div></li></ul></div>
+      <div><h3>Teaching</h3><ul><li><span>2016–</span><div>Founder and teacher<br><i>Elena Varga Atelier, online</i></div></li><li><span>2013–19</span><div>Evening drawing classes<br><i>Sociedade Nacional de Belas Artes</i></div></li><li><span>3,900+</span><div>Private video critiques<br><i>Each one 8 to 12 minutes</i></div></li></ul></div>
+      <div><h3>Press and talks</h3><ul><li><span>2025</span><div>“Teaching people to look”<br><i>Talk, Lisbon Design Week</i></div></li><li><span>2023</span><div>Studio feature<br><i>Drawing Quarterly, issue 41</i></div></li><li><span>2021</span><div>“The slow lesson”<br><i>Podcast, The Working Artist</i></div></li></ul></div>
+    </div>
+  </section>
+  <section class="m-academy" id="teachers" aria-labelledby="h-team">
+    <div class="head2"><div><p class="chapter"><b>05</b>Teachers</p><h2 class="headline h2" id="h-team">Four painters, <em>one table.</em></h2></div><p class="txt">Each teacher works in one medium and films at the same studio table, so every course feels like the same room.</p></div>
+    <ul class="team">
+      <li><span class="av"><img src="img/1631002724711-d1ae3cf651b0-w1100.jpg" alt=""></span><b>Elena Varga</b><span class="role">Founder · Pencil, Graphite</span><p>Started the Atelier in 2016. Teaches Courses 01 and 02.</p></li>
+      <li><span class="av" aria-hidden="true">TR</span><b>Tomás Reis</b><span class="role">Watercolour</span><p>Botanical painter from Sintra. Teaches Course 03.</p></li>
+      <li><span class="av" aria-hidden="true">AL</span><b>Ana Lobo</b><span class="role">Ink</span><p>Illustrator and printmaker. Teaches Course 04.</p></li>
+      <li><span class="av" aria-hidden="true">JW</span><b>Jonas Weber</b><span class="role">Oil, Acrylic</span><p>Landscape painter, outdoors in every weather. Teaches Courses 05 and 06.</p></li>
+    </ul>
+    <a class="link team-link" href="courses.html?mode=academy">See every teacher’s courses →</a>
+  </section>
+
+  <!-- 06 · the table -->
+  <section aria-labelledby="h-table">
+    <div class="head2"><div><p class="chapter"><b>06</b>The studio</p><h2 class="headline h2" id="h-table">The table <em>everything is filmed on.</em></h2></div><p class="txt">A top-floor room in Graça with a north window. Every lesson is filmed here, at the same height, in the same light. Point at the numbers.</p></div>
+    <div class="table">
+      <div>
+        <div class="photo" id="photo">
+          <img src="img/1752649937266-1900d9e176c3-w1400.jpg" alt="The Lisbon studio: a tall window, easels and a painter at work">
+          <button class="spot" type="button" style="left:62%;top:22%" data-i="1" aria-expanded="false" aria-controls="leg1" aria-label="1, the north window">1</button>
+          <button class="spot" type="button" style="left:74%;top:56%" data-i="2" aria-expanded="false" aria-controls="leg2" aria-label="2, the easel">2</button>
+          <button class="spot" type="button" style="left:30%;top:66%" data-i="3" aria-expanded="false" aria-controls="leg3" aria-label="3, the camera chair">3</button>
+          <button class="spot" type="button" style="left:12%;top:30%" data-i="4" aria-expanded="false" aria-controls="leg4" aria-label="4, the drying wall">4</button>
+        </div>
+        <p class="cap mono">Studio, Graça, Lisbon · north light, 9 to 4</p>
+      </div>
+      <ol class="legend">
+        <li id="leg1" data-i="1"><i>1</i><div><b>The north window</b><span>Even light all day, no hard sun. It’s why shadows in the lessons look the same at 9 and at 4.</span></div></li>
+        <li id="leg2" data-i="2"><i>2</i><div><b>The easel</b><span>Bought second-hand in 2010. Every painting course is filmed against it.</span></div></li>
+        <li id="leg3" data-i="3"><i>3</i><div><b>The camera chair</b><span>The camera sits where your eyes would be, so you see the page the way I do.</span></div></li>
+        <li id="leg4" data-i="4"><i>4</i><div><b>The drying wall</b><span>Students’ final drawings, pinned up for the week their critique is filmed.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 07 · numbers -->
+  <section aria-labelledby="h-nums">
+    <div class="head2"><div><p class="chapter"><b>07</b>Since 2016</p><h2 class="headline h2" id="h-nums">Ten years, <em>counted honestly.</em></h2></div><p class="txt">No rounding up. These come from the course records.</p></div>
+    <div class="nums">
+      <div><b>12,400</b><span>Students</span><p>From 64 countries, most of them complete beginners.</p></div>
+      <div><b>3,900</b><span>Critiques</span><p>Private videos about one student’s drawing, never a template.</p></div>
+      <div><b>4.9</b><span>Average rating</span><p>From 2,870 reviews by students who finished.</p></div>
+      <div><b>83%</b><span>Finish their course</span><p>Because each one ends with a drawing worth finishing.</p></div>
+    </div>
+  </section>
+
+  <!-- 08 · a letter -->
+  <section aria-label="A letter from a student" style="padding-top:0">
+    <div class="letter reveal">
+      <blockquote>I hadn’t drawn since school. Six weeks in, I drew my grandmother’s house, and now it hangs in her kitchen. Elena’s critique was eleven minutes about my drawing alone.</blockquote>
+      <div class="who"><b>Marta K.</b><span>Foundations of Drawing · finished in 6 weeks</span><a class="link" href="course.html#reviews">Read more letters</a></div>
+    </div>
+  </section>
+
+  <!-- 09 · invitation -->
+  <section class="invite" aria-labelledby="h-invite">
+    <p class="chapter"><b>08</b>Your turn</p>
+    <h2 class="headline" id="h-invite"><span class="m-solo">Come and draw <em>with me.</em></span><span class="m-academy">Come and draw <em>with us.</em></span></h2>
+    <p class="lead">Start with the free lesson. It takes twelve minutes and one pencil.</p>
+    <div class="acts"><a class="btn btn-ink" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a><a class="btn btn-line btn-plain" href="courses.html">See all courses</a></div>
+    <p class="sig">Elena V.</p>
+  </section>
+</main>
+
+<div class="foot-band">
+<footer class="site-foot">
+  <div class="c"><h3>Learn</h3><a href="courses.html">All courses</a><a href="lesson.html">Free lessons</a><a href="course.html">Gift a course</a><a href="atelier-v7.html#faq">FAQ</a></div>
+  <div class="c"><div class="ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.9" pathLength="1"/></svg></div><h3>Studio</h3><a href="about.html">About Elena</a><a href="atelier-v7.html#gallery">Gallery</a><a href="atelier-v7.html#join">Services</a><a href="style.html">Style</a></div>
+  <div class="c"><h3>Information</h3><a href="atelier-v7.html#join">Commissions</a><a href="atelier-v7.html#faq">Questions</a><a href="style.html#review">How we review</a></div>
+  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · Made by hand in Lisbon</span></div>
+</footer>
+</div>
+
+<script src="assets/site.js"></script>
+<script>
+  // Studio spots and legend light each other up.
+  const spots = [...document.querySelectorAll('.spot')], items = [...document.querySelectorAll('.legend li')];
+  const light = i => { spots.forEach(s => s.setAttribute('aria-expanded', s.dataset.i === i)); items.forEach(l => l.classList.toggle('on', l.dataset.i === i)); };
+  spots.forEach(s => { s.addEventListener('mouseenter', () => light(s.dataset.i)); s.addEventListener('focus', () => light(s.dataset.i)); s.addEventListener('click', () => light(s.dataset.i)); });
+  items.forEach(l => l.addEventListener('mouseenter', () => light(l.dataset.i)));
+  document.getElementById('photo').addEventListener('mouseleave', () => light(null));
+</script>
+</body>
+</html>

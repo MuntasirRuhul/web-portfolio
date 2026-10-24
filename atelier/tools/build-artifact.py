@@ -5,7 +5,7 @@
 import re, io, base64, os, shutil
 from PIL import Image
 root='/home/user/web-portfolio/atelier/'
-PAGES=['courses.html','course.html','lesson.html','style.html']   # extra pages besides home
+PAGES=['about.html','courses.html','course.html','lesson.html','style.html']   # extra pages besides home
 cache={}
 def embed(s):
     def rep(m):
