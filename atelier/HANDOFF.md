@@ -51,8 +51,8 @@ Order top to bottom. `g6` = the 6-column grid wrapper.
 | 05 | **Gallery** | `section.gw#gallery` | Her work, linked to courses | **Salon wall.** Seven works in two rows, hung on a dashed centre line (`.gw-row::before`). Each `a.gw-w` sets its width with `--w`, image ratio with `--r` and course colour with `--pc`; frames are a white mat (`.gw-f`) or mat + ink border (`.gw-f.dark`). Museum label under each (`.gw-l`): title, medium · year · size, course dot. No filters, no JS. At ≤ 760px it becomes a 2-column grid, first work full width. |
 | 06 | **Students** | `section.rl.rv-dark#students` | Social proof | Dark ground (`--night`). Three solid colour blocks (`.rv-block`, `--bg`/`--fg` per card: ochre, rose, terracotta), each with a big quote mark, the quote, and name · course. Then a 4-up stats row and "Read all reviews". 3 → 1 columns at 860px. |
 | 07 | **FAQ** | `section.faq#faq` | Objections | Native `<details>`, first open. |
-| 08 | **Join** | `section.join#join` | Conversion | Dark panel with two action cards (portfolio review, live class) + photo, then the newsletter strip. |
-| | Footer | `footer` | Links | 3 columns + base row. |
+| 08 | **Join** | `section.join#join` | Conversion | One closing stack with the footer, 10px apart: dark panel with two action cards + photo; a tall newsletter strip (one large line with the offer in terracotta, 76px email field); then the dark rounded footer. |
+| | Footer | `footer` | Links | Dark rounded block joined to the closing stack. 3 columns + base row; the hero's construction circle is drawn in the middle column when the footer scrolls into view and turns slowly (60s), with a terracotta dot. Static under reduced motion. |
 
 ---
 
