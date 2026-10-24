@@ -10,7 +10,7 @@ Updated 24 Oct 2026. Repo `MuntasirRuhul/web-portfolio`, branch `claude/gracious
 
 | What | Link |
 |---|---|
-| **Main site (home + course page, linked, takes comments)** | https://claude.ai/artifact/99R7pSgDvcfXydKFhzy8tk |
+| **Main site (home + course + lesson pages, linked, takes comments)** | https://claude.ai/artifact/99R7pSgDvcfXydKFhzy8tk |
 | Course page alone (old copy, has its own comment history) | https://claude.ai/artifact/YQCTkW8qtcDWazMmMxViMf |
 | v8 colour experiment (dcognition.ai scheme, not chosen) | https://claude.ai/artifact/UBUXF74htZnKJqduXDYaw7 |
 | Course hero options (Cinema vs Cover) | https://claude.ai/artifact/9HSwGohQj1wet7VU3HZzFm |
@@ -25,10 +25,11 @@ Only the main site artifact is being updated now. All its comment threads are re
 | File | What it is |
 |---|---|
 | `atelier-v7.html` | **Home page.** The one to build from. |
-| `course.html` | **Course detail page** (Course 01 · Foundations of Drawing), the Tutor LMS `single-course.php` template. |
+| `course.html` | **Course detail page** (Course 01 · Foundations of Drawing), the Tutor LMS `single-course.php` template. Its "Log in" button opens `lesson.html` (demo path into the learning area). |
+| `lesson.html` | **Lesson / learning area** (Topic 04 · Lesson 1 "Three values, not seven"), the Tutor LMS `single-lesson.php` + `learning-area/*` templates. |
 | `HANDOFF.md` | Full spec: tokens, sections, decisions D1–D5, accessibility, QA. Partly stale (see below). |
 | `HANDOFF-NEXT.md` | This file. |
-| `tools/build-artifact.py` | Builds the artifact: embeds `img/` photos as data URIs (artifacts block external images) and writes `atelier-v7.html` (main page, doctype stripped), `site/home.html` and `site/course.html` (course links rewritten to `home.html`). Run it from a scratch folder that has a `site/` subfolder; it reads from `/home/user/web-portfolio/atelier/`. Needs Pillow. |
+| `tools/build-artifact.py` | Builds the artifact: embeds `img/` photos as data URIs (artifacts block external images) and writes `atelier-v7.html` (main page, doctype stripped), `site/home.html`, `site/course.html` (course links rewritten to `home.html`) and `site/lesson.html`. Run it from a scratch folder that has a `site/` subfolder; it reads from `/home/user/web-portfolio/atelier/`. Needs Pillow. |
 | `img/` + `images.txt` | 18 self-hosted placeholder photos (Unsplash, fetched by a GitHub Action). |
 | `atelier-v8.html` | dcognition.ai colour experiment. Not chosen. |
 | `course-heroes.html` | Hero options page (A1 Cinema, B Cover + notes). |
@@ -68,6 +69,18 @@ Elsewhere: `research/tutorlms/STUDY.md` (Tutor LMS page inventory, Course → To
 - **Enrol card:** soft beige, rounded, no border; natural-colour trailer with a "Watch the trailer" chip; price $79 / $99 "Autumn price"; Enrol now + Watch lesson 1 free; refund line; "This course includes" with hand-drawn washed icons; gift link. Phones: card first, 24px under the header; sticky bottom price bar.
 - **Then:** reviews (average + cards), questions, More courses (poster cards), footer.
 
+## 5b. Lesson page (`lesson.html`)
+
+- **State shown:** Marta K., enrolled, topics 1–3 done (12 of 24 items, 50%), on Topic 04 · Lesson 1 "Three values, not seven".
+- **Header (sticky, 64px):** ← Course (to `course.html#curriculum`) · "Course 01 · Pencil / Foundations of Drawing" · progress "12 of 24 done", bar in the course accent, % · avatar. Phones: progress becomes a 2px line under the header, plus a "Contents" pill.
+- **Sidebar (340px, soft beige, sticky, own scroll):** "Course content 12 / 24", topics as accordions (numeral in course accent, "4 of 4 done" in terracotta), items with line tick when done, type icon otherwise; current item is a white row with a 3px accent bar and "Now playing"; the critique assignment is locked ("After your final drawing"). "Stuck on something?" card at the bottom. Phones: a drawer from the left with a scrim (Escape / scrim / × close).
+- **Lesson column (max 880px):** 16:9 player (rounded 16px; simulated playback, scrub with chapter marks, CC, speed, full screen); mono label "Topic 04 · Light and value · Lesson 1 of 4", H1, meta line, and a small 3-segment "Step 02 · Sketch" bar tying the lesson to the Look / Sketch / Finish method.
+- **Tabs:** Overview · Exercise files ³ · Comments ¹⁴ (superscript counts, ARIA tabs, arrow keys).
+  - Overview: lead, "In this lesson" chapter list (clickable times seek the video), "Have these ready" (line ticks), two tilted note cards: rose "A note from Elena" with signature, ochre "After this lesson" (links to the files tab).
+  - Exercise files: three rows with drawn thumbnails (three-value scale, egg reference, notes), outline pill "Download".
+  - Comments: compose box (beige field), comments with initials, "at 06:12" timestamps, Elena's reply indented with a rose rule and a mono "Teacher" label (not a pill). Posting adds the comment (demo).
+- **Bottom bar (sticky):** Previous (outline circle + title) · Mark as complete (ink pill → outline "Completed" with a terracotta line tick; updates the sidebar item, topic count and progress) · Next (ink circle + title). Phones: fixed, titles hidden.
+
 ## 6. Open decisions (waiting on the user)
 
 1. **Course header:** Cinema or Cover? Then remove the switch and slim the enrol card so price and trailer aren't repeated.
@@ -77,7 +90,7 @@ Elsewhere: `research/tutorlms/STUDY.md` (Tutor LMS page inventory, Course → To
 
 ## 7. Next work
 
-1. Lesson / learning-area screen (sidebar curriculum, video, Overview · Exercise files · Comments tabs, Previous / Mark complete / Next).
+1. ~~Lesson / learning-area screen~~ done 24 Oct (`lesson.html`), waiting for the user's comments. Follow-ups: quiz screen, assignment upload ("Submit for Elena's critique"), free-preview variant for non-enrolled visitors.
 2. Courses archive (poster cards + medium and level filters).
 3. Then About, Studio notes (blog), Services (portfolio review, live class), Contact, Login / Register, Cart / Checkout, and a restyle of the Tutor LMS dashboard.
 4. Replace placeholder content: photos, prices, review numbers and quotes, step times.
@@ -91,6 +104,6 @@ Elsewhere: `research/tutorlms/STUDY.md` (Tutor LMS page inventory, Course → To
 
 ## 9. How the user gives feedback, and how to publish
 
-- The user comments on the artifact. Comments arrive as notifications: read with ArtifactComments → fix in the repo → commit and push → run `tools/build-artifact.py` → republish the same artifact (main file `atelier-v7.html`, extra files `home.html`, `course.html`) → reply in the thread saying what changed → resolve.
+- The user comments on the artifact. Comments arrive as notifications: read with ArtifactComments → fix in the repo → commit and push → run `tools/build-artifact.py` → republish the same artifact (main file `atelier-v7.html`, extra files `home.html`, `course.html`, `lesson.html`) → reply in the thread saying what changed → resolve.
 - Screenshot every change at 1440px and 390px with Playwright (pre-installed; import it by absolute path `/opt/node22/lib/node_modules/playwright/index.mjs`) and check `scrollWidth` for phone overflow.
 - How the user works: short comments, often with typos; iterate fast and cheaply; ask before big directional changes. When a comment is ambiguous, pick the likeliest reading and say so in the reply. Do exactly what's asked ("make less" means reduce, not remove).

@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three values, not seven · Foundations of Drawing</title>
+<meta name="description" content="Lesson 1 of topic 4 in Foundations of Drawing: group every value into light, shadow and dark.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Lesson page · Tutor LMS learning area (single-lesson.php, learning-area/*)
+   Layout: sticky header (course + progress) · curriculum sidebar (340px) · lesson column (max 880px)
+   with video, title, tabs (Overview · Exercise files · Comments) and a sticky Previous / Complete / Next bar.
+   Spacing scale: 4 · 8 · 12 · 16 · 24 · 40 · 64 · 96. */
+:root{
+  --page:#FFFFFF;
+  --soft:#FAF6EF;         /* sidebar ground, same beige as the home page */
+  --ink:#1D1A16;
+  --ink-2:#4A443B;
+  --muted:#6E6658;
+  --rule:rgba(29,26,22,.12);
+  --rule-strong:rgba(29,26,22,.85);
+  --terra:#C0512F;
+  --ochre:#DDA43C;
+  --rose:#D9A7A0;
+  --night:#161412;
+  --paper:#F3ECDF;
+  --pc:#8F6511;            /* this course's accent (Course 01 · Pencil) */
+
+  --sans:"Inter Tight", system-ui, sans-serif;
+  --display:"Inter", "Inter Tight", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+  --hand:"Caveat", cursive;
+
+  --head:64px;
+  --side:340px;
+  --col:880px;
+  --bar:72px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.label{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- header: back to course · course title · progress */
+.lh{position:sticky;top:0;z-index:40;height:var(--head);display:flex;align-items:center;gap:20px;padding:0 24px;background:var(--page);border-bottom:1px solid var(--rule)}
+.lh .back{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink-2);white-space:nowrap}
+.lh .back:hover{color:var(--terra)}
+.lh .sep{width:1px;height:24px;background:var(--rule)}
+.lh .ct{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.lh .ct b{font-size:15.5px;font-weight:600;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lh .ct .label{font-size:10px}
+.prog{display:flex;align-items:center;gap:12px;margin-left:auto;font-size:13.5px;color:var(--ink-2);white-space:nowrap}
+.prog b{color:var(--ink);font-weight:600}
+.prog i{position:relative;display:block;width:140px;height:6px;border-radius:3px;background:rgba(29,26,22,.1);overflow:hidden}
+.prog i::before{content:"";position:absolute;inset:0 auto 0 0;width:var(--p);background:var(--pc);border-radius:3px;transition:width .5s}
+.prog .pct{font-family:var(--mono);font-size:12px;color:var(--pc);min-width:32px}
+.lh .me{width:34px;height:34px;border-radius:50%;background:var(--rose);display:grid;place-items:center;font-size:12px;font-weight:600;flex:none}
+.lh .toc{display:none;align-items:center;gap:8px;height:36px;padding:0 14px;border:1px solid var(--rule-strong);border-radius:999px;font-size:14px;font-weight:500}
+
+/* ---------- learning area grid */
+.la{display:grid;grid-template-columns:var(--side) minmax(0,1fr);align-items:start}
+
+/* ---------- curriculum sidebar */
+.sb{position:sticky;top:var(--head);height:calc(100vh - var(--head));height:calc(100dvh - var(--head));overflow-y:auto;background:var(--soft);padding:24px 20px 40px;scrollbar-width:thin}
+.sb-head{display:flex;justify-content:space-between;align-items:baseline;padding:0 4px 16px;border-bottom:1px solid var(--rule-strong)}
+.sb-head h2{font-size:18px;font-weight:600;letter-spacing:-.02em}
+.sb-head span{font-size:13px;color:var(--ink-2)}
+.sb-close{display:none}
+.st{border-bottom:1px solid var(--rule)}
+.st summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:30px minmax(0,1fr) 18px;align-items:center;gap:10px;padding:14px 4px}
+.st summary::-webkit-details-marker{display:none}
+.st .no{font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:-.04em;color:var(--pc);font-variant-numeric:tabular-nums}
+.st .tw{display:flex;flex-direction:column;min-width:0}
+.st .tt{font-size:15px;font-weight:600;letter-spacing:-.015em;line-height:1.3}
+.st .mt{font-size:12.5px;color:var(--ink-2)}
+.st .mt.done{color:var(--terra)}
+.st .chev{width:18px;height:18px;transition:transform .25s}
+.st[open] .chev{transform:rotate(180deg)}
+.st summary:hover .tt{color:var(--terra)}
+.st ul{padding:0 0 12px}
+.it{position:relative;display:grid;grid-template-columns:18px minmax(0,1fr) auto;align-items:center;gap:12px;padding:9px 10px 9px 12px;margin:0 -4px;border-radius:10px;font-size:14px;line-height:1.35;color:var(--ink)}
+.it:hover{background:rgba(29,26,22,.05)}
+.it svg.i{width:18px;height:18px;color:var(--muted)}
+.it .d{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.it.done{color:var(--ink-2)}
+.it.done svg.i{color:var(--terra)}
+.it[aria-current="page"]{background:var(--page);font-weight:600}
+.it[aria-current="page"]::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:2px;background:var(--pc)}
+.it[aria-current="page"] svg.i{color:var(--pc)}
+.it[aria-current="page"].done svg.i{color:var(--terra)}
+.it .now{display:block;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--pc);margin-top:2px}
+.it.locked{color:var(--muted)}
+.it.locked .d{font-size:12px}
+.it.task .t{font-weight:600}
+.sb-foot{margin-top:24px;padding:16px;border-radius:16px;background:var(--page);font-size:13.5px;color:var(--ink-2)}
+.sb-foot b{display:block;color:var(--ink);font-size:14.5px;font-weight:600;margin-bottom:2px}
+.sb-foot a{display:inline-block;margin-top:8px;font-weight:500;color:var(--ink);border-bottom:1px solid currentColor}
+.sb-foot a:hover{color:var(--terra)}
+
+/* ---------- lesson column */
+.lm{min-width:0;display:flex;flex-direction:column;min-height:calc(100vh - var(--head))}
+.lc{width:100%;max-width:calc(var(--col) + 2 * 48px);margin:0 auto;padding:32px 48px 64px;flex:1}
+
+/* video player */
+.vp{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--night);color:#fff}
+.vp img{filter:saturate(.85)}
+.vp::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(22,20,18,.75),rgba(22,20,18,0) 38%);pointer-events:none}
+.vp .big{position:absolute;inset:0;margin:auto;z-index:2;width:84px;height:84px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;transition:transform .3s,opacity .3s}
+.vp .big:hover{transform:scale(1.06)}
+.vp .big svg{width:28px;height:28px;margin-left:4px;fill:currentColor;stroke:none}
+.vp.playing .big{opacity:0;pointer-events:none;transform:scale(.9)}
+.vp .chap{position:absolute;left:20px;top:18px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.ctl{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;gap:14px;padding:0 16px 14px}
+.ctl button{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;color:#fff}
+.ctl button:hover{background:rgba(255,255,255,.14)}
+.ctl svg.i{width:20px;height:20px}
+.ctl .pp .pause,.vp.playing .ctl .pp .play{display:none}
+.vp.playing .ctl .pp .pause{display:block}
+.ctl .time{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ctl .time .dur{opacity:.65}
+.scrub{position:relative;flex:1;height:20px;margin:0 6px;cursor:pointer}
+.scrub::before{content:"";position:absolute;left:0;right:0;top:8px;height:4px;border-radius:2px;background:rgba(255,255,255,.28)}
+.scrub .fill{position:absolute;left:0;top:8px;height:4px;border-radius:2px;background:var(--ochre);width:var(--t,0%)}
+.scrub .knob{position:absolute;top:4px;left:var(--t,0%);width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#fff}
+.scrub .mk{position:absolute;top:8px;width:2px;height:4px;background:var(--night)}
+.ctl .txt{font-family:var(--mono);font-size:11.5px;font-weight:500;width:auto;padding:0 6px}
+
+/* lesson title block */
+.lhd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 32px;margin-top:32px}
+.lhd h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,3.6vw,48px);line-height:1;letter-spacing:-.05em;margin-top:10px;text-wrap:balance}
+.lhd .label b{color:var(--pc);font-weight:500}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:14px;color:var(--ink-2)}
+.meta span+span::before{content:"·";margin-right:8px;color:var(--muted)}
+.step{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.step ol{display:flex;gap:4px}
+.step li{width:28px;height:6px;border-radius:3px;background:rgba(29,26,22,.12)}
+.step li.on{background:var(--rose)}
+.step li.was{background:var(--ochre)}
+
+/* tabs */
+.tabs{display:flex;gap:32px;margin-top:32px;border-bottom:1px solid var(--rule);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{display:flex;align-items:center;height:52px;font-size:15.5px;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
+.tabs button small{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);position:relative;top:-7px;margin-left:3px}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink);font-weight:600;border-color:var(--pc)}
+.tabs button[aria-selected="true"] small{color:var(--terra)}
+.panel{padding-top:32px}
+.panel[hidden]{display:none}
+h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 14px}
+.lead{font-size:18px;line-height:1.6;max-width:680px}
+.body{color:var(--ink-2);margin-top:12px;max-width:680px}
+
+/* overview: chapters, materials, note */
+.ov{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:48px;align-items:start}
+.chaps{border-top:1px solid var(--rule-strong)}
+.chaps button{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:12px;width:100%;padding:12px 0;border-bottom:1px solid var(--rule);text-align:left;font-size:15px}
+.chaps button:hover .ttl{color:var(--terra)}
+.chaps .tc{font-family:var(--mono);font-size:12.5px;color:var(--pc);font-variant-numeric:tabular-nums}
+.chaps .k{font-size:12.5px;color:var(--muted)}
+.chaps button[aria-current="true"] .ttl{font-weight:600}
+.chaps button[aria-current="true"] .k{color:var(--terra);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+.need li{display:flex;gap:12px;font-size:15px;line-height:1.5;padding:4px 0}
+.need svg.i{color:var(--terra);width:20px;height:20px;margin-top:1px}
+.note{background:var(--rose);border-radius:16px;padding:20px 22px 18px;transform:rotate(.6deg)}
+.note .label{color:var(--ink)}
+.note p:not(.label){font-size:16.5px;line-height:1.45;letter-spacing:-.01em;margin-top:12px}
+.note .sig{font-family:var(--hand);font-size:30px;line-height:1;margin-top:14px}
+.note + .note{margin-top:12px;background:var(--ochre);transform:rotate(-.6deg)}
+.note + .note a{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;border-bottom:1px solid currentColor}
+
+/* exercise files */
+.files{border-top:1px solid var(--rule-strong)}
+.file{display:grid;grid-template-columns:96px minmax(0,1fr) auto;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.file .th{aspect-ratio:4/3;border-radius:10px;background:var(--soft);display:grid;place-items:center;overflow:hidden}
+.file .th svg{width:78%;height:78%}
+.file b{display:block;font-size:16px;font-weight:600;letter-spacing:-.015em}
+.file span{display:block;font-size:13.5px;color:var(--ink-2);margin-top:2px}
+.file .dl{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:1px solid var(--rule-strong);border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+.file .dl:hover{background:var(--ink);color:var(--page)}
+.files-note{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+/* comments */
+.compose{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding-bottom:28px;border-bottom:1px solid var(--rule-strong)}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:600;background:var(--soft);color:var(--ink-2);flex:none}
+.av.me{background:var(--rose);color:var(--ink)}
+.av.el{background:var(--ink);color:var(--paper)}
+.compose textarea{width:100%;min-height:96px;resize:vertical;padding:12px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--soft);font:inherit;font-size:15px;color:var(--ink)}
+.compose textarea:focus{outline:none;border-color:var(--ink);background:var(--page)}
+.compose .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;font-size:13px;color:var(--muted)}
+.compose .post{height:40px;padding:0 18px;border-radius:999px;background:var(--ink);color:var(--page);font-size:14px;font-weight:500;transition:background .2s}
+.compose .post:hover{background:var(--terra)}
+.cmt{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.cmt .who{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:14px}
+.cmt .who b{font-weight:600}
+.cmt .who span{font-size:12.5px;color:var(--muted)}
+.cmt .who .tc{font-family:var(--mono);font-size:11.5px;color:var(--pc)}
+.cmt .who .role{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--terra)}
+.cmt p{font-size:15px;line-height:1.55;margin-top:6px}
+.cmt .acts{display:flex;gap:16px;margin-top:8px;font-size:13px;color:var(--muted)}
+.cmt .acts button:hover{color:var(--ink)}
+.cmt .reply{grid-column:2;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;margin-top:4px;padding:14px 0 0 16px;border-left:2px solid var(--rose)}
+.cmt .reply .av{width:32px;height:32px;font-size:11px}
+
+/* ---------- Previous / Mark complete / Next */
+.lbar{position:sticky;bottom:0;z-index:20;height:var(--bar);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:0 24px;background:var(--page);border-top:1px solid var(--rule)}
+.nav{display:flex;align-items:center;gap:12px;min-width:0;font-size:14px}
+.nav.next{justify-content:flex-end;text-align:right}
+.nav .ar{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--rule);border-radius:50%;flex:none;transition:border-color .2s,background .2s,color .2s}
+.nav:hover .ar{border-color:var(--ink)}
+.nav.next .ar{background:var(--ink);border-color:var(--ink);color:var(--page)}
+.nav.next:hover .ar{background:var(--terra);border-color:var(--terra)}
+.nav .tx{display:flex;flex-direction:column;min-width:0;line-height:1.3}
+.nav .tx b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav .tx .label{font-size:10px}
+.done-btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;background:var(--ink);color:var(--page);font-size:15px;font-weight:500;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.done-btn:hover{background:var(--terra)}
+.done-btn svg.i{display:none;color:var(--terra)}
+.done-btn[aria-pressed="true"]{background:var(--page);color:var(--ink);border:1px solid var(--rule-strong)}
+.done-btn[aria-pressed="true"] svg.i{display:block}
+.done-btn[aria-pressed="true"]:hover{border-color:var(--terra)}
+
+/* drawer scrim (phones) */
+.scrim{position:fixed;inset:0;z-index:45;background:rgba(22,20,18,.45);opacity:0;pointer-events:none;transition:opacity .25s}
+
+@media (max-width:1180px){
+  :root{--side:300px}
+  .ov{grid-template-columns:1fr;gap:32px}
+  .ov aside{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .note + .note{margin-top:0}
+}
+@media (max-width:900px){
+  :root{--head:56px;--bar:68px}
+  .lh{padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));gap:12px}
+  .lh .back span,.lh .sep,.lh .me,.prog .txt,.prog i{display:none}
+  .lh::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--p);background:var(--pc);transition:width .5s}
+  .prog{margin-left:auto}
+  .lh .toc{display:inline-flex}
+  .la{grid-template-columns:minmax(0,1fr)}
+  .sb{position:fixed;top:0;left:0;bottom:0;z-index:50;width:min(360px,88vw);height:100%;transform:translateX(-100%);transition:transform .3s cubic-bezier(.2,.7,.2,1);padding-top:16px;visibility:hidden}
+  .la.open .sb{transform:none;visibility:visible}
+  .la.open + .scrim,.la.open .scrim{opacity:1;pointer-events:auto}
+  .sb-close{display:grid;place-items:center;width:36px;height:36px;margin:0 0 8px auto;border-radius:50%;border:1px solid var(--rule)}
+  .lc{padding:0 0 48px}
+  .vp{border-radius:0}
+  .lhd,.tabs,.panel{margin-left:max(16px,env(safe-area-inset-left,0px));margin-right:max(16px,env(safe-area-inset-right,0px))}
+  .lhd{margin-top:24px}
+  .tabs{gap:24px;margin-top:24px}
+  .panel{padding-top:24px}
+  .ctl{gap:6px;padding:0 8px 8px}
+  .ctl .cc,.ctl .fs-hide{display:none}
+  .ctl .time .dur{display:none}
+  .vp .chap{left:16px;top:14px}
+  .vp .big{width:64px;height:64px}
+  .lbar{position:fixed;left:0;right:0;padding:0 max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));height:calc(var(--bar) + env(safe-area-inset-bottom,0px))}
+  .nav .tx{display:none}
+  body{padding-bottom:calc(var(--bar) + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:560px){
+  .ov aside{grid-template-columns:1fr}
+  .chaps button{grid-template-columns:48px minmax(0,1fr)}
+  .chaps .k{display:none}
+  .chaps button[aria-current="true"] .k{display:block;grid-column:2}
+  .file{grid-template-columns:72px minmax(0,1fr);gap:14px}
+  .file .dl{grid-column:2;justify-self:start;height:36px}
+  .step{display:none}
+  .ctl .sp,.vp .chap{display:none}
+  .done-btn{padding:0 18px;font-size:14.5px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.note,.note+.note{transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L8 20H4v-4z"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 5h14v10H10l-5 4z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 13h5M10 17h5"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 .2c0 1.8-2.5 2.1-2.5 3.8M12 16.6v.4"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5M5 15v5h14v-5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.8c1.6 1.4 3 3 4.3 4.7 2.9-4.6 6.4-8.6 10.7-11.8" stroke-width="2.2"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke-width="2"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12" stroke-width="2.4"/></symbol>
+  <symbol id="i-tri" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-full" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></symbol>
+  <symbol id="i-vol" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+</svg>
+
+<header class="lh" id="lh" style="--p:50%">
+  <a class="back" href="course.html#curriculum" aria-label="Back to the course page"><svg class="i"><use href="#i-left"/></svg><span>Course</span></a>
+  <span class="sep" aria-hidden="true"></span>
+  <div class="ct"><span class="label">Course 01 · Pencil</span><b>Foundations of Drawing</b></div>
+  <div class="prog" aria-live="polite"><span class="txt"><b id="pDone">12</b> of 24 done</span><i aria-hidden="true"></i><span class="pct" id="pPct">50%</span></div>
+  <button class="toc" type="button" id="tocBtn" aria-expanded="false" aria-controls="sb"><svg class="i"><use href="#i-list"/></svg>Contents</button>
+  <span class="me" title="Marta K.">MK</span>
+</header>
+
+<div class="la" id="la">
+
+  <!-- ===== Curriculum sidebar (learning-area/components/sidebar.php) ===== -->
+  <aside class="sb" id="sb" aria-label="Course content">
+    <button class="sb-close" type="button" id="sbClose" aria-label="Close course content"><svg class="i"><use href="#i-x"/></svg></button>
+    <div class="sb-head"><h2>Course content</h2><span><span id="sDone">12</span> / 24</span></div>
+
+    <details class="st">
+      <summary><span class="no">01</span><span class="tw"><span class="tt">Learning to look</span><span class="mt done">4 of 4 done</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+      <ul>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">How artists see</span><span class="d">12:40</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Shapes, values and edges</span><span class="d">16:05</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Blind contour, ten minutes</span><span class="d">21:15</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Quiz: Spot the edges</span><span class="d">8/8</span></a></li>
+      </ul>
+    </details>
+    <details class="st">
+      <summary><span class="no">02</span><span class="tw"><span class="tt">Line and gesture</span><span class="mt done">4 of 4 done</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+      <ul>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Holding the pencil</span><span class="d">09:30</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Gesture before detail</span><span class="d">17:20</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Thirty 30-second gestures</span><span class="d">24:45</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">What your lines say</span><span class="d">10:25</span></a></li>
+      </ul>
+    </details>
+    <details class="st">
+      <summary><span class="no">03</span><span class="tw"><span class="tt">Measuring and proportion</span><span class="mt done">4 of 4 done</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+      <ul>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Sight-size and the pencil ruler</span><span class="d">18:10</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Negative space</span><span class="d">14:50</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Drawing a chair</span><span class="d">32:00</span></a></li>
+        <li><a class="it done" href="#"><svg class="i" aria-label="Done"><use href="#i-check"/></svg><span class="t">Quiz: Proportion check</span><span class="d">5/6</span></a></li>
+      </ul>
+    </details>
+    <details class="st" open>
+      <summary><span class="no">04</span><span class="tw"><span class="tt">Light and value</span><span class="mt" id="t4">0 of 4 done</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+      <ul>
+        <li><a class="it" id="curItem" href="#" aria-current="page"><svg class="i"><use href="#i-play"/></svg><span class="t">Three values, not seven<span class="now">Now playing</span></span><span class="d">19:40</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-play"/></svg><span class="t">Cast shadows</span><span class="d">15:30</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-pencil"/></svg><span class="t">An egg on white paper</span><span class="d">30:20</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-file"/></svg><span class="t">Value scale sheet (PDF)</span><span class="d">04:30</span></a></li>
+      </ul>
+    </details>
+    <details class="st">
+      <summary><span class="no">05</span><span class="tw"><span class="tt">Texture and edges</span><span class="mt">4 items · 58 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+      <ul>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-play"/></svg><span class="t">Lost and found edges</span><span class="d">16:15</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-play"/></svg><span class="t">Paper, graphite and blending</span><span class="d">13:45</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-pencil"/></svg><span class="t">A crumpled paper bag</span><span class="d">21:30</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-chat"/></svg><span class="t">Your favourite edge</span><span class="d">06:30</span></a></li>
+      </ul>
+    </details>
+    <details class="st">
+      <summary><span class="no">06</span><span class="tw"><span class="tt">The final piece</span><span class="mt">4 items · 57 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+      <ul>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-play"/></svg><span class="t">Choosing your subject</span><span class="d">11:20</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-play"/></svg><span class="t">Building the drawing in layers</span><span class="d">20:40</span></a></li>
+        <li><a class="it" href="#"><svg class="i"><use href="#i-pencil"/></svg><span class="t">Your final drawing</span><span class="d">25:00</span></a></li>
+        <li><span class="it locked task"><svg class="i" aria-label="Locked"><use href="#i-lock"/></svg><span class="t">Submit for Elena's critique</span><span class="d">After your final drawing</span></span></li>
+      </ul>
+    </details>
+
+    <div class="sb-foot"><b>Stuck on something?</b>Ask under any lesson. Elena answers on Tuesdays and Fridays.<br><a href="#">Course Q&amp;A</a></div>
+  </aside>
+
+  <!-- ===== Lesson ===== -->
+  <main class="lm">
+    <div class="lc">
+
+      <div class="vp" id="vp" style="--t:0%">
+        <img src="img/1505569127510-bde1536937bc-w600.jpg" alt="">
+        <span class="chap" id="chapLabel">Why seven values is too many</span>
+        <button class="big" type="button" id="bigPlay" aria-label="Play lesson"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></button>
+        <div class="ctl">
+          <button class="pp" type="button" id="pp" aria-label="Play"><svg class="i play"><use href="#i-tri"/></svg><svg class="i pause"><use href="#i-pause"/></svg></button>
+          <span class="time"><span id="cur">00:00</span> <span class="dur">/ 19:40</span></span>
+          <div class="scrub" id="scrub" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="1180" aria-valuenow="0" aria-valuetext="00:00 of 19:40"><span class="fill"></span><span class="knob"></span></div>
+          <button class="fs-hide" type="button" aria-label="Volume"><svg class="i"><use href="#i-vol"/></svg></button>
+          <button class="txt cc" type="button" aria-label="Captions">CC</button>
+          <button class="txt sp" type="button" aria-label="Playback speed">1×</button>
+          <button type="button" aria-label="Full screen"><svg class="i"><use href="#i-full"/></svg></button>
+        </div>
+      </div>
+
+      <div class="lhd">
+        <div>
+          <p class="label"><b>Topic 04</b> · Light and value · Lesson 1 of 4</p>
+          <h1>Three values, not seven</h1>
+          <p class="meta"><span>Video lesson</span><span>19:40</span><span>Draw along</span></p>
+        </div>
+        <div class="step" aria-label="Step 2 of 3 in this topic: Sketch"><ol aria-hidden="true"><li class="was"></li><li class="on"></li><li></li></ol>Step 02 · Sketch</div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Lesson">
+        <button type="button" role="tab" id="tab-ov" aria-controls="p-ov" aria-selected="true">Overview</button>
+        <button type="button" role="tab" id="tab-files" aria-controls="p-files" aria-selected="false" tabindex="-1">Exercise files <small>3</small></button>
+        <button type="button" role="tab" id="tab-cm" aria-controls="p-cm" aria-selected="false" tabindex="-1">Comments <small>14</small></button>
+      </div>
+
+      <!-- OVERVIEW (learning-area/lesson/overview.php) -->
+      <section class="panel" id="p-ov" role="tabpanel" aria-labelledby="tab-ov">
+        <div class="ov">
+          <div>
+            <p class="lead">Your eye sees dozens of greys. A drawing only needs three: light, shadow and dark. In this lesson you squint until the egg breaks into three shapes, then draw those shapes and nothing else.</p>
+            <p class="body">Draw along with Elena from 06:12. Pause whenever she does, and don't blend yet. Blending comes in topic 5.</p>
+
+            <h3>In this lesson</h3>
+            <div class="chaps" id="chaps">
+              <button type="button" data-t="0" aria-current="true"><span class="tc">00:00</span><span class="ttl">Why seven values is too many</span><span class="k">Talk</span></button>
+              <button type="button" data-t="205"><span class="tc">03:25</span><span class="ttl">Squinting to group values</span><span class="k">Look</span></button>
+              <button type="button" data-t="372"><span class="tc">06:12</span><span class="ttl">Draw along: the light side</span><span class="k">Draw</span></button>
+              <button type="button" data-t="700"><span class="tc">11:40</span><span class="ttl">The core shadow and the dark</span><span class="k">Draw</span></button>
+              <button type="button" data-t="905"><span class="tc">15:05</span><span class="ttl">Checking against a value scale</span><span class="k">Check</span></button>
+              <button type="button" data-t="1100"><span class="tc">18:20</span><span class="ttl">What to practise this week</span><span class="k">Talk</span></button>
+            </div>
+
+            <h3>Have these ready</h3>
+            <ul class="need">
+              <li><svg class="i"><use href="#i-check"/></svg>An HB and a 4B pencil, sharpened</li>
+              <li><svg class="i"><use href="#i-check"/></svg>A white egg on white paper</li>
+              <li><svg class="i"><use href="#i-check"/></svg>A desk lamp lighting it from one side</li>
+              <li><svg class="i"><use href="#i-check"/></svg>The three-value scale, printed (Exercise files)</li>
+            </ul>
+          </div>
+
+          <aside>
+            <div class="note"><p class="label">A note from Elena</p><p>If you can see more than three greys, squint harder. The detail you lose is detail the drawing didn't need.</p><p class="sig">Elena V.</p></div>
+            <div class="note"><p class="label">After this lesson</p><p>Cast shadows (15:30), then your practice piece: an egg on white paper.</p><a href="#" data-goto="files">Print the value scale first</a></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- EXERCISE FILES (learning-area/lesson/exercise-files.php) -->
+      <section class="panel" id="p-files" role="tabpanel" aria-labelledby="tab-files" hidden>
+        <div class="files">
+          <div class="file">
+            <div class="th" aria-hidden="true"><svg viewBox="0 0 80 60"><rect x="8" y="16" width="20" height="28" rx="2" fill="#EDE6D9" stroke="#1D1A16" stroke-width="1.2"/><rect x="30" y="16" width="20" height="28" rx="2" fill="#9A9184"/><rect x="52" y="16" width="20" height="28" rx="2" fill="#2E2A25"/></svg></div>
+            <div><b>Three-value scale</b><span>PDF · 1 page · 0.4 MB · print on A4</span></div>
+            <a class="dl" href="#"><svg class="i"><use href="#i-down"/></svg>Download</a>
+          </div>
+          <div class="file">
+            <div class="th" aria-hidden="true"><svg viewBox="0 0 80 60" fill="none" stroke="#1D1A16" stroke-width="1.3" stroke-linecap="round"><path d="M14 47c12 3 40 4 56-1" stroke="#9A9184"/><path d="M42 49c10 1 22 0 28-3-6-3-16-4-26-3z" fill="#2E2A25" stroke="none"/><path d="M38 12c-9 0-15 11-15 21 0 9 7 15 15 15s15-6 15-15c0-10-6-21-15-21z" fill="#EDE6D9"/><path d="M45 15c5 5 8 12 8 18 0 9-7 15-15 15 6-3 10-8 10-15 0-7-1-13-3-18z" fill="#9A9184" stroke="none"/></svg></div>
+            <div><b>Reference photo: egg under a desk lamp</b><span>JPG · 3000 × 2000 · 2.8 MB</span></div>
+            <a class="dl" href="#"><svg class="i"><use href="#i-down"/></svg>Download</a>
+          </div>
+          <div class="file">
+            <div class="th" aria-hidden="true"><svg viewBox="0 0 80 60" fill="none" stroke="#1D1A16" stroke-width="1.2" stroke-linecap="round"><path d="M24 8h24l8 8v36H24z" fill="#fff"/><path d="M48 8v8h8M30 26h20M30 32h20M30 38h14"/></svg></div>
+            <div><b>Lesson notes and chapter times</b><span>PDF · 2 pages · 0.3 MB</span></div>
+            <a class="dl" href="#"><svg class="i"><use href="#i-down"/></svg>Download</a>
+          </div>
+        </div>
+        <p class="files-note">Files stay in your account. You can download them again from any lesson in topic 4.</p>
+      </section>
+
+      <!-- COMMENTS (learning-area/lesson/comments.php) -->
+      <section class="panel" id="p-cm" role="tabpanel" aria-labelledby="tab-cm" hidden>
+        <form class="compose" id="compose">
+          <span class="av me" aria-hidden="true">MK</span>
+          <div>
+            <label class="label" for="cmText" style="display:block;margin-bottom:8px">Add a comment</label>
+            <textarea id="cmText" placeholder="Ask a question or share how it went. Mention a time like 06:12 to link to it."></textarea>
+            <div class="row"><span>Elena reads every comment.</span><button class="post" type="submit">Post comment</button></div>
+          </div>
+        </form>
+        <div id="cmList">
+          <article class="cmt">
+            <span class="av" aria-hidden="true">PS</span>
+            <div>
+              <p class="who"><b>Priya S.</b><span>2 days ago</span><span class="tc">at 06:12</span></p>
+              <p>My light side keeps going muddy. Is it the 4B? I'm pressing quite lightly.</p>
+              <div class="acts"><button type="button">Reply</button><button type="button">Helpful · 9</button></div>
+            </div>
+            <div class="reply">
+              <span class="av el" aria-hidden="true">EV</span>
+              <div>
+                <p class="who"><b>Elena Varga</b><span class="role">Teacher</span><span>2 days ago</span></p>
+                <p>Leave the light side as bare paper. Use the HB only for the shadow shape, and save the 4B for the dark under the egg.</p>
+              </div>
+            </div>
+          </article>
+          <article class="cmt">
+            <span class="av" aria-hidden="true">TH</span>
+            <div>
+              <p class="who"><b>Tom H.</b><span>5 days ago</span></p>
+              <p>Squinting felt silly for about a minute, then everything clicked. First drawing of mine that looks round.</p>
+              <div class="acts"><button type="button">Reply</button><button type="button">Helpful · 21</button></div>
+            </div>
+          </article>
+          <article class="cmt">
+            <span class="av" aria-hidden="true">LM</span>
+            <div>
+              <p class="who"><b>Leila M.</b><span>1 week ago</span><span class="tc">at 15:05</span></p>
+              <p>Tip: hold the printed value scale next to the egg, not next to the drawing. Much easier to compare.</p>
+              <div class="acts"><button type="button">Reply</button><button type="button">Helpful · 14</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Previous / Mark complete / Next (learning-area/lesson/footer.php) -->
+    <nav class="lbar" aria-label="Lesson navigation">
+      <a class="nav prev" href="#" aria-label="Previous: Quiz, Proportion check"><span class="ar"><svg class="i"><use href="#i-left"/></svg></span><span class="tx"><span class="label">Previous</span><b>Quiz: Proportion check</b></span></a>
+      <button class="done-btn" type="button" id="doneBtn" aria-pressed="false"><svg class="i"><use href="#i-check"/></svg><span>Mark as complete</span></button>
+      <a class="nav next" href="#" aria-label="Next: Cast shadows"><span class="tx"><span class="label">Next</span><b>Cast shadows</b></span><span class="ar"><svg class="i"><use href="#i-right"/></svg></span></a>
+    </nav>
+  </main>
+
+  <div class="scrim" id="scrim"></div>
+</div>
+
+<script>
+  // ---- Video: simulated playback, chapters and seeking (placeholder for the real player).
+  const LEN = 1180, vp = document.getElementById('vp'), curEl = document.getElementById('cur');
+  const scrub = document.getElementById('scrub'), chapLabel = document.getElementById('chapLabel');
+  const chapBtns = [...document.querySelectorAll('#chaps button')];
+  const fmt = s => String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+  let t = 0, timer = null;
+  chapBtns.forEach(b => { const m = document.createElement('span'); m.className = 'mk'; m.style.left = (b.dataset.t / LEN * 100) + '%'; if (+b.dataset.t) scrub.appendChild(m); });
+  const render = () => {
+    vp.style.setProperty('--t', (t / LEN * 100) + '%');
+    curEl.textContent = fmt(t);
+    scrub.setAttribute('aria-valuenow', Math.round(t));
+    scrub.setAttribute('aria-valuetext', fmt(t) + ' of 19:40');
+    let ci = 0; chapBtns.forEach((b, i) => { if (+b.dataset.t <= t) ci = i; });
+    chapBtns.forEach((b, i) => b.setAttribute('aria-current', i === ci));
+    chapLabel.textContent = chapBtns[ci].querySelector('.ttl').textContent;
+  };
+  const setPlaying = on => {
+    vp.classList.toggle('playing', on);
+    document.getElementById('pp').setAttribute('aria-label', on ? 'Pause' : 'Play');
+    clearInterval(timer);
+    if (on) timer = setInterval(() => { t = Math.min(LEN, t + 1); render(); if (t >= LEN) setPlaying(false); }, 1000);
+  };
+  const seek = s => { t = Math.max(0, Math.min(LEN, s)); render(); };
+  document.getElementById('bigPlay').addEventListener('click', () => setPlaying(true));
+  document.getElementById('pp').addEventListener('click', () => setPlaying(!vp.classList.contains('playing')));
+  scrub.addEventListener('click', e => { const r = scrub.getBoundingClientRect(); seek((e.clientX - r.left) / r.width * LEN); });
+  scrub.addEventListener('keydown', e => { if (e.key === 'ArrowRight') seek(t + 5); else if (e.key === 'ArrowLeft') seek(t - 5); else return; e.preventDefault(); });
+  chapBtns.forEach(b => b.addEventListener('click', () => { seek(+b.dataset.t); setPlaying(true); vp.scrollIntoView({ block: 'nearest' }); }));
+  render();
+
+  // ---- Tabs: Overview · Exercise files · Comments (arrow keys move between tabs).
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const pick = tab => tabs.forEach(b => { const on = b === tab; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; document.getElementById(b.getAttribute('aria-controls')).hidden = !on; });
+  tabs.forEach((b, i) => {
+    b.addEventListener('click', () => pick(b));
+    b.addEventListener('keydown', e => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return; const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); });
+  });
+  document.querySelectorAll('[data-goto="files"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); pick(tabs[1]); tabs[1].focus(); }));
+
+  // ---- Mark as complete: updates the sidebar item, topic count and course progress.
+  const doneBtn = document.getElementById('doneBtn'), curItem = document.getElementById('curItem');
+  const curIcon = curItem.querySelector('use');
+  doneBtn.addEventListener('click', () => {
+    const on = doneBtn.getAttribute('aria-pressed') !== 'true', n = 12 + on, p = Math.round(n / 24 * 100) + '%';
+    doneBtn.setAttribute('aria-pressed', on);
+    doneBtn.querySelector('span').textContent = on ? 'Completed' : 'Mark as complete';
+    curItem.classList.toggle('done', on);
+    curIcon.setAttribute('href', on ? '#i-check' : '#i-play');
+    document.getElementById('t4').textContent = (on ? 1 : 0) + ' of 4 done';
+    document.getElementById('pDone').textContent = n;
+    document.getElementById('sDone').textContent = n;
+    document.getElementById('pPct').textContent = p;
+    document.getElementById('lh').style.setProperty('--p', p);
+  });
+
+  // ---- Comments: post appends your comment to the top of the list (demo only).
+  document.getElementById('compose').addEventListener('submit', e => {
+    e.preventDefault();
+    const ta = document.getElementById('cmText'), txt = ta.value.trim(); if (!txt) return;
+    const a = document.createElement('article'); a.className = 'cmt';
+    a.innerHTML = '<span class="av me" aria-hidden="true">MK</span><div><p class="who"><b>Marta K.</b><span>Just now</span></p><p></p></div>';
+    a.querySelector('p:not(.who)').textContent = txt;
+    document.getElementById('cmList').prepend(a); ta.value = '';
+  });
+
+  // ---- Phones: curriculum opens as a drawer from the Contents button.
+  const la = document.getElementById('la'), tocBtn = document.getElementById('tocBtn'), sb = document.getElementById('sb');
+  const setDrawer = open => { la.classList.toggle('open', open); tocBtn.setAttribute('aria-expanded', open); if (open) document.getElementById('sbClose').focus(); else tocBtn.focus(); };
+  tocBtn.addEventListener('click', () => setDrawer(true));
+  document.getElementById('sbClose').addEventListener('click', () => setDrawer(false));
+  document.getElementById('scrim').addEventListener('click', () => setDrawer(false));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && la.classList.contains('open')) setDrawer(false); });
+
+  // Keep the current item in view inside the sidebar.
+  sb.scrollTop = Math.max(0, curItem.offsetTop - sb.clientHeight / 3);
+</script>
+</body>
+</html>
