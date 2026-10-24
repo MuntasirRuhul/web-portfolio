@@ -32,6 +32,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 | D2 | ~~Student section layout~~ | **Decided:** colour blocks on the dark ground (ochre, rose, terracotta). Gallery decided too: Salon wall. | Done. |
 | D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
 | D4 | **Course page top section** | Narrowed to two, both now in `course.html` with a switch (bottom-left; `#cinema` / `#cover` links): **Cinema** (dark band, centred title, trailer, facts grid, price + buttons, signature) and **Cover** (full-width studio photo, cream panel with the facts grid and price + enrol). Facts follow the spec-sheet hierarchy: rating, lessons, length, level, then critique and certificate. | Pick one; then remove the switch and the other header. |
+| D5 | **Colour scheme v8** | `atelier-v8.html`: the home page in the dcognition.ai scheme (paper #F1EEE6, deep paper #E5E0D5, off-white #FFFEFA, ink #11110F, grey #6F6B63, orange #F4512B / #D83A17), serif headings (Source Serif 4) with orange italic accents, numbered circle labels, orange newsletter band, ink footer. Hero switch: Dark (`#dark`) or Light (`#light`). Captured reference in `research/refs/dcognition.ai/`. | Compare with v7 and choose. |
 
 ---
 
