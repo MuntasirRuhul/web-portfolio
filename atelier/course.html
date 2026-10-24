@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
 /* Single course page · Tutor LMS single-course.php
    Layout: one reading column (max 720px) + one sticky enrol card (360px).
@@ -57,8 +58,6 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 /* ---------- site header */
 .site{border-bottom:1px solid var(--rule)}
 .site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
-.brand{font-size:17px;font-weight:600;letter-spacing:-.03em}
-.brand b{font-weight:700}
 .site nav{display:flex;align-items:center;gap:28px;font-size:14.5px;color:var(--ink-2)}
 .site nav a:hover{color:var(--ink)}
 .site nav [aria-current]{color:var(--ink);font-weight:500}
@@ -101,21 +100,21 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,5.4vw,72px);l
 .byline strong{color:var(--ink);font-weight:600}
 
 /* ---------- section tabs (sticky, full width) */
-.tabs{position:sticky;top:0;z-index:20;background:var(--page);border-bottom:1px solid var(--rule);margin-top:0}
-.tabs ul{display:flex;gap:32px;height:var(--tabs);align-items:stretch;overflow-x:auto;scrollbar-width:none}
-.tabs ul::-webkit-scrollbar{display:none}
-.tabs li{display:flex} /* tab underline sits on the bottom rule, not under the label */
-.tabs a{display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
-.tabs a small{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);position:relative;top:-7px;margin-left:-4px}
-.tabs a:hover{color:var(--ink)}
-.tabs a[aria-current="true"]{color:var(--ink);font-weight:600;border-color:var(--pc)}
-.tabs a[aria-current="true"] small{color:var(--terra)}
+.ptabs{position:sticky;top:0;z-index:20;background:var(--page);border-bottom:1px solid var(--rule);margin-top:0}
+.ptabs ul{display:flex;gap:32px;height:var(--tabs);align-items:stretch;overflow-x:auto;scrollbar-width:none}
+.ptabs ul::-webkit-scrollbar{display:none}
+.ptabs li{display:flex} /* tab underline sits on the bottom rule, not under the label */
+.ptabs a{display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
+.ptabs a small{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);position:relative;top:-7px;margin-left:-4px}
+.ptabs a:hover{color:var(--ink)}
+.ptabs a[aria-current="true"]{color:var(--ink);font-weight:600;border-color:var(--pc)}
+.ptabs a[aria-current="true"] small{color:var(--terra)}
 
 /* ---------- sections */
 .sec{padding:48px 0 0}
 .sec + .sec{margin-top:32px;border-top:1px solid var(--rule)}
 .sec:last-child{padding-bottom:32px}
-h2{font-size:30px;font-weight:600;line-height:1.15;letter-spacing:-.035em}
+h2:not(.headline){font-size:30px;font-weight:600;line-height:1.15;letter-spacing:-.035em}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:24px}
 .sec-head p{font-size:14px;color:var(--ink-2)}
 h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
@@ -133,10 +132,11 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
 .fit li.no b{font-weight:600;color:var(--ink)}
 .fit li.no a{border-bottom:1px solid currentColor}
 .method{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
-.method li{position:relative;display:flex;flex-direction:column;min-height:300px;padding:18px 20px 22px;border-radius:14px;color:var(--ink);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.method li{position:relative;display:flex;flex-direction:column;min-height:300px;padding:18px 20px 22px;border-radius:var(--r-card);color:var(--ink);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .method li:nth-child(1){background:#DDA43C;transform:rotate(-.6deg)}
 .method li:nth-child(2){background:#D9A7A0}
-.method li:nth-child(3){background:var(--terra);color:#FFF8EE;transform:rotate(.6deg)}
+.method li:nth-child(3){background:var(--terra);color:#FFFFFF;transform:rotate(.6deg)}
+.method li:nth-child(3) span.d,.method li:nth-child(3) .out i{opacity:1}
 .method li:hover{transform:translateY(-6px) rotate(-1deg)}
 .method .top{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .method .t{font-weight:500}
@@ -243,14 +243,8 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
 .review .who i{width:32px;height:32px;border-radius:50%;background:var(--surface);color:var(--ink-2);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:600}
 .review .who span{color:var(--muted)}
 
-/* faq */
-.faq details{border-bottom:1px solid var(--rule)}
-.faq details:first-child{border-top:1px solid var(--rule-strong)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:18px 0;font-size:17px;font-weight:500;letter-spacing:-.015em}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--mono);font-size:20px;line-height:1;color:var(--muted);transition:transform .25s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{color:var(--ink-2);padding:0 40px 20px 0;margin-top:-4px}
+/* faq: the shared book FAQ (.faq-book in site.css) */
+#before details:first-child{border-top-color:var(--ink)}
 
 /* ---------- enrol card */
 .card{background:var(--soft);border-radius:16px;overflow:hidden}
@@ -265,7 +259,7 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
 .price{display:flex;align-items:baseline;gap:10px}
 .price strong{font-family:var(--display);font-size:44px;font-weight:700;letter-spacing:-.05em;line-height:1}
 .price s{font-size:17px;color:var(--muted)}
-.price em{font-style:normal;font-size:12.5px;font-weight:500;color:var(--terra);margin-left:auto}
+.price em{font-style:normal;font-size:12.5px;font-weight:500;color:var(--accent-text);margin-left:auto}
 .card .terms{font-size:13.5px;color:var(--ink-2);margin-top:6px}
 .cta{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;margin-top:20px;background:var(--ink);color:var(--page);height:52px;border-radius:999px;font-size:15.5px;font-weight:500;transition:background .25s}
 .cta:hover{background:var(--terra);color:#fff}
@@ -292,10 +286,10 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
 .cont .incl em{font-style:normal;font-size:12.5px;color:var(--ink-2)}
 
 /* ---------- more courses (poster cards from the home page) */
-.more{background:var(--soft);padding:80px 0 96px}
-.more .sec-head{margin-bottom:32px}
-.more .sec-head a{font-size:14.5px;font-weight:500;border-bottom:1px solid currentColor}
-.more .sec-head a:hover{color:var(--terra)}
+.next-band{padding:80px 0 96px}
+.next-band .sec-head{margin-bottom:32px}
+.next-band .sec-head a{font-size:14.5px;font-weight:500;border-bottom:1px solid currentColor}
+.next-band .sec-head a:hover{color:var(--accent-text)}
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .pcard{display:grid;grid-template-rows:auto auto 1fr auto;aspect-ratio:1/1.18;background:var(--page);color:var(--ink);padding:18px;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .pcard:hover{transform:translateY(-6px)}
@@ -319,7 +313,6 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
 /* ---------- footer */
 .foot{border-top:1px solid var(--rule);padding:48px 0 40px;font-size:14px;color:var(--ink-2)}
 .foot .wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
-.foot .brand{color:var(--ink)}
 .foot p{margin-top:8px;max-width:280px}
 .foot h4{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
 .foot li + li{margin-top:6px}
@@ -343,8 +336,8 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
   .course > .side{order:-1;margin:0 0 40px}
   .hero{padding:24px 0 32px}
   .chip{margin-top:24px}
-  .tabs ul{gap:24px}
-  .tabs{margin:32px -20px 0;padding:0 20px}
+  .ptabs ul{gap:24px}
+  .ptabs{margin:32px -20px 0;padding:0 20px}
   .cgrid{grid-template-columns:1fr 1fr}
   .foot .wrap{grid-template-columns:1fr 1fr}
   .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--page);border-top:1px solid var(--rule);padding:10px max(20px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) var(--gutter)}
@@ -416,7 +409,7 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
 .prog-h s{display:block;height:100%;background:#DDA43C;border-radius:3px}
 .ve .next{display:grid;grid-template-columns:168px minmax(0,1fr) 40px;align-items:center;gap:20px;max-width:620px;margin:28px auto 0;padding:10px 20px 10px 10px;border:1px solid rgba(243,236,223,.16);border-radius:16px;text-align:left;transition:border-color .25s}
 .ve .next:hover{border-color:rgba(243,236,223,.5)}
-.ve .next .ph{display:block;aspect-ratio:16/10;border-radius:10px;overflow:hidden}
+.ve .next .ph{display:block;aspect-ratio:16/10;border-radius:var(--r-field);overflow:hidden}
 .ve .next .tx{display:flex;flex-direction:column;gap:4px;min-width:0}
 .ve .next .mono{color:#DDA43C}
 .ve .next b{font-size:22px;font-weight:600;letter-spacing:-.025em;line-height:1.15}
@@ -442,6 +435,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 .hx .va{padding-left:var(--pad);padding-right:var(--pad)}
 .hx .va{padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(48px,6vw,88px)}
 .hx .crumb{justify-content:center;margin-bottom:20px;color:var(--dim)}
+.hx .crumb [aria-current]{color:var(--on-room)}
 .hx .va .credit{margin-top:8px}
 .switch{position:fixed;bottom:max(16px,env(safe-area-inset-bottom,0px));left:max(16px,env(safe-area-inset-left,0px));z-index:60;display:flex;align-items:center;gap:4px;padding:4px 4px 4px 14px;background:var(--page);border:1px solid var(--rule);border-radius:999px;font-size:12.5px;color:var(--ink-2)}
 .switch button{border:0;background:none;padding:6px 12px;border-radius:999px;cursor:pointer;font-size:12.5px;font-weight:500}
@@ -462,7 +456,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body>
+<body data-archetype="reading">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></symbol>
@@ -492,7 +486,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="atelier-v7.html"><b>Elena Varga</b> Atelier</a>
+    <a class="brand" href="atelier-v7.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a>
     <nav aria-label="Main">
       <a href="atelier-v7.html#courses" aria-current="page">Courses</a>
       <a href="atelier-v7.html#gallery">Gallery</a>
@@ -523,7 +517,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
   <nav class="crumb" aria-label="Breadcrumb"><a href="atelier-v7.html">Home</a><span aria-hidden="true">/</span><a href="#">My courses</a><span aria-hidden="true">/</span><span aria-current="page">Foundations of Drawing</span></nav>
   <p class="mono kicker">Course 01 · Pencil · Foundations of Drawing</p>
   <h1>Welcome back, Marta</h1>
-  <p class="lede">You're halfway. Topic 4 of 6, Light and value, starts with a twenty-minute draw-along.</p>
+  <p class="lede">You’re halfway. Topic 4 of 6, Light and value, starts with a twenty-minute draw-along.</p>
   <div class="prog-h"><b>50%</b><i aria-hidden="true"><s style="width:50%"></s></i><span>12 of 24 done</span></div>
   <a class="next" href="lesson.html"><span class="ph"><img src="img/1505569127510-bde1536937bc-w600.jpg" alt=""></span><span class="tx"><span class="mono">Up next · Topic 04 · Lesson 1</span><b>Three values, not seven</b><span class="m">Video lesson · 19:40 · draw along</span></span><span class="go" aria-hidden="true">→</span></a>
   <div class="act"><a class="btn" href="lesson.html">Continue: Three values, not seven</a><a class="btn l" href="lesson.html">Course resources</a></div>
@@ -535,7 +529,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
     <div class="course">
 
             <div class="main">
-        <nav class="tabs" aria-label="On this page">
+        <nav class="ptabs" aria-label="On this page">
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#curriculum">Curriculum <small>21</small></a></li>
@@ -547,13 +541,14 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 
         <!-- ABOUT -->
         <section class="sec" id="about" aria-labelledby="h-about">
-          <h2 id="h-about">About this course</h2>
-          <p class="lead" style="margin-top:16px">Most people who think they can't draw were never taught to look. This course starts there: you train your eye on shapes, values and edges first, then draw along with Elena as she works.</p>
-          <p class="body">You need no experience and very few materials. By week six you'll have one finished, considered drawing of a subject you chose, and a private video from Elena on what to try next.</p>
+          <p class="chapter"><b>01</b>About</p>
+          <h2 class="headline h2" id="h-about">Learn to look <em>before you draw.</em></h2>
+          <p class="lead" style="margin-top:16px">Most people who think they can’t draw were never taught to look. This course starts there: you train your eye on shapes, values and edges first, then draw along with Elena as she works.</p>
+          <p class="body">You need no experience and very few materials. By week six you’ll have one finished, considered drawing of a subject you chose, and a private video from Elena on what to try next.</p>
 
-          <h3>What you'll learn</h3>
+          <h3>What you’ll learn</h3>
           <ul class="checks">
-            <li><svg class="i"><use href="#i-check"/></svg>See shapes, values and edges instead of "things"</li>
+            <li><svg class="i"><use href="#i-check"/></svg>See shapes, values and edges instead of “things”</li>
             <li><svg class="i"><use href="#i-check"/></svg>Measure proportions with only your pencil</li>
             <li><svg class="i"><use href="#i-check"/></svg>Model light and shadow with three values</li>
             <li><svg class="i"><use href="#i-check"/></svg>Use gesture to put life into a drawing fast</li>
@@ -569,14 +564,14 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
           </ol>
           <p class="rhythm"><span>One topic ≈ 1 hour</span><i aria-hidden="true"><s style="width:15%;background:#DDA43C"></s><s style="width:38%;background:#D9A7A0"></s><s style="width:47%;background:var(--terra)"></s></i></p>
 
-          <h3>Who it's for</h3>
+          <h3>Who it’s for</h3>
           <ul class="fit">
             <li><svg class="i"><use href="#i-check"/></svg><span>Complete beginners, including anyone who stopped drawing at school</span></li>
             <li><svg class="i"><use href="#i-check"/></svg><span>Painters who want stronger drawing under their colour</span></li>
-            <li class="no"><svg class="i"><use href="#i-x"/></svg><span><b>Not for</b> portraits and figures in depth. That's <a href="#">Course 02</a>.</span></li>
+            <li class="no"><svg class="i"><use href="#i-x"/></svg><span><b>Not for</b> portraits and figures in depth. That’s <a href="#">Course 02</a>.</span></li>
           </ul>
 
-          <h3>What you'll need</h3>
+          <h3>What you’ll need</h3>
           <ul class="mats">
             <li>HB and 4B pencils<span>any brand</span></li>
             <li>Kneaded eraser<span>about $3</span></li>
@@ -589,7 +584,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
         <!-- CURRICULUM -->
         <section class="sec" id="curriculum" aria-labelledby="h-cur">
           <div class="sec-head">
-            <h2 id="h-cur">Curriculum</h2>
+            <div><p class="chapter"><b>02</b>Curriculum</p><h2 class="headline h2" id="h-cur">Six topics, one drawing <em>at a time.</em></h2></div>
             <button class="expand" type="button" id="expandAll" aria-pressed="false">Expand all</button>
           </div>
           <p class="cur-sum"><span><b>6</b> topics</span><span><b>21</b> lessons</span><span><b>2</b> quizzes</span><span><b>1</b> assignment</span><span><b>6 h 10 min</b> total</span></p>
@@ -645,7 +640,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
                 <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Choosing your subject</span><span class="k">Video</span><span class="d">11:20</span><span class="st"><span class="v-visitor"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span><span class="v-enrolled"></span></span></li>
                 <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Building the drawing in layers</span><span class="k">Video</span><span class="d">20:40</span><span class="st"><span class="v-visitor"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span><span class="v-enrolled"></span></span></li>
                 <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span class="t">Your final drawing</span><span class="k">Practice</span><span class="d">25:00</span><span class="st"><span class="v-visitor"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span><span class="v-enrolled"></span></span></li>
-                <li class="item task is-locked"><svg class="i"><use href="#i-upload"/></svg><span class="t">Submit your drawing for Elena's critique</span><span class="k">Assignment</span><span class="d">Upload</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item task is-locked"><svg class="i"><use href="#i-upload"/></svg><span class="t">Submit your drawing for Elena’s critique</span><span class="k">Assignment</span><span class="d">Upload</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
               </ul>
             </details>
           </div>
@@ -653,13 +648,14 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 
         <!-- TEACHER -->
         <section class="sec" id="teacher" aria-labelledby="h-teacher">
-          <h2 id="h-teacher" style="margin-bottom:24px">Your teacher</h2>
+          <p class="chapter"><b>03</b>Teacher</p>
+          <h2 class="headline h2" id="h-teacher" style="margin-bottom:32px">Taught by Elena, <em>at her own table.</em></h2>
           <div class="teacher">
             <figure class="ph"><img src="img/1631002724711-d1ae3cf651b0-w1100.jpg" alt="Elena Varga in her Lisbon studio" loading="lazy"><figcaption>In the studio, Lisbon</figcaption></figure>
             <div class="tx">
               <p class="nm">Elena Varga</p>
               <p class="role">Painter and illustrator, teaching since 2016</p>
-              <blockquote>“I don't teach tricks. I teach you to look for longer than feels comfortable, and then to trust what you saw.”</blockquote>
+              <blockquote>“I don’t teach tricks. I teach you to look for longer than feels comfortable, and then to trust what you saw.”</blockquote>
               <dl class="tfacts"><div><dt>Painting since</dt><dd>2006</dd></div><div><dt>Students</dt><dd>12,400</dd></div><div><dt>Critiques given</dt><dd>3,900+</dd></div></dl>
               <p class="sig">Elena V.</p>
               <a class="textlink" href="atelier-v7.html#about">More about Elena</a>
@@ -669,7 +665,8 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 
         <!-- STUDENT DRAWINGS: first and final drawing, same student (placeholder drawings) -->
         <section class="sec" id="progress" aria-labelledby="h-prog">
-          <div class="sec-head"><h2 id="h-prog">Week 1 <span aria-hidden="true">→</span><span class="sr"> to </span> Week 6</h2><p>The first and last drawing by students who finished</p></div>
+          <p class="chapter"><b>04</b>Week 1 → Week 6</p>
+          <div class="sec-head"><h2 class="headline h2" id="h-prog">Week 1, then <em>week 6.</em></h2><p>The first and last drawing by students who finished</p></div>
           <div class="pairs">
             <figure class="pair">
               <div class="pp"><div class="wk w1"><svg viewBox="0 0 160 160" role="img" aria-label="Week 1: a faint, broken outline of an egg"><path fill="none" stroke="#6E6658" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M80 38c-17 1-29 24-29 46 1 19 14 32 30 31 16 0 28-13 28-31-1-22-12-45-29-46" opacity=".7"/><path fill="none" stroke="#6E6658" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M79 40c-15 3-25 23-26 41" opacity=".45"/><path fill="none" stroke="#6E6658" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M46 120c20 4 50 4 70-1" opacity=".5"/></svg><span>Week 1</span></div><div class="wk"><svg viewBox="0 0 160 160" role="img" aria-label="Week 6: the egg drawn in three values with a dark cast shadow"><path d="M30 122c26 6 74 6 104-2" fill="none" stroke="#9A9184" stroke-width="1.2"/><path d="M84 124c18 2 36 0 48-5-9-6-26-8-44-5z" fill="#2E2A25"/><path d="M78 34c-18 0-30 26-30 48 0 20 13 35 30 35s30-15 30-35c0-22-12-48-30-48z" fill="#EDE6D9" stroke="#2E2A25" stroke-width="1.3"/><path d="M92 40c9 10 16 26 16 42 0 20-13 35-30 35 14-6 21-19 21-35 0-15-2-30-7-42z" fill="#9A9184"/><path d="M95 52c5 10 7 21 6 32" fill="none" stroke="#4A443B" stroke-width="2.4" stroke-linecap="round" opacity=".6"/></svg><span>Week 6</span></div></div>
@@ -688,7 +685,8 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 
         <!-- REVIEWS -->
         <section class="sec" id="reviews" aria-labelledby="h-rev">
-          <div class="sec-head"><h2 id="h-rev">Student reviews</h2><p>From students who finished the course</p></div>
+          <p class="chapter"><b>05</b>Reviews</p>
+          <div class="sec-head"><h2 class="headline h2" id="h-rev">Letters from students <em>who finished.</em></h2></div>
           <div class="rv-summary">
             <div class="rv-avg"><strong>4.9</strong><span class="stars" aria-hidden="true">★★★★★</span><span>612 reviews</span></div>
             <ul class="bars" aria-label="Rating breakdown">
@@ -700,21 +698,22 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
             </ul>
           </div>
           <div class="reviews">
-            <article class="review"><div class="top"><span class="stars" aria-label="5 stars">★★★★★</span><span>August 2026</span></div><p>“I hadn't drawn since school. Six weeks in I drew my grandmother's house, and now it hangs in her kitchen.”</p><p class="who"><i>MK</i><span><b>Marta K.</b> · finished in 6 weeks</span></p></article>
+            <article class="review"><div class="top"><span class="stars" aria-label="5 stars">★★★★★</span><span>August 2026</span></div><p>“I hadn’t drawn since school. Six weeks in I drew my grandmother’s house, and now it hangs in her kitchen.”</p><p class="who"><i>MK</i><span><b>Marta K.</b> · finished in 6 weeks</span></p></article>
             <article class="review"><div class="top"><span class="stars" aria-label="5 stars">★★★★★</span><span>July 2026</span></div><p>“The three-values lesson changed everything. My drawings finally look solid instead of fuzzy.”</p><p class="who"><i>PS</i><span><b>Priya S.</b> · finished in 5 weeks</span></p></article>
-            <article class="review"><div class="top"><span class="stars" aria-label="5 stars">★★★★★</span><span>June 2026</span></div><p>“Elena's critique was eleven minutes about my drawing alone. Worth the course on its own.”</p><p class="who"><i>LM</i><span><b>Leila M.</b> · finished in 7 weeks</span></p></article>
-            <article class="review"><div class="top"><span class="stars" aria-label="4 stars">★★★★☆</span><span>June 2026</span></div><p>“Calm and clear. I wanted more on hands, but that's what the portrait course is for.”</p><p class="who"><i>TH</i><span><b>Tom H.</b> · on topic 5</span></p></article>
+            <article class="review"><div class="top"><span class="stars" aria-label="5 stars">★★★★★</span><span>June 2026</span></div><p>“Elena’s critique was eleven minutes about my drawing alone. Worth the course on its own.”</p><p class="who"><i>LM</i><span><b>Leila M.</b> · finished in 7 weeks</span></p></article>
+            <article class="review"><div class="top"><span class="stars" aria-label="4 stars">★★★★☆</span><span>June 2026</span></div><p>“Calm and clear. I wanted more on hands, but that’s what the portrait course is for.”</p><p class="who"><i>TH</i><span><b>Tom H.</b> · on topic 5</span></p></article>
           </div>
           <a class="textlink" href="#">Read all 612 reviews</a>
         </section>
 
         <!-- BEFORE YOU ENROL (pre-sale questions; Tutor's Q&A is for enrolled students) -->
-        <section class="sec faq" id="before" aria-labelledby="h-faq">
-          <h2 id="h-faq" style="margin-bottom:24px">Before you enrol</h2>
-          <details open><summary>I've never drawn before. Is this for me?</summary><p>Yes. The course assumes nothing. If you can hold a pencil and write your name, you can follow every lesson.</p></details>
+        <section class="sec faq-book" id="before" aria-labelledby="h-faq">
+          <p class="chapter"><b>06</b>Before you enrol</p>
+          <h2 class="headline h2" id="h-faq" style="margin-bottom:24px">Before you <em>begin.</em></h2>
+          <details open><summary>I’ve never drawn before. Is this for me?</summary><p>Yes. The course assumes nothing. If you can hold a pencil and write your name, you can follow every lesson.</p></details>
           <details><summary>How long do I have to finish?</summary><p>As long as you like. Most students take six weeks at about an hour a week, and access never runs out.</p></details>
           <details><summary>How does the critique work?</summary><p>Upload a photo of your final drawing in topic 6. Within ten days Elena sends you a private video about it, usually 8 to 12 minutes long.</p></details>
-          <details><summary>Can I get a refund?</summary><p>Yes, within 14 days of buying, as long as you've watched fewer than five lessons.</p></details>
+          <details><summary>Can I get a refund?</summary><p>Yes, within 14 days of buying, as long as you’ve watched fewer than five lessons.</p></details>
         </section>
 
       </div>
@@ -727,7 +726,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
             <p class="terms">One payment · lifetime access</p>
             <a class="cta" href="#">Enrol now</a>
             <a class="cta2" href="#">Watch lesson 1 free</a>
-            <p class="guarantee">14-day refund if it isn't for you</p>
+            <p class="guarantee">14-day refund if it isn’t for you</p>
             <div class="incl">
               <p class="label">This course includes</p>
               <ul>
@@ -769,9 +768,11 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 
 
   <!-- MORE COURSES -->
-  <section class="more" aria-labelledby="h-more">
+  <section class="next-band band" aria-labelledby="h-more">
+    <div class="gridlines" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap">
-      <div class="sec-head"><h2 id="h-more">Where students go next</h2><a href="atelier-v7.html#courses">All six courses</a></div>
+      <p class="chapter"><b>07</b>Next</p>
+      <div class="sec-head"><h2 class="headline h2" id="h-more">Where students <em>go next.</em></h2><a href="atelier-v7.html#courses">All six courses</a></div>
       <div class="cgrid">
       <a href="course.html#cinema" class="pcard" style="--pc:var(--c2)" aria-label="The Portrait in Pencil, Intermediate, $99">
         <div class="ptop"><span>Elena Varga Atelier</span><b>No. 02 · Graphite</b></div>
@@ -813,7 +814,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 
 <footer class="foot">
   <div class="wrap">
-    <div><a class="brand" href="atelier-v7.html"><b>Elena Varga</b> Atelier</a><p>Online drawing and painting courses, filmed in a studio in Lisbon.</p></div>
+    <div><a class="brand" href="atelier-v7.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a><p>Online drawing and painting courses, filmed in a studio in Lisbon.</p></div>
     <div><h4>Learn</h4><ul><li><a href="atelier-v7.html#courses">All courses</a></li><li><a href="#">Free lessons</a></li><li><a href="#">Gift a course</a></li></ul></div>
     <div><h4>Studio</h4><ul><li><a href="atelier-v7.html#about">About Elena</a></li><li><a href="atelier-v7.html#gallery">Gallery</a></li><li><a href="#">Contact</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="atelier-v7.html#faq">FAQ</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
@@ -861,7 +862,7 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
 
   // Section tabs: mark the section currently in view.
-  const tabLinks = [...document.querySelectorAll('.tabs a')];
+  const tabLinks = [...document.querySelectorAll('.ptabs a')];
   const secs = tabLinks.map(a => document.querySelector(a.getAttribute('href')));
   const mark = () => {
     const y = window.scrollY + 120; let cur = null;
