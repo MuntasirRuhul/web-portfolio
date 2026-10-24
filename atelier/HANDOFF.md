@@ -14,7 +14,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 | Previous version | `atelier-v6.html` | Same page with the old gallery (filters + featured work) and the old student story. Reference only. |
 | Section options | `gallery-reviews-options.html` | The three gallery and three review directions that v7 chose from (A · Salon wall and C · Letters). |
 | Style guide | `style-guide.html` | Type, spacing, components, imagery, motion, voice. **Colours in it are the original palette;** see section 4 here for the new ones. |
-| **Single course page** | `course.html` | Course 01 · Foundations of Drawing, built in the v7 system as the template for every course (Tutor LMS `single-course.php`). See `research/tutorlms/STUDY.md` for the structure. |
+| **Single course page** | `course.html` | Course 01 · Foundations of Drawing, the template for every course (Tutor LMS `single-course.php`). Information-first layout: one reading column + one sticky enrol card, sticky section tabs (About · Curriculum · Teacher · Reviews · Questions), no grid lines or rail. Uses the v7 tokens and poster cards only for "Where students go next". See `research/tutorlms/STUDY.md` for the structure. |
 | Course card (copy-paste) | `poster-card-c.html` | The white poster card used on the site, standalone with all six courses. |
 | Figma | [art and potery](https://www.figma.com/design/0wA3LYabKVP9Jl4FMLjYKH/art-and-potery?node-id=0-1) | Course card component, level-meter variants, colour variables, text styles. |
 
