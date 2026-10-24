@@ -4,14 +4,14 @@
 
 ## 1. Tokens and components
 
-- [ ] 1.1 Create `atelier/assets/site.css` with the role-named tokens (colour, type steps, spacing, radii, rules, motion curves) and scale-table comments, copied from the home page's measured values, with `--muted` at `#6E6658`. Verify every token value against the home CSS (list each with its source line) and check `--muted` contrast is at least 4.5:1 on paper and on white.
-- [ ] 1.2 Add the components to `site.css`: chapter, headline, room, poster, steps/block, faq-book, btn variants, field with error, facts, tabs, review-bar, grain, gridlines, and the `body[data-archetype]` hooks. Verify with a scratch page that renders each one next to its home-page original and matches by screenshot.
+- [x] 1.1 Create `atelier/assets/site.css` with the role-named tokens (colour, type steps, spacing, radii, rules, motion curves) and scale-table comments, copied from the home page's measured values, with `--muted` at `#6E6658`. Verify every token value against the home CSS (list each with its source line) and check `--muted` contrast is at least 4.5:1 on paper and on white.
+- [x] 1.2 Add the components to `site.css`: chapter, headline, room, poster, steps/block, faq-book, btn variants, field with error, facts, tabs, review-bar, grain, gridlines, and the `body[data-archetype]` hooks. Verify with a scratch page that renders each one next to its home-page original and matches by screenshot.
 
 ## 2. Review gate
 
-- [ ] 2.1 Write `atelier/tools/audit.mjs`: archetype, overflow, page errors, off-scale font sizes and radii, shadows, straight quotes and " - " separators, contrast, missing alt, `#` primary links; an allow-list with reasons; non-zero exit on blocking items. Verify it fails on a scratch page with a planted shadow, a 14px radius and a straight-quote headline, and passes once they're removed.
-- [ ] 2.2 Run the audit on `atelier-v7.html`, `course.html` and `lesson.html` and save the baseline report to `atelier/tools/audit-baseline.txt`. Verify the report lists the drift items from the design's table.
-- [ ] 2.3 Write the review checklist (macro, meso, micro) into `atelier/HANDOFF-NEXT.md` and replace its stale "Design system" section with a summary of the language. Verify the handoff no longer contradicts the specs (ground colours, radii, label style).
+- [x] 2.1 Write `atelier/tools/audit.mjs`: archetype, overflow, page errors, off-scale font sizes and radii, shadows, straight quotes and " - " separators, contrast, missing alt, `#` primary links; an allow-list with reasons; non-zero exit on blocking items. Verify it fails on a scratch page with a planted shadow, a 14px radius and a straight-quote headline, and passes once they're removed.
+- [x] 2.2 Run the audit on `atelier-v7.html`, `course.html` and `lesson.html` and save the baseline report to `atelier/tools/audit-baseline.txt`. Verify the report lists the drift items from the design's table.
+- [x] 2.3 Write the review checklist (macro, meso, micro) into `atelier/HANDOFF-NEXT.md` and replace its stale "Design system" section with a summary of the language. Verify the handoff no longer contradicts the specs (ground colours, radii, label style).
 
 ## 3. Style reference
 

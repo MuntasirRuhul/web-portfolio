@@ -71,6 +71,9 @@ The full rules are in this change's `specs/`.
 8. **Style page** is a Gallery page assembled from `site.css` samples. Its "don't" side uses an inline `.dont` wrapper with a struck caption, so the bad examples are visibly marked and never reused.
 9. **Order of work:** tokens and components → audit → style page → realign the course page → realign the lesson page → home clean-ups → update the `atelier-site-pages` plan → publish. The audit lands before any realignment, so every later step is measured.
 
+11. **Accent as small text (found by the audit during apply).** Terracotta `#C0512F` is 4.37:1 on paper, just under 4.5:1 for small text. `--accent-text:#B24A2B` (4.99:1 on paper, 5.37:1 on white) is used for accent text under 24px on light grounds: chapter numbers, errors and link hovers. Headline accent phrases (large text, which needs 3:1), fills and buttons keep `#C0512F`, so the visible colour barely moves. Text on the terracotta block moves from paper at 85% (3.33:1) to full white (4.71:1).
+12. **Component title sizes.** The block title `clamp(24px,2.2vw,30px)` (v7:198) and the FAQ question `clamp(20px,2vw,25px)` (v7:353) are documented component steps in the audit, rather than being forced onto the h3 step, so the home page's look is preserved.
+
 ## Risks / Trade-offs
 
 - [Rewriting course headlines changes copy the user has reviewed] → Tab labels and section order stay. The headlines are shown in the summary for approval, and each one is a one-line revert.
