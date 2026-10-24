@@ -19,7 +19,7 @@
   --surface:#F3ECDF;      /* cream: enrol card, review summary, more-courses band */
   --ink:#1D1A16;
   --ink-2:#4A443B;
-  --muted:#8A8172;
+  --muted:#6E6658;      /* 5.6:1 on white, 4.8:1 on cream */
   --rule:rgba(29,26,22,.12);
   --rule-strong:rgba(29,26,22,.85);
   --terra:#C0512F;
@@ -117,16 +117,19 @@ h2{font-size:30px;font-weight:600;line-height:1.15;letter-spacing:-.035em}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:24px}
 .sec-head p{font-size:14px;color:var(--ink-2)}
 h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
-.lead{font-size:18px;line-height:1.6;color:var(--ink)}
-.body{color:var(--ink-2);margin-top:12px}
+.lead{font-size:18px;line-height:1.6;color:var(--ink);max-width:680px}
+.body{color:var(--ink-2);margin-top:12px;max-width:680px}
 
 /* about: outcomes, audience, method, materials */
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px}
 .checks li{display:flex;gap:12px;font-size:15px;line-height:1.5;padding:4px 0}
 .checks svg.i{color:var(--pc);width:20px;height:20px;margin-top:1px}
-.plain li{position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:var(--ink-2)}
-.plain li + li{margin-top:8px}
-.plain li::before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--muted)}
+.fit li{display:flex;gap:12px;font-size:15px;line-height:1.5;padding:4px 0}
+.fit svg.i{width:20px;height:20px;margin-top:1px;color:var(--pc)}
+.fit li.no{color:var(--ink-2);margin-top:8px;padding-top:12px;border-top:1px solid var(--rule)}
+.fit li.no svg.i{color:var(--ink-2)}
+.fit li.no b{font-weight:600;color:var(--ink)}
+.fit li.no a{border-bottom:1px solid currentColor}
 .method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:step}
 .method li{background:var(--surface);padding:20px 22px 24px;display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;row-gap:6px;align-content:start}
 .method li::before{counter-increment:step;content:counter(step);grid-row:1 / span 2;width:32px;height:32px;border-radius:50%;background:var(--pc);color:var(--page);display:grid;place-items:center;font-size:14px;font-weight:600}
@@ -135,41 +138,59 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
 .mats{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
 .mats li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px}
 .mats li span{font-size:13px;color:var(--muted);text-align:right}
+.btn2{display:inline-flex;align-items:center;gap:10px;margin-top:28px;height:44px;padding:0 20px;border:1px solid var(--ink);border-radius:999px;font-size:14.5px;font-weight:500;transition:background .2s,color .2s}
+.btn2:hover{background:var(--ink);color:var(--page)}
 .textlink{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14.5px;font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px}
 .textlink:hover{color:var(--terra);border-color:var(--terra)}
 
 /* curriculum */
 .expand{background:none;border:0;border-bottom:1px solid var(--ink);padding:0 0 2px;font-size:14px;font-weight:500;cursor:pointer}
 .expand:hover{color:var(--terra);border-color:var(--terra)}
-.topics{border-top:1px solid var(--rule-strong)}
+.topics{border-top:1px solid var(--ink)}
 .topic{border-bottom:1px solid var(--rule)}
-.topic summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:72px minmax(0,1fr) auto 20px;align-items:center;gap:16px;padding:18px 0}
+.topic summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:48px minmax(0,1fr) 24px;align-items:center;gap:16px;padding:20px 0}
 .topic summary::-webkit-details-marker{display:none}
-.topic .no{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.topic .tt{font-size:17px;font-weight:600;letter-spacing:-.02em}
-.topic .mt{font-size:13px;color:var(--muted);white-space:nowrap}
-.topic .chev{width:20px;height:20px;transition:transform .25s}
+.topic .no{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.04em;color:var(--pc);font-variant-numeric:tabular-nums}
+.topic .tw{display:flex;flex-direction:column;gap:2px}
+.topic .tt{font-size:18px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.topic .mt{font-size:13.5px;color:var(--ink-2)}
+.topic .chev{width:22px;height:22px;color:var(--ink);transition:transform .25s}
 .topic[open] .chev{transform:rotate(180deg)}
 .topic summary:hover .tt{color:var(--terra)}
-.items{padding:0 0 16px 88px}
-.item{display:grid;grid-template-columns:18px minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:9px 0;font-size:15px;color:var(--ink-2)}
-.item .i{color:var(--muted)}
-.item .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
-.item .d{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
-.item .free{font-size:13px;font-weight:500;color:var(--pc);border-bottom:1px solid currentColor}
-.item .free:hover{color:var(--terra)}
-.item.task{color:var(--ink);font-weight:500}
-.item.task .i{color:var(--pc)}
+.topic[open] summary{padding-bottom:12px}
+.items{padding:0 40px 20px 64px}
+.item{display:grid;grid-template-columns:20px minmax(0,1fr) 84px 52px 64px;align-items:center;gap:14px;padding:11px 0;border-top:1px solid var(--rule);font-size:15px;color:var(--ink)}
+.item svg.i{color:var(--ink-2)}
+.item .k{font-size:12.5px;color:var(--ink-2)}
+.item .d{font-size:13.5px;color:var(--ink-2);font-variant-numeric:tabular-nums;text-align:right}
+.item .st{display:flex;justify-content:flex-end}
+.item .lk{width:16px;height:16px;color:var(--ink-2)}
+.item .free{font-size:12.5px;font-weight:600;color:var(--page);background:var(--pc);border-radius:999px;padding:3px 10px}
+.item .free:hover{background:var(--terra)}
+.item.task .t{font-weight:600}
+.item.task svg.i:first-child{color:var(--pc)}
+.cur-sum{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 24px}
+.cur-sum span{font-size:13.5px;color:var(--ink);background:var(--surface);border-radius:999px;padding:5px 12px}
+.cur-sum b{font-weight:600}
 
 /* teacher */
-.teacher{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;align-items:start}
-.teacher .ph{aspect-ratio:1;overflow:hidden;background:var(--surface)}
-.teacher .ph img{filter:grayscale(1)}
-.teacher .nm{font-size:20px;font-weight:600;letter-spacing:-.03em}
-.teacher .role{font-size:14px;color:var(--ink-2);margin-top:2px}
-.teacher .stats{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:12px;font-size:14px;color:var(--ink-2)}
-.teacher .stats strong{color:var(--ink);font-weight:600}
-.teacher p{color:var(--ink-2);margin-top:16px}
+.teacher{display:grid;grid-template-columns:240px minmax(0,1fr);gap:32px;align-items:stretch}
+.teacher .ph{margin:0;display:flex;flex-direction:column}
+.teacher .ph img{aspect-ratio:4/5;height:auto;filter:grayscale(1)}
+.teacher figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-top:8px}
+.teacher .tx{display:flex;flex-direction:column}
+.teacher .nm{font-family:var(--display);font-size:32px;font-weight:700;letter-spacing:-.05em;line-height:1}
+.teacher .role{font-size:14.5px;color:var(--ink-2);margin-top:6px}
+.teacher blockquote{font-size:21px;line-height:1.35;letter-spacing:-.02em;margin:24px 0 0;padding-left:16px;border-left:3px solid var(--pc)}
+.tfacts{display:grid;grid-template-columns:repeat(3,1fr);column-gap:20px;margin-top:auto;padding-top:24px}
+.tfacts div{border-top:2px solid var(--ink);padding-top:8px}
+.tfacts dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.tfacts dd{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.teacher .sig{font-family:var(--hand);font-size:34px;line-height:1;margin-top:16px}
+.works{margin-top:32px}
+.works .label{color:var(--ink-2);margin-bottom:12px}
+.works .row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.works .row img{aspect-ratio:1;height:auto}
 
 /* reviews */
 .rv-summary{display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:center;background:var(--surface);padding:24px 28px}
@@ -219,8 +240,8 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
 .card .guarantee{font-size:12.5px;color:var(--muted);text-align:center;margin-top:12px}
 .card .incl{border-top:1px solid var(--rule);margin-top:20px;padding-top:20px}
 .card .incl .label{margin-bottom:12px;color:var(--ink-2)}
-.card .incl li{display:flex;align-items:center;gap:12px;font-size:14.5px;padding:5px 0}
-.card .incl svg.i{color:var(--pc)}
+.card .incl li{display:flex;align-items:center;gap:12px;font-size:14.5px;padding:6px 0}
+.card .incl svg.i{width:24px;height:24px;color:var(--ink);stroke-width:1.6;filter:url(#sketch)}
 .card .gift{display:flex;justify-content:space-between;border-top:1px solid var(--rule);margin-top:16px;padding-top:16px;font-size:13.5px;color:var(--ink-2)}
 .card .gift a{color:var(--ink);font-weight:500;border-bottom:1px solid currentColor}
 .card .gift a:hover{color:var(--terra)}
@@ -295,15 +316,15 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
   .keyfacts li:nth-child(n+3){border-top:1px solid var(--rule)}
   .checks,.mats,.reviews{grid-template-columns:1fr}
   .method{grid-template-columns:1fr}
-  .topic summary{grid-template-columns:minmax(0,1fr) 20px;gap:4px 12px}
-  .topic .no{grid-column:1}
-  .topic .tt{grid-column:1}
-  .topic .mt{grid-column:1}
-  .topic .chev{grid-column:2;grid-row:1 / span 3}
-  .items{padding-left:0}
-  .item{gap:10px}
-  .item .k{display:block;margin:0 0 2px}
-  .teacher{grid-template-columns:72px minmax(0,1fr);gap:16px}
+  .topic summary{grid-template-columns:36px minmax(0,1fr) 22px;gap:12px}
+  .topic .no{font-size:18px}
+  .items{padding:0 0 16px 0}
+  .item{grid-template-columns:20px minmax(0,1fr) auto auto;gap:10px}
+  .item .k{display:none}
+  .teacher{grid-template-columns:1fr;gap:20px}
+  .teacher .ph{max-width:240px}
+  .tfacts{margin-top:0}
+  .works .row{grid-template-columns:1fr 1fr}
   .rv-summary{grid-template-columns:1fr;gap:20px}
   .cgrid{grid-template-columns:1fr}
   .foot .wrap{grid-template-columns:1fr}
@@ -406,6 +427,14 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
   <symbol id="i-cert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5L15 13.5"/></symbol>
   <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.7-3.6-4-5.5-4a4 4 0 0 0 0 8c1.9 0 3.5-1.3 5.5-4zm0 0c2 2.7 3.6 4 5.5 4a4 4 0 0 0 0-8c-1.9 0-3.5 1.3-5.5 4z"/></symbol>
   <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="1.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol>
+  <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter>
+  <symbol id="h-video" viewBox="0 0 24 24"><path d="M3.4 6.6c3.6-.5 7.8-.4 12.1.1.4 3.6.5 7.1-.1 10.7-4 .5-8 .4-12 .1-.5-3.6-.6-7.3 0-10.9z"/><path d="M15.8 10.3c1.8-.9 3.3-1.9 4.9-2.6.3 2.9.3 5.8-.1 8.7-1.6-.6-3.2-1.6-4.8-2.6"/></symbol>
+  <symbol id="h-file" viewBox="0 0 24 24"><path d="M6.6 3.2c2.6-.2 5-.1 7.6.1l3.8 3.9c.2 4.6.1 9.1-.1 13.6-3.7.3-7.4.2-11.2 0-.3-5.9-.4-11.7-.1-17.6z"/><path d="M13.9 3.4c.1 1.3 0 2.6.2 3.9 1.3.1 2.6 0 3.9.1M9.2 12.6c1.9-.2 3.8-.1 5.7 0M9.1 16.4c1.6-.1 3.2 0 4.8.1"/></symbol>
+  <symbol id="h-quiz" viewBox="0 0 24 24"><path d="M12.3 2.9c5 .2 8.9 3.9 8.8 9.3-.2 5-4.3 8.8-9.4 8.8-5-.2-8.8-4.2-8.7-9.2.2-5 4.2-9 9.3-8.9z"/><path d="M9.3 9.6c.3-1.7 1.6-2.6 3-2.5 1.6.1 2.6 1.2 2.4 2.6-.3 1.8-2.6 2.2-2.8 4.1M11.9 16.9l.1.2"/></symbol>
+  <symbol id="h-chat" viewBox="0 0 24 24"><path d="M4.2 5.3c5.1-.6 10.3-.5 15.5.1.4 3.2.3 6.3-.1 9.5-3.1.3-6.1.2-9.2.2-1.9 1.4-3.6 2.8-5.6 4 .3-1.4.6-2.7.6-4.1-.6-.1-1.1-.1-1.5-.2-.4-3.2-.3-6.4.3-9.5z"/><path d="M8.3 9.8c2.4-.1 4.9-.1 7.4.1M8.4 12.2c1.6-.1 3.2 0 4.7 0"/></symbol>
+  <symbol id="h-cert" viewBox="0 0 24 24"><path d="M12.2 3.1c2.9.1 5.1 2.4 5 5.3-.1 2.9-2.5 5.1-5.3 5-2.9-.1-5-2.5-4.9-5.4.1-2.8 2.4-5 5.2-4.9z"/><path d="M9.2 12.9c-.5 2.6-1.1 5.2-1.5 7.9 1.5-.7 3-1.5 4.4-2.4 1.5.8 2.9 1.7 4.4 2.4-.4-2.7-.9-5.3-1.5-7.9"/></symbol>
+  <symbol id="h-inf" viewBox="0 0 24 24"><path d="M12 12.1c-1.9-2.4-3.6-4.1-5.6-4.1-2.3.1-4 1.9-3.9 4.1.1 2.1 1.8 3.8 3.9 3.8 2.2 0 3.7-1.8 5.6-3.8 1.9 2.1 3.5 3.9 5.7 3.9 2.1 0 3.8-1.7 3.8-3.9-.1-2.2-1.8-4-4-4-2 .1-3.7 1.8-5.5 4z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
 </svg>
 
@@ -482,10 +511,10 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
           </ol>
 
           <h3>Who it's for</h3>
-          <ul class="plain">
-            <li>Complete beginners, including anyone who stopped drawing at school</li>
-            <li>Painters who want stronger drawing under their colour</li>
-            <li>Not for: portraits and figures in depth (see Course 02)</li>
+          <ul class="fit">
+            <li><svg class="i"><use href="#i-check"/></svg><span>Complete beginners, including anyone who stopped drawing at school</span></li>
+            <li><svg class="i"><use href="#i-check"/></svg><span>Painters who want stronger drawing under their colour</span></li>
+            <li class="no"><svg class="i"><use href="#i-x"/></svg><span><b>Not for</b> portraits and figures in depth. That's <a href="#">Course 02</a>.</span></li>
           </ul>
 
           <h3>What you'll need</h3>
@@ -495,7 +524,7 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
             <li>A4 cartridge paper<span>120 gsm</span></li>
             <li>A desk lamp<span>light from one side</span></li>
           </ul>
-          <a class="textlink" href="#"><svg class="i"><use href="#i-file"/></svg>Download the materials list (PDF)</a>
+          <a class="btn2" href="#"><svg class="i"><use href="#i-file"/></svg>Download the materials list (PDF)</a>
         </section>
 
         <!-- CURRICULUM -->
@@ -504,60 +533,60 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
             <h2 id="h-cur">Curriculum</h2>
             <button class="expand" type="button" id="expandAll" aria-pressed="false">Expand all</button>
           </div>
-          <p class="body" style="margin:-12px 0 24px">6 topics · 21 lessons · 2 quizzes · 1 assignment · 6 h 10 min total</p>
+          <p class="cur-sum"><span><b>6</b> topics</span><span><b>21</b> lessons</span><span><b>2</b> quizzes</span><span><b>1</b> assignment</span><span><b>6 h 10 min</b> total</span></p>
           <div class="topics">
             <details class="topic" open>
-              <summary><span class="no">Topic 1</span><span class="tt">Learning to look</span><span class="mt">3 lessons · 1 quiz · 58 min</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+              <summary><span class="no">01</span><span class="tw"><span class="tt">Learning to look</span><span class="mt">3 lessons · 1 quiz · 58 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
               <ul class="items">
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>How artists see</span><a class="free" href="#">Preview</a><span class="d">12:40</span></li>
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Shapes, values and edges</span><svg class="i"><use href="#i-lock"/></svg><span class="d">16:05</span></li>
-                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span><span class="k">Practice</span>Blind contour, ten minutes</span><svg class="i"><use href="#i-lock"/></svg><span class="d">21:15</span></li>
-                <li class="item"><svg class="i"><use href="#i-quiz"/></svg><span><span class="k">Quiz</span>Spot the edges</span><svg class="i"><use href="#i-lock"/></svg><span class="d">8 Qs</span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">How artists see</span><span class="k">Video</span><span class="d">12:40</span><span class="st"><a class="free" href="#">Preview</a></span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Shapes, values and edges</span><span class="k">Video</span><span class="d">16:05</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span class="t">Blind contour, ten minutes</span><span class="k">Practice</span><span class="d">21:15</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-quiz"/></svg><span class="t">Spot the edges</span><span class="k">Quiz</span><span class="d">8 Qs</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
               </ul>
             </details>
             <details class="topic">
-              <summary><span class="no">Topic 2</span><span class="tt">Line and gesture</span><span class="mt">4 lessons · 1 h 02 min</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+              <summary><span class="no">02</span><span class="tw"><span class="tt">Line and gesture</span><span class="mt">4 lessons · 1 h 02 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
               <ul class="items">
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Holding the pencil</span><svg class="i"><use href="#i-lock"/></svg><span class="d">09:30</span></li>
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Gesture before detail</span><svg class="i"><use href="#i-lock"/></svg><span class="d">17:20</span></li>
-                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span><span class="k">Practice</span>Thirty 30-second gestures</span><svg class="i"><use href="#i-lock"/></svg><span class="d">24:45</span></li>
-                <li class="item"><svg class="i"><use href="#i-chat"/></svg><span><span class="k">Reflection</span>What your lines say</span><svg class="i"><use href="#i-lock"/></svg><span class="d">10:25</span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Holding the pencil</span><span class="k">Video</span><span class="d">09:30</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Gesture before detail</span><span class="k">Video</span><span class="d">17:20</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span class="t">Thirty 30-second gestures</span><span class="k">Practice</span><span class="d">24:45</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-chat"/></svg><span class="t">What your lines say</span><span class="k">Reflection</span><span class="d">10:25</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
               </ul>
             </details>
             <details class="topic">
-              <summary><span class="no">Topic 3</span><span class="tt">Measuring and proportion</span><span class="mt">3 lessons · 1 quiz · 1 h 05 min</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+              <summary><span class="no">03</span><span class="tw"><span class="tt">Measuring and proportion</span><span class="mt">3 lessons · 1 quiz · 1 h 05 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
               <ul class="items">
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Sight-size and the pencil ruler</span><svg class="i"><use href="#i-lock"/></svg><span class="d">18:10</span></li>
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Negative space</span><svg class="i"><use href="#i-lock"/></svg><span class="d">14:50</span></li>
-                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span><span class="k">Practice</span>Drawing a chair</span><svg class="i"><use href="#i-lock"/></svg><span class="d">32:00</span></li>
-                <li class="item"><svg class="i"><use href="#i-quiz"/></svg><span><span class="k">Quiz</span>Proportion check</span><svg class="i"><use href="#i-lock"/></svg><span class="d">6 Qs</span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Sight-size and the pencil ruler</span><span class="k">Video</span><span class="d">18:10</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Negative space</span><span class="k">Video</span><span class="d">14:50</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span class="t">Drawing a chair</span><span class="k">Practice</span><span class="d">32:00</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-quiz"/></svg><span class="t">Proportion check</span><span class="k">Quiz</span><span class="d">6 Qs</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
               </ul>
             </details>
             <details class="topic">
-              <summary><span class="no">Topic 4</span><span class="tt">Light and value</span><span class="mt">4 lessons · 1 h 10 min</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+              <summary><span class="no">04</span><span class="tw"><span class="tt">Light and value</span><span class="mt">4 lessons · 1 h 10 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
               <ul class="items">
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Three values, not seven</span><svg class="i"><use href="#i-lock"/></svg><span class="d">19:40</span></li>
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Cast shadows</span><svg class="i"><use href="#i-lock"/></svg><span class="d">15:30</span></li>
-                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span><span class="k">Practice</span>An egg on white paper</span><svg class="i"><use href="#i-lock"/></svg><span class="d">30:20</span></li>
-                <li class="item"><svg class="i"><use href="#i-file"/></svg><span><span class="k">Bonus</span>Value scale sheet (PDF)</span><svg class="i"><use href="#i-lock"/></svg><span class="d">04:30</span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Three values, not seven</span><span class="k">Video</span><span class="d">19:40</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Cast shadows</span><span class="k">Video</span><span class="d">15:30</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span class="t">An egg on white paper</span><span class="k">Practice</span><span class="d">30:20</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-file"/></svg><span class="t">Value scale sheet (PDF)</span><span class="k">Bonus</span><span class="d">04:30</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
               </ul>
             </details>
             <details class="topic">
-              <summary><span class="no">Topic 5</span><span class="tt">Texture and edges</span><span class="mt">4 lessons · 58 min</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+              <summary><span class="no">05</span><span class="tw"><span class="tt">Texture and edges</span><span class="mt">4 lessons · 58 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
               <ul class="items">
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Lost and found edges</span><svg class="i"><use href="#i-lock"/></svg><span class="d">16:15</span></li>
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Paper, graphite and blending</span><svg class="i"><use href="#i-lock"/></svg><span class="d">13:45</span></li>
-                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span><span class="k">Practice</span>A crumpled paper bag</span><svg class="i"><use href="#i-lock"/></svg><span class="d">21:30</span></li>
-                <li class="item"><svg class="i"><use href="#i-chat"/></svg><span><span class="k">Reflection</span>Your favourite edge</span><svg class="i"><use href="#i-lock"/></svg><span class="d">06:30</span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Lost and found edges</span><span class="k">Video</span><span class="d">16:15</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Paper, graphite and blending</span><span class="k">Video</span><span class="d">13:45</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span class="t">A crumpled paper bag</span><span class="k">Practice</span><span class="d">21:30</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-chat"/></svg><span class="t">Your favourite edge</span><span class="k">Reflection</span><span class="d">06:30</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
               </ul>
             </details>
             <details class="topic">
-              <summary><span class="no">Topic 6</span><span class="tt">The final piece</span><span class="mt">3 lessons · 1 assignment · 57 min</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+              <summary><span class="no">06</span><span class="tw"><span class="tt">The final piece</span><span class="mt">3 lessons · 1 assignment · 57 min</span></span><svg class="i chev"><use href="#i-chev"/></svg></summary>
               <ul class="items">
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Choosing your subject</span><svg class="i"><use href="#i-lock"/></svg><span class="d">11:20</span></li>
-                <li class="item"><svg class="i"><use href="#i-play"/></svg><span>Building the drawing in layers</span><svg class="i"><use href="#i-lock"/></svg><span class="d">20:40</span></li>
-                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span><span class="k">Practice</span>Your final drawing</span><svg class="i"><use href="#i-lock"/></svg><span class="d">25:00</span></li>
-                <li class="item task"><svg class="i"><use href="#i-upload"/></svg><span><span class="k">Assignment</span>Submit your drawing for Elena's critique</span><svg class="i"><use href="#i-lock"/></svg><span class="d">Upload</span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Choosing your subject</span><span class="k">Video</span><span class="d">11:20</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-play"/></svg><span class="t">Building the drawing in layers</span><span class="k">Video</span><span class="d">20:40</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item"><svg class="i"><use href="#i-pencil"/></svg><span class="t">Your final drawing</span><span class="k">Practice</span><span class="d">25:00</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
+                <li class="item task"><svg class="i"><use href="#i-upload"/></svg><span class="t">Submit your drawing for Elena's critique</span><span class="k">Assignment</span><span class="d">Upload</span><span class="st"><svg class="i lk" aria-label="Locked"><use href="#i-lock"/></svg></span></li>
               </ul>
             </details>
           </div>
@@ -567,14 +596,24 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
         <section class="sec" id="teacher" aria-labelledby="h-teacher">
           <h2 id="h-teacher" style="margin-bottom:24px">Your teacher</h2>
           <div class="teacher">
-            <div class="ph"><img src="img/1551180452-45cc5da51c3a-w600.jpg" alt="Elena Varga" loading="lazy" style="object-position:40% 30%"></div>
-            <div>
+            <figure class="ph"><img src="img/1631002724711-d1ae3cf651b0-w1100.jpg" alt="Elena Varga in her Lisbon studio" loading="lazy"><figcaption>In the studio, Lisbon</figcaption></figure>
+            <div class="tx">
               <p class="nm">Elena Varga</p>
-              <p class="role">Painter, illustrator and teacher · Lisbon</p>
-              <p class="stats"><span><strong>18</strong> courses</span><span><strong>12,400</strong> students</span><span><strong>4.9</strong> average rating</span></p>
-              <p>Elena has painted professionally since 2006 and started filming lessons in 2016, because students kept asking how she actually sees a subject before she draws it. She teaches slowly, shows her mistakes, and builds every course around looking.</p>
-              <a class="textlink" href="atelier-v7.html#about">More about Elena</a>
+              <p class="role">Painter and illustrator, teaching since 2016</p>
+              <blockquote>“I don't teach tricks. I teach you to look for longer than feels comfortable, and then to trust what you saw.”</blockquote>
+              <dl class="tfacts"><div><dt>Painting since</dt><dd>2006</dd></div><div><dt>Students</dt><dd>12,400</dd></div><div><dt>Critiques given</dt><dd>3,900+</dd></div></dl>
+              <p class="sig">Elena V.</p>
             </div>
+          </div>
+          <div class="works">
+            <p class="label">From her sketchbook</p>
+            <div class="row">
+              <img src="img/1784295658198-f3a1d43b40e4-w1000.jpg" alt="Portrait study, ink" loading="lazy">
+              <img src="img/1768408279662-d31ad1a1cda6-w500.jpg" alt="Gesture, ink" loading="lazy">
+              <img src="img/1776871293074-a214107f3e37-w800.jpg" alt="Meadow, watercolour" loading="lazy">
+              <img src="img/1765814142778-7d9d12654bbd-w600.jpg" alt="Bridge, watercolour" loading="lazy">
+            </div>
+            <a class="textlink" href="atelier-v7.html#about">More about Elena</a>
           </div>
         </section>
 
@@ -624,12 +663,12 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
             <div class="incl">
               <p class="label">This course includes</p>
               <ul>
-                <li><svg class="i"><use href="#i-video"/></svg>21 video lessons · 6 h 10 min</li>
-                <li><svg class="i"><use href="#i-file"/></svg>6 printable reference sheets</li>
-                <li><svg class="i"><use href="#i-quiz"/></svg>2 short quizzes</li>
-                <li><svg class="i"><use href="#i-chat"/></svg>1 private video critique</li>
-                <li><svg class="i"><use href="#i-cert"/></svg>Certificate of completion</li>
-                <li><svg class="i"><use href="#i-infinity"/></svg>Lifetime access and updates</li>
+                <li><svg class="i"><use href="#h-video"/></svg>21 video lessons · 6 h 10 min</li>
+                <li><svg class="i"><use href="#h-file"/></svg>6 printable reference sheets</li>
+                <li><svg class="i"><use href="#h-quiz"/></svg>2 short quizzes</li>
+                <li><svg class="i"><use href="#h-chat"/></svg>1 private video critique</li>
+                <li><svg class="i"><use href="#h-cert"/></svg>Certificate of completion</li>
+                <li><svg class="i"><use href="#h-inf"/></svg>Lifetime access and updates</li>
               </ul>
             </div>
             <p class="gift"><span>Buying for someone?</span><a href="#">Gift this course</a></p>
