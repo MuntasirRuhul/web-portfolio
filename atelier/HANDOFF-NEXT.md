@@ -52,7 +52,7 @@ The rules live in OpenSpec change `atelier-art-direction` (`openspec/changes/ate
 
 ### Review checklist (run before every publish)
 
-- **Macro (page):** the right archetype and its rules; one idea per section; a rhythm of paper → room → objects; one clear first action; it ends with a next step.
+- **Macro (page):** the right archetype and its rules; the shared header brand and the shared dark footer (`.site-foot` on a paper band; Workroom screens have none); one idea per section; a rhythm of paper → room → objects; one clear first action; it ends with a next step.
 - **Meso (section):** a chapter label and a voiced headline; aligned to the grid lines; colour blocks in order; images grey at rest, colour on touch; captions in mono.
 - **Micro (details):** sizes on the scale; radii and rules on the scale; real characters (curly quotes, `·`, `→`, `×`, en dash); line icons and ticks; hover and focus states (terracotta focus ring); reduced motion; contrast of 4.5:1 for body text and 3:1 for large text.
 - **Scripted:** `node atelier/tools/audit.mjs <pages>` must pass (exit 0). Then look at before/after screenshots at 1440px and 390px.

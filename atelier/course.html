@@ -311,13 +311,6 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
 .meter[data-l="1"] i:nth-child(3),.meter[data-l="2"] i:nth-child(n+2),.meter[data-l="3"] i{opacity:1}
 
 /* ---------- footer */
-.foot{border-top:1px solid var(--rule);padding:48px 0 40px;font-size:14px;color:var(--ink-2)}
-.foot .wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
-.foot p{margin-top:8px;max-width:280px}
-.foot h4{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
-.foot li + li{margin-top:6px}
-.foot a:hover{color:var(--terra)}
-.foot .base{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px solid var(--rule);padding-top:20px;margin-top:16px;font-size:12.5px;color:var(--muted)}
 
 /* ---------- phone enrol bar */
 .mbar{display:none}
@@ -339,8 +332,7 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
   .ptabs ul{gap:24px}
   .ptabs{margin:32px -20px 0;padding:0 20px}
   .cgrid{grid-template-columns:1fr 1fr}
-  .foot .wrap{grid-template-columns:1fr 1fr}
-  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--page);border-top:1px solid var(--rule);padding:10px max(20px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) var(--gutter)}
+    .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--page);border-top:1px solid var(--rule);padding:10px max(20px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) var(--gutter)}
   .mbar strong{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.05em}
   .mbar span{display:block;font-size:12px;color:var(--muted)}
   .mbar a{background:var(--ink);color:var(--page);padding:12px 22px;border-radius:999px;font-size:15px;font-weight:500}
@@ -370,8 +362,7 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
   .pairs::-webkit-scrollbar{display:none}
   .pair{flex:0 0 82%;scroll-snap-align:start}
   .cgrid{grid-template-columns:1fr}
-  .foot .wrap{grid-template-columns:1fr}
-}
+  }
 /* ---------- hero options (from course-heroes.html) */
 :root{--sans:"Inter Tight",system-ui,sans-serif;--disp:"Inter","Inter Tight",system-ui,sans-serif;--pad:clamp(20px,4vw,56px);--dim:#A9A092}
 .hx .mono{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -440,6 +431,9 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
 .switch{position:fixed;bottom:max(16px,env(safe-area-inset-bottom,0px));left:max(16px,env(safe-area-inset-left,0px));z-index:60;display:flex;align-items:center;gap:4px;padding:4px 4px 4px 14px;background:var(--page);border:1px solid var(--rule);border-radius:999px;font-size:12.5px;color:var(--ink-2)}
 .switch button{border:0;background:none;padding:6px 12px;border-radius:999px;cursor:pointer;font-size:12.5px;font-weight:500}
 .switch button[aria-pressed="true"]{background:var(--ink);color:var(--page)}
+/* the footer sits on paper like the home page; extra room below it keeps the fixed review switch clear */
+.foot-band{padding-bottom:64px}
+@media (max-width:900px){.foot-band{padding-bottom:72px}}
 @media (max-width:900px){.switch{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 @media (max-width:860px){
   .hx .grid{grid-template-columns:1fr 1fr}
@@ -812,15 +806,14 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
   </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <div><a class="brand" href="atelier-v7.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a><p>Online drawing and painting courses, filmed in a studio in Lisbon.</p></div>
-    <div><h4>Learn</h4><ul><li><a href="atelier-v7.html#courses">All courses</a></li><li><a href="#">Free lessons</a></li><li><a href="#">Gift a course</a></li></ul></div>
-    <div><h4>Studio</h4><ul><li><a href="atelier-v7.html#about">About Elena</a></li><li><a href="atelier-v7.html#gallery">Gallery</a></li><li><a href="#">Contact</a></li></ul></div>
-    <div><h4>Help</h4><ul><li><a href="atelier-v7.html#faq">FAQ</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
-    <div class="base"><span>© 2026 Elena Varga Atelier</span><span><a href="style.html">Style</a> · Instagram · Pinterest · YouTube</span></div>
-  </div>
+<div class="foot-band band">
+<footer class="site-foot">
+  <div class="c"><h3>Learn</h3><a href="atelier-v7.html#courses">All courses</a><a href="lesson.html">Free lessons</a><a href="#">Gift a course</a><a href="atelier-v7.html#faq">FAQ</a></div>
+  <div class="c"><div class="ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.9" pathLength="1"/></svg></div><h3>Studio</h3><a href="atelier-v7.html#about">About Elena</a><a href="atelier-v7.html#gallery">Gallery</a><a href="#">Journal</a><a href="#">Contact</a></div>
+  <div class="c"><h3>Information</h3><a href="#">Commissions</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · Made by hand in Lisbon</span></div>
 </footer>
+</div>
 
 <div class="switch" role="group" aria-label="Review: page view"><span>View</span><button type="button" data-v="visitor" aria-pressed="true">Visitor</button><button type="button" data-v="enrolled" aria-pressed="false">Enrolled</button></div>
 <div class="mbar v-visitor"><div><strong>$79</strong><span>Lifetime access</span></div><a href="#">Enrol now</a></div>
@@ -871,6 +864,10 @@ html[data-view="enrolled"] .v-visitor,html:not([data-view="enrolled"]) .v-enroll
     tabLinks.forEach((a, i) => a.setAttribute('aria-current', i === cur));
   };
   addEventListener('scroll', mark, { passive: true }); mark();
+
+  // Footer circle: drawn each time the footer comes into view (as on the home page).
+  const foot = document.querySelector('.site-foot');
+  new IntersectionObserver(([e]) => foot.classList.toggle('ring-on', e.isIntersecting), { threshold: .3 }).observe(foot);
 
   // Initial view from the hash (set on <html> by the head script).
   setView(document.documentElement.dataset.view, false);

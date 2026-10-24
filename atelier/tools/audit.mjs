@@ -113,6 +113,8 @@ for (const page of pages) {
         }
       }
       for (const img of document.images) if (!img.hasAttribute('alt')) res.alt.push(img.src.slice(-50));
+      // one footer for the whole site: the dark room footer (.site-foot), or the home page's original
+      res.footer = [...document.querySelectorAll('footer')].filter(f => !f.classList.contains('site-foot') && !document.querySelector('.hero .hn')).map(f => sel(f) + ' is not the shared .site-foot');
       for (const a of document.querySelectorAll('header a[href="#"], nav a[href="#"], footer a[href="#"], .poster[href="#"], .pcard[href="#"], a.btn[href="#"], a.cta[href="#"]')) if (visible(a)) res.hashLinks.push(sel(a) + ' "' + a.textContent.trim().slice(0, 30) + '"');
       return res;
     }, { ALLOW_SHADOW, ALLOW_RADIUS, scaleSteps: [...scale(width), ...componentSteps(width)], EXCEPTIONS, RADII_OK });
@@ -130,6 +132,7 @@ for (const page of pages) {
     add('BLOCK', 'italic text', r.italic);
     add('BLOCK', 'contrast', r.contrast);
     add('BLOCK', 'images without alt', r.alt);
+    add('BLOCK', 'footer is not the shared one', r.footer);
     add(strictLinks ? 'BLOCK' : 'WARN', 'href="#" in primary links', r.hashLinks);
     const off = Object.entries(r.fonts).filter(([k]) => k.includes('OFF-SCALE')).map(([k, n]) => `${k} ×${n}`);
     add('WARN', 'font sizes off the scale', off);
