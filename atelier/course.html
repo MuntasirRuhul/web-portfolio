@@ -74,9 +74,9 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .menu a:hover{color:var(--terra)}
 
 /* ---------- page grid: content column + card column */
-.course{display:grid;grid-template-columns:minmax(0,var(--col)) var(--card);justify-content:space-between;column-gap:80px;align-items:start}
+.course{display:grid;grid-template-columns:minmax(0,var(--col)) var(--card);justify-content:space-between;column-gap:80px;align-items:start;padding-top:24px} /* safe gap under the dark header; card top lines up with the tabs */
 .course > .main{grid-column:1;min-width:0}
-.course > .side{grid-column:2;grid-row:1;position:sticky;top:24px;margin-top:24px}
+.course > .side{grid-column:2;grid-row:1;position:sticky;top:24px}
 
 /* ---------- hero (left column only) */
 .hero{padding:40px 0 64px}
@@ -339,7 +339,7 @@ html[data-view="enrolled"] .item.is-next svg.i:first-child{color:var(--pc)}
   .course > .side{grid-column:1;grid-row:auto;position:static;margin:0}
   .course > .main{display:contents}
   .hero{order:-2}
-  .course > .side{order:-1;margin:24px 0 40px}
+  .course > .side{order:-1;margin:0 0 40px}
   .hero{padding:24px 0 32px}
   .chip{margin-top:24px}
   .tabs ul{gap:24px}
