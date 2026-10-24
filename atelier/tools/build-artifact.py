@@ -1,7 +1,11 @@
-# Build the linked artifact: home as the main page, home.html + course.html + lesson.html as extra pages.
-import re, io, base64
+# Build the linked artifact: home as the main page, every other page as an extra file.
+# Run from a scratch folder (it writes ./atelier-v7.html and ./site/*); it reads from atelier/.
+#   python3 /home/user/web-portfolio/atelier/tools/build-artifact.py
+# Publish: main file ./atelier-v7.html; files = site/<page>.html and site/assets/* at their names.
+import re, io, base64, os, shutil
 from PIL import Image
 root='/home/user/web-portfolio/atelier/'
+PAGES=['course.html','lesson.html','style.html']   # extra pages besides home
 cache={}
 def embed(s):
     def rep(m):
@@ -16,15 +20,15 @@ def embed(s):
 def strip_doc(s):
     s=re.sub(r'<!doctype html>\s*<html[^>]*>\s*<head>\s*','',s,flags=re.I)
     s=s.replace('<meta charset="utf-8">\n','').replace('<meta name="viewport" content="width=device-width, initial-scale=1">\n','')
-    return s.replace('</head>\n<body>','').replace('</body>\n</html>','')
-home=open(root+'atelier-v7.html').read()
-course=open(root+'course.html').read()
-lesson=open(root+'lesson.html').read()
-# course page links back to the home page file
-course=course.replace('atelier-v7.html','home.html')
-home_e=embed(home); course_e=embed(course)
-open('site/home.html','w').write(home_e)            # full document, served as its own page
-open('site/course.html','w').write(course_e)        # full document
-open('site/lesson.html','w').write(embed(lesson))   # full document
+    return s.replace('</head>\n<body','<body').replace('</body>\n</html>','')
+os.makedirs('site/assets',exist_ok=True)
+home_e=embed(open(root+'atelier-v7.html').read())
+open('site/home.html','w').write(home_e)             # full document, served as its own page
 open('atelier-v7.html','w').write(strip_doc(home_e)) # main artifact page
-print({k:len(open(p).read())//1024 for k,p in [('main','atelier-v7.html'),('home','site/home.html'),('course','site/course.html'),('lesson','site/lesson.html')]}, 'KB')
+sizes={'main':len(home_e)//1024}
+for page in PAGES:
+    s=open(root+page).read().replace('atelier-v7.html','home.html')   # pages link back to the home file
+    open('site/'+page,'w').write(embed(s)); sizes[page]=os.path.getsize('site/'+page)//1024
+for f in os.listdir(root+'assets'):
+    shutil.copy(root+'assets/'+f,'site/assets/'+f); sizes['assets/'+f]=os.path.getsize('site/assets/'+f)//1024
+print(sizes,'KB')

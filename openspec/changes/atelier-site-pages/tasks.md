@@ -1,10 +1,10 @@
 # Tasks
 
-**Standard check** for every page task: Playwright (`/opt/node22/lib/node_modules/playwright/index.mjs`) screenshots at 1440px and 390px in solo and academy mode; no page errors; `scrollWidth` equals the viewport width; no `box-shadow` in the page's CSS. Each group ends published, so the user can comment before the next one.
+**Standard check** for every page task: Playwright (`/opt/node22/lib/node_modules/playwright/index.mjs`) screenshots at 1440px and 390px in solo and academy mode; no page errors; `scrollWidth` equals the viewport width; `node atelier/tools/audit.mjs <page> --strict-links` exits 0 (no shadows, scale radii, curly quotes, contrast, alt text, no `#` primary links), and the art-direction review checklist in `atelier/HANDOFF-NEXT.md` is walked. Each group ends published, so the user can comment before the next one.
 
 ## 1. Shared shell and mode switch
 
-- [ ] 1.1 Create `atelier/assets/site.css` (tokens, base, header, footer, buttons, labels, poster card, book FAQ, step cards, form fields and errors, review bar) and `atelier/assets/site.js` (menu, mode head logic helper, review bar with mode plus optional `data-states`, form helper, tabs helper). Verify with a scratch page that uses every component and passes the standard check.
+- [ ] 1.1 Extend `atelier/assets/site.css` (from `atelier-art-direction`) with the phone menu dropdown and the `.m-solo` / `.m-academy` mode rules, and create `atelier/assets/site.js` (menu, mode head logic helper, review bar with mode plus optional `data-states`, form helper, tabs helper). Verify with a scratch page that uses every component and passes the standard check.
 - [ ] 1.2 Add the mode head script and `site.js` to `atelier-v7.html`, `course.html` and `lesson.html`; move the course page's Visitor / Enrolled switch into the shared review bar. Verify `?mode=academy` persists across the three pages, storage blocked still renders solo, and the course-page checks from `course-page-concept-v2` still pass (hash views, 23/1 locks, Continue links).
 - [ ] 1.3 Extract the learning-area CSS from `lesson.html` into `atelier/assets/learn.css` and link it. Verify `lesson.html` screenshots at both widths match the pre-change screenshots pixel for pixel or by visual review.
 - [ ] 1.4 Extend `tools/build-artifact.py` to take the page list, embed images per page, rewrite home links, and copy `assets/`. Verify it writes every listed page plus `site/assets/*` and prints sizes.

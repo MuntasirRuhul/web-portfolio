@@ -32,8 +32,8 @@ Primary navigation, footer links, course cards and main calls to action on all p
 - **THEN** none of the header, footer, course-card or primary-button links is `#`, and every relative link resolves to an existing file and anchor
 
 ### Requirement: Design system and responsiveness
-All new pages SHALL follow the Atelier system: tokens from the course page, no shadows, line ticks without circles, no pill badges for counts or tags, the earthy palette without blue, Inter Tight / JetBrains Mono / Caveat type. They SHALL work at 1440px and 390px.
+All new pages SHALL follow the Atelier design language (`atelier-art-direction`): its tokens and components from `assets/site.css`, a declared archetype, no shadows, line ticks without circles, no pill badges for counts or tags, the earthy palette without blue, Inter Tight / JetBrains Mono / Caveat type. They SHALL work at 1440px and 390px.
 
 #### Scenario: Responsive check
 - **WHEN** each page is rendered at 1440px and 390px
-- **THEN** there are no script errors, `scrollWidth` equals the viewport width, and no element uses a box shadow
+- **THEN** there are no script errors, `scrollWidth` equals the viewport width, and `atelier/tools/audit.mjs` passes for the page

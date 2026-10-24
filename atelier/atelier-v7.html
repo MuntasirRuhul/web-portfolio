@@ -18,7 +18,7 @@
   --card:#FFFFFF;
   --ink:#1D1A16;
   --ink-2:#4A443B;
-  --muted:#8A8172;
+  --muted:#6E6658;      /* was #8A8172 (3.6:1); 5.3:1 on paper (atelier-art-direction) */
   --line:rgba(var(--ink-rgb),.075);
   --rule:rgba(var(--ink-rgb),.14);
   --terra:#C0512F;
@@ -50,6 +50,7 @@
 .courses,.panel,.nl{color:var(--on-band)}
 .courses .txt,.panel .txt,.courses .lbl,.panel .lbl{color:var(--on-band-2)}
 .courses .lbl b,.panel .lbl b,.courses h2 em,.panel h2 em{color:var(--band-accent)}
+.courses .lbl b{color:#B24A2B}   /* small text: the 4.99:1 shade */
 .panel .more{color:var(--on-band);border-color:currentColor}
 .panel .more:hover{color:var(--band-accent);border-color:var(--band-accent)}
 .nl p{color:var(--on-band)}
@@ -71,7 +72,7 @@ h1 em,h2 em{font-style:normal;color:var(--terra)}
 
 /* section label: "02 — Mediums" */
 .lbl{display:flex;align-items:center;gap:12px;font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:22px}
-.lbl b{color:var(--terra);font-weight:800}
+.lbl b{color:#B24A2B;font-weight:800}   /* accent as small text: 4.99:1 */
 .lbl::after{content:"";width:34px;height:1px;background:currentColor;order:1}
 .lbl b{order:0}
 
@@ -140,9 +141,9 @@ main{margin-left:var(--rail)}
 .hn .on{color:var(--accent-lt)}
 /* phone menu: only shown at ≤ 980px, where the left-hand links are hidden */
 .hn-menu{display:none;align-items:center;gap:10px;background:none;border:0;color:rgba(var(--on-dark-rgb),.9);font:inherit;font-size:15px;cursor:pointer;padding:0}
-.hn-menu i{position:relative;display:block;width:16px;height:1.5px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;transition:box-shadow .25s,transform .25s}
-.hn-menu i::after{content:"";position:absolute;inset:0;background:currentColor;opacity:0;transform:rotate(90deg);transition:opacity .2s}
-.hn-menu[aria-expanded="true"] i{box-shadow:none;transform:rotate(45deg)}
+.hn-menu i{position:relative;display:block;width:16px;height:11.5px;background:linear-gradient(currentColor,currentColor) 0 0/100% 1.5px no-repeat,linear-gradient(currentColor,currentColor) 0 5px/100% 1.5px no-repeat,linear-gradient(currentColor,currentColor) 0 10px/100% 1.5px no-repeat;transition:transform .25s}
+.hn-menu i::after{content:"";position:absolute;left:0;right:0;top:5px;height:1.5px;background:currentColor;opacity:0;transform:rotate(90deg);transition:opacity .2s}
+.hn-menu[aria-expanded="true"] i{background:linear-gradient(currentColor,currentColor) 0 5px/100% 1.5px no-repeat;transform:rotate(45deg)}
 .hn-menu[aria-expanded="true"] i::after{opacity:1}
 .hn-panel{position:absolute;top:58px;left:20px;right:20px;list-style:none;background:var(--card);color:var(--ink);border-radius:12px;padding:10px 20px}
 .hn-panel[hidden]{display:none}
@@ -205,7 +206,8 @@ main{margin-left:var(--rail)}
 .panel .more:hover{color:var(--accent-lt);border-color:var(--accent-lt)}
 .step:nth-child(1){background:var(--ochre);color:var(--ink)}
 .step:nth-child(2){background:var(--rose);color:var(--ink)}
-.step:nth-child(3){background:var(--terra);color:var(--paper)}
+.step:nth-child(3){background:var(--terra);color:#FFFFFF}
+.step:nth-child(3) p{opacity:1}
 .step .n,.step p,.step h3{color:inherit}
 .step p{opacity:.85}
 .step svg path{stroke:currentColor}
@@ -312,7 +314,7 @@ main{margin-left:var(--rail)}
 @media (prefers-reduced-motion:reduce){.rv-ticker{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.rv-grid{animation:none}.rv-grid [aria-hidden="true"]{display:none}}
 .who{font-size:14px;line-height:1.4}
 .who b{font-weight:600}
-.who span{display:block;font-family:var(--wide);font-size:10px;opacity:.72;margin-top:2px}
+.who span{display:block;font-family:var(--wide);font-size:10px;opacity:1;margin-top:2px}
 .qm{display:block;font-family:"Inter",var(--sans);font-weight:700;line-height:1;height:.5em;font-size:96px;letter-spacing:-.05em}
 .rv-block{display:flex;flex-direction:column;justify-content:space-between;gap:44px;min-height:clamp(300px,26vw,380px);padding:clamp(22px,2.2vw,32px);background:var(--bg);color:var(--fg);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .rv-block:hover{transform:translateY(-6px) rotate(-.6deg)}
@@ -366,7 +368,7 @@ details p{color:var(--ink-2);margin-top:12px;max-width:620px}
 .cta-cards{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:10px}
 .cta-bg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--night-2) 0,rgba(42,37,34,.55) 22%,transparent 55%)}
 .cta-cards{grid-template-columns:repeat(2,minmax(0,320px))!important;gap:12px!important}
-.cta-card{position:relative;border:1px solid rgba(var(--on-dark-rgb),.12);border-radius:14px;padding:clamp(22px,2vw,28px);display:flex;flex-direction:column;gap:22px;color:var(--paper);background:linear-gradient(160deg,rgba(var(--on-dark-rgb),.07),rgba(var(--on-dark-rgb),.015));transition:background .35s,border-color .35s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.cta-card{position:relative;border:1px solid rgba(var(--on-dark-rgb),.12);border-radius:16px;padding:clamp(22px,2vw,28px);display:flex;flex-direction:column;gap:22px;color:var(--paper);background:linear-gradient(160deg,rgba(var(--on-dark-rgb),.07),rgba(var(--on-dark-rgb),.015));transition:background .35s,border-color .35s,transform .45s cubic-bezier(.2,.7,.2,1)}
 .cta-card:hover{border-color:rgba(var(--on-dark-rgb),.28);transform:translateY(-4px)}
 .cta-card .ct{display:flex;justify-content:space-between;align-items:center}
 .cta-card .k{font-family:var(--wide);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
@@ -377,7 +379,7 @@ details p{color:var(--ink-2);margin-top:12px;max-width:620px}
 .cta-card p{font-size:14px;line-height:1.5;color:rgba(var(--on-dark-rgb),.62);margin-top:10px}
 .cta-card .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
 .cta-card .meta span{font-size:12px;color:var(--paper);border:1px solid rgba(var(--on-dark-rgb),.18);border-radius:999px;padding:4px 10px;display:inline-flex;align-items:center;gap:6px}
-.cta-card .live{width:7px;height:7px;border-radius:50%;background:#7FBF6A;box-shadow:0 0 0 3px rgba(127,191,106,.2)}
+.cta-card .live{width:7px;height:7px;border-radius:50%;background:#7FBF6A;outline:3px solid rgba(127,191,106,.2)}
 .cta-card .u{display:flex;justify-content:space-between;align-items:center;height:46px;padding:0 6px 0 18px;border-radius:999px;background:var(--paper);color:var(--night);font-size:14.5px;font-weight:500;transition:background .3s,color .3s}
 .cta-card .u i{width:34px;height:34px;border-radius:50%;background:var(--night);color:var(--paper);display:grid;place-items:center;font-style:normal;transition:transform .3s}
 .cta-card:hover .u{background:var(--accent-lt);color:var(--night)}
@@ -385,6 +387,7 @@ details p{color:var(--ink-2);margin-top:12px;max-width:620px}
 .nl{margin-top:10px;background:#FFFFFF;border:1px solid var(--rule);border-radius:16px;padding:clamp(36px,4.4vw,64px) clamp(24px,3vw,56px);display:flex;justify-content:space-between;align-items:center;gap:30px}
 .nl p{font-size:clamp(22px,2.3vw,34px);font-weight:500;letter-spacing:-.03em;line-height:1.15;white-space:nowrap}
 .nl p em{font-style:normal;color:var(--terra)}
+em.w{font-style:normal;font-weight:600}
 .nl form{display:flex;flex:0 1 560px;background:var(--page);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
 .nl input{flex:1;min-width:0;border:0;background:transparent;height:76px;padding:0 26px;font:inherit;font-size:17px;color:var(--ink);outline:none}
 .nl button{width:76px;border:0;background:var(--terra);color:#fff;font-size:24px;cursor:pointer;transition:background .25s}
@@ -500,7 +503,7 @@ summary{font-weight:500;letter-spacing:-.02em}
 }
 </style>
 </head>
-<body>
+<body data-archetype="gallery">
 
 <!-- the drawing grid -->
 <div class="cols" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -550,7 +553,7 @@ summary{font-weight:500;letter-spacing:-.02em}
       <h2 class="reveal d1">The Atelier captures how Elena Varga draws, paints and teaches, at her own table and at her own pace, <em>for anyone willing to look closely.</em></h2>
       <div class="ab-stage">
         <div class="ab-copy reveal d2">
-          <p>I started filming lessons in my Lisbon studio in 2016 because students kept asking the same question: "How do you actually <em>see</em> that?" Ten years and twelve thousand students later, these courses are my best answer, filmed at the speed I really work.</p>
+          <p>I started filming lessons in my Lisbon studio in 2016 because students kept asking the same question: “How do you actually <em class="w">see</em> that?” Ten years and twelve thousand students later, these courses are my best answer, filmed at the speed I really work.</p>
           <p>Painting changes slowly, so the Atelier does too. New courses arrive each season, along with guest sessions from painters and illustrators I admire, from ink to oil. <a href="#join">Get the studio notes</a> to hear first.</p>
           <div class="ab-sig"><b>Elena V.</b><span>18 courses · 340 hours · 64 countries</span></div>
         </div>
@@ -566,9 +569,9 @@ summary{font-weight:500;letter-spacing:-.02em}
     <div class="panel reveal">
       <div class="side">
         <div>
-          <span class="lbl"><b>03</b>How you'll learn</span>
+          <span class="lbl"><b>03</b>How you’ll learn</span>
           <h2>Look. Sketch. <em>Paint.</em></h2>
-          <p class="txt">Every course follows the same three steps, whether you're holding a pencil or a brush. You always know what you're doing and why.</p>
+          <p class="txt">Every course follows the same three steps, whether you’re holding a pencil or a brush. You always know what you’re doing and why.</p>
         </div>
         <a class="more" href="#courses">See the courses →</a>
       </div>
@@ -707,18 +710,18 @@ summary{font-weight:500;letter-spacing:-.02em}
   </div>
   <div class="rv-ticker">
   <div class="rv-grid" aria-label="Student reviews">
-    <figure class="rv-block" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure class="rv-block" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother’s house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
     <figure class="rv-block" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
+    <figure class="rv-block" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
     <figure class="rv-block" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>The three-values lesson changed everything. My drawings finally look solid.</blockquote></div><figcaption class="who"><b>Priya S.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Elena's critique was eleven minutes about my drawing alone. Worth the course on its own.</blockquote></div><figcaption class="who"><b>Leila M.</b><span>Course 02 · The Portrait in Pencil</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Painting outside scared me. She breaks it into small, calm decisions.</blockquote></div><figcaption class="who"><b>Jonas W.</b><span>Course 05 · Plein Air in Oil</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure class="rv-block" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Elena’s critique was eleven minutes about my drawing alone. Worth the course on its own.</blockquote></div><figcaption class="who"><b>Leila M.</b><span>Course 02 · The Portrait in Pencil</span></figcaption></figure>
+    <figure class="rv-block" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>Painting outside scared me. She breaks it into small, calm decisions.</blockquote></div><figcaption class="who"><b>Jonas W.</b><span>Course 05 · Plein Air in Oil</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother’s house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
     <figure class="rv-block" aria-hidden="true" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
     <figure class="rv-block" aria-hidden="true" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>The three-values lesson changed everything. My drawings finally look solid.</blockquote></div><figcaption class="who"><b>Priya S.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Elena's critique was eleven minutes about my drawing alone. Worth the course on its own.</blockquote></div><figcaption class="who"><b>Leila M.</b><span>Course 02 · The Portrait in Pencil</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Painting outside scared me. She breaks it into small, calm decisions.</blockquote></div><figcaption class="who"><b>Jonas W.</b><span>Course 05 · Plein Air in Oil</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Elena’s critique was eleven minutes about my drawing alone. Worth the course on its own.</blockquote></div><figcaption class="who"><b>Leila M.</b><span>Course 02 · The Portrait in Pencil</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>Painting outside scared me. She breaks it into small, calm decisions.</blockquote></div><figcaption class="who"><b>Jonas W.</b><span>Course 05 · Plein Air in Oil</span></figcaption></figure>
   </div>
   </div>
   <div class="rl-stats reveal d1">
@@ -737,7 +740,7 @@ summary{font-weight:500;letter-spacing:-.02em}
       <h2 class="reveal d1">Before you <em>begin.</em></h2>
     </div>
     <div class="list reveal d2">
-      <details open><summary>I've never drawn before. Is this for me?</summary><p>Yes, and especially you. Foundations of Drawing assumes nothing. If you can hold a pencil and write your name, you can learn to draw.</p></details>
+      <details open><summary>I’ve never drawn before. Is this for me?</summary><p>Yes, and especially you. Foundations of Drawing assumes nothing. If you can hold a pencil and write your name, you can learn to draw.</p></details>
       <details><summary>What materials do I need?</summary><p>Each course has a downloadable materials list with budget and studio options. Most beginner courses need only a pencil, an eraser and a sketchbook.</p></details>
       <details><summary>How long do I have access?</summary><p>Forever. Buy once and watch at your own pace, including all future updates to that course.</p></details>
       <details><summary>Can I get feedback on my work?</summary><p>Every course includes one private video critique from me, plus access to our student community for ongoing encouragement.</p></details>
@@ -769,7 +772,7 @@ summary{font-weight:500;letter-spacing:-.02em}
   <div class="c"><h3>Learn</h3><a href="#">All courses</a><a href="#">Free lessons</a><a href="#">Gift a course</a><a href="#faq">FAQ</a></div>
   <div class="c"><div class="f-ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.9" pathLength="1"/></svg></div><h3>Studio</h3><a href="#about">About Elena</a><a href="#gallery">Gallery</a><a href="#">Journal</a><a href="#">Contact</a></div>
   <div class="c"><h3>Information</h3><a href="#">Commissions</a><a href="#">Privacy</a><a href="#">Terms</a></div>
-  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span>Made by hand in Lisbon</span></div>
+  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · Made by hand in Lisbon</span></div>
 </footer>
 
 <script>
