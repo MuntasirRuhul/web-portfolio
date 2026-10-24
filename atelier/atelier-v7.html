@@ -343,6 +343,9 @@ main{margin-left:var(--rail)}
 .faq .hd{grid-column:1/3;padding:0 var(--pad)}
 .faq .list{grid-column:3/7;padding:0 var(--pad) 0 0}
 details{border-top:1px solid var(--rule);padding:22px 0}
+/* keep the text clear of the vertical grid line the FAQ rules start on */
+.faq details{padding-left:clamp(20px,2.4vw,36px);padding-right:clamp(12px,1.4vw,20px)}
+@media (max-width:980px){.faq details{padding-left:0;padding-right:0}}
 details:last-child{border-bottom:1px solid var(--rule)}
 summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:var(--serif);font-size:clamp(20px,2vw,25px)}
 summary::-webkit-details-marker{display:none}
