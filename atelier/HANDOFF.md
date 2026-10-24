@@ -31,6 +31,7 @@ A one-page website for an artist who sells online drawing and painting courses. 
 | D1 | ~~Colour palette~~ | **Decided:** Original, with plum instead of blue. Other palettes and the picker removed in v7. | Done. |
 | D2 | ~~Student section layout~~ | **Decided:** colour blocks on the dark ground (ochre, rose, terracotta). Gallery decided too: Salon wall. | Done. |
 | D3 | **Real content** | All names, quotes, stats, prices and images are placeholders | See section 9. |
+| D4 | **Course page top section** | Round 2 in `course-heroes.html`: **A** Cinema + Editorial (dark / light), **B** Magazine cover, **C** Spec sheet compact, **D** Ticket with image. Feedback: merge 02's image and position with 03's facts grid, buttons and signature; keep the magazine cover; the spec sheet must fit one screen; on the ticket put the image in the stub and the price under the facts. | Pick one, then build the rest of the course page from it. |
 
 ---
 
