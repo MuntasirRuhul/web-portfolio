@@ -32,10 +32,10 @@ h1{font-family:var(--disp);font-weight:700;letter-spacing:-.06em;line-height:.9}
 
 /* shared: the ruled facts grid from option 03 */
 .grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid currentColor;border-bottom:1px solid currentColor;text-align:left}
-.grid div{padding:14px 16px;border-left:1px solid var(--line,var(--rule))}
+.grid div{padding:12px 16px 14px;border-left:1px solid var(--line,var(--rule))}
 .grid div:first-child{border-left:0;padding-left:0}
 .grid dt{margin-bottom:4px}
-.grid dd{font-size:16px;font-weight:500}
+.grid dd{font-size:18px;font-weight:600;letter-spacing:-.01em}
 .sig{font-family:var(--hand);font-size:32px;line-height:1}
 
 /* A · Cinema + Editorial */
@@ -46,124 +46,73 @@ h1{font-family:var(--disp);font-weight:700;letter-spacing:-.06em;line-height:.9}
 .va .vid::after{content:"▶";position:absolute;inset:0;margin:auto;width:84px;height:84px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;font-size:24px}
 .va .vid span{position:absolute;left:16px;bottom:14px;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff}
 .va .grid{max-width:1040px;margin:32px auto 0}
-.va .act{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:32px}
+.va .act{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:32px}
+.va .price{font-family:var(--disp);font-size:44px;font-weight:700;letter-spacing:-.05em;line-height:1;margin-right:12px}
+.grid dd small{font-size:13px;font-weight:400;opacity:.65}
 .va .sig{margin-top:24px}
 .va.dark{background:var(--night);color:var(--paper);--line:rgba(243,236,223,.16)}
 .va.dark .mono,.va.dark .lede{color:var(--dim)}
 .va.dark .btn{background:var(--terra);color:#fff}
 .va.dark .btn.l{background:transparent;color:var(--paper);border-color:rgba(243,236,223,.5)}
-.va.light .lede{color:var(--ink-2)}
 
 /* B · Magazine cover (kept as is) */
-.vb{position:relative;padding:0;min-height:640px}
+.vb{position:relative;padding:clamp(96px,11vw,170px) 0 clamp(48px,6vw,80px)}
 .vb > img{position:absolute;inset:0;filter:grayscale(1)}
-.vb .panel{position:relative;max-width:620px;margin-left:var(--pad);top:clamp(120px,14vw,220px);background:var(--surface);padding:36px 40px 40px}
+.vb .panel{position:relative;max-width:640px;margin-left:var(--pad);background:var(--surface);padding:36px 40px 40px}
 .vb h1{font-size:clamp(48px,6vw,84px);margin:10px 0 16px}
 .vb p{color:var(--ink-2);font-size:17px}
-.vb .meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin:20px 0 28px;font-size:14px}
-
-/* C · Spec sheet, compact: fits one screen */
-.vc{display:grid;grid-template-columns:340px 1fr;gap:clamp(24px,4vw,56px);align-items:stretch}
-.vc h1{font-size:clamp(40px,4vw,56px);margin:10px 0 20px}
-.vc dl{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}
-.vc dl div{border-top:1px solid var(--rule);padding:9px 0}
-.vc dl div:nth-child(-n+2){border-top:2px solid var(--ink)}
-.vc dt{margin-bottom:2px}
-.vc dd{font-size:15px;font-weight:600}
-.vc .buy{display:flex;align-items:center;gap:16px;margin-top:24px}
-.vc .buy b{font-family:var(--disp);font-size:44px;letter-spacing:-.05em;line-height:1}
-.vc .buy .btn{flex:1}
-.vc .img{position:relative;height:min(560px,70vh);min-height:400px}
-.vc .img img{filter:grayscale(1)}
-.vc .img span{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--page);padding:6px 10px}
-
-/* D · Ticket, image in the stub, price in the content */
-.vd{background:var(--surface)}
-.vd .ticket{display:grid;grid-template-columns:1fr 340px;max-width:1120px;margin:0 auto;background:var(--page);border:1.5px solid var(--ink)}
-.vd .main{padding:32px 36px}
-.vd h1{font-size:clamp(48px,6vw,84px);margin:10px 0 28px}
-.vd dl{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink)}
-.vd dl div{padding:12px 12px 12px 0}
-.vd dd{font-size:18px;font-weight:600}
-.vd .price{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;border-top:1px solid var(--rule);padding-top:20px}
-.vd .price b{font-family:var(--disp);font-size:52px;letter-spacing:-.06em;line-height:1}
-.vd .price small{font-size:14px;color:var(--ink-2);margin-right:auto}
-.vd .stub{position:relative;border-left:1.5px dashed var(--ink);padding:14px}
-.vd .stub .ph{height:100%;min-height:320px;background:var(--pc)}
-.vd .stub img{filter:grayscale(1) contrast(1.1);mix-blend-mode:screen}
-.vd .stub span{position:absolute;left:26px;top:26px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:var(--page);padding:5px 9px;color:var(--pc)}
+.vb .facts{display:grid;grid-template-columns:repeat(3,1fr);column-gap:20px;margin:24px 0 0}
+.vb .facts div{border-top:1px solid var(--rule);padding:10px 0}
+.vb .facts div:nth-child(-n+3){border-top:2px solid var(--ink)}
+.vb .facts dt{margin-bottom:2px}
+.vb .facts dd{font-size:18px;font-weight:600;letter-spacing:-.01em}
+.vb .facts dd small{font-size:13px;font-weight:400;color:var(--muted)}
+.vb .buy{display:flex;align-items:center;gap:16px;margin-top:24px}
+.vb .buy b{font-family:var(--disp);font-size:48px;letter-spacing:-.05em;line-height:1}
+.vb .buy .btn{flex:1}
 
 @media (max-width:860px){
-  .intro,.vc,.vd .ticket{grid-template-columns:1fr}
+  .intro{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr 1fr}
   .grid div{border-left:0;padding-left:0;border-top:1px solid var(--line,var(--rule))}
   .grid div:nth-child(-n+2){border-top:0}
-  .vb .panel{margin:0 16px;top:220px;padding:24px}
-  .vb{min-height:720px}
-  .vc .img{height:320px;min-height:0;order:-1}
-  .vd .stub{border-left:0;border-top:1.5px dashed var(--ink)}
-  .vd .stub .ph{min-height:240px}
-  .vd dl{grid-template-columns:1fr 1fr}
+  .vb .panel{margin:0 16px;padding:24px}
+  .vb{padding:200px 0 32px}
+  .vb .facts{grid-template-columns:1fr 1fr}
+  .vb .facts div:nth-child(3){border-top:1px solid var(--rule)}
 }
 </style>
 </head>
 <body>
 <div class="intro">
-  <div><span class="mono">Course page · top section · round 2</span><h2>Four directions to develop</h2><p>The other six options are removed. Same course and facts throughout.</p></div>
-  <div class="notes"><strong>Your notes from round 1</strong>
+  <div><span class="mono">Course page · top section · round 3</span><h2>Two directions</h2><p>A2, C and D are removed. Both remaining heroes now use the spec sheet's fact hierarchy.</p></div>
+  <div class="notes"><strong>Your notes</strong>
     <ul>
-      <li>Merge 02 and 03: the image and its position from Cinema (clear, sophisticated); the facts grid, information, button position and signature from Editorial. → <b>A</b>, in dark and light.</li>
-      <li>Magazine cover works as it is. → <b>B</b></li>
-      <li>Spec sheet is good but far too long (3–4 seconds of scrolling). Make it fit one screen. → <b>C</b></li>
-      <li>Admission ticket is good. Try the image where the price stub was, and move the price into the content, under the level information. → <b>D</b></li>
+      <li>Round 1: merge 02's image and position with 03's facts grid, buttons and signature; keep the magazine cover; the spec sheet must fit one screen; ticket with the image in the stub.</li>
+      <li>Round 2: keep A1 (dark) and the magazine cover; delete the rest.</li>
+      <li>Round 2: the magazine cover's facts (4.9 · 612 reviews, 21 lessons…) need more priority. Use option C's hierarchy: small label, bold value (Level / Beginner, Lessons / 21).</li>
+      <li>Priority order used: rating, lessons, length, level, then critique and certificate. Price stays with the button.</li>
     </ul></div>
 </div>
 
-<div class="tag"><b>A1</b><strong>Cinema + Editorial, dark</strong><span>Centred title and promise, the trailer as the image, then the ruled facts grid, both buttons and her signature.</span></div>
+<div class="tag"><b>A</b><strong>Cinema + Editorial, dark</strong><span>Facts in the spec-sheet hierarchy, rating first; the price now sits with the buttons.</span></div>
 <section class="v va dark">
   <span class="mono">A course by Elena Varga · Course 01 · Pencil</span>
   <h1>Foundations of Drawing</h1>
   <p class="lede">Learn to draw what you see with one pencil and a sheet of paper, in six weeks of short lessons.</p>
   <div class="vid"><img src="img/1551180452-aea351b23949-w2000.jpg" alt=""><span>Trailer · 2:14</span></div>
-  <dl class="grid"><div><dt class="mono">Level</dt><dd>Beginner</dd></div><div><dt class="mono">Lessons</dt><dd>21</dd></div><div><dt class="mono">Length</dt><dd>6 h 10 min</dd></div><div><dt class="mono">Rating</dt><dd>★ 4.9 (612)</dd></div><div><dt class="mono">Price</dt><dd>$79</dd></div></dl>
-  <div class="act"><a class="btn" href="#">Enrol now</a><a class="btn l" href="#">Watch lesson 1 free</a></div>
+  <dl class="grid"><div><dt class="mono">Rating</dt><dd>★ 4.9 <small>(612)</small></dd></div><div><dt class="mono">Lessons</dt><dd>21</dd></div><div><dt class="mono">Length</dt><dd>6 h 10 min</dd></div><div><dt class="mono">Level</dt><dd>Beginner</dd></div><div><dt class="mono">Certificate</dt><dd>Yes</dd></div></dl>
+  <div class="act"><span class="price">$79</span><a class="btn" href="#">Enrol now</a><a class="btn l" href="#">Watch lesson 1 free</a></div>
   <p class="sig">Elena V.</p>
 </section>
 
-<div class="tag"><b>A2</b><strong>Cinema + Editorial, light</strong><span>The same merge on the white page, so it sits with the rest of the site.</span></div>
-<section class="v va light">
-  <span class="mono">A course by Elena Varga · Course 01 · Pencil</span>
-  <h1>Foundations of Drawing</h1>
-  <p class="lede">Learn to draw what you see with one pencil and a sheet of paper, in six weeks of short lessons.</p>
-  <div class="vid"><img src="img/1551180452-aea351b23949-w2000.jpg" alt=""><span>Trailer · 2:14</span></div>
-  <dl class="grid"><div><dt class="mono">Level</dt><dd>Beginner</dd></div><div><dt class="mono">Lessons</dt><dd>21</dd></div><div><dt class="mono">Length</dt><dd>6 h 10 min</dd></div><div><dt class="mono">Rating</dt><dd>★ 4.9 (612)</dd></div><div><dt class="mono">Price</dt><dd>$79</dd></div></dl>
-  <div class="act"><a class="btn" href="#">Enrol now</a><a class="btn l" href="#">Watch lesson 1 free</a></div>
-  <p class="sig">Elena V.</p>
-</section>
-
-<div class="tag"><b>B</b><strong>Magazine cover</strong><span>Kept as it was: full-width studio photo, cream panel with title, promise and enrol.</span></div>
+<div class="tag"><b>B</b><strong>Magazine cover</strong><span>The soft meta line becomes a spec-sheet facts grid (rating, lessons, length on top); price sits beside enrol.</span></div>
 <section class="v vb">
   <img src="img/1752649937266-1900d9e176c3-w1400.jpg" alt="">
   <div class="panel"><span class="mono">Course 01 · Pencil · Beginner</span><h1>Foundations of Drawing</h1><p>Six weeks, one pencil, one finished drawing that Elena critiques for you.</p>
-    <div class="meta"><span>★ 4.9 · 612 reviews</span><span>21 lessons</span><span>6 h 10 min</span></div><a class="btn" href="#">Enrol for $79</a></div>
-</section>
-
-<div class="tag"><b>C</b><strong>Spec sheet, compact</strong><span>Title moves into the facts column, facts in two columns, price beside the button; the photo is capped so the whole hero fits one screen.</span></div>
-<section class="v vc">
-  <div><span class="mono">Course 01 · Pencil</span><h1>Foundations of Drawing</h1>
-    <dl><div><dt class="mono">Level</dt><dd>Beginner</dd></div><div><dt class="mono">Lessons</dt><dd>21 + 2 quizzes</dd></div><div><dt class="mono">Length</dt><dd>6 h 10 min</dd></div><div><dt class="mono">Critique</dt><dd>1 private video</dd></div><div><dt class="mono">Certificate</dt><dd>Yes</dd></div><div><dt class="mono">Rating</dt><dd>★ 4.9 (612)</dd></div></dl>
+    <dl class="facts"><div><dt class="mono">Rating</dt><dd>★ 4.9 <small>(612)</small></dd></div><div><dt class="mono">Lessons</dt><dd>21</dd></div><div><dt class="mono">Length</dt><dd>6 h 10 min</dd></div><div><dt class="mono">Level</dt><dd>Beginner</dd></div><div><dt class="mono">Critique</dt><dd>1 private video</dd></div><div><dt class="mono">Certificate</dt><dd>Yes</dd></div></dl>
     <div class="buy"><b>$79</b><a class="btn" href="#">Enrol now</a></div></div>
-  <div class="img"><img src="img/1631002724711-d1ae3cf651b0-w1100.jpg" alt=""><span>Elena in the studio</span></div>
 </section>
 
-<div class="tag"><b>D</b><strong>Ticket with image</strong><span>The tinted course image takes the stub; price and enrol move into the ticket, under the facts.</span></div>
-<section class="v vd">
-  <div class="ticket">
-    <div class="main"><span class="mono">Elena Varga Atelier · Admit one · No. 01</span><h1>Foundations<br>of drawing</h1>
-      <dl><div><dt class="mono">Level</dt><dd>Beginner</dd></div><div><dt class="mono">Lessons</dt><dd>21</dd></div><div><dt class="mono">Running</dt><dd>6 h 10 min</dd></div><div><dt class="mono">Rating</dt><dd>★ 4.9</dd></div></dl>
-      <div class="price"><b>$79</b><small>Admission · one payment, lifetime</small><a class="btn" href="#">Enrol now</a></div></div>
-    <div class="stub"><div class="ph"><img src="img/1505569127510-bde1536937bc-w600.jpg" alt=""></div><span>No. 01 · Pencil</span></div>
-  </div>
-</section>
 </body>
 </html>
