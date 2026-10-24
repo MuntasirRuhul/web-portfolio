@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foundations of Drawing · Elena Varga Atelier</title>
+<meta name="description" content="Foundations of Drawing: a beginner pencil course by Elena Varga. 21 lessons, 6 hours 10 minutes, one private critique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+
+/* ============ Tokens ============ */
+:root{
+  --page:#FFFFFF;       /* page background */
+  --paper:#F3ECDF;      /* light text on dark surfaces */
+  --band:#F3ECDF;       /* surface: method panel, courses, newsletter, footer column */
+  --card:#FFFFFF;
+  --ink:#1D1A16;
+  --ink-2:#4A443B;
+  --muted:#8A8172;
+  --line:rgba(var(--ink-rgb),.075);
+  --rule:rgba(var(--ink-rgb),.14);
+  --terra:#C0512F;
+  --ochre:#DDA43C;
+  --ultra:#7A3E5E;
+  --sage:#7E9271;
+  --rose:#D9A7A0;
+
+  --serif:"Inter Tight", system-ui, sans-serif;
+  --wide:"JetBrains Mono", ui-monospace, monospace;
+  --sans:"Inter Tight", system-ui, sans-serif;
+  --hand:"Caveat", cursive;
+
+  --rail:56px;
+  --pad:48px;
+  --night:#161412;
+  --night-2:#2A2522;
+  --accent-lt:#E8724A;
+  --dim:#A9A092;
+  --dimmer:#8F877A;
+  --ink-rgb:29,26,22;
+  --on-dark-rgb:243,236,223;
+  --band-soft:var(--band); --on-band:var(--ink); --on-band-2:var(--ink-2); --band-accent:var(--terra);
+  --s1:var(--ochre); --s1t:var(--ink); --s2:var(--ultra); --s2t:#fff; --s3:var(--terra); --s3t:#fff;
+  --c1:#8F6511; --c2:#A55C52; --c3:#7A3E5E; --c4:#1D1A16; --c5:#C0512F; --c6:#56694A;
+}
+
+/* text that sits on the signature band */
+.courses,.panel,.nl{color:var(--on-band)}
+.courses .txt,.panel .txt,.courses .lbl,.panel .lbl{color:var(--on-band-2)}
+.courses .lbl b,.panel .lbl b,.courses h2 em,.panel h2 em{color:var(--band-accent)}
+.panel .more{color:var(--on-band);border-color:currentColor}
+.panel .more:hover{color:var(--band-accent);border-color:var(--band-accent)}
+.nl p{color:var(--on-band)}
+
+/* ============ Base ============ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{ /* paper grain */
+  content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.14;mix-blend-mode:multiply;filter:grayscale(1);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--sans);font-weight:600;line-height:1;letter-spacing:-.04em}
+h2{font-size:clamp(40px,5vw,68px)}
+h1 em,h2 em{font-style:normal;color:var(--terra)}
+.txt{color:var(--ink-2);max-width:420px}
+
+/* section label: "02 — Mediums" */
+.lbl{display:flex;align-items:center;gap:12px;font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:22px}
+.lbl b{color:var(--terra);font-weight:800}
+.lbl::after{content:"";width:34px;height:1px;background:currentColor;order:1}
+.lbl b{order:0}
+
+/* ============ Drawing grid ============ */
+.cols{position:fixed;inset:0 0 0 var(--rail);display:grid;grid-template-columns:repeat(6,1fr);pointer-events:none;z-index:0}
+.cols i{border-left:1px solid var(--line)}
+main,header,footer,section{position:relative;z-index:1}
+.g6{display:grid;grid-template-columns:repeat(6,1fr)}
+
+/* ============ Rail ============ */
+.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:12px 0 26px;pointer-events:none}
+.rail>*{pointer-events:auto}
+.vt{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--wide);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.soc{display:flex;flex-direction:column;gap:16px}
+.soc a{width:18px;height:18px;display:grid;place-items:center;color:var(--ink-2);transition:color .2s}
+.soc a:hover{color:var(--terra)}
+.soc svg{width:14px;height:14px;fill:currentColor}
+
+/* ============ Top bar ============ */
+.top{margin:10px 14px 0 var(--rail);height:48px;display:flex;justify-content:space-between;align-items:center;padding:0 7px 0 16px;background:var(--card);border:1px solid var(--rule);border-radius:12px}
+.logo{display:flex;align-items:center;gap:10px}
+.strokes{display:flex;gap:3px}
+.strokes i{width:3px;height:13px;border-radius:1px;background:var(--c)}
+.logo b{font-weight:600;font-size:15px;letter-spacing:-.02em}
+.top .r{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500}
+.top .r a{color:var(--ink-2);transition:color .2s}
+.top .r a:hover{color:var(--ink)}
+.top .r .login{background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:999px}
+.top .r .login:hover{background:var(--terra);color:#fff}
+
+/* ============ Buttons ============ */
+.btn{display:inline-flex;align-items:center;gap:14px;padding:6px 6px 6px 22px;border-radius:999px;font-family:var(--sans);font-weight:500;font-size:14.5px;position:relative;overflow:hidden;isolation:isolate;transition:color .3s;cursor:pointer;border:0}
+.btn::after{content:"";position:absolute;inset:0;background:var(--terra);transform:translateX(-101%);transition:transform .45s cubic-bezier(.6,.1,.2,1);z-index:-1}
+.btn:hover::after{transform:none}
+.btn .ar{width:36px;height:36px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;font-size:15px;transition:transform .3s}
+.btn:hover .ar{transform:rotate(-45deg)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+
+/* ============ Motion ============ */
+.js .draw path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s cubic-bezier(.6,.1,.2,1)}
+.is-in .draw path,.draw.is-in path{stroke-dashoffset:0}
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-in{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
+
+main{margin-left:var(--rail)}
+
+/* ============ 01 Hero: construction-line layout ============ */
+.hero{
+  --vx:38%;            /* vertical rule */
+  --hy:48%;            /* horizontal rule */
+  --x0:calc(var(--rail) + 1.4%);
+  --x1:1.8%;
+  --hl:rgba(var(--on-dark-rgb),.2);
+  position:relative;margin-left:calc(var(--rail) * -1);height:100vh;min-height:640px;max-height:1060px;
+  background:var(--night);color:var(--paper);overflow:hidden
+}
+.hn{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:26px var(--x1) 0 var(--x0);z-index:3;font-size:15px}
+.hn div{display:flex;gap:clamp(20px,3.4vw,56px)}
+.hn a{color:rgba(var(--on-dark-rgb),.82);transition:color .2s}
+.hn a:hover{color:#fff}
+.hn .on{color:var(--accent-lt)}
+/* phone menu: only shown at ≤ 980px, where the left-hand links are hidden */
+.hn-menu{display:none;align-items:center;gap:10px;background:none;border:0;color:rgba(var(--on-dark-rgb),.9);font:inherit;font-size:15px;cursor:pointer;padding:0}
+.hn-menu i{position:relative;display:block;width:16px;height:1.5px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;transition:box-shadow .25s,transform .25s}
+.hn-menu i::after{content:"";position:absolute;inset:0;background:currentColor;opacity:0;transform:rotate(90deg);transition:opacity .2s}
+.hn-menu[aria-expanded="true"] i{box-shadow:none;transform:rotate(45deg)}
+.hn-menu[aria-expanded="true"] i::after{opacity:1}
+.hn-panel{position:absolute;top:58px;left:20px;right:20px;list-style:none;background:var(--card);color:var(--ink);border-radius:12px;padding:10px 20px}
+.hn-panel[hidden]{display:none}
+.hn-panel li+li{border-top:1px solid var(--rule)}
+.hn-panel a{display:flex;justify-content:space-between;padding:14px 0;font-size:20px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.hn-panel a::after{content:"→";color:var(--terra)}
+.hn-panel a:hover{color:var(--terra)}
+.vline{position:absolute;left:var(--vx);top:0;bottom:0;width:1px;background:var(--hl)}
+.hline{position:absolute;top:var(--hy);left:calc(var(--x0) + 12%);right:22%;height:1px;
+  background:linear-gradient(90deg,var(--hl) 0 30%,transparent 30% 38%,var(--hl) 38% 55%,transparent 55% 66%,var(--hl) 66% 100%)}
+.ring{position:absolute;left:var(--vx);top:var(--hy);height:70%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;z-index:2}
+.ring svg{width:100%;height:100%;overflow:visible}
+.ring circle{fill:none;stroke:rgba(var(--on-dark-rgb),.34);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1}
+/* drawn each time the hero enters the viewport; resets instantly when it leaves */
+.hero.ring-on .ring circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s cubic-bezier(.6,.1,.2,1) .3s}
+.mini{position:absolute;left:var(--x0);top:20%;width:12.4%;height:calc(var(--hy) - 20%);overflow:hidden;z-index:1}
+.big{position:absolute;left:var(--vx);right:var(--x1);top:20%;bottom:22%;overflow:hidden}
+.mini img,.big img{filter:grayscale(1) contrast(1.05)}
+.big img{transform:scale(1.06);transition:transform 2.6s cubic-bezier(.2,.7,.2,1)}
+.hero.is-in .big img{transform:none}
+.hero h1{position:absolute;left:var(--x0);top:calc(var(--hy) + 5%);max-width:calc(var(--vx) - var(--x0) - 3%);font-size:clamp(30px,3.3vw,56px);font-weight:500;line-height:1;letter-spacing:-.045em;z-index:3}
+.hero h1 span{color:rgba(var(--on-dark-rgb),.45)}
+.roles{position:absolute;left:calc(var(--x0) + 12.4%);bottom:14%;list-style:none;font-size:clamp(15px,1.3vw,21px);line-height:1.5;z-index:3}
+.year{position:absolute;left:var(--vx);bottom:14%;font-size:clamp(15px,1.3vw,21px);padding-left:12px;z-index:3}
+.hcta{position:absolute;right:var(--x1);bottom:14%;font-size:clamp(15px,1.3vw,21px);color:var(--accent-lt);z-index:3;display:inline-flex;gap:10px;transition:gap .3s,color .3s}
+.hcta:hover{gap:16px;color:#fff}
+/* thin paint stroke under the hero link */
+.hcta .stroke{position:absolute;left:-3%;bottom:-13px;width:calc(100% - 18px);height:14px;overflow:visible;pointer-events:none}
+.hcta .stroke path{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.js .hcta .draw path{transition:stroke-dashoffset 1.3s cubic-bezier(.6,.1,.2,1) .9s}
+.js .hcta .draw path + path{transition-delay:1.15s}
+.hero.is-in .hcta .draw path{stroke-dashoffset:0}
+.hcta:hover .stroke path:first-child{stroke-width:2.8}
+/* white side tab, pinned */
+.tabv{position:fixed;right:0;top:39%;z-index:30;width:38px;background:#fff;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 0 18px;height:220px;border:1px solid var(--rule);border-right:0;transition:width .3s}
+.tabv:hover{width:44px}
+.tabv b{font-size:15px;font-weight:700;letter-spacing:-.04em}
+.tabv span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;font-weight:600}
+/* rail sits on the dark hero, so give it contrast */
+.soc a{color:var(--muted)}
+
+/* ============ 03 Method ============ */
+.method{padding:0 14px clamp(90px,10vw,140px) 0}
+.panel{grid-column:1/7;background:var(--band);border-radius:28px;padding:clamp(28px,4vw,52px) clamp(22px,3.4vw,44px);display:grid;grid-template-columns:1fr 1.6fr;gap:40px}
+.panel .side{display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.panel h2{font-size:clamp(34px,3.4vw,50px)}
+.panel .txt{margin-top:18px;font-size:15px}
+.more{font-family:var(--wide);font-size:11px;color:var(--ink);display:inline-flex;gap:10px;align-items:center;align-self:flex-start;border-bottom:1px solid var(--ink);padding-bottom:3px;transition:gap .3s,color .3s,border-color .3s}
+.more:hover{gap:16px;color:var(--terra);border-color:var(--terra)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:var(--card);padding:20px 22px 26px;display:flex;flex-direction:column;min-height:330px}
+.step .n{font-family:var(--wide);font-size:11px;font-weight:500;color:var(--terra)}
+.step svg{width:58px;height:58px;margin-top:38px;overflow:visible}
+.step h3{font-size:clamp(24px,2.2vw,30px);margin-top:auto;padding-top:30px}
+.step p{font-size:14px;color:var(--ink-2);margin-top:8px}
+
+/* ============ 03 Courses: poster card (matches Figma "Course card / Poster white") ============ */
+.courses{background:var(--band);padding:clamp(80px,10vw,140px) 0}
+.courses .head{grid-column:1/7;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,70px)}
+.cgrid{grid-column:1/7;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.6vw,36px);padding:0 var(--pad)}
+.pcard{display:grid;grid-template-rows:auto auto 1fr auto;aspect-ratio:1/1.18;background:var(--card);color:var(--ink);padding:18px;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover{transform:translateY(-6px)}
+.pcard .ptop{display:flex;justify-content:space-between;font-family:var(--wide);font-size:9.5px;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:8px}
+.pcard .ptop b{color:var(--pc);font-weight:400}
+.pcard h3{font-family:"Inter",var(--sans);font-weight:700;font-size:36px;line-height:.86;letter-spacing:-.065em;margin-top:14px;color:var(--pc)}
+.pcard .pic{position:relative;justify-self:end;align-self:stretch;aspect-ratio:3/4;min-height:0;max-width:100%;overflow:hidden;margin:14px 0 12px;background:var(--pc)}
+.pcard .pic img{filter:grayscale(1) contrast(1.1);mix-blend-mode:screen;opacity:.95;transition:filter .6s}
+.pcard:hover .pic img{filter:none;mix-blend-mode:normal;opacity:1}
+.pcard .tag{position:absolute;left:8px;top:8px;font-family:var(--wide);font-size:9px;background:var(--card);color:var(--pc);padding:4px 8px}
+.pcard dl{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.pcard dl div{border-top:1px solid var(--pc);padding:6px 0 4px}
+.pcard dl div:nth-child(-n+2){border-top-width:2px}
+.pcard dt{font-family:var(--wide);font-size:9px;color:var(--muted)}
+.pcard dd{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
+.pcard:hover .adm::after{content:" → Enrol";font-weight:500;color:var(--pc)}
+.meter{display:inline-flex;flex-direction:column;gap:3px;width:16px;color:var(--pc)}
+.meter i{height:3px;border-radius:2px;background:currentColor;opacity:.25}
+.meter i:nth-child(1){width:100%}.meter i:nth-child(2){width:72%}.meter i:nth-child(3){width:44%}
+.meter[data-l="1"] i:nth-child(3),.meter[data-l="2"] i:nth-child(n+2),.meter[data-l="3"] i{opacity:1}
+
+/* ============ 02 About: centred editorial column ============ */
+.about{padding:clamp(110px,13vw,180px) var(--pad) clamp(90px,10vw,140px);background:var(--page)}
+.ab{max-width:880px;margin:0 auto}
+.ab h2{font-size:clamp(30px,3.5vw,48px);font-weight:500;line-height:1.08;letter-spacing:-.04em;margin-top:8px}
+.ab h2 em{color:var(--terra)}
+.ab-stage{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(28px,4vw,56px);margin-top:clamp(48px,6vw,80px)}
+.ab-copy{grid-column:2;grid-row:1}
+.ab-copy p{font-size:14px;line-height:1.5;color:var(--ink);max-width:380px}
+.ab-copy p+p{margin-top:14px}
+.ab-copy a{border-bottom:1px solid currentColor;transition:color .25s}
+.ab-copy a:hover{color:var(--terra)}
+.ab-sig{display:flex;align-items:baseline;gap:12px;margin-top:22px}
+.ab-sig b{font-family:var(--hand);font-size:32px;font-weight:500;line-height:1}
+.ab-sig span{font-family:var(--wide);font-size:10px;color:var(--muted)}
+/* the two cut-out objects: shot on white, multiplied into the paper */
+.ab-stage img{filter:grayscale(1) contrast(1.18) brightness(1.04);height:auto}
+.ab-figure,.ab-object{mix-blend-mode:multiply}
+.ab-figure{grid-column:1;grid-row:1/3;margin-top:clamp(40px,5vw,70px);aspect-ratio:4/5;overflow:hidden}
+.ab-figure img{width:100%;height:100%;object-fit:cover;object-position:50% 80%;transform:scale(1.55);transform-origin:46% 80%}
+.ab-object{grid-column:2;grid-row:2;align-self:end}
+.ab-object img{width:100%}
+.ab-object figcaption{font-family:var(--wide);font-size:10px;color:var(--muted);display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding-top:8px;margin-top:-6px}
+@media (max-width:760px){
+  .ab-stage{grid-template-columns:1fr}
+  .ab-copy,.ab-figure,.ab-object{grid-column:1;grid-row:auto}
+  .ab-figure{margin-top:36px}
+  .ab-object{margin-top:20px}
+}
+
+/* shared section head (gallery, students) */
+.vhead{grid-column:1/7;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+.sec{padding:clamp(80px,10vw,140px) 0}
+
+/* ============ 05 Gallery: the salon wall ============ */
+.gw{background:var(--page)}
+.gw-wall{grid-column:1/7;padding:0 var(--pad);display:flex;flex-direction:column;gap:clamp(110px,10vw,140px)}
+.gw-row{position:relative;display:flex;align-items:center;justify-content:space-between;gap:clamp(18px,2.6vw,44px)}
+.gw-row::before{content:"";position:absolute;left:calc(var(--pad) * -1);right:calc(var(--pad) * -1);top:50%;border-top:1px dashed rgba(var(--ink-rgb),.22)}
+.gw-w{position:relative;flex:0 0 var(--w);display:block}
+.gw-f{display:block;background:var(--band);padding:clamp(8px,1.1vw,16px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.gw-f.dark{border:5px solid var(--ink)}
+.gw-f .im{display:block;aspect-ratio:var(--r);overflow:hidden;background:var(--band-soft)}
+.gw-w:hover .gw-f{transform:translateY(-5px)}
+.gw-l{position:absolute;top:100%;left:0;right:0;margin-top:16px;font-family:var(--wide);font-size:10px;line-height:1.55;color:var(--muted)}
+.gw-l b{display:block;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin-bottom:2px}
+.gw-l i{font-style:normal;display:inline-flex;gap:6px;align-items:center;margin-top:4px;color:var(--ink-2)}
+.gw-l i::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pc)}
+.gw-w:hover .gw-l i{color:var(--terra)}
+.gw-note{font-family:var(--wide);font-size:10.5px;color:var(--muted);display:flex;gap:10px;align-items:center}
+.gw-note::before{content:"";width:34px;border-top:1px dashed currentColor}
+@media (max-width:760px){
+  .gw-wall{display:grid;grid-template-columns:1fr 1fr;gap:44px 16px;align-items:start}
+  .gw-row{display:contents}
+  .gw-row::before{display:none}
+  .gw-row:first-child .gw-w.lg{grid-column:1/3}
+  .gw-l{position:static;display:block;margin-top:10px}
+}
+
+/* ============ 06 Students: letters (poster cards) ============ */
+.rl .lbl{color:var(--on-band-2)}
+.rl .lbl b,.rl h2 em{color:var(--band-accent)}
+.rl .txt{color:var(--on-band-2)}
+/* students: colour blocks on the dark ground */
+.rv-grid{grid-column:1/7;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,32px)}
+.who{font-size:14px;line-height:1.4}
+.who b{font-weight:600}
+.who span{display:block;font-family:var(--wide);font-size:10px;opacity:.72;margin-top:2px}
+.qm{display:block;font-family:"Inter",var(--sans);font-weight:700;line-height:1;height:.5em;font-size:96px;letter-spacing:-.05em}
+.rv-block{display:flex;flex-direction:column;justify-content:space-between;gap:44px;min-height:clamp(300px,26vw,380px);padding:clamp(22px,2.2vw,32px);background:var(--bg);color:var(--fg);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.rv-block:hover{transform:translateY(-6px) rotate(-.6deg)}
+.rv-block blockquote{font-size:clamp(22px,2vw,28px);font-weight:500;line-height:1.15;letter-spacing:-.03em;margin-top:18px}
+.rl.rv-dark{background:var(--night);color:var(--paper)}
+.rv-dark .lbl,.rv-dark .txt{color:var(--dim)}
+.rv-dark .lbl b,.rv-dark h2 em{color:var(--accent-lt)}
+.rv-dark .rl-stats{border-top-color:rgba(var(--on-dark-rgb),.3)}
+.rv-dark .rl-stats div+div{border-left-color:rgba(var(--on-dark-rgb),.14)}
+.rv-dark .rl-stats span{color:var(--dim)}
+.rv-dark .rl-foot a:hover{color:var(--accent-lt)}
+@media (max-width:860px){
+  .rv-grid{grid-template-columns:1fr}
+  .rv-block{min-height:0}
+}
+.rl-stats{grid-column:1/7;margin:clamp(48px,6vw,80px) var(--pad) 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.rl-stats div{padding:18px 18px 0 0}
+.rl-stats div+div{border-left:1px solid var(--rule);padding-left:18px}
+.rl-stats b{display:block;font-size:clamp(32px,3.6vw,52px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.rl-stats span{display:block;font-family:var(--wide);font-size:10px;color:var(--on-band-2);margin-top:8px}
+.rl-foot{grid-column:1/7;margin:32px var(--pad) 0}
+.rl-foot a{font-size:14px;font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px}
+.rl-foot a:hover{color:var(--band-accent)}
+@media (max-width:600px){
+  .rl-stats{grid-template-columns:1fr 1fr}
+  .rl-stats div:nth-child(3){border-left:0;padding-left:0}
+  .rl-stats div{padding-bottom:18px}
+}
+/* ============ 08 FAQ ============ */
+.faq{padding:clamp(80px,10vw,130px) 0}
+.faq .hd{grid-column:1/3;padding:0 var(--pad)}
+.faq .list{grid-column:3/7;padding:0 var(--pad) 0 0}
+details{border-top:1px solid var(--rule);padding:22px 0}
+details:last-child{border-bottom:1px solid var(--rule)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:var(--serif);font-size:clamp(20px,2vw,25px)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--wide);font-weight:400;font-size:26px;line-height:1;transition:transform .3s;color:var(--terra)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--ink-2);margin-top:12px;max-width:620px}
+
+/* ============ 08 Join: actions + newsletter ============ */
+.join{padding:0 14px clamp(80px,9vw,120px) 0}
+.cta-wrap{grid-column:1/7}
+.cta-panel{position:relative;border-radius:16px;overflow:hidden;background:var(--night-2);padding:clamp(18px,2vw,30px);min-height:clamp(320px,25vw,380px);display:flex}
+.cta-bg{position:absolute;top:0;right:0;bottom:0;width:50%}
+.cta-bg img{object-position:50% 40%}
+.cta-cards{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:10px}
+.cta-card{border:1px solid rgba(var(--on-dark-rgb),.14);border-radius:6px;padding:clamp(22px,2vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;color:var(--paper);transition:background .3s,border-color .3s}
+.cta-card:hover{background:rgba(var(--on-dark-rgb),.04);border-color:rgba(var(--on-dark-rgb),.3)}
+.cta-card h3{font-size:clamp(19px,1.6vw,22px);font-weight:500;letter-spacing:-.02em}
+.cta-card p{font-size:13.5px;color:rgba(var(--on-dark-rgb),.55);margin-top:10px;max-width:240px}
+.cta-card .u{color:var(--accent-lt);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px;font-size:15px;align-self:flex-start;transition:color .25s}
+.cta-card:hover .u{color:#fff}
+.nl{margin-top:10px;background:var(--band);border-radius:14px;padding:20px 20px 20px clamp(20px,2vw,30px);display:flex;justify-content:space-between;align-items:center;gap:30px}
+.nl p{font-size:clamp(17px,1.4vw,20px);font-weight:500;letter-spacing:-.02em;line-height:1.3;max-width:520px}
+.nl form{display:flex;flex:0 1 700px;background:#fff;border-radius:10px;overflow:hidden}
+.nl input{flex:1;min-width:0;border:0;background:transparent;height:60px;padding:0 22px;font:inherit;font-size:15px;color:var(--ink);outline:none}
+.nl button{width:60px;border:0;background:var(--terra);color:#fff;font-size:20px;cursor:pointer;transition:background .25s}
+.nl button:hover{background:var(--ink)}
+@media (max-width:980px){
+  .join{padding:0 10px 80px}
+  .cta-panel{flex-direction:column;padding:0}
+  .cta-bg{position:relative;width:100%;height:220px}
+    .cta-cards{grid-template-columns:1fr;padding:14px}
+  .nl{flex-direction:column;align-items:stretch}
+}
+
+/* ============ Footer ============ */
+footer{margin-left:var(--rail);display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+footer .c{padding:70px 20px 40px;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+footer .c:nth-child(2){background:var(--band-soft)}
+footer .c h3{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:800;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-bottom:20px}
+footer .c a:hover{color:var(--terra)}
+footer .base{grid-column:1/4;display:grid;grid-template-columns:repeat(3,1fr);font-size:11px;color:var(--muted)}
+footer .base span{padding:20px 0 40px}
+footer .base span:nth-child(2){background:var(--band-soft)}
+
+/* ============ Responsive ============ */
+@media (max-width:1100px){
+  .hero .copy{grid-column:1/4}
+  .p2{display:none}.t1{grid-column:4/7;padding-right:var(--pad)}
+}
+@media (max-width:980px){
+  :root{--rail:0px;--pad:20px}
+  .rail{bottom:auto;align-items:flex-start;padding:0;border:0}
+  .rail .vt,.rail .soc{display:none}
+  .cols{grid-template-columns:repeat(3,1fr)}
+  .top{padding:0 20px 0 76px;grid-template-columns:auto 1fr;height:78px}
+  .top .l,.top .r{display:none}
+  .logo{grid-column:1;align-items:flex-start}
+  .g6{grid-template-columns:1fr}
+  .g6>*{grid-column:1!important}
+  .hero{padding-top:30px}
+  .canvas{width:auto;max-width:440px;margin:56px var(--pad) 0;justify-self:stretch}
+  .mediums .copy{margin-bottom:30px}
+  .strips{margin:0 var(--pad);height:360px}
+  .tab{width:28px;height:120px}
+  .cgrid{grid-template-columns:repeat(2,1fr)}
+  .story .hd{padding-top:50px}
+  .ph,.p3{margin:24px var(--pad) 0!important;width:auto!important;height:300px!important}
+  .p2{display:block}
+  .t1,.t2{padding:30px var(--pad) 0!important}
+  .big{padding:0 var(--pad);font-size:28vw}
+  .number .copy{padding:20px var(--pad) 0}
+  .faq .list{padding:30px var(--pad) 0}
+  footer{grid-template-columns:1fr}footer .base{grid-column:1;grid-template-columns:1fr}
+  footer .base span{padding:12px 0}
+}
+@media (max-width:600px){
+  .cgrid{grid-template-columns:1fr}
+}
+/* ============ v4: one sans + mono labels ============ */
+.lbl{font-weight:500;letter-spacing:.06em;font-size:10.5px}
+.tag,.stats span,.ph figcaption,footer .c h3{letter-spacing:.06em;font-weight:500}
+.num,.big,.yr{font-family:var(--sans);font-variation-settings:normal}
+.num{font-weight:700;letter-spacing:-.05em}
+.big{font-weight:700;letter-spacing:-.06em}
+.yr{font-weight:700;letter-spacing:-.05em}
+.stats b{font-weight:600;letter-spacing:-.03em}
+summary{font-weight:500;letter-spacing:-.02em}
+@media (max-width:980px){
+  .rail{padding:12px 0 0 12px}
+  .top{margin:10px 10px 0 56px;padding:0 6px 0 14px}
+  .top .r a:not(.login){display:none}
+  .top .r{display:flex}
+  .logo{flex-direction:row}
+  .hero{padding:36px 0 70px}
+  .hero .copy{padding:0 20px}
+  .hero{height:auto;max-height:none;min-height:0;margin-left:0;display:flex;flex-direction:column;padding:76px 20px 48px;gap:22px}
+  .hn{padding:22px 20px 0;align-items:center;z-index:6}
+  .hn div:first-of-type{display:none}
+  .hn div:last-of-type a:not(.on){display:none}
+  .hn-menu{display:inline-flex}
+  .rail{display:none}
+  .vline,.hline,.ring,.mini{display:none}
+  .big,.hero h1,.roles,.year,.hcta{position:static;max-width:none}
+  .big{aspect-ratio:4/3.2}
+  .hero h1{font-size:40px}
+  .roles,.year,.hcta{font-size:16px}
+  .hcta{position:relative;align-self:flex-start;margin-bottom:10px}
+  .year{padding-left:0}
+  .tabv{height:170px;width:32px}
+  .method{padding:0 10px 90px}
+  .panel{grid-template-columns:1fr;border-radius:22px}
+}
+@media (max-width:700px){
+  .steps{grid-template-columns:1fr}
+  .step{min-height:0}
+  .step h3{padding-top:24px}
+  .credit{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .js .draw path{stroke-dashoffset:0}
+}
+
+
+/* =====================================================================
+   Single course page (Tutor LMS: single-course.php + single/course/*)
+   ===================================================================== */
+
+/* ---- header band: the home hero's nav on a slim dark strip */
+.chead{--x0:calc(var(--rail) + 1.4%);--x1:1.8%;position:relative;z-index:5;margin-left:calc(var(--rail) * -1);height:78px;background:var(--night);color:var(--paper)}
+.chead .hn{position:relative;height:100%;align-items:center;padding-top:0}
+.chead .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:17px;font-weight:700;letter-spacing:-.04em;color:var(--paper)}
+.chead .brand span{font-weight:500;color:var(--dim);margin-left:6px;letter-spacing:-.02em}
+.chead .hn .on{color:var(--accent-lt)}
+
+/* ---- hero: title as a poster, tinted course image */
+.c-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,5vw,80px);align-items:end;padding:clamp(40px,5vw,72px) var(--pad) clamp(56px,7vw,96px)}
+.crumb{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--wide);font-size:10.5px;color:var(--muted)}
+.crumb a:hover{color:var(--terra)}
+.crumb b{color:var(--pc);font-weight:500}
+.c-rate{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:26px;font-size:14px;color:var(--ink-2)}
+.stars{color:var(--pc);letter-spacing:.06em}
+.c-rate b{color:var(--ink);font-weight:600}
+.c-title{font-family:"Inter",var(--sans);font-weight:700;font-size:clamp(56px,8.2vw,124px);line-height:.86;letter-spacing:-.065em;color:var(--pc);margin:16px 0 26px}
+.c-lede{font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--ink-2);max-width:540px}
+.c-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0 18px;margin-top:clamp(32px,4vw,52px);max-width:640px}
+.c-facts div{border-top:2px solid var(--pc);padding-top:8px}
+.c-facts dt{font-family:var(--wide);font-size:9.5px;color:var(--muted)}
+.c-facts dd{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;letter-spacing:-.01em}
+.c-pic{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--pc);max-width:100%}
+.c-pic img{filter:grayscale(1) contrast(1.1);mix-blend-mode:screen;opacity:.95;transition:filter .6s}
+.c-pic:hover img{filter:none;mix-blend-mode:normal;opacity:1}
+.c-pic .tag{position:absolute;left:12px;top:12px;font-family:var(--wide);font-size:9.5px;letter-spacing:.06em;background:var(--card);color:var(--pc);padding:5px 9px}
+.play{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:14px;background:var(--card);color:var(--ink);padding:10px 16px 10px 10px;font-size:14px;font-weight:500;transition:background .25s,color .25s}
+.play i{flex:none;width:40px;height:40px;border-radius:50%;background:var(--pc);display:grid;place-items:center}
+.play i::after{content:"";margin-left:3px;border-left:11px solid var(--card);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.play span{margin-left:auto;font-family:var(--wide);font-size:10px;color:var(--muted)}
+.play:hover{background:var(--ink);color:var(--paper)}
+
+/* ---- body: content column + sticky enrol box */
+.c-body{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:clamp(40px,5vw,96px);align-items:start;padding:0 var(--pad) clamp(80px,10vw,140px)}
+.c-main{min-width:0;grid-column:1;grid-row:1}
+.c-aside{position:sticky;top:24px;grid-column:2;grid-row:1}
+.c-sec{padding-top:clamp(56px,6vw,88px)}
+.c-sec:first-child{padding-top:0;border-top:1px solid var(--ink)}
+.c-sec h2{font-size:clamp(30px,3.1vw,44px);margin-bottom:clamp(22px,2.4vw,32px)}
+.c-sec:first-child h2{margin-top:clamp(28px,3vw,40px)}
+.c-sec .sub{font-family:var(--wide);font-size:10.5px;color:var(--muted);margin:-14px 0 26px}
+
+/* enrol box (Tutor: course-entry-box.php) */
+.ebox{background:var(--band);padding:clamp(20px,2vw,28px)}
+.ebox .pt{display:flex;justify-content:space-between;font-family:var(--wide);font-size:9.5px;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px}
+.ebox .pt b{color:var(--pc);font-weight:400}
+.price{display:flex;align-items:baseline;gap:12px;margin:18px 0 4px}
+.price b{font-family:"Inter",var(--sans);font-size:56px;font-weight:700;letter-spacing:-.06em;line-height:1}
+.price s{font-size:18px;color:var(--muted)}
+.ebox .note{font-size:13.5px;color:var(--ink-2)}
+.ebox .btn{width:100%;justify-content:space-between;margin-top:20px}
+.ebox .alt{display:flex;justify-content:space-between;margin-top:14px;font-size:14px;font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:3px;transition:color .25s,border-color .25s}
+.ebox .alt:hover{color:var(--terra);border-color:var(--terra)}
+.ebox dl{margin-top:22px}
+.ebox dl div{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--rule);padding:9px 0}
+.ebox dt{font-family:var(--wide);font-size:9.5px;color:var(--muted)}
+.ebox dd{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;text-align:right}
+.ebox .gift{display:flex;justify-content:space-between;border-top:1px solid var(--ink);margin-top:4px;padding-top:12px;font-size:13px;color:var(--ink-2)}
+.ebox .gift a{border-bottom:1px solid currentColor}
+.ebox .gift a:hover{color:var(--terra)}
+.meter{color:var(--pc)}
+
+/* what's included */
+.incl{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(16px,2vw,28px)}
+.incl div{border-top:2px solid var(--pc);padding:10px 0 26px}
+.incl b{display:block;font-family:"Inter",var(--sans);font-size:clamp(40px,4vw,56px);font-weight:700;letter-spacing:-.06em;line-height:1;color:var(--pc)}
+.incl span{display:block;font-size:14px;line-height:1.4;color:var(--ink-2);margin-top:8px;max-width:180px}
+
+/* overview + learn */
+.ov p{font-size:16.5px;color:var(--ink-2);max-width:640px}
+.ov p+p{margin-top:14px}
+.learn{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(18px,2.4vw,36px);margin-top:clamp(28px,3vw,40px)}
+.learn li{position:relative;padding:12px 0 12px 28px;border-top:1px solid var(--rule);font-size:15px;line-height:1.45}
+.learn li::before{content:"";position:absolute;left:2px;top:17px;width:12px;height:7px;border-left:2px solid var(--pc);border-bottom:2px solid var(--pc);transform:rotate(-45deg)}
+
+/* materials (Tutor: course-requirements.php + material-includes.php) */
+.mats{list-style:none}
+.mats li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 20px;align-items:baseline;border-top:1px solid var(--rule);padding:13px 0}
+.mats li:last-child{border-bottom:1px solid var(--rule)}
+.mats b{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.mats span{font-family:var(--wide);font-size:10px;color:var(--muted);text-align:right}
+.dl{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-size:14px;font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:3px;transition:gap .3s,color .25s,border-color .25s}
+.dl:hover{gap:16px;color:var(--terra);border-color:var(--terra)}
+
+/* curriculum (Tutor: course-topics.php) */
+.cur-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 24px;margin:-8px 0 18px}
+.cur-head p{font-family:var(--wide);font-size:10.5px;color:var(--muted)}
+.cur-head p b{color:var(--ink);font-weight:500}
+.cur-head button{font:inherit;font-size:13.5px;font-weight:500;background:none;border:0;border-bottom:1px solid var(--ink);padding:0 0 2px;cursor:pointer;color:var(--ink)}
+.cur-head button:hover{color:var(--terra);border-color:var(--terra)}
+.topic{padding:0;border-top:1px solid var(--ink)}
+.topic:last-of-type{border-bottom:1px solid var(--ink)}
+.topic summary{display:grid;grid-template-columns:48px minmax(0,1fr) auto 26px;align-items:baseline;gap:6px 16px;padding:20px 0;font-size:clamp(19px,1.7vw,23px);font-weight:500;letter-spacing:-.02em}
+.topic summary::after{grid-column:4;justify-self:end}
+.topic summary .n{font-family:var(--wide);font-size:11px;font-weight:500;color:var(--pc);letter-spacing:0}
+.topic summary .m{font-family:var(--wide);font-size:10px;font-weight:400;color:var(--muted);letter-spacing:0;white-space:nowrap}
+.topic summary:hover .t{color:var(--terra)}
+.items{list-style:none;padding:0 0 18px 64px}
+.item{display:grid;grid-template-columns:92px minmax(0,1fr) auto auto;align-items:center;gap:6px 14px;padding:11px 0;border-top:1px solid var(--line);font-size:15px}
+.item .ty{justify-self:start;font-family:var(--wide);font-size:9px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);padding:3px 7px;color:var(--ink-2)}
+.item .ty.q,.item .ty.a{background:var(--pc);border-color:var(--pc);color:var(--card)}
+.item .d{font-family:var(--wide);font-size:10px;color:var(--muted);min-width:44px;text-align:right}
+.item .lk{width:14px;height:14px;color:var(--muted)}
+.item .pv{font-family:var(--wide);font-size:9.5px;color:var(--pc);border-bottom:1px solid currentColor;white-space:nowrap}
+.item .pv:hover{color:var(--terra)}
+
+/* instructor (Tutor: instructors.php) */
+.inst{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(22px,3vw,40px);align-items:start}
+.inst .im{aspect-ratio:4/5;overflow:hidden;background:var(--band)}
+.inst .im img{filter:grayscale(1) contrast(1.05)}
+.inst h3{font-size:clamp(26px,2.4vw,34px);letter-spacing:-.04em}
+.inst .role{font-family:var(--wide);font-size:10px;color:var(--muted);margin-top:6px}
+.inst p{font-size:15px;color:var(--ink-2);margin-top:16px;max-width:520px}
+.inst .sig{font-family:var(--hand);font-size:32px;line-height:1;margin-top:14px}
+.inst dl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 clamp(20px,3vw,44px);margin-top:20px}
+.inst dt{font-family:var(--wide);font-size:9.5px;color:var(--muted)}
+.inst dd{font-size:22px;font-weight:600;letter-spacing:-.03em}
+.inst .more{margin-top:20px}
+
+/* reviews (Tutor: reviews.php + reviews-loop.php) */
+.rv-sum{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;padding-bottom:28px;border-bottom:1px solid var(--rule)}
+.rv-avg b{display:block;font-family:"Inter",var(--sans);font-size:clamp(64px,6vw,88px);font-weight:700;letter-spacing:-.06em;line-height:.9}
+.rv-avg span{display:block;font-family:var(--wide);font-size:10px;color:var(--muted);margin-top:8px}
+.hist{list-style:none;display:grid;gap:7px}
+.hist li{display:grid;grid-template-columns:34px minmax(0,1fr) 44px;align-items:center;gap:12px;font-family:var(--wide);font-size:10px;color:var(--muted)}
+.hist i{display:block;height:6px;background:var(--band)}
+.hist i::before{content:"";display:block;height:100%;width:var(--w);background:var(--pc)}
+.hist li span:last-child{text-align:right}
+.rv-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px);margin-top:28px}
+.rv-card{background:var(--band);padding:clamp(18px,2vw,26px);display:flex;flex-direction:column;gap:18px}
+.rv-card p{font-size:16px;line-height:1.45;letter-spacing:-.01em}
+.rv-card .who{display:flex;align-items:center;gap:12px;margin-top:auto;font-size:14px}
+.rv-card .who i{flex:none;width:36px;height:36px;border-radius:50%;background:var(--pc);color:var(--card);display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:600}
+.rv-card .who span{display:block;font-family:var(--wide);font-size:9.5px;color:var(--muted)}
+.rv-more{margin-top:22px}
+
+/* course FAQ reuses the home FAQ details styling */
+.c-faq details:last-child{border-bottom:1px solid var(--rule)}
+
+/* ---- more courses on the cream surface */
+.c-more{background:var(--band);padding:clamp(80px,10vw,130px) 0}
+.c-more .head{grid-column:1/7;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,60px)}
+.c-more .head a{font-size:14px;font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px}
+.c-more .head a:hover{color:var(--terra)}
+.c-nl{padding:clamp(56px,6vw,90px) 14px clamp(56px,6vw,90px) 0}
+
+/* ---- phone enrol bar */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:35;align-items:center;justify-content:space-between;gap:16px;background:var(--night);color:var(--paper);padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.mbar b{font-family:"Inter",var(--sans);font-size:26px;font-weight:700;letter-spacing:-.05em}
+.mbar span{display:block;font-family:var(--wide);font-size:9.5px;color:var(--dim)}
+.mbar a{background:var(--terra);color:#fff;padding:12px 20px;border-radius:999px;font-size:14.5px;font-weight:500}
+
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+
+@media (max-width:1100px){
+  .c-body{grid-template-columns:minmax(0,1fr) 320px}
+  .incl{grid-template-columns:1fr 1fr}
+}
+@media (max-width:980px){
+  .chead{margin-left:0;height:64px}
+  .chead .hn{padding:0 20px}
+  .c-hero{grid-template-columns:1fr;align-items:start}
+  .c-pic{max-width:440px}
+  .c-body{grid-template-columns:1fr}
+  .c-aside,.c-main{grid-column:1;grid-row:auto}
+  .c-aside{position:static}
+  .mbar{display:flex}
+  body{padding-bottom:72px}
+  .tabv{display:none}
+}
+@media (max-width:640px){
+  .c-facts{grid-template-columns:1fr 1fr;gap:14px 18px}
+  .learn,.rv-cards{grid-template-columns:1fr}
+  .incl{grid-template-columns:1fr 1fr}
+  .topic summary{grid-template-columns:34px minmax(0,1fr) 22px}
+  .topic summary .m{grid-column:2;grid-row:2}
+  .topic summary::after{grid-column:3;grid-row:1}
+  .items{padding-left:0}
+  .item{grid-template-columns:minmax(0,1fr) auto auto;gap:4px 12px}
+  .item .ty{grid-column:1/4}
+  .inst{grid-template-columns:1fr}
+  .inst .im{max-width:220px}
+  .rv-sum{grid-template-columns:1fr}
+  .mats li{grid-template-columns:1fr}
+  .mats span{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<aside class="rail">
+  <span class="vt">Elena Varga — school of drawing — Lisbon</span>
+  <div class="soc">
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.2 2.3 2.3 4.2 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.2 3.7 2.1 5.6 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.7-.2 5.6-2.1 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.2-3.7-2.1-5.6-5.8-5.8C15 2 14.7 2 12 2z"/></svg></a>
+    <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.2-.9 3.4-.2 1 .5 1.900 1.6 1.9 1.9 0 3.3-2 3.3-4.9 0-2.5-1.8-4.3-4.4-4.3-3 0-4.8 2.3-4.8 4.6 0 .9.4 1.9.8 2.4l.1.4-.3 1.1c0 .2-.2.2-.4.1-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.300 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15V9l5.2 3-5.2 3z"/></svg></a>
+  </div>
+</aside>
+
+<main>
+
+  <header class="chead">
+    <nav class="hn" aria-label="Main">
+      <button class="hn-menu" type="button" aria-expanded="false" aria-controls="hnPanel"><i></i>Menu</button>
+      <div><a href="atelier-v7.html#about">About</a><a class="on" href="atelier-v7.html#courses" aria-current="page">Courses</a><a href="atelier-v7.html#gallery">Gallery</a><a href="atelier-v7.html#students">Students</a></div>
+      <a class="brand" href="atelier-v7.html">EV.<span>Atelier</span></a>
+      <div><a href="atelier-v7.html#faq">FAQ</a><a href="atelier-v7.html#join">Free lesson</a><a class="on" href="#">Log in</a></div>
+      <ul class="hn-panel" id="hnPanel" hidden>
+        <li><a href="atelier-v7.html#about">About Elena</a></li><li><a href="atelier-v7.html#courses">Courses</a></li><li><a href="atelier-v7.html#gallery">Gallery</a></li>
+        <li><a href="atelier-v7.html#students">Students</a></li><li><a href="atelier-v7.html#faq">Questions</a></li><li><a href="atelier-v7.html#join">Free lesson</a></li>
+      </ul>
+    </nav>
+  </header>
+  <a class="tabv" href="#" aria-label="Watch lesson 1 free"><b>EV.</b><span>Lesson 1 free</span></a>
+
+  <!-- HERO -->
+  <section class="c-hero" style="--pc:var(--c1)">
+    <div>
+      <nav class="crumb" aria-label="Breadcrumb"><a href="atelier-v7.html">Home</a><span>/</span><a href="atelier-v7.html#courses">Courses</a><span>/</span><b>No. 01 · Pencil</b></nav>
+      <div class="c-rate"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4.9</b> from 612 reviews</span><span>3,480 students</span><span>Updated Sept 2026</span></div>
+      <h1 class="c-title">Foundations<br>of drawing.</h1>
+      <p class="c-lede">Learn to draw what you see, with a pencil and a sheet of paper. Six weeks of short, filmed lessons at the pace Elena really works, ending with a drawing she critiques for you.</p>
+      <dl class="c-facts">
+        <div><dt>Level</dt><dd><span class="meter" data-l="1" aria-hidden="true"><i></i><i></i><i></i></span>Beginner</dd></div>
+        <div><dt>Lessons</dt><dd>21</dd></div>
+        <div><dt>Running</dt><dd>6h 10m</dd></div>
+        <div><dt>Medium</dt><dd>Pencil</dd></div>
+      </dl>
+    </div>
+    <figure class="c-pic">
+      <img src="img/1505569127510-bde1536937bc-w600.jpg" alt="A pencil study from the course" >
+      <span class="tag">Bestseller</span>
+      <a class="play" href="#"><i aria-hidden="true"></i>Watch the course trailer<span>2:14</span></a>
+    </figure>
+  </section>
+
+  <div class="c-body" style="--pc:var(--c1)">
+
+    <!-- ENROL BOX -->
+    <aside class="c-aside" aria-label="Enrol">
+      <div class="ebox">
+        <div class="pt"><span>Elena Varga Atelier</span><b>No. 01 · Pencil</b></div>
+        <div class="price"><b>$79</b><s>$99</s></div>
+        <p class="note">One payment. Yours for life, with every future update.</p>
+        <a class="btn btn-ink" href="#">Enrol now <span class="ar">→</span></a>
+        <a class="alt" href="#">Watch lesson 1 free <span>→</span></a>
+        <dl>
+          <div><dt>Level</dt><dd><span class="meter" data-l="1" aria-hidden="true"><i></i><i></i><i></i></span>Beginner</dd></div>
+          <div><dt>Lessons</dt><dd>21 + 2 quizzes</dd></div>
+          <div><dt>Running</dt><dd>6h 10m</dd></div>
+          <div><dt>Critique</dt><dd>1 private video</dd></div>
+          <div><dt>Certificate</dt><dd>Yes</dd></div>
+          <div><dt>Access</dt><dd>Lifetime</dd></div>
+        </dl>
+        <p class="gift"><span>Drawing for someone else?</span><a href="#">Gift this course</a></p>
+      </div>
+    </aside>
+
+    <div class="c-main">
+
+      <section class="c-sec">
+        <h2>What's included</h2>
+        <div class="incl">
+          <div><b>21</b><span>Video lessons, filmed at her own table</span></div>
+          <div><b>6</b><span>Reference sheets to draw from, one per topic</span></div>
+          <div><b>2</b><span>Short quizzes to check your eye</span></div>
+          <div><b>1</b><span>Private video critique of your final drawing</span></div>
+          <div><b>1</b><span>Certificate when you finish</span></div>
+          <div><b>∞</b><span>Lifetime access, including future updates</span></div>
+        </div>
+      </section>
+
+      <section class="c-sec ov">
+        <h2>Overview</h2>
+        <p>Most people who "can't draw" were never taught to look. This course starts there. Each topic follows Elena's three steps, Look, Sketch, Paint, so you train your eye before you touch the paper, then draw along with her in real time.</p>
+        <p>You need no experience and very few materials. By week six you will have a finished, considered drawing of a subject you chose, and a private video from Elena on what to try next.</p>
+        <ul class="learn">
+          <li>See shapes, values and edges instead of "things"</li>
+          <li>Measure proportions with nothing but your pencil</li>
+          <li>Draw a convincing light and shadow with three values</li>
+          <li>Use gesture to get life into a drawing fast</li>
+          <li>Control lost and found edges for depth</li>
+          <li>Plan and finish one drawing from start to end</li>
+        </ul>
+      </section>
+
+      <section class="c-sec">
+        <h2>What you'll need</h2>
+        <ul class="mats">
+          <li><b>HB and 4B graphite pencils</b><span>Any brand · about $4</span></li>
+          <li><b>Kneaded eraser</b><span>Shapes into a point for highlights</span></li>
+          <li><b>A4 cartridge paper, 120 gsm</b><span>A pad of 20 sheets is plenty</span></li>
+          <li><b>A desk lamp</b><span>One light source, from the side</span></li>
+          <li><b>A craft knife or sharpener</b><span>Elena sharpens with a knife; either works</span></li>
+        </ul>
+        <a class="dl" href="#">Download the materials list (PDF) <span>↓</span></a>
+      </section>
+
+      <section class="c-sec" id="curriculum">
+        <h2>Curriculum</h2>
+        <div class="cur-head"><p><b>6 topics</b> · 21 lessons · 2 quizzes · 1 assignment · 6h 10m</p><button type="button" id="expandAll" aria-pressed="false">Expand all</button></div>
+
+        <details class="topic" open>
+          <summary><span class="n">01</span><span class="t">Learning to look</span><span class="m">58 min · 3 lessons · 1 quiz</span></summary>
+          <ol class="items">
+            <li class="item"><span class="ty">Lesson</span><span>How artists see</span><a class="pv" href="#">Free preview</a><span class="d">12:40</span></li>
+            <li class="item"><span class="ty">Lesson</span><span>Shapes, values and edges</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">16:05</span></li>
+            <li class="item"><span class="ty">Practice</span><span>Blind contour, ten minutes</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">21:15</span></li>
+            <li class="item"><span class="ty q">Quiz</span><span>Spot the edges</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">8 Qs</span></li>
+          </ol>
+        </details>
+        <details class="topic">
+          <summary><span class="n">02</span><span class="t">Line and gesture</span><span class="m">1 hr 02 min · 4 lessons</span></summary>
+          <ol class="items">
+            <li class="item"><span class="ty">Lesson</span><span>Holding the pencil</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">09:30</span></li>
+            <li class="item"><span class="ty">Lesson</span><span>Gesture before detail</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">17:20</span></li>
+            <li class="item"><span class="ty">Practice</span><span>Thirty 30-second gestures</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">24:45</span></li>
+            <li class="item"><span class="ty">Reflection</span><span>What your lines say</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">10:25</span></li>
+          </ol>
+        </details>
+        <details class="topic">
+          <summary><span class="n">03</span><span class="t">Measuring and proportion</span><span class="m">1 hr 05 min · 3 lessons · 1 quiz</span></summary>
+          <ol class="items">
+            <li class="item"><span class="ty">Lesson</span><span>Sight-size and the pencil ruler</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">18:10</span></li>
+            <li class="item"><span class="ty">Lesson</span><span>Negative space</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">14:50</span></li>
+            <li class="item"><span class="ty">Practice</span><span>Drawing a chair</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">32:00</span></li>
+            <li class="item"><span class="ty q">Quiz</span><span>Proportion check</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">6 Qs</span></li>
+          </ol>
+        </details>
+        <details class="topic">
+          <summary><span class="n">04</span><span class="t">Light and value</span><span class="m">1 hr 10 min · 4 lessons</span></summary>
+          <ol class="items">
+            <li class="item"><span class="ty">Lesson</span><span>Three values, not seven</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">19:40</span></li>
+            <li class="item"><span class="ty">Lesson</span><span>Cast shadows</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">15:30</span></li>
+            <li class="item"><span class="ty">Practice</span><span>An egg on white paper</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">30:20</span></li>
+            <li class="item"><span class="ty">Bonus</span><span>Value scale sheet (PDF)</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">04:30</span></li>
+          </ol>
+        </details>
+        <details class="topic">
+          <summary><span class="n">05</span><span class="t">Texture and edges</span><span class="m">58 min · 4 lessons</span></summary>
+          <ol class="items">
+            <li class="item"><span class="ty">Lesson</span><span>Lost and found edges</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">16:15</span></li>
+            <li class="item"><span class="ty">Lesson</span><span>Paper, graphite and blending</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">13:45</span></li>
+            <li class="item"><span class="ty">Practice</span><span>A crumpled paper bag</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">21:30</span></li>
+            <li class="item"><span class="ty">Reflection</span><span>Your favourite edge</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">06:30</span></li>
+          </ol>
+        </details>
+        <details class="topic">
+          <summary><span class="n">06</span><span class="t">The final piece</span><span class="m">57 min · 3 lessons · 1 assignment</span></summary>
+          <ol class="items">
+            <li class="item"><span class="ty">Lesson</span><span>Choosing your subject</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">11:20</span></li>
+            <li class="item"><span class="ty">Lesson</span><span>Building the drawing in layers</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">20:40</span></li>
+            <li class="item"><span class="ty">Practice</span><span>Your final drawing</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">25:00</span></li>
+            <li class="item"><span class="ty a">Assignment</span><span>Submit for Elena's critique</span><svg class="lk" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-label="Locked"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span class="d">Upload</span></li>
+          </ol>
+        </details>
+      </section>
+
+      <section class="c-sec">
+        <h2>Your teacher</h2>
+        <div class="inst">
+          <div class="im"><img src="img/1551180452-45cc5da51c3a-w600.jpg" alt="Portrait of Elena Varga" loading="lazy" style="object-position:40% 30%"></div>
+          <div>
+            <h3>Elena Varga</h3>
+            <p class="role">Painter · Illustrator · Teacher · Lisbon, since 2006</p>
+            <p>I started filming lessons because students kept asking how I actually see a subject before I draw it. This is the course I wish I'd had: slow, honest about mistakes, and built around looking.</p>
+            <p class="sig">Elena V.</p>
+            <dl><div><dt>Courses</dt><dd>18</dd></div><div><dt>Students</dt><dd>12,400</dd></div><div><dt>Rating</dt><dd>4.9</dd></div></dl>
+            <a class="more" href="atelier-v7.html#about">More about Elena →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-sec" id="reviews">
+        <h2>Student reviews</h2>
+        <div class="rv-sum">
+          <div class="rv-avg"><b>4.9</b><span class="stars" aria-hidden="true">★★★★★</span><span>612 reviews</span></div>
+          <ul class="hist" aria-label="Rating breakdown">
+            <li><span>5 ★</span><i style="--w:91%"></i><span>557</span></li>
+            <li><span>4 ★</span><i style="--w:7%"></i><span>43</span></li>
+            <li><span>3 ★</span><i style="--w:1.5%"></i><span>9</span></li>
+            <li><span>2 ★</span><i style="--w:.5%"></i><span>3</span></li>
+            <li><span>1 ★</span><i style="--w:0%"></i><span>0</span></li>
+          </ul>
+        </div>
+        <div class="rv-cards">
+          <figure class="rv-card"><span class="stars" aria-label="5 stars">★★★★★</span><p>“I hadn't drawn since school. Six weeks in I drew my grandmother's house, and now it hangs in her kitchen.”</p><figcaption class="who"><i>MK</i><div><b>Marta K.</b><span>Finished · week 6</span></div></figcaption></figure>
+          <figure class="rv-card"><span class="stars" aria-label="5 stars">★★★★★</span><p>“The three-values lesson changed everything. My drawings finally look solid instead of fuzzy.”</p><figcaption class="who"><i>PS</i><div><b>Priya S.</b><span>Finished · week 5</span></div></figcaption></figure>
+          <figure class="rv-card"><span class="stars" aria-label="5 stars">★★★★★</span><p>“Elena's critique video was 11 minutes about my drawing alone. Worth the course on its own.”</p><figcaption class="who"><i>LM</i><div><b>Leila M.</b><span>Finished · week 7</span></div></figcaption></figure>
+          <figure class="rv-card"><span class="stars" aria-label="4 stars">★★★★☆</span><p>“Calm and clear. I wanted a little more on hands, but she says that's the portrait course.”</p><figcaption class="who"><i>TH</i><div><b>Tom H.</b><span>In progress · topic 5</span></div></figcaption></figure>
+        </div>
+        <a class="dl rv-more" href="#">Read all 612 reviews <span>→</span></a>
+      </section>
+
+      <section class="c-sec c-faq">
+        <h2>Before you enrol</h2>
+        <details open><summary>I've never drawn before. Is this for me?</summary><p>Yes. This course assumes nothing. If you can hold a pencil and write your name, you can follow every lesson.</p></details>
+        <details><summary>How long do I have to finish?</summary><p>As long as you like. Most students take six weeks at about an hour a week, but access never runs out.</p></details>
+        <details><summary>How does the critique work?</summary><p>Upload a photo of your final drawing in topic 6. Within ten days Elena sends you a private video going through it, usually 8 to 12 minutes long.</p></details>
+        <details><summary>Can I get a refund?</summary><p>Yes, within 14 days of buying, as long as you've watched fewer than five lessons.</p></details>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- MORE COURSES -->
+  <section class="c-more g6">
+    <div class="head">
+      <div>
+        <span class="lbl"><b>Next</b>Keep drawing</span>
+        <h2>Where students <em>go next.</em></h2>
+      </div>
+      <a href="atelier-v7.html#courses">All six courses →</a>
+    </div>
+    <div class="cgrid">
+      <a href="#" class="pcard" style="--pc:var(--c2)" aria-label="The Portrait in Pencil, Intermediate, $99">
+        <div class="ptop"><span>Elena Varga Atelier</span><b>No. 02 · Graphite</b></div>
+        <h3>The portrait<br>in pencil</h3>
+        <div class="pic"><img src="img/1593472807861-5bb884af28f6-w600.jpg" alt="" loading="lazy"></div>
+        <dl>
+          <div><dt>Level</dt><dd><span class="meter" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span>Intermediate</dd></div>
+          <div><dt>Lessons</dt><dd>18</dd></div>
+          <div><dt>Running</dt><dd>5h 40m</dd></div>
+          <div><dt>Admission</dt><dd class="adm">$99</dd></div>
+        </dl>
+      </a>
+      <a href="#" class="pcard" style="--pc:var(--c3)" aria-label="Watercolour Gardens, Beginner, $89">
+        <div class="ptop"><span>Elena Varga Atelier</span><b>No. 03 · Watercolour</b></div>
+        <h3>Watercolour<br>gardens</h3>
+        <div class="pic"><img src="img/1700608277944-98b04da666ba-w600.jpg" alt="" loading="lazy"></div>
+        <dl>
+          <div><dt>Level</dt><dd><span class="meter" data-l="1" aria-hidden="true"><i></i><i></i><i></i></span>Beginner</dd></div>
+          <div><dt>Lessons</dt><dd>20</dd></div>
+          <div><dt>Running</dt><dd>4h 55m</dd></div>
+          <div><dt>Admission</dt><dd class="adm">$89</dd></div>
+        </dl>
+      </a>
+      <a href="#" class="pcard" style="--pc:var(--c4)" aria-label="Ink, Line &amp; Silence, Beginner, $69">
+        <div class="ptop"><span>Elena Varga Atelier</span><b>No. 04 · Ink</b></div>
+        <h3>Ink, line<br>&amp; silence</h3>
+        <div class="pic"><img src="img/1724666696560-aec1b5732c92-w600.jpg" alt="" loading="lazy"><span class="tag">New</span></div>
+        <dl>
+          <div><dt>Level</dt><dd><span class="meter" data-l="1" aria-hidden="true"><i></i><i></i><i></i></span>Beginner</dd></div>
+          <div><dt>Lessons</dt><dd>14</dd></div>
+          <div><dt>Running</dt><dd>3h 20m</dd></div>
+          <div><dt>Admission</dt><dd class="adm">$69</dd></div>
+        </dl>
+      </a>
+    </div>
+  </section>
+
+  <section class="c-nl g6">
+    <div class="cta-wrap">
+      <div class="nl">
+        <p>Get a free 45-minute lesson, plus monthly studio notes and new techniques straight to your inbox.</p>
+        <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('input').placeholder='Thanks! Check your inbox.'">
+          <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="c"><h3>Learn</h3><a href="#">All courses</a><a href="#">Free lessons</a><a href="#">Gift a course</a><a href="#faq">FAQ</a></div>
+  <div class="c"><h3>Studio</h3><a href="#about">About Elena</a><a href="#gallery">Gallery</a><a href="#">Journal</a><a href="#">Contact</a></div>
+  <div class="c"><h3>Information</h3><a href="#">Commissions</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span>Made by hand in Lisbon</span></div>
+</footer>
+
+<div class="mbar"><div><b>$79</b><span>Lifetime access · 21 lessons</span></div><a href="#">Enrol now</a></div>
+
+<script>
+  // Curriculum: expand or collapse every topic.
+  const topics = [...document.querySelectorAll('.topic')], expandBtn = document.getElementById('expandAll');
+  const syncBtn = () => { const all = topics.every(t => t.open); expandBtn.textContent = all ? 'Collapse all' : 'Expand all'; expandBtn.setAttribute('aria-pressed', all); };
+  expandBtn.addEventListener('click', () => { const open = !topics.every(t => t.open); topics.forEach(t => t.open = open); syncBtn(); });
+  topics.forEach(t => t.addEventListener('toggle', syncBtn));
+
+  // Phone menu.
+  const menuBtn = document.querySelector('.hn-menu'), menu = document.getElementById('hnPanel');
+  const setMenu = open => { menuBtn.setAttribute('aria-expanded', open); menu.hidden = !open; };
+  menuBtn.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
+
+  // Reveal on scroll.
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .draw').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
