@@ -194,6 +194,20 @@ main{margin-left:var(--rail)}
 .step svg{width:58px;height:58px;margin-top:38px;overflow:visible}
 .step h3{font-size:clamp(24px,2.2vw,30px);margin-top:auto;padding-top:30px}
 .step p{font-size:14px;color:var(--ink-2);margin-top:8px}
+/* method panel uses the students section's scheme: dark ground, ochre / rose / terracotta cards */
+.panel{background:var(--night);color:var(--paper)}
+.panel .txt,.panel .lbl{color:var(--dim)}
+.panel .lbl b,.panel h2 em{color:var(--accent-lt)}
+.panel .more{color:var(--paper);border-color:currentColor}
+.panel .more:hover{color:var(--accent-lt);border-color:var(--accent-lt)}
+.step:nth-child(1){background:var(--ochre);color:var(--ink)}
+.step:nth-child(2){background:var(--rose);color:var(--ink)}
+.step:nth-child(3){background:var(--terra);color:var(--paper)}
+.step .n,.step p,.step h3{color:inherit}
+.step p{opacity:.85}
+.step svg path{stroke:currentColor}
+.step{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.step:hover{transform:translateY(-6px) rotate(-.6deg)}
 
 /* ============ 03 Courses: poster card (matches Figma "Course card / Poster white") ============ */
 .courses{background:var(--band);padding:clamp(80px,10vw,140px) 0}
