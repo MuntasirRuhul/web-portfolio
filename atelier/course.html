@@ -74,7 +74,7 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .menu a:hover{color:var(--terra)}
 
 /* ---------- page grid: content column + card column */
-.course{display:grid;grid-template-columns:minmax(0,var(--col)) var(--card);justify-content:space-between;column-gap:80px;align-items:start;padding-top:24px} /* safe gap under the dark header; card top lines up with the tabs */
+.course{display:grid;grid-template-columns:minmax(0,var(--col)) var(--card);justify-content:space-between;column-gap:80px;align-items:start;padding:24px 0 64px} /* safe gaps: under the dark header (card top lines up with the tabs) and above the next band (the sticky card stops 64px short) */
 .course > .main{grid-column:1;min-width:0}
 .course > .side{grid-column:2;grid-row:1;position:sticky;top:24px}
 
@@ -113,7 +113,7 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,5.4vw,72px);l
 /* ---------- sections */
 .sec{padding:48px 0 0}
 .sec + .sec{margin-top:32px;border-top:1px solid var(--rule)}
-.sec:last-child{padding-bottom:96px}
+.sec:last-child{padding-bottom:32px}
 h2{font-size:30px;font-weight:600;line-height:1.15;letter-spacing:-.035em}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:24px}
 .sec-head p{font-size:14px;color:var(--ink-2)}
