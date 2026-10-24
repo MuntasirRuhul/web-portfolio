@@ -15,7 +15,7 @@
 
 ## 3. Style reference
 
-- [ ] 3.1 Build `atelier/style.html` (Gallery) with the eleven chapters, live samples from `site.css`, do / don't pairs, contrast ratios, a motion replay, and archetype thumbnails. Verify that the audit passes, every sample uses `site.css` classes, focus rings show when tabbing the Components chapter, and the standard check passes.
+- [x] 3.1 Build `atelier/style.html` (Gallery) with the eleven chapters, live samples from `site.css`, do / don't pairs, contrast ratios, a motion replay, and archetype thumbnails. Verify that the audit passes, every sample uses `site.css` classes, focus rings show when tabbing the Components chapter, and the standard check passes.
 
 ## 4. Realign existing pages
 

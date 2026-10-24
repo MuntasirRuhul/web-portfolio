@@ -95,6 +95,7 @@ for (const page of pages) {
         if (!own) continue;
         if (e.closest('code,pre,script,style,textarea,input')) continue;
         if (/"/.test(own)) res.quotes.push(sel(e) + ' → ' + own.slice(0, 50));
+        if (/[A-Za-z]'[A-Za-z]|'\s|\s'/.test(own)) res.quotes.push(sel(e) + ' → straight apostrophe: ' + own.slice(0, 50));
         if (/\s-\s/.test(own)) res.quotes.push(sel(e) + ' → separator " - ": ' + own.slice(0, 50));
         if (cs.fontStyle === 'italic' && !/Caveat/.test(cs.fontFamily)) res.italic.push(sel(e) + ' → ' + own.slice(0, 40));
         const fs = Math.round(parseFloat(cs.fontSize) * 10) / 10;

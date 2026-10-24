@@ -122,6 +122,7 @@ body[data-archetype="workroom"] .gridlines,body[data-archetype="counter"] .gridl
 .headline.h2{font-size:var(--t-h2);line-height:1.08}
 .headline.h3{font-size:var(--t-h3);line-height:1.1;letter-spacing:-.03em}
 .headline em{font-style:normal;color:var(--accent)}
+.headline.h3 em{color:var(--accent-text)}   /* h3 reaches 22px on phones: small text, so the 4.99:1 shade */
 .room .headline em{color:var(--accent-on-room)}
 .lead{font-size:var(--t-lead);line-height:1.6;max-width:640px}
 .txt{color:var(--ink-2);max-width:420px}                                  /* v7 .txt */
@@ -251,3 +252,52 @@ body[data-archetype="workroom"] .reveal{opacity:1!important;transform:none!impor
   .facts div{border-left:0;padding-left:0;border-top:1px solid var(--rule)}
   .facts div:nth-child(-n+2){border-top:0}
 }
+
+/* ---------- 15. Brand mark (v7 .logo/.strokes 99-102): three painted strokes + name ---------- */
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:-.02em;color:inherit}
+.brand .strokes{display:flex;gap:3px}
+.brand .strokes i{width:3px;height:13px;border-radius:1px;background:var(--block-1)}
+.brand .strokes i:nth-child(2){background:var(--block-2)}
+.brand .strokes i:nth-child(3){background:var(--block-3)}
+.brand span{font-weight:400;color:var(--muted)}
+.room .brand span{color:var(--on-room-2)}
+
+/* ---------- 16. Light page header (shared by every page outside the home hero) ---------- */
+.site-head{position:relative;z-index:40;background:var(--object);border-bottom:1px solid var(--rule)}
+body[data-archetype="gallery"] .site-head,body[data-archetype="counter"] .site-head{background:var(--paper)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.site-head nav{display:flex;align-items:center;gap:28px;font-size:14.5px;color:var(--ink-2)}
+.site-head nav a:hover{color:var(--ink)}
+.site-head nav [aria-current="page"]{color:var(--ink);font-weight:500}
+.site-head .login{background:var(--ink);color:var(--object);padding:8px 16px;border-radius:var(--r-pill)}
+.site-head .login:hover{background:var(--accent);color:#fff}
+
+/* ---------- 17. Footer room (v7 footer 406-417) ---------- */
+.site-foot{position:relative;z-index:1;margin:0 10px 10px;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;background:var(--room);color:var(--on-room-2);border-radius:var(--r-card);overflow:hidden}
+.site-foot .c{position:relative;min-height:300px;padding:72px 20px 56px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:var(--t-small)}
+.site-foot .c + .c{border-left:1px solid var(--rule-on-room)}
+.site-foot h3{font-family:var(--mono);font-weight:500;font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--on-room);margin-bottom:16px}
+.site-foot a:hover{color:var(--accent-on-room)}
+.site-foot .base{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);font-size:12px;border-top:1px solid var(--rule-on-room)}
+.site-foot .base span{padding:20px 0 24px}
+.site-foot .ring{position:absolute;left:50%;top:50%;width:min(360px,120%);aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.site-foot .ring svg{width:100%;height:100%;overflow:visible}
+.site-foot .ring circle{fill:none;stroke:rgba(var(--on-room-rgb),.34);stroke-width:.3;stroke-dasharray:1;stroke-dashoffset:1}
+.site-foot.ring-on .ring circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s var(--ease-line) .3s}
+@media (max-width:900px){
+  .site-head nav a:not(.login){display:none}
+  .site-foot{grid-template-columns:1fr}
+  .site-foot .c + .c{border-left:0;border-top:1px solid var(--rule-on-room)}
+  .site-foot .base{grid-template-columns:1fr}
+  .site-foot .base span{padding:12px 0}
+}
+@media (prefers-reduced-motion:reduce){.site-foot .ring circle{stroke-dashoffset:0}}
+
+/* ---------- 18. Do / don't pairs (style page and reviews) ---------- */
+.pair-dd{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.do,.dont{position:relative;border-radius:var(--r-card);padding:28px 24px 20px;background:var(--object)}
+.do > .tag-dd,.dont > .tag-dd{display:flex;align-items:center;gap:8px;margin-top:20px;padding-top:12px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase}
+.do > .tag-dd{color:var(--ink)}
+.dont > .tag-dd{color:var(--accent-text);text-decoration:line-through;text-decoration-thickness:1px}
+.dont{background:transparent;border:1px dashed var(--rule)}
+@media (max-width:700px){.pair-dd{grid-template-columns:1fr}}
