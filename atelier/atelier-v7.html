@@ -159,15 +159,15 @@ main{margin-left:var(--rail)}
 /* drawn each time the hero enters the viewport; resets instantly when it leaves */
 .hero.ring-on .ring circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s cubic-bezier(.6,.1,.2,1) .3s}
 .mini{position:absolute;left:var(--x0);top:20%;width:12.4%;height:calc(var(--hy) - 20%);overflow:hidden;z-index:1}
-.big{position:absolute;left:var(--vx);right:var(--x1);top:20%;bottom:22%;overflow:hidden}
+.big{position:absolute;left:var(--vx);right:var(--x1);top:20%;bottom:27%;overflow:hidden}
 .mini img,.big img{filter:grayscale(1) contrast(1.05)}
 .big img{transform:scale(1.06);transition:transform 2.6s cubic-bezier(.2,.7,.2,1)}
 .hero.is-in .big img{transform:none}
 .hero h1{position:absolute;left:var(--x0);top:calc(var(--hy) + 5%);max-width:calc(var(--vx) - var(--x0) - 3%);font-size:clamp(30px,3.3vw,56px);font-weight:500;line-height:1;letter-spacing:-.045em;z-index:3}
 .hero h1 span{color:rgba(var(--on-dark-rgb),.45)}
-.roles{position:absolute;left:calc(var(--x0) + 12.4%);bottom:14%;list-style:none;font-size:clamp(15px,1.3vw,21px);line-height:1.5;z-index:3}
-.year{position:absolute;left:var(--vx);bottom:14%;font-size:clamp(15px,1.3vw,21px);padding-left:12px;z-index:3}
-.hcta{position:absolute;right:var(--x1);bottom:14%;font-size:clamp(15px,1.3vw,21px);color:var(--accent-lt);z-index:3;display:inline-flex;gap:10px;transition:gap .3s,color .3s}
+.roles{position:absolute;left:calc(var(--x0) + 12.4%);bottom:15%;list-style:none;font-size:clamp(15px,1.3vw,21px);line-height:1.5;z-index:3}
+.year{position:absolute;left:var(--vx);bottom:15%;padding-top:0;font-size:clamp(15px,1.3vw,21px);padding-left:12px;z-index:3}
+.hcta{position:absolute;right:var(--x1);bottom:15%;font-size:clamp(15px,1.3vw,21px);color:var(--accent-lt);z-index:3;display:inline-flex;gap:10px;transition:gap .3s,color .3s}
 .hcta:hover{gap:16px;color:#fff}
 /* thin paint stroke under the hero link */
 .hcta .stroke{position:absolute;left:-3%;bottom:-13px;width:calc(100% - 18px);height:14px;overflow:visible;pointer-events:none}
@@ -470,7 +470,7 @@ summary{font-weight:500;letter-spacing:-.02em}
   .logo{flex-direction:row}
   .hero{padding:36px 0 70px}
   .hero .copy{padding:0 20px}
-  .hero{height:auto;max-height:none;min-height:0;margin-left:0;display:flex;flex-direction:column;padding:76px 20px 48px;gap:22px}
+  .hero{height:auto;max-height:none;min-height:0;margin-left:0;display:flex;flex-direction:column;padding:76px 20px 56px;gap:32px}
   .hn{padding:22px 20px 0;align-items:center;z-index:6}
   .hn div:first-of-type{display:none}
   .hn div:last-of-type a:not(.on){display:none}
