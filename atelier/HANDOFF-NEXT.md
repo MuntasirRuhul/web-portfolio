@@ -40,7 +40,7 @@ Elsewhere: `research/tutorlms/STUDY.md` (Tutor LMS page inventory, Course → To
 ## 3. Design system (current)
 
 - **Palette (Original, earthy, no blue):** terracotta `#C0512F`, ochre `#DDA43C`, rose `#D9A7A0`, plum `#7A3E5E` (replaces blue), sage `#7E9271`, ink `#1D1A16`, ink-2 `#4A443B`, near-black `#161412`, paper `#F3ECDF`.
-- **Grounds:** home page `--page:#FAF6EF` (soft beige), cards white. Course page: white page, soft beige `--soft:#FAF6EF` for the enrol card, review summary and "More courses" band. The strong cream `#F3ECDF` is now only the Cover header panel and text on dark.
+- **Grounds:** home page `--page:#FAF6EF` (soft beige), cards white. Course page: white page, soft beige `--soft:#FAF6EF` for the enrol card, review summary and "More courses" band. The strong cream `#F3ECDF` is now only text on dark (the Cover header that used it was removed).
 - **No shadows anywhere.** Separation comes from colour, rules and rounded corners (16px on cards).
 - **Type:** Inter Tight (body and headings; Inter 700 for display), JetBrains Mono for small uppercase labels, Caveat for the signature. Heading accent words in terracotta, no italics. No serif.
 - **Ticks and crosses:** plain line tick / cross in terracotta, no circle (the user dislikes round ticks).
@@ -61,13 +61,17 @@ Elsewhere: `research/tutorlms/STUDY.md` (Tutor LMS page inventory, Course → To
 
 ## 5. Course page (`course.html`)
 
-- **Header:** two versions behind a bottom-left switch (`#cinema` default / `#cover`). **Cinema:** dark band, centred title, trailer, facts grid (Rating, Lessons, Length, Level, Certificate), price + buttons, signature. **Cover:** studio photo with a cream panel, facts grid, price + Enrol.
-- **Layout:** reading column (760px) + sticky enrol card (360px). Section tabs (About · Curriculum · Teacher · Reviews · Questions) sit directly under the header, sticky; counts are small superscripts, terracotta on the active tab.
+- **Two views behind a bottom-left review switch:** Visitor (`#visitor`, default) and Enrolled (`#enrolled`); `#cinema` / `#cover` fall back to Visitor. Built by OpenSpec change `course-page-concept-v2` (`openspec/changes/`).
+- **Header (Visitor), Cinema only:** dark band, "Course 01 · Pencil" mono label, centred title, trailer, 6-cell facts grid (Rating, Lessons, Length, Level, Students 3,180, Updated Oct 2026), Wishlist (toggles to Saved) and Share (copies the link) as quiet text links, price + buttons, signature. Cover was dropped; it stays on record in `course-heroes.html`.
+- **Header (Enrolled):** "Welcome back, Marta", progress 50% · 12 of 24 done (ochre bar), Up next card (poster, Topic 04 · Lesson 1, "Three values, not seven", 19:40), Continue + Course resources buttons, all to `lesson.html`. No price.
+- **Layout:** reading column (760px) + sticky enrol card (360px). Section tabs (About · Curriculum · Teacher · Reviews · Before you enrol) sit directly under the header, sticky; counts are small superscripts, terracotta on the active tab.
 - **About:** intro → What you'll learn (line ticks) → **How each topic works** (ochre / rose / terracotta step cards: step number, time ~10/25/30 min, line icon, big title, short text, footer naming the item type; arrows between cards; colour bar "One topic ≈ 1 hour" underneath) → Who it's for (line tick / cross) → What you'll need.
-- **Curriculum:** 6 topics with large numerals, aligned item rows (icon / title / type / time / state), "Free preview" as a small terracotta mono label; summary line in plain text.
+- **Curriculum:** 6 topics with large numerals, aligned item rows (icon / title / type / time / state), "Free preview" as a small terracotta mono label; summary line in plain text. Enrolled view: topics 1–3 "4 of 4 done" in terracotta, line ticks on done items, topic 4 open with "Up next" on lesson 1, no locks except the critique assignment.
 - **Teacher:** photo + Elena's name, role, quote, three facts, signature, "More about Elena". Spacing opened up (48px photo–text, 32–40px between blocks).
-- **Enrol card:** soft beige, rounded, no border; natural-colour trailer with a "Watch the trailer" chip; price $79 / $99 "Autumn price"; Enrol now + Watch lesson 1 free; refund line; "This course includes" with hand-drawn washed icons; gift link. Phones: card first, 24px under the header; sticky bottom price bar.
-- **Then:** reviews (average + cards), questions, More courses (poster cards), footer.
+- **Enrol card (Visitor):** soft beige, rounded, no border; no trailer (it's in the header); price $79 / $99 "Autumn price"; Enrol now + Watch lesson 1 free; refund line; "This course includes" with hand-drawn washed icons; gift link. Phones: card first, 24px under the header; sticky bottom price bar.
+- **Continue card (Enrolled):** poster with an "Up next 19:40" chip, lesson title, progress bar, Continue learning + Course resources, "Your course" list (certificate locked · 12 items to go, private critique after topic 6, reference sheets 4 of 6, enrolled 3 Sep 2026), "Ask Elena". Phone bar shows 50% · 12 of 24 done + Continue.
+- **Shared state:** the enrolled view and `lesson.html` both show Marta at 12 of 24 (50%), topic 4 lesson 1 current. Change both files together.
+- **Then:** **Week 1 → Week 6** strip (three first-vs-final drawing pairs: Marta egg, Priya mug, Leila pear; drawn SVG placeholders, swap for real student work), reviews (average + cards), Before you enrol (pre-sale FAQ; the name avoids Tutor's enrolled-only Q&A), More courses (poster cards), footer.
 
 ## 5b. Lesson page (`lesson.html`)
 
@@ -83,7 +87,7 @@ Elsewhere: `research/tutorlms/STUDY.md` (Tutor LMS page inventory, Course → To
 
 ## 6. Open decisions (waiting on the user)
 
-1. **Course header:** Cinema or Cover? Then remove the switch and slim the enrol card so price and trailer aren't repeated.
+1. ~~Course header~~ Cinema chosen 24 Oct (Cover removed, trailer no longer repeated in the card). Assumed on the user's behalf in `course-page-concept-v2`; easy to flip back from `course-heroes.html`.
 2. **Teacher block:** the text column is now taller than the photo on desktop; make the photo taller to line up? (offered, no answer)
 3. **v8:** keep as reference or delete.
 4. **Enrol card beige:** now the light `#FAF6EF`; offered to go one step stronger if it reads too faint.
