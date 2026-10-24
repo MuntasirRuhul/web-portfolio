@@ -268,7 +268,7 @@ main{margin-left:var(--rail)}
 
 /* ============ 05 Gallery: the salon wall ============ */
 .gw{background:var(--page)}
-.gw-wall{grid-column:1/7;padding:0 var(--pad);display:flex;flex-direction:column;gap:clamp(110px,10vw,140px)}
+.gw-wall{grid-column:1/7;padding:0 var(--pad);display:flex;flex-direction:column;gap:clamp(150px,13vw,190px)}
 .gw-row{position:relative;display:flex;align-items:center;justify-content:space-between;gap:clamp(18px,2.6vw,44px)}
 .gw-row::before{content:"";position:absolute;left:calc(var(--pad) * -1);right:calc(var(--pad) * -1);top:50%;border-top:1px dashed rgba(var(--ink-rgb),.22)}
 .gw-w{position:relative;flex:0 0 var(--w);display:block}
@@ -276,15 +276,19 @@ main{margin-left:var(--rail)}
 .gw-f.dark{border:5px solid var(--ink)}
 .gw-f .im{display:block;aspect-ratio:var(--r);overflow:hidden;background:var(--band-soft)}
 .gw-w:hover .gw-f{transform:translateY(-5px)}
-.gw-l{position:absolute;top:100%;left:0;right:0;margin-top:16px;font-family:var(--wide);font-size:10px;line-height:1.55;color:var(--muted)}
-.gw-l b{display:block;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin-bottom:2px}
-.gw-l i{font-style:normal;display:inline-flex;gap:6px;align-items:center;margin-top:4px;color:var(--ink-2)}
-.gw-l i::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pc)}
+/* museum label: title → details → course link */
+.gw-l{position:absolute;top:100%;left:0;right:0;margin-top:18px;font-family:var(--sans);font-size:14px;line-height:1.45;color:var(--ink-2)}
+.gw-l b{display:block;font-size:clamp(18px,1.5vw,21px);font-weight:600;letter-spacing:-.025em;line-height:1.2;color:var(--ink);margin-bottom:4px}
+.gw-l br{display:none}
+.gw-l i{font-style:normal;display:flex;gap:8px;align-items:center;margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);font-size:13.5px;font-weight:500;color:var(--ink)}
+.gw-l i::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--pc)}
 .gw-w:hover .gw-l i{color:var(--terra)}
 .gw-note{font-family:var(--wide);font-size:10.5px;color:var(--muted);display:flex;gap:10px;align-items:center}
 .gw-note::before{content:"";width:34px;border-top:1px dashed currentColor}
 @media (max-width:760px){
-  .gw-wall{display:grid;grid-template-columns:1fr 1fr;gap:44px 16px;align-items:start}
+  .gw-wall{display:grid;grid-template-columns:1fr 1fr;gap:48px 16px;align-items:start}
+  .gw-l b{font-size:17px}
+  .gw-l{font-size:13px}
   .gw-row{display:contents}
   .gw-row::before{display:none}
   .gw-row:first-child .gw-w.lg{grid-column:1/3}
