@@ -104,6 +104,7 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,5.4vw,72px);l
 .tabs{position:sticky;top:0;z-index:20;background:var(--page);border-bottom:1px solid var(--rule);margin-top:0}
 .tabs ul{display:flex;gap:32px;height:var(--tabs);align-items:stretch;overflow-x:auto;scrollbar-width:none}
 .tabs ul::-webkit-scrollbar{display:none}
+.tabs li{display:flex} /* tab underline sits on the bottom rule, not under the label */
 .tabs a{display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
 .tabs a small{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);position:relative;top:-7px;margin-left:-4px}
 .tabs a:hover{color:var(--ink)}
