@@ -58,7 +58,8 @@ for (const page of pages) {
     const p = await browser.newPage({ viewport: { width, height: 900 } });
     const errors = [];
     p.on('pageerror', e => errors.push(e.message));
-    await p.goto('file://' + resolve(ROOT, page));
+    const [file, hash] = page.split('#');
+    await p.goto('file://' + resolve(ROOT, file) + (hash ? '#' + hash : ''));
     await p.waitForTimeout(400);
     // show every reveal so hidden-until-scrolled content is audited too
     await p.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important}' });
@@ -116,7 +117,7 @@ for (const page of pages) {
       return res;
     }, { ALLOW_SHADOW, ALLOW_RADIUS, scaleSteps: [...scale(width), ...componentSteps(width)], EXCEPTIONS, RADII_OK });
 
-    const expected = ARCHETYPE[basename(page)];
+    const expected = ARCHETYPE[basename(page.split('#')[0])];
     const items = [];
     const add = (level, name, list) => { if (list && list.length) items.push({ level, name, list }); };
     if (!r.archetype) add('BLOCK', 'missing data-archetype', ['<body> has no data-archetype']);

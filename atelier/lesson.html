@@ -81,12 +81,12 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .st .tw{display:flex;flex-direction:column;min-width:0}
 .st .tt{font-size:15px;font-weight:600;letter-spacing:-.015em;line-height:1.3}
 .st .mt{font-size:12.5px;color:var(--ink-2)}
-.st .mt.done{color:var(--terra)}
+.st .mt.done{color:#B24A2B}   /* accent as small text (site.css --accent-text) */
 .st .chev{width:18px;height:18px;transition:transform .25s}
 .st[open] .chev{transform:rotate(180deg)}
 .st summary:hover .tt{color:var(--terra)}
 .st ul{padding:0 0 12px}
-.it{position:relative;display:grid;grid-template-columns:18px minmax(0,1fr) auto;align-items:center;gap:12px;padding:9px 10px 9px 12px;margin:0 -4px;border-radius:10px;font-size:14px;line-height:1.35;color:var(--ink)}
+.it{position:relative;display:grid;grid-template-columns:18px minmax(0,1fr) auto;align-items:center;gap:12px;padding:9px 10px 9px 12px;margin:0 -4px;border-radius:12px;font-size:14px;line-height:1.35;color:var(--ink)}
 .it:hover{background:rgba(29,26,22,.05)}
 .it svg.i{width:18px;height:18px;color:var(--muted)}
 .it .d{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -119,7 +119,7 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .vp.playing .big{opacity:0;pointer-events:none;transform:scale(.9)}
 .vp .chap{position:absolute;left:20px;top:18px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85)}
 .ctl{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;gap:14px;padding:0 16px 14px}
-.ctl button{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;color:#fff}
+.ctl button{display:grid;place-items:center;width:32px;height:32px;border-radius:12px;color:#fff}
 .ctl button:hover{background:rgba(255,255,255,.14)}
 .ctl svg.i{width:20px;height:20px}
 .ctl .pp .pause,.vp.playing .ctl .pp .play{display:none}
@@ -135,7 +135,7 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 
 /* lesson title block */
 .lhd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 32px;margin-top:32px}
-.lhd h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,3.6vw,48px);line-height:1;letter-spacing:-.05em;margin-top:10px;text-wrap:balance}
+.lhd h1{font-family:var(--sans);font-weight:600;font-size:clamp(22px,2vw,28px);line-height:1.1;letter-spacing:-.03em;margin-top:10px;text-wrap:balance}
 .lhd .label b{color:var(--pc);font-weight:500}
 .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:14px;color:var(--ink-2)}
 .meta span+span::before{content:"·";margin-right:8px;color:var(--muted)}
@@ -180,7 +180,7 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 14px}
 /* exercise files */
 .files{border-top:1px solid var(--rule-strong)}
 .file{display:grid;grid-template-columns:96px minmax(0,1fr) auto;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule)}
-.file .th{aspect-ratio:4/3;border-radius:10px;background:var(--soft);display:grid;place-items:center;overflow:hidden}
+.file .th{aspect-ratio:4/3;border-radius:12px;background:var(--soft);display:grid;place-items:center;overflow:hidden}
 .file .th svg{width:78%;height:78%}
 .file b{display:block;font-size:16px;font-weight:600;letter-spacing:-.015em}
 .file span{display:block;font-size:13.5px;color:var(--ink-2);margin-top:2px}
@@ -278,7 +278,7 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 14px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.note,.note+.note{transform:none}}
 </style>
 </head>
-<body>
+<body data-archetype="workroom">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></symbol>
@@ -368,7 +368,7 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 14px}
         <li><a class="it" href="#"><svg class="i"><use href="#i-play"/></svg><span class="t">Choosing your subject</span><span class="d">11:20</span></a></li>
         <li><a class="it" href="#"><svg class="i"><use href="#i-play"/></svg><span class="t">Building the drawing in layers</span><span class="d">20:40</span></a></li>
         <li><a class="it" href="#"><svg class="i"><use href="#i-pencil"/></svg><span class="t">Your final drawing</span><span class="d">25:00</span></a></li>
-        <li><span class="it locked task"><svg class="i" aria-label="Locked"><use href="#i-lock"/></svg><span class="t">Submit for Elena's critique</span><span class="d">After your final drawing</span></span></li>
+        <li><span class="it locked task"><svg class="i" aria-label="Locked"><use href="#i-lock"/></svg><span class="t">Submit for Elena’s critique</span><span class="d">After your final drawing</span></span></li>
       </ul>
     </details>
 
@@ -414,7 +414,7 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 14px}
         <div class="ov">
           <div>
             <p class="lead">Your eye sees dozens of greys. A drawing only needs three: light, shadow and dark. In this lesson you squint until the egg breaks into three shapes, then draw those shapes and nothing else.</p>
-            <p class="body">Draw along with Elena from 06:12. Pause whenever she does, and don't blend yet. Blending comes in topic 5.</p>
+            <p class="body">Draw along with Elena from 06:12. Pause whenever she does, and don’t blend yet. Blending comes in topic 5.</p>
 
             <h3>In this lesson</h3>
             <div class="chaps" id="chaps">
@@ -436,7 +436,7 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 14px}
           </div>
 
           <aside>
-            <div class="note"><p class="label">A note from Elena</p><p>If you can see more than three greys, squint harder. The detail you lose is detail the drawing didn't need.</p><p class="sig">Elena V.</p></div>
+            <div class="note"><p class="label">A note from Elena</p><p>If you can see more than three greys, squint harder. The detail you lose is detail the drawing didn’t need.</p><p class="sig">Elena V.</p></div>
             <div class="note"><p class="label">After this lesson</p><p>Cast shadows (15:30), then your practice piece: an egg on white paper.</p><a href="#" data-goto="files">Print the value scale first</a></div>
           </aside>
         </div>
@@ -479,7 +479,7 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 14px}
             <span class="av" aria-hidden="true">PS</span>
             <div>
               <p class="who"><b>Priya S.</b><span>2 days ago</span><span class="tc">at 06:12</span></p>
-              <p>My light side keeps going muddy. Is it the 4B? I'm pressing quite lightly.</p>
+              <p>My light side keeps going muddy. Is it the 4B? I’m pressing quite lightly.</p>
               <div class="acts"><button type="button">Reply</button><button type="button">Helpful · 9</button></div>
             </div>
             <div class="reply">
