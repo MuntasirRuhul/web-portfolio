@@ -164,7 +164,7 @@ Figma equivalent: component **Course card / Poster white** (380×448) + **Level 
 
 ## 7. Interaction & motion
 
-Everything is hover / scroll based. Nothing autoplays or loops.
+Everything is hover / scroll based, with one exception: the students section is a slow auto-looping ticker (70s per loop, pauses on hover/focus, static and hand-scrollable under reduced motion).
 
 | Behaviour | Implementation |
 |---|---|

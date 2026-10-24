@@ -296,14 +296,13 @@ main{margin-left:var(--rail)}
 .rl .lbl b,.rl h2 em{color:var(--band-accent)}
 .rl .txt{color:var(--on-band-2)}
 /* students: colour blocks on the dark ground */
-.rv-grid{grid-column:1/7;display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2 * var(--pad) - 2 * clamp(18px,2.2vw,32px)) / 3);gap:clamp(18px,2.2vw,32px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--pad);padding:0 var(--pad) 8px;scrollbar-width:none}
-.rv-grid::-webkit-scrollbar{display:none}
-.rv-grid > *{scroll-snap-align:start}
-.rv-grid::after{content:"";width:1px}
-.rv-nav{display:flex;gap:8px}
-.rv-nav button{width:48px;height:48px;border-radius:50%;border:1px solid rgba(var(--on-dark-rgb),.4);background:transparent;color:var(--paper);font-size:18px;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
-.rv-nav button:hover{background:var(--paper);color:var(--night)}
-.rv-nav button:disabled{opacity:.3;cursor:default;background:transparent;color:var(--paper)}
+/* students: ticker, an endless slow loop (cards repeated once for a seamless wrap) */
+.rv-ticker{grid-column:1/7;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rv-grid{display:flex;width:max-content;gap:clamp(18px,2.2vw,32px);padding-right:clamp(18px,2.2vw,32px);animation:rv-tick 70s linear infinite}
+.rv-grid > *{flex:0 0 clamp(280px,28vw,380px)}
+.rv-ticker:hover .rv-grid,.rv-ticker:focus-within .rv-grid{animation-play-state:paused}
+@keyframes rv-tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.rv-ticker{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.rv-grid{animation:none}.rv-grid [aria-hidden="true"]{display:none}}
 .who{font-size:14px;line-height:1.4}
 .who b{font-weight:600}
 .who span{display:block;font-family:var(--wide);font-size:10px;opacity:.72;margin-top:2px}
@@ -319,7 +318,7 @@ main{margin-left:var(--rail)}
 .rv-dark .rl-stats span{color:var(--dim)}
 .rv-dark .rl-foot a:hover{color:var(--accent-lt)}
 @media (max-width:860px){
-  .rv-grid{grid-auto-columns:85%}
+  .rv-grid > *{flex-basis:78vw}
   .rv-block{min-height:0}
 }
 .rl-stats{grid-column:1/7;margin:clamp(48px,6vw,80px) var(--pad) 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
@@ -671,16 +670,23 @@ summary{font-weight:500;letter-spacing:-.02em}
       <span class="lbl reveal"><b>06</b>Students</span>
       <h2 class="reveal d1">Letters from <em>the wall.</em></h2>
     </div>
-    <div class="reveal d2" style="display:flex;flex-direction:column;align-items:flex-end;gap:20px"><p class="txt">Written by students after their final critique. Every one of them started with a pencil and no experience.</p>
-      <div class="rv-nav"><button type="button" data-d="-1" aria-label="Previous reviews">←</button><button type="button" data-d="1" aria-label="Next reviews">→</button></div></div>
+    <p class="txt reveal d2">Written by students after their final critique. Every one of them started with a pencil and no experience.</p>
   </div>
-  <div class="rv-grid" id="rvTrack" tabindex="0" aria-label="Student reviews">
-    <figure class="rv-block reveal" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
-    <figure class="rv-block reveal d1" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
-    <figure class="rv-block reveal d2" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
+  <div class="rv-ticker">
+  <div class="rv-grid" aria-label="Student reviews">
+    <figure class="rv-block" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure class="rv-block" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
+    <figure class="rv-block" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
     <figure class="rv-block" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>The three-values lesson changed everything. My drawings finally look solid.</blockquote></div><figcaption class="who"><b>Priya S.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
     <figure class="rv-block" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Elena's critique was eleven minutes about my drawing alone. Worth the course on its own.</blockquote></div><figcaption class="who"><b>Leila M.</b><span>Course 02 · The Portrait in Pencil</span></figcaption></figure>
     <figure class="rv-block" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Painting outside scared me. She breaks it into small, calm decisions.</blockquote></div><figcaption class="who"><b>Jonas W.</b><span>Course 05 · Plein Air in Oil</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Six weeks in, I drew my grandmother's house. Now it hangs in her kitchen.</blockquote></div><figcaption class="who"><b>Marta K.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>I finally stopped erasing. Ink taught me to commit to the line.</blockquote></div><figcaption class="who"><b>Ana R.</b><span>Course 04 · Ink, Line &amp; Silence</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>My washes used to turn to mud. Now I know exactly when to stop.</blockquote></div><figcaption class="who"><b>Tom H.</b><span>Course 03 · Watercolour Gardens</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>The three-values lesson changed everything. My drawings finally look solid.</blockquote></div><figcaption class="who"><b>Priya S.</b><span>Course 01 · Foundations of Drawing</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Elena's critique was eleven minutes about my drawing alone. Worth the course on its own.</blockquote></div><figcaption class="who"><b>Leila M.</b><span>Course 02 · The Portrait in Pencil</span></figcaption></figure>
+    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:var(--paper)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Painting outside scared me. She breaks it into small, calm decisions.</blockquote></div><figcaption class="who"><b>Jonas W.</b><span>Course 05 · Plein Air in Oil</span></figcaption></figure>
+  </div>
   </div>
   <div class="rl-stats reveal d1">
     <div><b>4.9</b><span>Average rating · 2,870 reviews</span></div>
@@ -734,13 +740,6 @@ summary{font-weight:500;letter-spacing:-.02em}
 </footer>
 
 <script>
-  // Student reviews carousel: arrows scroll one card; they disable at either end.
-  const rvTrack = document.getElementById('rvTrack'), rvBtns = document.querySelectorAll('.rv-nav button');
-  const rvStep = () => rvTrack.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(rvTrack).columnGap);
-  const rvSync = () => { const max = rvTrack.scrollWidth - rvTrack.clientWidth - 2; rvBtns[0].disabled = rvTrack.scrollLeft <= 2; rvBtns[1].disabled = rvTrack.scrollLeft >= max; };
-  rvBtns.forEach(b => b.addEventListener('click', () => rvTrack.scrollBy({ left: rvStep() * b.dataset.d, behavior: 'smooth' })));
-  rvTrack.addEventListener('scroll', rvSync, { passive: true }); addEventListener('resize', rvSync); rvSync();
-
   // Reveal on scroll.
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
