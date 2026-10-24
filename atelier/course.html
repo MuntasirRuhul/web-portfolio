@@ -38,7 +38,7 @@
   --gutter:max(20px, env(safe-area-inset-left, 0px));
   --col:760px;
   --card:360px;
-  --tabs:56px;
+  --tabs:64px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--tabs) + 24px)}
@@ -75,7 +75,7 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 /* ---------- page grid: content column + card column */
 .course{display:grid;grid-template-columns:minmax(0,var(--col)) var(--card);justify-content:space-between;column-gap:80px;align-items:start}
 .course > .main{grid-column:1;min-width:0}
-.course > .side{grid-column:2;grid-row:1;position:sticky;top:24px;margin-top:40px}
+.course > .side{grid-column:2;grid-row:1;position:sticky;top:24px;margin-top:56px}
 
 /* ---------- hero (left column only) */
 .hero{padding:40px 0 64px}
@@ -100,37 +100,38 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,5.4vw,72px);l
 .byline strong{color:var(--ink);font-weight:600}
 
 /* ---------- section tabs (sticky, full width) */
-.tabs{position:sticky;top:0;z-index:20;background:var(--page);border-bottom:1px solid var(--rule)}
+.tabs{position:sticky;top:0;z-index:20;background:var(--page);border-bottom:1px solid var(--rule);margin-top:56px}
 .tabs ul{display:flex;gap:32px;height:var(--tabs);align-items:stretch;overflow-x:auto;scrollbar-width:none}
 .tabs ul::-webkit-scrollbar{display:none}
-.tabs a{display:flex;align-items:center;font-size:14.5px;color:var(--ink-2);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.tabs a{display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
+.tabs a small{font-size:11.5px;font-weight:500;color:var(--ink-2);background:var(--surface);border-radius:999px;padding:2px 8px}
 .tabs a:hover{color:var(--ink)}
-.tabs a[aria-current="true"]{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.tabs a[aria-current="true"]{color:var(--ink);font-weight:600;border-color:var(--pc)}
+.tabs a[aria-current="true"] small{background:var(--pc);color:var(--page)}
 
 /* ---------- sections */
-.sec{padding:64px 0 0}
+.sec{padding:56px 0 0}
 .sec + .sec{margin-top:32px;border-top:1px solid var(--rule)}
 .sec:last-child{padding-bottom:96px}
 h2{font-size:30px;font-weight:600;line-height:1.15;letter-spacing:-.035em}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:24px}
 .sec-head p{font-size:14px;color:var(--ink-2)}
-h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 12px}
+h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
 .lead{font-size:18px;line-height:1.6;color:var(--ink)}
 .body{color:var(--ink-2);margin-top:12px}
 
 /* about: outcomes, audience, method, materials */
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px}
-.checks li{display:flex;gap:12px;font-size:15px;line-height:1.5}
-.checks svg.i{color:var(--pc);margin-top:2px}
+.checks li{display:flex;gap:12px;font-size:15px;line-height:1.5;padding:4px 0}
+.checks svg.i{color:var(--pc);width:20px;height:20px;margin-top:1px}
 .plain li{position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:var(--ink-2)}
 .plain li + li{margin-top:8px}
 .plain li::before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--muted)}
-.method{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule)}
-.method li{padding:16px 20px 20px}
-.method li + li{border-left:1px solid var(--rule)}
-.method .label{color:var(--pc)}
-.method b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em;margin-top:8px}
-.method span{display:block;font-size:14px;line-height:1.5;color:var(--ink-2);margin-top:4px}
+.method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:step}
+.method li{background:var(--surface);padding:20px 22px 24px;display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;row-gap:6px;align-content:start}
+.method li::before{counter-increment:step;content:counter(step);grid-row:1 / span 2;width:32px;height:32px;border-radius:50%;background:var(--pc);color:var(--page);display:grid;place-items:center;font-size:14px;font-weight:600}
+.method b{font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:32px}
+.method span{font-size:14px;line-height:1.5;color:var(--ink-2)}
 .mats{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
 .mats li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px}
 .mats li span{font-size:13px;color:var(--muted);text-align:right}
@@ -277,7 +278,7 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 12px}
   .hero{padding:24px 0 32px}
   .chip{margin-top:24px}
   .tabs ul{gap:24px}
-  .tabs{margin:0 -20px;padding:0 20px}
+  .tabs{margin:32px -20px 0;padding:0 20px}
   .cgrid{grid-template-columns:1fr 1fr}
   .foot .wrap{grid-template-columns:1fr 1fr}
   .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--page);border-top:1px solid var(--rule);padding:10px max(20px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) var(--gutter)}
@@ -294,7 +295,6 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:40px 0 12px}
   .keyfacts li:nth-child(n+3){border-top:1px solid var(--rule)}
   .checks,.mats,.reviews{grid-template-columns:1fr}
   .method{grid-template-columns:1fr}
-  .method li + li{border-left:0;border-top:1px solid var(--rule)}
   .topic summary{grid-template-columns:minmax(0,1fr) 20px;gap:4px 12px}
   .topic .no{grid-column:1}
   .topic .tt{grid-column:1}
@@ -400,7 +400,7 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
   <symbol id="i-quiz" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 .2c0 1.8-2.5 2.1-2.5 3.8M12 16.6v.4"/></symbol>
   <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5M5 15v5h14v-5"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/><path d="M7.5 12.4l3 3 6-6.3" stroke="#fff" stroke-width="2"/></symbol>
   <symbol id="i-level" viewBox="0 0 24 24"><path d="M5 19v-4M12 19V10M19 19V5"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
   <symbol id="i-cert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5L15 13.5"/></symbol>
@@ -451,10 +451,10 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
         <nav class="tabs" aria-label="On this page">
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#curriculum">Curriculum <small>21</small></a></li>
             <li><a href="#teacher">Teacher</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#questions">Questions</a></li>
+            <li><a href="#reviews">Reviews <small>612</small></a></li>
+            <li><a href="#questions">Questions <small>4</small></a></li>
           </ul>
         </nav>
 
@@ -476,9 +476,9 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
 
           <h3>How each topic works</h3>
           <ol class="method">
-            <li><span class="label">Step 1</span><b>Look</b><span>A short exercise that trains your eye before you make a mark.</span></li>
-            <li><span class="label">Step 2</span><b>Sketch</b><span>Draw along in real time while Elena explains each decision.</span></li>
-            <li><span class="label">Step 3</span><b>Finish</b><span>Complete a practice piece and compare it with hers.</span></li>
+            <li><b>Look</b><span>A short exercise that trains your eye before you make a mark.</span></li>
+            <li><b>Sketch</b><span>Draw along in real time while Elena explains each decision.</span></li>
+            <li><b>Finish</b><span>Complete a practice piece and compare it with hers.</span></li>
           </ol>
 
           <h3>Who it's for</h3>
@@ -722,6 +722,7 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
   const mark = () => {
     const y = window.scrollY + 120; let cur = null;
     secs.forEach((s, i) => { if (s.offsetTop <= y) cur = i; });
+    if (cur === null) cur = 0;
     tabLinks.forEach((a, i) => a.setAttribute('aria-current', i === cur));
   };
   addEventListener('scroll', mark, { passive: true }); mark();
