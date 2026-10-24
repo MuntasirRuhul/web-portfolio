@@ -130,11 +130,24 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
 .fit li.no svg.i{color:var(--ink-2)}
 .fit li.no b{font-weight:600;color:var(--ink)}
 .fit li.no a{border-bottom:1px solid currentColor}
-.method{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:step}
-.method li{background:var(--surface);padding:20px 22px 24px;display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;row-gap:6px;align-content:start}
-.method li::before{counter-increment:step;content:counter(step);grid-row:1 / span 2;width:32px;height:32px;border-radius:50%;background:var(--pc);color:var(--page);display:grid;place-items:center;font-size:14px;font-weight:600}
-.method b{font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:32px}
-.method span{font-size:14px;line-height:1.5;color:var(--ink-2)}
+.method{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
+.method li{position:relative;display:flex;flex-direction:column;min-height:300px;padding:18px 20px 22px;border-radius:14px;color:var(--ink);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.method li:nth-child(1){background:#DDA43C;transform:rotate(-.6deg)}
+.method li:nth-child(2){background:#D9A7A0}
+.method li:nth-child(3){background:var(--terra);color:#FFF8EE;transform:rotate(.6deg)}
+.method li:hover{transform:translateY(-6px) rotate(-1deg)}
+.method .top{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.method .t{padding:4px 10px;border-radius:999px;border:1px solid currentColor}
+.method svg{width:64px;height:64px;margin:32px 0 0;overflow:visible;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.method b{display:block;margin-top:auto;padding-top:28px;font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.method span.d{display:block;margin-top:8px;font-size:14px;line-height:1.5;opacity:.85}
+.method .out{display:block;margin-top:14px;padding-top:12px;border-top:1px solid currentColor;font-size:13px;font-weight:600}
+.method .out i{font-style:normal;font-weight:400;opacity:.75}
+.method li+li::before{content:"";position:absolute;left:-17px;top:50%;width:24px;height:24px;margin-top:-12px;border-radius:50%;background:var(--page);z-index:1}
+.method li+li::after{content:"→";position:absolute;left:-17px;top:50%;width:24px;height:24px;margin-top:-12px;display:grid;place-items:center;font-size:13px;color:var(--ink);z-index:2}
+.rhythm{display:flex;align-items:center;gap:12px;margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rhythm i{display:flex;flex:1;height:6px;border-radius:3px;overflow:hidden}
+.rhythm i s{display:block;height:100%}
 .mats{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
 .mats li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:15px}
 .mats li span{font-size:13px;color:var(--muted);text-align:right}
@@ -317,6 +330,9 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
   .keyfacts li:nth-child(n+3){border-top:1px solid var(--rule)}
   .checks,.mats,.reviews{grid-template-columns:1fr}
   .method{grid-template-columns:1fr}
+  .method li{min-height:0;transform:none!important}
+  .method li+li::before,.method li+li::after{left:50%;top:-17px;margin:0 0 0 -12px}
+  .method li+li::after{content:"↓"}
   .topic summary{grid-template-columns:36px minmax(0,1fr) 22px;gap:12px}
   .topic .no{font-size:18px}
   .items{padding:0 0 16px 0}
@@ -504,10 +520,11 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
 
           <h3>How each topic works</h3>
           <ol class="method">
-            <li><b>Look</b><span>A short exercise that trains your eye before you make a mark.</span></li>
-            <li><b>Sketch</b><span>Draw along in real time while Elena explains each decision.</span></li>
-            <li><b>Finish</b><span>Complete a practice piece and compare it with hers.</span></li>
+            <li><div class="top"><span>Step 01</span><span class="t">~10 min</span></div><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M6 42 C 20 20, 64 20, 78 42 C 64 64, 20 64, 6 42 Z"/><path d="M42 30 a12 12 0 1 0 .1 0 Z"/></svg><b>Look</b><span class="d">A short exercise that trains your eye before you make a mark.</span><span class="out">Exercise <i>· eye training</i></span></li>
+            <li><div class="top"><span>Step 02</span><span class="t">~25 min</span></div><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M58 8 L76 26 L30 72 L10 76 L14 56 Z M52 14 L70 32"/><path d="M8 82 C 30 74, 50 84, 80 76"/></svg><b>Sketch</b><span class="d">Draw along in real time while Elena explains each decision.</span><span class="out">Video lesson <i>· draw along</i></span></li>
+            <li><div class="top"><span>Step 03</span><span class="t">~30 min</span></div><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M10 12 C 32 10, 54 10, 74 12 C 76 32, 76 52, 74 72 C 52 74, 30 74, 10 72 C 8 52, 8 32, 10 12 Z"/><path d="M22 58 C 30 44, 36 40, 44 50 C 50 42, 56 40, 64 56"/><path d="M54 28 a5 5 0 1 0 .1 0"/></svg><b>Finish</b><span class="d">Complete a practice piece and compare it with hers.</span><span class="out">Practice piece <i>· yours to keep</i></span></li>
           </ol>
+          <p class="rhythm"><span>One topic ≈ 1 hour</span><i aria-hidden="true"><s style="width:15%;background:#DDA43C"></s><s style="width:38%;background:#D9A7A0"></s><s style="width:47%;background:var(--terra)"></s></i></p>
 
           <h3>Who it's for</h3>
           <ul class="fit">
