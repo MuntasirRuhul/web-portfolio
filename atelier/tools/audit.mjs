@@ -1,7 +1,7 @@
 // Art-direction audit (openspec change: atelier-art-direction, spec design-review).
 // Opens each page at 1440px and 390px and checks it against the design language.
 //
-//   node atelier/tools/audit.mjs [page.html ...] [--strict-links] [--json]
+//   node atelier/tools/audit.mjs [page.html ...] [--strict-links] [--desktop] [--json]
 //
 // With no pages it audits every *.html in atelier/ that declares data-archetype.
 // BLOCK items fail the run (exit 1); WARN items are reported only.
@@ -16,6 +16,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const strictLinks = args.includes('--strict-links');
 const asJson = args.includes('--json');
+const WIDTHS = args.includes('--desktop') ? [1440] : [1440, 390];   // --desktop: desktop-first phase, phone/tablet checked later
 let pages = args.filter(a => !a.startsWith('--'));
 if (!pages.length) pages = readdirSync(ROOT).filter(f => f.endsWith('.html') && /data-archetype=/.test(readFileSync(resolve(ROOT, f), 'utf8')));
 
@@ -54,7 +55,7 @@ const out = [];
 let blocking = 0;
 
 for (const page of pages) {
-  for (const width of [1440, 390]) {
+  for (const width of WIDTHS) {
     const p = await browser.newPage({ viewport: { width, height: 900 } });
     const errors = [];
     p.on('pageerror', e => errors.push(e.message));

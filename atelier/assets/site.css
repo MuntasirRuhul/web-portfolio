@@ -301,3 +301,19 @@ body[data-archetype="gallery"] .site-head,body[data-archetype="counter"] .site-h
 .dont > .tag-dd{color:var(--accent-text);text-decoration:line-through;text-decoration-thickness:1px}
 .dont{background:transparent;border:1px dashed var(--rule)}
 @media (max-width:700px){.pair-dd{grid-template-columns:1fr}}
+
+/* ---------- 19. Phone menu for the light header ---------- */
+.menu-btn{display:none;align-items:center;gap:8px;font-size:14.5px;color:var(--ink)}
+.menu-btn svg{width:18px;height:18px;transition:transform .25s}
+.menu-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.site-menu{position:absolute;left:0;right:0;top:100%;background:inherit;border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px}
+.site-menu[hidden]{display:none}
+.site-menu a{display:flex;justify-content:space-between;padding:12px 0;font-size:18px;font-weight:500;border-bottom:1px solid var(--rule)}
+.site-menu a::after{content:"→";color:var(--accent-text)}
+.site-menu a:hover{color:var(--accent-text)}
+@media (max-width:900px){.menu-btn{display:inline-flex}}
+
+/* ---------- 20. Solo / Academy mode (html[data-mode], set before first paint) ---------- */
+html[data-mode="academy"] .m-solo,html:not([data-mode="academy"]) .m-academy{display:none!important}
+.teacher-line{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
+.teacher-line i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:600;background:var(--paper);color:var(--ink);border:1px solid var(--rule)}
