@@ -241,7 +241,11 @@ h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin:48px 0 16px}
 .card .incl{border-top:1px solid var(--rule);margin-top:20px;padding-top:20px}
 .card .incl .label{margin-bottom:12px;color:var(--ink-2)}
 .card .incl li{display:flex;align-items:center;gap:12px;font-size:14.5px;padding:6px 0}
-.card .incl svg.i{width:24px;height:24px;color:var(--ink);stroke-width:1.6;filter:url(#sketch)}
+.card .incl svg.i{width:26px;height:26px;color:var(--ink);stroke-width:1.5}
+.card .incl .wash{fill:var(--wash);stroke:none}
+.card .incl li:nth-child(3n+1){--wash:rgba(221,164,60,.45)}
+.card .incl li:nth-child(3n+2){--wash:rgba(217,167,160,.55)}
+.card .incl li:nth-child(3n){--wash:rgba(126,146,113,.4)}
 .card .gift{display:flex;justify-content:space-between;border-top:1px solid var(--rule);margin-top:16px;padding-top:16px;font-size:13.5px;color:var(--ink-2)}
 .card .gift a{color:var(--ink);font-weight:500;border-bottom:1px solid currentColor}
 .card .gift a:hover{color:var(--terra)}
@@ -427,13 +431,12 @@ html[data-hero="cinema"] .vb,html[data-hero="cover"] .va{display:none}
   <symbol id="i-cert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5L15 13.5"/></symbol>
   <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.7-3.6-4-5.5-4a4 4 0 0 0 0 8c1.9 0 3.5-1.3 5.5-4zm0 0c2 2.7 3.6 4 5.5 4a4 4 0 0 0 0-8c-1.9 0-3.5 1.3-5.5 4z"/></symbol>
   <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="1.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol>
-  <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter>
-  <symbol id="h-video" viewBox="0 0 24 24"><path d="M3.4 6.6c3.6-.5 7.8-.4 12.1.1.4 3.6.5 7.1-.1 10.7-4 .5-8 .4-12 .1-.5-3.6-.6-7.3 0-10.9z"/><path d="M15.8 10.3c1.8-.9 3.3-1.9 4.9-2.6.3 2.9.3 5.8-.1 8.7-1.6-.6-3.2-1.6-4.8-2.6"/></symbol>
-  <symbol id="h-file" viewBox="0 0 24 24"><path d="M6.6 3.2c2.6-.2 5-.1 7.6.1l3.8 3.9c.2 4.6.1 9.1-.1 13.6-3.7.3-7.4.2-11.2 0-.3-5.9-.4-11.7-.1-17.6z"/><path d="M13.9 3.4c.1 1.3 0 2.6.2 3.9 1.3.1 2.6 0 3.9.1M9.2 12.6c1.9-.2 3.8-.1 5.7 0M9.1 16.4c1.6-.1 3.2 0 4.8.1"/></symbol>
-  <symbol id="h-quiz" viewBox="0 0 24 24"><path d="M12.3 2.9c5 .2 8.9 3.9 8.8 9.3-.2 5-4.3 8.8-9.4 8.8-5-.2-8.8-4.2-8.7-9.2.2-5 4.2-9 9.3-8.9z"/><path d="M9.3 9.6c.3-1.7 1.6-2.6 3-2.5 1.6.1 2.6 1.2 2.4 2.6-.3 1.8-2.6 2.2-2.8 4.1M11.9 16.9l.1.2"/></symbol>
-  <symbol id="h-chat" viewBox="0 0 24 24"><path d="M4.2 5.3c5.1-.6 10.3-.5 15.5.1.4 3.2.3 6.3-.1 9.5-3.1.3-6.1.2-9.2.2-1.9 1.4-3.6 2.8-5.6 4 .3-1.4.6-2.7.6-4.1-.6-.1-1.1-.1-1.5-.2-.4-3.2-.3-6.4.3-9.5z"/><path d="M8.3 9.8c2.4-.1 4.9-.1 7.4.1M8.4 12.2c1.6-.1 3.2 0 4.7 0"/></symbol>
-  <symbol id="h-cert" viewBox="0 0 24 24"><path d="M12.2 3.1c2.9.1 5.1 2.4 5 5.3-.1 2.9-2.5 5.1-5.3 5-2.9-.1-5-2.5-4.9-5.4.1-2.8 2.4-5 5.2-4.9z"/><path d="M9.2 12.9c-.5 2.6-1.1 5.2-1.5 7.9 1.5-.7 3-1.5 4.4-2.4 1.5.8 2.9 1.7 4.4 2.4-.4-2.7-.9-5.3-1.5-7.9"/></symbol>
-  <symbol id="h-inf" viewBox="0 0 24 24"><path d="M12 12.1c-1.9-2.4-3.6-4.1-5.6-4.1-2.3.1-4 1.9-3.9 4.1.1 2.1 1.8 3.8 3.9 3.8 2.2 0 3.7-1.8 5.6-3.8 1.9 2.1 3.5 3.9 5.7 3.9 2.1 0 3.8-1.7 3.8-3.9-.1-2.2-1.8-4-4-4-2 .1-3.7 1.8-5.5 4z"/></symbol>
+  <symbol id="h-video" viewBox="0 0 24 24"><path style="fill:var(--wash,transparent);stroke:none" d="M5.5 8.8c2.6-3.1 8.3-3.6 11.6-1.2 3 2.2 3.3 6.8.6 9.6-2.8 2.9-8.6 3.3-11.6.6-2.5-2.2-2.8-6.2-.6-9z"/><path d="M3.4 6.6c3.6-.5 7.8-.4 12.1.1.4 3.6.5 7.1-.1 10.7-4 .5-8 .4-12 .1-.5-3.6-.6-7.3 0-10.9z"/><path d="M15.8 10.3c1.8-.9 3.3-1.9 4.9-2.6.3 2.9.3 5.8-.1 8.7-1.6-.6-3.2-1.6-4.8-2.6"/></symbol>
+  <symbol id="h-file" viewBox="0 0 24 24"><path style="fill:var(--wash,transparent);stroke:none" d="M5.5 8.8c2.6-3.1 8.3-3.6 11.6-1.2 3 2.2 3.3 6.8.6 9.6-2.8 2.9-8.6 3.3-11.6.6-2.5-2.2-2.8-6.2-.6-9z"/><path d="M6.6 3.2c2.6-.2 5-.1 7.6.1l3.8 3.9c.2 4.6.1 9.1-.1 13.6-3.7.3-7.4.2-11.2 0-.3-5.9-.4-11.7-.1-17.6z"/><path d="M13.9 3.4c.1 1.3 0 2.6.2 3.9 1.3.1 2.6 0 3.9.1M9.2 12.6c1.9-.2 3.8-.1 5.7 0M9.1 16.4c1.6-.1 3.2 0 4.8.1"/></symbol>
+  <symbol id="h-quiz" viewBox="0 0 24 24"><path style="fill:var(--wash,transparent);stroke:none" d="M5.5 8.8c2.6-3.1 8.3-3.6 11.6-1.2 3 2.2 3.3 6.8.6 9.6-2.8 2.9-8.6 3.3-11.6.6-2.5-2.2-2.8-6.2-.6-9z"/><path d="M12.3 2.9c5 .2 8.9 3.9 8.8 9.3-.2 5-4.3 8.8-9.4 8.8-5-.2-8.8-4.2-8.7-9.2.2-5 4.2-9 9.3-8.9z"/><path d="M9.3 9.6c.3-1.7 1.6-2.6 3-2.5 1.6.1 2.6 1.2 2.4 2.6-.3 1.8-2.6 2.2-2.8 4.1M11.9 16.9l.1.2"/></symbol>
+  <symbol id="h-chat" viewBox="0 0 24 24"><path style="fill:var(--wash,transparent);stroke:none" d="M5.5 8.8c2.6-3.1 8.3-3.6 11.6-1.2 3 2.2 3.3 6.8.6 9.6-2.8 2.9-8.6 3.3-11.6.6-2.5-2.2-2.8-6.2-.6-9z"/><path d="M4.2 5.3c5.1-.6 10.3-.5 15.5.1.4 3.2.3 6.3-.1 9.5-3.1.3-6.1.2-9.2.2-1.9 1.4-3.6 2.8-5.6 4 .3-1.4.6-2.7.6-4.1-.6-.1-1.1-.1-1.5-.2-.4-3.2-.3-6.4.3-9.5z"/><path d="M8.3 9.8c2.4-.1 4.9-.1 7.4.1M8.4 12.2c1.6-.1 3.2 0 4.7 0"/></symbol>
+  <symbol id="h-cert" viewBox="0 0 24 24"><path style="fill:var(--wash,transparent);stroke:none" d="M5.5 8.8c2.6-3.1 8.3-3.6 11.6-1.2 3 2.2 3.3 6.8.6 9.6-2.8 2.9-8.6 3.3-11.6.6-2.5-2.2-2.8-6.2-.6-9z"/><path d="M12.2 3.1c2.9.1 5.1 2.4 5 5.3-.1 2.9-2.5 5.1-5.3 5-2.9-.1-5-2.5-4.9-5.4.1-2.8 2.4-5 5.2-4.9z"/><path d="M9.2 12.9c-.5 2.6-1.1 5.2-1.5 7.9 1.5-.7 3-1.5 4.4-2.4 1.5.8 2.9 1.7 4.4 2.4-.4-2.7-.9-5.3-1.5-7.9"/></symbol>
+  <symbol id="h-inf" viewBox="0 0 24 24"><path style="fill:var(--wash,transparent);stroke:none" d="M5.5 8.8c2.6-3.1 8.3-3.6 11.6-1.2 3 2.2 3.3 6.8.6 9.6-2.8 2.9-8.6 3.3-11.6.6-2.5-2.2-2.8-6.2-.6-9z"/><path d="M12 12.1c-1.9-2.4-3.6-4.1-5.6-4.1-2.3.1-4 1.9-3.9 4.1.1 2.1 1.8 3.8 3.9 3.8 2.2 0 3.7-1.8 5.6-3.8 1.9 2.1 3.5 3.9 5.7 3.9 2.1 0 3.8-1.7 3.8-3.9-.1-2.2-1.8-4-4-4-2 .1-3.7 1.8-5.5 4z"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
 </svg>
