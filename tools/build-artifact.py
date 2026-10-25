@@ -6,7 +6,7 @@ import re, io, base64, os, shutil
 from PIL import Image
 import pathlib
 root=str(pathlib.Path(__file__).resolve().parent.parent)+'/'   # the repo root
-PAGES=['about.html','contact.html','courses.html','course.html','lesson.html','style.html']   # extra pages besides home
+PAGES=['about.html','contact.html','sitemap.html','courses.html','course.html','lesson.html','style.html']   # extra pages besides home
 cache={}
 def embed(s):
     def rep(m):
