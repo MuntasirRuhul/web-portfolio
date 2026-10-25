@@ -1,0 +1,2542 @@
+{
+  "theme": "workademy",
+  "info": [
+    {
+      "url": "https://tutorlms.com/themes/workademy/",
+      "title": "Workademy – Corporate & Team Learning WordPress Theme | Tutor LMS"
+    }
+  ],
+  "demos": [
+    "https://workademy.tutorlms.io/",
+    "https://demo.tutorlms.io/"
+  ],
+  "pages": [
+    {
+      "url": "https://workademy.tutorlms.io/",
+      "title": "Workademy | Tutor LMS",
+      "h1": [
+        "Empower Your Team with Smarter Learning"
+      ],
+      "h2": [
+        "What we are offering?",
+        "Top Categories",
+        "Popular Courses",
+        "Why Teams and Professionals Choose Us",
+        "Latest Articles",
+        "Feedback from Real Teams",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/",
+        "Communication Skills → https://workademy.tutorlms.io/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/",
+        "Join our community → https://workademy.tutorlms.io/#"
+      ],
+      "bodyClass": "",
+      "height": 8864,
+      "status": 200,
+      "template": "home/0",
+      "shot": "shots/01-home-0.jpg"
+    },
+    {
+      "url": "https://demo.tutorlms.io/",
+      "title": "Try Tutor LMS Pro",
+      "h1": [],
+      "h2": [
+        "What describes you best?"
+      ],
+      "nav": [
+        "Terms & Conditions → https://demo.tutorlms.io/terms-conditions/",
+        "tutorlms.com → https://tutorlms.com/"
+      ],
+      "footer": [
+        "Terms & Conditions → https://demo.tutorlms.io/terms-conditions/",
+        "tutorlms.com → https://tutorlms.com/"
+      ],
+      "bodyClass": "home wp-singular page-template page-template-page-templates page-template-tpl-canvas page-template-page-templatestpl-canvas-php page page-id-32 wp-custom-logo wp-theme-tutorstarter tutor-lms",
+      "height": 1185,
+      "status": 200,
+      "template": "home/0"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/",
+      "title": "Courses – Workademy",
+      "h1": [
+        "Courses that thrive your team"
+      ],
+      "h2": [
+        "Browse by Categories",
+        "Advanced AWS & Azure Operations",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Communication Skills → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Join our community → https://workademy.tutorlms.io/courses/#"
+      ],
+      "bodyClass": "",
+      "height": 5536,
+      "status": 200,
+      "template": "courses/1",
+      "shot": "shots/02-courses-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/blogs/",
+      "title": "Blogs – Workademy",
+      "h1": [
+        "Explore Articles"
+      ],
+      "h2": [
+        "Building a Security-First Mindset Across Your Organization",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/blogs/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/blogs/",
+        "Communication Skills → https://workademy.tutorlms.io/blogs/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/blogs/",
+        "Join our community → https://workademy.tutorlms.io/blogs/#"
+      ],
+      "bodyClass": "",
+      "height": 3190,
+      "status": 200,
+      "template": "blogs/1",
+      "shot": "shots/03-blogs-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/about/",
+      "title": "About – Workademy",
+      "h1": [
+        "About Us"
+      ],
+      "h2": [
+        "Who We Help",
+        "Leadership Team",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/about/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/about/",
+        "Communication Skills → https://workademy.tutorlms.io/about/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/about/",
+        "Join our community → https://workademy.tutorlms.io/about/#"
+      ],
+      "bodyClass": "",
+      "height": 3963,
+      "status": 200,
+      "template": "about/1",
+      "shot": "shots/04-about-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/login/",
+      "title": "Login – Workademy",
+      "h1": [
+        "Login to your account"
+      ],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "",
+      "height": 970,
+      "status": 200,
+      "template": "login/1",
+      "shot": "shots/05-login-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/membership/",
+      "title": "Workademy",
+      "h1": [
+        "Pricing Plan"
+      ],
+      "h2": [
+        "FAQs",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Communication Skills → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Join our community → https://workademy.tutorlms.io/membership/#"
+      ],
+      "bodyClass": "",
+      "height": 2399,
+      "status": 200,
+      "template": "membership/1",
+      "shot": "shots/06-membership-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/contact/",
+      "title": "Contact – Workademy",
+      "h1": [
+        "How can we help you?"
+      ],
+      "h2": [
+        "Leave us a message",
+        "FAQs",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/contact/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/contact/",
+        "Communication Skills → https://workademy.tutorlms.io/contact/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/contact/",
+        "Join our community → https://workademy.tutorlms.io/contact/#"
+      ],
+      "bodyClass": "",
+      "height": 3623,
+      "status": 200,
+      "template": "contact/1",
+      "shot": "shots/07-contact-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+      "title": "Advanced AWS & Azure Operations – Workademy",
+      "h1": [
+        "Advanced AWS & Azure Operations"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Join our community → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/#"
+      ],
+      "bodyClass": "",
+      "height": 6638,
+      "status": 200,
+      "template": "courses/2",
+      "shot": "shots/08-courses-2.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-category/ai-data/",
+      "title": "AI + Data – Workademy",
+      "h1": [
+        "AI + Data"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "Join our community → https://workademy.tutorlms.io/course-category/ai-data/#"
+      ],
+      "bodyClass": "",
+      "height": 2676,
+      "status": 200,
+      "template": "course-category/2",
+      "shot": "shots/09-course-category-2.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-category/cloud-it-ops/",
+      "title": "Cloud + IT Ops – Workademy",
+      "h1": [
+        "Cloud + IT Ops"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Join our community → https://workademy.tutorlms.io/course-category/cloud-it-ops/#"
+      ],
+      "bodyClass": "",
+      "height": 2676,
+      "status": 200,
+      "template": "course-category/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-category/communication/",
+      "title": "Communication Skills – Workademy",
+      "h1": [
+        "Communication Skills"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "Join our community → https://workademy.tutorlms.io/course-category/communication/#"
+      ],
+      "bodyClass": "",
+      "height": 2747,
+      "status": 200,
+      "template": "course-category/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-category/hr-workplace-culture/",
+      "title": "HR & Workplace Culture – Workademy",
+      "h1": [
+        "HR & Workplace Culture"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Join our community → https://workademy.tutorlms.io/course-category/hr-workplace-culture/#"
+      ],
+      "bodyClass": "",
+      "height": 2747,
+      "status": 200,
+      "template": "course-category/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+      "title": "Employee Engagement & Retention Strategies – Workademy",
+      "h1": [
+        "Employee Engagement & Retention Strategies"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Join our community → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/#"
+      ],
+      "bodyClass": "",
+      "height": 6689,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+      "title": "Cybersecurity Awareness for Corporate Teams – Workademy",
+      "h1": [
+        "Cybersecurity Awareness for Corporate Teams"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "Join our community → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/#"
+      ],
+      "bodyClass": "",
+      "height": 7168,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+      "title": "Building a Security-First Mindset Across Your Organization – Workademy",
+      "h1": [
+        "Building a Security-First Mindset Across Your Organization"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Communication Skills → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Join our community → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/#"
+      ],
+      "bodyClass": "",
+      "height": 6053,
+      "status": 200,
+      "template": "building-a-security-first-mindset-across-your-organization/1",
+      "shot": "shots/10-building-a-security-first-mindset-across-your-organization-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/ai-in-learning-how-data-is-reshaping-employee-development/",
+      "title": "AI in Learning: How Data Is Reshaping Employee Development – Workademy",
+      "h1": [
+        "AI in Learning: How Data Is Reshaping Employee Development"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/ai-in-learning-how-data-is-reshaping-employee-development/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/ai-in-learning-how-data-is-reshaping-employee-development/",
+        "Communication Skills → https://workademy.tutorlms.io/ai-in-learning-how-data-is-reshaping-employee-development/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/ai-in-learning-how-data-is-reshaping-employee-development/",
+        "Join our community → https://workademy.tutorlms.io/ai-in-learning-how-data-is-reshaping-employee-development/#"
+      ],
+      "bodyClass": "",
+      "height": 5874,
+      "status": 200,
+      "template": "ai-in-learning-how-data-is-reshaping-employee-development/1",
+      "shot": "shots/11-ai-in-learning-how-data-is-reshaping-employee-development-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/registration/",
+      "title": "Register – Workademy",
+      "h1": [
+        "Create Your Account"
+      ],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "",
+      "height": 1015,
+      "status": 200,
+      "template": "registration/1",
+      "shot": "shots/12-registration-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/faq/",
+      "title": "FAQ – Workademy",
+      "h1": [
+        "Frequently asked questions"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/faq/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/faq/",
+        "Communication Skills → https://workademy.tutorlms.io/faq/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/faq/",
+        "Join our community → https://workademy.tutorlms.io/faq/#"
+      ],
+      "bodyClass": "",
+      "height": 4075,
+      "status": 200,
+      "template": "faq/1",
+      "shot": "shots/13-faq-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/privacy-policy-2/",
+      "title": "Privacy Policy – Workademy",
+      "h1": [
+        "Privacy Policy"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Communication Skills → https://workademy.tutorlms.io/privacy-policy-2/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Join our community → https://workademy.tutorlms.io/privacy-policy-2/#"
+      ],
+      "bodyClass": "",
+      "height": 3351,
+      "status": 200,
+      "template": "privacy-policy-2/1",
+      "shot": "shots/14-privacy-policy-2-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/terms-conditions/",
+      "title": "Terms & Conditions – Workademy",
+      "h1": [
+        "Terms & Conditions"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/terms-conditions/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/terms-conditions/",
+        "Communication Skills → https://workademy.tutorlms.io/terms-conditions/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/terms-conditions/",
+        "Join our community → https://workademy.tutorlms.io/terms-conditions/#"
+      ],
+      "bodyClass": "",
+      "height": 2914,
+      "status": 200,
+      "template": "terms-conditions/1",
+      "shot": "shots/15-terms-conditions-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/instructors/",
+      "title": "Instructors – Workademy",
+      "h1": [
+        "Meet Instructors"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/instructors/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/instructors/",
+        "Communication Skills → https://workademy.tutorlms.io/instructors/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/instructors/",
+        "Join our community → https://workademy.tutorlms.io/instructors/#"
+      ],
+      "bodyClass": "",
+      "height": 2925,
+      "status": 200,
+      "template": "instructors/1",
+      "shot": "shots/16-instructors-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/testimonials/",
+      "title": "Testimonials – Workademy",
+      "h1": [
+        "What Our Learners Are Saying"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/testimonials/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/testimonials/",
+        "Communication Skills → https://workademy.tutorlms.io/testimonials/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/testimonials/",
+        "Join our community → https://workademy.tutorlms.io/testimonials/#"
+      ],
+      "bodyClass": "",
+      "height": 2503,
+      "status": 200,
+      "template": "testimonials/1",
+      "shot": "shots/17-testimonials-1.jpg"
+    },
+    {
+      "url": "https://demo.tutorlms.io/terms-conditions/",
+      "title": "Terms & Conditions – Try Tutor LMS Pro",
+      "h1": [
+        "Terms & Conditions"
+      ],
+      "h2": [
+        "1. About the Tutor LMS demo",
+        "2. What the Demo is",
+        "3. Eligibility & access",
+        "4. Temporary nature & data deletion",
+        "5. Acceptable use",
+        "6. No warranty",
+        "7. Limitation of liability",
+        "8. Privacy & data",
+        "9. Intellectual property",
+        "10. Relationship to other terms",
+        "11. Changes to these terms",
+        "12. Contact"
+      ],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "privacy-policy wp-singular page-template-default page page-id-111 wp-custom-logo wp-theme-tutorstarter tutor-lms",
+      "height": 2623,
+      "status": 200,
+      "template": "terms-conditions/1"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-category/leadership-management/",
+      "title": "Leadership & Management – Workademy",
+      "h1": [
+        "Leadership & Management"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "Join our community → https://workademy.tutorlms.io/course-category/leadership-management/#"
+      ],
+      "bodyClass": "",
+      "height": 2747,
+      "status": 200,
+      "template": "course-category/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-category/security/",
+      "title": "Security – Workademy",
+      "h1": [
+        "Security"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/cybersecurity-awareness-for-corporate-teams/",
+        "Join our community → https://workademy.tutorlms.io/course-category/security/#"
+      ],
+      "bodyClass": "",
+      "height": 2676,
+      "status": 200,
+      "template": "course-category/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-category/software-development/",
+      "title": "Software Development – Workademy",
+      "h1": [
+        "Software Development"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "Join our community → https://workademy.tutorlms.io/course-category/software-development/#"
+      ],
+      "bodyClass": "",
+      "height": 2747,
+      "status": 200,
+      "template": "course-category/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+      "title": "Leading High-Performing Teams – Workademy",
+      "h1": [
+        "Leading High-Performing Teams"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/leading-high-performing-teams/",
+        "Join our community → https://workademy.tutorlms.io/courses/leading-high-performing-teams/#"
+      ],
+      "bodyClass": "",
+      "height": 6892,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+      "title": "Business Writing & Professional Documentation – Workademy",
+      "h1": [
+        "Business Writing & Professional Documentation"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/",
+        "Join our community → https://workademy.tutorlms.io/courses/business-writing-professional-documentation/#"
+      ],
+      "bodyClass": "",
+      "height": 7028,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+      "title": "Modern Web Development with React – Workademy",
+      "h1": [
+        "Modern Web Development with React"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/modern-web-development-with-react/",
+        "Join our community → https://workademy.tutorlms.io/courses/modern-web-development-with-react/#"
+      ],
+      "bodyClass": "",
+      "height": 5733,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/mastering-workplace-communication/",
+      "title": "Mastering Workplace Communication – Workademy",
+      "h1": [
+        "Mastering Workplace Communication"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/mastering-workplace-communication/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/mastering-workplace-communication/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/mastering-workplace-communication/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/mastering-workplace-communication/",
+        "Join our community → https://workademy.tutorlms.io/courses/mastering-workplace-communication/#"
+      ],
+      "bodyClass": "",
+      "height": 6690,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/data-privacy-compliance-for-professionals/",
+      "title": "Data Privacy & Compliance for Professionals – Workademy",
+      "h1": [
+        "Data Privacy & Compliance for Professionals"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/data-privacy-compliance-for-professionals/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/data-privacy-compliance-for-professionals/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/data-privacy-compliance-for-professionals/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/data-privacy-compliance-for-professionals/",
+        "Join our community → https://workademy.tutorlms.io/courses/data-privacy-compliance-for-professionals/#"
+      ],
+      "bodyClass": "",
+      "height": 6593,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/it-operations-devops-essentials/",
+      "title": "IT Operations & DevOps Essentials – Workademy",
+      "h1": [
+        "IT Operations & DevOps Essentials"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/it-operations-devops-essentials/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/it-operations-devops-essentials/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/it-operations-devops-essentials/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/it-operations-devops-essentials/",
+        "Join our community → https://workademy.tutorlms.io/courses/it-operations-devops-essentials/#"
+      ],
+      "bodyClass": "",
+      "height": 7230,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/diversity-equity-inclusion-dei-in-the-workplace/",
+      "title": "Diversity, Equity & Inclusion (DEI) in the Workplace – Workademy",
+      "h1": [
+        "Diversity, Equity & Inclusion (DEI) in the Workplace"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/diversity-equity-inclusion-dei-in-the-workplace/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/diversity-equity-inclusion-dei-in-the-workplace/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/diversity-equity-inclusion-dei-in-the-workplace/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/diversity-equity-inclusion-dei-in-the-workplace/",
+        "Join our community → https://workademy.tutorlms.io/courses/diversity-equity-inclusion-dei-in-the-workplace/#"
+      ],
+      "bodyClass": "",
+      "height": 7008,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/hr-compliance-legal-essentials/",
+      "title": "HR Compliance & Legal Essentials – Workademy",
+      "h1": [
+        "HR Compliance & Legal Essentials"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/hr-compliance-legal-essentials/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/hr-compliance-legal-essentials/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/hr-compliance-legal-essentials/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/hr-compliance-legal-essentials/",
+        "Join our community → https://workademy.tutorlms.io/courses/hr-compliance-legal-essentials/#"
+      ],
+      "bodyClass": "",
+      "height": 6690,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/why-soft-skills-are-the-hardest-to-master-in-corporate-training/",
+      "title": "Why Soft Skills Are the Hardest to Master in Corporate Training – Workademy",
+      "h1": [
+        "Why Soft Skills Are the Hardest to Master in Corporate Training"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/why-soft-skills-are-the-hardest-to-master-in-corporate-training/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/why-soft-skills-are-the-hardest-to-master-in-corporate-training/",
+        "Communication Skills → https://workademy.tutorlms.io/why-soft-skills-are-the-hardest-to-master-in-corporate-training/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/why-soft-skills-are-the-hardest-to-master-in-corporate-training/",
+        "Join our community → https://workademy.tutorlms.io/why-soft-skills-are-the-hardest-to-master-in-corporate-training/#"
+      ],
+      "bodyClass": "",
+      "height": 6053,
+      "status": 200,
+      "template": "why-soft-skills-are-the-hardest-to-master-in-corporate-training/1",
+      "shot": "shots/18-why-soft-skills-are-the-hardest-to-master-in-corporate-training-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/how-to-build-a-culture-of-continuous-learning/",
+      "title": "How to Build a Culture of Continuous Learning – Workademy",
+      "h1": [
+        "How to Build a Culture of Continuous Learning"
+      ],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/how-to-build-a-culture-of-continuous-learning/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/how-to-build-a-culture-of-continuous-learning/",
+        "Communication Skills → https://workademy.tutorlms.io/how-to-build-a-culture-of-continuous-learning/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/how-to-build-a-culture-of-continuous-learning/",
+        "Join our community → https://workademy.tutorlms.io/how-to-build-a-culture-of-continuous-learning/#"
+      ],
+      "bodyClass": "",
+      "height": 6053,
+      "status": 200,
+      "template": "how-to-build-a-culture-of-continuous-learning/1",
+      "shot": "shots/19-how-to-build-a-culture-of-continuous-learning-1.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/author/yellowostrich655/",
+      "title": "Perry Hawkins – Workademy",
+      "h1": [],
+      "h2": [
+        "Bio",
+        "Running Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/author/yellowostrich655/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/author/yellowostrich655/",
+        "Communication Skills → https://workademy.tutorlms.io/author/yellowostrich655/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/author/yellowostrich655/",
+        "Join our community → https://workademy.tutorlms.io/author/yellowostrich655/#"
+      ],
+      "bodyClass": "",
+      "height": 2732,
+      "status": 200,
+      "template": "author/2",
+      "shot": "shots/20-author-2.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/author/yellowmeercat427/",
+      "title": "Travis Jacobs – Workademy",
+      "h1": [],
+      "h2": [
+        "Bio",
+        "Running Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/author/yellowmeercat427/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/author/yellowmeercat427/",
+        "Communication Skills → https://workademy.tutorlms.io/author/yellowmeercat427/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/author/yellowmeercat427/",
+        "Join our community → https://workademy.tutorlms.io/author/yellowmeercat427/#"
+      ],
+      "bodyClass": "",
+      "height": 2802,
+      "status": 200,
+      "template": "author/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/author/yellowgoose973/",
+      "title": "Christian Martin – Workademy",
+      "h1": [],
+      "h2": [
+        "Bio",
+        "Running Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/author/yellowgoose973/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/author/yellowgoose973/",
+        "Communication Skills → https://workademy.tutorlms.io/author/yellowgoose973/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/author/yellowgoose973/",
+        "Join our community → https://workademy.tutorlms.io/author/yellowgoose973/#"
+      ],
+      "bodyClass": "",
+      "height": 2802,
+      "status": 200,
+      "template": "author/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-tag/career-growth/",
+      "title": "Career Growth – Workademy",
+      "h1": [
+        "Career Growth"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Join our community → https://workademy.tutorlms.io/course-tag/career-growth/#"
+      ],
+      "bodyClass": "",
+      "height": 3766,
+      "status": 200,
+      "template": "course-tag/2",
+      "shot": "shots/21-course-tag-2.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-tag/communication/",
+      "title": "Communication – Workademy",
+      "h1": [
+        "Communication"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Join our community → https://workademy.tutorlms.io/course-tag/communication/#"
+      ],
+      "bodyClass": "",
+      "height": 3789,
+      "status": 200,
+      "template": "course-tag/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-tag/corporate/",
+      "title": "Corporate – Workademy",
+      "h1": [
+        "Corporate"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/",
+        "Join our community → https://workademy.tutorlms.io/course-tag/corporate/#"
+      ],
+      "bodyClass": "",
+      "height": 3789,
+      "status": 200,
+      "template": "course-tag/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/designing-scalable-cloud-systems/",
+      "title": "Designing Scalable Cloud Systems - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-270 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4",
+      "shot": "shots/22-courses-4.jpg"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/multi-region-deployments/",
+      "title": "Multi-Region Deployments - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-271 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/high-availability-disaster-recovery/",
+      "title": "High Availability & Disaster Recovery - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-272 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/quizzes/data-basics-check-7-2/",
+      "title": "Quiz: Cloud Architecture Basics - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-274 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/vpc-subnets-and-routing/",
+      "title": "VPC, Subnets, and Routing - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-275 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/cloud-storage-options-optimization/",
+      "title": "Cloud Storage Options & Optimization - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-276 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/data-backup-retention-policies/",
+      "title": "Data Backup & Retention Policies - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-277 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/quizzes/interpreting-data-effectively-8-2/",
+      "title": "Quiz: Networking & Storage - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-279 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/introduction-to-terraform-cloudformation/",
+      "title": "Introduction to Terraform & CloudFormation - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-280 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/automating-deployment-pipelines/",
+      "title": "Automating Deployment Pipelines - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-281 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/configuration-management-tools/",
+      "title": "Configuration Management Tools - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-282 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/quizzes/interpreting-data-effectively-2-8-2/",
+      "title": "Quiz: Infrastructure as Code - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-284 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/cloud-monitoring-tools-alerts/",
+      "title": "Cloud Monitoring Tools & Alerts - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-285 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/logging-and-event-management/",
+      "title": "Logging and Event Management - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-286 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/troubleshooting-common-issues/",
+      "title": "Troubleshooting Common Issues - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-287 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/quizzes/interpreting-data-effectively-2-2-8-2/",
+      "title": "Quiz: Monitoring & Troubleshooting - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-289 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/cloud-cost-tracking-tools/",
+      "title": "Cloud Cost Tracking Tools - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-290 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/rightsizing-resources/",
+      "title": "Rightsizing Resources - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-291 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/lessons/policies-for-cloud-governance/",
+      "title": "Policies for Cloud Governance - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-292 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/advanced-aws-azure-operations/quizzes/interpreting-data-effectively-2-2-2-7-2/",
+      "title": "Quiz: Cloud Cost & Governance - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-294 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/author/yellowgoose102/",
+      "title": "Leon Gregory – Workademy",
+      "h1": [],
+      "h2": [
+        "Bio",
+        "Running Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/author/yellowgoose102/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/author/yellowgoose102/",
+        "Communication Skills → https://workademy.tutorlms.io/author/yellowgoose102/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/author/yellowgoose102/",
+        "Join our community → https://workademy.tutorlms.io/author/yellowgoose102/#"
+      ],
+      "bodyClass": "",
+      "height": 2755,
+      "status": 200,
+      "template": "author/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/author/workademy/",
+      "title": "workademy – Workademy",
+      "h1": [],
+      "h2": [
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Communication Skills → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/building-a-security-first-mindset-across-your-organization/",
+        "Join our community → https://workademy.tutorlms.io/author/workademy/#"
+      ],
+      "bodyClass": "archive author author-workademy author-1 wp-embed-responsive wp-theme-kirkibase tutor-lms",
+      "height": 10311,
+      "status": 200,
+      "template": "author/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+      "title": "Introduction to Artificial Intelligence in Business – Workademy",
+      "h1": [
+        "Introduction to Artificial Intelligence in Business"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/",
+        "Join our community → https://workademy.tutorlms.io/courses/introduction-to-artificial-intelligence-in-business/#"
+      ],
+      "bodyClass": "",
+      "height": 6917,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/data-driven-decision-making-for-managers/",
+      "title": "Data-Driven Decision Making for Managers – Workademy",
+      "h1": [
+        "Data-Driven Decision Making for Managers"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/data-driven-decision-making-for-managers/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/data-driven-decision-making-for-managers/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/data-driven-decision-making-for-managers/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/data-driven-decision-making-for-managers/",
+        "Join our community → https://workademy.tutorlms.io/courses/data-driven-decision-making-for-managers/#"
+      ],
+      "bodyClass": "",
+      "height": 6128,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/data-analytics-with-excel-power-bi/",
+      "title": "Data Analytics with Excel & Power BI – Workademy",
+      "h1": [
+        "Data Analytics with Excel & Power BI"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/data-analytics-with-excel-power-bi/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/data-analytics-with-excel-power-bi/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/data-analytics-with-excel-power-bi/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/data-analytics-with-excel-power-bi/",
+        "Join our community → https://workademy.tutorlms.io/courses/data-analytics-with-excel-power-bi/#"
+      ],
+      "bodyClass": "",
+      "height": 6661,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/cloud-fundamentals-for-enterprise-teams/",
+      "title": "Cloud Fundamentals for Enterprise Teams – Workademy",
+      "h1": [
+        "Cloud Fundamentals for Enterprise Teams"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/cloud-fundamentals-for-enterprise-teams/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/cloud-fundamentals-for-enterprise-teams/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/cloud-fundamentals-for-enterprise-teams/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/cloud-fundamentals-for-enterprise-teams/",
+        "Join our community → https://workademy.tutorlms.io/courses/cloud-fundamentals-for-enterprise-teams/#"
+      ],
+      "bodyClass": "",
+      "height": 6669,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/effective-cross-cultural-communication/",
+      "title": "Effective Cross-Cultural Communication – Workademy",
+      "h1": [
+        "Effective Cross-Cultural Communication"
+      ],
+      "h2": [
+        "Instructor(s)",
+        "Learner Reviews",
+        "Explore More Courses",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/effective-cross-cultural-communication/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/effective-cross-cultural-communication/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/effective-cross-cultural-communication/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/effective-cross-cultural-communication/",
+        "Join our community → https://workademy.tutorlms.io/courses/effective-cross-cultural-communication/#"
+      ],
+      "bodyClass": "",
+      "height": 6359,
+      "status": 200,
+      "template": "courses/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/course-tag/team-management/",
+      "title": "Team Management – Workademy",
+      "h1": [
+        "Team Management"
+      ],
+      "h2": [
+        "All Courses",
+        "Explore More Categories",
+        "Upskill. Onboard. Lead. Repeat."
+      ],
+      "nav": [
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "About → https://workademy.tutorlms.io/about/"
+      ],
+      "footer": [
+        "Start → https://workademy.tutorlms.io/registration",
+        "Contact Sales → https://workademy.tutorlms.io/contact/",
+        "About → https://workademy.tutorlms.io/about/",
+        "FAQs → https://workademy.tutorlms.io/faq/",
+        "Contact → https://workademy.tutorlms.io/contact/",
+        "Pricing → https://workademy.tutorlms.io/membership",
+        "Privacy Policy → https://workademy.tutorlms.io/privacy-policy-2/",
+        "Terms & Conditions → https://workademy.tutorlms.io/terms-conditions/",
+        "Home → https://workademy.tutorlms.io/",
+        "Courses → https://workademy.tutorlms.io/courses",
+        "Blogs → https://workademy.tutorlms.io/blogs/",
+        "Instructors → https://workademy.tutorlms.io/instructors/",
+        "Testimonials → https://workademy.tutorlms.io/testimonials/",
+        "AI + Data → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Cloud + IT Ops → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Communication Skills → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "HR & Workplace Culture → https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/",
+        "Join our community → https://workademy.tutorlms.io/course-tag/team-management/#"
+      ],
+      "bodyClass": "",
+      "height": 3304,
+      "status": 200,
+      "template": "course-tag/2"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/what-engagement-means-in-corporates/",
+      "title": "What Engagement Means in Corporates - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-46 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/key-drivers-of-employee-motivation/",
+      "title": "Key Drivers of Employee Motivation - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-47 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/measuring-engagement-effectively/",
+      "title": "Measuring Engagement Effectively - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-48 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/quizzes/data-basics-check-9-3-2/",
+      "title": "Quiz: Engagement Basics - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-50 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/identifying-high-performing-employees/",
+      "title": "Identifying High-Performing Employees - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-51 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/career-development-pathways/",
+      "title": "Career Development Pathways - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-52 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/retention-strategies-and-incentives/",
+      "title": "Retention Strategies and Incentives - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-53 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/quizzes/interpreting-data-effectively-10-3-2/",
+      "title": "Quiz: Talent Management - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-55 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/constructive-feedback-techniques/",
+      "title": "Constructive Feedback Techniques - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-56 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/regular-performance-check-ins/",
+      "title": "Regular Performance Check-ins - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-57 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/continuous-improvement-loops/",
+      "title": "Continuous Improvement Loops - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-58 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/quizzes/interpreting-data-effectively-2-10-3-2/",
+      "title": "Quiz: Feedback Culture - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-60 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/recognition-programs-that-work/",
+      "title": "Recognition Programs That Work - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-61 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/non-monetary-vs-monetary-rewards/",
+      "title": "Non-Monetary vs. Monetary Rewards - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-62 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/public-recognition-its-benefits/",
+      "title": "Public Recognition & Its Benefits - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-63 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/quizzes/interpreting-data-effectively-2-2-10-3-2/",
+      "title": "Quiz: Recognition Strategies - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular tutor_quiz-template-default single single-tutor_quiz postid-65 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/maintaining-engagement-virtually/",
+      "title": "Maintaining Engagement Virtually - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-66 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/digital-tools-best-practices/",
+      "title": "Digital Tools & Best Practices - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-67 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    },
+    {
+      "url": "https://workademy.tutorlms.io/courses/employee-engagement-retention-strategies/lessons/overcoming-remote-work-challenges/",
+      "title": "Overcoming Remote Work Challenges - Workademy",
+      "h1": [],
+      "h2": [],
+      "nav": [],
+      "footer": [],
+      "bodyClass": "wp-singular lesson-template-default single single-lesson postid-68 wp-embed-responsive wp-theme-kirkibase tutor-lms tutor-frontend",
+      "height": 970,
+      "status": 200,
+      "template": "courses/4"
+    }
+  ]
+}

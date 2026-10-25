@@ -1,0 +1,321 @@
+https://tutorlms.com/blog/wellthrive-tutor-lms-theme/
+
+Product
+
+What’s New in
+
+Explore now
+
+Creation
+
+Build courses visually, faster.
+
+Engagement
+
+Keep learners hooked.
+
+Monetization
+
+Sell courses your way.
+
+Management
+
+Run everything in one place.
+
+Course Builder
+
+Content Bank
+
+AI Studio
+
+Certificate Builder
+
+Lessons
+
+Quizzes
+
+Assignments
+
+Live Classes
+
+Native eCommerce
+
+Course Bundles
+
+Subscriptions
+
+Memberships
+
+Content Drip
+
+Prerequisites
+
+Gradebook
+
+Analytics
+
+Solutions
+
+Solo Course Creators
+
+Build and sell on your own.
+
+Schools & Academies
+
+Run a complete online school.
+
+Coaching Businesses
+
+Turn expertise into income.
+
+Agencies
+
+Build learning platforms for clients.
+
+Nonprofits & Community Builders
+
+Teach and grow your community.
+
+Resources
+
+Add-Ons
+
+Unlock more possibilities for your LMS.
+
+Integrations
+
+Connect with tools you already use.
+
+Migration
+
+Switch to Tutor LMS with confidence.
+
+Blog
+
+Learn, grow, and stay ahead in eLearning.
+
+Documentation
+
+Everything you need to build with Tutor LMS.
+
+Videos
+
+Learn visually with tutorials.
+
+Release Notes
+
+See what’s new in every update.
+
+Partners
+
+Explore our trusted Tutor LMS partners.
+
+Themes
+
+Exclusive Tutor LMS themes.
+
+Support
+Pricing
+Try Demo
+Login
+Sign Up
+RELEASES - 3 MINS READ
+Introducing WellThrive: A Tutor LMS Theme for Health Coaches, Life Mentors & Educators
+
+If your mission is to help others live better physically, mentally, or emotionally, your platform deserves to feel just as empowering. 
+
+That’s exactly what WellThrive delivers.
+
+Built with Droip and designed exclusively for Tutor LMS, WellThrive is a theme for wellness coaches, life mentors, nutritionists, and holistic educators who need more than a pretty layout.
+
+What’s Inside the WellThrive Theme
+
+The WellThrive template kit includes a complete set of beautifully crafted pages that help you tell your story, offer your services, and run your courses professionally.
+
+A Home Page That Connects Instantly
+
+Your homepage isn’t just the first impression. It’s your chance to ground visitors in your mission. WellThrive’s homepage does just that with:
+
+A bold hero section that speaks directly to your audience
+
+Warm imagery and expressive visuals
+
+An inviting call-to-action that guides users to seek help or explore further
+
+It also introduces services, courses, and transformation-focused messaging that resonates with people looking for real change, not just another program.
+
+Courses That Speak to Transformation
+
+WellThrive integrates perfectly with Tutor LMS, so your course pages aren’t just functional, but they motivate action too.
+
+Course Listing Page: Intuitive, visually appealing, and easy to navigate, so learners find what they need fast.
+
+Course Details Page: All the essentials learners want to know from the curriculum, course info, reviews, all in a layout that guides them toward that “Enroll” button.
+Service Pages That Sell Without the Push
+
+Whether you offer 1:1 coaching, group circles, or structured programs, each service gets its own spotlight. 
+
+WellThrive includes dedicated pages for:
+
+Wellness Coaching
+
+Group Coaching Circles
+
+Wellness Planning & Habit Reset
+
+Mind-Body Reset Program
+
+Wellness Mentorship
+
+Each page is crafted to outline benefits clearly, set expectations, and encourage the reader to take action, without ever feeling salesy.
+
+A Blog That Builds Your Voice
+
+Share wellness tips, personal reflections, and resources with a blog layout that feels editorial yet easy to read. 
+
+The Blog and Blog Details pages ensure your content looks beautiful on any screen, from mobile to desktop.
+
+How to Import the WellThrive LMS Theme
+
+Getting started with WellThrive is quick, intuitive, and beginner-friendly. Here’s how to import the theme into your site:
+
+Log in to your WordPress Dashboard
+
+Go to Tutor LMS Pro > Themes
+
+This opens the Tutor LMS Theme Library
+
+Find the WellThrive theme
+
+Click Preview and Import the template
+
+You’re done!
+
+All the pages, styles, and content will be instantly added to your site, ready for you to make it your own with Droip’s visual editor. You’ll also get a lightweight blank base theme for Tutor LMS, automatically installed and applied.
+
+Note: For best results, we recommend importing the WellThrive theme on a staging site first to preview and customize everything before going live.
+
+How to Customize the WellThrive Theme
+
+Once you’ve imported WellThrive, you can customize it fully to match your brand. Here’s how to get started:
+
+Header & Footer
+
+The Header and Footer of the WellThrive theme are saved as Symbols (reusable components that update across your site instantly) in Droip.
+
+To customize:
+
+Open the Droip Editor
+
+From the left sidebar, go to Insert > Symbols
+
+You’ll see both the navbar and footer saved as Symbols
+
+Click Edit on any Symbol to enter Main Mode
+
+Inside the main mode, you can replace the logo, edit menu items, update call-to-action buttons and links, and make any others edit required.
+
+All changes apply globally, so there’s no need to edit page by page. You can also unset the header or footer for the entire site or specific pages from the Layers panel.
+
+Change Brand Colors, Fonts & Sizes Globally
+
+Want your entire site to follow your brand’s style? With Droip Variables, you can control design at a global level.
+
+Here’s how:
+
+Open the Droip Editor
+
+Go to Variables from the left sidebar
+
+From here, you can update primary and secondary colors, set fonts for headings and body text, and adjust font sizes and weights globally. Every change you make here is reflected across all pages instantly and consistently.
+
+Not only these, with Droip’s full design flexibility, you can visually edit any section, add animations, set visibility rules, and fine-tune mobile layouts all without code. 
+
+Ready to Build Your Wellness Coaching Site?
+
+Whether you’re a coach, mentor, or educator, WellThrive gives you everything you need to launch a professional LMS platform that inspires.
+
+Import it today and let us know your thoughts in the comments! 
+
+ZAREEN TASNIM
+July 15, 2025
+Share
+Table of Contents
+What's Inside the WellThrive Theme
+How to Import the WellThrive LMS Theme
+How to Customize the WellThrive Theme
+Ready to Build Your Wellness Coaching Site?
+Start Using Tutor LMS Today
+
+Ready to take your online courses to new heights? Download Tutor LMS now and enjoy a journey of eLearning excellence.
+
+Get Tutor LMS 
+Comments
+Sign in
+All Comments (0)
+Sort by
+Newest
+Oldest
+Join the world’s #1 Tutor LMS community
+Subscribe
+Blog
+Tutor LMS V4
+Pricing
+Product
+Course Builder
+Content Bank
+AI Studio
+Certificate Builder
+Lessons
+Quizzes
+Assignments
+Live Classes
+Native eCommerce
+Course Bundles
+Subscriptions
+Memberships
+Content Drip
+Prerequisites
+Gradebook
+Analytics
+Solutions
+Solo Course Creators
+Schools & Academies
+Coaching Businesses
+Agencies
+Nonprofits & Community Builders
+Alternative to
+LearnDash
+Kajabi
+Teachable
+Thinkific
+Resources
+Add-Ons
+Integrations
+Migration
+Blog
+Documentation
+Videos
+Release Notes
+Partners
+Company
+Affiliates
+Affiliate T&C
+Terms & Privacy
+Refund Policy
+Brand Assets
+Support
+Pricing
+Contact us
+Facebook Community
+
+Build, manage, and scale your eLearning business with the most powerful WordPress LMS — all in one place.
+
+Crafted by Humans
+
+Proudly built using
+
+© 2026 All Rights Reserved
+
+This site uses cookies. By continuing to use this website, you agree to their use. For details, please check our Privacy Policy.
+I accept
