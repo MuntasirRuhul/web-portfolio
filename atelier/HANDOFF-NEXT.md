@@ -1,3 +1,18 @@
+# START HERE (updated 25 Oct 2026)
+
+**New chat? Say:** "Read `atelier/HANDOFF-NEXT.md` and continue." Then work on branch **`atelier`** (the user's chosen branch; `claude/gracious-fermat-bqbft2` has the same history).
+
+**Preview:** https://claude.ai/artifact/99R7pSgDvcfXydKFhzy8tk. Build with `tools/build-artifact.py` from a scratch folder, then republish the main file plus every page in `PAGES` and `assets/*`.
+
+**Status of the 12 new pages** (plan: `openspec/changes/atelier-site-pages/tasks.md`):
+- Done: `courses.html` (filters, sort, Solo/Academy) and `about.html` (hero statement; the same chair across twenty years; overheard in 3,900 critiques; brushes in order of use / four teachers, four tools; studio table; tally marks; letter on the drying wall; pull up a chair). The user approved the About hero and asked for non-generic, studio-specific sections, the bar for every page.
+- Next: Teachers (optional; academy content already sits on About), Services, Studio notes (list and article), Contact, then Account, Checkout, Dashboard, Quiz, Assignment.
+- **Desktop first:** build and check at 1440px only (`node atelier/tools/audit.mjs --desktop <page>`). Phone and tablet are a later pass (task group 6).
+- Shared parts: `assets/site.css` (design language), `assets/site.js` (menu, Solo/Academy review bar, helpers). Every page declares `<body data-archetype>`, uses `.site-head` and the dark `.site-foot` on a `.foot-band`, and must pass the audit before publishing.
+- Header links still point to home anchors for pages not built yet (Services, Questions). Re-point them as pages land.
+
+---
+
 # Handoff: Elena Varga Atelier (start a new chat from this file)
 
 Updated 24 Oct 2026. Repo `MuntasirRuhul/web-portfolio`, branch `claude/gracious-fermat-bqbft2`. Everything here is committed and pushed. Static HTML/CSS/vanilla JS, no build step, Google Fonts.
