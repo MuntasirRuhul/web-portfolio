@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var m=new URLSearchParams(location.search).get('mode')||localStorage.getItem('atelier-mode');document.documentElement.dataset.mode=m==='academy'?'academy':'solo'}catch(e){document.documentElement.dataset.mode='solo'}document.documentElement.classList.add('js')</script>
+<title>Contact · Elena Varga Atelier</title>
+<meta name="description" content="Write Elena a letter. She reads every one at the studio table in Graça, Lisbon, on Tuesday and Friday mornings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* Contact · Counter archetype · desktop first.
+   One idea: you write Elena a letter. The form is the letter (ruled paper, blanks in the sentences, your signature);
+   beside it, the one dark room is the drying wall where answered letters hang. Sending pins yours there too. */
+main{padding-top:var(--s7);padding-bottom:var(--s9)}
+.desk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--s7);align-items:start}
+
+/* the room: the drying wall */
+.wall{padding:clamp(40px,4vw,56px) clamp(32px,3.4vw,48px)}
+.wall .lead{margin-top:22px;color:var(--on-room-2);max-width:440px}
+.pins{display:flex;flex-direction:column;gap:var(--s5);margin-top:var(--s7)}
+.pin{position:relative;background:#FFFDF8;color:var(--ink);padding:22px 24px 18px;max-width:420px;transition:transform var(--t-lift) var(--ease-object)}
+.pin:nth-child(odd){transform:rotate(-1.4deg)}
+.pin:nth-child(even){transform:rotate(1.1deg);margin-left:auto}
+.pin:hover{transform:translateY(-6px) rotate(-.6deg)}
+.pin::before{content:"";position:absolute;top:-11px;left:50%;width:70px;height:22px;margin-left:-35px;background:rgba(217,167,160,.6);transform:rotate(-3deg)}
+.pin:nth-child(even)::before{background:rgba(221,164,60,.5);transform:rotate(4deg)}
+.pin .mono{display:flex;justify-content:space-between;gap:12px}
+.pin .mono b{color:var(--accent-text);font-weight:500}
+.pin q{display:block;quotes:"“" "”";margin-top:10px;font-size:17px;font-weight:500;letter-spacing:-.015em;line-height:1.4}
+.pin p{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule);font-size:var(--t-small);color:var(--ink-2)}
+.pin p .sig{font-size:24px;color:var(--ink);margin-left:4px}
+.pin.mine{display:none}
+.pin.mine.on{display:block}
+.addr{display:grid;grid-template-columns:1fr 1fr;gap:0 var(--s5);margin-top:var(--s8);border-top:1px solid var(--rule-on-room)}
+.addr div{padding:14px 0;border-bottom:1px solid var(--rule-on-room)}
+.addr dt{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--on-room-2)}
+.addr dd{margin-top:4px;font-size:15px;color:var(--on-room)}
+.addr a:hover{color:var(--accent-on-room)}
+
+/* the letter: the one card */
+.letter{position:sticky;top:36px;background:#FFFDF8;padding:44px 52px 40px;transform:rotate(.5deg);margin-top:12px}
+.letter::before{content:"";position:absolute;top:-12px;left:44px;width:90px;height:24px;background:rgba(221,164,60,.45);transform:rotate(-3deg)}
+.letter .top{display:flex;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.ruled{margin-top:26px;font-size:20px;line-height:40px;letter-spacing:-.01em;background:repeating-linear-gradient(transparent 0 39px,rgba(122,62,94,.16) 39px 40px)}
+.ruled p{margin:0}
+.blank{display:inline-block;vertical-align:baseline;height:32px;padding:0 4px;border:0;border-bottom:1.5px solid var(--ink);background:transparent;font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-.01em;transition:border-color .2s,background .2s}
+.blank::placeholder{color:#8F877A;font-weight:400}
+.blank:focus{outline:none;border-bottom-color:var(--accent);background:rgba(221,164,60,.12)}
+.blank[aria-invalid="true"]{border-bottom-color:var(--accent);border-bottom-style:dashed}
+select.blank{cursor:pointer;padding-right:22px;appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1A16' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 2px center/14px no-repeat}
+select.blank:focus{background-color:rgba(221,164,60,.12)}
+#name{width:220px}#email{width:300px}
+.body{display:block;width:100%;min-height:200px;margin-top:0;border:0;background:transparent;font-size:20px;line-height:40px;letter-spacing:-.01em;color:var(--ink);resize:vertical;padding:0}
+.body::placeholder{color:#8F877A}
+.body:focus{outline:none}
+.body-wrap{position:relative}
+.body-wrap:focus-within::before{content:"";position:absolute;left:-20px;top:8px;bottom:8px;width:2px;background:var(--accent)}
+.err{display:none;font-size:13.5px;line-height:1.5;color:var(--accent-text);margin:2px 0 6px}
+.err.on{display:block}
+.close{display:flex;align-items:baseline;gap:16px}
+.close .sig{font-size:40px;color:var(--ink);min-width:120px}
+.close .sig.empty{color:#8F877A}
+.send{display:flex;flex-direction:column;align-items:stretch;gap:18px;margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid var(--rule)}
+.send .when{font-size:var(--t-small);color:var(--ink-2)}
+.send .when b{color:var(--ink);font-weight:600}
+.send .row{display:flex;align-items:center;justify-content:space-between;gap:20px;white-space:nowrap}
+
+/* sent: the letter is pinned */
+.done{display:none}
+.letter.sent form{display:none}
+.letter.sent .done{display:block;padding:var(--s6) 0 var(--s4)}
+.done .stamp{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:112px;height:112px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent-text);font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;text-align:center;line-height:1.5;transform:rotate(-12deg);margin-bottom:var(--s6)}
+.done .stamp b{font-size:15px;font-weight:500}
+.done p.txt{margin-top:18px;max-width:460px}
+.done .acts{display:flex;gap:12px;margin-top:var(--s6)}
+
+.foot-band{padding-bottom:64px}
+</style>
+</head>
+<body data-archetype="counter">
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a>
+    <nav aria-label="Main">
+      <a href="courses.html">Courses</a>
+      <a class="m-academy" href="about.html#teachers">Teachers</a>
+      <a href="about.html"><span class="m-solo">About</span><span class="m-academy">About us</span></a>
+      <a href="index.html#join">Services</a>
+      <a href="index.html#faq">Questions</a>
+      <a class="login" href="lesson.html">Log in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="desk">
+
+    <!-- the drying wall (the one room) -->
+    <section class="room wall" aria-labelledby="h-contact">
+      <p class="chapter"><b>01</b>Contact</p>
+      <h1 class="headline" id="h-contact">Write Elena <em>a letter.</em></h1>
+      <p class="lead"><span class="m-solo">I read every letter myself, at the studio table, on Tuesday and Friday mornings before filming. Answered ones go up on the drying wall for a week.</span><span class="m-academy">Elena reads every letter herself, at the studio table, on Tuesday and Friday mornings before filming. Answered ones go up on the drying wall for a week.</span></p>
+
+      <div class="pins" id="pins" aria-label="Letters on the drying wall">
+        <article class="pin mine" id="mine" aria-live="polite"><span class="mono"><span>Your letter · just now</span><b id="mineDay">Read Tue</b></span><q id="mineQ">…</q><p>Waiting on the wall for Elena’s pencil.</p></article>
+        <article class="pin"><span class="mono"><span>Tomás, Leeds · 12 Oct</span><b>Answered in 1 day</b></span><q>Can I do Course 01 with just a biro and printer paper?</q><p>Yes, for the first two topics. Buy one 2B pencil before Topic 03, when the values start. <span class="sig">E.</span></p></article>
+        <article class="pin"><span class="mono"><span>Inês, Coimbra · 9 Oct</span><b>Answered in 2 days</b></span><q>Would you paint my grandmother’s house in Graça from a photo?</q><p>From a photo, no. From the street, yes, in spring when the light comes round. Let’s talk in March. <span class="sig">E.</span></p></article>
+        <article class="pin"><span class="mono"><span>Sam, Toronto · 2 Oct</span><b>Answered in 1 day</b></span><q>I finished Topic 06 but I’m scared to send my final drawing.</q><p>Send it. That fear is the reason the critique exists. <span class="sig">E.</span></p></article>
+      </div>
+
+      <dl class="addr">
+        <div><dt>Studio</dt><dd>Rua da Graça 4, 3º<br>1170-165 Lisboa</dd></div>
+        <div><dt>Letters read</dt><dd>Tuesday and Friday mornings</dd></div>
+        <div><dt>By email</dt><dd><a href="mailto:hello@elenavarga.studio">hello@elenavarga.studio</a></dd></div>
+        <div><dt>Course access</dt><dd><a href="index.html#faq">Quick answers →</a></dd></div>
+      </dl>
+    </section>
+
+    <!-- the letter (the one card) -->
+    <div class="letter" id="letter">
+      <div class="top mono"><span>To Elena Varga · Rua da Graça 4</span><span id="today">Lisboa · 25 Oct 2026</span></div>
+
+      <form id="form" novalidate aria-label="Your letter to Elena">
+        <div class="ruled">
+          <p>Dear Elena,</p>
+          <p>my name is <label class="sr" for="name">Your name</label><input class="blank" id="name" name="name" autocomplete="name" placeholder="your name" required aria-describedby="e-name">,</p>
+          <p>and you can write back to me at</p>
+          <p><label class="sr" for="email">Your email</label><input class="blank" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="e-email">.</p>
+          <p class="err" id="e-name">Add your name, so Elena knows who to write back to.</p>
+          <p class="err" id="e-email">Add an email address Elena can reply to, like marta@example.com.</p>
+          <p>I’m writing about <label class="sr" for="topic">What you’re writing about</label><select class="blank" id="topic" name="topic">
+              <option value="taking">a course I’m taking</option>
+              <option value="thinking">a course I’m thinking about</option>
+              <option value="critique">my private critique</option>
+              <option value="commission">a commission or a painting</option>
+              <option value="talk">a talk or a workshop</option>
+              <option value="other">something else</option>
+            </select><span id="courseBit">:</span></p>
+          <p id="courseLine"><label class="sr" for="course">Which course</label><select class="blank" id="course" name="course">
+              <option>01 · Foundations of Drawing</option>
+              <option>02 · The Portrait in Pencil</option>
+              <option>03 · Watercolour Gardens</option>
+              <option>04 · Ink, Line and Silence</option>
+              <option>05 · Plein Air in Oil</option>
+              <option>06 · Abstract Colour</option>
+            </select>.</p>
+          <div class="body-wrap"><label class="sr" for="msg">Your letter</label><textarea class="body" id="msg" name="msg" rows="5" required aria-describedby="e-msg" placeholder="Write as much or as little as you like. If it’s about a drawing, say which topic and lesson."></textarea></div>
+          <p class="err" id="e-msg">Write a line or two first. Even “I’m stuck on Topic 03” is enough.</p>
+          <p class="close">Yours, <span class="sig empty" id="sig" aria-hidden="true">your name</span></p>
+        </div>
+
+        <div class="send">
+          <p class="when">Your letter will be read on <b id="readDay">Tuesday 27 Oct</b>. Most are answered within two working days.</p>
+          <div class="row">
+            <label class="check"><input type="checkbox" name="copy" checked> Send me a copy</label>
+            <button class="btn btn-ink" type="submit">Fold and send <span class="ar" aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </form>
+
+      <div class="done" id="done" tabindex="-1">
+        <span class="stamp" aria-hidden="true">Pinned<b id="stampDay">25 Oct</b>Graça</span>
+        <h2 class="headline h2">Pinned to <em>the drying wall.</em></h2>
+        <p class="txt">Thank you, <span id="doneName">Marta</span>. Elena reads it on <b id="doneDay">Tuesday 27 Oct</b> and writes back to <b id="doneMail">you</b>, usually within two working days.</p>
+        <div class="acts"><a class="btn btn-ink" href="lesson.html">Watch lesson 1 while you wait <span class="ar" aria-hidden="true">→</span></a><button class="btn btn-line btn-plain" type="button" id="again">Write another letter</button></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div class="foot-band">
+<footer class="site-foot">
+  <div class="c"><h3>Learn</h3><a href="courses.html">All courses</a><a href="lesson.html">Free lessons</a><a href="course.html">Gift a course</a><a href="index.html#faq">FAQ</a></div>
+  <div class="c"><div class="ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.9" pathLength="1"/></svg></div><h3>Studio</h3><a href="about.html">About Elena</a><a href="index.html#gallery">Gallery</a><a href="index.html#join">Services</a><a href="style.html">Style</a></div>
+  <div class="c"><h3>Information</h3><a href="contact.html">Contact</a><a href="index.html#join">Commissions</a><a href="index.html#faq">Questions</a><a href="style.html#review">How we review</a></div>
+  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · Made by hand in Lisbon</span></div>
+</footer>
+</div>
+
+<script src="assets/site.js"></script>
+<script>
+  const $ = id => document.getElementById(id);
+  const form = $('form'), letter = $('letter'), name = $('name'), email = $('email'), msg = $('msg'), topic = $('topic');
+  const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const now = new Date();
+  // Letters are read on Tuesday and Friday mornings: today if it's one of those before 10:00, otherwise the next one.
+  const readDay = (() => { const d = new Date(now); if (!([2,5].includes(d.getDay()) && d.getHours() < 10)) do d.setDate(d.getDate() + 1); while (![2,5].includes(d.getDay())); return d; })();
+  const fmt = d => `${DAYS[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`;
+  $('today').textContent = `Lisboa · ${now.getDate()} ${MON[now.getMonth()]} ${now.getFullYear()}`;
+  $('readDay').textContent = fmt(readDay);
+
+  // The signature follows the name; the course line only shows for course letters.
+  const sig = $('sig');
+  name.addEventListener('input', () => { const v = name.value.trim(); sig.textContent = v || 'your name'; sig.classList.toggle('empty', !v); });
+  const syncCourse = () => { const on = ['taking','thinking'].includes(topic.value); $('courseLine').hidden = !on; $('courseBit').textContent = on ? ':' : '.'; };
+  topic.addEventListener('change', syncCourse); syncCourse();
+
+  // Inline checks, errors in terracotta text under the line they belong to.
+  const checks = [[name, 'e-name'], [email, 'e-email'], [msg, 'e-msg']];
+  const check = (el, id) => { const ok = el.checkValidity() && el.value.trim() !== ''; el.setAttribute('aria-invalid', !ok); $(id).classList.toggle('on', !ok); return ok; };
+  checks.forEach(([el, id]) => el.addEventListener('blur', () => { if (el.value) check(el, id); }));
+  checks.forEach(([el, id]) => el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(el, id); }));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const bad = checks.filter(([el, id]) => !check(el, id));
+    if (bad.length) { bad[0][0].focus(); return; }
+    const first = name.value.trim().split(/\s+/)[0];
+    $('doneName').textContent = first; $('doneMail').textContent = email.value.trim(); $('doneDay').textContent = fmt(readDay);
+    $('stampDay').textContent = `${now.getDate()} ${MON[now.getMonth()]}`;
+    const line = msg.value.trim().split(/(?<=[.?!])\s/)[0];
+    $('mineQ').textContent = line.length > 90 ? line.slice(0, 88) + '…' : line;
+    $('mineDay').textContent = 'Read ' + DAYS[readDay.getDay()].slice(0, 3);
+    $('mine').classList.add('on');
+    letter.classList.add('sent'); $('done').focus();
+  });
+  $('again').addEventListener('click', () => { form.reset(); sig.textContent = 'your name'; sig.classList.add('empty'); syncCourse(); letter.classList.remove('sent'); name.focus(); });
+</script>
+</body>
+</html>
