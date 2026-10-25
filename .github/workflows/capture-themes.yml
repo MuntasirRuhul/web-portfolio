@@ -1,0 +1,37 @@
+# Crawls the Tutor LMS theme demos (Pathwise, Workademy, WellThrive) and records every page:
+# URL, title, headings, and one screenshot per page template. Output: research/themes/.
+name: Capture Tutor LMS theme demos
+
+on:
+  push:
+    branches: [atelier-site]
+    paths:
+      - .github/workflows/capture-themes.yml
+      - research/themes/crawl.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null
+          npm install playwright@1.47.2
+          npx playwright install --with-deps chromium
+      - name: Crawl
+        run: node research/themes/crawl.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add research/themes
+          git diff --cached --quiet || { git commit -m "Capture Tutor LMS theme demos"; git pull --rebase; git push; }
