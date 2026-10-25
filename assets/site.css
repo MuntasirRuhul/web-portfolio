@@ -1,0 +1,320 @@
+/* ==========================================================================
+   Elena Varga Atelier · site.css
+   The design language (openspec change: atelier-art-direction), taken from
+   the home page (atelier-v7.html). Line numbers below point at that file.
+   Pages link this file, declare <body data-archetype="gallery|reading|
+   workroom|counter">, and add only page-layout CSS of their own.
+   ========================================================================== */
+
+/* ---------- 1. Tokens ---------- */
+:root{
+  /* colour, by role */
+  --paper:#FAF6EF;          /* gallery ground ............ v7:15 --page */
+  --object:#FFFFFF;         /* cards, frames, reading page  v7:17-18 --band/--card */
+  --room:#161412;           /* dark rooms ................ v7:37 --night */
+  --room-2:#2A2522;         /* raised surface in a room ... v7:38 --night-2 */
+  --on-room:#F3ECDF;        /* text on dark ............... v7:16 --paper */
+  --on-room-2:#A9A092;      /* secondary text on dark ..... v7:40 --dim */
+  --ink:#1D1A16;            /* text ...................... v7:19 */
+  --ink-2:#4A443B;          /* secondary text ............ v7:20 */
+  --muted:#6E6658;          /* tertiary text; v7:21 was #8A8172 (3.57:1 on paper), now 5.26:1 on paper, 5.67:1 on white */
+  --accent:#C0512F;         /* the one accent, terracotta . v7:24 --terra */
+  --accent-on-room:#E8724A; /* accent on dark only ........ v7:39 --accent-lt (6.07:1 on room) */
+  --accent-text:#B24A2B;    /* accent as text under 24px on light grounds: #C0512F is 4.37:1 on paper, this is 4.99:1 */
+  --block-1:#DDA43C;        /* colour blocks, in order .... v7:25 ochre */
+  --block-2:#D9A7A0;        /*                              v7:28 rose */
+  --block-3:#C0512F;        /*                              v7:24 terracotta */
+  --c1:#8F6511; --c2:#A55C52; --c3:#7A3E5E; --c4:#1D1A16; --c5:#C0512F; --c6:#56694A; /* course accents v7:46 */
+  --ink-rgb:29,26,22;
+  --on-room-rgb:243,236,223;
+  --rule:rgba(var(--ink-rgb),.14);        /* hairlines ............ v7:23 */
+  --grid:rgba(var(--ink-rgb),.075);       /* drawing grid lines ... v7:22 --line */
+  --rule-on-room:rgba(var(--on-room-rgb),.12);
+
+  /* type families (v7:30-33; Inter 700 for poster titles v7:223) */
+  --sans:"Inter Tight", system-ui, sans-serif;
+  --display:"Inter", "Inter Tight", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+  --hand:"Caveat", cursive;
+
+  /* type scale
+     display  clamp(40px,5vw,68px)    v7:68 h2
+     h2       clamp(30px,3.5vw,48px)  v7:242 .ab h2
+     h3       clamp(22px,2vw,28px)    v7:319 .rv-block blockquote (step h3 v7:198 runs 24-30px)
+     lead 18px · body 16px (v7:60) · small 14px · mono 10.5px (v7:457)
+     component exceptions: poster captions 9–9.5px (v7:221, v7:231), poster title 36px (v7:223), meta 12–15.5px,
+     block title clamp(24px,2.2vw,30px) (v7:198), FAQ question clamp(20px,2vw,25px) (v7:353) */
+  --t-statement:clamp(56px,6.4vw,96px);   /* one per page at most: the About statement */
+  --t-display:clamp(40px,5vw,68px);
+  --t-h2:clamp(30px,3.5vw,48px);
+  --t-h3:clamp(22px,2vw,28px);
+  --t-lead:18px;
+  --t-body:16px;
+  --t-small:14px;
+  --t-mono:10.5px;
+  --track-head:-.04em;      /* v7:67, v7:242 */
+  --track-display:-.055em;
+  --track-mono:.06em;       /* v7:457 (the effective label tracking) */
+
+  /* spacing scale: 4 · 8 · 12 · 16 · 24 · 32 · 40 · 64 · 96 · 140 */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:40px; --s8:64px; --s9:96px; --s10:140px;
+  --section:clamp(80px,10vw,140px);   /* v7:216 .courses / v7:270 .sec */
+  --gap-stack:10px;                   /* the closing stack's 10px (v7:361, v7:385, v7:406) */
+
+  /* radii (v7:188 room 28 · v7:363/385/406 cards 16 · v7:98 bar 12 · v7:110 pill · discs 50%) */
+  --r-room:28px;
+  --r-room-sm:22px;   /* rooms on phones, v7:488 */
+  --r-card:16px;
+  --r-field:12px;
+  --r-pill:999px;
+
+  /* motion (v7:212 objects · v7:111 lines) */
+  --ease-object:cubic-bezier(.2,.7,.2,1);
+  --ease-line:cubic-bezier(.6,.1,.2,1);
+  --t-reveal:.9s;      /* v7:120 */
+  --t-lift:.45s;       /* v7:212 */
+  --t-draw:1.4s;       /* v7:118 */
+
+  /* layout */
+  --wrap:1200px;
+  --gutter:max(20px, env(safe-area-inset-left, 0px));
+}
+
+/* ---------- 2. Base ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--object);color:var(--ink);font-family:var(--sans);font-size:var(--t-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+body[data-archetype="gallery"],body[data-archetype="counter"]{background:var(--paper)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:calc(var(--wrap) + 2 * 48px);margin:0 auto;padding-left:max(48px,var(--gutter));padding-right:max(48px,var(--gutter))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tabular{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--mono);font-size:var(--t-mono);font-weight:500;letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--muted)}
+.sig{font-family:var(--hand);font-size:32px;font-weight:500;line-height:1}             /* v7 .ab-sig b */
+svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- 3. Layers: paper grain and the drawing grid (opt-in by archetype) ---------- */
+/* grain: v7 body::before, unchanged */
+body[data-archetype="gallery"]::before,.band::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.14;mix-blend-mode:multiply;filter:grayscale(1);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.band{position:relative;isolation:isolate;background:var(--paper)}
+.band::before{position:absolute;z-index:0}
+.band > *{position:relative;z-index:1}
+/* grid: v7 .cols — thirds of the content area */
+.gridlines{position:fixed;inset:0;display:grid;grid-template-columns:repeat(3,1fr);border-right:1px solid var(--grid);pointer-events:none;z-index:0}
+.gridlines i{border-left:1px solid var(--grid)}
+.band > .gridlines{position:absolute;z-index:0}
+body[data-archetype="workroom"] .gridlines,body[data-archetype="counter"] .gridlines{display:none}
+
+/* ---------- 4. Chapter label and headline voice ---------- */
+/* v7 .lbl (73-76) with the v4 override (457) */
+.chapter{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:500;font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink-2);margin-bottom:22px}
+.chapter b{color:var(--accent-text);font-weight:500}
+.chapter::after{content:"";width:34px;height:1px;background:currentColor;order:1}
+.room .chapter{color:var(--on-room-2)}
+.room .chapter b{color:var(--accent-on-room)}
+/* v7 h1,h2,h3 (67-69) */
+.headline{font-family:var(--sans);font-weight:600;line-height:1;letter-spacing:var(--track-head);font-size:var(--t-display);text-wrap:balance}
+.headline.h2{font-size:var(--t-h2);line-height:1.08}
+.headline.h3{font-size:var(--t-h3);line-height:1.1;letter-spacing:-.03em}
+.headline em{font-style:normal;color:var(--accent)}
+.headline.h3 em{color:var(--accent-text)}   /* h3 reaches 22px on phones: small text, so the 4.99:1 shade */
+.room .headline em{color:var(--accent-on-room)}
+.lead{font-size:var(--t-lead);line-height:1.6;max-width:640px}
+.txt{color:var(--ink-2);max-width:420px}                                  /* v7 .txt */
+
+/* ---------- 5. Rooms, objects, colour blocks ---------- */
+.room{background:var(--room);color:var(--on-room);border-radius:var(--r-room);padding:clamp(28px,4vw,52px) clamp(22px,3.4vw,44px)}   /* v7 .panel 188/201 */
+.room .txt{color:var(--on-room-2)}
+.object{background:var(--object);border-radius:var(--r-card)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}         /* v7 .steps */
+.block{display:flex;flex-direction:column;min-height:330px;padding:20px 22px 26px;color:var(--ink);transition:transform var(--t-lift) var(--ease-object)}
+.block:nth-child(1){background:var(--block-1)}
+.block:nth-child(2){background:var(--block-2)}
+.block:nth-child(3){background:var(--block-3);color:#FFFFFF}   /* white 4.71:1; paper text was 4.01:1 */
+.block:hover{transform:translateY(-6px) rotate(-.6deg)}
+.block .n{font-family:var(--mono);font-size:11px;font-weight:500}
+.block svg{width:58px;height:58px;margin-top:38px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.block h3{font-size:clamp(24px,2.2vw,30px);font-weight:600;letter-spacing:var(--track-head);line-height:1;margin-top:auto;padding-top:30px}
+.block p{font-size:var(--t-small);margin-top:8px;opacity:.85}
+.block:nth-child(3) p{opacity:1}
+
+/* ---------- 6. Poster card (v7 .pcard 219-237) ---------- */
+.poster{--pc:var(--c1);display:grid;grid-template-rows:auto auto 1fr auto;aspect-ratio:1/1.18;background:var(--object);color:var(--ink);padding:18px;overflow:hidden;transition:transform var(--t-lift) var(--ease-object)}
+.poster:hover{transform:translateY(-6px)}
+.poster .ptop{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:8px}
+.poster .ptop b{color:var(--pc);font-weight:400}
+.poster h3{font-family:var(--display);font-weight:700;font-size:36px;line-height:.86;letter-spacing:-.065em;margin-top:14px;color:var(--pc)}
+.poster .pic{position:relative;justify-self:end;align-self:stretch;aspect-ratio:3/4;min-height:0;max-width:100%;overflow:hidden;margin:14px 0 12px;background:var(--pc)}
+.poster .pic img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);mix-blend-mode:screen;opacity:.95;transition:filter .6s}
+.poster:hover .pic img,.poster:focus-visible .pic img{filter:none;mix-blend-mode:normal;opacity:1}
+.poster .tag{position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:9px;background:var(--object);color:var(--pc);padding:4px 8px}
+.poster dl{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.poster dl div{border-top:1px solid var(--pc);padding:6px 0 4px}
+.poster dl div:nth-child(-n+2){border-top-width:2px}
+.poster dt{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.poster dd{font-size:var(--t-small);font-weight:600;display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
+.poster:hover .adm::after{content:" → Enrol";font-weight:500;color:var(--pc)}
+.meter{display:inline-flex;flex-direction:column;gap:3px;width:16px;color:var(--pc)}
+.meter i{height:3px;border-radius:2px;background:currentColor;opacity:.25}
+.meter i:nth-child(1){width:100%}.meter i:nth-child(2){width:72%}.meter i:nth-child(3){width:44%}
+.meter[data-l="1"] i:nth-child(3),.meter[data-l="2"] i:nth-child(n+2),.meter[data-l="3"] i{opacity:1}
+
+/* ---------- 7. Buttons and links ---------- */
+/* v7 .btn (110-115): pill with a disc arrow, terracotta wipes in from the left */
+.btn{display:inline-flex;align-items:center;gap:14px;padding:6px 6px 6px 22px;border-radius:var(--r-pill);font-weight:500;font-size:14.5px;position:relative;overflow:hidden;isolation:isolate;transition:color .3s;border:0;min-height:48px}
+.btn::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-101%);transition:transform var(--t-lift) var(--ease-line);z-index:-1}
+.btn:hover::after{transform:none}
+.btn:hover{color:#fff}
+.btn .ar{width:36px;height:36px;border-radius:50%;background:var(--on-room);color:var(--ink);display:grid;place-items:center;font-size:15px;transition:transform .3s}
+.btn:hover .ar{transform:rotate(-45deg)}
+.btn-ink{background:var(--ink);color:var(--on-room)}
+.btn-line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-plain{padding:0 24px}                                                  /* no disc: forms, cards */
+.room .btn-line{color:var(--on-room);border-color:rgba(var(--on-room-rgb),.5)}
+.link{border-bottom:1px solid currentColor;padding-bottom:2px;font-weight:500;transition:color .2s,border-color .2s}
+.link:hover{color:var(--accent-text)}
+.more{font-family:var(--mono);font-size:11px;display:inline-flex;gap:10px;align-items:center;border-bottom:1px solid currentColor;padding-bottom:3px;transition:gap .3s,color .3s}  /* v7 .more */
+.more:hover{gap:16px;color:var(--accent-text)}
+
+/* ---------- 8. Book FAQ (v7 344-358) ---------- */
+.faq-book details{border-top:1px solid var(--rule);padding:22px 0}
+.faq-book details:last-child{border-bottom:1px solid var(--rule)}
+.faq-book summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:clamp(20px,2vw,25px);font-weight:500;letter-spacing:-.02em}
+.faq-book summary::-webkit-details-marker{display:none}
+.faq-book summary::after{content:"";flex:none;width:30px;height:30px;margin-top:-2px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3.5h11.5v15H7.5A1.5 1.5 0 0 0 6 20z'/%3E%3Cpath d='M6 20a1.5 1.5 0 0 0 1.5 1H18.5'/%3E%3Cpath d='M6 4v16'/%3E%3Cpath d='M10 7.5h4.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3.5h11.5v15H7.5A1.5 1.5 0 0 0 6 20z'/%3E%3Cpath d='M6 20a1.5 1.5 0 0 0 1.5 1H18.5'/%3E%3Cpath d='M6 4v16'/%3E%3Cpath d='M10 7.5h4.5'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .35s var(--ease-object)}
+.faq-book summary:hover::after{transform:rotate(-8deg)}
+.faq-book details[open] summary::after{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 6.5C9.6 5 6.6 4.7 3 5.3v13c3.6-.6 6.6-.3 9 1.2 2.4-1.5 5.4-1.8 9-1.2v-13c-3.6-.6-6.6-.3-9 1.2z'/%3E%3Cpath d='M12 6.5v13'/%3E%3Cpath d='M5.5 8.6c1.6-.2 3.1 0 4.4.6M5.5 11.4c1.6-.2 3.1 0 4.4.6M14.1 9.2c1.3-.6 2.8-.8 4.4-.6M14.1 12c1.3-.6 2.8-.8 4.4-.6'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 6.5C9.6 5 6.6 4.7 3 5.3v13c3.6-.6 6.6-.3 9 1.2 2.4-1.5 5.4-1.8 9-1.2v-13c-3.6-.6-6.6-.3-9 1.2z'/%3E%3Cpath d='M12 6.5v13'/%3E%3Cpath d='M5.5 8.6c1.6-.2 3.1 0 4.4.6M5.5 11.4c1.6-.2 3.1 0 4.4.6M14.1 9.2c1.3-.6 2.8-.8 4.4-.6M14.1 12c1.3-.6 2.8-.8 4.4-.6'/%3E%3C/svg%3E");width:34px}
+.faq-book details p{color:var(--ink-2);margin-top:12px;max-width:620px}
+
+/* ---------- 9. Facts table, tabs ---------- */
+.facts{display:grid;grid-template-columns:repeat(var(--cols,4),1fr);border-top:2px solid var(--ink)}
+.facts div{padding:12px 16px 14px;border-left:1px solid var(--rule)}
+.facts div:first-child{border-left:0;padding-left:0}
+.facts dt{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.facts dd{font-size:18px;font-weight:600;letter-spacing:-.01em}
+.tabs{display:flex;gap:32px;border-bottom:1px solid var(--rule);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs > *{display:flex;align-items:center;height:56px;font-size:15.5px;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
+.tabs > *:hover{color:var(--ink)}
+.tabs > [aria-selected="true"],.tabs > [aria-current="page"],.tabs > [aria-current="true"]{color:var(--ink);font-weight:600;border-color:var(--pc,var(--c1))}
+.tabs small{font-family:var(--mono);font-size:11px;position:relative;top:-7px;margin-left:3px}
+
+/* ---------- 10. Forms (Counter) ---------- */
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.field .label{font-family:var(--mono);font-size:var(--t-mono);font-weight:500;letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--ink-2)}
+.field input,.field select,.field textarea{width:100%;min-height:52px;padding:12px 16px;border:1px solid var(--rule);border-radius:var(--r-field);background:var(--paper);font-size:var(--t-body);color:var(--ink);transition:border-color .2s,background .2s}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);background:var(--object)}
+.field .err{display:none;font-size:13.5px;color:var(--accent-text)}
+.field[data-invalid] input,.field[data-invalid] select,.field[data-invalid] textarea{border-color:var(--accent)}
+.field[data-invalid] .err{display:block}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:var(--t-small);color:var(--ink-2)}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:var(--ink)}
+
+/* ---------- 11. Line tick list ---------- */
+.ticks li{display:flex;gap:12px;font-size:15px;line-height:1.5;padding:4px 0}
+.ticks svg.i{color:var(--accent);width:20px;height:20px;margin-top:1px}
+
+/* ---------- 12. Review bar (demo switches, bottom left) ---------- */
+.review-bar{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:4px;background:var(--object);border:1px solid var(--rule);border-radius:var(--r-pill);font-size:12.5px;color:var(--ink-2)}
+.review-bar .grp{display:flex;align-items:center;gap:2px}
+.review-bar .grp + .grp{border-left:1px solid var(--rule);padding-left:4px}
+.review-bar span{padding:0 6px 0 10px}
+.review-bar button{padding:6px 12px;border-radius:var(--r-pill);font-size:12.5px;font-weight:500}
+.review-bar button[aria-pressed="true"]{background:var(--ink);color:var(--object)}
+
+/* ---------- 13. Motion ---------- */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity var(--t-reveal) ease,transform var(--t-reveal) var(--ease-object)}   /* v7 120 */
+.reveal.is-in{opacity:1;transform:none}
+body[data-archetype="workroom"] .reveal{opacity:1!important;transform:none!important;transition:none!important}
+.js .draw path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset var(--t-draw) var(--ease-line)}            /* v7 118 */
+.is-in .draw path,.draw.is-in path{stroke-dashoffset:0}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+  .js .draw path{stroke-dashoffset:0}
+}
+
+/* ---------- 14. Responsive ---------- */
+@media (max-width:900px){
+  .wrap{padding-left:var(--gutter);padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .room{border-radius:var(--r-room-sm)}
+}
+@media (max-width:700px){
+  .steps{grid-template-columns:1fr}
+  .block{min-height:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div{border-left:0;padding-left:0;border-top:1px solid var(--rule)}
+  .facts div:nth-child(-n+2){border-top:0}
+}
+
+/* ---------- 15. Brand mark (v7 .logo/.strokes 99-102): three painted strokes + name ---------- */
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:-.02em;color:inherit}
+.brand .strokes{display:flex;gap:3px}
+.brand .strokes i{width:3px;height:13px;border-radius:1px;background:var(--block-1)}
+.brand .strokes i:nth-child(2){background:var(--block-2)}
+.brand .strokes i:nth-child(3){background:var(--block-3)}
+.brand span{font-weight:400;color:var(--muted)}
+.room .brand span{color:var(--on-room-2)}
+
+/* ---------- 16. Light page header (shared by every page outside the home hero) ---------- */
+.site-head{position:relative;z-index:40;background:var(--object);border-bottom:1px solid var(--rule)}
+body[data-archetype="gallery"] .site-head,body[data-archetype="counter"] .site-head{background:var(--paper)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.site-head nav{display:flex;align-items:center;gap:28px;font-size:14.5px;color:var(--ink-2)}
+.site-head nav a:hover{color:var(--ink)}
+.site-head nav [aria-current="page"]{color:var(--ink);font-weight:500}
+.site-head .login{background:var(--ink);color:var(--object);padding:8px 16px;border-radius:var(--r-pill)}
+.site-head .login:hover{background:var(--accent);color:#fff}
+
+/* ---------- 17. Footer room (v7 footer 406-417) ---------- */
+.site-foot{position:relative;z-index:1;margin:0 10px 10px;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;background:var(--room);color:var(--on-room-2);border-radius:var(--r-card);overflow:hidden}
+.site-foot .c{position:relative;min-height:300px;padding:72px 20px 56px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:var(--t-small)}
+.site-foot .c + .c{border-left:1px solid var(--rule-on-room)}
+.site-foot h3{font-family:var(--mono);font-weight:500;font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--on-room);margin-bottom:16px}
+.site-foot a:hover{color:var(--accent-on-room)}
+.site-foot .base{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);font-size:12px;border-top:1px solid var(--rule-on-room)}
+.site-foot .base span{padding:20px 0 24px}
+.site-foot .ring{position:absolute;left:50%;top:50%;width:min(360px,120%);aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.site-foot .ring svg{width:100%;height:100%;overflow:visible}
+.site-foot .ring circle{fill:none;stroke:rgba(var(--on-room-rgb),.34);stroke-width:.3;stroke-dasharray:1;stroke-dashoffset:1}
+.site-foot.ring-on .ring circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s var(--ease-line) .3s}
+@media (max-width:900px){
+  .site-head nav a:not(.login){display:none}
+  .site-foot{grid-template-columns:1fr}
+  .site-foot .c + .c{border-left:0;border-top:1px solid var(--rule-on-room)}
+  .site-foot .base{grid-template-columns:1fr}
+  .site-foot .base span{padding:12px 0}
+}
+@media (prefers-reduced-motion:reduce){.site-foot .ring circle{stroke-dashoffset:0}}
+
+/* ---------- 18. Do / don't pairs (style page and reviews) ---------- */
+.pair-dd{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.do,.dont{position:relative;border-radius:var(--r-card);padding:28px 24px 20px;background:var(--object)}
+.do > .tag-dd,.dont > .tag-dd{display:flex;align-items:center;gap:8px;margin-top:20px;padding-top:12px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase}
+.do > .tag-dd{color:var(--ink)}
+.dont > .tag-dd{color:var(--accent-text);text-decoration:line-through;text-decoration-thickness:1px}
+.dont{background:transparent;border:1px dashed var(--rule)}
+@media (max-width:700px){.pair-dd{grid-template-columns:1fr}}
+
+/* ---------- 19. Phone menu for the light header ---------- */
+.menu-btn{display:none;align-items:center;gap:8px;font-size:14.5px;color:var(--ink)}
+.menu-btn svg{width:18px;height:18px;transition:transform .25s}
+.menu-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.site-menu{position:absolute;left:0;right:0;top:100%;background:inherit;border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px}
+.site-menu[hidden]{display:none}
+.site-menu a{display:flex;justify-content:space-between;padding:12px 0;font-size:18px;font-weight:500;border-bottom:1px solid var(--rule)}
+.site-menu a::after{content:"→";color:var(--accent-text)}
+.site-menu a:hover{color:var(--accent-text)}
+@media (max-width:900px){.menu-btn{display:inline-flex}}
+
+/* ---------- 20. Solo / Academy mode (html[data-mode], set before first paint) ---------- */
+html[data-mode="academy"] .m-solo,html:not([data-mode="academy"]) .m-academy{display:none!important}
+.teacher-line{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
+.teacher-line i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:600;background:var(--paper);color:var(--ink);border:1px solid var(--rule)}

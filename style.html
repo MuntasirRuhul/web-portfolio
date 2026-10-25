@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style · Elena Varga Atelier</title>
+<meta name="description" content="The Atelier’s design language: principles, colour, type, spacing, grid, voice, imagery, details, components, motion and page archetypes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+/* Style reference · page layout only. Every sample below is drawn by assets/site.css. */
+.sg-hero{padding:var(--section) 0 var(--s8)}
+.sg-hero .lead{margin-top:24px;color:var(--ink-2)}
+.toc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--s8);border-top:1px solid var(--ink)}
+.toc a{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule);font-size:15px;transition:color .2s}
+.toc a:hover{color:var(--accent-text)}
+.toc a b{font-family:var(--mono);font-size:var(--t-mono);font-weight:500;color:var(--accent-text);letter-spacing:var(--track-mono)}
+.toc a:nth-child(3n+2),.toc a:nth-child(3n){padding-left:20px}
+
+.ch{padding:var(--section) 0;border-top:1px solid var(--rule)}
+.ch-head{display:grid;grid-template-columns:1fr 2fr;gap:var(--s7);margin-bottom:var(--s8)}
+.ch-head .txt{max-width:440px;align-self:end}
+.ch h3.sub{font-size:var(--t-small);font-weight:600;margin:var(--s7) 0 var(--s4)}
+.cap{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--muted);margin-top:10px}
+
+/* 01 principles */
+.princ{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.princ li{display:flex;flex-direction:column;min-height:280px;padding:20px 20px 22px;background:var(--object);border-radius:var(--r-card)}
+.princ .n{font-family:var(--mono);font-size:var(--t-mono);color:var(--accent-text)}
+.princ b{display:block;margin-top:auto;font-size:var(--t-h3);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.princ p{font-size:var(--t-small);color:var(--ink-2);margin-top:10px}
+.princ .w{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--muted);margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
+
+/* 02 colour */
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.sw li{background:var(--object);border-radius:var(--r-card);overflow:hidden}
+.sw .chip{height:108px;margin:10px 10px 0;border-radius:var(--r-field);border:1px solid var(--rule)}
+.sw .meta{padding:14px 16px 16px}
+.sw .meta b{display:block;font-weight:600}
+.sw .meta span{display:block;font-size:13.5px;color:var(--ink-2)}
+.sw .meta code{display:block;font-family:var(--mono);font-size:12px;color:var(--ink);margin-top:8px}
+.sw .ratio{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:4px}
+.accents{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.accents li{border-top:2px solid var(--c);padding-top:10px;font-size:var(--t-small)}
+.accents li b{display:block;font-family:var(--display);font-size:36px;letter-spacing:-.065em;line-height:.9;color:var(--c)}
+.accents code{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+
+/* 03 type */
+.type li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--rule)}
+.type li:first-child{border-top:1px solid var(--ink)}
+.type .spec{font-family:var(--mono);font-size:12px;color:var(--ink-2);line-height:1.5}
+.type .spec b{display:block;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:var(--track-mono);font-size:var(--t-mono)}
+.fam{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:var(--s7)}
+.fam li{background:var(--object);border-radius:var(--r-card);padding:20px}
+.fam .g{font-size:56px;line-height:1;letter-spacing:-.04em}
+.fam p{font-size:13.5px;color:var(--ink-2);margin-top:12px}
+.fam .g.sig{white-space:nowrap;font-size:clamp(40px,4vw,56px)!important}
+
+/* 04 spacing & radii */
+.space li{display:grid;grid-template-columns:80px minmax(0,1fr);gap:16px;align-items:center;padding:6px 0}
+.space i{display:block;height:8px;background:var(--block-1);border-radius:2px}
+.space code{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.radii{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end}
+.radii .r{height:140px;background:var(--object);border:1px solid var(--rule)}
+.radii .r.room{background:var(--room);border:0}
+.radii .r.pill{height:48px}
+.radii .r.disc{height:auto;aspect-ratio:1;width:96px;border-radius:50%}
+
+/* 05 grid & construction */
+.canvas{position:relative;height:420px;border-radius:var(--r-card);background:var(--object);overflow:hidden}
+.canvas .gridlines{position:absolute}
+.canvas .circle{position:absolute;left:33.333%;top:50%;height:86%;aspect-ratio:1;transform:translate(-50%,-50%)}
+.canvas .circle circle{fill:none;stroke:rgba(var(--ink-rgb),.4);stroke-width:.25;stroke-dasharray:1;stroke-dashoffset:1}
+.canvas.is-in .circle circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s var(--ease-line) .2s}
+@media (prefers-reduced-motion:reduce){.canvas .circle circle{stroke-dashoffset:0}}
+.canvas .hl{position:absolute;left:8%;right:20%;top:50%;border-top:1px solid rgba(var(--ink-rgb),.2)}
+.canvas .on{position:absolute;left:calc(33.333% + 16px);top:calc(50% + 18px);max-width:52%}
+.canvas .on .headline{font-size:var(--t-h3)}
+
+/* 06 voice */
+.voice-do .headline{font-size:var(--t-h2)}
+.voice-dont h2{font-size:var(--t-h2);font-weight:600;letter-spacing:-.04em;line-height:1}
+
+/* 07 imagery */
+.imgs{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:10px}
+.imgs figure{margin:0}
+.imgs .ph{aspect-ratio:4/5;overflow:hidden;border-radius:var(--r-card);background:var(--object)}
+.imgs .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:filter .6s,transform .6s var(--ease-object)}
+.imgs .ph:hover img,.imgs .ph:focus-within img{filter:none;transform:scale(1.02)}
+.imgs .cut{display:grid;place-items:center;background:var(--paper)}
+.imgs .cut img{height:auto;object-fit:contain;filter:grayscale(1) contrast(1.18) brightness(1.04);mix-blend-mode:multiply}
+.initials{display:flex;gap:10px;margin-top:12px}
+.initials i{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:600;font-size:var(--t-small);background:var(--paper);color:var(--ink-2);border:1px solid var(--rule)}
+
+/* 08 micro */
+.chars{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--ink)}
+.chars li{padding:18px 0 14px;border-bottom:1px solid var(--rule)}
+.chars b{display:block;font-size:44px;font-weight:500;line-height:1}
+.chars span{display:block;font-size:13px;color:var(--ink-2);margin-top:8px}
+.tick-row{display:flex;align-items:center;gap:12px;font-size:15px}
+.tick-row svg.i{width:20px;height:20px;color:var(--accent)}
+.bad-tick{width:20px;height:20px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:700}
+.bad-pill{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:var(--r-pill);background:var(--rule);font-size:12px}
+.sup{font-family:var(--mono);font-size:11px;color:var(--accent-text);position:relative;top:-7px;margin-left:3px}
+.dd-stack{display:grid;gap:12px}
+
+/* 09 components */
+.comp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.comp > div{background:var(--object);border-radius:var(--r-card);padding:28px 24px}
+.comp > div.span2{grid-column:1/-1}
+.comp > div.on-room{background:var(--room);color:var(--on-room)}
+.comp .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.comp .poster-wrap{max-width:340px}
+.rb-static{position:static!important;display:inline-flex}
+
+/* 10 motion */
+.motion{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.motion > div{background:var(--object);border-radius:var(--r-card);padding:24px;min-height:300px;display:flex;flex-direction:column}
+.motion .stage{flex:1;display:grid;place-items:center;margin:16px 0}
+.motion .chip-m{width:120px;height:150px;background:var(--block-1);transition:transform var(--t-lift) var(--ease-object)}
+.motion .chip-m:hover{transform:translateY(-6px) rotate(-.6deg)}
+.motion .rv{width:140px;height:110px;background:var(--block-2)}
+.motion .rv.go{animation:rise var(--t-reveal) var(--ease-object) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.motion svg.curve{width:100%;height:120px;overflow:visible}
+.motion svg.curve path{fill:none;stroke-width:2;stroke-linecap:round}
+.motion .drawn{width:140px;height:140px;overflow:visible}
+.motion .drawn circle{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1}
+.motion .drawn.go circle{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s var(--ease-line)}
+.replay{align-self:flex-start;margin-top:var(--s5)}
+
+/* 11 archetypes */
+.arch{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.arch li{background:var(--object);border-radius:var(--r-card);overflow:hidden;display:flex;flex-direction:column}
+.arch .thumb{aspect-ratio:4/3;position:relative;padding:14px;display:grid;gap:6px;align-content:start}
+.arch .thumb i{display:block;height:6px;border-radius:2px;background:rgba(var(--ink-rgb),.18)}
+.arch .t-gallery{background:var(--paper);background-image:linear-gradient(90deg,transparent calc(33.33% - 1px),var(--grid) 0,var(--grid) 33.33%,transparent 0,transparent calc(66.66% - 1px),var(--grid) 0,var(--grid) 66.66%,transparent 0)}
+.arch .t-gallery .big{height:14px;width:70%;background:var(--ink)}
+.arch .t-gallery .rm{height:44px;border-radius:8px;background:var(--room);margin-top:6px}
+.arch .t-reading{background:var(--object)}
+.arch .t-reading .rm{height:36px;border-radius:0;background:var(--room)}
+.arch .t-reading .col{width:62%}
+.arch .t-reading .band{height:24px;border-radius:4px;background:var(--paper);margin-top:4px}
+.arch .t-work{background:var(--object);grid-template-columns:30% 1fr;gap:8px}
+.arch .t-work .side{grid-row:1/4;background:var(--paper);border-radius:4px;height:100%}
+.arch .t-work .vid{height:44px;border-radius:4px;background:var(--room)}
+.arch .t-counter{background:var(--paper);grid-template-columns:1fr 1fr;gap:8px}
+.arch .t-counter .rm{grid-row:1/4;background:var(--room);border-radius:6px;height:100%}
+.arch .t-counter .card{background:var(--object);border-radius:6px;height:100%;grid-row:1/4;padding:8px;display:grid;gap:5px;align-content:center}
+.arch .t-counter .card i{height:8px;border-radius:2px;background:var(--paper);border:1px solid var(--rule)}
+.arch .body{padding:18px 18px 20px;border-top:1px solid var(--rule);flex:1;display:flex;flex-direction:column}
+.arch .body b{font-size:20px;font-weight:600;letter-spacing:-.03em}
+.arch .body p{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.arch .body .ex{margin-top:auto;padding-top:14px;font-size:13.5px}
+.arch .body .ex a{border-bottom:1px solid currentColor}
+.arch .body .ex a:hover{color:var(--accent-text)}
+
+.closing{padding:var(--section) 0;text-align:center}
+.closing .sig{font-size:40px;margin-top:var(--s5)}
+
+@media (max-width:1100px){
+  .princ{grid-template-columns:repeat(3,1fr)}
+  .arch{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .ch-head{grid-template-columns:1fr;gap:var(--s4)}
+  .toc{grid-template-columns:1fr 1fr}
+  .toc a:nth-child(3n+2),.toc a:nth-child(3n){padding-left:0}
+  .toc a:nth-child(even){padding-left:16px}
+  .sw{grid-template-columns:1fr 1fr}
+  .accents{grid-template-columns:repeat(3,1fr);row-gap:20px}
+  .fam{grid-template-columns:1fr 1fr}
+  .radii{grid-template-columns:repeat(3,1fr)}
+  .imgs{grid-template-columns:1fr 1fr}
+  .imgs figure:first-child{grid-column:1/-1}
+  .chars{grid-template-columns:repeat(3,1fr)}
+  .comp{grid-template-columns:1fr}
+  .motion{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .princ{grid-template-columns:1fr}
+  .princ li{min-height:0}
+  .princ b{margin-top:28px}
+  .toc{grid-template-columns:1fr}
+  .toc a:nth-child(even){padding-left:0}
+  .type li{grid-template-columns:1fr;gap:6px}
+  .arch{grid-template-columns:1fr}
+  .canvas{height:360px}
+  .canvas .on{left:16px;right:16px;max-width:none;top:auto;bottom:16px}
+}
+</style>
+</head>
+<body data-archetype="gallery">
+<div class="gridlines" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.8c1.6 1.4 3 3 4.3 4.7 2.9-4.6 6.4-8.6 10.7-11.8" stroke-width="2.2"/></symbol>
+</svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="course.html">A course</a>
+      <a href="lesson.html">A lesson</a>
+      <a href="style.html" aria-current="page">Style</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" style="position:relative;z-index:1">
+
+  <section class="sg-hero">
+    <p class="chapter reveal"><b>00</b>Style</p>
+    <h1 class="headline reveal">The Atelier, drawn up <em>as rules.</em></h1>
+    <p class="lead reveal">An artist’s studio, presented as a gallery. This page keeps the taste of the home page in one place, from a hairline to a whole page, so every new page is made of the same marks. Every sample below is the real CSS the site uses.</p>
+    <nav class="toc reveal" aria-label="Chapters">
+      <a href="#principles"><b>01</b>Principles</a><a href="#colour"><b>02</b>Colour</a><a href="#type"><b>03</b>Type</a>
+      <a href="#space"><b>04</b>Spacing and radii</a><a href="#grid"><b>05</b>Grid and construction</a><a href="#voice"><b>06</b>Labels and voice</a>
+      <a href="#imagery"><b>07</b>Imagery</a><a href="#micro"><b>08</b>Micro-details</a><a href="#components"><b>09</b>Components</a>
+      <a href="#motion"><b>10</b>Motion</a><a href="#archetypes"><b>11</b>Archetypes</a><a href="#review"><b>12</b>Review</a>
+    </nav>
+  </section>
+
+  <!-- 01 -->
+  <section class="ch" id="principles" aria-labelledby="h1p">
+    <div class="ch-head"><div><p class="chapter"><b>01</b>Principles</p><h2 class="headline h2" id="h1p">Five rules the eye <em>can feel.</em></h2></div><p class="txt">Every decision on every page should be traceable to one of these. If it isn’t, it’s probably noise.</p></div>
+    <ol class="princ">
+      <li><span class="n">01</span><b>The studio is the gallery.</b><p>Sections are things in Elena’s studio: posters, a wall, letters, labels. Never “a features grid”.</p><span class="w">Courses hung like posters</span></li>
+      <li><span class="n">02</span><b>Drawn, then painted.</b><p>Structure is grey line on paper. Colour arrives late, in a few deliberate blocks.</p><span class="w">Look · Sketch · Paint</span></li>
+      <li><span class="n">03</span><b>Look longer.</b><p>Generous space, slow motion, one idea per section. Nothing hurries the eye.</p><span class="w">140px between chapters</span></li>
+      <li><span class="n">04</span><b>The hand is present.</b><p>A signature, an irregular paint pot, a card tilted half a degree. Never a wobble filter.</p><span class="w">Elena V.</span></li>
+      <li><span class="n">05</span><b>Quiet labels, loud statements.</b><p>10.5px mono captions beside 68px sentence headlines. Nothing in between shouts.</p><span class="w">04 The collection ——</span></li>
+    </ol>
+  </section>
+
+  <!-- 02 -->
+  <section class="ch" id="colour" aria-labelledby="h2c">
+    <div class="ch-head"><div><p class="chapter"><b>02</b>Colour</p><h2 class="headline h2" id="h2c">Paper, ink, and <em>one accent.</em></h2></div><p class="txt">Colours have jobs, not names. Ratios are measured live from this page’s CSS against paper and white.</p></div>
+    <ul class="sw" id="swatches">
+      <li data-c="--paper"><div class="chip" style="background:var(--paper)"></div><div class="meta"><b>Paper</b><span>Gallery ground</span><code></code><p class="ratio"></p></div></li>
+      <li data-c="--object"><div class="chip" style="background:var(--object)"></div><div class="meta"><b>Object</b><span>Cards, frames, reading pages</span><code></code><p class="ratio"></p></div></li>
+      <li data-c="--room"><div class="chip" style="background:var(--room)"></div><div class="meta"><b>Room</b><span>Dark panels, footer, hero</span><code></code><p class="ratio"></p></div></li>
+      <li data-c="--ink"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>Ink</b><span>Text</span><code></code><p class="ratio"></p></div></li>
+      <li data-c="--ink-2"><div class="chip" style="background:var(--ink-2)"></div><div class="meta"><b>Ink 2</b><span>Secondary text</span><code></code><p class="ratio"></p></div></li>
+      <li data-c="--muted"><div class="chip" style="background:var(--muted)"></div><div class="meta"><b>Muted</b><span>Captions, meta</span><code></code><p class="ratio"></p></div></li>
+      <li data-c="--accent"><div class="chip" style="background:var(--accent)"></div><div class="meta"><b>Accent</b><span>One phrase, one button</span><code></code><p class="ratio"></p></div></li>
+      <li data-c="--accent-text"><div class="chip" style="background:var(--accent-text)"></div><div class="meta"><b>Accent text</b><span>Accent under 24px on light</span><code></code><p class="ratio"></p></div></li>
+    </ul>
+    <h3 class="sub">Colour blocks, always in this order</h3>
+    <div class="steps" aria-hidden="true" style="max-width:720px"><div class="block" style="min-height:120px"><span class="n">01</span><h3>Ochre</h3></div><div class="block" style="min-height:120px"><span class="n">02</span><h3>Rose</h3></div><div class="block" style="min-height:120px"><span class="n">03</span><h3>Terracotta</h3></div></div>
+    <h3 class="sub">One accent per course</h3>
+    <ul class="accents">
+      <li style="--c:var(--c1)"><b>01</b>Pencil <code>#8F6511</code></li><li style="--c:var(--c2)"><b>02</b>Graphite <code>#A55C52</code></li><li style="--c:var(--c3)"><b>03</b>Watercolour <code>#7A3E5E</code></li>
+      <li style="--c:var(--c4)"><b>04</b>Ink <code>#1D1A16</code></li><li style="--c:var(--c5)"><b>05</b>Oil <code>#C0512F</code></li><li style="--c:var(--c6)"><b>06</b>Acrylic <code>#56694A</code></li>
+    </ul>
+    <h3 class="sub">Accent discipline</h3>
+    <div class="pair-dd">
+      <div class="do"><p class="headline h3">Six courses, hung <em>like posters.</em></p><p class="tag-dd">Do · one phrase lands the sentence</p></div>
+      <div class="dont"><p class="headline h3"><em>Six</em> courses, <em>hung</em> like <em>posters.</em></p><p class="tag-dd">Don’t · accent everywhere is no accent</p></div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="ch" id="type" aria-labelledby="h3t">
+    <div class="ch-head"><div><p class="chapter"><b>03</b>Type</p><h2 class="headline h2" id="h3t">One sans, one mono, <em>one hand.</em></h2></div><p class="txt">Tight headlines, calm body, tiny uppercase labels. Seven steps cover every page; anything else is a named component.</p></div>
+    <ul class="type">
+      <li><span class="spec"><b>Display</b>clamp(40, 5vw, 68) · 600 · −.04em</span><span class="headline">Look longer.</span></li>
+      <li><span class="spec"><b>H2</b>clamp(30, 3.5vw, 48) · 600</span><span class="headline h2">Six topics, one drawing at a time.</span></li>
+      <li><span class="spec"><b>H3</b>clamp(22, 2vw, 28) · 600</span><span class="headline h3">Three values, not seven.</span></li>
+      <li><span class="spec"><b>Lead</b>18 · 400 · 1.6</span><span class="lead" style="font-size:var(--t-lead)">Most people who think they can’t draw were never taught to look.</span></li>
+      <li><span class="spec"><b>Body</b>16 · 400 · 1.6</span><span style="font-size:var(--t-body);color:var(--ink-2)">You need no experience and very few materials. By week six you’ll have one finished drawing.</span></li>
+      <li><span class="spec"><b>Small</b>14 · 400</span><span style="font-size:var(--t-small);color:var(--ink-2)">One payment · lifetime access · 14-day refund</span></li>
+      <li><span class="spec"><b>Mono</b>10.5 · 500 · +.06em · caps</span><span class="mono">Her brushes, in order of use · No. 2 … No. 24</span></li>
+    </ul>
+    <ul class="fam">
+      <li><span class="g" style="font-family:var(--sans);font-weight:600">Aa</span><p>Inter Tight · text and headings</p></li>
+      <li><span class="g" style="font-family:var(--display);font-weight:700;letter-spacing:-.065em">Aa</span><p>Inter 700 · poster titles, numerals</p></li>
+      <li><span class="g" style="font-family:var(--mono);font-size:44px">Aa</span><p>JetBrains Mono · labels, captions</p></li>
+      <li><span class="g sig" style="font-size:56px">Elena V.</span><p>Caveat · the signature, nothing else</p></li>
+    </ul>
+    <h3 class="sub">Emphasis</h3>
+    <div class="pair-dd">
+      <div class="do"><p style="font-size:var(--t-lead)">“How do you actually <b style="font-weight:600">see</b> that?”</p><p class="tag-dd">Do · weight and curly quotes</p></div>
+      <div class="dont"><p style="font-size:var(--t-lead);font-family:Georgia,serif;font-style:italic">How do you actually see that?</p><p class="tag-dd">Don’t · italics or a serif</p></div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="ch" id="space" aria-labelledby="h4s">
+    <div class="ch-head"><div><p class="chapter"><b>04</b>Spacing and radii</p><h2 class="headline h2" id="h4s">Room to look, <em>corners that agree.</em></h2></div><p class="txt">Ten spacing steps and five corner radii. Separation comes from space, colour and hairlines, never from shadows.</p></div>
+    <ul class="space" aria-label="Spacing scale">
+      <li><code>4</code><i style="width:4px"></i></li><li><code>8</code><i style="width:8px"></i></li><li><code>12</code><i style="width:12px"></i></li><li><code>16</code><i style="width:16px"></i></li><li><code>24</code><i style="width:24px"></i></li>
+      <li><code>32</code><i style="width:32px"></i></li><li><code>40</code><i style="width:40px"></i></li><li><code>64</code><i style="width:64px"></i></li><li><code>96</code><i style="width:96px"></i></li><li><code>140</code><i style="width:140px"></i></li>
+    </ul>
+    <h3 class="sub">Radii</h3>
+    <div class="radii">
+      <div><div class="r room" style="border-radius:var(--r-room)"></div><p class="cap">28 · room</p></div>
+      <div><div class="r" style="border-radius:var(--r-card)"></div><p class="cap">16 · card</p></div>
+      <div><div class="r" style="border-radius:var(--r-field)"></div><p class="cap">12 · field, bar</p></div>
+      <div><div class="r pill" style="border-radius:var(--r-pill)"></div><p class="cap">999 · pill</p></div>
+      <div><div class="r disc"></div><p class="cap">50% · disc</p></div>
+    </div>
+    <h3 class="sub">Separation</h3>
+    <div class="pair-dd">
+      <div class="do" style="background:var(--paper)"><div style="background:var(--object);border-radius:var(--r-card);padding:20px">A white object on paper.</div><p class="tag-dd">Do · colour and space</p></div>
+      <div class="dont"><div style="background:var(--object);border-radius:14px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.15)">A floating card with a 14px corner.</div><p class="tag-dd">Don’t · drop shadows, odd radii</p></div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="ch" id="grid" aria-labelledby="h5g">
+    <div class="ch-head"><div><p class="chapter"><b>05</b>Grid and construction</p><h2 class="headline h2" id="h5g">Drawn on <em>construction lines.</em></h2></div><p class="txt">Gallery pages carry the drawing grid: thin lines at the thirds. Labels, headlines and rules start on a line. One construction circle per page may draw itself in.</p></div>
+    <div class="canvas" id="canvas">
+      <div class="gridlines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="hl" aria-hidden="true"></span>
+      <svg class="circle" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.9" pathLength="1"/></svg>
+      <div class="on"><p class="chapter"><b>02</b>The artist</p><p class="headline">Starts on the line.</p></div>
+    </div>
+    <p class="cap">Grid lines rgba(ink, .075) · construction circle .25 stroke, drawn in 2.4s</p>
+  </section>
+
+  <!-- 06 -->
+  <section class="ch" id="voice" aria-labelledby="h6v">
+    <div class="ch-head"><div><p class="chapter"><b>06</b>Labels and voice</p><h2 class="headline h2" id="h6v">Say it like <em>a caption.</em></h2></div><p class="txt">Each section opens with a numbered chapter label, then a plain sentence that ends in a full stop. Nouns belong in labels and tabs, never as headlines.</p></div>
+    <div class="pair-dd">
+      <div class="do voice-do"><p class="chapter"><b>02</b>Curriculum</p><h3 class="headline">Six topics, one drawing <em>at a time.</em></h3><p class="tag-dd">Do · label names it, headline says it</p></div>
+      <div class="dont voice-dont"><h2>Curriculum</h2><p style="color:var(--ink-2);margin-top:8px">6 topics · 21 lessons</p><p class="tag-dd">Don’t · a UI noun as the headline</p></div>
+    </div>
+    <h3 class="sub">Headlines from the house</h3>
+    <ul class="type">
+      <li><span class="spec"><b>Home</b>Hero</span><span class="headline h3">Elena Varga. Learn to draw what you see.</span></li>
+      <li><span class="spec"><b>Home</b>Method</span><span class="headline h3">Look. Sketch. <em>Paint.</em></span></li>
+      <li><span class="spec"><b>Home</b>Courses</span><span class="headline h3">Six courses, hung <em>like posters.</em></span></li>
+      <li><span class="spec"><b>Home</b>Reviews</span><span class="headline h3">Letters from <em>the wall.</em></span></li>
+      <li><span class="spec"><b>Course</b>Teacher</span><span class="headline h3">Taught by Elena, <em>at her own table.</em></span></li>
+    </ul>
+  </section>
+
+  <!-- 07 -->
+  <section class="ch" id="imagery" aria-labelledby="h7i">
+    <div class="ch-head"><div><p class="chapter"><b>07</b>Imagery</p><h2 class="headline h2" id="h7i">Grey at rest, <em>colour on touch.</em></h2></div><p class="txt">Photographs are greyscale with a little contrast. Colour is a reward for attention. Cut-outs multiply into the paper. People other than Elena appear as initials, never as stock faces with names.</p></div>
+    <div class="imgs">
+      <figure><div class="ph" tabindex="0"><img src="img/1505569127510-bde1536937bc-w600.jpg" alt="A hand drawing in a sketchbook, shown in grey until hovered"></div><figcaption class="cap">Hover or focus · colour returns</figcaption></figure>
+      <figure><div class="ph cut"><img src="img/1693588516818-a4cbe7b49ae2-w900.jpg" alt="A row of brushes multiplied into the paper"></div><figcaption class="cap">Cut-out · multiply on paper</figcaption></figure>
+      <figure><a class="poster" style="--pc:var(--c3)" href="course.html" aria-label="Watercolour Gardens, example poster"><div class="ptop"><span>Elena Varga Atelier</span><b>No. 03 · Watercolour</b></div><h3>Watercolour<br>gardens</h3><div class="pic"><img src="img/1700608277944-98b04da666ba-w600.jpg" alt=""></div><dl><div><dt>Level</dt><dd>Beginner</dd></div><div><dt>Lessons</dt><dd>20</dd></div></dl></a><figcaption class="cap">Poster · screen-mixed into the course colour</figcaption></figure>
+    </div>
+    <h3 class="sub">Students and teachers who aren’t Elena</h3>
+    <div class="initials" aria-label="Initials for named students"><i>MK</i><i>PS</i><i>LM</i><i>TH</i></div>
+  </section>
+
+  <!-- 08 -->
+  <section class="ch" id="micro" aria-labelledby="h8m">
+    <div class="ch-head"><div><p class="chapter"><b>08</b>Micro-details</p><h2 class="headline h2" id="h8m">The small marks <em>carry the taste.</em></h2></div><p class="txt">Real typographic characters, line icons with round caps, plain ticks, and counts that sit quietly beside their words.</p></div>
+    <ul class="chars">
+      <li><b>“ ”</b><span>Curly quotes</span></li><li><b>’</b><span>Apostrophe</span></li><li><b>·</b><span>Separator</span></li>
+      <li><b>→</b><span>Onward link</span></li><li><b>×</b><span>Dimensions</span></li><li><b>–</b><span>Ranges, 4–6</span></li>
+    </ul>
+    <div class="dd-stack" style="margin-top:var(--s7)">
+      <div class="pair-dd">
+        <div class="do"><p class="tick-row"><svg class="i"><use href="#i-check"/></svg>Measure proportions with only your pencil</p><p class="tag-dd">Do · a plain line tick</p></div>
+        <div class="dont"><p class="tick-row"><span class="bad-tick">✓</span>Measure proportions with only your pencil</p><p class="tag-dd">Don’t · a round tick badge</p></div>
+      </div>
+      <div class="pair-dd">
+        <div class="do"><p style="font-size:15.5px;font-weight:600">Reviews<span class="sup">612</span></p><p class="tag-dd">Do · a superscript count</p></div>
+        <div class="dont"><p style="font-size:15.5px;font-weight:600">Reviews<span class="bad-pill">612</span></p><p class="tag-dd">Don’t · a pill badge</p></div>
+      </div>
+      <div class="pair-dd">
+        <div class="do"><p>21 lessons · 6 h 10 min · Beginner</p><p class="tag-dd">Do · middle dots</p></div>
+        <div class="dont"><p>21 lessons - 6h10 - beginner</p><p class="tag-dd">Don’t · hyphens as separators</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 -->
+  <section class="ch" id="components" aria-labelledby="h9c">
+    <div class="ch-head"><div><p class="chapter"><b>09</b>Components</p><h2 class="headline h2" id="h9c">Made once, <em>hung everywhere.</em></h2></div><p class="txt">Each sample is the class a page uses. Tab through them: every one shows the terracotta focus ring.</p></div>
+    <div class="comp">
+      <div><p class="mono" style="margin-bottom:16px">Buttons</p><div class="row"><a class="btn btn-ink" href="#components">Explore the courses <span class="ar" aria-hidden="true">→</span></a><a class="btn btn-line btn-plain" href="#components">Watch lesson 1 free</a></div></div>
+      <div><p class="mono" style="margin-bottom:16px">Links</p><div class="row"><a class="link" href="#components">More about Elena</a><a class="more" href="#components">See the courses →</a></div></div>
+      <div><p class="mono" style="margin-bottom:16px">Chapter label and headline</p><p class="chapter"><b>04</b>The collection</p><p class="headline h2">Six courses, hung <em>like posters.</em></p></div>
+      <div><p class="mono" style="margin-bottom:16px">Facts</p><dl class="facts" style="--cols:3"><div><dt>Lessons</dt><dd>21</dd></div><div><dt>Length</dt><dd>6 h 10 min</dd></div><div><dt>Level</dt><dd>Beginner</dd></div></dl></div>
+      <div class="span2 on-room room" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:32px"><div><p class="chapter"><b>03</b>How you’ll learn</p><p class="headline h2">Look. Sketch. <em>Paint.</em></p><p class="txt" style="margin-top:16px">Room · 28px · night ground, colour blocks in order.</p></div>
+        <div class="steps" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="block" style="min-height:220px"><span class="n">01</span><h3>Look</h3><p>Train the eye first.</p></div><div class="block" style="min-height:220px"><span class="n">02</span><h3>Sketch</h3><p>Draw along with Elena.</p></div><div class="block" style="min-height:220px"><span class="n">03</span><h3>Paint</h3><p>Finish a real piece.</p></div></div></div>
+      <div><p class="mono" style="margin-bottom:16px">Poster card</p><div class="poster-wrap"><a class="poster" style="--pc:var(--c1)" href="course.html"><div class="ptop"><span>Elena Varga Atelier</span><b>No. 01 · Pencil</b></div><h3>Foundations<br>of drawing</h3><div class="pic"><img src="img/1505569127510-bde1536937bc-w600.jpg" alt=""><span class="tag">Bestseller</span></div><dl><div><dt>Level</dt><dd><span class="meter" data-l="1" aria-hidden="true"><i></i><i></i><i></i></span>Beginner</dd></div><div><dt>Lessons</dt><dd>21</dd></div><div><dt>Running</dt><dd>6h 10m</dd></div><div><dt>Admission</dt><dd class="adm">$79</dd></div></dl></a></div></div>
+      <div><p class="mono" style="margin-bottom:16px">Book FAQ</p><div class="faq-book"><details open><summary>I’ve never drawn before. Is this for me?</summary><p>Yes, and especially you. If you can hold a pencil and write your name, you can learn to draw.</p></details><details><summary>How long do I have access?</summary><p>Forever, including future updates.</p></details></div></div>
+      <div><p class="mono" style="margin-bottom:16px">Field and error</p><div class="field" style="margin-bottom:16px"><label for="sg-name">First name</label><input id="sg-name" value="Marta" autocomplete="off"></div><div class="field" data-invalid><label for="sg-mail">Email</label><input id="sg-mail" value="marta@" aria-describedby="sg-mail-err" aria-invalid="true" autocomplete="off"><span class="err" id="sg-mail-err">Enter a full email address, like name@example.com.</span></div></div>
+      <div><p class="mono" style="margin-bottom:16px">Tabs</p><div class="tabs" role="tablist" aria-label="Sample tabs"><button role="tab" aria-selected="true">Overview</button><button role="tab" aria-selected="false" tabindex="-1">Exercise files<small>3</small></button><button role="tab" aria-selected="false" tabindex="-1">Comments<small>14</small></button></div>
+        <p class="mono" style="margin:28px 0 12px">Line ticks</p><ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>See shapes, values and edges</li><li><svg class="i"><use href="#i-check"/></svg>Model light with three values</li></ul></div>
+      <div class="span2"><p class="mono" style="margin-bottom:16px">Review bar · demo switches, fixed bottom left on pages</p><div class="review-bar rb-static" role="group" aria-label="Sample review bar"><div class="grp"><span>Mode</span><button aria-pressed="true">Solo</button><button aria-pressed="false">Academy</button></div><div class="grp"><span>View</span><button aria-pressed="false">Visitor</button><button aria-pressed="true">Enrolled</button></div></div></div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="ch" id="motion" aria-labelledby="h10m">
+    <div class="ch-head"><div><p class="chapter"><b>10</b>Motion</p><h2 class="headline h2" id="h10m">Slow, then <em>settled.</em></h2></div><p class="txt">Two curves. Objects rise and lift on one; lines draw themselves on the other. Everything stops for readers who ask for less motion.</p></div>
+    <div class="motion">
+      <div><p class="mono">Reveal · .9s · ease-object</p><div class="stage"><div class="rv go" id="mv-rv"></div></div>
+        <svg class="curve" viewBox="0 0 100 60" aria-hidden="true"><path d="M0 60 C 20 18, 20 0, 100 0" stroke="var(--block-2)"/></svg></div>
+      <div><p class="mono">Lift · .45s · hover me</p><div class="stage"><div class="chip-m" tabindex="0" aria-label="Hover or focus to see the lift"></div></div>
+        <svg class="curve" viewBox="0 0 100 60" aria-hidden="true"><path d="M0 60 C 20 18, 20 0, 100 0" stroke="var(--block-1)"/></svg></div>
+      <div><p class="mono">Draw · 2.4s · ease-line</p><div class="stage"><svg class="drawn go" id="mv-dr" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" pathLength="1"/></svg></div>
+        <svg class="curve" viewBox="0 0 100 60" aria-hidden="true"><path d="M0 60 C 60 60, 10 0, 100 0" stroke="var(--block-3)"/></svg></div>
+    </div>
+    <button class="btn btn-ink btn-plain replay" type="button" id="replay">Replay motion</button>
+  </section>
+
+  <!-- 11 -->
+  <section class="ch" id="archetypes" aria-labelledby="h11a">
+    <div class="ch-head"><div><p class="chapter"><b>11</b>Archetypes</p><h2 class="headline h2" id="h11a">Four rooms, <em>one house.</em></h2></div><p class="txt">Every page declares what kind of room it is on <code style="font-family:var(--mono);font-size:13px">&lt;body data-archetype&gt;</code>. The language stays; the amount of it changes with the job.</p></div>
+    <ul class="arch">
+      <li><div class="thumb t-gallery" aria-hidden="true"><i class="big"></i><i style="width:50%"></i><i class="rm"></i></div><div class="body"><b>Gallery</b><p>Showing. Paper, grain, grid lines, chapter labels, display headlines, one dark room, at most one row of colour blocks.</p><p class="ex">Home, about, courses, services, notes · <a href="index.html">See the home page</a></p></div></li>
+      <li><div class="thumb t-reading" aria-hidden="true"><i class="rm"></i><i class="col"></i><i class="col" style="width:50%"></i><i class="band"></i></div><div class="body"><b>Reading</b><p>Studying. A white sheet with a 760px column. Beige, grain and grid only inside bands and objects.</p><p class="ex">Course page, article · <a href="course.html">See the course page</a></p></div></li>
+      <li><div class="thumb t-work" aria-hidden="true"><span class="side"></span><i class="vid"></i><i></i><i style="width:60%"></i></div><div class="body"><b>Workroom</b><p>Doing. A quiet tool: no grain, no grid, no reveals, no display headlines. Progress in the course accent.</p><p class="ex">Lesson, quiz, assignment, dashboard · <a href="lesson.html">See the lesson page</a></p></div></li>
+      <li><div class="thumb t-counter" aria-hidden="true"><span class="rm"></span><span class="card"><i></i><i></i><i style="background:var(--ink);border:0"></i></span></div><div class="body"><b>Counter</b><p>Committing. One white card on paper beside a room or photo. Errors in terracotta text, one primary button.</p><p class="ex">Log in, checkout, contact · coming with the site pages</p></div></li>
+    </ul>
+  </section>
+
+  <!-- 12 -->
+  <section class="ch" id="review" aria-labelledby="h12r">
+    <div class="ch-head"><div><p class="chapter"><b>12</b>Review</p><h2 class="headline h2" id="h12r">Checked from the wall <em>to the pixel.</em></h2></div><p class="txt">Before any page is published, it passes this list and <code style="font-family:var(--mono);font-size:13px">tools/audit.mjs</code>.</p></div>
+    <div class="comp">
+      <div><p class="chapter"><b>A</b>Macro · the page</p><ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>Right archetype, and its rules</li><li><svg class="i"><use href="#i-check"/></svg>The same header brand and dark footer</li><li><svg class="i"><use href="#i-check"/></svg>One idea per section</li><li><svg class="i"><use href="#i-check"/></svg>Rhythm of paper, room and objects</li><li><svg class="i"><use href="#i-check"/></svg>One clear first action, and a next step at the end</li></ul></div>
+      <div><p class="chapter"><b>B</b>Meso · the section</p><ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg>Chapter label and a voiced headline</li><li><svg class="i"><use href="#i-check"/></svg>Starts on a grid line</li><li><svg class="i"><use href="#i-check"/></svg>Colour blocks in order</li><li><svg class="i"><use href="#i-check"/></svg>Images grey at rest, captions in mono</li></ul></div>
+      <div class="span2"><p class="chapter"><b>C</b>Micro · the details</p><ul class="ticks" style="columns:2;column-gap:40px"><li><svg class="i"><use href="#i-check"/></svg>Sizes and radii on the scale</li><li><svg class="i"><use href="#i-check"/></svg>Curly quotes, middle dots, arrows</li><li><svg class="i"><use href="#i-check"/></svg>Line icons, line ticks, no pill counts</li><li><svg class="i"><use href="#i-check"/></svg>Hover and focus on everything you can touch</li><li><svg class="i"><use href="#i-check"/></svg>Reduced motion respected</li><li><svg class="i"><use href="#i-check"/></svg>Contrast 4.5:1 body, 3:1 large</li></ul></div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <p class="chapter" style="justify-content:center"><b>—</b>Signed</p>
+    <p class="headline h2">Look longer, then <em>draw.</em></p>
+    <p class="sig">Elena V.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="c"><h3>Learn</h3><a href="index.html#courses">All courses</a><a href="course.html">A course</a><a href="lesson.html">A lesson</a></div>
+  <div class="c"><div class="ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.9" pathLength="1"/></svg></div><h3>Studio</h3><a href="index.html#about">About Elena</a><a href="index.html#gallery">Gallery</a><a href="index.html#faq">Questions</a></div>
+  <div class="c"><h3>This site</h3><a href="style.html">Style</a><a href="style.html#archetypes">Archetypes</a><a href="style.html#review">Review</a></div>
+  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · Made by hand in Lisbon</span></div>
+</footer>
+
+<script>
+  // Colour chapter: read each token's value from the live CSS and measure contrast.
+  const cs = getComputedStyle(document.documentElement);
+  const hex = v => v.trim().toUpperCase();
+  const rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const lum = h => rgb(h).map(x => { x /= 255; return x <= .03928 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4; }).reduce((a, x, i) => a + x * [.2126, .7152, .0722][i], 0);
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => m - n); return ((y + .05) / (x + .05)).toFixed(2); };
+  const paper = hex(cs.getPropertyValue('--paper')), white = '#FFFFFF';
+  document.querySelectorAll('#swatches li').forEach(li => {
+    const v = hex(cs.getPropertyValue(li.dataset.c));
+    li.querySelector('code').textContent = li.dataset.c + ' · ' + v;
+    li.querySelector('.ratio').textContent = `${ratio(v, paper)}:1 on paper · ${ratio(v, white)}:1 on white`;
+  });
+
+  // Sample tabs behave like real tabs.
+  const tabs = [...document.querySelectorAll('.comp [role="tab"]')];
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => tabs.forEach(x => { x.setAttribute('aria-selected', x === t); x.tabIndex = x === t ? 0 : -1; }));
+    t.addEventListener('keydown', e => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return; const n = tabs[(i + d + tabs.length) % tabs.length]; n.click(); n.focus(); });
+  });
+  // Sample review bar toggles within its group.
+  document.querySelectorAll('.rb-static .grp').forEach(g => g.querySelectorAll('button').forEach(b => b.addEventListener('click', () => g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)))));
+
+  // Motion replay.
+  document.getElementById('replay').addEventListener('click', () => {
+    for (const id of ['mv-rv', 'mv-dr']) { const el = document.getElementById(id); el.classList.remove('go'); void el.getBoundingClientRect(); requestAnimationFrame(() => el.classList.add('go')); }
+  });
+
+  // Reveal on scroll, and the footer circle each time the footer comes into view.
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll('.reveal,.draw,#canvas').forEach(el => io.observe(el));
+  const foot = document.querySelector('.site-foot');
+  new IntersectionObserver(([e]) => foot.classList.toggle('ring-on', e.isIntersecting), { threshold: .3 }).observe(foot);
+</script>
+</body>
+</html>

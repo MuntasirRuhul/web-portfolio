@@ -1,0 +1,177 @@
+
+✗ atelier-v7.html @1440  archetype=null  6 blocking, 2 warnings
+  BLOCK missing data-archetype (1)
+     · <body> has no data-archetype
+  BLOCK shadows (1)
+     · span > i.live → rgba(127, 191, 106, 0.2) 0px 0px 0px 3px
+  BLOCK off-scale radii (2)
+     · .cta-cards > a.cta-card → 14px
+     · .cta-cards > a.cta-card → 14px
+  BLOCK straight quotes / " - " separators (1)
+     · .ab-copy > p → I started filming lessons in my Lisbon studio in 2
+  BLOCK italic text (1)
+     · p > em → see
+  BLOCK contrast (47)
+     · .rail > span.vt → 3.57:1 (needs 4.5) "Elena Varga — school of drawin"
+     · .lbl > b → 4.37:1 (needs 4.5) "02"
+     · .ab-sig > span → 3.57:1 (needs 4.5) "18 courses · 340 hours · 64 co"
+     · figcaption > span → 3.57:1 (needs 4.5) "Her brushes, in order of use"
+     · figcaption > span → 3.57:1 (needs 4.5) "No. 2 → No. 24"
+     · .step > span.n → 4.01:1 (needs 4.5) "03"
+     · .step > p → 3.33:1 (needs 4.5) "Finish a real piece, then get "
+     · .lbl > b → 4.37:1 (needs 4.5) "04"
+     · … 39 more
+  WARN href="#" in primary links (9)
+     · div > a.on "Log in"
+     · .c > a "All courses"
+     · .c > a "Free lessons"
+     · .c > a "Gift a course"
+     · .c > a "Journal"
+     · .c > a "Contact"
+     · .c > a "Commissions"
+     · .c > a "Privacy"
+     · … 1 more
+  WARN font sizes off the scale (7)
+     · 18.7 (OFF-SCALE) ×6
+     · 49 (OFF-SCALE) ×2
+     · 21 (OFF-SCALE) ×7
+     · 51.8 (OFF-SCALE) ×4
+     · 27 (OFF-SCALE) ×2
+     · 33.1 (OFF-SCALE) ×2
+     · 24 (OFF-SCALE) ×1
+
+✗ atelier-v7.html @390  archetype=null  6 blocking, 2 warnings
+  BLOCK missing data-archetype (1)
+     · <body> has no data-archetype
+  BLOCK shadows (2)
+     · .hn-menu > i → rgba(243, 236, 223, 0.9) 0px -5px 0px 0px, rgba(243, 236, 22
+     · span > i.live → rgba(127, 191, 106, 0.2) 0px 0px 0px 3px
+  BLOCK off-scale radii (2)
+     · .cta-cards > a.cta-card → 14px
+     · .cta-cards > a.cta-card → 14px
+  BLOCK straight quotes / " - " separators (1)
+     · .ab-copy > p → I started filming lessons in my Lisbon studio in 2
+  BLOCK italic text (1)
+     · p > em → see
+  BLOCK contrast (48)
+     · .lbl > b → 4.37:1 (needs 4.5) "02"
+     · .ab-sig > span → 3.57:1 (needs 4.5) "18 courses · 340 hours · 64 co"
+     · figcaption > span → 3.57:1 (needs 4.5) "Her brushes, in order of use"
+     · figcaption > span → 3.57:1 (needs 4.5) "No. 2 → No. 24"
+     · .step > span.n → 4.01:1 (needs 4.5) "03"
+     · .step > p → 3.33:1 (needs 4.5) "Finish a real piece, then get "
+     · .lbl > b → 4.37:1 (needs 4.5) "04"
+     · .ptop > span → 3.84:1 (needs 4.5) "Elena Varga Atelier"
+     · … 40 more
+  WARN href="#" in primary links (9)
+     · div > a.on "Log in"
+     · .c > a "All courses"
+     · .c > a "Free lessons"
+     · .c > a "Gift a course"
+     · .c > a "Journal"
+     · .c > a "Contact"
+     · .c > a "Commissions"
+     · .c > a "Privacy"
+     · … 1 more
+  WARN font sizes off the scale (2)
+     · 34 (OFF-SCALE) ×2
+     · 32 (OFF-SCALE) ×4
+
+✗ course.html @1440  archetype=null  4 blocking, 2 warnings
+  BLOCK missing data-archetype (1)
+     · <body> has no data-archetype
+  BLOCK off-scale radii (3)
+     · .method > li → 14px
+     · .method > li → 14px
+     · .method > li → 14px
+  BLOCK straight quotes / " - " separators (1)
+     · .checks > li → See shapes, values and edges instead of "things"
+  BLOCK contrast (4)
+     · .crumb > span → 1.91:1 (needs 4.5) "Foundations of Drawing"
+     · li > span.d → 3.67:1 (needs 4.5) "Complete a practice piece and "
+     · .out > i → 3.20:1 (needs 4.5) "· yours to keep"
+     · .price > em → 4.37:1 (needs 4.5) "Autumn price"
+  WARN href="#" in primary links (8)
+     · .act > a.btn "Enrol now"
+     · .act > a.btn.l "Watch lesson 1 free"
+     · .in > a.cta "Enrol now"
+     · li > a "Free lessons"
+     · li > a "Gift a course"
+     · li > a "Contact"
+     · li > a "Privacy"
+     · li > a "Terms"
+  WARN font sizes off the scale (7)
+     · 86.4 (OFF-SCALE) ×1
+     · 19 (OFF-SCALE) ×1
+     · 44 (OFF-SCALE) ×2
+     · 22 (OFF-SCALE) ×6
+     · 32 (OFF-SCALE) ×1
+     · 21 (OFF-SCALE) ×1
+     · 56 (OFF-SCALE) ×1
+
+✗ course.html @390  archetype=null  4 blocking, 2 warnings
+  BLOCK missing data-archetype (1)
+     · <body> has no data-archetype
+  BLOCK off-scale radii (3)
+     · .method > li → 14px
+     · .method > li → 14px
+     · .method > li → 14px
+  BLOCK straight quotes / " - " separators (1)
+     · .checks > li → See shapes, values and edges instead of "things"
+  BLOCK contrast (4)
+     · .crumb > span → 1.91:1 (needs 4.5) "Foundations of Drawing"
+     · li > span.d → 3.67:1 (needs 4.5) "Complete a practice piece and "
+     · .out > i → 3.20:1 (needs 4.5) "· yours to keep"
+     · .price > em → 4.37:1 (needs 4.5) "Autumn price"
+  WARN href="#" in primary links (8)
+     · .act > a.btn "Enrol now"
+     · .act > a.btn.l "Watch lesson 1 free"
+     · .in > a.cta "Enrol now"
+     · li > a "Free lessons"
+     · li > a "Gift a course"
+     · li > a "Contact"
+     · li > a "Privacy"
+     · li > a "Terms"
+  WARN font sizes off the scale (5)
+     · 44 (OFF-SCALE) ×3
+     · 19 (OFF-SCALE) ×1
+     · 32 (OFF-SCALE) ×1
+     · 21 (OFF-SCALE) ×1
+     · 56 (OFF-SCALE) ×1
+
+✗ lesson.html @1440  archetype=null  3 blocking, 2 warnings
+  BLOCK missing data-archetype (1)
+     · <body> has no data-archetype
+  BLOCK off-scale radii (29)
+     · li > a.it.done → 10px
+     · li > a.it.done → 10px
+     · li > a.it.done → 10px
+     · li > a.it.done → 10px
+     · li > a.it.done → 10px
+     · li > a.it.done → 10px
+     · li > a.it.done → 10px
+     · li > a.it.done → 10px
+     · … 21 more
+  BLOCK contrast (3)
+     · .tw > span.mt.done → 4.37:1 (needs 4.5) "4 of 4 done"
+     · .tw > span.mt.done → 4.37:1 (needs 4.5) "4 of 4 done"
+     · .tw > span.mt.done → 4.37:1 (needs 4.5) "4 of 4 done"
+  WARN href="#" in primary links (2)
+     · .lbar > a.nav.prev "PreviousQuiz: Proportion check"
+     · .lbar > a.nav.next "NextCast shadows"
+  WARN font sizes off the scale (1)
+     · 11.5 (OFF-SCALE) ×2
+
+✗ lesson.html @390  archetype=null  2 blocking, 2 warnings
+  BLOCK missing data-archetype (1)
+     · <body> has no data-archetype
+  BLOCK off-scale radii (2)
+     · .ctl > button#pp.pp → 8px
+     · .ctl > button → 8px
+  WARN href="#" in primary links (2)
+     · .lbar > a.nav.prev "PreviousQuiz: Proportion check"
+     · .lbar > a.nav.next "NextCast shadows"
+  WARN font sizes off the scale (1)
+     · 34 (OFF-SCALE) ×1
+
+FAIL: 25 blocking item group(s) across 6 page views.
