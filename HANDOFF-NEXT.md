@@ -6,7 +6,9 @@
 
 **Status of the 12 new pages** (plan: `openspec/changes/atelier-site-pages/tasks.md`):
 - Done: `courses.html` (filters, sort, Solo/Academy) and `about.html`, rebuilt 25 Oct after the user called the first version generic. It is now “one drawing, scrolled”: a sticky sheet where the chair from Elena’s first studio is drawn in six stages (look, gesture, measure, three values, finish, signed), her story runs beside it one stage per year, and it ends on a dark room with Marta’s letter and the free lesson. Bar for every page: one studio-specific idea for the whole page, not stacked generic sections.
-- Next: Services, Studio notes (list and article), Contact, then Account, Checkout, Dashboard, Quiz, Assignment. Teachers is optional (academy content already sits on About).
+- Done 25 Oct: `contact.html` (Counter). You write Elena a ruled letter with blanks in its sentences, beside a dark room showing the drying wall of answered letters. Sending pins your letter there. Linked from the footers.
+- About is on hold: the user still isn't satisfied with the scrolled-drawing version. Revisit later and ask what's missing first.
+- Next: Services, Studio notes (list and article), then Account, Checkout, Dashboard, Quiz, Assignment. Teachers is optional (academy content already sits on About).
 - **Desktop first:** build and check at 1440px only (`node tools/audit.mjs --desktop <page>`). Phone and tablet are a later pass (task group 6).
 - Shared parts: `assets/site.css` (design language), `assets/site.js` (menu, Solo/Academy review bar, helpers). Every page declares `<body data-archetype>`, uses `.site-head` and the dark `.site-foot` on a `.foot-band`, and must pass the audit before publishing.
 - Header links still point to home anchors for pages not built yet (Services, Questions). Re-point them as pages land.
