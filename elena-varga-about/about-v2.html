@@ -534,7 +534,8 @@ body{height:100vh;overflow:hidden}
 .xh-name{position:absolute;inset:0;margin:0;pointer-events:none;font-weight:700;letter-spacing:-.088em;line-height:.8;font-size:clamp(110px,17.5vw,300px);color:var(--ink)}
 .xh-name span{position:absolute}
 .xh-name .a{left:4.5%;top:14%}
-.xh-name .b{right:2.5%;bottom:10%}
+.xh-name .b{right:2.5%;bottom:10%;letter-spacing:-.1em}
+.xh-name .kv{position:static;margin-right:-.07em}
 /* the cut-out portrait sits between the two words: in front of "Elena", beside "Varga" */
 .xh-fig{position:absolute;left:44%;bottom:0;height:80%;aspect-ratio:1162/1354;transform:translateX(-50%);z-index:2;margin:0}
 .xh-fig img{width:100%;height:100%;object-fit:contain;filter:grayscale(1) contrast(1.04)}
@@ -561,7 +562,17 @@ body{height:100vh;overflow:hidden}
 .xm{background:var(--night);color:var(--paper);padding:clamp(110px,14vw,200px) clamp(20px,6vw,110px);position:relative;overflow:hidden}
 .xm .lbl{color:var(--dim)}
 .xm .lbl b{color:var(--accent-lt)}
-.xm p{font-size:clamp(34px,4.6vw,76px);font-weight:500;letter-spacing:-.045em;line-height:1.04;max-width:1180px}
+.xm-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:center}
+.xm p{font-size:clamp(32px,3.7vw,64px);font-weight:500;letter-spacing:-.045em;line-height:1.05}
+/* her own drawing beside her words: taped to the dark wall */
+.xm-art{position:relative;justify-self:center;width:100%;max-width:400px;margin:0}
+.xm-art .sh{display:block;background:#FFFDF8;padding:12px 12px 0;transform:rotate(2.2deg);box-shadow:0 30px 50px -28px rgba(0,0,0,.8);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.xm-art:hover .sh{transform:rotate(.6deg) translateY(-6px)}
+.xm-art .sh::before{content:"";position:absolute;top:-14px;left:50%;z-index:2;width:92px;height:28px;margin-left:-46px;transform:rotate(-4deg);background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0) 40%),rgba(226,196,132,.85);clip-path:polygon(0 4%,4% 0,8% 9%,12% 1%,88% 0,92% 8%,96% 2%,100% 7%,98% 22%,100% 38%,97% 55%,100% 72%,98% 90%,100% 100%,94% 96%,90% 100%,10% 100%,6% 93%,2% 100%,0 92%,2% 76%,0 60%,3% 44%,0 28%,2% 14%)}
+.xm-art img{aspect-ratio:4/5;height:auto;filter:grayscale(1) contrast(1.08)}
+.xm-art .cap{display:flex;justify-content:space-between;gap:12px;padding:12px 2px 14px;font-family:var(--wide);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.xm-art figcaption{margin-top:22px;font-size:14.5px;line-height:1.5;color:var(--dim);max-width:340px}
+.xm-art figcaption b{color:var(--paper);font-weight:500}
 .xm p .w{color:rgba(var(--on-dark-rgb),.18);transition:color .35s}
 .xm p .w.on{color:var(--paper)}
 .xm p .w.ac.on{color:var(--accent-lt)}
@@ -699,6 +710,8 @@ body{height:100vh;overflow:hidden}
   .xh-role{position:static;order:5;margin-top:22px}
   .xh-sub{position:static;order:6;margin-top:8px}
   .xm-circle{display:none}
+  .xm-grid{grid-template-columns:1fr}
+  .xm-art{max-width:320px;justify-self:start}
   .xt{height:auto}
   .xt-pin{position:static;height:auto;overflow:visible;padding:90px 0 60px}
   .xt-track{width:auto;flex-direction:column;align-items:stretch;gap:56px;padding:48px var(--pad) 0;transform:none!important}
@@ -760,7 +773,7 @@ body{height:100vh;overflow:hidden}
         <li><a href="#studio">The studio</a></li><li><a href="courses.html">Courses</a></li><li><a href="lesson.html">Free lesson</a></li>
       </ul>
     </nav>
-    <h1 class="xh-name" aria-label="Elena Varga"><span class="a" aria-hidden="true">Elena</span><span class="b" aria-hidden="true">Varga</span></h1>
+    <h1 class="xh-name" aria-label="Elena Varga"><span class="a" aria-hidden="true">Elena</span><span class="b" aria-hidden="true"><span class="kv">V</span>arga</span></h1>
     <figure class="xh-fig">
       <svg class="xh-lines" viewBox="0 0 1162 1354" aria-hidden="true">
         <circle class="g dash fade" cx="590" cy="190" r="250"/>
@@ -783,8 +796,16 @@ body{height:100vh;overflow:hidden}
   <section class="xm" aria-label="In her words">
     <span class="xm-circle" aria-hidden="true"></span>
     <span class="lbl"><b>01</b>In her words</span>
-    <p id="manifesto">I don’t teach people to draw. I teach them [to look]: a full minute before a mark, three values instead of seven, and the nerve to leave [a lost edge lost.]</p>
-    <div class="sig"><b>Elena V.</b><span class="mono">Graça, Lisbon · January 2026</span></div>
+    <div class="xm-grid">
+      <div>
+        <p id="manifesto">I don’t teach people to draw. I teach them [to look]: a full minute before a mark, three values instead of seven, and the nerve to leave [a lost edge lost.]</p>
+        <div class="sig"><b>Elena V.</b><span class="mono">Graça, Lisbon · January 2026</span></div>
+      </div>
+      <figure class="xm-art reveal">
+        <span class="sh"><img src="assets/img/ink-portrait.jpg" alt="Elena’s ink self-portrait study from 2008" loading="lazy"><span class="cap"><span>Self-portrait study</span><span>Ink · 2008</span></span></span>
+        <figcaption><b>Drawn the year she learned to look first.</b> One plumb line, one eye level, then the rest.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- 03 TWENTY YEARS -->
@@ -797,7 +818,7 @@ body{height:100vh;overflow:hidden}
       <div class="xt-track" id="xtTrack">
         <span class="xt-rule" aria-hidden="true"></span>
         <article class="xt-item" style="--c:var(--ink);--rot:-2deg"><span class="xt-node mono">01 · Budapest</span><span class="xt-pic"><img src="assets/img/gesture.jpg" alt="Ink gesture study" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2006</span><h3>A borrowed room in Budapest.</h3><p>Shared with a sculptor. It had one chair, so she drew it, and drew what she thought a chair was.</p><span class="xt-tag mono">Lesson · look first</span></div></article>
-        <article class="xt-item" style="--c:var(--ultra);--rot:1.5deg"><span class="xt-node mono">02 · Budapest</span><span class="xt-pic"><img src="assets/img/ink-portrait.jpg" alt="Portrait study in ink" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2008</span><h3>MA Fine Art, Painting.</h3><p>Hungarian University of Fine Arts. One plumb line, one eye level, one circle around the whole shape.</p><span class="xt-tag mono">Lesson · plumb lines</span></div></article>
+        <article class="xt-item" style="--c:var(--ultra);--rot:1.5deg"><span class="xt-node mono">02 · Budapest</span><span class="xt-pic"><img src="assets/img/blue-hour.jpg" alt="Blue Hour, acrylic" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2008</span><h3>MA Fine Art, Painting.</h3><p>Hungarian University of Fine Arts. One plumb line, one eye level, one circle around the whole shape.</p><span class="xt-tag mono">Lesson · plumb lines</span></div></article>
         <article class="xt-item" style="--c:#8F6511;--rot:-1deg"><span class="xt-node mono">03 · Lisbon</span><span class="xt-pic"><img src="assets/img/old-street.jpg" alt="Old Street, watercolour" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2010</span><h3>Lisbon, for the light.</h3><p>A three-month residency she never left. Thirty-second drawings in cafés, on the 28 tram, at the Ribeira market.</p><span class="xt-tag mono">Lesson · gesture</span></div></article>
         <article class="xt-item" style="--c:var(--terra);--rot:2deg"><span class="xt-node mono">04 · Galeria Graça</span><span class="xt-pic"><img src="assets/img/bridge.jpg" alt="Bridge, watercolour" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2014</span><h3>“Mesa”, her first solo show.</h3><p>Twenty-two studies of one table at Galeria Graça. Everything measured at arm’s length, one eye closed.</p><span class="xt-tag mono">Lesson · measure</span></div></article>
         <article class="xt-item" style="--c:#A55C52;--rot:-1.5deg"><span class="xt-node mono">05 · On camera</span><span class="xt-pic"><img src="assets/img/meadow.jpg" alt="Meadow, watercolour" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2016</span><h3>One question, on camera.</h3><p>A student asked how she “actually sees” a shadow. She filmed the answer: three values. It became Course 01.</p><span class="xt-tag mono">Lesson · three values</span></div></article>
