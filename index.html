@@ -32,7 +32,7 @@
   --sans:"Inter Tight", system-ui, sans-serif;
   --hand:"Caveat", cursive;
 
-  --rail:56px;
+  --rail:84px;
   --pad:48px;
   --night:#161412;
   --night-2:#2A2522;
@@ -83,7 +83,7 @@ main,header,footer,section{position:relative;z-index:1}
 .g6{display:grid;grid-template-columns:repeat(6,1fr)}
 
 /* ============ Rail ============ */
-.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:12px 0 26px;pointer-events:none}
+.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 0 26px;pointer-events:none}
 .rail>*{pointer-events:auto}
 .vt{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--wide);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .soc{display:flex;flex-direction:column;gap:10px}
@@ -357,7 +357,7 @@ details p{color:var(--ink-2);margin-top:12px;max-width:620px}
 /* ============ 08 Join: actions + newsletter ============ */
 .join{padding:clamp(40px,5vw,72px) 10px 10px 10px}
 .cta-wrap{grid-column:1/7}
-/* studio-map CTA: the studio's street plan, one place word, the address, one action */
+/* drawing CTA: construction lines behind one line of invitation and one action */
 .map-cta{position:relative;display:grid;place-items:center;min-height:clamp(240px,22vw,300px);border-radius:16px;overflow:hidden;background:var(--night);color:var(--paper);text-align:center}
 .map-cta .map{position:absolute;inset:0;width:100%;height:100%}
 .map-cta .map *{fill:none;stroke:rgba(var(--on-dark-rgb),.16);stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .6s}
@@ -481,6 +481,34 @@ summary{font-weight:500;letter-spacing:-.02em}
   .js .reveal{opacity:1;transform:none}
   .js .draw path{stroke-dashoffset:0}
 }
+
+/* ============ Rail menu button + drawer (same as assets/site.css section 21) ============ */
+.burger{width:52px;height:52px;border-radius:16px;background:var(--ink);display:grid;place-items:center;transition:background .25s;border:0;cursor:pointer}
+.burger:hover{background:var(--terra)}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;border-radius:1px;background:var(--paper);transition:transform .35s cubic-bezier(.2,.7,.2,1),background .25s}
+.burger span{position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.hero-dark-rail .burger,.burger[aria-expanded="true"]{background:var(--page)}
+.hero-dark-rail .burger span,.hero-dark-rail .burger span::before,.hero-dark-rail .burger span::after{background:var(--ink)}
+.burger[aria-expanded="true"] span{background:transparent!important}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);background:var(--ink)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);background:var(--ink)}
+.menu-scrim{position:fixed;inset:0;z-index:64;background:rgba(var(--ink-rgb),.4);opacity:0;pointer-events:none;transition:opacity .4s}
+.menu-drawer{position:fixed;top:0;bottom:0;left:0;z-index:65;width:min(520px,100vw);padding:96px 48px 36px calc(var(--rail) + 28px);background:var(--night);color:var(--paper);display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .55s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+body.menu-open .menu-scrim{opacity:1;pointer-events:auto}
+body.menu-open .menu-drawer{transform:none;visibility:visible}
+.menu-drawer .lbl{color:var(--dim)}
+.menu-drawer nav{display:flex;flex-direction:column;margin-top:22px}
+.menu-drawer nav a{display:flex;align-items:baseline;gap:18px;padding:12px 0;border-bottom:1px solid rgba(var(--on-dark-rgb),.12);font-size:clamp(30px,3.5vw,48px);font-weight:600;letter-spacing:-.04em;line-height:1.1;transition:color .25s,padding .35s cubic-bezier(.2,.7,.2,1)}
+.menu-drawer nav a small{font-family:var(--wide);font-size:10.5px;font-weight:500;letter-spacing:.06em;color:var(--dim);min-width:20px}
+.menu-drawer nav a:hover{color:var(--accent-lt);padding-left:8px}
+.menu-drawer .menu-foot{margin-top:auto;display:flex;flex-direction:column;gap:18px}
+.menu-drawer .mbtn{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;height:48px;padding:0 6px 0 22px;border-radius:999px;background:var(--paper);color:var(--ink);font-size:14.5px;font-weight:500}
+.menu-drawer .mbtn i{width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-style:normal}
+.menu-drawer address{font-style:normal;font-size:12px;line-height:1.7;color:var(--dim)}
+body.menu-open .rail .vt{color:var(--dim)}
+@media (prefers-reduced-motion:reduce){.menu-drawer{transition:none}}
 </style>
 </head>
 <body data-archetype="gallery">
@@ -489,6 +517,7 @@ summary{font-weight:500;letter-spacing:-.02em}
 <div class="cols" aria-hidden="true"><i></i><i></i><i></i></div>
 
 <aside class="rail">
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteDrawer"><span></span></button>
   <span class="vt">Elena Varga — school of drawing — Lisbon</span>
   <div class="soc">
     <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
@@ -729,7 +758,7 @@ summary{font-weight:500;letter-spacing:-.02em}
   <!-- 08 JOIN -->
   <section class="join g6" id="join">
     <div class="cta-wrap reveal">
-      <a class="map-cta" href="contact.html">
+      <a class="map-cta" href="lesson.html">
         <svg class="map" viewBox="0 0 1300 300" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0 98C300 82 900 62 1300 102M0 212C400 192 800 242 1300 192M200 0C230 120 262 220 282 300M462 0C492 120 472 232 452 300M832 0C802 100 782 200 762 300M1072 0C1102 120 1132 222 1152 300M330 56L982 286"/>
           <ellipse cx="650" cy="152" rx="176" ry="96"/><ellipse cx="650" cy="152" rx="96" ry="58"/>
@@ -737,9 +766,9 @@ summary{font-weight:500;letter-spacing:-.02em}
         </svg>
         <div class="mc">
           <span class="mc-strokes" aria-hidden="true"><i style="background:var(--ochre)"></i><i style="background:var(--rose)"></i><i style="background:var(--terra)"></i><i style="background:#8F6511"></i><i style="background:#A55C52"></i><i style="background:#7A3E5E"></i><i style="background:var(--paper)"></i><i style="background:#56694A"></i></span>
-          <strong>Lisbon</strong>
-          <span class="mc-addr">Rua da Graça 4, 3º<br>1170-165 Lisboa</span>
-          <span class="mc-go">Write Elena a letter →</span>
+          <strong>Start drawing.</strong>
+          <span class="mc-addr">Lesson 1 is free: twelve minutes, one pencil,<br>and whatever chair you’re sitting on.</span>
+          <span class="mc-go">Watch lesson 1 free →</span>
         </div>
       </a>
       <div class="nl">
@@ -753,6 +782,13 @@ summary{font-weight:500;letter-spacing:-.02em}
   </section>
 </main>
 
+<div class="menu-scrim"></div>
+<div class="menu-drawer" id="siteDrawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <span class="lbl"><b>00</b>Menu</span>
+  <nav aria-label="Menu"><a href="courses.html"><small>01</small>Courses</a><a href="about.html"><small>02</small>About</a><a href="sitemap.html#notes"><small>03</small>Studio notes</a><a href="#faq"><small>04</small>Questions</a><a href="contact.html"><small>05</small>Contact</a></nav>
+  <div class="menu-foot"><a class="mbtn" href="lesson.html">Watch lesson 1 free <i aria-hidden="true">→</i></a><address>Rua da Graça 4, 3º · 1170-165 Lisboa<br>Letters read on Tuesday and Friday mornings</address></div>
+</div>
+
 <footer>
   <div class="c"><h3>Learn</h3><a href="courses.html">All courses</a><a href="#">Free lessons</a><a href="#">Gift a course</a><a href="#faq">FAQ</a></div>
   <div class="c"><h3>Studio</h3><a href="about.html">About Elena</a><a href="#gallery">Gallery</a><a href="sitemap.html#notes">Studio notes</a><a href="contact.html">Contact</a></div>
@@ -761,6 +797,18 @@ summary{font-weight:500;letter-spacing:-.02em}
 </footer>
 
 <script>
+  // Rail menu: the button opens the drawer; scrim, Escape or a link closes it.
+  const railBtn = document.querySelector('.burger'), drawer = document.getElementById('siteDrawer'), scrim = document.querySelector('.menu-scrim');
+  const setDrawer = open => { document.body.classList.toggle('menu-open', open); railBtn.setAttribute('aria-expanded', open); railBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); if (open) drawer.querySelector('nav a').focus(); else railBtn.focus(); };
+  railBtn.addEventListener('click', () => setDrawer(!document.body.classList.contains('menu-open')));
+  // over the dark hero the button turns light
+  const railEl = document.querySelector('.rail'), heroEl = document.querySelector('.hero');
+  const railTone = () => railEl.classList.toggle('hero-dark-rail', heroEl.getBoundingClientRect().bottom > 72);
+  addEventListener('scroll', railTone, { passive: true }); railTone();
+  scrim.addEventListener('click', () => setDrawer(false));
+  drawer.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setDrawer(false); });
+
   // Reveal on scroll.
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });

@@ -36,6 +36,38 @@
   }
   if (!document.body.hasAttribute('data-no-review-bar')) document.body.appendChild(bar);
 
+  // Left rail and menu drawer (every page but Workroom screens, which keep their own header)
+  if (document.body.dataset.archetype !== 'workroom' && !document.body.hasAttribute('data-no-rail')) {
+    const here = location.pathname.split('/').pop() || 'index.html';
+    const links = [['courses.html','Courses'],['about.html','About'],['sitemap.html#notes','Studio notes'],['index.html#faq','Questions'],['contact.html','Contact']];
+    const ico = { Instagram:'<rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r=".6"/>',
+      Pinterest:'<circle cx="12" cy="12" r="8.5"/><path d="M11 8.5c3-1 5.2 1 4.2 3.6s-3.6 2.6-4.6 1M11.2 9 9 19.5"/>',
+      YouTube:'<rect x="3" y="6" width="18" height="12" rx="3.5"/><path d="M10.5 9.5l4 2.5-4 2.5z"/>' };
+    const rail = document.createElement('aside');
+    rail.className = 'rail';
+    rail.innerHTML = '<button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteDrawer"><span></span></button>' +
+      '<span class="vt" aria-hidden="true">Elena Varga — school of drawing — Lisbon</span>' +
+      '<div class="soc">' + Object.entries(ico).map(([n, d]) => `<a href="#" aria-label="${n}"><svg viewBox="0 0 24 24">${d}</svg></a>`).join('') + '</div>';
+    const scrim = document.createElement('div'); scrim.className = 'menu-scrim';
+    const drawer = document.createElement('div');
+    drawer.className = 'menu-drawer'; drawer.id = 'siteDrawer';
+    drawer.setAttribute('role', 'dialog'); drawer.setAttribute('aria-modal', 'true'); drawer.setAttribute('aria-label', 'Menu');
+    drawer.innerHTML = '<p class="chapter"><b>00</b>Menu</p><nav aria-label="Menu">' +
+      links.map(([h, t], i) => `<a href="${h}"${h.split('#')[0] === here && !h.includes('#') ? ' aria-current="page"' : ''}><small>0${i + 1}</small>${t}</a>`).join('') + '</nav>' +
+      '<div class="menu-foot"><a class="btn btn-paper" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a>' +
+      '<address>Rua da Graça 4, 3º · 1170-165 Lisboa<br>Letters read on Tuesday and Friday mornings</address></div>';
+    document.body.prepend(rail); document.body.append(scrim, drawer); document.body.classList.add('has-rail');
+    const burger = rail.querySelector('.burger');
+    const setMenu = open => {
+      document.body.classList.toggle('menu-open', open);
+      burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (open) drawer.querySelector('nav a').focus(); else burger.focus();
+    };
+    burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+    scrim.addEventListener('click', () => setMenu(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setMenu(false); });
+  }
+
   // Reveal on scroll and the footer circle
   const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: .12 }) : null;
   document.querySelectorAll('.reveal,.draw').forEach(el => io ? io.observe(el) : el.classList.add('is-in'));
