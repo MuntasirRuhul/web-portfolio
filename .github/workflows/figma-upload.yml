@@ -1,0 +1,24 @@
+# Posts the home-page photos to Figma upload URLs listed in research/figma-upload/manifest.txt
+# ("<file> <url>" per line). The URLs are single-use and expire after 10 minutes.
+name: Upload photos to Figma
+
+on:
+  push:
+    branches: [atelier-site]
+    paths:
+      - research/figma-upload/manifest.txt
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload
+        run: |
+          cd research/figma-upload
+          while read -r f url; do
+            [ -z "$f" ] && continue
+            echo "== $f"
+            curl -sS -m 60 -F "file=@$f;type=image/jpeg" "$url" | head -c 300; echo
+          done < manifest.txt
