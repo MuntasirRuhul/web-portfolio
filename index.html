@@ -223,20 +223,19 @@ main{margin-left:0}
 .courses{background:var(--page);padding:clamp(80px,10vw,140px) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .courses .head{grid-column:1/7;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,70px)}
 .cgrid{grid-column:1/7;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.6vw,36px);padding:0 var(--pad)}
-.pcard{display:grid;grid-template-rows:auto auto 1fr auto;aspect-ratio:1/1.18;background:#FFFFFF;color:var(--ink);padding:18px;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.pcard{display:grid;grid-template-rows:auto 1fr auto;row-gap:24px;aspect-ratio:1/1.2;background:#FFFFFF;color:var(--ink);padding:24px;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .pcard:hover{transform:translateY(-6px)}
-.pcard .ptop{display:flex;justify-content:space-between;font-family:var(--wide);font-size:9.5px;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:8px}
+.pcard .ptop{display:none;justify-content:space-between;font-family:var(--wide);font-size:9.5px;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:8px}
 .pcard .ptop b{color:var(--pc);font-weight:400}
-.pcard h3{font-family:"Inter",var(--sans);font-weight:700;font-size:36px;line-height:.86;letter-spacing:-.065em;margin-top:14px;color:var(--pc)}
-.pcard .pic{position:relative;justify-self:end;align-self:stretch;aspect-ratio:3/4;min-height:0;max-width:100%;overflow:hidden;margin:14px 0 12px;background:var(--pc)}
+.pcard h3{font-family:"Inter",var(--sans);font-weight:700;font-size:32px;line-height:1;letter-spacing:-.06em;color:var(--pc)}
+.pcard .pic{position:relative;justify-self:end;align-self:stretch;aspect-ratio:3/4;min-height:0;max-width:100%;overflow:hidden;background:var(--pc)}
 .pcard .pic img{filter:grayscale(1) contrast(1.1);mix-blend-mode:screen;opacity:.95;transition:filter .6s}
 .pcard:hover .pic img{filter:none;mix-blend-mode:normal;opacity:1}
 .pcard .tag{position:absolute;left:8px;top:8px;font-family:var(--wide);font-size:9px;background:var(--card);color:var(--pc);padding:4px 8px}
 .pcard dl{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
 .pcard dl div{border-top:1px solid var(--pc);padding:6px 0 4px}
-.pcard dl div:nth-child(-n+2){border-top-width:2px}
 .pcard dt{font-family:var(--wide);font-size:9px;color:var(--muted)}
-.pcard dd{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
+.pcard dd{font-size:16px;font-weight:600;display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
 .pcard:hover .adm::after{content:" → Enrol";font-weight:500;color:var(--pc)}
 .meter{display:inline-flex;flex-direction:column;gap:3px;width:16px;color:var(--pc)}
 .meter i{height:3px;border-radius:2px;background:currentColor;opacity:.25}
