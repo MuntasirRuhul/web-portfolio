@@ -571,26 +571,30 @@ body{height:100vh;overflow:hidden}
 
 /* ---------- 03 Twenty years: a wall you walk along (horizontal on scroll) ---------- */
 .xt{position:relative;height:420vh;background:var(--page)}
-.xt-pin{position:sticky;top:0;height:calc(100vh - 20px);overflow:hidden;display:flex;flex-direction:column;padding:clamp(48px,6vw,80px) 0 40px}
+.xt-pin{position:sticky;top:0;height:calc(100vh - 20px);overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:clamp(48px,6vw,80px) 0 40px}
 .xt-head{display:flex;justify-content:space-between;align-items:end;gap:30px;padding:0 var(--pad)}
 .xt-head h2 em{color:var(--terra)}
 .xt-count{font-family:var(--wide);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
 .xt-count b{color:var(--ink);font-weight:500}
-.xt-track{position:relative;flex:1;display:flex;align-items:center;gap:clamp(60px,7vw,120px);padding:0 30vw 0 var(--pad);width:max-content;will-change:transform}
-.xt-rule{position:absolute;left:0;right:0;top:50%;height:22px;margin-top:-11px;pointer-events:none;
-  background:linear-gradient(var(--ink),var(--ink)) 0 50%/100% 1px no-repeat,repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 40px) 0 0/100% 100%}
-.xt-item{position:relative;flex:none;width:clamp(260px,24vw,360px);z-index:1}
-.xt-item:nth-child(odd){align-self:flex-start;margin-top:4vh}
-.xt-item:nth-child(even){align-self:flex-end;margin-bottom:2vh}
-.xt-yr{display:block;font-size:clamp(64px,7vw,112px);font-weight:600;letter-spacing:-.06em;line-height:.85;color:var(--c)}
-.xt-pic{position:relative;display:block;margin-top:18px;background:#fff;border:1px solid var(--rule);padding:10px;transform:rotate(var(--rot,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.xt-track{position:relative;flex:none;display:flex;align-items:flex-start;gap:clamp(48px,5vw,88px);padding:clamp(36px,4.5vh,60px) 30vw 0 var(--pad);width:max-content;will-change:transform}
+/* the timeline runs along the top of the cards; each card hangs from a node on it */
+.xt-rule{position:absolute;left:0;right:0;top:calc(clamp(36px,4.5vh,60px) + 5px);height:1px;background:var(--ink);pointer-events:none}
+.xt-rule::after{content:"";position:absolute;left:0;right:0;top:-6px;height:13px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 40px)}
+.xt-item{position:relative;flex:none;width:clamp(270px,23vw,340px);z-index:1}
+.xt-node{position:relative;display:flex;width:max-content;align-items:center;gap:10px;height:11px;padding-right:10px;background:var(--page);color:var(--ink-2)}
+.xt-node::before{content:"";flex:none;width:11px;height:11px;border-radius:50%;background:var(--page);border:2px solid var(--c);box-sizing:border-box;transition:background .3s}
+.xt-item:hover .xt-node::before{background:var(--c)}
+.xt-pic{position:relative;display:block;margin-top:clamp(22px,3vh,32px);background:#fff;border:1px solid var(--rule);padding:8px;transform:rotate(var(--rot,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .xt-item:hover .xt-pic{transform:rotate(0) translateY(-6px)}
-.xt-pic::before{content:"";position:absolute;top:-10px;left:50%;width:70px;height:20px;margin-left:-35px;background:rgba(221,164,60,.5);transform:rotate(-3deg)}
-.xt-pic img{aspect-ratio:4/3;height:auto}
-.xt-item h3{font-size:22px;letter-spacing:-.03em;margin-top:18px}
-.xt-item p{font-size:14px;color:var(--ink-2);margin-top:6px;max-width:320px}
-.xt-item .mono{display:block;color:var(--muted);margin-top:10px}
-.xt-bar{margin:0 var(--pad);height:2px;background:var(--rule);position:relative}
+.xt-pic::before{content:"";position:absolute;top:-10px;left:50%;width:64px;height:18px;margin-left:-32px;background:rgba(221,164,60,.5);transform:rotate(-3deg)}
+.xt-pic img{aspect-ratio:3/2;height:auto}
+.xt-body{margin-top:clamp(18px,2.6vh,26px);padding-left:2px}
+.xt-yr{display:block;font-size:clamp(40px,3.6vw,56px);font-weight:600;letter-spacing:-.055em;line-height:.9;color:var(--c)}
+.xt-item h3{font-size:clamp(19px,1.5vw,22px);line-height:1.15;letter-spacing:-.03em;margin-top:10px}
+.xt-item p{font-size:14px;line-height:1.5;color:var(--ink-2);margin-top:6px;max-width:310px}
+.xt-tag{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding-top:10px;border-top:1px solid var(--rule);color:var(--ink-2)}
+.xt-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c)}
+.xt-bar{margin:clamp(32px,5vh,56px) var(--pad) 0;height:2px;background:var(--rule);position:relative}
 .xt-bar i{position:absolute;inset:0;background:var(--terra);transform-origin:left;transform:scaleX(var(--p,0))}
 
 /* ---------- 04 The January chair: on an ochre ground, step through it ---------- */
@@ -689,8 +693,13 @@ body{height:100vh;overflow:hidden}
   .xt{height:auto}
   .xt-pin{position:static;height:auto;overflow:visible;padding:90px 0 60px}
   .xt-track{width:auto;flex-direction:column;align-items:stretch;gap:56px;padding:48px var(--pad) 0;transform:none!important}
-  .xt-item,.xt-item:nth-child(n){width:auto;max-width:460px;align-self:auto;margin:0}
-  .xt-rule,.xt-bar,.xt-count{display:none}
+  .xt-item{width:auto;max-width:460px}
+  .xt-bar,.xt-count{display:none}
+  .xt-rule{top:48px;bottom:0;left:calc(var(--pad) + 5px);right:auto;width:1px;height:auto}
+  .xt-rule::after{display:none}
+  .xt-node{padding-left:0}
+  .xt-pic,.xt-body{margin-left:28px}
+  .xt-pic{margin-top:18px}
   .xc{grid-template-columns:1fr}
   .sheet{max-width:420px}
   .xb-grid{grid-template-columns:1fr 1fr;grid-template-areas:"ph ph" "a b" "c d" "t t"}
@@ -777,12 +786,12 @@ body{height:100vh;overflow:hidden}
       </div>
       <div class="xt-track" id="xtTrack">
         <span class="xt-rule" aria-hidden="true"></span>
-        <article class="xt-item" style="--c:var(--ink);--rot:-2deg"><span class="xt-yr">2006</span><span class="xt-pic"><img src="assets/img/gesture.jpg" alt="Ink gesture study" loading="lazy"></span><h3>A borrowed room in Budapest.</h3><p>Shared with a sculptor. It had one chair, so she drew it, and drew what she thought a chair was.</p><span class="mono">Lesson · look first</span></article>
-        <article class="xt-item" style="--c:var(--ultra);--rot:1.5deg"><span class="xt-yr">2008</span><span class="xt-pic"><img src="assets/img/ink-portrait.jpg" alt="Portrait study in ink" loading="lazy"></span><h3>MA Fine Art, Painting.</h3><p>Hungarian University of Fine Arts. One plumb line, one eye level, one circle around the whole shape.</p><span class="mono">Lesson · plumb lines</span></article>
-        <article class="xt-item" style="--c:#8F6511;--rot:-1deg"><span class="xt-yr">2010</span><span class="xt-pic"><img src="assets/img/old-street.jpg" alt="Old Street, watercolour" loading="lazy"></span><h3>Lisbon, for the light.</h3><p>A three-month residency she never left. Thirty-second drawings in cafés, on the 28 tram, at the Ribeira market.</p><span class="mono">Lesson · gesture</span></article>
-        <article class="xt-item" style="--c:var(--terra);--rot:2deg"><span class="xt-yr">2014</span><span class="xt-pic"><img src="assets/img/bridge.jpg" alt="Bridge, watercolour" loading="lazy"></span><h3>“Mesa”, her first solo show.</h3><p>Twenty-two studies of one table at Galeria Graça. Everything measured at arm’s length, one eye closed.</p><span class="mono">Lesson · measure</span></article>
-        <article class="xt-item" style="--c:#A55C52;--rot:-1.5deg"><span class="xt-yr">2016</span><span class="xt-pic"><img src="assets/img/meadow.jpg" alt="Meadow, watercolour" loading="lazy"></span><h3>One question, on camera.</h3><p>A student asked how she “actually sees” a shadow. She filmed the answer: three values. It became Course 01.</p><span class="mono">Lesson · three values</span></article>
-        <article class="xt-item" style="--c:#56694A;--rot:1deg"><span class="xt-yr">2026</span><span class="xt-pic"><img src="assets/img/fragments.jpg" alt="Fragments, acrylic" loading="lazy"></span><h3>The table under the north window.</h3><p>Every lesson filmed in the same light, 9 to 4. Every final drawing watched by her.</p><span class="mono">Lesson · finish</span></article>
+        <article class="xt-item" style="--c:var(--ink);--rot:-2deg"><span class="xt-node mono">01 · Budapest</span><span class="xt-pic"><img src="assets/img/gesture.jpg" alt="Ink gesture study" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2006</span><h3>A borrowed room in Budapest.</h3><p>Shared with a sculptor. It had one chair, so she drew it, and drew what she thought a chair was.</p><span class="xt-tag mono">Lesson · look first</span></div></article>
+        <article class="xt-item" style="--c:var(--ultra);--rot:1.5deg"><span class="xt-node mono">02 · Budapest</span><span class="xt-pic"><img src="assets/img/ink-portrait.jpg" alt="Portrait study in ink" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2008</span><h3>MA Fine Art, Painting.</h3><p>Hungarian University of Fine Arts. One plumb line, one eye level, one circle around the whole shape.</p><span class="xt-tag mono">Lesson · plumb lines</span></div></article>
+        <article class="xt-item" style="--c:#8F6511;--rot:-1deg"><span class="xt-node mono">03 · Lisbon</span><span class="xt-pic"><img src="assets/img/old-street.jpg" alt="Old Street, watercolour" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2010</span><h3>Lisbon, for the light.</h3><p>A three-month residency she never left. Thirty-second drawings in cafés, on the 28 tram, at the Ribeira market.</p><span class="xt-tag mono">Lesson · gesture</span></div></article>
+        <article class="xt-item" style="--c:var(--terra);--rot:2deg"><span class="xt-node mono">04 · Galeria Graça</span><span class="xt-pic"><img src="assets/img/bridge.jpg" alt="Bridge, watercolour" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2014</span><h3>“Mesa”, her first solo show.</h3><p>Twenty-two studies of one table at Galeria Graça. Everything measured at arm’s length, one eye closed.</p><span class="xt-tag mono">Lesson · measure</span></div></article>
+        <article class="xt-item" style="--c:#A55C52;--rot:-1.5deg"><span class="xt-node mono">05 · On camera</span><span class="xt-pic"><img src="assets/img/meadow.jpg" alt="Meadow, watercolour" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2016</span><h3>One question, on camera.</h3><p>A student asked how she “actually sees” a shadow. She filmed the answer: three values. It became Course 01.</p><span class="xt-tag mono">Lesson · three values</span></div></article>
+        <article class="xt-item" style="--c:#56694A;--rot:1deg"><span class="xt-node mono">06 · Graça, today</span><span class="xt-pic"><img src="assets/img/fragments.jpg" alt="Fragments, acrylic" loading="lazy"></span><div class="xt-body"><span class="xt-yr">2026</span><h3>The table under the north window.</h3><p>Every lesson filmed in the same light, 9 to 4. Every final drawing watched by her.</p><span class="xt-tag mono">Lesson · finish</span></div></article>
       </div>
       <div class="xt-bar" aria-hidden="true"><i id="xtBar"></i></div>
     </div>
