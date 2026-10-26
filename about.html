@@ -295,7 +295,7 @@ main{position:relative;z-index:1}
   const story = document.querySelector('.story'), line = document.getElementById('graphite');
   let ticking = false;
   const fill = () => { const r = story.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (innerHeight / 2 - r.top) / r.height)); line.style.setProperty('--p', p.toFixed(3)); ticking = false; };
-  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(fill); } }, { passive: true });
+  document.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(fill); } }, { passive: true, capture: true });   // the page scrolls inside the body panel
   fill();
 </script>
 </body>
