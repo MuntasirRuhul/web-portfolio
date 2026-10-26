@@ -517,68 +517,198 @@ body{height:100vh;overflow:hidden}
 .frame{position:fixed;top:10px;right:10px;bottom:10px;left:calc(var(--rail) + 20px);border-radius:16px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;background:var(--page);isolation:isolate;scrollbar-width:thin;scrollbar-color:rgba(var(--ink-rgb),.25) transparent}
 @media (max-width:980px){body{height:auto;overflow:visible}.frame{position:static;border-radius:0;overflow:visible}}
 
-/* ============ About page: home's system, about-only pieces below ============ */
-.hero .big img{object-position:50% 28%}
+/* =====================================================================
+   About page. Shares home's tokens, rail, drawer and footer; every
+   section below is its own composition.
+   ===================================================================== */
+.mono{font-family:var(--wide);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
 
-/* 04 Chapters: poster cards, one per year */
-.yrs .pcard h3{font-size:clamp(28px,2.6vw,36px)}
-.yrs .pcard h3 small{display:block;font-size:.55em;letter-spacing:-.04em;margin-top:6px;opacity:.9}
-.yrs .pcard dd{font-size:15px}
+/* ---------- 01 Portrait: the name, drawn over with construction lines ---------- */
+.xh{position:relative;height:calc(100vh - 20px);min-height:680px;max-height:1080px;overflow:hidden;background:var(--page);color:var(--ink)}
+.xh .hn a{color:var(--ink-2)}
+.xh .hn a:hover{color:var(--ink)}
+.xh .hn .on{color:var(--terra)}
+.xh .hn-brand{color:var(--ink)!important}
+.xh .hn-brand span{color:var(--muted)}
+.xh .hn-menu{color:var(--ink)}
+.xh-name{position:absolute;inset:0;pointer-events:none;font-weight:600;letter-spacing:-.065em;line-height:.8;font-size:clamp(120px,19.5vw,330px);color:var(--ink)}
+.xh-name span{position:absolute}
+.xh-name .a{left:2.2%;top:15%}
+.xh-name .b{right:2.2%;bottom:15%}
+.xh-photo{position:absolute;left:50%;bottom:66px;height:80%;-webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent);mask-image:radial-gradient(closest-side,#000 72%,transparent);aspect-ratio:1100/1648;transform:translateX(-46%);z-index:2;mix-blend-mode:multiply}
+.xh-photo img{height:100%;width:100%;object-fit:cover;filter:grayscale(1) brightness(1.14) contrast(1.2)}
+.js .xh-photo{opacity:0;transform:translate(-46%,24px);transition:opacity 1.2s ease .2s,transform 1.4s cubic-bezier(.2,.7,.2,1) .2s}
+.xh.is-in .xh-photo{opacity:1;transform:translateX(-46%)}
+.xh-lines{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;overflow:visible}
+.xh-lines .g{fill:none;stroke:var(--terra);stroke-width:1;vector-effect:non-scaling-stroke}
+.xh-lines .dash{stroke-dasharray:5 6;opacity:.7}
+.xh-lines .ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2s cubic-bezier(.6,.1,.2,1) .9s}
+.xh.is-in .xh-lines .ln{stroke-dashoffset:0}
+.js .xh-lines .dash{opacity:0;transition:opacity 1s ease .6s}
+.xh.is-in .xh-lines .dash{opacity:.7}
+.xh-note{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;color:#B24A2B}
+.xh-note::before{content:"";width:28px;border-top:1px solid currentColor}
+.xh-note.r{flex-direction:row-reverse}
+.xh-note.n1{left:calc(50% + 7vw);top:45.5%}
+.xh-note.n2{right:calc(50% + 7vw);top:71.5%}
+.xh-meta{position:absolute;left:2.2%;right:2.2%;bottom:24px;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);padding-top:12px;gap:16px}
+.xh-meta span{color:var(--muted)}
+.xh-meta b{display:block;font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:-.01em;text-transform:none;color:var(--ink);margin-top:4px}
 
-/* 05 The January chair: one drawing that builds itself, stage by stage */
-.chair-sec{background:var(--page);border-top:1px solid var(--rule)}
-.chair-grid{grid-column:1/7;padding:0 var(--pad);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,100px);align-items:center}
-.chair-frame{position:relative;max-width:520px;width:100%;justify-self:center;transform:rotate(-.7deg);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.chair-frame:hover{transform:rotate(0) translateY(-5px)}
-.chair-frame::before,.chair-frame::after{content:"";position:absolute;top:-11px;width:78px;height:24px;z-index:2}
-.chair-frame::before{left:34px;transform:rotate(-4deg);background:rgba(217,167,160,.6)}
-.chair-frame::after{right:34px;transform:rotate(3deg);background:rgba(221,164,60,.45)}
-.chair-frame .gw-f{padding:clamp(16px,2vw,28px)}
-.chair-art{display:block;width:100%;aspect-ratio:4/5;overflow:visible}
-.chair-cap{display:flex;justify-content:space-between;gap:16px;margin-top:14px;padding-top:10px;border-top:1px solid var(--rule);font-family:var(--wide);font-size:10px;color:var(--muted)}
-.chair-art text{font-family:var(--wide);font-size:6.5px;letter-spacing:.06em;fill:#B24A2B}
-.chair-art .sigtext{font-family:var(--hand);font-size:22px;letter-spacing:0;fill:var(--ink)}
-.chair-art .L{transition:opacity 1.2s ease}
-.js .chair-art .ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.5s cubic-bezier(.6,.1,.2,1)}
-.js .chair-art .fd{opacity:0;transition:opacity 1s ease}
-.js .chair-art.is-in .ln{stroke-dashoffset:0}
-.js .chair-art.is-in .fd{opacity:1}
-.chair-art .L2 *{transition-delay:.8s!important}
-.chair-art .L3 *{transition-delay:1.6s!important}
-.chair-art .L4 *{transition-delay:2.4s!important}
-.chair-art .L5 *{transition-delay:3.2s!important}
-.chair-art .L6 *{transition-delay:4.3s!important}
-/* at the finish the guides are erased back, as on paper */
-.chair-art.done .L1,.chair-art.done .L3{opacity:.2}
-.chair-art.done .L2{opacity:.25}
-.stages{list-style:none;margin-top:clamp(28px,3vw,40px);counter-reset:st}
-.stages li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:14px 0;border-top:1px solid var(--rule)}
-.stages li:last-child{border-bottom:1px solid var(--rule)}
-.stages .n{font-family:var(--wide);font-size:11px;color:var(--muted);transition:color .4s}
-.stages b{font-size:clamp(19px,1.6vw,23px);font-weight:600;letter-spacing:-.03em}
-.stages span:last-child{font-family:var(--wide);font-size:10px;color:var(--muted)}
-.stages p{grid-column:2/4;font-size:14px;color:var(--ink-2);margin-top:2px}
-.chair-sec.is-in .stages .n{color:var(--terra)}
-.stages li:nth-child(2) .n{transition-delay:.8s}.stages li:nth-child(3) .n{transition-delay:1.6s}.stages li:nth-child(4) .n{transition-delay:2.4s}.stages li:nth-child(5) .n{transition-delay:3.2s}.stages li:nth-child(6) .n{transition-delay:4.3s}
+/* ---------- 02 Manifesto: one long sentence that lights up as you read ---------- */
+.xm{background:var(--night);color:var(--paper);padding:clamp(110px,14vw,200px) clamp(20px,6vw,110px);position:relative;overflow:hidden}
+.xm .lbl{color:var(--dim)}
+.xm .lbl b{color:var(--accent-lt)}
+.xm p{font-size:clamp(34px,4.6vw,76px);font-weight:500;letter-spacing:-.045em;line-height:1.04;max-width:1180px}
+.xm p .w{color:rgba(var(--on-dark-rgb),.18);transition:color .35s}
+.xm p .w.on{color:var(--paper)}
+.xm p .w.ac.on{color:var(--accent-lt)}
+.xm .sig{display:flex;align-items:baseline;gap:14px;margin-top:clamp(40px,5vw,64px)}
+.xm .sig b{font-family:var(--hand);font-size:40px;font-weight:500;line-height:1}
+.xm .sig span{color:var(--dim)}
+.xm-circle{position:absolute;right:-8vw;top:50%;width:46vw;aspect-ratio:1;transform:translateY(-50%);border:1px solid rgba(var(--on-dark-rgb),.1);border-radius:50%;pointer-events:none}
+.xm-circle::after{content:"";position:absolute;inset:18%;border:1px dashed rgba(var(--on-dark-rgb),.08);border-radius:50%}
 
-/* 07 On the record: the FAQ layout, rows inside */
-.rec{list-style:none;margin-top:16px;max-width:620px}
-.rec li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;padding:10px 0;border-top:1px solid var(--rule);font-size:15px;color:var(--ink-2)}
-.rec li:last-child{border-bottom:1px solid var(--rule)}
-.rec .yr{font-family:var(--wide);font-size:12px;color:var(--ink);padding-top:2px;font-variant-numeric:tabular-nums}
-.rec b{color:var(--ink);font-weight:600}
+/* ---------- 03 Twenty years: a wall you walk along (horizontal on scroll) ---------- */
+.xt{position:relative;height:420vh;background:var(--page)}
+.xt-pin{position:sticky;top:0;height:calc(100vh - 20px);overflow:hidden;display:flex;flex-direction:column;padding:clamp(48px,6vw,80px) 0 40px}
+.xt-head{display:flex;justify-content:space-between;align-items:end;gap:30px;padding:0 var(--pad)}
+.xt-head h2 em{color:var(--terra)}
+.xt-count{font-family:var(--wide);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.xt-count b{color:var(--ink);font-weight:500}
+.xt-track{position:relative;flex:1;display:flex;align-items:center;gap:clamp(60px,7vw,120px);padding:0 30vw 0 var(--pad);width:max-content;will-change:transform}
+.xt-rule{position:absolute;left:0;right:0;top:50%;height:22px;margin-top:-11px;pointer-events:none;
+  background:linear-gradient(var(--ink),var(--ink)) 0 50%/100% 1px no-repeat,repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 40px) 0 0/100% 100%}
+.xt-item{position:relative;flex:none;width:clamp(260px,24vw,360px);z-index:1}
+.xt-item:nth-child(odd){align-self:flex-start;margin-top:4vh}
+.xt-item:nth-child(even){align-self:flex-end;margin-bottom:2vh}
+.xt-yr{display:block;font-size:clamp(64px,7vw,112px);font-weight:600;letter-spacing:-.06em;line-height:.85;color:var(--c)}
+.xt-pic{position:relative;display:block;margin-top:18px;background:#fff;border:1px solid var(--rule);padding:10px;transform:rotate(var(--rot,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.xt-item:hover .xt-pic{transform:rotate(0) translateY(-6px)}
+.xt-pic::before{content:"";position:absolute;top:-10px;left:50%;width:70px;height:20px;margin-left:-35px;background:rgba(221,164,60,.5);transform:rotate(-3deg)}
+.xt-pic img{aspect-ratio:4/3;height:auto}
+.xt-item h3{font-size:22px;letter-spacing:-.03em;margin-top:18px}
+.xt-item p{font-size:14px;color:var(--ink-2);margin-top:6px;max-width:320px}
+.xt-item .mono{display:block;color:var(--muted);margin-top:10px}
+.xt-bar{margin:0 var(--pad);height:2px;background:var(--rule);position:relative}
+.xt-bar i{position:absolute;inset:0;background:var(--terra);transform-origin:left;transform:scaleX(var(--p,0))}
 
+/* ---------- 04 The January chair: on an ochre ground, step through it ---------- */
+.xc{background:var(--ochre);color:var(--ink);padding:clamp(90px,10vw,140px) var(--pad);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,100px);align-items:center}
+.xc .lbl{color:var(--ink)}
+.xc .lbl b{color:var(--ink)}
+.xc h2 em{color:#fff}
+.xc .lead{font-size:17px;max-width:440px;margin-top:22px;color:var(--ink)}
+.xc-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.xc-chips button{font:inherit;font-size:14px;font-weight:500;padding:9px 16px;border-radius:999px;border:1px solid rgba(var(--ink-rgb),.35);background:transparent;color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.xc-chips button:hover{border-color:var(--ink)}
+.xc-chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.xc-say{margin-top:26px;min-height:96px;max-width:460px;padding-top:16px;border-top:1px solid rgba(var(--ink-rgb),.3)}
+.xc-say .mono{display:block}
+.xc-say q{display:block;quotes:"“" "”";margin-top:8px;font-size:22px;font-weight:500;letter-spacing:-.025em;line-height:1.25}
+.sheet{position:relative;justify-self:center;width:100%;max-width:540px;aspect-ratio:4/5;background:#FFFDF8;padding:26px 26px 18px;display:flex;flex-direction:column;transform:rotate(1.4deg);box-shadow:0 30px 60px -30px rgba(var(--ink-rgb),.45)}
+.sheet::before,.sheet::after{content:"";position:absolute;top:-11px;width:78px;height:24px}
+.sheet::before{left:34px;transform:rotate(-4deg);background:rgba(217,167,160,.75)}
+.sheet::after{right:34px;transform:rotate(3deg);background:rgba(192,81,47,.45)}
+.sheet svg{flex:1;min-height:0;width:100%;overflow:visible}
+.sheet .edge{display:flex;justify-content:space-between;gap:16px;padding-top:10px;border-top:1px solid var(--rule);color:var(--muted)}
+.sheet .edge b{color:var(--ink);font-weight:500}
+.sheet .ln{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.5s cubic-bezier(.6,.1,.2,1),opacity .3s}
+.sheet .fd{transition:opacity 1s ease}
+.sheet .L{transition:opacity 1.2s ease}
+.sheet:not(.s-1) .L1 .ln,.sheet:not(.s-2) .L2 .ln,.sheet:not(.s-3) .L3 .ln,.sheet:not(.s-4) .L4 .ln,.sheet:not(.s-5) .L5 .ln,.sheet:not(.s-6) .L6 .ln{stroke-dashoffset:1;opacity:0}
+.sheet:not(.s-1) .L1 .fd,.sheet:not(.s-2) .L2 .fd,.sheet:not(.s-3) .L3 .fd,.sheet:not(.s-4) .L4 .fd,.sheet:not(.s-5) .L5 .fd,.sheet:not(.s-6) .L6 .fd{opacity:0}
+.L2 .ln:nth-child(2){transition-delay:.15s}.L2 .ln:nth-child(3){transition-delay:.3s}.L2 .ln:nth-child(4){transition-delay:.45s}
+.L5 .ln:nth-child(2){transition-delay:.2s}.L5 .ln:nth-child(3){transition-delay:.4s}.L5 .ln:nth-child(4){transition-delay:.6s}.L5 .ln:nth-child(5){transition-delay:.8s}
+.sheet.s-5 .L1,.sheet.s-5 .L3{opacity:.2}
+.sheet.s-5 .L2{opacity:.25}
+.sheet text{font-family:var(--wide);font-size:6.5px;letter-spacing:.06em;fill:#B24A2B}
+.sheet .sigtext{font-family:var(--hand);font-size:22px;letter-spacing:0;fill:var(--ink)}
+
+/* ---------- 05 The studio in numbers: a bento of colour tiles ---------- */
+.xb{padding:clamp(90px,10vw,140px) var(--pad);background:var(--page)}
+.xb-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,56px)}
+.xb-head h2 em{color:var(--terra)}
+.xb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(220px,auto);gap:12px;grid-template-areas:"ph ph a b" "ph ph c d" "t t t t"}
+.tile{position:relative;border-radius:20px;padding:clamp(20px,2vw,28px);display:flex;flex-direction:column;justify-content:space-between;gap:18px;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.tile:hover{transform:translateY(-5px) rotate(-.4deg)}
+.tile b.big{font-size:clamp(52px,5.4vw,88px);font-weight:600;letter-spacing:-.06em;line-height:.85}
+.tile p{font-size:14.5px;line-height:1.45;max-width:260px}
+.tile .mono{opacity:.75}
+.t-ph{grid-area:ph;padding:0;background:var(--night)}
+.t-ph img{position:absolute;inset:0;filter:grayscale(1) contrast(1.05);object-position:50% 30%}
+.t-ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 26px 22px;color:var(--paper);background:linear-gradient(transparent,rgba(22,20,18,.85));font-size:15px}
+.t-ph figcaption .mono{display:block;color:var(--dim);margin-bottom:6px;opacity:1}
+.t-a{grid-area:a;background:var(--terra);color:#fff}
+.t-b{grid-area:b;background:var(--rose);color:var(--ink)}
+.t-c{grid-area:c;background:#fff;border:1px solid var(--rule)}
+.t-d{grid-area:d;background:var(--sage);color:#fff}
+.t-c ul{list-style:none;font-size:14.5px}
+.t-c li{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--rule)}
+.t-c li span{font-family:var(--wide);font-size:11px;color:var(--muted)}
+.t-t{grid-area:t;background:var(--night);color:var(--paper);flex-direction:row;align-items:center;gap:clamp(20px,4vw,60px);min-height:0}
+.t-t h3{font-size:clamp(26px,2.6vw,38px);flex:none;max-width:280px}
+.t-t h3 em{font-style:normal;color:var(--accent-lt)}
+.team{flex:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none}
+.team li{border-top:1px solid rgba(var(--on-dark-rgb),.25);padding-top:14px}
+.team i{display:block;width:30px;height:30px;border-radius:50%;background:var(--c);margin-bottom:14px}
+.team b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em}
+.team span{display:block;margin-top:4px;color:var(--dim)}
+
+/* ---------- 06 A letter, and your turn ---------- */
+.xl{margin:0 10px;border-radius:16px;background:var(--night);color:var(--paper);padding:clamp(56px,7vw,110px) clamp(24px,5vw,90px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,100px);align-items:center}
+.xl .lbl{color:var(--dim)}
+.xl .lbl b{color:var(--accent-lt)}
+.xl h2{font-size:clamp(48px,6vw,96px);letter-spacing:-.055em}
+.xl h2 em{color:var(--accent-lt)}
+.xl .lead{color:var(--dim);max-width:440px;margin-top:22px}
+.xl .acts{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:34px}
+.xl .btn-ink{background:var(--paper);color:var(--ink)}
+.xl .btn-ink .ar{background:var(--ink);color:var(--paper)}
+.xl .plain{font-size:14.5px;font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px}
+.xl .plain:hover{color:var(--accent-lt)}
+.letter{position:relative;padding:44px 44px 36px;transform:rotate(1.6deg);color:var(--ink);background:#FFFDF8 repeating-linear-gradient(transparent 0 33px,rgba(122,62,94,.16) 33px 34px);background-position:0 30px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.letter:hover{transform:translateY(-6px) rotate(.4deg)}
+.letter::before{content:"";position:absolute;top:-12px;left:28px;width:84px;height:24px;transform:rotate(4deg);background:rgba(221,164,60,.6)}
+.letter p{font-size:18px;line-height:34px}
+.letter .from{margin-top:20px;font-weight:600}
+.letter .from span{display:block;font-weight:400;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.xl + footer{margin-top:10px}
+
+/* ---------- Responsive ---------- */
 @media (max-width:980px){
-  .chair-grid{grid-column:1;grid-template-columns:1fr}
-  .chair-frame{max-width:440px}
-  .faq .hd{padding:0 var(--pad)}
+  .xh{height:auto;min-height:0;max-height:none;padding:84px 20px 28px;display:flex;flex-direction:column}
+  .xh-name{position:relative;inset:auto;font-size:27vw;line-height:.82;display:flex;flex-direction:column}
+  .xh-name span{position:static}
+  .xh-name .b{align-self:flex-end;margin-top:-.02em}
+  .xh-photo{position:relative;left:auto;height:auto;width:92%;align-self:center;margin-top:8px;transform:none!important}
+  .js .xh-photo{transform:none}
+  .xh-lines,.xh-note{display:none}
+  .xh-meta{position:static;grid-template-columns:1fr 1fr;margin-top:24px}
+  .xm-circle{display:none}
+  .xt{height:auto}
+  .xt-pin{position:static;height:auto;overflow:visible;padding:90px 0 60px}
+  .xt-track{width:auto;flex-direction:column;align-items:stretch;gap:56px;padding:48px var(--pad) 0;transform:none!important}
+  .xt-item,.xt-item:nth-child(n){width:auto;max-width:460px;align-self:auto;margin:0}
+  .xt-rule,.xt-bar,.xt-count{display:none}
+  .xc{grid-template-columns:1fr}
+  .sheet{max-width:420px}
+  .xb-grid{grid-template-columns:1fr 1fr;grid-template-areas:"ph ph" "a b" "c d" "t t"}
+  .t-ph{min-height:420px}
+  .t-t{flex-direction:column;align-items:flex-start}
+  .team{grid-template-columns:1fr 1fr;width:100%}
+  .xl{grid-template-columns:1fr}
 }
 @media (max-width:600px){
-  .stages li{grid-template-columns:34px minmax(0,1fr)}
-  .stages span:last-child{display:none}
-  .rec li{grid-template-columns:52px minmax(0,1fr)}
+  .xb-grid{grid-template-columns:1fr;grid-template-areas:"ph" "a" "b" "c" "d" "t"}
+  .tile{min-height:200px}
+  .letter{padding:36px 26px 30px}
 }
-@media (prefers-reduced-motion:reduce){.js .chair-art .ln{stroke-dashoffset:0}.js .chair-art .fd{opacity:1}.chair-frame{transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .js .xh-photo{opacity:1;transform:translateX(-46%)}
+  .xh-lines .ln{stroke-dashoffset:0}
+  .xm p .w{color:var(--paper)}
+}
 </style>
 </head>
 <body data-archetype="gallery">
@@ -601,273 +731,153 @@ body{height:100vh;overflow:hidden}
 <div class="frame">
 <main>
 
-  <!-- 01 HERO -->
-  <section class="hero" id="top">
+  <!-- 01 PORTRAIT -->
+  <section class="xh" id="top">
     <nav class="hn" aria-label="Main">
       <button class="hn-menu" type="button" aria-expanded="false" aria-controls="hnPanel"><i></i>Menu</button>
       <a class="hn-brand" href="home.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a>
       <div><a href="courses.html">Courses</a><a href="lesson.html">Free lesson</a><a class="on" href="lesson.html">Log in</a></div>
       <ul class="hn-panel" id="hnPanel" hidden>
-        <li><a href="home.html">Home</a></li><li><a href="#story">Her story</a></li><li><a href="#chapters">Chapters</a></li>
-        <li><a href="#chair">The January chair</a></li><li><a href="courses.html">Courses</a></li><li><a href="lesson.html">Free lesson</a></li>
+        <li><a href="home.html">Home</a></li><li><a href="#years">Twenty years</a></li><li><a href="#chair">The January chair</a></li>
+        <li><a href="#studio">The studio</a></li><li><a href="courses.html">Courses</a></li><li><a href="lesson.html">Free lesson</a></li>
       </ul>
     </nav>
-    <span class="vline" aria-hidden="true"></span>
-    <span class="hline" aria-hidden="true"></span>
-    <div class="ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.9" pathLength="1"/></svg></div>
-    <figure class="mini"><img src="assets/img/portrait.jpg" alt="Portrait of the artist Elena Varga" style="object-position:40% 30%"></figure>
-    <figure class="big"><img src="assets/img/studio.jpg" alt="Elena Varga at her studio table in Graça, Lisbon"></figure>
-    <h1>About Elena.<br><span>Twenty years of learning to look.</span></h1>
-    <ul class="roles"><li>(1) Born Budapest, 1984</li><li>(2) Lisbon since 2010</li><li>(3) Teaching since 2016</li></ul>
-    <span class="year">Painting since 2006</span>
-    <a class="hcta" href="#story">Read her story <span>↓</span>
-      <svg class="stroke draw" viewBox="0 0 240 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" stroke-width="2.2" d="M3 9.5 C 30 6.8, 62 6.2, 98 6.9 C 136 7.6, 170 8.4, 204 6.6 C 216 6, 228 5.4, 237 4.8"/><path pathLength="1" stroke-width="0.9" opacity=".55" d="M14 11.8 C 58 9.6, 104 9.4, 150 10.2 C 182 10.7, 206 9.8, 226 8.4"/></svg></a>
-  </section>
-  <a class="tabv" href="lesson.html" aria-label="Get a free lesson"><b>EV.</b><span>Free lesson</span></a>
-
-  <!-- 02 STORY -->
-  <section class="about" id="story">
-    <div class="ab">
-      <span class="lbl reveal"><b>02</b>Her story</span>
-      <h2 class="reveal d1">Every January, Elena draws the chair from her first studio on a blank sheet. Twenty Januaries later, <em>it is still the best lesson she knows.</em></h2>
-      <div class="ab-stage">
-        <div class="ab-copy reveal d2">
-          <p>My first studio was a borrowed room in Budapest, shared with a sculptor. It had one chair, so I drew it, and drew what I thought a chair was. It took me years to <em class="w">look</em> first.</p>
-          <p>A three-month residency brought me to Lisbon for the light, and I never went back. I drew in cafés, on the 28 tram, at the Ribeira market. In 2016 a student asked how I “actually see” a shadow. I filmed the answer, and it became the first lesson of Course 01.</p>
-          <p>Now I film every lesson at one table under a north window in Graça, and I watch every student’s final drawing myself. <a href="#chair">Watch the chair get drawn</a>.</p>
-          <div class="ab-sig"><b>Elena V.</b><span>Graça, Lisbon · 2026</span></div>
-        </div>
-        <figure class="ab-figure reveal"><img src="assets/img/seated.jpg" alt="Elena Varga seated on a wooden studio chair"></figure>
-      </div>
+    <h1 class="xh-name" aria-label="Elena Varga"><span class="a" aria-hidden="true">Elena</span><span class="b" aria-hidden="true">Varga</span></h1>
+    <figure class="xh-photo"><img src="assets/img/seated.jpg" alt="Elena Varga seated on a wooden chair in her studio"></figure>
+    <svg class="xh-lines" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+      <path class="g dash" d="M512 60 L512 1000"/>
+      <path class="g dash" d="M40 475 L960 475"/>
+      <ellipse class="g ln" pathLength="1" cx="505" cy="475" rx="62" ry="100"/>
+      <path class="g ln" pathLength="1" d="M430 735 C 470 724, 560 724, 620 740"/>
+    </svg>
+    <span class="xh-note n1 mono">Eye level · look first</span>
+    <span class="xh-note n2 r mono">The chair from her first studio</span>
+    <div class="xh-meta mono">
+      <span>Born<b>Budapest, 1984</b></span>
+      <span>Painting<b>Since 2006</b></span>
+      <span>Lisbon<b>Since 2010</b></span>
+      <span>Teaching<b>Since 2016 · 12,400 students</b></span>
     </div>
   </section>
 
-  <!-- 03 BELIEFS -->
-  <section class="method g6">
-    <div class="panel reveal">
-      <div class="side">
-        <div>
-          <span class="lbl"><b>03</b>What she believes</span>
-          <h2>Look first. <em>Draw second.</em></h2>
-          <p class="txt">Three ideas Elena has repeated in every critique since 2016. They are the spine of every course, from pencil to oil.</p>
-        </div>
-        <a class="more" href="courses.html">See the courses →</a>
+  <!-- 02 MANIFESTO -->
+  <section class="xm" aria-label="In her words">
+    <span class="xm-circle" aria-hidden="true"></span>
+    <span class="lbl"><b>01</b>In her words</span>
+    <p id="manifesto">I don’t teach people to draw. I teach them [to look]: a full minute before a mark, three values instead of seven, and the nerve to leave [a lost edge lost.]</p>
+    <div class="sig"><b>Elena V.</b><span class="mono">Graça, Lisbon · January 2026</span></div>
+  </section>
+
+  <!-- 03 TWENTY YEARS -->
+  <section class="xt" id="years" aria-labelledby="h-years">
+    <div class="xt-pin">
+      <div class="xt-head">
+        <div><span class="lbl"><b>02</b>Twenty years</span><h2 id="h-years">A walk along <em>the studio wall.</em></h2></div>
+        <span class="xt-count"><b id="xtNow">2006</b> → 2026</span>
       </div>
-      <div class="steps">
-        <div class="step"><span class="n">01 · Look</span>
-          <svg class="draw" viewBox="0 0 84 84" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"><path pathLength="1" d="M6 42 C 20 20, 64 20, 78 42 C 64 64, 20 64, 6 42 Z"/><path pathLength="1" d="M42 30 a12 12 0 1 0 .1 0 Z" stroke="var(--terra)"/></svg>
-          <h3>A minute before a mark.</h3><p>“Don’t draw yet. Look at it for a full minute.” One plumb line, one eye level, one circle around the whole shape.</p></div>
-        <div class="step"><span class="n">02 · Values</span>
-          <svg class="draw" viewBox="0 0 84 84" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M8 70 L8 14 L30 14 L30 70 Z M31 70 L31 14 L53 14 L53 70"/><path pathLength="1" d="M54 70 L54 14 L76 14 L76 70 Z M58 22 L72 36 M58 34 L72 48 M58 46 L72 60" stroke="var(--terra)"/></svg>
-          <h3>Three values, not seven.</h3><p>The paper, one middle grey, one dark. “Squint. Count the values. I count three.”</p></div>
-        <div class="step"><span class="n">03 · Finish</span>
-          <svg class="draw" viewBox="0 0 84 84" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M10 60 C 24 40, 34 36, 44 46 C 52 54, 60 40, 74 22"/><path pathLength="1" d="M12 76 C 30 70, 52 80, 78 72" stroke="var(--terra)"/></svg>
-          <h3>Leave lost edges lost.</h3><p>“You stopped here because it got hard. That’s exactly where to keep going.” Then sign it.</p></div>
+      <div class="xt-track" id="xtTrack">
+        <span class="xt-rule" aria-hidden="true"></span>
+        <article class="xt-item" style="--c:var(--ink);--rot:-2deg"><span class="xt-yr">2006</span><span class="xt-pic"><img src="assets/img/gesture.jpg" alt="Ink gesture study" loading="lazy"></span><h3>A borrowed room in Budapest.</h3><p>Shared with a sculptor. It had one chair, so she drew it, and drew what she thought a chair was.</p><span class="mono">Lesson · look first</span></article>
+        <article class="xt-item" style="--c:var(--ultra);--rot:1.5deg"><span class="xt-yr">2008</span><span class="xt-pic"><img src="assets/img/ink-portrait.jpg" alt="Portrait study in ink" loading="lazy"></span><h3>MA Fine Art, Painting.</h3><p>Hungarian University of Fine Arts. One plumb line, one eye level, one circle around the whole shape.</p><span class="mono">Lesson · plumb lines</span></article>
+        <article class="xt-item" style="--c:#8F6511;--rot:-1deg"><span class="xt-yr">2010</span><span class="xt-pic"><img src="assets/img/old-street.jpg" alt="Old Street, watercolour" loading="lazy"></span><h3>Lisbon, for the light.</h3><p>A three-month residency she never left. Thirty-second drawings in cafés, on the 28 tram, at the Ribeira market.</p><span class="mono">Lesson · gesture</span></article>
+        <article class="xt-item" style="--c:var(--terra);--rot:2deg"><span class="xt-yr">2014</span><span class="xt-pic"><img src="assets/img/bridge.jpg" alt="Bridge, watercolour" loading="lazy"></span><h3>“Mesa”, her first solo show.</h3><p>Twenty-two studies of one table at Galeria Graça. Everything measured at arm’s length, one eye closed.</p><span class="mono">Lesson · measure</span></article>
+        <article class="xt-item" style="--c:#A55C52;--rot:-1.5deg"><span class="xt-yr">2016</span><span class="xt-pic"><img src="assets/img/meadow.jpg" alt="Meadow, watercolour" loading="lazy"></span><h3>One question, on camera.</h3><p>A student asked how she “actually sees” a shadow. She filmed the answer: three values. It became Course 01.</p><span class="mono">Lesson · three values</span></article>
+        <article class="xt-item" style="--c:#56694A;--rot:1deg"><span class="xt-yr">2026</span><span class="xt-pic"><img src="assets/img/fragments.jpg" alt="Fragments, acrylic" loading="lazy"></span><h3>The table under the north window.</h3><p>Every lesson filmed in the same light, 9 to 4. Every final drawing watched by her.</p><span class="mono">Lesson · finish</span></article>
       </div>
+      <div class="xt-bar" aria-hidden="true"><i id="xtBar"></i></div>
     </div>
   </section>
 
-  <!-- 04 CHAPTERS -->
-  <section class="courses yrs g6" id="chapters">
-    <div class="head">
-      <div>
-        <span class="lbl reveal"><b>04</b>Chapters</span>
-        <h2 class="reveal d1">Twenty years, hung <em>like posters.</em></h2>
-      </div>
-      <p class="txt reveal d2">Six rooms, six cities and studios, six things she learned. Each chapter became a stage of the drawing below, and a lesson in a course.</p>
-    </div>
-    <div class="cgrid">
-      <article class="pcard reveal" style="--pc:var(--c4)">
-        <h3>2006<small>Budapest</small></h3>
-        <div class="pic"><img src="assets/img/gesture.jpg" alt="" loading="lazy"><span class="tag">First studio</span></div>
-        <dl><div><dt>Lesson</dt><dd>Look first</dd></div><div><dt>Room</dt><dd>A borrowed one</dd></div></dl>
-      </article>
-      <article class="pcard reveal d1" style="--pc:var(--c3)">
-        <h3>2008<small>Fine Art, MA</small></h3>
-        <div class="pic"><img src="assets/img/ink-portrait.jpg" alt="" loading="lazy"><span class="tag">Painting</span></div>
-        <dl><div><dt>Lesson</dt><dd>Plumb lines</dd></div><div><dt>School</dt><dd>HUFA Budapest</dd></div></dl>
-      </article>
-      <article class="pcard reveal d2" style="--pc:var(--c1)">
-        <h3>2010<small>Lisbon</small></h3>
-        <div class="pic"><img src="assets/img/old-street.jpg" alt="" loading="lazy"><span class="tag">Residency</span></div>
-        <dl><div><dt>Lesson</dt><dd>Gesture</dd></div><div><dt>Drawn on</dt><dd>The 28 tram</dd></div></dl>
-      </article>
-      <article class="pcard reveal" style="--pc:var(--c5)">
-        <h3>2014<small>“Mesa”</small></h3>
-        <div class="pic"><img src="assets/img/bridge.jpg" alt="" loading="lazy"><span class="tag">Solo show</span></div>
-        <dl><div><dt>Lesson</dt><dd>Measure</dd></div><div><dt>Studies</dt><dd>22 of one table</dd></div></dl>
-      </article>
-      <article class="pcard reveal d1" style="--pc:var(--c2)">
-        <h3>2016<small>On camera</small></h3>
-        <div class="pic"><img src="assets/img/meadow.jpg" alt="" loading="lazy"><span class="tag">Course 01</span></div>
-        <dl><div><dt>Lesson</dt><dd>Three values</dd></div><div><dt>First film</dt><dd>One shadow</dd></div></dl>
-      </article>
-      <article class="pcard reveal d2" style="--pc:var(--c6)">
-        <h3>2026<small>The studio table</small></h3>
-        <div class="pic"><img src="assets/img/fragments.jpg" alt="" loading="lazy"><span class="tag">Today</span></div>
-        <dl><div><dt>Lesson</dt><dd>Finish</dd></div><div><dt>Light</dt><dd>North, 9 to 4</dd></div></dl>
-      </article>
-    </div>
-  </section>
-
-  <!-- 05 THE JANUARY CHAIR -->
-  <section class="chair-sec sec g6" id="chair">
-    <div class="vhead">
-      <div>
-        <span class="lbl reveal"><b>05</b>The January chair</span>
-        <h2 class="reveal d1">One drawing, <em>six stages.</em></h2>
-      </div>
-      <span class="gw-note reveal d2">Graphite on cartridge paper · 42 × 59.4 cm · Studio collection</span>
-    </div>
-    <div class="chair-grid">
-      <figure class="chair-frame reveal">
-        <span class="gw-f">
-          <svg class="chair-art" id="chairArt" viewBox="0 0 240 300" role="img" aria-label="A pencil study of the chair from Elena’s first studio, built up in six stages: guide lines, gesture, measurements, three values, the finished drawing and her signature.">
-            <g transform="translate(20 34)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <g class="L L1">
-                <path class="fd" d="M105 -18 L105 250 M-14 128 L222 128" stroke="#C0512F" stroke-width=".6" stroke-dasharray="3 3"/>
-                <circle class="ln" cx="105" cy="130" r="108" pathLength="1" stroke="#C0512F" stroke-width=".6" transform="rotate(-90 105 130)"/>
-                <text class="fd" x="168" y="124">eye level</text>
-              </g>
-              <g class="L L2" stroke="#1D1A16" stroke-width=".9" opacity=".55">
-                <path class="ln" pathLength="1" d="M50 120 L130 110 L160 130 L80 142 Z M50 120 L50 127 L80 149 L160 137 L160 130"/>
-                <path class="ln" pathLength="1" d="M51 122 L53 38 M131 111 L133 30 M53 40 L133 31 M53 47 L133 38 M52 76 L132 67"/>
-                <path class="ln" pathLength="1" d="M50 127 L49 212 M80 149 L80 230 M160 137 L160 214 M131 117 L131 198 M49 192 L80 208 L160 194"/>
-                <path class="ln" pathLength="1" opacity=".6" transform="translate(2.5 -1.5) rotate(.8 100 120)" d="M50 120 L130 110 L160 130 L80 142 Z M51 122 L53 38 M131 111 L133 30 M53 40 L133 31 M50 127 L49 212 M80 149 L80 230 M160 137 L160 214"/>
-              </g>
-              <g class="L L3" stroke="#C0512F" stroke-width=".8">
-                <path class="fd" d="M49 22 L49 236 M160 22 L160 236 M14 212 L196 212 M14 30 L196 30" stroke-dasharray="2.5 3" opacity=".8"/>
-                <path class="ln" pathLength="1" d="M22 30 L22 212 M18 30 L26 30 M18 76 L26 76 M18 121 L26 121 M18 167 L26 167 M18 212 L26 212"/>
-                <text class="fd" x="4" y="56" stroke="none">1</text><text class="fd" x="4" y="101" stroke="none">2</text><text class="fd" x="4" y="147" stroke="none">3</text><text class="fd" x="4" y="192" stroke="none">4</text>
-              </g>
-              <g class="L L4" stroke="none">
-                <path class="fd" d="M50 120 L130 110 L160 130 L80 142 Z" fill="#EDE6D9"/>
-                <path class="fd" d="M50 120 L50 127 L80 149 L160 137 L160 130 L80 142 Z M53 40 L133 31 L133 38 L53 47 Z" fill="#9A9184"/>
-                <path class="fd" d="M80 230 L160 214 L200 222 L120 238 Z" fill="#9A9184" opacity=".6"/>
-              </g>
-              <g class="L5" stroke="#1D1A16">
-                <path class="ln" pathLength="1" stroke-width="1.4" d="M50 120 L130 110 L160 130 L80 142 Z M50 120 L50 127 L80 149 L160 137 L160 130"/>
-                <path class="ln" pathLength="1" stroke-width="1.4" d="M51 122 L53 38 M131 111 L133 30 M53 40 L133 31 M53 47 L133 38 M74 44 L73 116 M94 42 L93 114 M114 39 L113 112"/>
-                <path class="ln" pathLength="1" stroke-width="1.4" d="M50 127 L49 212 M131 117 L131 198 M49 192 L80 208 L160 194"/>
-                <path class="ln" pathLength="1" stroke-width="2.6" d="M81 150 L81 230 M161 138 L161 214"/>
-                <path class="ln" pathLength="1" stroke="#9A9184" stroke-width="1" d="M0 240 L220 226"/>
-                <path class="fd" d="M82 230 L160 214 L200 222 L120 238 Z" fill="#2E2A25" opacity=".85" stroke="none"/>
-              </g>
-              <g class="L6">
-                <text class="fd sigtext" x="128" y="262" transform="rotate(-5 160 258)">Elena V.</text>
-                <path class="ln" pathLength="1" d="M128 266 C 150 262, 172 260, 196 254" stroke="#1D1A16" stroke-width=".7" transform="rotate(-2 160 258)"/>
-                <text class="fd" x="176" y="274" style="fill:#4A443B">I.2026</text>
-              </g>
-            </g>
-          </svg>
-        </span>
-        <figcaption class="chair-cap"><span>The chair from her first studio</span><span>I.2026</span></figcaption>
-      </figure>
-      <div class="reveal d1">
-        <p class="txt">The same chair, a blank sheet, every January since 2006. Watch it build in the order every course teaches: guides first, signature last.</p>
-        <ol class="stages">
-          <li><span class="n">01</span><b>Look</b><span>2006</span><p>A plumb line, the eye level and one circle around the whole shape.</p></li>
-          <li><span class="n">02</span><b>Gesture</b><span>2010</span><p>Thirty seconds, the whole chair in one breath. Alive before it is correct.</p></li>
-          <li><span class="n">03</span><b>Measure</b><span>2014</span><p>Arm’s length, one eye closed: the seat is one pencil head, the back is two.</p></li>
-          <li><span class="n">04</span><b>Three values</b><span>2016</span><p>The paper, one middle grey, one dark.</p></li>
-          <li><span class="n">05</span><b>Finish</b><span>Today</span><p>Firm lines where it matters, guides erased back, lost edges left lost.</p></li>
-          <li><span class="n">06</span><b>Sign it</b><span>I.2026</span><p>Then draw it again next January.</p></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 CRITIQUES -->
-  <section class="rl sec g6 rv-dark" id="critiques">
-  <div class="vhead">
+  <!-- 04 THE JANUARY CHAIR -->
+  <section class="xc" id="chair" aria-labelledby="h-chair">
     <div>
-      <span class="lbl reveal"><b>06</b>Overheard</span>
-      <h2 class="reveal d1">Lines from <em>her critiques.</em></h2>
+      <span class="lbl"><b>03</b>The January chair</span>
+      <h2 id="h-chair">Same chair. <em>Every January.</em></h2>
+      <p class="lead">Since 2006 she has drawn the chair from her first studio on a blank sheet, in the six stages every course teaches. Step through them.</p>
+      <div class="xc-chips" id="chips" role="group" aria-label="Drawing stage">
+        <button type="button" data-s="1">Look</button><button type="button" data-s="2">Gesture</button><button type="button" data-s="3">Measure</button><button type="button" data-s="4">Values</button><button type="button" data-s="5">Finish</button><button type="button" data-s="6">Sign</button>
+      </div>
+      <div class="xc-say" aria-live="polite"><span class="mono" id="sayWho">Overheard in a critique · Marta, Course 01</span><q id="sayQ">Don’t draw yet. Look at it for a full minute.</q></div>
     </div>
-    <p class="txt reveal d2">Every final drawing gets a private video critique from Elena: eight to twelve minutes about that one drawing. These are lines students sent back to us.</p>
-  </div>
-  <div class="rv-ticker">
-  <div class="rv-grid" aria-label="Lines from Elena’s critiques">
-    <figure class="rv-block" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Don’t draw yet. Look at it for a full minute.</blockquote></div><figcaption class="who"><b>Said to Marta</b><span>Course 01 · 00:18</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Your eye went to the handle. Stay with the whole shape.</blockquote></div><figcaption class="who"><b>Said to Priya</b><span>Course 01 · 02:10</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>Close one eye. Now hold the seat against the leg.</blockquote></div><figcaption class="who"><b>Said to Leila</b><span>Course 03 · 04:55</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Squint. Count the values. I count three.</blockquote></div><figcaption class="who"><b>Said to Marta</b><span>Course 01 · 00:42</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>You stopped here because it got hard. That’s exactly where to keep going.</blockquote></div><figcaption class="who"><b>Said to Tom</b><span>Course 02 · 06:30</span></figcaption></figure>
-    <figure class="rv-block" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>Leave the lost edges lost.</blockquote></div><figcaption class="who"><b>Said to Ana</b><span>Course 04 · 07:12</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Don’t draw yet. Look at it for a full minute.</blockquote></div><figcaption class="who"><b>Said to Marta</b><span>Course 01 · 00:18</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Your eye went to the handle. Stay with the whole shape.</blockquote></div><figcaption class="who"><b>Said to Priya</b><span>Course 01 · 02:10</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>Close one eye. Now hold the seat against the leg.</blockquote></div><figcaption class="who"><b>Said to Leila</b><span>Course 03 · 04:55</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--ochre);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>Squint. Count the values. I count three.</blockquote></div><figcaption class="who"><b>Said to Marta</b><span>Course 01 · 00:42</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--rose);--fg:var(--ink)"><div><span class="qm" aria-hidden="true">“</span><blockquote>You stopped here because it got hard. That’s exactly where to keep going.</blockquote></div><figcaption class="who"><b>Said to Tom</b><span>Course 02 · 06:30</span></figcaption></figure>
-    <figure class="rv-block" aria-hidden="true" style="--bg:var(--terra);--fg:#FFFFFF"><div><span class="qm" aria-hidden="true">“</span><blockquote>Leave the lost edges lost.</blockquote></div><figcaption class="who"><b>Said to Ana</b><span>Course 04 · 07:12</span></figcaption></figure>
-  </div>
-  </div>
-  <div class="rl-stats reveal d1">
-    <div><b>3,900</b><span>Private critiques</span></div>
-    <div><b>12,400</b><span>Students since 2016</span></div>
-    <div><b>83%</b><span>Finish their course</span></div>
-    <div><b>64</b><span>Countries</span></div>
-  </div>
-  <div class="rl-foot reveal d2"><a href="course.html#reviews">Read the students’ letters →</a></div>
-</section>
+    <figure class="sheet" id="sheet">
+      <svg viewBox="0 0 240 300" role="img" aria-label="A pencil study of the chair from Elena’s first studio, built up in six stages.">
+        <g transform="translate(20 34)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <g class="L L1">
+            <path class="fd" d="M105 -18 L105 250 M-14 128 L222 128" stroke="#C0512F" stroke-width=".6" stroke-dasharray="3 3"/>
+            <circle class="ln" cx="105" cy="130" r="108" pathLength="1" stroke="#C0512F" stroke-width=".6" transform="rotate(-90 105 130)"/>
+            <text class="fd" x="168" y="124">eye level</text>
+          </g>
+          <g class="L L2" stroke="#1D1A16" stroke-width=".9" opacity=".55">
+            <path class="ln" pathLength="1" d="M50 120 L130 110 L160 130 L80 142 Z M50 120 L50 127 L80 149 L160 137 L160 130"/>
+            <path class="ln" pathLength="1" d="M51 122 L53 38 M131 111 L133 30 M53 40 L133 31 M53 47 L133 38 M52 76 L132 67"/>
+            <path class="ln" pathLength="1" d="M50 127 L49 212 M80 149 L80 230 M160 137 L160 214 M131 117 L131 198 M49 192 L80 208 L160 194"/>
+            <path class="ln" pathLength="1" opacity=".6" transform="translate(2.5 -1.5) rotate(.8 100 120)" d="M50 120 L130 110 L160 130 L80 142 Z M51 122 L53 38 M131 111 L133 30 M53 40 L133 31 M50 127 L49 212 M80 149 L80 230 M160 137 L160 214"/>
+          </g>
+          <g class="L L3" stroke="#C0512F" stroke-width=".8">
+            <path class="fd" d="M49 22 L49 236 M160 22 L160 236 M14 212 L196 212 M14 30 L196 30" stroke-dasharray="2.5 3" opacity=".8"/>
+            <path class="ln" pathLength="1" d="M22 30 L22 212 M18 30 L26 30 M18 76 L26 76 M18 121 L26 121 M18 167 L26 167 M18 212 L26 212"/>
+            <text class="fd" x="4" y="56" stroke="none">1</text><text class="fd" x="4" y="101" stroke="none">2</text><text class="fd" x="4" y="147" stroke="none">3</text><text class="fd" x="4" y="192" stroke="none">4</text>
+          </g>
+          <g class="L L4" stroke="none">
+            <path class="fd" d="M50 120 L130 110 L160 130 L80 142 Z" fill="#EDE6D9"/>
+            <path class="fd" d="M50 120 L50 127 L80 149 L160 137 L160 130 L80 142 Z M53 40 L133 31 L133 38 L53 47 Z" fill="#9A9184"/>
+            <path class="fd" d="M80 230 L160 214 L200 222 L120 238 Z" fill="#9A9184" opacity=".6"/>
+          </g>
+          <g class="L5" stroke="#1D1A16">
+            <path class="ln" pathLength="1" stroke-width="1.4" d="M50 120 L130 110 L160 130 L80 142 Z M50 120 L50 127 L80 149 L160 137 L160 130"/>
+            <path class="ln" pathLength="1" stroke-width="1.4" d="M51 122 L53 38 M131 111 L133 30 M53 40 L133 31 M53 47 L133 38 M74 44 L73 116 M94 42 L93 114 M114 39 L113 112"/>
+            <path class="ln" pathLength="1" stroke-width="1.4" d="M50 127 L49 212 M131 117 L131 198 M49 192 L80 208 L160 194"/>
+            <path class="ln" pathLength="1" stroke-width="2.6" d="M81 150 L81 230 M161 138 L161 214"/>
+            <path class="ln" pathLength="1" stroke="#9A9184" stroke-width="1" d="M0 240 L220 226"/>
+            <path class="fd" d="M82 230 L160 214 L200 222 L120 238 Z" fill="#2E2A25" opacity=".85" stroke="none"/>
+          </g>
+          <g class="L6">
+            <text class="fd sigtext" x="128" y="262" transform="rotate(-5 160 258)">Elena V.</text>
+            <path class="ln" pathLength="1" d="M128 266 C 150 262, 172 260, 196 254" stroke="#1D1A16" stroke-width=".7" transform="rotate(-2 160 258)"/>
+            <text class="fd" x="176" y="274" style="fill:#4A443B">I.2026</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption class="edge mono"><span>Stage <b id="stNo">01</b> / 06</span><span>Graphite · 42 × 59.4 cm</span></figcaption>
+    </figure>
+  </section>
 
-  <!-- 07 ON THE RECORD -->
-  <section class="faq g6" id="record">
-    <div class="hd">
-      <span class="lbl reveal"><b>07</b>On the record</span>
-      <h2 class="reveal d1">Studios, shows <em>and teachers.</em></h2>
+  <!-- 05 THE STUDIO -->
+  <section class="xb" id="studio" aria-labelledby="h-studio">
+    <div class="xb-head reveal">
+      <div><span class="lbl"><b>04</b>The studio</span><h2 id="h-studio">One table, <em>one window.</em></h2></div>
+      <p class="txt">Rua da Graça 4, third floor. Every course is filmed here, so every lesson looks like the same room.</p>
     </div>
-    <div class="list reveal d2">
-      <details open><summary>Training</summary>
-        <ul class="rec">
-          <li><span class="yr">2006</span><span><b>First studio</b> · a borrowed room in Budapest, shared with a sculptor</span></li>
-          <li><span class="yr">2008</span><span><b>MA Fine Art, Painting</b> · Hungarian University of Fine Arts</span></li>
-          <li><span class="yr">2010</span><span><b>Three-month residency</b> · Lisbon, for the light</span></li>
-        </ul></details>
-      <details><summary>Exhibitions</summary>
-        <ul class="rec">
-          <li><span class="yr">2014</span><span><b>“Mesa”</b> · first solo show, 22 studies of one table, Galeria Graça, Lisbon</span></li>
-          <li><span class="yr">2022–25</span><span><b>Selected works</b> · ink, watercolour and acrylic, hung in <a href="home.html#gallery">the studio</a></span></li>
-        </ul></details>
-      <details><summary>Teaching</summary>
-        <ul class="rec">
-          <li><span class="yr">2010</span><span><b>Evening classes</b> · six years of them, in Graça</span></li>
-          <li><span class="yr">2016</span><span><b>Course 01 filmed</b> · Foundations of Drawing, from one question about a shadow</span></li>
-          <li><span class="yr">2026</span><span><b>Six courses</b> · pencil, graphite, watercolour, ink, oil and acrylic</span></li>
-        </ul></details>
-      <details><summary>Who teaches at the table</summary>
-        <ul class="rec">
-          <li><span class="yr">Pencil</span><span><b>Elena Varga</b> · founder, pencil and graphite</span></li>
-          <li><span class="yr">Water</span><span><b>Tomás Reis</b> · watercolour</span></li>
-          <li><span class="yr">Ink</span><span><b>Ana Lobo</b> · ink</span></li>
-          <li><span class="yr">Oil</span><span><b>Jonas Weber</b> · oil and acrylic</span></li>
-        </ul></details>
+    <div class="xb-grid">
+      <figure class="tile t-ph reveal"><img src="assets/img/studio.jpg" alt="Elena at the studio table with her brushes" loading="lazy"><figcaption><span class="mono">Graça · north light</span>The table where every lesson is filmed.</figcaption></figure>
+      <div class="tile t-a reveal d1"><span class="mono">Private critiques</span><div><b class="big">3,900</b><p>Eight to twelve minutes each, about one drawing. She watches every one herself.</p></div></div>
+      <div class="tile t-b reveal d2"><span class="mono">Filming hours</span><div><b class="big">9→4</b><p>The same even north light, so a shadow in lesson 1 matches lesson 24.</p></div></div>
+      <div class="tile t-c reveal d1"><span class="mono">In her pencil case</span><ul><li>HB, 2B, 6B<span>Graphite</span></li><li>Kneaded eraser<span>Lifts</span></li><li>Craft knife<span>Sharpens</span></li><li>Cartridge paper<span>A2</span></li></ul></div>
+      <div class="tile t-d reveal d2"><span class="mono">Countries</span><div><b class="big">64</b><p>12,400 students, and 83% of them finish their course.</p></div></div>
+      <div class="tile t-t reveal">
+        <h3>Who films at <em>her table.</em></h3>
+        <ul class="team">
+          <li style="--c:var(--ochre)"><i></i><b>Elena Varga</b><span class="mono">Founder · Pencil</span></li>
+          <li style="--c:var(--rose)"><i></i><b>Tomás Reis</b><span class="mono">Watercolour</span></li>
+          <li style="--c:var(--paper)"><i></i><b>Ana Lobo</b><span class="mono">Ink</span></li>
+          <li style="--c:var(--terra)"><i></i><b>Jonas Weber</b><span class="mono">Oil · Acrylic</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- 08 JOIN -->
-  <section class="join g6" id="join">
-    <div class="cta-wrap reveal">
-      <a class="map-cta" href="lesson.html">
-        <svg class="map" viewBox="0 0 1300 300" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 98C300 82 900 62 1300 102M0 212C400 192 800 242 1300 192M200 0C230 120 262 220 282 300M462 0C492 120 472 232 452 300M832 0C802 100 782 200 762 300M1072 0C1102 120 1132 222 1152 300M330 56L982 286"/>
-          <ellipse cx="650" cy="152" rx="176" ry="96"/><ellipse cx="650" cy="152" rx="96" ry="58"/>
-          <path class="dash" d="M0 152H1300"/>
-        </svg>
-        <div class="mc">
-          <span class="mc-strokes" aria-hidden="true"><i style="background:var(--ochre)"></i><i style="background:var(--rose)"></i><i style="background:var(--terra)"></i><i style="background:#8F6511"></i><i style="background:#A55C52"></i><i style="background:#7A3E5E"></i><i style="background:var(--paper)"></i><i style="background:#56694A"></i></span>
-          <strong>Pull up a chair.</strong>
-          <span class="mc-addr">Lesson 1 is free: the same chair, the same three values.<br>Twelve minutes, one pencil, and whatever chair you’re sitting on.</span>
-          <span class="mc-go">Watch lesson 1 free →</span>
-        </div>
-      </a>
-      <div class="nl">
-        <p>Get a <em>free 45-minute lesson</em> and monthly studio notes.</p>
-        <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('input').placeholder='Thanks! Check your inbox.'">
-          <input type="email" placeholder="Enter your email" aria-label="Email address" required>
-          <button type="submit" aria-label="Subscribe">→</button>
-        </form>
-      </div>
+  <!-- 06 YOUR TURN -->
+  <section class="xl reveal" aria-labelledby="h-turn">
+    <div>
+      <span class="lbl"><b>05</b>Your turn</span>
+      <h2 id="h-turn">Pull up <em>a chair.</em></h2>
+      <p class="lead">Start with the free lesson: the same chair, the same three values. Twelve minutes, one pencil, and whatever chair you’re sitting on.</p>
+      <div class="acts"><a class="btn btn-ink" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a><a class="plain" href="courses.html">See all courses</a></div>
+    </div>
+    <div class="letter">
+      <p>Dear Elena,</p>
+      <p>I hadn’t drawn since school. Six weeks in, I drew my grandmother’s chair, and now the drawing hangs above it in her kitchen. Your critique was eleven minutes about my drawing alone. I watched it four times.</p>
+      <p class="from">Marta K.<span>Foundations of Drawing · finished in 6 weeks · Porto</span></p>
     </div>
   </section>
 </main>
@@ -888,33 +898,84 @@ body{height:100vh;overflow:hidden}
 </div>
 
 <script>
-  // Rail menu: the button opens the drawer; scrim, Escape or a link closes it.
+  // Rail menu: the button opens the drawer; scrim or Escape closes it.
   const railBtn = document.querySelector('.burger'), drawer = document.getElementById('siteDrawer'), scrim = document.querySelector('.menu-scrim');
   const setDrawer = open => { document.body.classList.toggle('menu-open', open); railBtn.setAttribute('aria-expanded', open); railBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); if (open) drawer.querySelector('nav a').focus(); else railBtn.focus(); };
   railBtn.addEventListener('click', () => setDrawer(!document.body.classList.contains('menu-open')));
   scrim.addEventListener('click', () => setDrawer(false));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setDrawer(false); });
 
-  // Reveal on scroll.
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-  }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+  // Reveal on scroll; the portrait draws its construction lines on load.
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: .15 });
   document.querySelectorAll('.reveal, .draw').forEach(el => io.observe(el));
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.xh');
   requestAnimationFrame(() => hero.classList.add('is-in'));
-  setTimeout(() => hero.classList.add('is-in'), 400);
 
-  // Hero circle: draw it again whenever the hero scrolls back into view.
-  new IntersectionObserver(([e]) => hero.classList.toggle('ring-on', e.isIntersecting), { threshold: .35 }).observe(hero);
+  // Manifesto: wrap each word; [brackets] mark the accent words.
+  const man = document.getElementById('manifesto');
+  let acc = false;
+  man.innerHTML = man.textContent.split(/\s+/).map(w => {
+    if (w.startsWith('[')) { acc = true; w = w.slice(1); }
+    const end = w.includes(']'); const word = w.replace(']', '');
+    const html = `<span class="w${acc ? ' ac' : ''}">${word}</span>`;
+    if (end) acc = false;
+    return html;
+  }).join(' ');
+  const words = [...man.querySelectorAll('.w')];
 
-  // The January chair: draws itself stage by stage once it is in view, then the guides are erased back.
-  const chair = document.getElementById('chairArt'), chairSec = document.getElementById('chair');
-  new IntersectionObserver(([e], obs) => {
+  // Twenty years: vertical scroll walks the wall sideways (desktop only).
+  const xt = document.getElementById('years'), track = document.getElementById('xtTrack'), bar = document.getElementById('xtBar'), now = document.getElementById('xtNow');
+  const years = [...track.querySelectorAll('.xt-yr')].map(y => y.textContent);
+  const wide = matchMedia('(min-width: 981px)');
+  const clamp = v => Math.min(1, Math.max(0, v));
+
+  let ticking = false;
+  const onScroll = () => {
+    const vh = innerHeight;
+    const m = man.getBoundingClientRect();
+    const mp = clamp((vh * .85 - m.top) / (m.height + vh * .35));
+    const lit = Math.round(mp * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < lit));
+    if (wide.matches) {
+      const r = xt.getBoundingClientRect();
+      const p = clamp(-r.top / (r.height - vh));
+      const dist = track.scrollWidth - track.parentElement.clientWidth;
+      track.style.transform = `translate3d(${-p * dist}px,0,0)`;
+      bar.style.setProperty('--p', p.toFixed(3));
+      now.textContent = years[Math.min(years.length - 1, Math.floor(p * years.length))];
+    } else track.style.transform = '';
+    ticking = false;
+  };
+  document.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true, capture: true });   // the page scrolls inside the frame panel
+  addEventListener('resize', onScroll);
+  onScroll();
+
+  // The January chair: chips set the stage; it plays through once when it comes into view.
+  const sheet = document.getElementById('sheet'), chips = [...document.querySelectorAll('#chips button')];
+  const stNo = document.getElementById('stNo'), sayWho = document.getElementById('sayWho'), sayQ = document.getElementById('sayQ');
+  const said = [
+    ['Marta, Course 01', 'Don’t draw yet. Look at it for a full minute.'],
+    ['Priya, Course 01', 'Your eye went to the handle. Stay with the whole shape.'],
+    ['Leila, Course 03', 'Close one eye. Now hold the seat against the leg.'],
+    ['Marta, Course 01', 'Squint. Count the values. I count three.'],
+    ['Tom, Course 02', 'You stopped here because it got hard. That’s exactly where to keep going.'],
+    ['Every student', 'Finished. Sign it. Then draw it again.']
+  ];
+  let playing = null;
+  const setStage = n => {
+    for (let k = 1; k <= 6; k++) sheet.classList.toggle('s-' + k, k <= n);
+    chips.forEach((c, i) => c.setAttribute('aria-pressed', i === n - 1));
+    stNo.textContent = '0' + n;
+    sayWho.textContent = 'Overheard in a critique · ' + said[n - 1][0]; sayQ.textContent = said[n - 1][1];
+  };
+  chips.forEach(c => c.addEventListener('click', () => { clearInterval(playing); setStage(+c.dataset.s); }));
+  setStage(1);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) setStage(6);
+  else new IntersectionObserver(([e], obs) => {
     if (!e.isIntersecting) return;
-    chair.classList.add('is-in'); chairSec.classList.add('is-in');
-    setTimeout(() => chair.classList.add('done'), 5600);
     obs.disconnect();
-  }, { threshold: .35 }).observe(chair);
+    let n = 1; playing = setInterval(() => { setStage(++n); if (n >= 6) clearInterval(playing); }, 1500);
+  }, { threshold: .5 }).observe(sheet);
 
   // Phone menu.
   const menuBtn = document.querySelector('.hn-menu'), menu = document.getElementById('hnPanel');
