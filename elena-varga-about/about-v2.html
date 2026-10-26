@@ -531,13 +531,12 @@ body{height:100vh;overflow:hidden}
 .xh .hn-brand{color:var(--ink)!important}
 .xh .hn-brand span{color:var(--muted)}
 .xh .hn-menu{color:var(--ink)}
-.xh-name{position:absolute;inset:0;margin:0;pointer-events:none;font-weight:700;letter-spacing:-.088em;line-height:.8;font-size:clamp(110px,17.5vw,300px);color:var(--ink)}
+.xh-name{position:absolute;inset:0;margin:0;pointer-events:none;font-weight:700;letter-spacing:-.06em;line-height:.8;font-size:clamp(110px,17.5vw,300px);color:var(--ink)}
 .xh-name span{position:absolute}
 .xh-name .a{left:4.5%;top:14%}
-.xh-name .b{right:2.5%;bottom:10%;letter-spacing:-.1em}
-.xh-name .kv{position:static;margin-right:-.07em}
+.xh-name .b{right:2.5%;bottom:10%}
 /* the cut-out portrait sits between the two words: in front of "Elena", beside "Varga" */
-.xh-fig{position:absolute;left:44%;bottom:0;height:80%;aspect-ratio:1162/1354;transform:translateX(-50%);z-index:2;margin:0}
+.xh-fig{position:absolute;left:var(--fx,44%);bottom:0;height:80%;aspect-ratio:1162/1354;transform:translateX(-50%);z-index:2;margin:0}
 .xh-fig img{width:100%;height:100%;object-fit:contain;filter:grayscale(1) contrast(1.04)}
 .js .xh-fig img{opacity:0;transform:translateY(24px);transition:opacity 1.2s ease .2s,transform 1.4s cubic-bezier(.2,.7,.2,1) .2s}
 .xh.is-in .xh-fig img{opacity:1;transform:none}
@@ -552,7 +551,7 @@ body{height:100vh;overflow:hidden}
 .js .xh-lines .fade{opacity:0;transition:opacity 1s ease 1.4s}
 .xh.is-in .xh-lines .fade{opacity:1}
 .xh-lines .back{z-index:-1}
-.xh-tag{position:absolute;left:calc(44% + 34vh);top:36%;z-index:3;font-size:clamp(20px,1.9vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1.12;color:var(--terra)}
+.xh-tag{position:absolute;left:calc(var(--fx,44%) + var(--fw,55vh) * .55);top:36%;z-index:3;font-size:clamp(20px,1.9vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1.12;color:var(--terra)}
 .xh-role{position:absolute;left:4.5%;top:59%;z-index:3;display:flex;align-items:center;gap:22px;letter-spacing:.2em;color:var(--ink-2)}
 .xh-role::after{content:"";width:clamp(60px,10vw,150px);border-top:1.5px solid var(--terra)}
 .xh-role b{font-weight:500;color:var(--ink)}
@@ -773,7 +772,7 @@ body{height:100vh;overflow:hidden}
         <li><a href="#studio">The studio</a></li><li><a href="courses.html">Courses</a></li><li><a href="lesson.html">Free lesson</a></li>
       </ul>
     </nav>
-    <h1 class="xh-name" aria-label="Elena Varga"><span class="a" aria-hidden="true">Elena</span><span class="b" aria-hidden="true"><span class="kv">V</span>arga</span></h1>
+    <h1 class="xh-name" aria-label="Elena Varga"><span class="a" aria-hidden="true">Elena</span><span class="b" aria-hidden="true">Varga</span></h1>
     <figure class="xh-fig">
       <svg class="xh-lines" viewBox="0 0 1162 1354" aria-hidden="true">
         <circle class="g dash fade" cx="590" cy="190" r="250"/>
@@ -949,6 +948,27 @@ body{height:100vh;overflow:hidden}
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: .15 });
   document.querySelectorAll('.reveal, .draw').forEach(el => io.observe(el));
   const hero = document.querySelector('.xh');
+
+  // Lay the name around the portrait, as in the reference: "Elena" ends at her hair,
+  // "Varga" starts at her boot tip. The name is scaled down when the screen is too narrow for both.
+  const fig = hero.querySelector('.xh-fig'), name = hero.querySelector('.xh-name');
+  const elena = name.querySelector('.a'), varga = name.querySelector('.b');
+  const HAIR = .43, BOOT = .87, TUCK = .03;   // positions across the photo's width
+  const placeFig = () => {
+    name.style.fontSize = ''; varga.style.left = ''; varga.style.right = '';
+    hero.style.removeProperty('--fx'); hero.style.removeProperty('--fw');
+    if (!matchMedia('(min-width: 981px)').matches) return;
+    const W = hero.clientWidth, fw = fig.offsetWidth, F0 = parseFloat(getComputedStyle(name).fontSize);
+    const e = elena.offsetWidth / F0, v = varga.offsetWidth / F0, L = W * .045, R = W * .025;
+    const F = Math.max(90, Math.min(F0, (W - L - R - (BOOT - HAIR - 2 * TUCK) * fw) / (e + v)));
+    name.style.fontSize = F + 'px';
+    const hair = L + e * F - TUCK * fw;                  // where "Elena" ends, tucked just behind her hair
+    hero.style.setProperty('--fw', fw + 'px');
+    hero.style.setProperty('--fx', Math.round(hair + (.5 - HAIR) * fw) + 'px');
+    varga.style.left = Math.round(hair + (BOOT - HAIR - TUCK) * fw) + 'px'; varga.style.right = 'auto';
+  };
+  placeFig(); addEventListener('resize', placeFig);
+  if (document.fonts) document.fonts.ready.then(placeFig);
   requestAnimationFrame(() => hero.classList.add('is-in'));
 
   // Manifesto: wrap each word; [brackets] mark the accent words.
