@@ -579,14 +579,19 @@ body{height:100vh;overflow:hidden}
 .xt-track{position:relative;flex:none;display:flex;align-items:flex-start;gap:clamp(48px,5vw,88px);padding:clamp(36px,4.5vh,60px) 30vw 0 var(--pad);width:max-content;will-change:transform}
 /* the timeline runs along the top of the cards; each card hangs from a node on it */
 .xt-rule{position:absolute;left:0;right:0;top:calc(clamp(36px,4.5vh,60px) + 5px);height:1px;background:var(--ink);pointer-events:none}
-.xt-rule::after{content:"";position:absolute;left:0;right:0;top:-6px;height:13px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px 40px)}
 .xt-item{position:relative;flex:none;width:clamp(270px,23vw,340px);z-index:1}
 .xt-node{position:relative;display:flex;width:max-content;align-items:center;gap:10px;height:11px;padding-right:10px;background:var(--page);color:var(--ink-2)}
 .xt-node::before{content:"";flex:none;width:11px;height:11px;border-radius:50%;background:var(--page);border:2px solid var(--c);box-sizing:border-box;transition:background .3s}
 .xt-item:hover .xt-node::before{background:var(--c)}
-.xt-pic{position:relative;display:block;margin-top:clamp(22px,3vh,32px);background:#fff;border:1px solid var(--rule);padding:8px;transform:rotate(var(--rot,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.xt-pic{position:relative;display:block;margin-top:clamp(26px,3.4vh,36px);background:#fff;border:1px solid var(--rule);padding:8px;transform:rotate(var(--rot,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .xt-item:hover .xt-pic{transform:rotate(0) translateY(-6px)}
-.xt-pic::before{content:"";position:absolute;top:-10px;left:50%;width:64px;height:18px;margin-left:-32px;background:rgba(221,164,60,.5);transform:rotate(-3deg)}
+.xt-pic{box-shadow:0 18px 26px -18px rgba(var(--ink-rgb),.45),0 2px 4px rgba(var(--ink-rgb),.06)}
+/* masking tape: torn ends, a little translucent, half on the paper and half on the wall */
+.xt-pic::before{content:"";position:absolute;top:-14px;left:50%;z-index:2;width:84px;height:28px;margin-left:-42px;transform:rotate(-3deg);
+  background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0) 40%,rgba(0,0,0,.04)),rgba(226,196,132,.82);
+  box-shadow:0 1px 2px rgba(var(--ink-rgb),.18);
+  clip-path:polygon(0 4%,4% 0,8% 9%,12% 1%,88% 0,92% 8%,96% 2%,100% 7%,98% 22%,100% 38%,97% 55%,100% 72%,98% 90%,100% 100%,94% 96%,90% 100%,10% 100%,6% 93%,2% 100%,0 92%,2% 76%,0 60%,3% 44%,0 28%,2% 14%)}
+.xt-item:nth-child(even) .xt-pic::before{transform:rotate(2.5deg);margin-left:-30px}
 .xt-pic img{aspect-ratio:3/2;height:auto}
 .xt-body{margin-top:clamp(30px,4.2vh,44px);padding-left:2px}
 .xt-yr{display:block;font-size:clamp(40px,3.6vw,56px);font-weight:600;letter-spacing:-.055em;line-height:.9;color:var(--c)}
