@@ -383,7 +383,7 @@ html[data-mode="academy"] .m-solo,html:not([data-mode="academy"]) .m-academy{dis
 /* ---------- 21. Left rail and menu drawer (injected by site.js; not on Workroom screens) ---------- */
 body.has-rail{padding-left:var(--rail-w)}
 body.has-rail .gridlines{left:var(--rail-w)}
-.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail-w);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 0 28px;pointer-events:none}
+.rail{position:fixed;width:var(--rail-w);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 0 28px;pointer-events:none}
 .rail > *{pointer-events:auto}
 .burger{width:52px;height:52px;border-radius:16px;background:var(--line-strong);display:grid;place-items:center;transition:background .25s}
 .burger:hover{background:var(--bg-accent)}
@@ -423,7 +423,24 @@ body.menu-open .menu-drawer{transform:none;visibility:visible}
   body.has-rail .gridlines{left:0}
   .rail{display:none}
 }
-body.has-rail .review-bar{left:calc(var(--rail-w) + 16px)}
+body.has-rail .review-bar{left:calc(var(--rail-w) + var(--frame-gap) * 2 + 16px)}
 @media (max-width:900px){body.has-rail .review-bar{left:max(16px,env(safe-area-inset-left,0px))}}
 /* with the rail, the header row reads: menu button · brand ………… FAQ · Free lesson · Log in */
 body.has-rail .site-head .wrap{max-width:none;padding-left:20px;padding-right:26px}
+
+/* ---------- 22. Two panels: the side nav and the page body, separated by a 10px gap ---------- */
+:root{--frame-gap:10px;--frame-ground:#FFFFFF}
+body.has-rail{padding:var(--frame-gap) var(--frame-gap) var(--frame-gap) calc(var(--rail-w) + var(--frame-gap) * 2);background:var(--frame-ground)}
+body.has-rail::before{display:none}
+.frame{position:relative;min-height:calc(100vh - var(--frame-gap) * 2);border-radius:var(--r-card);overflow:clip;background:var(--bg-surface);isolation:isolate}
+body[data-archetype="gallery"] .frame,body[data-archetype="counter"] .frame{background:var(--bg-page)}
+body[data-archetype="gallery"] .frame::before{content:"";position:absolute;inset:0;z-index:100;pointer-events:none;opacity:.14;mix-blend-mode:multiply;filter:grayscale(1);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body.has-rail .gridlines{top:var(--frame-gap);bottom:var(--frame-gap);left:calc(var(--rail-w) + var(--frame-gap) * 2);right:var(--frame-gap)}
+.rail{top:var(--frame-gap);left:var(--frame-gap);bottom:var(--frame-gap);border-radius:var(--r-card);background:var(--bg-page)}
+.menu-drawer{top:var(--frame-gap);bottom:var(--frame-gap);left:calc(var(--rail-w) + var(--frame-gap) * 2);border-radius:var(--r-card);padding:72px 48px 36px}
+.menu-scrim{border-radius:0}
+@media (max-width:900px){
+  body.has-rail{padding:0;background:var(--bg-page)}
+  .frame{border-radius:0;min-height:100vh}
+  .menu-drawer{top:0;bottom:0;left:0;border-radius:0}
+}

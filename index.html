@@ -77,13 +77,13 @@ h1 em,h2 em{font-style:normal;color:var(--terra)}
 .lbl b{order:0}
 
 /* ============ Drawing grid ============ */
-.cols{position:fixed;inset:0 0 0 var(--rail);display:grid;grid-template-columns:repeat(3,1fr);border-right:1px solid var(--line);pointer-events:none;z-index:0}
+.cols{position:fixed;inset:10px 10px 10px calc(var(--rail) + 20px);border-radius:16px;display:grid;grid-template-columns:repeat(3,1fr);border-right:1px solid var(--line);pointer-events:none;z-index:0}
 .cols i{border-left:1px solid var(--line)}
 main,header,footer,section{position:relative;z-index:1}
 .g6{display:grid;grid-template-columns:repeat(6,1fr)}
 
 /* ============ Rail ============ */
-.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 0 26px;pointer-events:none}
+.rail{position:fixed;left:10px;top:10px;bottom:10px;width:var(--rail);border-radius:16px;background:var(--page);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 0 26px;pointer-events:none}
 .rail>*{pointer-events:auto}
 .vt{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--wide);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .soc{display:flex;flex-direction:column;gap:10px}
@@ -122,16 +122,16 @@ main,header,footer,section{position:relative;z-index:1}
 .reveal.is-in{opacity:1;transform:none}
 .d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
 
-main{margin-left:var(--rail)}
+main{margin-left:0}
 
 /* ============ 01 Hero: construction-line layout ============ */
 .hero{
   --vx:38%;            /* vertical rule */
   --hy:48%;            /* horizontal rule */
-  --x0:calc(var(--rail) + 1.4%);
+  --x0:2.2%;
   --x1:1.8%;
   --hl:rgba(var(--on-dark-rgb),.2);
-  position:relative;margin-left:calc(var(--rail) * -1);height:100vh;min-height:640px;max-height:1060px;
+  position:relative;margin-left:0;height:calc(100vh - 20px);min-height:640px;max-height:1060px;
   background:var(--night);color:var(--paper);overflow:hidden
 }
 .hn{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;height:92px;padding:0 var(--x1) 0 var(--x0);z-index:3;font-size:15px}
@@ -184,7 +184,7 @@ main{margin-left:var(--rail)}
 .hero.is-in .hcta .draw path{stroke-dashoffset:0}
 .hcta:hover .stroke path:first-child{stroke-width:2.8}
 /* white side tab, pinned */
-.tabv{position:fixed;right:0;top:39%;z-index:30;width:38px;background:#fff;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 0 18px;height:220px;border:1px solid var(--rule);border-right:0;transition:width .3s}
+.tabv{position:fixed;right:10px;top:39%;border-radius:12px 0 0 12px;z-index:30;width:38px;background:#fff;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 0 18px;height:220px;border:1px solid var(--rule);border-right:0;transition:width .3s}
 .tabv:hover{width:44px}
 .tabv b{font-size:15px;font-weight:700;letter-spacing:-.04em}
 .tabv span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;font-weight:600}
@@ -395,7 +395,7 @@ em.w{font-style:normal;font-weight:600}
 }
 
 /* ============ Footer ============ */
-footer{position:relative;z-index:1;margin:0 0 0 var(--rail);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px) minmax(0,500px) minmax(0,300px) minmax(0,1fr);text-align:center;background:#000;color:var(--dim)}
+footer{position:relative;z-index:1;margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px) minmax(0,500px) minmax(0,300px) minmax(0,1fr);text-align:center;background:#000;color:var(--dim)}
 footer .c{position:relative;min-height:350px;padding:40px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:14px;color:var(--dim)}
 footer .c:nth-child(1){grid-column:2}
 footer .c:nth-child(2){grid-column:3;background:rgba(var(--on-dark-rgb),.06)}
@@ -495,13 +495,12 @@ summary{font-weight:500;letter-spacing:-.02em}
 .burger span{position:relative}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0}
 .burger span::before{top:-6px}.burger span::after{top:6px}
-.hero-dark-rail .burger,.burger[aria-expanded="true"]{background:var(--page)}
-.hero-dark-rail .burger span,.hero-dark-rail .burger span::before,.hero-dark-rail .burger span::after{background:var(--ink)}
+.burger[aria-expanded="true"]{background:var(--terra)}
 .burger[aria-expanded="true"] span{background:transparent!important}
-.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);background:var(--ink)}
-.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);background:var(--ink)}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);background:#fff}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);background:#fff}
 .menu-scrim{position:fixed;inset:0;z-index:64;background:rgba(var(--ink-rgb),.4);opacity:0;pointer-events:none;transition:opacity .4s}
-.menu-drawer{position:fixed;top:0;bottom:0;left:0;z-index:65;width:min(520px,100vw);padding:96px 48px 36px calc(var(--rail) + 28px);background:var(--night);color:var(--paper);display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .55s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+.menu-drawer{position:fixed;top:10px;bottom:10px;left:calc(var(--rail) + 20px);border-radius:16px;z-index:65;width:min(520px,100vw);padding:72px 48px 36px;background:var(--night);color:var(--paper);display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .55s cubic-bezier(.2,.7,.2,1);visibility:hidden}
 body.menu-open .menu-scrim{opacity:1;pointer-events:auto}
 body.menu-open .menu-drawer{transform:none;visibility:visible}
 .menu-drawer .lbl{color:var(--dim)}
@@ -513,8 +512,11 @@ body.menu-open .menu-drawer{transform:none;visibility:visible}
 .menu-drawer .mbtn{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;height:48px;padding:0 6px 0 22px;border-radius:999px;background:var(--paper);color:var(--ink);font-size:14.5px;font-weight:500}
 .menu-drawer .mbtn i{width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-style:normal}
 .menu-drawer address{font-style:normal;font-size:12px;line-height:1.7;color:var(--dim)}
-body.menu-open .rail .vt{color:var(--dim)}
 @media (prefers-reduced-motion:reduce){.menu-drawer{transition:none}}
+/* ============ Two panels: side nav and page body ============ */
+body{background:#FFFFFF}
+.frame{position:relative;margin:10px 10px 10px calc(var(--rail) + 20px);border-radius:16px;overflow:clip;background:var(--page);isolation:isolate}
+@media (max-width:980px){.frame{margin:0;border-radius:0}}
 </style>
 </head>
 <body data-archetype="gallery">
@@ -534,6 +536,7 @@ body.menu-open .rail .vt{color:var(--dim)}
 
 
 
+<div class="frame">
 <main>
 
   <!-- 01 HERO -->
@@ -788,6 +791,14 @@ body.menu-open .rail .vt{color:var(--dim)}
   </section>
 </main>
 
+<footer>
+  <div class="c"><h3>Learn</h3><a href="courses.html">All courses</a><a href="#">Free lessons</a><a href="#">Gift a course</a><a href="#faq">FAQ</a></div>
+  <div class="c"><h3>Studio</h3><a href="about.html">About Elena</a><a href="#gallery">Gallery</a><a href="sitemap.html#notes">Studio notes</a><a href="contact.html">Contact</a></div>
+  <div class="c"><h3>Information</h3><a href="contact.html">Commissions</a><a href="sitemap.html">Site map</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · Made by hand in Lisbon</span></div>
+</footer>
+</div>
+
 <div class="menu-scrim"></div>
 <div class="menu-drawer" id="siteDrawer" role="dialog" aria-modal="true" aria-label="Menu">
   <span class="lbl"><b>00</b>Menu</span>
@@ -795,12 +806,6 @@ body.menu-open .rail .vt{color:var(--dim)}
   <div class="menu-foot"><a class="mbtn" href="lesson.html">Watch lesson 1 free <i aria-hidden="true">→</i></a><address>Rua da Graça 4, 3º · 1170-165 Lisboa<br>Letters read on Tuesday and Friday mornings</address></div>
 </div>
 
-<footer>
-  <div class="c"><h3>Learn</h3><a href="courses.html">All courses</a><a href="#">Free lessons</a><a href="#">Gift a course</a><a href="#faq">FAQ</a></div>
-  <div class="c"><h3>Studio</h3><a href="about.html">About Elena</a><a href="#gallery">Gallery</a><a href="sitemap.html#notes">Studio notes</a><a href="contact.html">Contact</a></div>
-  <div class="c"><h3>Information</h3><a href="contact.html">Commissions</a><a href="sitemap.html">Site map</a><a href="#">Privacy</a><a href="#">Terms</a></div>
-  <div class="base"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · Made by hand in Lisbon</span></div>
-</footer>
 
 <script>
   // Rail menu: the button opens the drawer; scrim, Escape or a link closes it.

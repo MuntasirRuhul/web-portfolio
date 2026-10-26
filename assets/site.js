@@ -56,6 +56,10 @@
       links.map(([h, t], i) => `<a href="${h}"${h.split('#')[0] === here && !h.includes('#') ? ' aria-current="page"' : ''}><small>0${i + 1}</small>${t}</a>`).join('') + '</nav>' +
       '<div class="menu-foot"><a class="btn btn-paper" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a>' +
       '<address>Rua da Graça 4, 3º · 1170-165 Lisboa<br>Letters read on Tuesday and Friday mornings</address></div>';
+    // the page body goes into its own panel, beside the side-nav panel
+    const frame = document.createElement('div'); frame.className = 'frame';
+    [...document.body.children].filter(n => n.tagName !== 'SCRIPT' && !n.classList.contains('review-bar')).forEach(n => frame.appendChild(n));
+    document.body.prepend(frame);
     document.body.prepend(rail); document.body.append(scrim, drawer); document.body.classList.add('has-rail');
     const burger = rail.querySelector('.burger');
     const setMenu = open => {
