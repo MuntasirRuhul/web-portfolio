@@ -35,7 +35,9 @@
 .princ .w{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:var(--track-mono);text-transform:uppercase;color:var(--muted);margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
 
 /* 02 colour */
-.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.sw{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.sw-note{margin:-6px 0 16px}
+.sub code{font-family:var(--mono);font-size:.62em;color:var(--accent-text);font-weight:500}
 .sw li{background:var(--object);border-radius:var(--r-card);overflow:hidden}
 .sw .chip{height:108px;margin:10px 10px 0;border-radius:var(--r-field);border:1px solid var(--rule)}
 .sw .meta{padding:14px 16px 16px}
@@ -52,6 +54,7 @@
 .type li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--rule)}
 .type li:first-child{border-top:1px solid var(--ink)}
 .type .spec{font-family:var(--mono);font-size:12px;color:var(--ink-2);line-height:1.5}
+.type .spec code{display:block;color:var(--accent-text);font-size:11.5px;margin:2px 0}
 .type .spec b{display:block;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:var(--track-mono);font-size:var(--t-mono)}
 .fam{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:var(--s7)}
 .fam li{background:var(--object);border-radius:var(--r-card);padding:20px}
@@ -240,17 +243,22 @@
 
   <!-- 02 -->
   <section class="ch" id="colour" aria-labelledby="h2c">
-    <div class="ch-head"><div><p class="chapter"><b>02</b>Colour</p><h2 class="headline h2" id="h2c">Paper, ink, and <em>one accent.</em></h2></div><p class="txt">Colours have jobs, not names. Ratios are measured live from this page’s CSS against paper and white.</p></div>
-    <ul class="sw" id="swatches">
-      <li data-c="--paper"><div class="chip" style="background:var(--paper)"></div><div class="meta"><b>Paper</b><span>Gallery ground</span><code></code><p class="ratio"></p></div></li>
-      <li data-c="--object"><div class="chip" style="background:var(--object)"></div><div class="meta"><b>Object</b><span>Cards, frames, reading pages</span><code></code><p class="ratio"></p></div></li>
-      <li data-c="--room"><div class="chip" style="background:var(--room)"></div><div class="meta"><b>Room</b><span>Dark panels, footer, hero</span><code></code><p class="ratio"></p></div></li>
-      <li data-c="--ink"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>Ink</b><span>Text</span><code></code><p class="ratio"></p></div></li>
-      <li data-c="--ink-2"><div class="chip" style="background:var(--ink-2)"></div><div class="meta"><b>Ink 2</b><span>Secondary text</span><code></code><p class="ratio"></p></div></li>
-      <li data-c="--muted"><div class="chip" style="background:var(--muted)"></div><div class="meta"><b>Muted</b><span>Captions, meta</span><code></code><p class="ratio"></p></div></li>
-      <li data-c="--accent"><div class="chip" style="background:var(--accent)"></div><div class="meta"><b>Accent</b><span>One phrase, one button</span><code></code><p class="ratio"></p></div></li>
-      <li data-c="--accent-text"><div class="chip" style="background:var(--accent-text)"></div><div class="meta"><b>Accent text</b><span>Accent under 24px on light</span><code></code><p class="ratio"></p></div></li>
-    </ul>
+    <div class="ch-head"><div><p class="chapter"><b>02</b>Colour</p><h2 class="headline h2" id="h2c">Paper, ink, and <em>one accent.</em></h2></div><p class="txt">A palette of raw colours, and four role families on top: text, background, line and icon. Pages use the roles. Ratios are measured live from this page’s CSS against paper and white.</p></div>
+    <h3 class="sub">Palette</h3>
+    <p class="txt sw-note">The raw colours. Components never use these directly; they use the role tokens below.</p>
+    <ul class="sw"><li data-c="--paper"><div class="chip" style="background:var(--paper)"></div><div class="meta"><b>Paper</b><span>#FAF6EF</span><code></code><p class="ratio"></p></div></li><li data-c="--object"><div class="chip" style="background:var(--object)"></div><div class="meta"><b>White</b><span>#FFFFFF</span><code></code><p class="ratio"></p></div></li><li data-c="--room"><div class="chip" style="background:var(--room)"></div><div class="meta"><b>Room</b><span>#161412</span><code></code><p class="ratio"></p></div></li><li data-c="--room-2"><div class="chip" style="background:var(--room-2)"></div><div class="meta"><b>Room 2</b><span>#2A2522</span><code></code><p class="ratio"></p></div></li><li data-c="--black"><div class="chip" style="background:var(--black)"></div><div class="meta"><b>Black</b><span>Footer</span><code></code><p class="ratio"></p></div></li><li data-c="--ink"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>Ink</b><span>#1D1A16</span><code></code><p class="ratio"></p></div></li><li data-c="--ink-2"><div class="chip" style="background:var(--ink-2)"></div><div class="meta"><b>Ink 2</b><span>#4A443B</span><code></code><p class="ratio"></p></div></li><li data-c="--muted"><div class="chip" style="background:var(--muted)"></div><div class="meta"><b>Muted</b><span>#6E6658</span><code></code><p class="ratio"></p></div></li><li data-c="--on-room"><div class="chip" style="background:var(--on-room)"></div><div class="meta"><b>On room</b><span>#F3ECDF</span><code></code><p class="ratio"></p></div></li><li data-c="--on-room-2"><div class="chip" style="background:var(--on-room-2)"></div><div class="meta"><b>On room 2</b><span>#A9A092</span><code></code><p class="ratio"></p></div></li><li data-c="--accent"><div class="chip" style="background:var(--accent)"></div><div class="meta"><b>Terracotta</b><span>The one accent</span><code></code><p class="ratio"></p></div></li><li data-c="--accent-text"><div class="chip" style="background:var(--accent-text)"></div><div class="meta"><b>Terracotta deep</b><span>Accent as small text</span><code></code><p class="ratio"></p></div></li><li data-c="--accent-on-room"><div class="chip" style="background:var(--accent-on-room)"></div><div class="meta"><b>Terracotta light</b><span>Accent on dark</span><code></code><p class="ratio"></p></div></li></ul>
+    <h3 class="sub">Text · <code>--text-*</code></h3>
+    <p class="txt sw-note">Every piece of type takes one of these.</p>
+    <ul class="sw"><li data-c="--text-primary"><div class="chip" style="background:var(--text-primary)"></div><div class="meta"><b>Primary</b><span>Headlines, body</span><code></code><p class="ratio"></p></div></li><li data-c="--text-secondary"><div class="chip" style="background:var(--text-secondary)"></div><div class="meta"><b>Secondary</b><span>Intros, descriptions</span><code></code><p class="ratio"></p></div></li><li data-c="--text-muted"><div class="chip" style="background:var(--text-muted)"></div><div class="meta"><b>Muted</b><span>Captions, meta</span><code></code><p class="ratio"></p></div></li><li data-c="--text-accent"><div class="chip" style="background:var(--text-accent)"></div><div class="meta"><b>Accent</b><span>Accent under 24px</span><code></code><p class="ratio"></p></div></li><li data-c="--text-accent-display"><div class="chip" style="background:var(--text-accent-display)"></div><div class="meta"><b>Accent display</b><span>Headline phrase, 24px+</span><code></code><p class="ratio"></p></div></li><li data-c="--text-inverse"><div class="chip" style="background:var(--text-inverse)"></div><div class="meta"><b>Inverse</b><span>Text on rooms</span><code></code><p class="ratio"></p></div></li><li data-c="--text-inverse-muted"><div class="chip" style="background:var(--text-inverse-muted)"></div><div class="meta"><b>Inverse muted</b><span>Secondary on rooms</span><code></code><p class="ratio"></p></div></li><li data-c="--text-accent-inverse"><div class="chip" style="background:var(--text-accent-inverse)"></div><div class="meta"><b>Accent inverse</b><span>Accent on rooms</span><code></code><p class="ratio"></p></div></li><li data-c="--text-on-accent"><div class="chip" style="background:var(--text-on-accent)"></div><div class="meta"><b>On accent</b><span>Text on terracotta</span><code></code><p class="ratio"></p></div></li></ul>
+    <h3 class="sub">Background · <code>--bg-*</code></h3>
+    <p class="txt sw-note">Grounds and surfaces, from the page down to a field.</p>
+    <ul class="sw"><li data-c="--bg-page"><div class="chip" style="background:var(--bg-page)"></div><div class="meta"><b>Page</b><span>Gallery ground</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-surface"><div class="chip" style="background:var(--bg-surface)"></div><div class="meta"><b>Surface</b><span>Cards, frames, reading pages</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-field"><div class="chip" style="background:var(--bg-field)"></div><div class="meta"><b>Field</b><span>Inputs</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-inverse"><div class="chip" style="background:var(--bg-inverse)"></div><div class="meta"><b>Inverse</b><span>Rooms, hero</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-inverse-raised"><div class="chip" style="background:var(--bg-inverse-raised)"></div><div class="meta"><b>Inverse raised</b><span>Panels inside rooms</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-footer"><div class="chip" style="background:var(--bg-footer)"></div><div class="meta"><b>Footer</b><span>Site footer</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-accent"><div class="chip" style="background:var(--bg-accent)"></div><div class="meta"><b>Accent</b><span>Primary button hover, submit</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-block-1"><div class="chip" style="background:var(--bg-block-1)"></div><div class="meta"><b>Block 1</b><span>Ochre, first</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-block-2"><div class="chip" style="background:var(--bg-block-2)"></div><div class="meta"><b>Block 2</b><span>Rose, second</span><code></code><p class="ratio"></p></div></li><li data-c="--bg-block-3"><div class="chip" style="background:var(--bg-block-3)"></div><div class="meta"><b>Block 3</b><span>Terracotta, third</span><code></code><p class="ratio"></p></div></li></ul>
+    <h3 class="sub">Line · <code>--line-*</code></h3>
+    <p class="txt sw-note">Rules, borders and the drawing grid. Never shadows.</p>
+    <ul class="sw"><li data-c="--line-default"><div class="chip" style="background:var(--line-default)"></div><div class="meta"><b>Default</b><span>Hairlines, card borders</span><code></code><p class="ratio"></p></div></li><li data-c="--line-strong"><div class="chip" style="background:var(--line-strong)"></div><div class="meta"><b>Strong</b><span>Section rules, ticks</span><code></code><p class="ratio"></p></div></li><li data-c="--line-grid"><div class="chip" style="background:var(--line-grid)"></div><div class="meta"><b>Grid</b><span>Construction lines</span><code></code><p class="ratio"></p></div></li><li data-c="--line-inverse"><div class="chip" style="background:var(--line-inverse)"></div><div class="meta"><b>Inverse</b><span>Rules on rooms</span><code></code><p class="ratio"></p></div></li><li data-c="--line-focus"><div class="chip" style="background:var(--line-focus)"></div><div class="meta"><b>Focus</b><span>Focus ring</span><code></code><p class="ratio"></p></div></li></ul>
+    <h3 class="sub">Icon · <code>--icon-*</code></h3>
+    <p class="txt sw-note">Line icons, 1.6px with round caps.</p>
+    <ul class="sw"><li data-c="--icon-default"><div class="chip" style="background:var(--icon-default)"></div><div class="meta"><b>Default</b><span>Icons on light</span><code></code><p class="ratio"></p></div></li><li data-c="--icon-muted"><div class="chip" style="background:var(--icon-muted)"></div><div class="meta"><b>Muted</b><span>Decorative, inactive</span><code></code><p class="ratio"></p></div></li><li data-c="--icon-accent"><div class="chip" style="background:var(--icon-accent)"></div><div class="meta"><b>Accent</b><span>Ticks, book, active</span><code></code><p class="ratio"></p></div></li><li data-c="--icon-inverse"><div class="chip" style="background:var(--icon-inverse)"></div><div class="meta"><b>Inverse</b><span>Icons on rooms</span><code></code><p class="ratio"></p></div></li><li data-c="--icon-on-accent"><div class="chip" style="background:var(--icon-on-accent)"></div><div class="meta"><b>On accent</b><span>Icons on terracotta</span><code></code><p class="ratio"></p></div></li></ul>
     <h3 class="sub">Colour blocks, always in this order</h3>
     <div class="steps" aria-hidden="true" style="max-width:720px"><div class="block" style="min-height:120px"><span class="n">01</span><h3>Ochre</h3></div><div class="block" style="min-height:120px"><span class="n">02</span><h3>Rose</h3></div><div class="block" style="min-height:120px"><span class="n">03</span><h3>Terracotta</h3></div></div>
     <h3 class="sub">One accent per course</h3>
@@ -267,15 +275,20 @@
 
   <!-- 03 -->
   <section class="ch" id="type" aria-labelledby="h3t">
-    <div class="ch-head"><div><p class="chapter"><b>03</b>Type</p><h2 class="headline h2" id="h3t">One sans, one mono, <em>one hand.</em></h2></div><p class="txt">Tight headlines, calm body, tiny uppercase labels. Seven steps cover every page; anything else is a named component.</p></div>
+    <div class="ch-head"><div><p class="chapter"><b>03</b>Type</p><h2 class="headline h2" id="h3t">One sans, one mono, <em>one hand.</em></h2></div><p class="txt">Display, H1 to H6, three body sizes, a caption and a mono label. Each step is a token and a class; anything else is a named component, like the poster title or the signature.</p></div>
     <ul class="type">
-      <li><span class="spec"><b>Display</b>clamp(40, 5vw, 68) · 600 · −.04em</span><span class="headline">Look longer.</span></li>
-      <li><span class="spec"><b>H2</b>clamp(30, 3.5vw, 48) · 600</span><span class="headline h2">Six topics, one drawing at a time.</span></li>
-      <li><span class="spec"><b>H3</b>clamp(22, 2vw, 28) · 600</span><span class="headline h3">Three values, not seven.</span></li>
-      <li><span class="spec"><b>Lead</b>18 · 400 · 1.6</span><span class="lead" style="font-size:var(--t-lead)">Most people who think they can’t draw were never taught to look.</span></li>
-      <li><span class="spec"><b>Body</b>16 · 400 · 1.6</span><span style="font-size:var(--t-body);color:var(--ink-2)">You need no experience and very few materials. By week six you’ll have one finished drawing.</span></li>
-      <li><span class="spec"><b>Small</b>14 · 400</span><span style="font-size:var(--t-small);color:var(--ink-2)">One payment · lifetime access · 14-day refund</span></li>
-      <li><span class="spec"><b>Mono</b>10.5 · 500 · +.06em · caps</span><span class="mono">Her brushes, in order of use · No. 2 … No. 24</span></li>
+      <li><span class="spec"><b>Display</b><code>.t-display · var(--fs-display)</code>clamp(56, 6.4vw, 96) · 600 · −.055em</span><span class="t-display">Look longer.</span></li>
+      <li><span class="spec"><b>H1</b><code>.t-h1 · var(--fs-h1)</code>clamp(40, 5vw, 68) · 600 · −.04em</span><span class="t-h1">Six courses, hung <em>like posters.</em></span></li>
+      <li><span class="spec"><b>H2</b><code>.t-h2 · var(--fs-h2)</code>clamp(30, 3.5vw, 48) · 600 · −.04em</span><span class="t-h2">Six topics, one drawing at a time.</span></li>
+      <li><span class="spec"><b>H3</b><code>.t-h3 · var(--fs-h3)</code>clamp(22, 2vw, 28) · 600 · −.03em</span><span class="t-h3">Three values, not seven.</span></li>
+      <li><span class="spec"><b>H4</b><code>.t-h4 · var(--fs-h4)</code>clamp(18, 1.5vw, 21) · 600</span><span class="t-h4">Portrait study</span></li>
+      <li><span class="spec"><b>H5</b><code>.t-h5 · var(--fs-h5)</code>18 · 600</span><span class="t-h5">What you’ll need</span></li>
+      <li><span class="spec"><b>H6</b><code>.t-h6 · var(--fs-h6)</code>16 · 600</span><span class="t-h6">Topic 04 · Light and value</span></li>
+      <li><span class="spec"><b>Body large</b><code>.t-body-lg · var(--fs-body-lg)</code>18 · 400 · 1.6</span><span class="t-body-lg">Most people who think they can’t draw were never taught to look.</span></li>
+      <li><span class="spec"><b>Body</b><code>.t-body · var(--fs-body)</code>16 · 400 · 1.6</span><span class="t-body">You need no experience and very few materials. By week six you’ll have one finished drawing.</span></li>
+      <li><span class="spec"><b>Body small</b><code>.t-body-sm · var(--fs-body-sm)</code>14 · 400 · 1.55</span><span class="t-body-sm">One payment · lifetime access · 14-day refund</span></li>
+      <li><span class="spec"><b>Caption</b><code>.t-caption · var(--fs-caption)</code>12 · 400 · 1.5</span><span class="t-caption">© 2026 Elena Varga Atelier · Made by hand in Lisbon</span></li>
+      <li><span class="spec"><b>Label</b><code>.t-label · var(--fs-label)</code>10.5 · 500 · +.06em · caps · mono</span><span class="t-label">Her brushes, in order of use · No. 2 … No. 24</span></li>
     </ul>
     <ul class="fam">
       <li><span class="g" style="font-family:var(--sans);font-weight:600">Aa</span><p>Inter Tight · text and headings</p></li>
@@ -452,10 +465,10 @@
   const lum = h => rgb(h).map(x => { x /= 255; return x <= .03928 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4; }).reduce((a, x, i) => a + x * [.2126, .7152, .0722][i], 0);
   const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => m - n); return ((y + .05) / (x + .05)).toFixed(2); };
   const paper = hex(cs.getPropertyValue('--paper')), white = '#FFFFFF';
-  document.querySelectorAll('#swatches li').forEach(li => {
+  document.querySelectorAll('.sw li').forEach(li => {
     const v = hex(cs.getPropertyValue(li.dataset.c));
     li.querySelector('code').textContent = li.dataset.c + ' · ' + v;
-    li.querySelector('.ratio').textContent = `${ratio(v, paper)}:1 on paper · ${ratio(v, white)}:1 on white`;
+    li.querySelector('.ratio').textContent = /^#[0-9A-F]{6}$/.test(v) ? `${ratio(v, paper)}:1 on paper · ${ratio(v, white)}:1 on white` : 'Translucent: sits on its ground';
   });
 
   // Sample tabs behave like real tabs.

@@ -40,7 +40,8 @@ const ALLOW_RADIUS = {
 
 // Scale (spec design-language: Typography scale). clamp() steps resolved per viewport.
 const clamp = (min, vw, max, w) => Math.min(max, Math.max(min, vw * w / 100));
-const scale = w => [clamp(40, 5, 68, w), clamp(30, 3.5, 48, w), clamp(22, 2, 28, w), 18, 16, 14, 10.5];
+// Display, H1–H6, body lg/md/sm, caption, label (spec design-language: Typography scale)
+const scale = w => [clamp(56, 6.4, 96, w), clamp(40, 5, 68, w), clamp(30, 3.5, 48, w), clamp(22, 2, 28, w), clamp(18, 1.5, 21, w), 18, 16, 14, 12, 10.5];
 // Component titles measured on the home page: block title (v7:198) and FAQ question (v7:353).
 const componentSteps = w => [clamp(24, 2.2, 30, w), clamp(20, 2, 25, w), clamp(56, 6.4, 96, w)];   // + statement step (one per page)
 // Documented component exceptions (reported as WARN if outside both lists).
