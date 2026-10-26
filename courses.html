@@ -18,19 +18,15 @@ main{position:relative;z-index:1}
 .intro .facts{--cols:3}
 
 /* filters: plain text toggles, no pills */
-.filters{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s5) var(--s7);align-items:end;padding:var(--s5) 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.filters{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s5) var(--s7);padding:var(--s5) 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
 .filters > *{min-width:0}
-.frow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px}
+.frow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 28px}
 .frow + .frow{margin-top:12px}
-.frow .mono{width:76px;flex:none}
 .frow button{position:relative;padding:4px 0;font-size:15px;color:var(--muted);transition:color .2s}
 .frow button:hover{color:var(--ink)}
 .frow button[aria-pressed="true"]{color:var(--ink);font-weight:600}
 .frow button[aria-pressed="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--accent)}
 .frow button sup{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-left:2px;top:-.5em;position:relative}
-.side{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.sort{display:flex;align-items:center;gap:10px}
-.sort select{min-height:40px;padding:6px 36px 6px 14px;border:1px solid var(--rule);border-radius:var(--r-field);background:var(--object) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1A16' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center/16px;appearance:none;font-size:14.5px;color:var(--ink);cursor:pointer}
 .count{font-size:14px;color:var(--ink-2)}
 .count b{color:var(--ink);font-weight:600}
 
@@ -58,7 +54,6 @@ main{position:relative;z-index:1}
 @media (max-width:900px){
   .intro{grid-template-columns:1fr;gap:var(--s5)}
   .filters{grid-template-columns:minmax(0,1fr)}
-  .side{align-items:flex-start;flex-direction:row;flex-wrap:wrap;justify-content:space-between;width:100%}
   .start{grid-template-columns:1fr}
   .foot-band{padding-bottom:72px}
 }
@@ -67,7 +62,6 @@ main{position:relative;z-index:1}
   .frow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-20px;padding-right:20px}
   .frow::-webkit-scrollbar{display:none}
   .frow button{white-space:nowrap}
-  .frow .mono{width:64px}
 }
 </style>
 </head>
@@ -97,50 +91,19 @@ main{position:relative;z-index:1}
     <dl class="facts reveal"><div><dt>Courses</dt><dd>6</dd></div><div><dt>Hours</dt><dd>33</dd></div><div><dt>Critiques</dt><dd>1 each</dd></div></dl>
   </section>
 
-  <section class="filters" aria-label="Filter and sort courses">
-    <div>
-      <div class="frow" role="group" aria-label="Medium" data-key="medium">
-        <span class="mono">Medium</span>
-        <button type="button" data-v="all" aria-pressed="true">All</button>
-        <button type="button" data-v="pencil" aria-pressed="false">Pencil</button>
-        <button type="button" data-v="graphite" aria-pressed="false">Graphite</button>
-        <button type="button" data-v="watercolour" aria-pressed="false">Watercolour</button>
-        <button type="button" data-v="ink" aria-pressed="false">Ink</button>
-        <button type="button" data-v="oil" aria-pressed="false">Oil</button>
-        <button type="button" data-v="acrylic" aria-pressed="false">Acrylic</button>
-      </div>
-      <div class="frow" role="group" aria-label="Level" data-key="level">
-        <span class="mono">Level</span>
-        <button type="button" data-v="all" aria-pressed="true">All</button>
-        <button type="button" data-v="beginner" aria-pressed="false">Beginner</button>
-        <button type="button" data-v="intermediate" aria-pressed="false">Intermediate</button>
-        <button type="button" data-v="advanced" aria-pressed="false">Advanced</button>
-      </div>
-      <div class="frow m-academy" role="group" aria-label="Teacher" data-key="teacher">
-        <span class="mono">Teacher</span>
-        <button type="button" data-v="all" aria-pressed="true">All</button>
-        <button type="button" data-v="elena" aria-pressed="false">Elena Varga</button>
-        <button type="button" data-v="tomas" aria-pressed="false">Tomás Reis</button>
-        <button type="button" data-v="ana" aria-pressed="false">Ana Lobo</button>
-        <button type="button" data-v="jonas" aria-pressed="false">Jonas Weber</button>
-      </div>
+  <section class="filters" aria-label="Filter courses">
+    <div class="frow" role="group" aria-label="Show">
+      <button type="button" data-v="all" aria-pressed="true">All<sup>6</sup></button>
+      <button type="button" data-v="drawing" aria-pressed="false">Drawing<sup>3</sup></button>
+      <button type="button" data-v="painting" aria-pressed="false">Painting<sup>3</sup></button>
+      <button type="button" data-v="beginner" aria-pressed="false">For beginners<sup>3</sup></button>
     </div>
-    <div class="side">
-      <label class="sort"><span class="mono">Sort</span>
-        <select id="sort" aria-label="Sort courses">
-          <option value="rec">Recommended</option>
-          <option value="new">Newest</option>
-          <option value="price">Price, low to high</option>
-          <option value="short">Shortest first</option>
-        </select>
-      </label>
-      <p class="count" id="count" role="status" aria-live="polite"><b>6</b> courses</p>
-    </div>
+    <p class="count" id="count" role="status" aria-live="polite"><b>6</b> courses</p>
   </section>
 
   <section class="wall" aria-label="Courses">
     <div class="cgrid" id="grid">
-      <a href="course.html" class="poster" style="--pc:var(--c1)" data-medium="pencil" data-level="beginner" data-teacher="elena" data-price="79" data-mins="370" data-added="2024-01" data-rec="1" aria-label="Foundations of Drawing, Pencil, Beginner, $79">
+      <a href="course.html" class="poster" style="--pc:var(--c1)" data-medium="pencil" data-kind="drawing" data-level="beginner" data-teacher="elena" data-price="79" data-mins="370" data-added="2024-01" data-rec="1" aria-label="Foundations of Drawing, Pencil, Beginner, $79">
         <div class="ptop"><span>Elena Varga Atelier</span><b>No. 01 · Pencil</b></div>
         <h3>Foundations<br>of drawing</h3>
         <div class="pic"><img src="img/1505569127510-bde1536937bc-w600.jpg" alt="" loading="lazy"><span class="tag">Bestseller</span></div>
@@ -152,7 +115,7 @@ main{position:relative;z-index:1}
         </dl>
         <p class="teacher-line m-academy"><i aria-hidden="true">EV</i>Elena Varga</p>
       </a>
-      <a href="course.html" class="poster" style="--pc:var(--c2)" data-medium="graphite" data-level="intermediate" data-teacher="elena" data-price="99" data-mins="340" data-added="2024-06" data-rec="2" aria-label="The Portrait in Pencil, Graphite, Intermediate, $99">
+      <a href="course.html" class="poster" style="--pc:var(--c2)" data-medium="graphite" data-kind="drawing" data-level="intermediate" data-teacher="elena" data-price="99" data-mins="340" data-added="2024-06" data-rec="2" aria-label="The Portrait in Pencil, Graphite, Intermediate, $99">
         <div class="ptop"><span>Elena Varga Atelier</span><b>No. 02 · Graphite</b></div>
         <h3>The portrait<br>in pencil</h3>
         <div class="pic"><img src="img/1593472807861-5bb884af28f6-w600.jpg" alt="" loading="lazy"></div>
@@ -164,7 +127,7 @@ main{position:relative;z-index:1}
         </dl>
         <p class="teacher-line m-academy"><i aria-hidden="true">EV</i>Elena Varga</p>
       </a>
-      <a href="course.html" class="poster" style="--pc:var(--c3)" data-medium="watercolour" data-level="beginner" data-teacher="tomas" data-price="89" data-mins="295" data-added="2025-03" data-rec="3" aria-label="Watercolour Gardens, Watercolour, Beginner, $89">
+      <a href="course.html" class="poster" style="--pc:var(--c3)" data-medium="watercolour" data-kind="painting" data-level="beginner" data-teacher="tomas" data-price="89" data-mins="295" data-added="2025-03" data-rec="3" aria-label="Watercolour Gardens, Watercolour, Beginner, $89">
         <div class="ptop"><span>Elena Varga Atelier</span><b>No. 03 · Watercolour</b></div>
         <h3>Watercolour<br>gardens</h3>
         <div class="pic"><img src="img/1700608277944-98b04da666ba-w600.jpg" alt="" loading="lazy"></div>
@@ -176,7 +139,7 @@ main{position:relative;z-index:1}
         </dl>
         <p class="teacher-line m-academy"><i aria-hidden="true">TR</i>Tomás Reis</p>
       </a>
-      <a href="course.html" class="poster" style="--pc:var(--c4)" data-medium="ink" data-level="beginner" data-teacher="ana" data-price="69" data-mins="200" data-added="2026-09" data-rec="4" aria-label="Ink, Line and Silence, Ink, Beginner, $69">
+      <a href="course.html" class="poster" style="--pc:var(--c4)" data-medium="ink" data-kind="drawing" data-level="beginner" data-teacher="ana" data-price="69" data-mins="200" data-added="2026-09" data-rec="4" aria-label="Ink, Line and Silence, Ink, Beginner, $69">
         <div class="ptop"><span>Elena Varga Atelier</span><b>No. 04 · Ink</b></div>
         <h3>Ink, line<br>&amp; silence</h3>
         <div class="pic"><img src="img/1724666696560-aec1b5732c92-w600.jpg" alt="" loading="lazy"><span class="tag">New</span></div>
@@ -188,7 +151,7 @@ main{position:relative;z-index:1}
         </dl>
         <p class="teacher-line m-academy"><i aria-hidden="true">AL</i>Ana Lobo</p>
       </a>
-      <a href="course.html" class="poster" style="--pc:var(--c5)" data-medium="oil" data-level="advanced" data-teacher="jonas" data-price="129" data-mins="485" data-added="2026-10" data-rec="5" aria-label="Plein Air in Oil, Oil, Advanced, $129">
+      <a href="course.html" class="poster" style="--pc:var(--c5)" data-medium="oil" data-kind="painting" data-level="advanced" data-teacher="jonas" data-price="129" data-mins="485" data-added="2026-10" data-rec="5" aria-label="Plein Air in Oil, Oil, Advanced, $129">
         <div class="ptop"><span>Elena Varga Atelier</span><b>No. 05 · Oil</b></div>
         <h3>Plein air<br>in oil</h3>
         <div class="pic"><img src="img/1541753866388-0b3c701627d3-w600.jpg" alt="" loading="lazy"><span class="tag">New</span></div>
@@ -200,7 +163,7 @@ main{position:relative;z-index:1}
         </dl>
         <p class="teacher-line m-academy"><i aria-hidden="true">JW</i>Jonas Weber</p>
       </a>
-      <a href="course.html" class="poster" style="--pc:var(--c6)" data-medium="acrylic" data-level="intermediate" data-teacher="jonas" data-price="89" data-mins="270" data-added="2026-08" data-rec="6" aria-label="Abstract Colour, Acrylic, Intermediate, $89">
+      <a href="course.html" class="poster" style="--pc:var(--c6)" data-medium="acrylic" data-kind="painting" data-level="intermediate" data-teacher="jonas" data-price="89" data-mins="270" data-added="2026-08" data-rec="6" aria-label="Abstract Colour, Acrylic, Intermediate, $89">
         <div class="ptop"><span>Elena Varga Atelier</span><b>No. 06 · Acrylic</b></div>
         <h3>Abstract<br>colour</h3>
         <div class="pic"><img src="img/1532640331846-d2da5987c3ee-w600.jpg" alt="" loading="lazy"><span class="tag">New</span></div>
@@ -216,7 +179,7 @@ main{position:relative;z-index:1}
 
     <div class="empty" id="empty" hidden>
       <p class="chapter"><b>—</b>Nothing on this wall</p>
-      <h2 class="headline h3">No course matches <em>those filters yet.</em></h2>
+      <h2 class="headline h3">No course matches <em>that yet.</em></h2>
       <p>Oil and acrylic start at intermediate. If you’re new, the free lesson from Foundations of Drawing is the best first step.</p>
       <div class="row"><button class="btn btn-ink btn-plain" type="button" id="clear">Clear filters</button><a class="btn btn-line btn-plain" href="lesson.html">Watch the free lesson</a></div>
     </div>
@@ -245,30 +208,20 @@ main{position:relative;z-index:1}
 
 <script src="assets/site.js"></script>
 <script>
-  // Filters combine; sort reorders; the count and the empty state follow.
+  // One filter row: all, drawing, painting, or courses for beginners. The count and the empty state follow.
   const grid = document.getElementById('grid'), cards = [...grid.querySelectorAll('.poster')];
   const countEl = document.getElementById('count'), empty = document.getElementById('empty');
-  const sel = { medium: 'all', level: 'all', teacher: 'all' };
-  const rows = [...document.querySelectorAll('.frow')];
+  const btns = [...document.querySelectorAll('.frow button')];
+  let pick = 'all';
+  const match = c => pick === 'all' || c.dataset.kind === pick || (pick === 'beginner' && c.dataset.level === 'beginner');
   const apply = () => {
-    const academy = document.documentElement.dataset.mode === 'academy';
     let n = 0;
-    cards.forEach(c => {
-      const ok = ['medium', 'level'].every(k => sel[k] === 'all' || c.dataset[k] === sel[k]) && (!academy || sel.teacher === 'all' || c.dataset.teacher === sel.teacher);
-      c.hidden = !ok; if (ok) n++;
-    });
+    cards.forEach(c => { const ok = match(c); c.hidden = !ok; if (ok) n++; });
     countEl.innerHTML = `<b>${n}</b> ${n === 1 ? 'course' : 'courses'}`;
     empty.hidden = n > 0; grid.hidden = n === 0;
   };
-  rows.forEach(row => row.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
-    row.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
-    sel[row.dataset.key] = b.dataset.v; apply();
-  })));
-  const reset = () => { rows.forEach(row => { row.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x.dataset.v === 'all')); sel[row.dataset.key] = 'all'; }); apply(); };
-  document.getElementById('clear').addEventListener('click', reset);
-  const by = { rec: (a, b) => a.dataset.rec - b.dataset.rec, new: (a, b) => b.dataset.added.localeCompare(a.dataset.added), price: (a, b) => a.dataset.price - b.dataset.price || a.dataset.rec - b.dataset.rec, short: (a, b) => a.dataset.mins - b.dataset.mins };
-  document.getElementById('sort').addEventListener('change', e => { [...cards].sort(by[e.target.value]).forEach(c => grid.appendChild(c)); });
-  document.addEventListener('atelier:mode', apply);
+  btns.forEach(b => b.addEventListener('click', () => { btns.forEach(x => x.setAttribute('aria-pressed', x === b)); pick = b.dataset.v; apply(); }));
+  document.getElementById('clear').addEventListener('click', () => btns[0].click());
   apply();
 </script>
 </body>
