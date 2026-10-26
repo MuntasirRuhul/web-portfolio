@@ -531,29 +531,31 @@ body{height:100vh;overflow:hidden}
 .xh .hn-brand{color:var(--ink)!important}
 .xh .hn-brand span{color:var(--muted)}
 .xh .hn-menu{color:var(--ink)}
-.xh-name{position:absolute;inset:0;pointer-events:none;font-weight:600;letter-spacing:-.065em;line-height:.8;font-size:clamp(120px,19.5vw,330px);color:var(--ink)}
+.xh-name{position:absolute;inset:0;margin:0;pointer-events:none;font-weight:700;letter-spacing:-.06em;line-height:.8;font-size:clamp(110px,17.5vw,300px);color:var(--ink)}
 .xh-name span{position:absolute}
-.xh-name .a{left:2.2%;top:15%}
-.xh-name .b{right:2.2%;bottom:15%}
-.xh-photo{position:absolute;left:50%;bottom:66px;height:80%;-webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent);mask-image:radial-gradient(closest-side,#000 72%,transparent);aspect-ratio:1100/1648;transform:translateX(-46%);z-index:2;mix-blend-mode:multiply}
-.xh-photo img{height:100%;width:100%;object-fit:cover;filter:grayscale(1) brightness(1.14) contrast(1.2)}
-.js .xh-photo{opacity:0;transform:translate(-46%,24px);transition:opacity 1.2s ease .2s,transform 1.4s cubic-bezier(.2,.7,.2,1) .2s}
-.xh.is-in .xh-photo{opacity:1;transform:translateX(-46%)}
-.xh-lines{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;overflow:visible}
-.xh-lines .g{fill:none;stroke:var(--terra);stroke-width:1;vector-effect:non-scaling-stroke}
-.xh-lines .dash{stroke-dasharray:5 6;opacity:.7}
+.xh-name .a{left:4.5%;top:14%}
+.xh-name .b{right:2.5%;bottom:10%}
+/* the cut-out portrait sits between the two words: in front of "Elena", beside "Varga" */
+.xh-fig{position:absolute;left:44%;bottom:0;height:80%;aspect-ratio:1162/1354;transform:translateX(-50%);z-index:2;margin:0}
+.xh-fig img{width:100%;height:100%;object-fit:contain;filter:grayscale(1) contrast(1.04)}
+.js .xh-fig img{opacity:0;transform:translateY(24px);transition:opacity 1.2s ease .2s,transform 1.4s cubic-bezier(.2,.7,.2,1) .2s}
+.xh.is-in .xh-fig img{opacity:1;transform:none}
+/* construction lines drawn in the photo's own coordinates, so they stay on her head at any size */
+.xh-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.xh-lines .g{fill:none;stroke:var(--terra);stroke-width:1.4;vector-effect:non-scaling-stroke}
+.xh-lines .dash{stroke-dasharray:6 6}
+.xh-lines .dot{stroke-dasharray:2 5}
+.xh-lines .floor{fill:none;stroke:var(--ink);stroke-width:1;vector-effect:non-scaling-stroke;opacity:.28}
 .xh-lines .ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2s cubic-bezier(.6,.1,.2,1) .9s}
 .xh.is-in .xh-lines .ln{stroke-dashoffset:0}
-.js .xh-lines .dash{opacity:0;transition:opacity 1s ease .6s}
-.xh.is-in .xh-lines .dash{opacity:.7}
-.xh-note{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;color:#B24A2B}
-.xh-note::before{content:"";width:28px;border-top:1px solid currentColor}
-.xh-note.r{flex-direction:row-reverse}
-.xh-note.n1{left:calc(50% + 7vw);top:45.5%}
-.xh-note.n2{right:calc(50% + 7vw);top:71.5%}
-.xh-meta{position:absolute;left:2.2%;right:2.2%;bottom:24px;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);padding-top:12px;gap:16px}
-.xh-meta span{color:var(--muted)}
-.xh-meta b{display:block;font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:-.01em;text-transform:none;color:var(--ink);margin-top:4px}
+.js .xh-lines .fade{opacity:0;transition:opacity 1s ease 1.4s}
+.xh.is-in .xh-lines .fade{opacity:1}
+.xh-lines .back{z-index:-1}
+.xh-tag{position:absolute;left:calc(44% + 34vh);top:36%;z-index:3;font-size:clamp(20px,1.9vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1.12;color:var(--terra)}
+.xh-role{position:absolute;left:4.5%;top:59%;z-index:3;display:flex;align-items:center;gap:22px;letter-spacing:.2em;color:var(--ink-2)}
+.xh-role::after{content:"";width:clamp(60px,10vw,150px);border-top:1.5px solid var(--terra)}
+.xh-role b{font-weight:500;color:var(--ink)}
+.xh-sub{position:absolute;left:4.5%;top:calc(59% + 34px);z-index:3;color:var(--muted)}
 
 /* ---------- 02 Manifesto: one long sentence that lights up as you read ---------- */
 .xm{background:var(--night);color:var(--paper);padding:clamp(110px,14vw,200px) clamp(20px,6vw,110px);position:relative;overflow:hidden}
@@ -686,14 +688,16 @@ body{height:100vh;overflow:hidden}
 
 /* ---------- Responsive ---------- */
 @media (max-width:980px){
-  .xh{height:auto;min-height:0;max-height:none;padding:84px 20px 28px;display:flex;flex-direction:column}
-  .xh-name{position:relative;inset:auto;font-size:27vw;line-height:.82;display:flex;flex-direction:column}
-  .xh-name span{position:static}
-  .xh-name .b{align-self:flex-end;margin-top:-.02em}
-  .xh-photo{position:relative;left:auto;height:auto;width:92%;align-self:center;margin-top:8px;transform:none!important}
-  .js .xh-photo{transform:none}
-  .xh-lines,.xh-note{display:none}
-  .xh-meta{position:static;grid-template-columns:1fr 1fr;margin-top:24px}
+  .xh{height:auto;min-height:0;max-height:none;padding:84px 20px 40px;display:flex;flex-direction:column}
+  .xh-name{display:contents}
+  .xh-name span{position:relative;font-size:27vw;line-height:.82}
+  .xh-name .a{left:auto;top:auto;order:1}
+  .xh-fig{position:relative;left:auto;bottom:auto;height:auto;width:86%;align-self:center;transform:none;order:2;margin-top:2vw}
+  .xh-name .b{right:auto;bottom:auto;order:3;align-self:flex-end;margin-top:-13vw;z-index:3}
+  .xh-lines .hide-m{display:none}
+  .xh-tag{position:static;order:4;margin-top:28px;font-size:24px}
+  .xh-role{position:static;order:5;margin-top:22px}
+  .xh-sub{position:static;order:6;margin-top:8px}
   .xm-circle{display:none}
   .xt{height:auto}
   .xt-pin{position:static;height:auto;overflow:visible;padding:90px 0 60px}
@@ -719,7 +723,7 @@ body{height:100vh;overflow:hidden}
   .letter{padding:36px 26px 30px}
 }
 @media (prefers-reduced-motion:reduce){
-  .js .xh-photo{opacity:1;transform:translateX(-46%)}
+  .js .xh-fig img{opacity:1;transform:none}
   .xh-lines .ln{stroke-dashoffset:0}
   .xm p .w{color:var(--paper)}
 }
@@ -757,21 +761,22 @@ body{height:100vh;overflow:hidden}
       </ul>
     </nav>
     <h1 class="xh-name" aria-label="Elena Varga"><span class="a" aria-hidden="true">Elena</span><span class="b" aria-hidden="true">Varga</span></h1>
-    <figure class="xh-photo"><img src="assets/img/seated.jpg" alt="Elena Varga seated on a wooden chair in her studio"></figure>
-    <svg class="xh-lines" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
-      <path class="g dash" d="M512 60 L512 1000"/>
-      <path class="g dash" d="M40 475 L960 475"/>
-      <ellipse class="g ln" pathLength="1" cx="505" cy="475" rx="62" ry="100"/>
-      <path class="g ln" pathLength="1" d="M430 735 C 470 724, 560 724, 620 740"/>
-    </svg>
-    <span class="xh-note n1 mono">Eye level · look first</span>
-    <span class="xh-note n2 r mono">The chair from her first studio</span>
-    <div class="xh-meta mono">
-      <span>Born<b>Budapest, 1984</b></span>
-      <span>Painting<b>Since 2006</b></span>
-      <span>Lisbon<b>Since 2010</b></span>
-      <span>Teaching<b>Since 2016 · 12,400 students</b></span>
-    </div>
+    <figure class="xh-fig">
+      <svg class="xh-lines" viewBox="0 0 1162 1354" aria-hidden="true">
+        <circle class="g dash fade" cx="590" cy="190" r="250"/>
+        <path class="g ln hide-m" pathLength="1" d="M860 -140 L860 560"/>
+        <path class="g ln hide-m" pathLength="1" d="M700 205 L1430 205"/>
+        <path class="g dot fade hide-m" d="M1450 205 L1560 205"/>
+        <path class="g fade hide-m" d="M240 -110 h44 M262 -132 v44"/>
+        <path class="g fade hide-m" d="M1060 330 h40 M1080 310 v40 M1080 350 v170"/>
+        <path class="g fade hide-m" d="M60 930 h40 M80 910 v40"/>
+        <path class="floor fade" d="M210 1318 C 420 1296, 760 1296, 1020 1314 M260 1334 C 470 1318, 720 1318, 960 1332 M330 1346 C 520 1338, 700 1338, 880 1346 M300 1306 l30 -10 M380 1302 l34 -12 M470 1300 l30 -10 M840 1302 l30 -10 M920 1306 l28 -9"/>
+      </svg>
+      <img src="assets/img/elena-chair.webp" alt="Elena Varga sitting on a wooden studio chair in a paint-splashed apron">
+    </figure>
+    <p class="xh-tag">Twenty years of<br>learning to look.</p>
+    <p class="xh-role mono"><span>Painter <b>/</b> Teacher</span></p>
+    <p class="xh-sub mono">Budapest 1984 · Lisbon since 2010</p>
   </section>
 
   <!-- 02 MANIFESTO -->
