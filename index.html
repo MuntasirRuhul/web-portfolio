@@ -134,7 +134,13 @@ main{margin-left:var(--rail)}
   position:relative;margin-left:calc(var(--rail) * -1);height:100vh;min-height:640px;max-height:1060px;
   background:var(--night);color:var(--paper);overflow:hidden
 }
-.hn{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:26px var(--x1) 0 var(--x0);z-index:3;font-size:15px}
+.hn{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;height:92px;padding:0 var(--x1) 0 var(--x0);z-index:3;font-size:15px}
+.hn-brand{display:inline-flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;color:var(--paper)!important}
+.hn-brand span{font-weight:400;color:rgba(var(--on-dark-rgb),.6)}
+.hn-brand .strokes{display:flex;gap:3px}
+.hn-brand .strokes i{width:3px;height:13px;border-radius:1px;background:var(--ochre)}
+.hn-brand .strokes i:nth-child(2){background:var(--rose)}
+.hn-brand .strokes i:nth-child(3){background:var(--terra)}
 .hn div{display:flex;gap:clamp(20px,3.4vw,56px)}
 .hn a{color:rgba(var(--on-dark-rgb),.82);transition:color .2s}
 .hn a:hover{color:#fff}
@@ -455,7 +461,6 @@ summary{font-weight:500;letter-spacing:-.02em}
   .hero .copy{padding:0 20px}
   .hero{height:auto;max-height:none;min-height:0;margin-left:0;display:flex;flex-direction:column;padding:76px 20px 56px;gap:32px}
   .hn{padding:22px 20px 0;align-items:center;z-index:6}
-  .hn div:first-of-type{display:none}
   .hn div:last-of-type a:not(.on){display:none}
   .hn-menu{display:inline-flex}
   .rail{display:none}
@@ -485,6 +490,7 @@ summary{font-weight:500;letter-spacing:-.02em}
 /* ============ Rail menu button + drawer (same as assets/site.css section 21) ============ */
 .burger{width:52px;height:52px;border-radius:16px;background:var(--ink);display:grid;place-items:center;transition:background .25s;border:0;cursor:pointer}
 .burger:hover{background:var(--terra)}
+.burger:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 .burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;border-radius:1px;background:var(--paper);transition:transform .35s cubic-bezier(.2,.7,.2,1),background .25s}
 .burger span{position:relative}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0}
@@ -534,7 +540,7 @@ body.menu-open .rail .vt{color:var(--dim)}
   <section class="hero" id="top">
     <nav class="hn" aria-label="Main">
       <button class="hn-menu" type="button" aria-expanded="false" aria-controls="hnPanel"><i></i>Menu</button>
-      <div><a href="#about">About</a><a href="#courses">Courses</a><a href="#gallery">Gallery</a><a href="#students">Students</a></div>
+      <a class="hn-brand" href="#top"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a>
       <div><a href="#faq">FAQ</a><a href="#join">Free lesson</a><a class="on" href="#">Log in</a></div>
       <ul class="hn-panel" id="hnPanel" hidden>
         <li><a href="#about">About Elena</a></li><li><a href="#courses">Courses</a></li><li><a href="#gallery">Gallery</a></li>

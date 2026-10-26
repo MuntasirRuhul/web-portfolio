@@ -383,7 +383,7 @@ html[data-mode="academy"] .m-solo,html:not([data-mode="academy"]) .m-academy{dis
 /* ---------- 21. Left rail and menu drawer (injected by site.js; not on Workroom screens) ---------- */
 body.has-rail{padding-left:var(--rail-w)}
 body.has-rail .gridlines{left:var(--rail-w)}
-.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail-w);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 0 28px;pointer-events:none}
+.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail-w);z-index:70;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 0 28px;pointer-events:none}
 .rail > *{pointer-events:auto}
 .burger{width:52px;height:52px;border-radius:16px;background:var(--line-strong);display:grid;place-items:center;transition:background .25s}
 .burger:hover{background:var(--bg-accent)}
@@ -425,3 +425,5 @@ body.menu-open .menu-drawer{transform:none;visibility:visible}
 }
 body.has-rail .review-bar{left:calc(var(--rail-w) + 16px)}
 @media (max-width:900px){body.has-rail .review-bar{left:max(16px,env(safe-area-inset-left,0px))}}
+/* with the rail, the header row reads: menu button · brand ………… FAQ · Free lesson · Log in */
+body.has-rail .site-head .wrap{max-width:none;padding-left:20px;padding-right:26px}
