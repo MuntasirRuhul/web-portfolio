@@ -641,7 +641,7 @@ body{height:100vh;overflow:hidden}
   <ol class="sn-grid">
     <li class="note"><a href="#"><img src="assets/img/meadow.jpg" alt="Meadow, watercolour" width="800" height="419" loading="lazy"><span class="title body-l">Choosing cartridge paper you won’t be afraid of</span><time class="caption" datetime="2026-10-22">22 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Materials</li><li class="body-s">Paper</li></ul></li>
     <li class="note"><a href="#"><img src="assets/img/course-3.jpg" alt="Watercolour garden study" width="600" height="960" loading="lazy"><span class="title body-l">When to stop a wash: watercolour’s last ten seconds</span><time class="caption" datetime="2026-10-18">18 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Technique</li><li class="body-s">Watercolour</li></ul></li>
-    <li class="note"><a href="#"><img src="assets/img/ink-portrait.jpg" alt="Portrait study in ink" width="1000" height="1289" loading="lazy"><span class="title body-l">Three values, not seven: the squint test</span><time class="caption" datetime="2026-10-12">12 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Technique</li><li class="body-s">Pencil</li></ul></li>
+    <li class="note"><a href="note.html"><img src="assets/img/ink-portrait.jpg" alt="Portrait study in ink" width="1000" height="1289" loading="lazy"><span class="title body-l">Three values, not seven: the squint test</span><time class="caption" datetime="2026-10-12">12 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Technique</li><li class="body-s">Pencil</li></ul></li>
     <li class="note"><a href="#"><img src="assets/img/old-street.jpg" alt="Old Street, watercolour" width="800" height="565" loading="lazy"><span class="title body-l">Thirty seconds a drawing at the Ribeira market</span><time class="caption" datetime="2026-10-09">9 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Sketchbook</li><li class="body-s">Ink</li></ul></li>
     <li class="note"><a href="#"><img src="assets/img/course-1.jpg" alt="Pencil study" width="600" height="600" loading="lazy"><span class="title body-l">Why every drawing starts with one plumb line</span><time class="caption" datetime="2026-10-03">3 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Technique</li><li class="body-s">Pencil</li></ul></li>
     <li class="note"><a href="#"><img src="assets/img/gesture.jpg" alt="Gesture study in ink" width="500" height="372" loading="lazy"><span class="title body-l">Ink teaches you to commit to the line</span><time class="caption" datetime="2026-09-28">28 Sep 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Sketchbook</li><li class="body-s">Ink</li></ul></li>
@@ -677,7 +677,7 @@ body{height:100vh;overflow:hidden}
   railBtn.addEventListener('click', () => setDrawer(!document.body.classList.contains('menu-open')));
   scrim.addEventListener('click', () => setDrawer(false));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setDrawer(false); });
-  document.querySelectorAll('.note a').forEach(a => a.addEventListener('click', e => e.preventDefault()));   // sample notes, no articles yet
+  document.querySelectorAll('.note a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));   // sample notes, no articles yet
 </script>
 </body>
 </html>
