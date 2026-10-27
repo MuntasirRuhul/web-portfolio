@@ -598,14 +598,19 @@ body{height:100vh;overflow:hidden}
 .np-back:hover{color:var(--terra)}
 .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-1);list-style:none}
 .tags li{padding:6px 12px;background:#f5e9e0;color:var(--terra-text)}   /* terra at 8% on page: 4.5:1 with terra-text */
-.np-head{max-width:880px;margin:var(--space-8) auto 0;display:flex;flex-direction:column;align-items:center;gap:var(--space-5);text-align:center}
-.np-head h1{text-wrap:balance}
-.np-head .dek{max-width:640px;color:var(--ink-2);text-wrap:balance}
-.np-by{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--space-3);color:var(--muted)}
+/* editorial opening: a handwritten eyebrow, a big uppercase title, one small centred picture */
+.hand-s{font-family:var(--font-hand);font-size:24px;line-height:100%;font-weight:500}
+.np-head{max-width:1120px;margin:var(--space-8) auto 0;display:flex;flex-direction:column;align-items:center;gap:var(--space-5);text-align:center}
+.np-eyebrow{color:var(--ink-2)}
+.np-title{font-family:var(--font-sans);font-size:80px;line-height:100%;letter-spacing:-2px;font-weight:400;text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.np-by{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--space-3);margin-top:var(--space-2);color:var(--muted)}
 .np-by span+span::before{content:"·";margin-right:var(--space-3)}
-.np-hero{width:fit-content;max-width:880px;margin:var(--space-8) auto 0}
-.np-hero img{display:block;width:auto;max-width:100%;height:auto;max-height:min(880px,86vh)}
-.np-hero figcaption,.np-fig figcaption{display:flex;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-3);color:var(--muted)}
+.np-hero{width:min(440px,100%);margin:var(--space-9) auto 0;display:flex;flex-direction:column;align-items:center}
+.np-hero img{display:block;width:100%;height:auto}
+.np-hero figcaption{display:flex;flex-direction:column;align-items:center;gap:var(--space-1);margin-top:var(--space-5);text-align:center}
+.np-hero figcaption .hand-s{color:var(--ink-2)}
+.np-hero figcaption .body-s{color:var(--ink)}
+.np-fig figcaption{display:flex;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-3);color:var(--muted)}
 
 .np-body{max-width:640px;margin:var(--space-9) auto 0;color:var(--ink)}
 .np-body > * + *{margin-top:var(--space-5)}
@@ -614,10 +619,10 @@ body{height:100vh;overflow:hidden}
 .np-body h2{margin-top:var(--space-8);color:var(--ink)}
 .np-body h2 + p{margin-top:var(--space-4)}
 .np-body em{font-style:normal;color:var(--ink);font-weight:500}
-.np-quote{margin:var(--space-8) 0;padding:var(--space-6) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.np-quote p{color:var(--ink)}
+.np-quote{margin:var(--space-9) 0;text-align:center}
+.np-quote p.np-q{font-family:var(--font-sans);font-size:40px;line-height:110%;letter-spacing:-2px;font-weight:400;text-transform:uppercase;color:var(--ink);text-wrap:balance}
 .np-quote p .a{color:var(--terra)}
-.np-quote p.np-cite{margin-top:var(--space-4);color:var(--muted)}
+.np-quote p.np-cite{margin-top:var(--space-4);color:var(--ink-2)}
 .np-fig{margin:var(--space-8) 0}
 .np-fig .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
 .np-fig .three span{display:flex;align-items:flex-end;aspect-ratio:1;padding:var(--space-3);border:1px solid var(--rule)}
@@ -649,7 +654,8 @@ body{height:100vh;overflow:hidden}
 @media (max-width:1180px){.sn-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:980px){.np{padding:var(--space-8) var(--gutter-phone) var(--space-9)}}
 @media (max-width:600px){
-  .np-head h1{font-size:40px;line-height:1.1;letter-spacing:-2px}
+  .np-title{font-size:40px;line-height:110%;letter-spacing:-2px}
+  .np-quote p.np-q{font-size:30px;line-height:120%}
   .sn-grid{grid-template-columns:1fr;gap:var(--space-8)}
 }
 </style>
@@ -677,15 +683,14 @@ body{height:100vh;overflow:hidden}
 
   <article>
     <header class="np-head">
-      <ul class="tags" aria-label="Topics"><li class="body-s">Technique</li><li class="body-s">Pencil</li></ul>
-      <h1 class="heading-2">Three values, not seven: the squint test</h1>
-      <p class="dek body-l">Squint at anything and it falls into three shapes: the paper, one grey, one dark. That is the whole lesson, and it took me ten years to believe it.</p>
+      <p class="np-eyebrow hand-s">a studio note on technique</p>
+      <h1 class="np-title">Three values, not seven: the squint test</h1>
       <p class="np-by caption"><span>Elena Varga</span><span><time datetime="2026-10-12">12 Oct 2026</time></span><span>4 min read</span></p>
     </header>
 
     <figure class="np-hero">
       <img src="assets/img/ink-portrait.jpg" alt="Elena’s ink portrait study, worked in three values" width="1000" height="1289">
-      <figcaption class="caption"><span>Portrait study, three values only</span><span>Ink on paper · 2025</span></figcaption>
+      <figcaption><span class="hand-s">portrait study, three values only</span><span class="body-s">ink on paper · 2025</span></figcaption>
     </figure>
 
     <div class="np-body">
@@ -706,8 +711,8 @@ body{height:100vh;overflow:hidden}
       </figure>
 
       <blockquote class="np-quote">
-        <p class="heading-3">Squint. Count the values. <span class="a">I count three.</span></p>
-        <p class="np-cite caption">Said in nearly every critique since 2016</p>
+        <p class="np-q">Squint. Count the values. <span class="a">I count three.</span></p>
+        <p class="np-cite hand-s">said in nearly every critique since 2016</p>
       </blockquote>
 
       <h2 class="heading-4">Why three is enough</h2>
