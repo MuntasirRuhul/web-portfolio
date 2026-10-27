@@ -39,7 +39,7 @@ textarea.ct-in{height:auto;min-height:96px;padding-top:var(--space-2);resize:ver
 .ct-done p{color:var(--ink-2)}
 .ct-done .hand{color:var(--ink)}
 
-@media (max-width:1280px){.ct-title{font-family:var(--t-display-l-font);font-size:var(--t-display-l-size);line-height:var(--t-display-l-lh);letter-spacing:var(--t-display-l-ls);font-weight:var(--t-display-l-weight)}}
+@media (max-width:1520px){.ct-title{font-family:var(--t-display-l-font);font-size:var(--t-display-l-size);line-height:var(--t-display-l-lh);letter-spacing:var(--t-display-l-ls);font-weight:var(--t-display-l-weight)}}
 @media (max-width:980px){
   .ct{padding:var(--space-8) var(--gutter-phone) var(--space-9)}
   .ct-grid{grid-template-columns:1fr;gap:var(--space-8)}

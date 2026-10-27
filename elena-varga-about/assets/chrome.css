@@ -3,7 +3,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--card);color:var(--ink);font-family:var(--font-sans);font-size:var(--t-body-m-size);line-height:var(--t-body-m-lh);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--card);color:var(--ink);font-family:var(--t-body-m-font);font-size:var(--t-body-m-size);line-height:var(--t-body-m-lh);letter-spacing:var(--t-body-m-ls);font-weight:var(--t-body-m-weight);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
 .label{text-transform:uppercase}
