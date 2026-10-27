@@ -1,0 +1,20 @@
+/* ============ Studio notes: a four-column index, pictures at their own shape ============ */
+.sn{max-width:1336px;margin:0 auto;padding:var(--space-9) var(--space-7) var(--space-10)}
+.sn-head{display:flex;flex-direction:column;align-items:center;gap:var(--space-2);text-align:center;padding-bottom:var(--space-7);margin-bottom:var(--space-8);border-bottom:1px solid var(--rule)}
+.sn-head p{color:var(--ink-2);text-wrap:balance}
+.sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-9) var(--space-5);align-items:start;list-style:none}
+.note a{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+.note img{display:block;width:100%;height:auto;background:var(--card)}
+.note .title{margin-top:var(--space-5);color:var(--ink);text-wrap:pretty;transition:color .25s}
+.note time{display:block;margin-top:var(--space-2);color:var(--muted)}
+.note .tags{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-top:var(--space-4);list-style:none}
+.note .tags li{padding:var(--space-1) var(--space-3);background:var(--pill);color:var(--terra-text)}
+.note a:hover .title{color:var(--terra)}
+.note a:hover img{opacity:.92}
+.note a:focus-visible{outline:2px solid var(--terra);outline-offset:6px}
+.sn-more{display:flex;justify-content:center;margin-top:var(--space-10)}
+.sn-more .btn{border:0;cursor:pointer}
+
+@media (max-width:1180px){.sn-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:980px){.sn{padding:var(--space-9) var(--gutter-phone)}.sn-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-8) var(--space-4)}}
+@media (max-width:600px){.sn-grid{grid-template-columns:1fr;gap:var(--space-8)}}

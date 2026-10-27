@@ -1,0 +1,50 @@
+/* ============ Contact: a big title, the studio on the left, the form on the right ============ */
+.ct{padding:var(--space-9) var(--space-7) var(--space-10)}
+.ct-title{color:var(--ink);white-space:nowrap}
+.ct-rule{position:relative;height:1px;margin-top:var(--space-7);background:var(--terra)}
+.ct-rule::after{content:"";position:absolute;right:0;top:-8px;width:16px;height:16px;background:linear-gradient(var(--terra),var(--terra)) center/100% 1px no-repeat,linear-gradient(var(--terra),var(--terra)) center/1px 100% no-repeat}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-8);margin-top:var(--space-7)}
+.ct-info{display:flex;flex-direction:column;gap:var(--space-5);color:var(--ink)}
+.ct-info dl{display:flex;flex-direction:column;gap:var(--space-5)}
+.ct-info dt{color:var(--muted)}
+.ct-info dd{margin:var(--space-1) 0 0;color:var(--ink)}
+.ct-info a{color:var(--ink)}
+.ct-info a:hover{color:var(--terra)}
+.ct-sign{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-2)}
+.ct-sign .hand{font-family:var(--t-hand-s-font);font-size:var(--t-hand-s-size);line-height:var(--t-hand-s-lh);letter-spacing:var(--t-hand-s-ls);font-weight:var(--t-hand-s-weight);color:var(--ink-2)}
+
+/* underline fields */
+.ct-form{display:flex;flex-direction:column;gap:var(--space-6);max-width:640px}
+.ct-form fieldset{border:0;padding:0;margin:0;min-width:0}
+.ct-form legend,.ct-lab{display:block;color:var(--ink)}
+.ct-form legend{margin-bottom:var(--space-3)}
+.ct-two{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+.ct-field{display:flex;flex-direction:column;gap:var(--space-2)}
+.ct-field .ct-lab{color:var(--ink-2)}
+.ct-in{width:100%;height:40px;padding:0;border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;font-family:inherit;font-family:var(--t-body-m-font);font-size:var(--t-body-m-size);line-height:var(--t-body-m-lh);letter-spacing:var(--t-body-m-ls);font-weight:var(--t-body-m-weight);color:var(--ink);transition:border-color .2s}
+.ct-in::placeholder{color:var(--muted)}
+.ct-in:focus{outline:none;border-bottom:2px solid var(--terra)}
+.ct-in[aria-invalid="true"]{border-bottom-color:var(--terra-text);border-bottom-style:dashed}
+select.ct-in{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:var(--space-6);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231D1A16' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 0 center/16px no-repeat}
+textarea.ct-in{height:auto;min-height:96px;padding-top:var(--space-2);resize:vertical}
+.ct-err{display:none;color:var(--terra-text)}
+.ct-err.on{display:block}
+.ct-check{display:flex;align-items:center;gap:var(--space-3);color:var(--ink-2);cursor:pointer}
+.ct-check input{appearance:none;-webkit-appearance:none;flex:none;width:16px;height:16px;margin:0;border:1px solid var(--ink);border-radius:50%;cursor:pointer}
+.ct-check input:checked{background:radial-gradient(circle,var(--terra) 0 4px,transparent 5px)}
+.ct-check input:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.ct-send{align-self:flex-start}
+.ct-done{display:flex;flex-direction:column;gap:var(--space-4);max-width:640px}
+.ct-done[hidden],.ct-form[hidden]{display:none}
+.ct-done p{color:var(--ink-2)}
+.ct-done .hand{color:var(--ink)}
+
+@media (max-width:1280px){.ct-title{font-family:var(--t-display-l-font);font-size:var(--t-display-l-size);line-height:var(--t-display-l-lh);letter-spacing:var(--t-display-l-ls);font-weight:var(--t-display-l-weight)}}
+@media (max-width:980px){
+  .ct{padding:var(--space-8) var(--gutter-phone) var(--space-9)}
+  .ct-grid{grid-template-columns:1fr;gap:var(--space-8)}
+}
+@media (max-width:600px){
+  .ct-title{font-family:var(--t-heading-2-font);font-size:var(--t-heading-2-size);line-height:var(--t-heading-2-lh);letter-spacing:var(--t-heading-2-ls);font-weight:var(--t-heading-2-weight)}
+  .ct-two{grid-template-columns:1fr;gap:var(--space-6)}
+}

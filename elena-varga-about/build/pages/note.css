@@ -1,0 +1,61 @@
+/* ============ A studio note ============ */
+.np{padding:var(--space-9) var(--space-7) var(--space-10)}
+.np-back{display:inline-flex;gap:var(--space-2);color:var(--ink-2);text-decoration:none}
+.np-back:hover{color:var(--terra)}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-1);list-style:none}
+.tags li{padding:var(--space-1) var(--space-3);background:var(--pill);color:var(--terra-text)}
+/* editorial opening: a handwritten eyebrow, a big uppercase title, one small centred picture */
+.np-head{max-width:1120px;margin:var(--space-8) auto 0;display:flex;flex-direction:column;align-items:center;gap:var(--space-5);text-align:center}
+.np-eyebrow{color:var(--ink-2)}
+.np-title{text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.np-by{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--space-3);margin-top:var(--space-2);color:var(--muted)}
+.np-by span+span::before{content:"·";margin-right:var(--space-3)}
+.np-hero{width:min(440px,100%);margin:var(--space-9) auto 0;display:flex;flex-direction:column;align-items:center}
+.np-hero img{display:block;width:100%;height:auto}
+.np-hero figcaption{display:flex;flex-direction:column;align-items:center;gap:var(--space-1);margin-top:var(--space-5);text-align:center}
+.np-hero figcaption .hand-s{color:var(--ink-2)}
+.np-hero figcaption .body-s{color:var(--ink)}
+.np-fig figcaption{display:flex;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-3);color:var(--muted)}
+
+.np-body{max-width:640px;margin:var(--space-9) auto 0;color:var(--ink)}
+.np-body > * + *{margin-top:var(--space-5)}
+.np-body .lead{color:var(--ink)}
+.np-body p{color:var(--ink-2)}
+.np-body h2{margin-top:var(--space-8);color:var(--ink)}
+.np-body h2 + p{margin-top:var(--space-4)}
+.np-body em{font-style:normal;color:var(--ink);font-weight:var(--t-body-l-weight)}
+.np-quote{margin:var(--space-9) 0;text-align:center}
+.np-quote p.np-q{text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.np-quote p .a{color:var(--terra)}
+.np-quote p.np-cite{margin-top:var(--space-4);color:var(--ink-2)}
+.np-fig{margin:var(--space-8) 0}
+.np-fig .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.np-fig .three span{display:flex;align-items:flex-end;aspect-ratio:1;padding:var(--space-3);border:1px solid var(--rule)}
+.np-steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:0;margin-top:var(--space-5)}
+.np-steps li{counter-increment:s;display:grid;grid-template-columns:48px minmax(0,1fr);gap:var(--space-3);padding:var(--space-4) 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.np-steps li:last-child{border-bottom:1px solid var(--rule)}
+.np-steps li::before{content:"0" counter(s);color:var(--terra-text)}
+.np-sign{display:flex;align-items:baseline;gap:var(--space-4);margin-top:var(--space-8)}
+.np-sign span{color:var(--muted)}
+.np-try{display:flex;justify-content:space-between;align-items:center;gap:var(--space-6);flex-wrap:wrap;margin-top:var(--space-8);padding:var(--space-6);background:var(--night);border-radius:var(--radius-md);color:var(--paper)}
+.np-try p{color:var(--dim);max-width:360px}
+.np-try .heading-4{color:var(--paper)}
+.np-tags-end{justify-content:flex-start;margin-top:var(--space-6)}
+
+.np-more{max-width:1336px;margin:var(--space-10) auto 0;padding-top:var(--space-7);border-top:1px solid var(--rule)}
+.np-more-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-7)}
+.np-more-head a{color:var(--ink-2)}
+.np-more-head a:hover{color:var(--terra)}
+.sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-9) var(--space-5);align-items:start;list-style:none}
+.note a{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+.note img{display:block;width:100%;height:auto}
+.note .title{margin-top:var(--space-5);text-wrap:pretty;transition:color .25s}
+.note time{display:block;margin-top:var(--space-2);color:var(--muted)}
+.note .tags{justify-content:flex-start;margin-top:var(--space-4)}
+.note a:hover .title{color:var(--terra)}
+
+@media (max-width:1180px){.sn-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.np{padding:var(--space-8) var(--gutter-phone) var(--space-9)}}
+@media (max-width:600px){
+  .sn-grid{grid-template-columns:1fr;gap:var(--space-8)}
+}
