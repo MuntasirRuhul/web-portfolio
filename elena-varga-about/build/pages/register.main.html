@@ -1,0 +1,46 @@
+<main class="au">
+  <figure class="au-art">
+    <img src="assets/img/seated.jpg" alt="A model sitting on a wooden chair in the white studio, ready for a drawing session." width="1100" height="1648">
+    <figcaption><span class="hand-s">first lesson, a chair</span><p class="heading-3">Pull up a chair. The first lesson is free.</p></figcaption>
+  </figure>
+
+  <div class="au-main">
+    <div class="au-box">
+      <p class="au-eyebrow label">Join the studio</p>
+      <h1 class="au-title heading-1">Create an account.</h1>
+      <p class="au-intro body-l">Free to start. Already have one? <a href="login.html">Log in</a>.</p>
+
+      <form class="au-form" id="auForm" novalidate aria-label="Create an account">
+        <div class="au-field"><label class="au-lab body-l" for="first">First name</label><input class="au-in" id="first" name="first" autocomplete="given-name" required aria-describedby="e-first"><span class="au-err body-m" id="e-first">Add your first name, so Elena knows what to call you.</span></div>
+        <div class="au-field"><label class="au-lab body-l" for="email">Email</label><input class="au-in" id="email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="au-err body-m" id="e-email">Add an email address you check, like marta@example.com.</span></div>
+        <div class="au-field">
+          <label class="au-lab body-l" for="password">Password</label>
+          <div class="au-wrap"><input class="au-in" id="password" name="password" type="password" autocomplete="new-password" required minlength="8" aria-describedby="h-password e-password"><button class="au-show label" type="button" aria-controls="password" aria-pressed="false">Show</button></div>
+          <span class="au-hint body-m" id="h-password">At least 8 characters.</span>
+          <span class="au-err body-m" id="e-password">Use at least 8 characters.</span>
+        </div>
+        <fieldset>
+          <legend class="body-l">Where are you starting?</legend>
+          <div class="au-levels body-m">
+            <input type="radio" name="level" id="lv1" value="new" checked><label for="lv1">Never really drawn</label>
+            <input type="radio" name="level" id="lv2" value="some"><label for="lv2">Some sketchbooks</label>
+            <input type="radio" name="level" id="lv3" value="lots"><label for="lv3">I draw a lot</label>
+          </div>
+        </fieldset>
+        <label class="au-check body-m"><input type="checkbox" name="notes"> Send me studio notes and new lessons, once a month</label>
+        <div class="au-field">
+          <label class="au-check body-m"><input type="checkbox" id="agree" name="agree" required aria-describedby="e-agree"> <span>I agree to the <a href="terms.html">terms and conditions</a> and have read the <a href="privacy.html">privacy policy</a>.</span></label>
+          <span class="au-err body-m" id="e-agree">Tick this to create your account.</span>
+        </div>
+        <button class="au-submit btn" type="submit">Create account <span class="ar" aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="au-done" id="auDone" tabindex="-1" hidden>
+        <p class="label" style="color:var(--terra-text)">Account created</p>
+        <p class="heading-3" style="color:var(--ink)">Welcome to the studio, <span id="doneName">Marta</span>.</p>
+        <p class="body-m">We’ve sent a note to <b id="doneMail">your inbox</b> to confirm your address. Until then, <a href="lesson.html">lesson 1</a> is ready for you.</p>
+        <span class="signature">Elena</span>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,34 @@
+<main class="au">
+  <figure class="au-art">
+    <img src="assets/img/studio.jpg" alt="A student holding a paintbrush among plaster and bronze casts in the studio." width="1400" height="2100">
+    <figcaption><span class="hand-s">the studio, Tuesday morning</span><p class="heading-3">Your drawing board is where you left it.</p></figcaption>
+  </figure>
+
+  <div class="au-main">
+    <div class="au-box">
+      <p class="au-eyebrow label">Students</p>
+      <h1 class="au-title heading-1">Welcome back.</h1>
+      <p class="au-intro body-l">Log in to pick up your lessons. New here? <a href="register.html">Create an account</a>.</p>
+
+      <form class="au-form" id="auForm" novalidate aria-label="Log in">
+        <div class="au-field"><label class="au-lab body-l" for="email">Email</label><input class="au-in" id="email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="au-err body-m" id="e-email">Add the email address you signed up with, like marta@example.com.</span></div>
+        <div class="au-field">
+          <div class="au-lab body-l"><label for="password">Password</label><a class="au-forgot body-m" href="contact.html">Forgot it?</a></div>
+          <div class="au-wrap"><input class="au-in" id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="e-password"><button class="au-show label" type="button" aria-controls="password" aria-pressed="false">Show</button></div>
+          <span class="au-err body-m" id="e-password">Add your password.</span>
+        </div>
+        <label class="au-check body-m"><input type="checkbox" name="remember" checked> Keep me logged in on this device</label>
+        <button class="au-submit btn" type="submit">Log in <span class="ar" aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="au-done" id="auDone" tabindex="-1" hidden>
+        <p class="label" style="color:var(--terra-text)">Logged in</p>
+        <p class="heading-3" style="color:var(--ink)">Good to see you again.</p>
+        <p class="body-m">Your courses open in a moment. In the meantime, <a href="lesson.html">lesson 1</a> is always free.</p>
+        <span class="signature">Elena</span>
+      </div>
+
+      <p class="au-alt body-m">Trouble logging in? <a href="contact.html">Write to the studio</a> and we’ll sort it out.</p>
+    </div>
+  </div>
+</main>

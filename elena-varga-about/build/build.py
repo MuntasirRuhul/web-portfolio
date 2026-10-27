@@ -1,6 +1,6 @@
 """Assemble site pages from the shared chrome + each page's own main, CSS and JS.
 Every page loads assets/tokens.css (the design system) and assets/chrome.css (rail, drawer, footer, buttons)."""
-import sys, shutil
+import os, sys, shutil
 
 S, R = sys.argv[1], sys.argv[2]
 P = S + '/site/pages'
@@ -27,13 +27,19 @@ PAGES = {  # key: (output file, which nav link is current)
     'notes': ('notes.html', 'notes.html'),
     'note': ('note.html', 'notes.html'),
     'contact': ('contact.html', 'contact.html'),
+    'login': ('login.html', None),
+    'register': ('register.html', None),
+    'terms': ('terms.html', None),
+    'privacy': ('privacy.html', None),
 }
+SHARED = {'login': 'auth', 'register': 'auth', 'terms': 'legal', 'privacy': 'legal'}  # pages that share one layout's CSS (and JS)
+src = lambda key, ext: f'{P}/{key}.{ext}' if os.path.exists(f'{P}/{key}.{ext}') else f'{P}/{SHARED[key]}.{ext}'
 NAV = [('courses.html', 'Courses'), ('about.html', 'About'), ('notes.html', 'Studio notes'), ('home.html#faq', 'Questions'), ('contact.html', 'Contact')]
 
 def page(key):
     out, current = PAGES[key]
     title, desc = open(f'{P}/{key}.meta').read().strip().split('\n')
-    css, main, js = (open(f'{P}/{key}.{x}').read() for x in ('css', 'main.html', 'js'))
+    css, main, js = (open(src(key, x)).read() for x in ('css', 'main.html', 'js'))
     cur = lambda h: ' aria-current="page"' if h == current else ''
     nav = ''.join(f'<a href="{h}"{cur(h)}><small>0{i + 1}</small>{t}</a>' for i, (h, t) in enumerate(NAV))
     return f'''<!doctype html>
@@ -60,9 +66,9 @@ def page(key):
 {main}
 
 <footer class="site-foot body-m">
-  <div class="c"><h3 class="label">Learn</h3><a href="courses.html">All courses</a><a href="lesson.html">Free lessons</a><a href="course.html">Gift a course</a><a href="home.html#faq">FAQ</a></div>
+  <div class="c"><h3 class="label">Learn</h3><a href="courses.html">All courses</a><a href="lesson.html">Free lessons</a><a href="course.html">Gift a course</a><a href="home.html#faq">FAQ</a><a href="login.html">Log in</a></div>
   <div class="c"><h3 class="label">Studio</h3><a href="about.html">About Elena</a><a href="home.html#gallery">Gallery</a><a href="notes.html">Studio notes</a><a href="contact.html">Contact</a></div>
-  <div class="c"><h3 class="label">Information</h3><a href="contact.html">Commissions</a><a href="components.html">Components</a><a href="sitemap.html">Site map</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  <div class="c"><h3 class="label">Information</h3><a href="contact.html">Commissions</a><a href="components.html">Components</a><a href="sitemap.html">Site map</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
   <div class="base body-s"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · <a href="components.html">Components</a> · Made by hand in Lisbon</span></div>
 </footer>
 </div>
@@ -71,7 +77,7 @@ def page(key):
 <div class="menu-drawer" id="siteDrawer" role="dialog" aria-modal="true" aria-label="Menu">
   <p class="menu-label label"><b>00</b>Menu</p>
   <nav aria-label="Menu">{nav}</nav>
-  <div class="menu-foot"><a class="btn btn-paper" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a><address class="body-s">Rua da Graça 4, 3º · 1170-165 Lisboa<br>Letters read on Tuesday and Friday mornings</address></div>
+  <div class="menu-foot"><a class="btn btn-paper" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a><p class="menu-acct body-m"><a href="login.html">Log in</a> · <a href="register.html">Create an account</a></p><address class="body-s">Rua da Graça 4, 3º · 1170-165 Lisboa<br>Letters read on Tuesday and Friday mornings</address></div>
 </div>
 
 <script>
