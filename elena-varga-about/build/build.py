@@ -26,7 +26,7 @@ PAGES = {  # key: (output file, which nav link is current)
     'components': ('components.html', None),
     'notes': ('notes.html', 'notes.html'),
     'note': ('note.html', 'notes.html'),
-    'contact': ('contact-v2.html', 'contact.html'),
+    'contact': ('contact.html', 'contact.html'),
 }
 NAV = [('courses.html', 'Courses'), ('about.html', 'About'), ('notes.html', 'Studio notes'), ('home.html#faq', 'Questions'), ('contact.html', 'Contact')]
 
