@@ -34,7 +34,7 @@
 .ct-two{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
 .ct-field{display:flex;flex-direction:column;gap:var(--space-2)}
 .ct-field .ct-lab{color:var(--ink-2)}
-.ct-in{width:100%;height:40px;padding:0;border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;font-family:inherit;font-family:var(--t-body-m-font);font-size:var(--t-body-m-size);line-height:var(--t-body-m-lh);letter-spacing:var(--t-body-m-ls);font-weight:var(--t-body-m-weight);color:var(--ink);transition:border-color .2s}
+.ct-in{width:100%;height:48px;padding:0;border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;font-family:var(--t-body-l-font);font-size:var(--t-body-l-size);line-height:var(--t-body-l-lh);letter-spacing:var(--t-body-l-ls);font-weight:var(--t-body-l-weight);color:var(--ink);transition:border-color .2s}
 .ct-in::placeholder{color:var(--muted)}
 .ct-in:focus{outline:none;border-bottom:2px solid var(--terra)}
 .ct-in[aria-invalid="true"]{border-bottom-color:var(--terra-text);border-bottom-style:dashed}
@@ -43,8 +43,8 @@ textarea.ct-in{height:auto;min-height:96px;padding-top:var(--space-2);resize:ver
 .ct-err{display:none;color:var(--terra-text)}
 .ct-err.on{display:block}
 .ct-check{display:flex;align-items:center;gap:var(--space-3);color:var(--ink-2);cursor:pointer}
-.ct-check input{appearance:none;-webkit-appearance:none;flex:none;width:16px;height:16px;margin:0;border:1px solid var(--ink);border-radius:50%;cursor:pointer}
-.ct-check input:checked{background:radial-gradient(circle,var(--terra) 0 4px,transparent 5px)}
+.ct-check input{appearance:none;-webkit-appearance:none;flex:none;width:20px;height:20px;margin:0;border:1px solid var(--ink);border-radius:50%;cursor:pointer}
+.ct-check input:checked{background:radial-gradient(circle,var(--terra) 0 5px,transparent 6px)}
 .ct-check input:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 .ct-send{align-self:flex-start}
 .ct-done{display:flex;flex-direction:column;gap:var(--space-4);max-width:640px}
@@ -82,7 +82,7 @@ textarea.ct-in{height:auto;min-height:96px;padding-top:var(--space-2);resize:ver
   <div class="ct-rule" aria-hidden="true"></div>
 
   <div class="ct-grid">
-    <div class="ct-info body-s">
+    <div class="ct-info body-l">
       <p>Graça, Lisbon<br>Since 2010</p>
       <p>Letters read<br>Tuesday and Friday<br>mornings</p>
     </div>
@@ -92,11 +92,11 @@ textarea.ct-in{height:auto;min-height:96px;padding-top:var(--space-2);resize:ver
         <fieldset>
           <legend class="heading-5">Name (required)</legend>
           <div class="ct-two">
-            <div class="ct-field"><label class="ct-lab body-s" for="first">First name</label><input class="ct-in" id="first" name="first" autocomplete="given-name" required aria-describedby="e-first"><span class="ct-err body-s" id="e-first">Add your first name, so Elena knows who to write back to.</span></div>
-            <div class="ct-field"><label class="ct-lab body-s" for="last">Last name</label><input class="ct-in" id="last" name="last" autocomplete="family-name"></div>
+            <div class="ct-field"><label class="ct-lab body-m" for="first">First name</label><input class="ct-in" id="first" name="first" autocomplete="given-name" required aria-describedby="e-first"><span class="ct-err body-m" id="e-first">Add your first name, so Elena knows who to write back to.</span></div>
+            <div class="ct-field"><label class="ct-lab body-m" for="last">Last name</label><input class="ct-in" id="last" name="last" autocomplete="family-name"></div>
           </div>
         </fieldset>
-        <div class="ct-field"><label class="ct-lab body-m" for="topic">What it’s about</label>
+        <div class="ct-field"><label class="ct-lab body-l" for="topic">What it’s about</label>
           <select class="ct-in" id="topic" name="topic">
             <option>A course I’m taking</option>
             <option>A course I’m thinking about</option>
@@ -105,9 +105,9 @@ textarea.ct-in{height:auto;min-height:96px;padding-top:var(--space-2);resize:ver
             <option>A talk or a workshop</option>
             <option>Something else</option>
           </select></div>
-        <div class="ct-field"><label class="ct-lab body-m" for="email">Email (required)</label><input class="ct-in" id="email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="ct-err body-s" id="e-email">Add an email address Elena can reply to, like marta@example.com.</span></div>
-        <label class="ct-check body-s"><input type="checkbox" id="notes" name="notes"> Send me studio notes and new lessons, once a month</label>
-        <div class="ct-field"><label class="ct-lab body-m" for="msg">Your message</label><textarea class="ct-in" id="msg" name="msg" rows="3" required aria-describedby="e-msg" placeholder="If it’s about a drawing, say which course and lesson."></textarea><span class="ct-err body-s" id="e-msg">Write a line or two first. Even “I’m stuck on lesson 3” is enough.</span></div>
+        <div class="ct-field"><label class="ct-lab body-l" for="email">Email (required)</label><input class="ct-in" id="email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="ct-err body-m" id="e-email">Add an email address Elena can reply to, like marta@example.com.</span></div>
+        <label class="ct-check body-m"><input type="checkbox" id="notes" name="notes"> Send me studio notes and new lessons, once a month</label>
+        <div class="ct-field"><label class="ct-lab body-l" for="msg">Your message</label><textarea class="ct-in" id="msg" name="msg" rows="3" required aria-describedby="e-msg" placeholder="If it’s about a drawing, say which course and lesson."></textarea><span class="ct-err body-m" id="e-msg">Write a line or two first. Even “I’m stuck on lesson 3” is enough.</span></div>
         <button class="ct-send btn btn-pill" type="submit">Send</button>
       </form>
 

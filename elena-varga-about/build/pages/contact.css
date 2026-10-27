@@ -21,7 +21,7 @@
 .ct-two{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
 .ct-field{display:flex;flex-direction:column;gap:var(--space-2)}
 .ct-field .ct-lab{color:var(--ink-2)}
-.ct-in{width:100%;height:40px;padding:0;border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;font-family:inherit;font-family:var(--t-body-m-font);font-size:var(--t-body-m-size);line-height:var(--t-body-m-lh);letter-spacing:var(--t-body-m-ls);font-weight:var(--t-body-m-weight);color:var(--ink);transition:border-color .2s}
+.ct-in{width:100%;height:48px;padding:0;border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;font-family:var(--t-body-l-font);font-size:var(--t-body-l-size);line-height:var(--t-body-l-lh);letter-spacing:var(--t-body-l-ls);font-weight:var(--t-body-l-weight);color:var(--ink);transition:border-color .2s}
 .ct-in::placeholder{color:var(--muted)}
 .ct-in:focus{outline:none;border-bottom:2px solid var(--terra)}
 .ct-in[aria-invalid="true"]{border-bottom-color:var(--terra-text);border-bottom-style:dashed}
@@ -30,8 +30,8 @@ textarea.ct-in{height:auto;min-height:96px;padding-top:var(--space-2);resize:ver
 .ct-err{display:none;color:var(--terra-text)}
 .ct-err.on{display:block}
 .ct-check{display:flex;align-items:center;gap:var(--space-3);color:var(--ink-2);cursor:pointer}
-.ct-check input{appearance:none;-webkit-appearance:none;flex:none;width:16px;height:16px;margin:0;border:1px solid var(--ink);border-radius:50%;cursor:pointer}
-.ct-check input:checked{background:radial-gradient(circle,var(--terra) 0 4px,transparent 5px)}
+.ct-check input{appearance:none;-webkit-appearance:none;flex:none;width:20px;height:20px;margin:0;border:1px solid var(--ink);border-radius:50%;cursor:pointer}
+.ct-check input:checked{background:radial-gradient(circle,var(--terra) 0 5px,transparent 6px)}
 .ct-check input:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 .ct-send{align-self:flex-start}
 .ct-done{display:flex;flex-direction:column;gap:var(--space-4);max-width:640px}
