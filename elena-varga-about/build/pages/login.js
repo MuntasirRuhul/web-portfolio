@@ -7,9 +7,13 @@
     const pw = $(b.getAttribute('aria-controls')), show = pw.type === 'password';
     pw.type = show ? 'text' : 'password'; b.textContent = show ? 'Hide' : 'Show'; b.setAttribute('aria-pressed', show);
   }));
-  form.addEventListener('submit', e => {
+  const send = e => {
     e.preventDefault();
     const bad = checks.filter(([el, id]) => !check(el, id));
     if (bad.length) { bad[0][0].focus(); return; }
     form.hidden = true; $('auDone').hidden = false; $('auDone').focus();
-  });
+  };
+  // The site runs in a sandboxed frame that blocks form submission, so the button and the Enter key call send() directly.
+  form.addEventListener('submit', send);
+  form.querySelector('[type="submit"]').addEventListener('click', send);
+  form.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.matches('input:not([type="checkbox"]):not([type="radio"])')) send(e); });
