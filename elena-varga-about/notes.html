@@ -594,8 +594,8 @@ body{height:100vh;overflow:hidden}
 
 /* ============ Studio notes: a four-column index, pictures at their own shape ============ */
 .sn{max-width:1336px;margin:0 auto;padding:var(--space-9) var(--space-7) var(--space-10)}
-.sn-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-5);flex-wrap:wrap;margin-bottom:var(--space-8)}
-.sn-head p{color:var(--muted)}
+.sn-head{display:flex;flex-direction:column;align-items:center;gap:var(--space-2);text-align:center;padding-bottom:var(--space-7);margin-bottom:var(--space-8);border-bottom:1px solid var(--rule)}
+.sn-head p{color:var(--ink-2);text-wrap:balance}
 .sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-9) var(--space-5);align-items:start;list-style:none}
 .note a{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
 .note img{display:block;width:100%;height:auto;background:var(--card)}
@@ -634,8 +634,8 @@ body{height:100vh;overflow:hidden}
 <div class="frame">
 <main class="sn">
   <header class="sn-head">
-    <h1 class="heading-3">Studio notes.</h1>
-    <p class="caption">12 of 48 notes · newest first</p>
+    <h1 class="heading-2">Studio notes</h1>
+    <p class="body-m">Notes from the studio in Graça, since 2016 · 48 notes</p>
   </header>
 
   <ol class="sn-grid">
