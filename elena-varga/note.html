@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three values, not seven · Studio notes · Elena Varga Atelier</title>
+<meta name="description" content="Squint at anything and it falls into three shapes: the paper, one grey, one dark. Elena Varga on the squint test.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/chrome.css">
+<style>
+/* ============ A studio note ============ */
+.np{padding:var(--space-9) var(--space-7) var(--space-10)}
+.np-back{display:inline-flex;gap:var(--space-2);color:var(--ink-2);text-decoration:none}
+.np-back:hover{color:var(--terra)}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-1);list-style:none}
+.tags li{padding:var(--space-1) var(--space-3);background:var(--pill);color:var(--terra-text)}
+/* editorial opening: a handwritten eyebrow, a big uppercase title, one small centred picture */
+.np-head{max-width:1120px;margin:var(--space-8) auto 0;display:flex;flex-direction:column;align-items:center;gap:var(--space-5);text-align:center}
+.np-eyebrow{color:var(--ink-2)}
+.np-title{text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.np-by{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--space-3);margin-top:var(--space-2);color:var(--muted)}
+.np-by span+span::before{content:"·";margin-right:var(--space-3)}
+.np-hero{width:min(440px,100%);margin:var(--space-9) auto 0;display:flex;flex-direction:column;align-items:center}
+.np-hero img{display:block;width:100%;height:auto}
+.np-hero figcaption{display:flex;flex-direction:column;align-items:center;gap:var(--space-1);margin-top:var(--space-5);text-align:center}
+.np-hero figcaption .hand-s{color:var(--ink-2)}
+.np-hero figcaption .body-s{color:var(--ink)}
+.np-fig figcaption{display:flex;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-3);color:var(--muted)}
+
+.np-body{max-width:640px;margin:var(--space-9) auto 0;color:var(--ink)}
+.np-body > * + *{margin-top:var(--space-5)}
+.np-body .lead{color:var(--ink)}
+.np-body p{color:var(--ink-2)}
+.np-body h2{margin-top:var(--space-8);color:var(--ink)}
+.np-body h2 + p{margin-top:var(--space-4)}
+.np-body em{font-style:normal;color:var(--ink);font-weight:var(--t-body-l-weight)}
+.np-quote{margin:var(--space-9) 0;text-align:center}
+.np-quote p.np-q{text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.np-quote p .a{color:var(--terra)}
+.np-quote p.np-cite{margin-top:var(--space-4);color:var(--ink-2)}
+.np-fig{margin:var(--space-8) 0}
+.np-fig .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.np-fig .three span{display:flex;align-items:flex-end;aspect-ratio:1;padding:var(--space-3);border:1px solid var(--rule)}
+.np-steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:0;margin-top:var(--space-5)}
+.np-steps li{counter-increment:s;display:grid;grid-template-columns:48px minmax(0,1fr);gap:var(--space-3);padding:var(--space-4) 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.np-steps li:last-child{border-bottom:1px solid var(--rule)}
+.np-steps li::before{content:"0" counter(s);color:var(--terra-text)}
+.np-sign{display:flex;align-items:baseline;gap:var(--space-4);margin-top:var(--space-8)}
+.np-sign span{color:var(--muted)}
+.np-try{display:flex;justify-content:space-between;align-items:center;gap:var(--space-6);flex-wrap:wrap;margin-top:var(--space-8);padding:var(--space-6);background:var(--night);border-radius:var(--radius-md);color:var(--paper)}
+.np-try p{color:var(--dim);max-width:360px}
+.np-try .heading-4{color:var(--paper)}
+.np-tags-end{justify-content:flex-start;margin-top:var(--space-6)}
+
+.np-more{max-width:1336px;margin:var(--space-10) auto 0;padding-top:var(--space-7);border-top:1px solid var(--rule)}
+.np-more-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-7)}
+.np-more-head a{color:var(--ink-2)}
+.np-more-head a:hover{color:var(--terra)}
+.sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-9) var(--space-5);align-items:start;list-style:none}
+.note a{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+.note img{display:block;width:100%;height:auto}
+.note .title{margin-top:var(--space-5);text-wrap:pretty;transition:color .25s}
+.note time{display:block;margin-top:var(--space-2);color:var(--muted)}
+.note .tags{justify-content:flex-start;margin-top:var(--space-4)}
+.note a:hover .title{color:var(--terra)}
+
+@media (max-width:1180px){.sn-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.np{padding:var(--space-8) var(--gutter-phone) var(--space-9)}}
+@media (max-width:600px){
+  .sn-grid{grid-template-columns:1fr;gap:var(--space-8)}
+}
+</style>
+</head>
+<body>
+<div class="cols" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<aside class="rail">
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteDrawer"><span></span></button>
+  <span class="vt" aria-hidden="true">Elena Varga — school of drawing — Lisbon</span>
+  <div class="soc">
+    <a href="#" aria-label="Pinterest"><svg viewBox="113.5 53.5 33 25" aria-hidden="true"><path class="well" d="M116.226 59.1939C125.561 49.4738 146.335 54.2154 145.996 66.6304C145.657 79.045 127.341 80.5166 121.591 75.9409C117.116 72.3801 120.209 69.6837 119 67.9995C117.815 66.6281 116.636 68.6805 114.58 65.7378C113.202 63.7649 114.492 60.999 116.226 59.1939ZM118.76 60.064C117.655 60.0642 116.76 60.9597 116.76 62.064C116.76 63.1684 117.655 64.0637 118.76 64.064C119.864 64.064 120.76 63.1686 120.76 62.064C120.76 60.9595 119.864 60.064 118.76 60.064ZM122.493 56.9947C121.665 56.9947 120.993 57.6663 120.993 58.4947C120.993 59.3231 121.665 59.9947 122.493 59.9947C123.321 59.9945 123.993 59.323 123.993 58.4947C123.993 57.6664 123.321 56.9948 122.493 56.9947ZM126.371 55.9947C125.819 55.9948 125.371 56.4425 125.371 56.9947C125.371 57.5469 125.819 57.9945 126.371 57.9947C126.923 57.9947 127.371 57.5469 127.371 56.9947C127.371 56.4425 126.923 55.9947 126.371 55.9947Z" style="fill:var(--pot-1)"/><path class="glyph" d="M139 65.385C139 67.023 138.414 68.5243 137.35 69.6106C136.352 70.6302 134.996 71.2153 133.63 71.2153C132.539 71.2153 131.738 70.9252 131.165 70.5691L130.499 73.3497C130.475 73.4571 130.429 73.5587 130.364 73.6485C130.299 73.7383 130.217 73.8147 130.122 73.8731C130.027 73.9315 129.921 73.9708 129.81 73.9888C129.7 74.0068 129.587 74.0031 129.478 73.9778C129.369 73.9526 129.266 73.9064 129.175 73.8418C129.084 73.7773 129.007 73.6957 128.949 73.6018C128.89 73.5078 128.851 73.4035 128.834 73.2947C128.817 73.1859 128.822 73.0748 128.849 72.9679L131.11 63.5283C131.134 63.4208 131.18 63.3193 131.245 63.2294C131.31 63.1396 131.392 63.0633 131.487 63.0048C131.582 62.9464 131.688 62.9071 131.798 62.8891C131.909 62.8711 132.022 62.8749 132.131 62.9001C132.24 62.9253 132.343 62.9716 132.434 63.0361C132.525 63.1007 132.602 63.1823 132.66 63.2762C132.718 63.3701 132.757 63.4745 132.775 63.5833C132.792 63.6921 132.787 63.8031 132.76 63.91L131.598 68.7638C131.844 69.0539 132.441 69.5495 133.63 69.5495C135.436 69.5495 137.304 67.9913 137.304 65.385C137.304 64.6612 137.134 63.9473 136.808 63.2983C136.482 62.6493 136.008 62.0827 135.424 61.6422C134.839 61.2018 134.159 60.8993 133.437 60.7582C132.714 60.6171 131.968 60.6411 131.257 60.8284C130.545 61.0156 129.887 61.3612 129.333 61.8383C128.779 62.3154 128.344 62.9113 128.062 63.5798C127.78 64.2484 127.658 64.9717 127.706 65.6939C127.754 66.4162 127.97 67.1179 128.338 67.7449C128.442 67.9355 128.466 68.1583 128.406 68.3663C128.345 68.5742 128.205 68.7509 128.015 68.8591C127.824 68.9673 127.598 68.9984 127.385 68.9459C127.171 68.8934 126.987 68.7614 126.87 68.5778C126.372 67.7295 126.079 66.78 126.014 65.8027C125.949 64.8254 126.113 63.8464 126.495 62.9416C126.877 62.0367 127.465 61.2303 128.214 60.5845C128.964 59.9388 129.855 59.4711 130.818 59.2176C131.781 58.9641 132.79 58.9316 133.768 59.1227C134.746 59.3137 135.666 59.7232 136.457 60.3194C137.248 60.9156 137.888 61.6825 138.329 62.5609C138.77 63.4393 139 64.4055 139 65.385Z"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg viewBox="113.5 84.5 33 25" aria-hidden="true"><path class="well" d="M143.774 90.1939C134.438 80.4738 113.665 85.2154 114.004 97.6304C114.343 110.045 132.659 111.517 138.409 106.941C142.884 103.38 139.79 100.684 141 98.9995C142.185 97.6281 143.363 99.6805 145.42 96.7378C146.798 94.7649 145.508 91.999 143.774 90.1939ZM141.24 91.064C142.344 91.0642 143.24 91.9597 143.24 93.064C143.24 94.1684 142.344 95.0637 141.24 95.064C140.136 95.064 139.24 94.1686 139.24 93.064C139.24 91.9595 140.136 91.064 141.24 91.064ZM137.507 87.9947C138.335 87.9947 139.007 88.6663 139.007 89.4947C139.007 90.3231 138.335 90.9947 137.507 90.9947C136.678 90.9945 136.007 90.323 136.007 89.4947C136.007 88.6664 136.678 87.9948 137.507 87.9947ZM133.629 86.9947C134.181 86.9948 134.629 87.4425 134.629 87.9947C134.629 88.5469 134.181 88.9945 133.629 88.9947C133.076 88.9947 132.629 88.5469 132.629 87.9947C132.629 87.4425 133.077 86.9947 133.629 86.9947Z" style="fill:var(--pot-2)"/><path class="glyph" d="M128.5 95.2713C127.929 95.2713 127.37 95.4407 126.895 95.7581C126.42 96.0756 126.05 96.5268 125.831 97.0546C125.612 97.5825 125.555 98.1634 125.667 98.7238C125.778 99.2841 126.053 99.7989 126.457 100.203C126.861 100.607 127.376 100.882 127.936 100.994C128.497 101.105 129.078 101.048 129.606 100.829C130.133 100.61 130.585 100.24 130.902 99.7651C131.219 99.2901 131.389 98.7315 131.389 98.1602C131.388 97.3942 131.083 96.6599 130.542 96.1183C130 95.5767 129.266 95.2721 128.5 95.2713ZM128.5 99.6046C128.214 99.6046 127.935 99.5199 127.698 99.3612C127.46 99.2025 127.275 98.9769 127.166 98.7129C127.056 98.449 127.028 98.1586 127.083 97.8784C127.139 97.5982 127.277 97.3408 127.479 97.1388C127.681 96.9368 127.938 96.7992 128.218 96.7435C128.498 96.6877 128.789 96.7163 129.053 96.8257C129.317 96.935 129.542 97.1201 129.701 97.3577C129.86 97.5952 129.944 97.8745 129.944 98.1602C129.944 98.5432 129.792 98.9106 129.521 99.1815C129.25 99.4524 128.883 99.6046 128.5 99.6046ZM131.389 91.6602H125.611C124.654 91.6613 123.736 92.0421 123.059 92.7191C122.382 93.396 122.001 94.3139 122 95.2713V101.049C122.001 102.006 122.382 102.924 123.059 103.601C123.736 104.278 124.654 104.659 125.611 104.66H131.389C132.346 104.659 133.264 104.278 133.941 103.601C134.618 102.924 134.999 102.006 135 101.049V95.2713C134.999 94.3139 134.618 93.396 133.941 92.7191C133.264 92.0421 132.346 91.6613 131.389 91.6602ZM133.556 101.049C133.556 101.624 133.327 102.175 132.921 102.581C132.515 102.987 131.964 103.216 131.389 103.216H125.611C125.036 103.216 124.485 102.987 124.079 102.581C123.673 102.175 123.444 101.624 123.444 101.049V95.2713C123.444 94.6966 123.673 94.1455 124.079 93.7392C124.485 93.3329 125.036 93.1046 125.611 93.1046H131.389C131.964 93.1046 132.515 93.3329 132.921 93.7392C133.327 94.1455 133.556 94.6966 133.556 95.2713V101.049ZM132.593 95.0305C132.593 95.221 132.536 95.4072 132.43 95.5655C132.324 95.7239 132.174 95.8473 131.998 95.9202C131.822 95.9931 131.629 96.0121 131.442 95.975C131.255 95.9378 131.083 95.8461 130.949 95.7114C130.814 95.5768 130.722 95.4052 130.685 95.2184C130.648 95.0316 130.667 94.838 130.74 94.662C130.813 94.4861 130.936 94.3357 131.095 94.2299C131.253 94.124 131.439 94.0676 131.63 94.0676C131.885 94.0676 132.13 94.169 132.311 94.3496C132.491 94.5302 132.593 94.7751 132.593 95.0305Z"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg viewBox="113.5 115.5 33 25" aria-hidden="true"><path class="well" d="M116.226 121.194C125.562 111.474 146.335 116.215 145.996 128.63C145.657 141.045 127.341 142.517 121.591 137.941C117.116 134.38 120.21 131.684 119 130C117.815 128.628 116.637 130.68 114.58 127.738C113.202 125.765 114.492 122.999 116.226 121.194ZM118.76 122.064C117.656 122.064 116.76 122.96 116.76 124.064C116.76 125.168 117.656 126.064 118.76 126.064C119.864 126.064 120.76 125.169 120.76 124.064C120.76 122.96 119.864 122.064 118.76 122.064ZM122.493 118.995C121.665 118.995 120.993 119.666 120.993 120.495C120.993 121.323 121.665 121.995 122.493 121.995C123.322 121.995 123.993 121.323 123.993 120.495C123.993 119.666 123.322 118.995 122.493 118.995ZM126.371 117.995C125.819 117.995 125.371 118.443 125.371 118.995C125.371 119.547 125.819 119.995 126.371 119.995C126.924 119.995 127.371 119.547 127.371 118.995C127.371 118.442 126.923 117.995 126.371 117.995Z" style="fill:var(--pot-3)"/><path class="glyph" d="M133.881 127.897L130.743 125.745C130.641 125.675 130.524 125.636 130.403 125.631C130.283 125.626 130.163 125.657 130.057 125.718C129.951 125.78 129.863 125.871 129.801 125.982C129.739 126.093 129.707 126.219 129.707 126.348V130.652C129.707 130.781 129.739 130.907 129.801 131.018C129.863 131.129 129.951 131.22 130.057 131.282C130.163 131.343 130.283 131.374 130.403 131.369C130.524 131.364 130.641 131.325 130.743 131.255L133.881 129.103C133.976 129.038 134.053 128.949 134.107 128.844C134.161 128.738 134.189 128.62 134.189 128.5C134.189 128.38 134.161 128.262 134.107 128.156C134.053 128.051 133.976 127.962 133.881 127.897ZM131.052 129.337V127.663L132.274 128.5L131.052 129.337ZM137.676 124.943C137.614 124.686 137.495 124.448 137.33 124.249C137.166 124.05 136.959 123.896 136.727 123.799C134.772 122.995 131.684 123 131.5 123C131.316 123 128.228 122.995 126.273 123.8C126.041 123.897 125.834 124.051 125.67 124.25C125.505 124.449 125.386 124.687 125.324 124.944C125.177 125.554 125 126.666 125 128.5C125 130.334 125.177 131.446 125.324 132.056C125.386 132.313 125.505 132.551 125.67 132.75C125.834 132.949 126.041 133.103 126.273 133.2C128.15 133.973 131.072 134 131.465 134H131.535C131.928 134 134.85 133.973 136.727 133.2C136.959 133.103 137.166 132.949 137.33 132.75C137.495 132.551 137.614 132.313 137.676 132.056C137.823 131.446 138 130.334 138 128.5C138 126.666 137.823 125.554 137.676 124.944V124.943ZM136.375 131.696C136.367 131.733 136.351 131.767 136.328 131.796C136.305 131.824 136.276 131.847 136.244 131.862C134.57 132.551 131.739 132.565 131.518 132.565H131.496C131.466 132.565 128.49 132.575 126.758 131.862C126.725 131.847 126.696 131.825 126.673 131.796C126.65 131.767 126.633 131.733 126.625 131.696C126.52 131.263 126.345 130.272 126.345 128.5C126.345 126.728 126.521 125.737 126.625 125.304C126.633 125.267 126.649 125.233 126.672 125.204C126.695 125.176 126.724 125.153 126.756 125.138C128.49 124.425 131.466 124.435 131.496 124.435H131.504C131.534 124.435 134.51 124.425 136.242 125.138C136.275 125.153 136.304 125.175 136.327 125.204C136.35 125.233 136.367 125.267 136.375 125.304C136.48 125.737 136.655 126.728 136.655 128.5C136.655 130.272 136.479 131.263 136.375 131.696Z"/></svg></a>
+  </div>
+</aside>
+<div class="frame">
+<header class="phone-bar"><a class="brand heading-5" href="home.html"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a><button class="menu-btn button" type="button" aria-controls="siteDrawer" aria-expanded="false">Menu</button></header>
+<main class="np">
+  <a class="np-back caption" href="notes.html">← Studio notes</a>
+
+  <article>
+    <header class="np-head">
+      <p class="np-eyebrow hand-s">a studio note on technique</p>
+      <h1 class="np-title title-caps">Three values, not seven: the squint test</h1>
+      <p class="np-by caption"><span>Elena Varga</span><span><time datetime="2026-10-12">12 Oct 2026</time></span><span>4 min read</span></p>
+    </header>
+
+    <figure class="np-hero">
+      <img src="assets/img/ink-portrait.jpg" alt="Elena’s ink portrait study, worked in three values" width="1000" height="1289">
+      <figcaption><span class="hand-s">portrait study, three values only</span><span class="body-s">ink on paper · 2025</span></figcaption>
+    </figure>
+
+    <div class="np-body">
+      <p class="lead body-l">In 2016 a student asked me how I “actually see” a shadow. I answered with three values, filmed the answer, and it became the first lesson of Course 01.</p>
+      <p class="body-m">Most beginners see seven, eight, a dozen greys. The eye is generous: it reports every tiny shift in the light, and the hand tries to copy all of them. The drawing goes flat and muddy, because no single tone is allowed to matter.</p>
+
+      <h2 class="heading-4">Half-close your eyes</h2>
+      <p class="body-m">Squinting throws away the detail and keeps the structure. Hold your pencil at arm’s length, half-close your eyes and look for a full minute before you mark anything. The small changes merge, and what is left is a few large shapes of light and dark.</p>
+      <p class="body-m">Now count them. I count three: <em>the paper</em>, left white; <em>one middle grey</em>, for everything turned a little away from the light; and <em>one dark</em>, for the cast shadow and the deepest folds.</p>
+
+      <figure class="np-fig">
+        <div class="three" aria-hidden="true">
+          <span class="label" style="background:var(--card);color:var(--muted)">Paper</span>
+          <span class="label" style="background:#9a9184;color:var(--ink)">Grey</span>
+          <span class="label" style="background:var(--ink);color:var(--paper)">Dark</span>
+        </div>
+        <figcaption class="caption"><span>The three values I teach</span><span>Paper · grey · dark</span></figcaption>
+      </figure>
+
+      <blockquote class="np-quote">
+        <p class="np-q title-caps-s">Squint. Count the values. <span class="a">I count three.</span></p>
+        <p class="np-cite hand-s">said in nearly every critique since 2016</p>
+      </blockquote>
+
+      <h2 class="heading-4">Why three is enough</h2>
+      <p class="body-m">Three values are enough to describe form: a lit side, a turning side, a shadow. Every extra grey is a decision you have to defend, and most of them do not survive. When the big shapes are right, a drawing reads from across the room, before anyone sees a single line.</p>
+      <p class="body-m">You can always add a fourth value at the very end, as an accent. You can rarely rescue a drawing that started with nine.</p>
+
+      <h2 class="heading-4">Try it tonight</h2>
+      <ol class="np-steps body-m">
+        <li>Put one object on a table under a single lamp: a cup, a shoe, a chair.</li>
+        <li>Squint for a full minute. Find the paper, the grey and the dark.</li>
+        <li>Block in the grey everywhere at once, in one even tone.</li>
+        <li>Add the dark last, and only where it is darkest. Then stop.</li>
+      </ol>
+
+      <div class="np-sign"><b class="signature">Elena V.</b><span class="caption">Graça, Lisbon · October 2026</span></div>
+
+      <ul class="tags np-tags-end" aria-label="Topics"><li class="body-s">Technique</li><li class="body-s">Pencil</li><li class="body-s">Course 01</li></ul>
+
+      <aside class="np-try" aria-label="Free lesson">
+        <div><p class="heading-4">Draw along with this lesson.</p><p class="body-m" style="margin-top:var(--space-2)">The squint test is lesson 1 of Foundations of Drawing, free: twelve minutes, one pencil.</p></div>
+        <a class="btn btn-paper" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+  </article>
+
+  <section class="np-more" aria-labelledby="h-more">
+    <div class="np-more-head"><h2 class="heading-4" id="h-more">More studio notes</h2><a class="body-m" href="notes.html">All notes →</a></div>
+    <ol class="sn-grid">
+      <li class="note"><a href="#"><img src="assets/img/meadow.jpg" alt="Meadow, watercolour" width="800" height="419" loading="lazy"><span class="title body-l">Choosing cartridge paper you won’t be afraid of</span><time class="caption" datetime="2026-10-22">22 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Materials</li><li class="body-s">Paper</li></ul></li>
+      <li class="note"><a href="#"><img src="assets/img/course-3.jpg" alt="Watercolour garden study" width="600" height="960" loading="lazy"><span class="title body-l">When to stop a wash: watercolour’s last ten seconds</span><time class="caption" datetime="2026-10-18">18 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Technique</li><li class="body-s">Watercolour</li></ul></li>
+      <li class="note"><a href="#"><img src="assets/img/old-street.jpg" alt="Old Street, watercolour" width="800" height="565" loading="lazy"><span class="title body-l">Thirty seconds a drawing at the Ribeira market</span><time class="caption" datetime="2026-10-09">9 Oct 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Sketchbook</li><li class="body-s">Ink</li></ul></li>
+      <li class="note"><a href="#"><img src="assets/img/gesture.jpg" alt="Gesture study in ink" width="500" height="372" loading="lazy"><span class="title body-l">Ink teaches you to commit to the line</span><time class="caption" datetime="2026-09-28">28 Sep 2026</time></a><ul class="tags" aria-label="Topics"><li class="body-s">Sketchbook</li><li class="body-s">Ink</li></ul></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-foot body-m">
+  <div class="c"><h3 class="label">Learn</h3><a href="courses.html">All courses</a><a href="lesson.html">Free lessons</a><a href="course.html">Gift a course</a><a href="home.html#faq">FAQ</a><a href="login.html">Log in</a></div>
+  <div class="c"><h3 class="label">Studio</h3><a href="about.html">About Elena</a><a href="home.html#gallery">Gallery</a><a href="notes.html">Studio notes</a><a href="contact.html">Contact</a></div>
+  <div class="c"><h3 class="label">Information</h3><a href="contact.html">Commissions</a><a href="components.html">Components</a><a href="sitemap.html">Site map</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  <div class="base body-s"><span>© 2026 Elena Varga Atelier</span><span>Instagram · Pinterest · YouTube</span><span><a href="style.html">Style</a> · <a href="components.html">Components</a> · Made by hand in Lisbon</span></div>
+</footer>
+</div>
+
+<div class="menu-scrim"></div>
+<div class="menu-drawer" id="siteDrawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-label label"><b>00</b>Menu</p>
+  <nav aria-label="Menu"><a href="courses.html"><small>01</small>Courses</a><a href="about.html"><small>02</small>About</a><a href="notes.html" aria-current="page"><small>03</small>Studio notes</a><a href="home.html#faq"><small>04</small>Questions</a><a href="contact.html"><small>05</small>Contact</a></nav>
+  <div class="menu-foot"><a class="btn btn-paper" href="lesson.html">Watch lesson 1 free <span class="ar" aria-hidden="true">→</span></a><p class="menu-acct body-m"><a href="login.html">Log in</a> · <a href="register.html">Create an account</a></p><address class="body-s">Rua da Graça 4, 3º · 1170-165 Lisboa<br>Letters read on Tuesday and Friday mornings</address></div>
+</div>
+
+<script>
+  // Menu: the rail button (desktop) and the phone bar button open the same drawer; the scrim or Escape closes it.
+  const drawer = document.getElementById('siteDrawer'), scrim = document.querySelector('.menu-scrim');
+  const openers = [...document.querySelectorAll('.burger, .menu-btn')];
+  let opener = null;
+  const setDrawer = (open, from) => {
+    document.body.classList.toggle('menu-open', open);
+    openers.forEach(b => b.setAttribute('aria-expanded', open));
+    if (open) { opener = from; drawer.querySelector('nav a').focus(); } else if (opener) opener.focus();
+  };
+  openers.forEach(b => b.addEventListener('click', () => setDrawer(!document.body.classList.contains('menu-open'), b)));
+  scrim.addEventListener('click', () => setDrawer(false));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setDrawer(false); });
+document.querySelectorAll('.note a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));   // sample notes, no articles yet
+</script>
+</body>
+</html>

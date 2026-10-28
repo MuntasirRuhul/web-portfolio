@@ -1,0 +1,206 @@
+/* Elena Varga Atelier — generated from tokens.json */
+:root, [data-theme="light"] {
+  --page: #faf6ef;
+  --card: #ffffff;
+  --night: #161412;
+  --night-2: #2a2522;
+  --footer: #000000;
+  --ink: #1d1a16;
+  --ink-2: #4a443b;
+  --muted: #6e6658;
+  --paper: #f3ecdf;
+  --dim: #a9a092;
+  --dimmer: #8f877a;
+  --terra: #c0512f;
+  --terra-text: #b24a2b;
+  --accent-lt: #e8724a;
+  --ochre: #dda43c;
+  --rose: #d9a7a0;
+  --sage: #7e9271;
+  --plum: #7a3e5e;
+  --course-1: #8f6511;
+  --course-2: #a55c52;
+  --course-3: var(--plum);
+  --course-4: var(--ink);
+  --course-5: var(--terra);
+  --course-6: #56694a;
+  --rule: rgba(29,26,22,0.14);
+  --line: rgba(29,26,22,0.075);
+  --tape: rgba(226,196,132,0.82);
+  --pill: #f5e9e0;
+  --sheet: #fffdf8;
+  --value-grey: #9a9184;
+  --shadow-pinned: 0 18px 26px -18px rgba(29,26,22,0.45), 0 2px 4px rgba(29,26,22,0.06);
+  --shadow-sheet: 0 30px 60px -30px rgba(29,26,22,0.45);
+  --shadow-tape: 0 1px 2px rgba(29,26,22,0.18);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --gutter-phone: 20px;
+  --rail: 84px;
+  --radius-0: 0px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-hand: "Caveat", "Segoe Script", cursive;
+  --font-poster: "Inter", "Inter Tight", system-ui, sans-serif;
+  --t-display-xl-font: var(--font-poster);
+  --t-display-xl-size: 240px;
+  --t-display-xl-lh: 0.8;
+  --t-display-xl-ls: -5px;
+  --t-display-xl-weight: 700;
+  --t-display-l-font: var(--font-poster);
+  --t-display-l-size: 160px;
+  --t-display-l-lh: 0.9;
+  --t-display-l-ls: -6px;
+  --t-display-l-weight: 600;
+  --t-display-m-font: var(--font-poster);
+  --t-display-m-size: 120px;
+  --t-display-m-lh: 0.9;
+  --t-display-m-ls: -6px;
+  --t-display-m-weight: 600;
+  --t-heading-1-font: var(--font-poster);
+  --t-heading-1-size: 80px;
+  --t-heading-1-lh: 1;
+  --t-heading-1-ls: -4px;
+  --t-heading-1-weight: 600;
+  --t-heading-2-font: var(--font-poster);
+  --t-heading-2-size: 64px;
+  --t-heading-2-lh: 1;
+  --t-heading-2-ls: -2px;
+  --t-heading-2-weight: 600;
+  --t-heading-3-font: var(--font-poster);
+  --t-heading-3-size: 40px;
+  --t-heading-3-lh: 1.1;
+  --t-heading-3-ls: -2px;
+  --t-heading-3-weight: 600;
+  --t-heading-4-font: var(--font-poster);
+  --t-heading-4-size: 32px;
+  --t-heading-4-lh: 1.2;
+  --t-heading-4-ls: -2px;
+  --t-heading-4-weight: 600;
+  --t-heading-5-font: var(--font-poster);
+  --t-heading-5-size: 22px;
+  --t-heading-5-lh: 1.2;
+  --t-heading-5-ls: 0px;
+  --t-heading-5-weight: 600;
+  --t-title-caps-font: var(--font-poster);
+  --t-title-caps-size: 80px;
+  --t-title-caps-lh: 1;
+  --t-title-caps-ls: -2px;
+  --t-title-caps-weight: 400;
+  --t-title-caps-s-font: var(--font-poster);
+  --t-title-caps-s-size: 40px;
+  --t-title-caps-s-lh: 1.1;
+  --t-title-caps-s-ls: -2px;
+  --t-title-caps-s-weight: 400;
+  --t-body-l-font: var(--font-poster);
+  --t-body-l-size: 20px;
+  --t-body-l-lh: 1.4;
+  --t-body-l-ls: 0px;
+  --t-body-l-weight: 500;
+  --t-body-m-font: var(--font-poster);
+  --t-body-m-size: 16px;
+  --t-body-m-lh: 1.5;
+  --t-body-m-ls: 0px;
+  --t-body-m-weight: 400;
+  --t-body-s-font: var(--font-poster);
+  --t-body-s-size: 12px;
+  --t-body-s-lh: 1.5;
+  --t-body-s-ls: 0px;
+  --t-body-s-weight: 400;
+  --t-button-font: var(--font-poster);
+  --t-button-size: 14px;
+  --t-button-lh: 1;
+  --t-button-ls: 0px;
+  --t-button-weight: 500;
+  --t-label-font: var(--font-mono);
+  --t-label-size: 10px;
+  --t-label-lh: 1.2;
+  --t-label-ls: 2px;
+  --t-label-weight: 500;
+  --t-caption-font: var(--font-mono);
+  --t-caption-size: 12px;
+  --t-caption-lh: 1.5;
+  --t-caption-ls: 0px;
+  --t-caption-weight: 400;
+  --t-signature-font: var(--font-hand);
+  --t-signature-size: 40px;
+  --t-signature-lh: 1;
+  --t-signature-ls: 0px;
+  --t-signature-weight: 500;
+  --t-hand-s-font: var(--font-hand);
+  --t-hand-s-size: 24px;
+  --t-hand-s-lh: 1;
+  --t-hand-s-ls: 0px;
+  --t-hand-s-weight: 500;
+}
+.display-xl { font-family: var(--t-display-xl-font); font-size: var(--t-display-xl-size); line-height: var(--t-display-xl-lh); letter-spacing: var(--t-display-xl-ls); font-weight: var(--t-display-xl-weight); }
+.display-l { font-family: var(--t-display-l-font); font-size: var(--t-display-l-size); line-height: var(--t-display-l-lh); letter-spacing: var(--t-display-l-ls); font-weight: var(--t-display-l-weight); }
+.display-m { font-family: var(--t-display-m-font); font-size: var(--t-display-m-size); line-height: var(--t-display-m-lh); letter-spacing: var(--t-display-m-ls); font-weight: var(--t-display-m-weight); }
+.heading-1 { font-family: var(--t-heading-1-font); font-size: var(--t-heading-1-size); line-height: var(--t-heading-1-lh); letter-spacing: var(--t-heading-1-ls); font-weight: var(--t-heading-1-weight); }
+.heading-2 { font-family: var(--t-heading-2-font); font-size: var(--t-heading-2-size); line-height: var(--t-heading-2-lh); letter-spacing: var(--t-heading-2-ls); font-weight: var(--t-heading-2-weight); }
+.heading-3 { font-family: var(--t-heading-3-font); font-size: var(--t-heading-3-size); line-height: var(--t-heading-3-lh); letter-spacing: var(--t-heading-3-ls); font-weight: var(--t-heading-3-weight); }
+.heading-4 { font-family: var(--t-heading-4-font); font-size: var(--t-heading-4-size); line-height: var(--t-heading-4-lh); letter-spacing: var(--t-heading-4-ls); font-weight: var(--t-heading-4-weight); }
+.heading-5 { font-family: var(--t-heading-5-font); font-size: var(--t-heading-5-size); line-height: var(--t-heading-5-lh); letter-spacing: var(--t-heading-5-ls); font-weight: var(--t-heading-5-weight); }
+.title-caps { font-family: var(--t-title-caps-font); font-size: var(--t-title-caps-size); line-height: var(--t-title-caps-lh); letter-spacing: var(--t-title-caps-ls); font-weight: var(--t-title-caps-weight); }
+.title-caps-s { font-family: var(--t-title-caps-s-font); font-size: var(--t-title-caps-s-size); line-height: var(--t-title-caps-s-lh); letter-spacing: var(--t-title-caps-s-ls); font-weight: var(--t-title-caps-s-weight); }
+.body-l { font-family: var(--t-body-l-font); font-size: var(--t-body-l-size); line-height: var(--t-body-l-lh); letter-spacing: var(--t-body-l-ls); font-weight: var(--t-body-l-weight); }
+.body-m { font-family: var(--t-body-m-font); font-size: var(--t-body-m-size); line-height: var(--t-body-m-lh); letter-spacing: var(--t-body-m-ls); font-weight: var(--t-body-m-weight); }
+.body-s { font-family: var(--t-body-s-font); font-size: var(--t-body-s-size); line-height: var(--t-body-s-lh); letter-spacing: var(--t-body-s-ls); font-weight: var(--t-body-s-weight); }
+.button { font-family: var(--t-button-font); font-size: var(--t-button-size); line-height: var(--t-button-lh); letter-spacing: var(--t-button-ls); font-weight: var(--t-button-weight); }
+.label { font-family: var(--t-label-font); font-size: var(--t-label-size); line-height: var(--t-label-lh); letter-spacing: var(--t-label-ls); font-weight: var(--t-label-weight); }
+.caption { font-family: var(--t-caption-font); font-size: var(--t-caption-size); line-height: var(--t-caption-lh); letter-spacing: var(--t-caption-ls); font-weight: var(--t-caption-weight); }
+.signature { font-family: var(--t-signature-font); font-size: var(--t-signature-size); line-height: var(--t-signature-lh); letter-spacing: var(--t-signature-ls); font-weight: var(--t-signature-weight); }
+.hand-s { font-family: var(--t-hand-s-font); font-size: var(--t-hand-s-size); line-height: var(--t-hand-s-lh); letter-spacing: var(--t-hand-s-ls); font-weight: var(--t-hand-s-weight); }
+
+/* Below 980px: display styles step down two places, headings one (README, Type) */
+@media (max-width: 980px) {
+  :root {
+    --t-display-xl-size: 120px;
+    --t-display-xl-lh: 0.9;
+    --t-display-xl-ls: -6px;
+    --t-display-xl-weight: 600;
+    --t-display-l-size: 80px;
+    --t-display-l-lh: 1;
+    --t-display-l-ls: -4px;
+    --t-display-l-weight: 600;
+    --t-display-m-size: 80px;
+    --t-display-m-lh: 1;
+    --t-display-m-ls: -4px;
+    --t-display-m-weight: 600;
+    --t-heading-1-size: 64px;
+    --t-heading-1-lh: 1;
+    --t-heading-1-ls: -2px;
+    --t-heading-1-weight: 600;
+    --t-heading-2-size: 40px;
+    --t-heading-2-lh: 1.1;
+    --t-heading-2-ls: -2px;
+    --t-heading-2-weight: 600;
+    --t-heading-3-size: 32px;
+    --t-heading-3-lh: 1.2;
+    --t-heading-3-ls: -2px;
+    --t-heading-3-weight: 600;
+    --t-heading-4-size: 22px;
+    --t-heading-4-lh: 1.2;
+    --t-heading-4-ls: 0px;
+    --t-heading-4-weight: 600;
+    --t-title-caps-size: 40px;
+    --t-title-caps-lh: 1.1;
+    --t-title-caps-ls: -2px;
+    --t-title-caps-weight: 400;
+  }
+}
