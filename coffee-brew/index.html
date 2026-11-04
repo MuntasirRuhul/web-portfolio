@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brew Lab — Coffee Brewing Guide</title>
+<meta name="description" content="Brew guides, a ratio calculator and a step timer for espresso, pour over, French press, AeroPress and cold brew.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <nav>
+    <span class="logo">☕ Brew Lab</span>
+    <a href="#methods">Methods</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#timer">Timer</a>
+    <a href="#tips">Tips</a>
+  </nav>
+  <div class="hero-text">
+    <h1>Better coffee,<br>one brew at a time.</h1>
+    <p>Pick a method, dial in your ratio, and follow the timer.</p>
+    <a class="btn" href="#methods">Start brewing</a>
+  </div>
+</header>
+
+<main>
+  <section id="methods">
+    <h2>Brew methods</h2>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <article class="card" id="method-card" aria-live="polite"></article>
+  </section>
+
+  <section id="calculator">
+    <h2>Ratio calculator</h2>
+    <div class="card calc">
+      <label>Method
+        <select id="calc-method"></select>
+      </label>
+      <label>Coffee (g)
+        <input id="calc-coffee" type="number" min="1" value="20">
+      </label>
+      <label>Water (ml)
+        <input id="calc-water" type="number" min="1" value="320">
+      </label>
+      <p class="result" id="calc-result"></p>
+      <div class="row">
+        <button class="btn small" data-mode="coffee">Calculate water from coffee</button>
+        <button class="btn small ghost" data-mode="water">Calculate coffee from water</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="timer">
+    <h2>Brew timer</h2>
+    <div class="card timer">
+      <p id="timer-method" class="muted"></p>
+      <div class="clock" id="clock">0:00</div>
+      <p class="step" id="timer-step">Select a method and press start.</p>
+      <div class="row">
+        <button class="btn" id="t-start">Start</button>
+        <button class="btn ghost" id="t-reset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tips">
+    <h2>Quick tips</h2>
+    <div class="grid">
+      <div class="card"><h3>Fresh beans</h3><p>Use beans roasted within the last 2–6 weeks and store them airtight, away from light.</p></div>
+      <div class="card"><h3>Grind just before</h3><p>Grinding right before brewing preserves aroma. Burr grinders give a more even grind.</p></div>
+      <div class="card"><h3>Water matters</h3><p>Use filtered water heated to 90–96 °C (195–205 °F) — never fully boiling.</p></div>
+      <div class="card"><h3>Weigh it</h3><p>A scale beats scoops. Consistency is the fastest route to a great cup.</p></div>
+      <div class="card"><h3>Taste &amp; adjust</h3><p>Sour? Grind finer or brew longer. Bitter? Grind coarser or brew shorter.</p></div>
+      <div class="card"><h3>Clean gear</h3><p>Oils build up and turn rancid. Rinse and wash equipment regularly.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> Brew Lab · Made with ☕</footer>
+<script src="app.js"></script>
+</body>
+</html>
