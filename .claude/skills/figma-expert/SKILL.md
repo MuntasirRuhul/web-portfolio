@@ -132,3 +132,8 @@ The Figma file is `art-and-craft` (file key `ItZHErcmmcHMa2KCxR8qeT`). The code'
 - Images: `upload_assets` returns upload URLs; POST each file to its URL with `curl -F "file=@x.jpg"` (the layer name comes from the filename; WebP is refused, send PNG with `;type=image/png`). Then copy the returned `imageHash` into an IMAGE fill on the placeholder (named `IMG/<name>`) and delete the temporary frames the upload placed on the page.
 - Screenshots: use `enableBase64Response: true`; the screenshot download host is not reachable from the cloud container. The upload host `mcp.figma.com` must be allowed in the environment.
 - Photos that are black and white on the site use an image fill with `filters: { saturation: -1 }`.
+
+### Before saying a design is done
+
+- Pull **every graphic** from the source, not just the text and photos: inline `<svg>`, CSS `mask`/`background` data URIs (the FAQ book icons were in a `summary::after` rule), and glyphs inside buttons. Import them with `createNodeFromSvg` and bind their fills or strokes to variables. Never leave a placeholder shape or a text character standing in for an icon.
+- Compare the Figma result with the source **element by element** (rail, nav, cards, toggles, hover/open states), not only section by section.
