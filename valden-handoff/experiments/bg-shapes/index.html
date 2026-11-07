@@ -1,0 +1,63 @@
+<title>Background Shapes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:wght@400;700&display=swap">
+<style>
+:root{--cream:#F5EEE8;--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--deep:#3A1410;--gold:#EEC453;--or:#DE5F2E;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--deep);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:52px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}
+.lead{margin:8px 0 0;color:var(--muted);max-width:68ch}
+.cap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 10px}
+.cap b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}
+.cap span{font-size:14px;color:var(--muted);max-width:74ch}
+.pn{position:relative;aspect-ratio:16/9;min-height:420px;border-radius:26px;overflow:hidden;background:var(--cream);box-shadow:inset 0 0 0 1px rgba(110,35,29,.12);isolation:isolate}
+.pn svg.bg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hd{position:absolute;left:5%;top:7%;z-index:3;display:grid;gap:12px;justify-items:start}
+.tape{display:inline-block;padding:6px 12px 3px;background:var(--gold);color:var(--ox);font:400 clamp(16px,1.9vw,22px)/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg)}
+.t{margin:0;font:400 clamp(30px,5.4vw,72px)/.92 'Titan One',sans-serif;text-transform:uppercase;color:var(--deep)}.t span{color:var(--red)}
+.jar{position:absolute;z-index:2;height:auto;filter:drop-shadow(0 28px 24px rgba(58,20,16,.45))}
+.pill{position:absolute;z-index:3;display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:24px;background:var(--cream);color:var(--ox);font:400 16px/1 'Titan One',sans-serif;text-decoration:none;white-space:nowrap}
+@media (max-width:760px){.pn{aspect-ratio:auto;height:520px}.hd{left:6%;top:5%}.t{font-size:clamp(28px,9vw,40px)}.pill{height:42px;font-size:14px;padding:0 16px}}
+</style>
+<div class="wrap">
+  <header><h1>Contrast shapes, 5 ideas</h1><p class="lead">A big dark maroon shape on the cream, inspired by your reference but with no floating products. Same copy and one static jar in each, so you can compare only the shape. Experiments, kept separate from the main page.</p></header>
+
+  <section><p class="cap"><b>S1 · The hill</b><span>A wide rounded hill like your reference. Big orange letters run along its curve and are clipped by the shape, so they look half-buried.</span></p>
+    <div class="pn"><svg class="bg" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><clipPath id="c1"><path id="h1" d="M170 675C210 500 330 380 480 345C570 324 650 290 740 315C840 342 930 440 1030 675Z"/></clipPath><path id="a1" d="M230 700C300 540 430 440 600 410C760 385 880 470 960 700"/></defs>
+      <path d="M170 675C210 500 330 380 480 345C570 324 650 290 740 315C840 342 930 440 1030 675Z" fill="#6E231D"/>
+      <g clip-path="url(#c1)"><text font-family="Titan One" font-size="92" fill="#DE5F2E" letter-spacing="8"><textPath href="#a1" startOffset="0">SMALL LOTS ✦ HAND-SEALED ✦ SMALL LOTS</textPath></text></g></svg>
+      <div class="hd"><span class="tape">The tins</span><h2 class="t">Your cup<br>of <span>gold.</span></h2></div>
+      <img class="jar" style="left:50%;transform:translateX(-50%) rotate(4deg);bottom:-3%;height:72%" src="./img/helios-jar.webp" alt="Helios jar"></div></section>
+
+  <section><p class="cap"><b>S2 · Sunrise arch</b><span>A half-circle rising from the bottom edge, with faint rings inside and the words running over the top. It echoes the sun on the Helios label.</span></p>
+    <div class="pn"><svg class="bg" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><path id="a2" d="M250 700A350 350 0 0 1 950 700"/></defs>
+      <path d="M200 700A400 400 0 0 1 1000 700Z" fill="#6E231D"/>
+      <g fill="none" stroke="#EEC453" stroke-width="2" opacity=".35"><path d="M270 700A330 330 0 0 1 930 700"/><path d="M350 700A250 250 0 0 1 850 700"/></g>
+      <text font-family="Mouse Memoirs" font-size="44" letter-spacing="9" fill="#E9BFAE"><textPath href="#a2" startOffset="50%" text-anchor="middle">SEE YOU AT SEVEN ✦ SAME TIME TOMORROW</textPath></text></svg>
+      <div class="hd"><span class="tape">The tins</span><h2 class="t">Your cup<br>of <span>gold.</span></h2></div>
+      <img class="jar" style="left:50%;transform:translateX(-50%) rotate(-3deg);bottom:-2%;height:66%" src="./img/helios-jar.webp" alt="Helios jar"></div></section>
+
+  <section><p class="cap"><b>S3 · Organic blob</b><span>A loose amoeba-like blob on one side, with the headline moved to the cream side. It's the softest and most playful shape.</span></p>
+    <div class="pn"><svg class="bg" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M90 250C120 110 330 40 470 100C640 170 700 330 640 470C590 590 420 660 270 610C120 560 60 400 90 250Z" fill="#B03A2B" transform="translate(26 22)"/>
+      <path d="M90 250C120 110 330 40 470 100C640 170 700 330 640 470C590 590 420 660 270 610C120 560 60 400 90 250Z" fill="#6E231D"/>
+      <path d="M170 330C190 250 300 200 380 240C470 285 490 380 430 450" fill="none" stroke="#EEC453" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" opacity=".5"/></svg>
+      <div class="hd" style="left:auto;right:5%;top:12%;justify-items:start;width:42%"><span class="tape">The tins</span><h2 class="t">Your cup<br>of <span>gold.</span></h2></div>
+      <img class="jar" style="left:17%;transform:rotate(6deg);top:12%;height:76%" src="./img/helios-jar.webp" alt="Helios jar"></div></section>
+
+  <section><p class="cap"><b>S4 · Tilted slab</b><span>A huge rounded rectangle tilted like a poster. The headline sits on it in cream and blush, and the jar overlaps its corner.</span></p>
+    <div class="pn"><svg class="bg" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g transform="rotate(-6 600 340)"><rect x="110" y="110" width="980" height="470" rx="56" fill="#6E231D"/><rect x="134" y="134" width="932" height="422" rx="40" fill="none" stroke="#F5EEE8" stroke-width="2" stroke-dasharray="4 10" opacity=".3"/></g></svg>
+      <div class="hd" style="left:11%;top:22%"><span class="tape">The tins</span><h2 class="t" style="color:#E9BFAE">Your cup<br>of <span style="color:#EEC453">gold.</span></h2></div>
+      <img class="jar" style="right:9%;transform:rotate(9deg);top:6%;height:80%" src="./img/helios-jar.webp" alt="Helios jar"></div></section>
+
+  <section><p class="cap"><b>S5 · Layered hills</b><span>Three overlapping curves like a landscape (oxblood, red, blush) with a gold sun behind the jar. It is the most illustrative and the most colourful.</span></p>
+    <div class="pn"><svg class="bg" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <circle cx="600" cy="360" r="190" fill="#EEC453"/>
+      <path d="M0 520C160 440 300 470 430 520C560 570 700 470 830 450C960 430 1090 480 1200 520V675H0Z" fill="#E9BFAE"/>
+      <path d="M0 575C170 500 330 540 470 585C610 630 760 530 900 520C1030 510 1120 560 1200 590V675H0Z" fill="#B03A2B"/>
+      <path d="M0 630C200 590 360 620 520 645C700 675 850 610 1020 612C1100 613 1160 630 1200 640V675H0Z" fill="#6E231D"/></svg>
+      <div class="hd"><span class="tape">The tins</span><h2 class="t">Your cup<br>of <span>gold.</span></h2></div>
+      <img class="jar" style="left:50%;transform:translateX(-50%) rotate(3deg);bottom:-4%;height:76%" src="./img/helios-jar.webp" alt="Helios jar"></div></section>
+</div>

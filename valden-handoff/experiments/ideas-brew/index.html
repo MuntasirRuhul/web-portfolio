@@ -1,0 +1,137 @@
+<title>Brew Bar Ideas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:wght@400;700&display=swap">
+<style>
+:root{--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--mu:#EEC453;--cream:#F5EEE8;--or:#DE5F2E;--esp:#3A1410;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--esp);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1200px;margin:0 auto;display:grid;gap:64px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}
+.lead{margin:8px 0 0;color:var(--muted);max-width:62ch}
+.cap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 12px}
+.cap b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}
+.cap span{font-size:14px;color:var(--muted);max-width:72ch}
+.panel{border-radius:26px;overflow:hidden;position:relative;padding:40px}
+.D{font-family:'Titan One',sans-serif;font-weight:400;text-transform:uppercase}
+.M{font-family:'Mouse Memoirs',sans-serif;text-transform:uppercase;line-height:1}
+button{font:inherit;cursor:pointer}
+button:focus-visible,select:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.mp{min-height:44px;padding:0 20px;border-radius:22px;border:2.5px solid var(--ox);background:transparent;color:var(--ox);font:400 17px 'Titan One',sans-serif;text-transform:uppercase;transition:background-color .2s,color .2s}
+.mp[aria-pressed=true]{background:var(--ox);color:var(--mu)}
+.step{display:inline-flex;align-items:center;gap:6px;padding:5px;border-radius:999px;background:var(--cream)}
+.step button{width:42px;height:42px;border-radius:50%;border:0;font:400 22px 'Titan One',sans-serif;background:var(--blush);color:var(--ox)}
+.step button:last-child{background:var(--red);color:var(--cream)}
+.step output{min-width:44px;text-align:center;font:400 30px 'Titan One',sans-serif;color:var(--ox)}
+/* A receipt */
+.A{background:var(--mu);display:grid;justify-items:center;gap:26px}
+.A .tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.slip{width:min(440px,100%);background:var(--cream);color:var(--esp);padding:30px 30px 46px;-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%;position:relative;box-shadow:0 20px 40px rgba(110,35,29,.18)}
+.slip h3{margin:0;font-size:28px;text-align:center;color:var(--ox)}
+.slip .sub{text-align:center;font-size:20px;color:var(--muted);margin:4px 0 18px;letter-spacing:.06em}
+.ln{display:flex;align-items:flex-end;gap:8px;padding:8px 0;font-size:24px}
+.ln i{flex:1;border-bottom:3px dotted rgba(110,35,29,.3);margin-bottom:6px}
+.ln b{font:400 26px 'Titan One',sans-serif;color:var(--red)}
+.slip hr{border:0;border-top:3px dashed rgba(110,35,29,.35);margin:14px 0}
+.slip .tot{display:flex;justify-content:space-between;align-items:center;font-size:28px;color:var(--ox)}
+.slip .tip{margin:14px 0 0;font-size:14px;line-height:1.5;text-align:center;color:var(--muted);font-family:'DM Sans',sans-serif;text-transform:none}
+/* B sentence */
+.B{background:var(--ox);color:var(--cream);padding:56px 48px}
+.B .eb{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blush);margin:0 0 18px}
+.sent{font:400 clamp(26px,4.4vw,54px)/1.4 'Titan One',sans-serif;margin:0;max-width:22ch*0}
+.sent .v{color:var(--mu);border-bottom:4px dashed rgba(238,196,83,.55);white-space:nowrap}
+.sent select{font:inherit;color:var(--mu);background:transparent;border:0;border-bottom:4px dashed rgba(238,196,83,.55);padding:0 22px 0 0;appearance:none;-webkit-appearance:none;cursor:pointer;text-transform:lowercase;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10'%3E%3Cpath d='M2 2l6 6 6-6' stroke='%23EEC453' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") right 4px center no-repeat}
+.sent select option{color:var(--esp);font-family:'DM Sans',sans-serif}
+.sent .ib{display:inline-flex;align-items:center;gap:6px;vertical-align:middle;margin:0 4px}
+.sent .ib button{width:40px;height:40px;border-radius:50%;border:0;background:var(--mu);color:var(--ox);font:400 22px 'Titan One',sans-serif}
+.B .tipl{margin:28px 0 0;font-size:16px;color:var(--blush);font-family:'DM Sans',sans-serif}
+/* C timer */
+.C{background:var(--cream);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:center}
+.C .ctl{display:grid;gap:18px;align-content:start}
+.ring{position:relative;width:min(300px,100%);aspect-ratio:1/1;margin:0 auto}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .tm{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring .tm b{font:400 clamp(44px,6vw,68px)/1 'Titan One',sans-serif;color:var(--ox);font-variant-numeric:tabular-nums}
+.ring .tm span{font-size:22px;color:var(--muted)}
+.C .b2{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.pill{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 26px;border:0;border-radius:25px;background:var(--ox);color:var(--cream);font:400 17px 'Titan One',sans-serif}
+.pill.g{background:transparent;color:var(--ox);box-shadow:inset 0 0 0 2.5px var(--ox)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:center;padding:12px 14px;border-radius:16px;background:rgba(110,35,29,.06);font-size:15px;line-height:1.4;transition:background-color .3s,color .3s}
+.steps li b{font:400 22px 'Titan One',sans-serif;color:var(--red);font-variant-numeric:tabular-nums}
+.steps li.on{background:var(--ox);color:var(--cream)}.steps li.on b{color:var(--mu)}
+.steps li.done{opacity:.45}
+/* D glass */
+.D2{background:var(--blush);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:center}
+.D2 .l{display:grid;gap:20px;justify-items:start}
+.gl{position:relative;width:min(260px,100%);margin:0 auto}
+.gl svg{display:block;width:100%;height:auto}
+.call{display:grid;gap:14px}
+.call div{background:var(--cream);padding:12px 16px 10px;border-radius:16px;transform:rotate(-1.5deg)}
+.call div:nth-child(even){transform:rotate(1.5deg);background:var(--ox);color:var(--cream)}
+.call small{display:block;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.call b{font:400 clamp(26px,3vw,38px)/1.1 'Titan One',sans-serif}
+.call div:nth-child(even) b{color:var(--mu)}.call div:nth-child(odd) b{color:var(--red)}
+/* E compare */
+.E{background:var(--mu)}
+.E .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.E .top h3{margin:0;font-size:clamp(28px,4vw,44px);line-height:1;color:var(--ox)}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.col{border-radius:22px;padding:22px 20px;position:relative;display:grid;gap:8px;align-content:start;min-height:300px}
+.col h4{margin:0 0 6px;font-size:26px;line-height:1;color:var(--ox)}
+.col .big{font:400 54px/.9 'Titan One',sans-serif;color:var(--red)}.col .big small{font-size:22px}
+.col .lab{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ox);opacity:.8;margin-top:8px}
+.col .t{font-size:28px;color:var(--ox)}
+.col .tape{position:absolute;right:14px;top:-10px;background:var(--ox);color:var(--mu);font-size:20px;padding:6px 10px 2px;transform:rotate(4deg)}
+@media (max-width:900px){.col .big{font-size:38px;white-space:nowrap}.col .big small{font-size:18px}.col{padding:20px 14px}.panel{padding:26px 18px}.B{padding:34px 20px}.C,.D2{grid-template-columns:1fr}.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+<div class="wrap">
+  <header><h1>Brew Bar, 5 ideas</h1><p class="lead">Same job (pick a method and cups, get the recipe), five different feels. All are interactive. Tips are neutral now, so they no longer name individual blends.</p></header>
+  <section><p class="cap"><b>A · The order slip</b><span>The recipe prints as a café order slip with a torn edge: dotted leaders, a total line, a short tip.</span></p><div class="panel A" id="A"></div></section>
+  <section><p class="cap"><b>B · One sentence</b><span>No tiles. The recipe is a sentence you edit inline: pick the method, change the cups, and the numbers in the sentence change.</span></p><div class="panel B" id="B"></div></section>
+  <section><p class="cap"><b>C · Live brew timer</b><span>It stops being a calculator and guides the brew: a countdown ring, the steps lighting up in turn, and start/pause/reset.</span></p><div class="panel C" id="C"></div></section>
+  <section><p class="cap"><b>D · Measuring glass</b><span>The glass becomes the main thing. It fills as you add cups, with ml marks on the side, and the recipe pinned beside it on tape.</span></p><div class="panel D2" id="D"></div></section>
+  <section><p class="cap"><b>E · Compare all four</b><span>No method to pick. All four recipes sit side by side and update together from one cup stepper, so you can compare time and grind at a glance.</span></p><div class="panel E" id="E"></div></section>
+</div>
+<script>
+var M=[
+{k:'Espresso',dose:18,water:36,u:'shot',us:'shots',max:4,time:'25–30 seconds',secs:28,grind:'Fine',temp:'93 °C',tip:'Pull it short and taste before adding milk.',st:['Dose and tamp the coffee level.','Start the shot and watch for a honey-like flow.','Stop near the target weight. Taste and adjust the grind.']},
+{k:'Pour-over',dose:15,water:250,u:'cup',us:'cups',max:4,time:'3 to 3½ minutes',secs:195,grind:'Medium-fine',temp:'94 °C',tip:'Pour slowly and evenly. Let it bloom for thirty seconds first.',st:['Rinse the filter, add coffee, bloom with twice its weight in water.','Pour in slow circles up to 60% of the water.','Pour the rest gently.','Let it drain fully.']},
+{k:'French press',dose:16,water:250,u:'cup',us:'cups',max:6,time:'4 minutes',secs:240,grind:'Coarse',temp:'95 °C',tip:'Press gently, then pour it all at once.',st:['Add coffee, pour all the water and stir gently.','Put the lid on without plunging.','Break the crust and skim the foam.','Plunge slowly and serve.']},
+{k:'Cold brew',dose:20,water:250,u:'glass',us:'glasses',max:6,time:'14 hours',secs:0,grind:'Extra coarse',temp:'Cold',tip:'Steep in the fridge overnight, then dilute to taste.',st:['Combine coffee and cold water, stir well.','Cover and refrigerate for 14 hours.','Strain, then dilute 1:1 with water or milk.']}];
+var T=[0,195,0,0];
+var $=function(s,r){return (r||document).querySelector(s)};
+var mi=1,cups=2;
+function cur(){var m=M[mi];if(cups>m.max)cups=m.max;return m}
+function pills(){return M.map(function(m,i){return '<button class="mp" type="button" data-m="'+i+'" aria-pressed="'+(i===mi)+'">'+m.k+'</button>'}).join('')}
+function stepper(){var m=cur();return '<div class="step" role="group" aria-label="Number of '+m.us+'"><button type="button" data-c="-1" aria-label="Fewer">−</button><output aria-live="polite">'+cups+'</output><button type="button" data-c="1" aria-label="More">+</button></div>'}
+function nice(m){return {dose:m.dose*cups,water:m.water*cups}}
+// A
+function rA(){var m=cur(),n=nice(m);$('#A').innerHTML='<div class="tabs pills" role="group" aria-label="Method">'+pills()+'</div><div class="slip M"><h3 class="D">Valden brew bar</h3><div class="sub">Order Nº '+String(cups*7+mi).padStart(3,'0')+' · '+m.k+' · '+cups+' '+(cups===1?m.u:m.us)+'</div><div class="ln"><span>Coffee</span><i></i><b>'+n.dose+' g</b></div><div class="ln"><span>Water</span><i></i><b>'+n.water+' g</b></div><div class="ln"><span>Grind</span><i></i><b>'+m.grind+'</b></div><div class="ln"><span>Water temp</span><i></i><b>'+m.temp+'</b></div><hr><div class="tot"><span>Ready in</span><b class="D" style="font-size:26px;color:var(--red)">'+m.time+'</b></div><p class="tip">'+m.tip+'</p></div>'+stepper()}
+// B
+function rB(){var m=cur(),n=nice(m);$('#B').innerHTML='<p class="eb">Tell us what you are making</p><p class="sent">Making <span class="ib"><button type="button" data-c="-1" aria-label="Fewer">−</button><span class="v">'+cups+'</span><button type="button" data-c="1" aria-label="More">+</button></span> '+(cups===1?m.u:m.us)+' of <select id="selB" aria-label="Method">'+M.map(function(x,i){return '<option value="'+i+'"'+(i===mi?' selected':'')+'>'+x.k.toLowerCase()+'</option>'}).join('')+'</select>? Weigh out <span class="v">'+n.dose+' g</span> of <span class="v">'+m.grind.toLowerCase()+'</span> coffee, add <span class="v">'+n.water+' g</span> of water at <span class="v">'+m.temp+'</span>, and give it <span class="v">'+m.time+'</span>.</p><p class="tipl">'+m.tip+'</p>'}
+// C
+var tm={run:false,left:0,id:null};
+function fmt(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function stepIdx(m){if(!m.secs)return -1;var e=m.secs-tm.left,n=m.st.length;return Math.min(n-1,Math.floor(e/m.secs*n))}
+function rC(){var m=cur(),tot=m.secs,R=120,C=2*Math.PI*R,p=tot?(1-tm.left/tot):0,idx=tot?stepIdx(m):-1,started=tot&&tm.left<tot;
+ $('#C').innerHTML='<div class="ctl"><div class="pills" role="group" aria-label="Method">'+pills()+'</div>'+stepper()+'<p style="margin:0;font-size:14px;color:var(--muted)">'+m.grind+' grind · '+m.temp+' · '+nice(m).dose+' g coffee, '+nice(m).water+' g water</p></div><div><div class="ring"><svg viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="'+R+'" fill="none" stroke="rgba(110,35,29,.12)" stroke-width="22"/><circle cx="150" cy="150" r="'+R+'" fill="none" stroke="#B03A2B" stroke-width="22" stroke-linecap="round" stroke-dasharray="'+C+'" stroke-dashoffset="'+(C*(1-p))+'"/></svg><div class="tm"><b>'+(tot?fmt(tm.left):'14 h')+'</b><span class="M">'+(tot?(tm.run?'brewing':(started?'paused':'ready')):'steep in the fridge')+'</span></div></div><div class="b2">'+(tot?'<button class="pill" type="button" data-t="go">'+(tm.run?'Pause':(started?'Resume':'Start'))+'</button><button class="pill g" type="button" data-t="reset">Reset</button>':'')+'</div></div><ol class="steps">'+m.st.map(function(s,i){var c=tot?(i===idx&&started?'on':(i<idx?'done':'')):'';return '<li class="'+c+'"><b>'+(tot?fmt(Math.round(i*m.secs/m.st.length)):'·')+'</b><span>'+s+'</span></li>'}).join('')+'</ol>'}
+function setT(){var m=cur();clearInterval(tm.id);tm.run=false;tm.left=m.secs}
+function tick(){var m=cur();if(tm.left>0){tm.left--;}else{clearInterval(tm.id);tm.run=false}rC()}
+// D
+function rD(){var m=cur(),n=nice(m),f=cups/m.max,top=30,bot=300,h=(bot-top)*f,y=bot-h;
+ var ticks='';for(var i=1;i<=m.max;i++){var ty=bot-(bot-top)*i/m.max;ticks+='<path d="M196 '+ty+'h14" stroke="#6E231D" stroke-width="2" stroke-linecap="round"/><text x="216" y="'+(ty+5)+'" font-family="Mouse Memoirs" font-size="18" fill="#6E231D">'+(m.water*i)+'</text>'}
+ $('#D').innerHTML='<div class="l"><div class="pills" role="group" aria-label="Method">'+pills()+'</div>'+stepper()+'<p style="margin:0;font-size:14px;max-width:26ch">'+m.tip+'</p></div><div class="gl"><svg viewBox="0 0 270 330" role="img" aria-label="Glass filled to '+cups+' of '+m.max+'"><defs><clipPath id="gc"><path d="M40 20h140l-12 280a30 30 0 0 1-30 28H82a30 30 0 0 1-30-28z"/></clipPath><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A4B24"/><stop offset="1" stop-color="#2A1208"/></linearGradient></defs><path d="M40 20h140l-12 280a30 30 0 0 1-30 28H82a30 30 0 0 1-30-28z" fill="rgba(245,238,232,.55)"/><g clip-path="url(#gc)"><rect x="30" y="'+y+'" width="170" height="'+(h+40)+'" fill="url(#cg)" style="transition:all .6s"/><rect x="30" y="'+y+'" width="170" height="10" fill="#D9A066" style="transition:all .6s"/></g><path d="M40 20h140l-12 280a30 30 0 0 1-30 28H82a30 30 0 0 1-30-28z" fill="none" stroke="#6E231D" stroke-width="5" stroke-linejoin="round"/><path d="M62 40l8 240" stroke="rgba(255,255,255,.45)" stroke-width="6" stroke-linecap="round"/>'+ticks+'</svg></div><div class="call"><div><small>Coffee</small><b>'+n.dose+' g</b></div><div><small>Water</small><b>'+n.water+' g</b></div><div><small>Time</small><b>'+m.time+'</b></div><div><small>Grind · water</small><b>'+m.grind+' · '+m.temp+'</b></div></div>'}
+// E
+var tints=['#F5EEE8','#E9BFAE','#F0B79A','#D9C7D8'];
+function rE(){var q=[0,1,2,3].map(function(i){return M[i]});var mx=function(f){return Math.max.apply(null,q.map(f))},mn=function(f){return Math.min.apply(null,q.map(f))};
+ $('#E').innerHTML='<div class="top"><h3 class="D">How many '+(cups===1?'cup':'cups')+'?</h3>'+'<div class="step" role="group" aria-label="Number of cups"><button type="button" data-c="-1" aria-label="Fewer">−</button><output aria-live="polite">'+cups+'</output><button type="button" data-c="1" aria-label="More">+</button></div></div><div class="cols">'+M.map(function(m,i){var d=m.dose*cups,w=m.water*cups,tag=i===0?'Fastest':(i===3?'Slowest':'');return '<div class="col" style="background:'+tints[i]+'">'+(tag?'<span class="tape M">'+tag+'</span>':'')+'<h4 class="D">'+m.k+'</h4><div class="lab">Coffee</div><div class="big">'+d+'<small> g</small></div><div class="lab">Water</div><div class="big">'+w+'<small> g</small></div><div class="lab">Time</div><div class="t M">'+m.time+'</div><div class="lab">Grind · water</div><div class="t M">'+m.grind+' · '+m.temp+'</div></div>'}).join('')+'</div>'}
+function all(){rA();rB();rC();rD();rE()}
+all();
+document.addEventListener('click',function(e){var b=e.target.closest('[data-m]');if(b){mi=+b.dataset.m;cur();setT();all();return}
+ b=e.target.closest('[data-c]');if(b){var m=cur();cups=Math.max(1,Math.min(m.max,cups+(+b.dataset.c)));all();return}
+ b=e.target.closest('[data-t]');if(b){var m2=cur();if(b.dataset.t==='reset'){setT();rC();return}
+  if(tm.run){clearInterval(tm.id);tm.run=false}else{if(tm.left<=0)tm.left=m2.secs;tm.run=true;clearInterval(tm.id);tm.id=setInterval(tick,1000)}rC()}});
+document.addEventListener('change',function(e){if(e.target.id==='selB'){mi=+e.target.value;cur();setT();all()}});
+setT();rC();
+</script>

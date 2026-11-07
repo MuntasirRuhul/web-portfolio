@@ -1,0 +1,101 @@
+<title>Valden Shop Card</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+<style>
+:root{--cream:#F5EEE8;--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--deep:#3A1410;--gold:#EEC453;--muted:#7A5A50;
+ --r-card:34px;--r-tile:16px;--gap:10px;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--deep);font-family:'DM Sans',system-ui,sans-serif;padding-block:56px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.D{font-family:'Titan One',sans-serif;font-weight:400;text-transform:uppercase}
+.section{max-width:1060px;margin:0 auto;padding-top:210px;position:relative}
+.eyebrow{display:inline-block;padding:7px 13px 3px;background:var(--gold);color:var(--ox);font:400 22px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg)}
+/* card */
+.card{position:relative;padding:36px 36px 28px;border-radius:var(--r-card);color:var(--cream);
+ background:radial-gradient(110% 80% at 88% -10%,#93332A 0%,#6E231D 42%,#47160F 100%);
+ box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 0 0 1px rgba(255,255,255,.05),0 40px 70px -20px rgba(58,20,16,.55)}
+.jar{position:absolute;right:-26px;top:-212px;width:188px;height:auto;transform:rotate(9deg);pointer-events:none;z-index:4;filter:drop-shadow(0 30px 24px rgba(58,20,16,.45))}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-right:150px}
+.who{display:flex;align-items:center;gap:20px}
+.av{flex:none;width:88px;height:88px;border-radius:50%;background:var(--gold);color:var(--ox);display:grid;place-items:center;font:400 46px/1 'Titan One',sans-serif;box-shadow:0 0 0 4px #6E231D,0 0 0 6px rgba(238,196,83,.55)}
+.hd h2{margin:0;font-size:22px;font-weight:700;display:flex;align-items:center;gap:8px}
+.hd h2 i{width:18px;height:18px;border-radius:50%;background:var(--gold);color:var(--ox);display:grid;place-items:center;font:700 11px/1 'DM Sans',sans-serif;font-style:normal}
+.hd p{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--blush);max-width:36ch}
+.stats{display:flex}
+.stats div{display:grid;justify-items:center;padding:0 18px;line-height:1.1}
+.stats div+div{border-left:1px solid rgba(245,238,232,.18)}
+.stats b{font:400 26px/1 'Titan One',sans-serif}.stats small{margin-top:5px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blush)}
+/* tabs */
+.tabs{display:flex;gap:4px;margin:26px 0 14px;padding:4px;width:max-content;max-width:100%;border-radius:999px;background:rgba(0,0,0,.22)}
+.tabs button{padding:10px 18px 9px;border:0;border-radius:999px;background:none;color:var(--blush);font:400 14px/1 'Titan One',sans-serif;text-transform:uppercase;letter-spacing:.02em;transition:background-color .25s,color .25s}
+.tabs button small{margin-left:5px;font-size:10px;opacity:.7;vertical-align:top}
+.tabs button:hover{color:var(--cream)}
+.tabs button[aria-pressed=true]{background:var(--cream);color:var(--ox)}
+/* grid + tiles */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.tile{position:relative;aspect-ratio:1/1.1;border-radius:var(--r-tile);padding:16px;display:flex;flex-direction:column;overflow:hidden;min-width:0;color:var(--deep);isolation:isolate;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.tile:hover{transform:translateY(-4px);box-shadow:0 22px 30px -14px rgba(0,0,0,.5)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative;z-index:3}
+.pill{padding:6px 11px 4px;border-radius:999px;background:rgba(255,255,255,.62);color:var(--ox);font:400 17px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;letter-spacing:.02em;backdrop-filter:blur(2px)}
+.idx{font:400 17px/1 'Mouse Memoirs',sans-serif;color:var(--ox);opacity:.55;letter-spacing:.06em}
+.n{margin:12px 0 0;font-size:clamp(26px,2.9vw,38px);line-height:.92;color:var(--ox);position:relative;z-index:3}
+.glow{position:absolute;right:-8%;bottom:-6%;width:78%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55),rgba(255,255,255,0) 68%);z-index:0}
+.im{position:absolute;right:5%;bottom:2%;width:48%;transform:rotate(6deg);transition:transform .5s var(--ease);filter:drop-shadow(0 18px 14px rgba(58,20,16,.32));z-index:1}
+.tile:hover .im{transform:rotate(2deg) translateY(-6px) scale(1.03)}
+.set{position:absolute;right:0;bottom:0;width:58%;aspect-ratio:1/1;z-index:1;transition:transform .5s var(--ease)}.tile:hover .set{transform:translateY(-6px)}
+.set img{position:absolute;width:44%;filter:drop-shadow(0 12px 10px rgba(58,20,16,.3))}
+.set img:nth-child(1){left:2%;top:24%;transform:rotate(-10deg)}.set img:nth-child(2){right:2%;top:22%;transform:rotate(9deg)}.set img:nth-child(3){left:26%;top:32%;width:48%}
+.foot{margin-top:auto;display:flex;align-items:center;gap:10px;position:relative;z-index:3}
+.pr{font:400 26px/1 'Titan One',sans-serif;color:var(--ox)}
+.add{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--ox);color:var(--cream);display:grid;place-items:center;transition:background-color .25s,transform .35s var(--ease)}
+.add:hover{background:var(--red);transform:rotate(90deg)}.add svg{width:18px;height:18px}
+/* text posters */
+.poster{justify-content:space-between;color:var(--gold);background:var(--ox)}
+.poster .rep{display:grid;font:400 clamp(24px,2.9vw,37px)/.9 'Titan One',sans-serif;text-transform:uppercase;position:relative;z-index:2;white-space:nowrap}
+.poster .rep span:nth-child(2){opacity:.6}.poster .rep span:nth-child(3){opacity:.26}
+.poster.alt{background:var(--cream);color:var(--red);box-shadow:inset 0 0 0 2px var(--blush)}
+.poster.alt .rep span:nth-child(n+2){color:transparent;-webkit-text-stroke:2px var(--red);opacity:1}.poster.alt .rep span:nth-child(3){-webkit-text-stroke-width:1.2px;opacity:.7}
+.poster .cap{display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative;z-index:3}
+.poster .cap .pill{background:rgba(238,196,83,.16);color:var(--gold)}
+.poster.alt .cap .pill{background:rgba(176,58,43,.1);color:var(--red)}
+.poster .cap img{width:44px;height:26px}
+.poster .stamp{position:absolute;right:14px;top:14px;width:68px;height:68px;border-radius:50%;border:2px dashed currentColor;display:grid;place-items:center;text-align:center;font:400 17px/1 'Mouse Memoirs',sans-serif;transform:rotate(-8deg);opacity:.9}
+.note{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:20px 0 0;padding-top:16px;border-top:1px solid rgba(245,238,232,.14);font-size:12px;color:var(--blush)}
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--deep);color:var(--cream);padding:12px 20px;border-radius:999px;font:400 22px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;z-index:9;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+@media (max-width:860px){.section{padding-top:150px}.card{padding:24px 16px 20px}.jar{width:96px;right:6px;top:-150px}.hd p{padding-right:20px}.pill{font-size:15px;white-space:nowrap;padding:5px 9px 3px}.idx{display:none}.im{width:40%;bottom:14%;right:4%}.set{width:52%;bottom:12%}.n{font-size:20px;margin-top:10px}.head{flex-direction:column;align-items:flex-start;padding-right:0}.av{width:72px;height:72px;font-size:38px}.stats div{padding:0 12px}.stats div:first-child{padding-left:0}.stats b{font-size:22px}.hd p{font-size:13px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.n{font-size:23px}.pr{font-size:22px}.add{width:40px;height:40px}.tile{padding:13px}.poster .stamp{width:52px;height:52px;font-size:13px}.poster .rep{font-size:clamp(15px,4.4vw,19px)}.poster.alt .rep{margin-top:44px!important}.tabs{margin-top:20px}.tabs button{padding:9px 12px 8px;font-size:12px}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+<main class="section">
+  <span class="eyebrow">The tins</span>
+  <div class="card" id="card">
+    <img class="jar" src="./img/helios-jar.webp" alt="Helios jar">
+    <div class="head">
+      <div class="who"><span class="av" aria-hidden="true">V</span>
+        <div class="hd"><h2>valden.tins <i aria-label="Official">✓</i></h2><p>Grand cru coffee, roasted in small lots and sealed by hand.</p></div></div>
+      <div class="stats" aria-label="Collection"><div><b>4</b><small>tins</small></div><div><b>3</b><small>blends</small></div><div><b>1</b><small>gift box</small></div></div>
+    </div>
+    <div class="tabs" role="group" aria-label="Filter the collection" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+    <p class="note"><span id="count"></span><span>Concept collection · Sample prices in USD</span></p>
+  </div>
+</main>
+<div class="toast" id="toast" hidden></div>
+<script>
+var P=[{id:'nuit',n:'Nuit',tag:'The signature',price:24,tint:'#E9BFAE',cat:'blends'},{id:'velours',n:'Velours',tag:'Morning espresso',price:24,tint:'#F2D58A',cat:'blends'},{id:'aurore',n:'Aurore',tag:'A brighter start',price:28,tint:'#F0B79A',cat:'blends'},{id:'coffret',n:'Le Coffret',tag:'Better together',price:68,tint:'#D9C7D8',cat:'gifts',set:true}];
+var F=[['all','All coffee'],['blends','Blends'],['gifts','Gifts & sets']],cur='all';
+var $=function(s){return document.querySelector(s)};
+var PLUS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+function art(p){return p.set?'<div class="set"><img src="./img/tin-aurore.webp" alt=""><img src="./img/tin-velours.webp" alt=""><img src="./img/tin-nuit.webp" alt="Nuit, Velours and Aurore tins together"></div>':'<img class="im" src="./img/tin-'+p.id+'.webp" alt="'+p.n+' tin">'}
+function tile(p,i){return '<article class="tile" style="background:'+p.tint+'"><i class="glow"></i><div class="row"><span class="pill">'+p.tag+'</span><span class="idx">0'+(i+1)+'</span></div><h3 class="n D">'+p.n+'</h3>'+art(p)+'<div class="foot"><span class="pr">$'+p.price+'</span><button class="add" type="button" data-add="'+p.n+'" aria-label="Add '+p.n+' to bag">'+PLUS+'</button></div></article>'}
+var ARW='<img src="./img/doodle-arrow-sharp.svg" alt="" aria-hidden="true">';
+var posters='<article class="tile poster"><div class="rep"><span>Small lots</span><span>Small lots</span><span>Small lots</span></div><div class="cap"><span class="pill">Roasted to order</span>'+ARW+'</div></article><article class="tile poster alt"><span class="stamp" aria-hidden="true">Every<br>tin</span><div class="rep" style="margin-top:56px"><span>Hand-sealed</span><span>Hand-sealed</span><span>Hand-sealed</span></div><div class="cap"><span class="pill">Sealed by hand</span>'+ARW+'</div></article>';
+function render(){var list=P.filter(function(p){return cur==='all'||p.cat===cur});
+ $('#tabs').innerHTML=F.map(function(f){var n=P.filter(function(p){return f[0]==='all'||p.cat===f[0]}).length;return '<button type="button" data-f="'+f[0]+'" aria-pressed="'+(f[0]===cur)+'">'+f[1]+'<small>0'+n+'</small></button>'}).join('');
+ $('#grid').innerHTML=list.map(tile).join('')+(cur==='all'?posters:'');
+ $('#count').textContent=list.length+(list.length===1?' tin':' tins')+' to choose from.'}
+render();
+document.addEventListener('click',function(e){var f=e.target.closest('[data-f]');if(f){cur=f.dataset.f;render();var b=$('[data-f="'+cur+'"]');b&&b.focus();return}
+ var b=e.target.closest('[data-add]');if(!b)return;var t=$('#toast');t.textContent='✓ '+b.dataset.add+' added (demo)';t.hidden=false;clearTimeout(window._t);window._t=setTimeout(function(){t.hidden=true},2000)});
+</script>

@@ -1,0 +1,93 @@
+<title>Shop Card Variants</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:wght@400;700&display=swap">
+<style>
+:root{--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--mu:#EEC453;--cream:#F5EEE8;--esp:#3A1410;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--esp);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:56px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}
+.lead{margin:8px 0 0;color:var(--muted);max-width:64ch}
+.cap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 10px}
+.cap b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}
+.cap span{font-size:14px;color:var(--muted);max-width:72ch}
+.stage{position:relative;padding:230px 8px 0}.stage:has(.v3){padding:20px 8px 90px}.stage:has(.v2){padding-top:300px}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.D{font-family:'Titan One',sans-serif;font-weight:400;text-transform:uppercase}
+/* the card (same look in every variant) */
+.card{position:relative;max-width:1000px;margin:0 auto;padding:34px 34px 26px;border-radius:34px;color:var(--cream);background:radial-gradient(120% 90% at 85% 0%,#8A2E24 0%,#6E231D 45%,#4A1712 100%);box-shadow:0 34px 60px rgba(58,20,16,.35)}
+.jar{position:absolute;height:auto;pointer-events:none;filter:drop-shadow(0 26px 22px rgba(58,20,16,.42));z-index:4}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:700}.top i{font-style:normal;color:var(--mu)}
+.pro{display:flex;align-items:center;gap:26px;margin-top:18px}
+.av{flex:none;width:92px;height:92px;border-radius:50%;background:var(--mu);color:var(--ox);display:grid;place-items:center;font:400 48px/1 'Titan One',sans-serif}
+.st{display:flex;gap:32px}.st div{display:grid;justify-items:center;line-height:1.1}.st b{font:400 30px/1 'Titan One',sans-serif}.st small{font-size:12px;color:var(--blush);margin-top:3px}
+.bio{margin:14px 0 0;max-width:420px;font-size:15px;line-height:1.55}.bio span{font-weight:700;color:var(--mu)}
+.tabs{display:flex;gap:6px;margin-top:18px;border-bottom:1px solid rgba(245,238,232,.25)}
+.tabs span{padding:12px 18px 11px;color:var(--blush);font:400 15px 'Titan One',sans-serif;text-transform:uppercase;margin-bottom:-1px;border-bottom:3px solid transparent}.tabs .on{color:var(--cream);border-bottom-color:var(--mu)}
+.grid{display:grid;gap:8px;margin-top:8px}
+.note{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 0;font-size:12px;color:var(--blush)}
+/* tile */
+.tile{position:relative;border-radius:6px;padding:14px;display:flex;flex-direction:column;overflow:hidden;min-width:0;color:var(--esp)}
+.tag{align-self:flex-start;padding:5px 9px 2px;background:var(--cream);color:var(--ox);font:400 17px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg);position:relative;z-index:2}
+.n{margin:8px 0 0;font-size:clamp(24px,2.6vw,34px);line-height:.95;color:var(--ox);position:relative;z-index:2}
+.im{position:absolute;filter:drop-shadow(0 16px 12px rgba(58,20,16,.3))}
+.f{margin-top:auto;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.pr{font:400 26px/1 'Titan One',sans-serif;color:var(--ox)}
+.add{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--ox);color:var(--cream);display:grid;place-items:center;transition:background-color .2s,transform .2s}
+.add:hover{background:var(--red);transform:rotate(90deg)}.add svg{width:18px;height:18px}
+.set{position:absolute}.set img{position:absolute;width:44%}
+.set img:nth-child(1){left:2%;top:24%;transform:rotate(-10deg)}.set img:nth-child(2){right:2%;top:22%;transform:rotate(9deg)}.set img:nth-child(3){left:26%;top:32%;width:48%}
+.poster{justify-content:space-between;color:var(--mu);background:var(--ox)}
+.poster .rep{display:grid;font:400 clamp(26px,3.4vw,42px)/.86 'Titan One',sans-serif}.poster .rep span:nth-child(2){opacity:.65}.poster .rep span:nth-child(3){opacity:.3}
+.poster small{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ox);color:var(--cream);padding:12px 20px;border-radius:8px;font:400 22px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;z-index:9}
+/* V1: one row of four, jar top-right */
+.v1 .grid{grid-template-columns:repeat(4,minmax(0,1fr))}.v1 .tile{aspect-ratio:1/1.5}.v1 .im{right:4%;bottom:15%;width:64%;transform:rotate(5deg)}.v1 .set{width:88%;aspect-ratio:1/1;right:0;bottom:14%}.v1 .n{font-size:clamp(20px,2.2vw,28px)}
+.v1 .jar{right:-24px;top:-190px;width:175px;transform:rotate(9deg)}.v1 .top i{margin-right:150px}
+/* V2: 2x2 big tiles, jar left */
+.v2 .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v2 .tile{aspect-ratio:1/.62;padding:20px}.v2 .n{font-size:clamp(34px,4vw,52px)}.v2 .im{right:5%;bottom:6%;width:30%;transform:rotate(6deg)}.v2 .set{width:36%;aspect-ratio:1/1;right:2%;bottom:2%}
+.v2 .jar{left:-30px;top:-292px;width:180px;transform:rotate(-9deg)}.v2 .top{padding-left:140px}
+/* V3: three columns, jar bottom-right corner overlapping the grid */
+.v3 .grid{grid-template-columns:repeat(3,minmax(0,1fr))}.v3 .tile{aspect-ratio:1/1.08}.v3 .im{right:4%;bottom:3%;width:46%;transform:rotate(6deg)}.v3 .set{width:56%;aspect-ratio:1/1;right:0;bottom:0}
+.v3 .jar{right:-40px;bottom:-60px;width:190px;transform:rotate(12deg)}.v3 .top i{margin-right:0}
+/* V4: Nuit hero tile on the left, three stacked on the right */
+.v4 .grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:repeat(3,150px)}.v4 .tile:first-child{grid-row:span 3;padding:22px}.v4 .tile:first-child .n{font-size:clamp(46px,6vw,76px)}.v4 .tile:first-child .im{right:6%;bottom:6%;width:46%;transform:rotate(7deg)}
+.v4 .tile:not(:first-child) .im{right:4%;top:14%;width:20%;transform:rotate(7deg)}.v4 .tile:not(:first-child) .set{width:26%;aspect-ratio:1/1;right:2%;top:6%}.v4 .tile:not(:first-child) .n{font-size:30px}.v4 .tile:not(:first-child) .pr{font-size:22px}.v4 .tile:not(:first-child) .add{width:38px;height:38px}
+.v4 .jar{right:-24px;top:-190px;width:175px;transform:rotate(9deg)}.v4 .top i{margin-right:150px}
+/* V5: tin on top, name + price strip at the bottom */
+.v5 .grid{grid-template-columns:repeat(4,minmax(0,1fr))}.v5 .tile{aspect-ratio:1/1.3;padding:0}.v5 .tag{position:absolute;left:12px;top:12px}
+.v5 .im{position:relative;right:auto;bottom:auto;width:64%;margin:44px auto 0;transform:rotate(4deg)}.v5 .set{position:relative;width:84%;aspect-ratio:1/1;margin:34px auto 0;left:0}
+.v5 .strip{margin-top:auto;background:var(--ox);color:var(--cream);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}.v5 .strip .n{margin:0;color:var(--cream);font-size:clamp(15px,1.5vw,20px);white-space:nowrap}.v5 .strip .pr{color:var(--mu);font-size:20px}.v5 .strip{padding:10px 10px;gap:6px}.v5 .strip .add{background:var(--mu);color:var(--ox);width:32px;height:32px}.v5 .strip .add svg{width:14px;height:14px}.v5 .strip .pr{font-size:17px}.v5 .strip .n{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.v5 .jar{right:-24px;top:-190px;width:175px;transform:rotate(9deg)}.v5 .top i{margin-right:150px}
+@media (max-width:860px){.stage,.stage:has(.v2){padding-top:190px}.stage:has(.v3){padding-top:190px}.card{padding:22px 14px 18px}.jar{width:130px!important;top:-142px!important;right:4px!important;left:auto!important;bottom:auto!important}.top{padding-left:0!important}.top i{margin-right:110px!important}.av{width:70px;height:70px;font-size:36px}.st{gap:18px}.st b{font-size:24px}.pro{padding-right:90px}
+ .v1 .grid,.v5 .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v1 .tile{aspect-ratio:1/1.2}.v2 .grid{grid-template-columns:1fr}.v2 .tile{aspect-ratio:1/.7}.v3 .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v4 .grid{grid-template-columns:1fr;grid-template-rows:auto}.v4 .tile:first-child{grid-row:auto;aspect-ratio:1/.9}.v4 .tile:not(:first-child){min-height:140px}.n{font-size:20px!important}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+<div class="wrap">
+  <header><h1>Shop card, 5 variants</h1><p class="lead">The same dark profile card in every one: same header, tabs, colours and tiles. Only the layout details change. Experiments, separate from the main page.</p></header>
+  <section><p class="cap"><b>V1 · One row</b><span>All four tins in a single row of tall tiles. Tin on the tile, no filler posters.</span></p><div class="stage" id="v1"></div></section>
+  <section><p class="cap"><b>V2 · Two by two</b><span>Four large wide tiles. The jar moves to the left corner and the handle shifts over.</span></p><div class="stage" id="v2"></div></section>
+  <section><p class="cap"><b>V3 · Three columns, jar below</b><span>Three columns with a text poster to fill the grid. The jar hangs off the bottom-right corner instead of the top.</span></p><div class="stage" id="v3"></div></section>
+  <section><p class="cap"><b>V4 · Hero tile</b><span>Nuit gets one big tile on the left, and the other three stack on the right as slim rows.</span></p><div class="stage" id="v4"></div></section>
+  <section><p class="cap"><b>V5 · Name strip</b><span>The tin sits on top of each tile and the name, price and button sit on a dark strip underneath.</span></p><div class="stage" id="v5"></div></section>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script>
+var P=[{id:'nuit',n:'Nuit',tag:'The signature',price:24,tint:'#E9BFAE'},{id:'velours',n:'Velours',tag:'The morning espresso',price:24,tint:'#F2D58A'},{id:'aurore',n:'Aurore',tag:'A brighter start',price:28,tint:'#F0B79A'},{id:'coffret',n:'Le Coffret',tag:'Better together',price:68,tint:'#D9C7D8',set:true}];
+var $=function(s){return document.querySelector(s)};
+var PLUS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+function art(p){return p.set?'<div class="set im"><img src="./img/tin-aurore.webp" alt=""><img src="./img/tin-velours.webp" alt=""><img src="./img/tin-nuit.webp" alt="Nuit, Velours and Aurore tins"></div>':'<img class="im" src="./img/tin-'+p.id+'.webp" alt="'+p.n+' tin">'}
+function addB(p){return '<button class="add" type="button" data-add="'+p.n+'" aria-label="Add '+p.n+' to bag">'+PLUS+'</button>'}
+function tile(p){return '<article class="tile" style="background:'+p.tint+'"><span class="tag">'+p.tag+'</span><h3 class="n D">'+p.n+'</h3>'+art(p)+'<div class="f"><span class="pr">$'+p.price+'</span>'+addB(p)+'</div></article>'}
+function tileS(p){return '<article class="tile" style="background:'+p.tint+'"><span class="tag">'+p.tag+'</span>'+art(p)+'<div class="strip"><h3 class="n D">'+p.n+'</h3><span class="pr">$'+p.price+'</span>'+addB(p)+'</div></article>'}
+var poster='<article class="tile poster"><div class="rep"><span>SMALL LOTS</span><span>SMALL LOTS</span><span>SMALL LOTS</span></div><small>Roasted to order</small></article>';
+function card(cls,tiles,extra){return '<div class="card '+cls+'"><img class="jar" src="./img/helios-jar.webp" alt="Helios jar"><div class="top"><span>valden.tins</span><i aria-hidden="true">✦</i></div><div class="pro"><span class="av" aria-hidden="true">V</span><div class="st"><div><b>4</b><small>tins</small></div><div><b>3</b><small>blends</small></div><div><b>1</b><small>gift box</small></div></div></div><p class="bio">Grand cru coffee, roasted in small lots and sealed by hand.<br><span>valden.coffee/tins</span></p><div class="tabs"><span class="on">All coffee</span><span>Blends</span><span>Gifts &amp; sets</span></div><div class="grid">'+tiles+'</div><p class="note"><span>4 tins to choose from.</span><span>Concept collection · Sample prices in USD</span></p></div>'}
+var all=P.map(tile).join('');
+$('#v1').innerHTML=card('v1',all);
+$('#v2').innerHTML=card('v2',all);
+$('#v3').innerHTML=card('v3',P.slice(0,3).map(tile).join('')+tile(P[3])+poster+poster.replace('SMALL LOTS','HAND-SEALED').replace('SMALL LOTS','HAND-SEALED').replace('SMALL LOTS','HAND-SEALED').replace('Roasted to order','Every tin').replace('var(--ox)','var(--red)'));
+$('#v4').innerHTML=card('v4',all);
+$('#v5').innerHTML=card('v5',P.map(tileS).join(''));
+var tt;document.addEventListener('click',function(e){var b=e.target.closest('[data-add]');if(!b)return;var t=$('#toast');t.textContent='✓ '+b.dataset.add+' added (demo)';t.hidden=false;clearTimeout(tt);tt=setTimeout(function(){t.hidden=true},2000)});
+</script>

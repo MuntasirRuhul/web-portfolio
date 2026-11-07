@@ -1,0 +1,120 @@
+<title>Shop Styles</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:wght@400;700&display=swap">
+<style>
+:root{--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--mu:#EEC453;--cream:#F5EEE8;--or:#DE5F2E;--esp:#3A1410;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--esp);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:64px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}
+.lead{margin:8px 0 0;color:var(--muted);max-width:64ch}
+.cap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 12px}
+.cap b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}
+.cap span{font-size:14px;color:var(--muted);max-width:72ch}
+.pn{position:relative;border-radius:26px;overflow:hidden;padding:56px 40px;isolation:isolate}
+.D{font-family:'Titan One',sans-serif;font-weight:400;text-transform:uppercase}
+.M{font-family:'Mouse Memoirs',sans-serif;text-transform:uppercase;line-height:1}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.tag{display:inline-block;align-self:flex-start;justify-self:start;padding:5px 9px 2px;background:var(--cream);color:var(--ox);font:400 17px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg)}
+.add{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--ox);color:var(--cream);display:grid;place-items:center;transition:background-color .2s,transform .2s}
+.add:hover{background:var(--red);transform:rotate(90deg)}
+.add svg{width:18px;height:18px}
+.sh{filter:drop-shadow(0 18px 14px rgba(58,20,16,.3))}
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ox);color:var(--cream);padding:12px 20px;border-radius:8px;font-size:14px;z-index:9}
+/* shared product tile */
+.tile{position:relative;border-radius:8px;padding:14px;display:flex;flex-direction:column;overflow:hidden;min-width:0;aspect-ratio:1/1.1}
+.tile .n{margin:8px 0 0;font-size:clamp(22px,2.5vw,32px);line-height:.95;color:var(--ox)}
+.tile .im{position:absolute;right:4%;bottom:3%;width:46%;transform:rotate(6deg)}
+.tile .f{margin-top:auto;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.tile .pr{font:400 26px/1 'Titan One',sans-serif;color:var(--ox)}
+.set{position:absolute;right:0;bottom:0;width:58%;aspect-ratio:1/1}.set img{position:absolute;width:44%}
+.set img:nth-child(1){left:2%;top:24%;transform:rotate(-10deg)}.set img:nth-child(2){right:2%;top:22%;transform:rotate(9deg)}.set img:nth-child(3){left:26%;top:32%;width:48%}
+/* A light profile */
+.A{background:var(--blush);padding-top:210px}
+.A .card{position:relative;max-width:980px;margin:0 auto;background:var(--cream);border-radius:34px;padding:30px;box-shadow:0 30px 56px rgba(110,35,29,.28)}
+.A .jar{position:absolute;right:-20px;top:-190px;width:180px;transform:rotate(9deg);z-index:3}
+.A .top{display:flex;justify-content:space-between;font-size:20px;font-weight:700}
+.A .pro{display:flex;align-items:center;gap:22px;margin:16px 0}
+.A .av{width:84px;height:84px;border-radius:50%;background:var(--red);color:var(--cream);display:grid;place-items:center;font:400 44px/1 'Titan One',sans-serif;box-shadow:0 0 0 4px var(--cream),0 0 0 7px var(--blush)}
+.A .st{display:flex;gap:26px}.A .st div{display:grid;justify-items:center}.A .st b{font:400 26px/1 'Titan One',sans-serif;color:var(--ox)}.A .st small{font-size:12px;color:var(--muted)}
+.A .tabs{display:flex;border-bottom:1px solid rgba(58,20,16,.18)}.A .tabs span{padding:10px 18px;font:400 14px 'Titan One',sans-serif;text-transform:uppercase;color:var(--muted)}.A .tabs .on{color:var(--ox);border-bottom:3px solid var(--ox)}
+.A .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+/* B phone */
+.B{background:var(--red);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:center;padding:64px 56px}
+.B .tx{display:grid;gap:22px;justify-items:start}.B .tx .hd{margin:0;font-size:clamp(44px,6vw,84px);line-height:.9;color:var(--blush)}.B .tx p{margin:0;max-width:34ch;color:var(--cream);line-height:1.6}
+.phone{position:relative;width:min(340px,100%);border:10px solid var(--esp);border-radius:44px;background:var(--cream);overflow:hidden;box-shadow:0 34px 60px rgba(58,20,16,.4);transform:rotate(3deg)}
+.phone::before{content:"";position:absolute;left:50%;top:8px;width:90px;height:22px;border-radius:12px;background:var(--esp);transform:translateX(-50%);z-index:3}
+.phone .hdr{padding:46px 18px 10px;display:flex;align-items:center;gap:12px}.phone .av{width:44px;height:44px;border-radius:50%;background:var(--mu);color:var(--ox);display:grid;place-items:center;font:400 22px 'Titan One',sans-serif}
+.phone .hdr b{font-size:15px}.phone .g{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px}
+.phone .tile{aspect-ratio:1/1;padding:10px;border-radius:4px}.phone .tile .n{font-size:19px}.phone .tile .pr{font-size:18px}.phone .tile .add{width:34px;height:34px}.phone .tile .add svg{width:14px;height:14px}.phone .tile .tag{font-size:13px;padding:3px 6px 1px}
+.B .jar{position:absolute;left:-70px;bottom:-20px;width:200px;transform:rotate(-8deg);display:none}
+/* C highlights */
+.C{background:var(--ox);color:var(--cream);text-align:center;padding:64px 24px}
+.C .hd{margin:0;font-size:clamp(40px,6vw,76px);line-height:.92;color:var(--blush)}
+.hl{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:30px 0 36px}
+.hl button{border:0;background:none;color:var(--blush);display:grid;justify-items:center;gap:8px;font:400 14px 'Titan One',sans-serif;text-transform:uppercase}
+.hl .ring{width:86px;height:86px;border-radius:50%;padding:4px;background:conic-gradient(var(--mu),var(--or),var(--red),var(--mu));display:grid;place-items:center;transition:transform .2s}
+.hl .ring i{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;border:4px solid var(--ox);overflow:hidden}
+.hl .ring img{height:92%;width:auto}
+.hl button[aria-pressed=true]{color:var(--mu)}.hl button[aria-pressed=true] .ring{transform:scale(1.1)}
+.post{position:relative;max-width:820px;margin:0 auto;border-radius:30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;text-align:left;color:var(--ox);padding:32px 40px;min-height:380px;transition:background-color .3s}
+.post .im{justify-self:center;width:min(240px,100%);transform:rotate(5deg)}.post .im.set{position:relative;width:min(300px,100%);right:auto;bottom:auto}
+.post .nm{margin:12px 0;font-size:clamp(40px,6vw,72px);line-height:.92}.post .nt{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}.post .nt span{background:var(--cream);padding:6px 10px 2px;font-size:20px}
+.post .bt{display:flex;align-items:center;gap:16px}.post .pr{font:400 36px/1 'Titan One',sans-serif}
+/* D bento */
+.D2{background:var(--cream);padding:40px 24px}
+.D2 .hd{margin:0 0 22px;font-size:clamp(40px,6vw,76px);line-height:.92;color:var(--esp)}.D2 .hd span{color:var(--red)}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:210px;gap:10px}
+.bento .tile{aspect-ratio:auto;border-radius:22px;padding:18px}
+.bento .big{grid-column:span 2;grid-row:span 2}.bento .big .n{font-size:clamp(40px,5vw,64px)}.bento .big .im{width:50%;right:6%}
+.bento .tall{grid-row:span 2}.bento .tall .im{width:78%;right:10%;bottom:14%}
+.bento .wide{grid-column:span 2}
+.bento .txt{justify-content:space-between;color:var(--cream)}.bento .txt .rep{display:grid;font:400 clamp(26px,3.4vw,44px)/.86 'Titan One',sans-serif}.bento .txt .rep span:nth-child(2){opacity:.65}.bento .txt .rep span:nth-child(3){opacity:.3}
+/* E pinboard */
+.E{background:var(--blush);padding:64px 40px 90px}
+.E .hd{margin:0 0 44px;font-size:clamp(40px,6vw,76px);line-height:.92;color:var(--ox);text-align:center}
+.pins{display:flex;flex-wrap:wrap;justify-content:center;gap:34px 28px}
+.pin{position:relative;width:min(250px,44%);background:var(--cream);padding:14px 14px 16px;box-shadow:0 18px 26px rgba(110,35,29,.25);transition:transform .3s}
+.pin:nth-child(1){transform:rotate(-4deg)}.pin:nth-child(2){transform:rotate(3deg) translateY(14px)}.pin:nth-child(3){transform:rotate(-2deg)}.pin:nth-child(4){transform:rotate(5deg) translateY(10px)}
+.pin:hover{transform:rotate(0) translateY(-8px) scale(1.03);z-index:2}
+.pin .tp{position:absolute;left:50%;top:-14px;width:84px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(238,196,83,.88)}
+.pin .ph{aspect-ratio:1/1.05;display:grid;place-items:center;overflow:hidden}.pin .ph img{height:88%;width:auto;transform:rotate(-4deg)}.pin .ph .set{position:relative;width:96%;right:auto;bottom:auto}
+.pin .c{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--ox)}.pin .c b{font:400 22px/1 'Titan One',sans-serif}.pin .c span{font:400 26px/1 'Mouse Memoirs',sans-serif;color:var(--red)}
+@media (max-width:820px){.pn{padding:34px 16px}.A{padding-top:170px}.A .jar{width:130px;top:-140px;right:0}.A .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.B{grid-template-columns:1fr;padding:40px 18px}.phone{justify-self:center}.post{grid-template-columns:1fr;padding:24px}.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px}.bento .big{grid-column:span 2}.bento .wide{grid-column:span 2}.pin{width:46%}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+<div class="wrap">
+  <header><h1>Shop, 5 styles</h1><p class="lead">All five keep the profile-feed idea you liked, in different looks. These are experiments, kept separate from the main page. Tap any + to see a demo toast.</p></header>
+  <section><p class="cap"><b>A · Light profile</b><span>The profile card inverted to cream on a blush wall, with all four tins in one row and the jar overlapping the corner.</span></p><div class="pn A" id="A"></div></section>
+  <section><p class="cap"><b>B · Phone feed</b><span>The shop shown as the feed on a tilted phone, with the headline beside it. It makes the Instagram reference literal.</span></p><div class="pn B" id="B"></div></section>
+  <section><p class="cap"><b>C · Story highlights</b><span>Four round story rings along the top. Tap one and a single big post below swaps. It shows one product at a time, large.</span></p><div class="pn C" id="C"></div></section>
+  <section><p class="cap"><b>D · Poster bento</b><span>No profile header. A bento grid of mixed-size posters: a big Nuit, a tall Aurore, and typographic posters, like the printed grid in your reference.</span></p><div class="pn D2" id="D"></div></section>
+  <section><p class="cap"><b>E · Pinboard</b><span>Four taped polaroids pinned at angles on a blush wall. It's the loosest and most handmade, and each lifts and straightens on hover.</span></p><div class="pn E" id="E"></div></section>
+</div>
+<div class="toast M" id="toast" hidden></div>
+<script>
+var P=[{id:'nuit',n:'Nuit',tag:'The signature',price:24,tint:'#E9BFAE',notes:['Cocoa nib','Molasses','Cedar']},
+{id:'velours',n:'Velours',tag:'The morning espresso',price:24,tint:'#F2D58A',notes:['Hazelnut','Dark cherry','Brown sugar']},
+{id:'aurore',n:'Aurore',tag:'A brighter start',price:28,tint:'#F0B79A',notes:['Jasmine','Bergamot','Apricot']},
+{id:'coffret',n:'Le Coffret',tag:'Better together',price:68,tint:'#D9C7D8',notes:['One of each'],set:true}];
+var $=function(s){return document.querySelector(s)};
+var PLUS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+function art(p,c){return p.set?'<div class="set '+(c||'')+'"><img src="./img/tin-aurore.webp" alt=""><img src="./img/tin-velours.webp" alt=""><img src="./img/tin-nuit.webp" alt="Nuit, Velours and Aurore tins"></div>':'<img class="sh '+(c||'')+'" src="./img/tin-'+p.id+'.webp" alt="'+p.n+' tin">'}
+function addB(p){return '<button class="add" type="button" data-add="'+p.n+'" aria-label="Add '+p.n+' to bag">'+PLUS+'</button>'}
+function tile(p,cls,extra){return '<article class="tile '+(cls||'')+'" style="background:'+p.tint+'"><span class="tag">'+p.tag+'</span><h3 class="n D">'+p.n+'</h3>'+art(p,'im')+'<div class="f"><span class="pr">$'+p.price+'</span>'+addB(p)+'</div></article>'}
+// A
+$('#A').innerHTML='<div class="card"><img class="jar sh" src="./img/helios-jar.webp" alt="Helios jar"><div class="top"><span>valden.tins</span><span style="color:var(--red)">✦</span></div><div class="pro"><span class="av">V</span><div class="st"><div><b>4</b><small>tins</small></div><div><b>3</b><small>blends</small></div><div><b>1</b><small>gift box</small></div></div></div><div class="tabs"><span class="on">All coffee</span><span>Blends</span><span>Gifts &amp; sets</span></div><div class="grid">'+P.map(function(p){return tile(p)}).join('')+'</div></div>';
+// B
+$('#B').innerHTML='<div class="tx"><span class="tag" style="background:var(--mu)">The tins</span><h2 class="hd D">Your cup<br>of gold.</h2><p>Three blends and a gift box. Every tin is roasted to order and sealed by hand.</p></div><div class="phone"><div class="hdr"><span class="av">V</span><div><b>valden.tins</b><div style="font-size:12px;color:var(--muted)">Grand cru coffee</div></div></div><div class="g">'+P.map(function(p){return tile(p)}).join('')+'</div></div>';
+// C
+var ci=0;
+function rC(){var p=P[ci];$('#C').innerHTML='<h2 class="hd D">Pick a tin</h2><div class="hl" role="group" aria-label="Choose a tin">'+P.map(function(q,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===ci)+'"><span class="ring"><i style="background:'+q.tint+'">'+(q.set?'<span style="font:400 26px Titan One;color:var(--ox)">3×</span>':'<img src="./img/tin-'+q.id+'.webp" alt="">')+'</i></span>'+q.n+'</button>'}).join('')+'</div><div class="post" style="background:'+p.tint+'"><div><span class="tag" style="background:var(--ox);color:var(--mu)">'+p.tag+'</span><h3 class="nm D">'+p.n+'</h3><div class="nt M">'+p.notes.map(function(n){return '<span>'+n+'</span>'}).join('')+'</div><div class="bt"><span class="pr">$'+p.price+'</span>'+addB(p)+'</div></div>'+art(p,'im')+'</div>'}
+rC();$('#C').addEventListener('click',function(e){var b=e.target.closest('[data-i]');if(b){ci=+b.dataset.i;rC()}});
+// D
+function txtT(bg,fg,a,b){return '<article class="tile txt" style="background:'+bg+';color:'+fg+'"><div class="rep"><span>'+a+'</span><span>'+a+'</span><span>'+a+'</span></div><span style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase">'+b+'</span></article>'}
+$('#D').innerHTML='<h2 class="hd D">Your cup of <span>gold.</span></h2><div class="bento">'+tile(P[0],'big')+tile(P[1])+txtT('#6E231D','#EEC453','SMALL LOTS','Roasted to order')+tile(P[2],'tall')+tile(P[3],'wide')+txtT('#B03A2B','#F5EEE8','HAND-SEALED','Every tin')+'</div>';
+// E
+$('#E').innerHTML='<h2 class="hd D">Pinned up<br>for you.</h2><div class="pins">'+P.map(function(p){return '<article class="pin"><i class="tp"></i><div class="ph" style="background:'+p.tint+'">'+art(p)+'</div><div class="c"><b>'+p.n+'</b><span>$'+p.price+'</span>'+addB(p)+'</div></article>'}).join('')+'</div>';
+var tt;document.addEventListener('click',function(e){var b=e.target.closest('[data-add]');if(!b)return;var t=$('#toast');t.textContent='✓ '+b.dataset.add+' added to your bag (demo)';t.hidden=false;clearTimeout(tt);tt=setTimeout(function(){t.hidden=true},2200)});
+</script>

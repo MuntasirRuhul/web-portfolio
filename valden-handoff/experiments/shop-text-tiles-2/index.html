@@ -1,0 +1,100 @@
+<title>Text Tile Ideas 2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:wght@400;700&display=swap">
+<style>
+:root{--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--mu:#EEC453;--cream:#F5EEE8;--or:#DE5F2E;--esp:#3A1410;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--esp);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:48px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}
+.lead{margin:8px 0 0;color:var(--muted);max-width:66ch}
+.cap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 10px}
+.cap b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}
+.cap span{font-size:14px;color:var(--muted);max-width:74ch}
+.stage{position:relative;padding:230px 8px 10px}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.D{font-family:'Titan One',sans-serif;font-weight:400;text-transform:uppercase}
+.card{position:relative;max-width:1000px;margin:0 auto;padding:34px 34px 26px;border-radius:34px;color:var(--cream);background:radial-gradient(120% 90% at 85% 0%,#8A2E24 0%,#6E231D 45%,#4A1712 100%);box-shadow:0 34px 60px rgba(58,20,16,.35)}
+.jar{position:absolute;right:-24px;top:-190px;width:175px;height:auto;transform:rotate(9deg);pointer-events:none;filter:drop-shadow(0 26px 22px rgba(58,20,16,.42));z-index:4}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:700}.top i{font-style:normal;color:var(--mu);margin-right:150px}
+.pro{display:flex;align-items:center;gap:26px;margin-top:18px}
+.av{flex:none;width:92px;height:92px;border-radius:50%;background:var(--mu);color:var(--ox);display:grid;place-items:center;font:400 48px/1 'Titan One',sans-serif}
+.st{display:flex;gap:32px}.st div{display:grid;justify-items:center;line-height:1.1}.st b{font:400 30px/1 'Titan One',sans-serif}.st small{font-size:12px;color:var(--blush);margin-top:3px}
+.bio{margin:14px 0 0;max-width:420px;font-size:15px;line-height:1.55}.bio span{font-weight:700;color:var(--mu)}
+.tabs{display:flex;gap:6px;margin-top:18px;border-bottom:1px solid rgba(245,238,232,.25)}
+.tabs span{padding:12px 18px 11px;color:var(--blush);font:400 15px 'Titan One',sans-serif;text-transform:uppercase;margin-bottom:-1px;border-bottom:3px solid transparent}.tabs .on{color:var(--cream);border-bottom-color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.note{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 0;font-size:12px;color:var(--blush)}
+.tile{position:relative;aspect-ratio:1/1.08;border-radius:6px;padding:14px;display:flex;flex-direction:column;overflow:hidden;min-width:0;color:var(--esp)}
+.tag{align-self:flex-start;padding:5px 9px 2px;background:var(--cream);color:var(--ox);font:400 17px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg);position:relative;z-index:2}
+.n{margin:8px 0 0;font-size:clamp(24px,2.6vw,34px);line-height:.95;color:var(--ox);position:relative;z-index:2}
+.im{position:absolute;right:4%;bottom:3%;width:46%;transform:rotate(6deg);filter:drop-shadow(0 16px 12px rgba(58,20,16,.3))}
+.f{margin-top:auto;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.pr{font:400 26px/1 'Titan One',sans-serif;color:var(--ox)}
+.add{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--ox);color:var(--cream);display:grid;place-items:center;transition:background-color .2s,transform .2s}
+.add:hover{background:var(--red);transform:rotate(90deg)}.add svg{width:18px;height:18px}
+.set{position:absolute;right:0;bottom:0;width:56%;aspect-ratio:1/1}.set img{position:absolute;width:44%}
+.set img:nth-child(1){left:2%;top:24%;transform:rotate(-10deg)}.set img:nth-child(2){right:2%;top:22%;transform:rotate(9deg)}.set img:nth-child(3){left:26%;top:32%;width:48%}
+.sm{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;position:relative;z-index:2}
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ox);color:var(--cream);padding:12px 20px;border-radius:8px;font:400 22px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;z-index:9}
+/* text tiles */
+.tt{justify-content:space-between;padding:16px}
+/* 1 fill line */
+.fillt{padding:0;background:#6E231D}.fillt .w{position:absolute;left:16px;top:12px;font:400 clamp(52px,7vw,92px)/.85 'Titan One',sans-serif;color:#EEC453;text-transform:uppercase}
+.fillt .cof{position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(#5A2A14,#2A1208)}
+.fillt .wave{position:absolute;left:0;top:-22px;width:200%;height:24px;animation:wv 7s linear infinite}
+.fillt .cof span{position:absolute;left:16px;bottom:14px;color:#F5EEE8}
+@keyframes wv{to{transform:translateX(-50%)}}
+/* 2 receipt */
+.rcpt{background:#F5EEE8;color:#3A1410;padding:16px 16px 14px;font-family:'Mouse Memoirs',sans-serif;text-transform:uppercase;justify-content:flex-start;gap:2px}
+.rcpt h4{margin:0 0 6px;text-align:center;font:400 clamp(18px,2vw,24px)/1 'Titan One',sans-serif;color:#6E231D}
+.rcpt .ln{display:flex;align-items:flex-end;gap:6px;font-size:clamp(17px,1.9vw,22px);line-height:1.15}.rcpt .ln i{flex:1;border-bottom:2px dotted rgba(110,35,29,.35);margin-bottom:5px}.rcpt .ln b{font-weight:400;color:#B03A2B}
+.rcpt hr{border:0;border-top:2px dashed rgba(110,35,29,.35);margin:6px 0}
+.rcpt .tot{display:flex;justify-content:space-between;font:400 clamp(20px,2.3vw,28px)/1 'Titan One',sans-serif;color:#6E231D;margin-top:auto}
+/* 3 round seal */
+.sealt{align-items:center;justify-content:center;padding:10px}
+.sealt svg{width:96%;height:auto;animation:sp 40s linear infinite}
+.sealt .ctr{position:absolute;inset:0;display:grid;place-items:center;font:400 clamp(60px,8vw,104px)/1 'Titan One',sans-serif}
+@keyframes sp{to{transform:rotate(360deg)}}
+/* 4 slice */
+.slicet{align-items:center;justify-content:center;padding:10px}
+.slicet .wd{position:relative;font:400 clamp(38px,4.9vw,64px)/.9 'Titan One',sans-serif;text-transform:uppercase;white-space:nowrap}
+.slicet .wd span{display:block}.slicet .wd .a{clip-path:inset(0 0 52% 0);transform:translateX(-7%)}.slicet .wd .b{position:absolute;left:0;top:0;clip-path:inset(48% 0 0 0);transform:translateX(7%);color:var(--alt)}
+.slicet .sm{position:absolute;left:14px;bottom:12px}
+/* 5 letter blocks */
+.blk{padding:12px;justify-content:center;align-items:center}
+.blk .g{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:82%}
+.blk .g b{aspect-ratio:1/1;display:grid;place-items:center;border-radius:8px;font:400 clamp(40px,5.4vw,72px)/1 'Titan One',sans-serif}
+.blk .g b:nth-child(1){transform:rotate(-5deg)}.blk .g b:nth-child(2){transform:rotate(4deg) translateY(4px)}.blk .g b:nth-child(3){transform:rotate(3deg)}.blk .g b:nth-child(4){transform:rotate(-4deg) translateY(-3px)}
+@media (max-width:860px){.card{padding:22px 14px 18px;margin-top:0}.jar{width:130px;right:4px;top:-142px}.i{display:none}.stage{padding-top:190px}.av{width:70px;height:70px;font-size:36px}.st{gap:18px}.st b{font-size:24px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.n{font-size:20px}.stage{padding-bottom:10px}.top i{margin-right:110px}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}}
+</style>
+<div class="wrap">
+  <header><h1>Text tiles, 5 more ideas</h1><p class="lead">Same dark card and grid as V3. Now the two text tiles get playful: they become little objects. Separate experiment, main page untouched.</p></header>
+  <section><p class="cap"><b>C1 · Fill line</b><span>A coffee-coloured wave fills the bottom of the tile and slowly drifts. The word sits above the line like a cup being filled.</span></p><div class="stage" id="t1"></div></section>
+  <section><p class="cap"><b>C2 · Till receipt</b><span>Each tile is a mini café receipt: items with dotted leaders and a total. The type stays small and tidy, so it is the quietest.</span></p><div class="stage" id="t2"></div></section>
+  <section><p class="cap"><b>C3 · Spinning seal</b><span>A round seal with text running around the edge that turns very slowly, and a big number in the middle.</span></p><div class="stage" id="t3"></div></section>
+  <section><p class="cap"><b>C4 · Sliced word</b><span>One big word cut in half, with the halves pushed apart sideways, like a glitch or a split-flap sign.</span></p><div class="stage" id="t4"></div></section>
+  <section><p class="cap"><b>C5 · Letter blocks</b><span>A word spelled out as four chunky letter blocks, each tilted, like alphabet toys.</span></p><div class="stage" id="t5"></div></section>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script>
+var P=[{id:'nuit',n:'Nuit',tag:'The signature',price:24,tint:'#E9BFAE'},{id:'velours',n:'Velours',tag:'The morning espresso',price:24,tint:'#F2D58A'},{id:'aurore',n:'Aurore',tag:'A brighter start',price:28,tint:'#F0B79A'},{id:'coffret',n:'Le Coffret',tag:'Better together',price:68,tint:'#D9C7D8',set:true}];
+var $=function(s){return document.querySelector(s)};
+var PLUS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+function art(p){return p.set?'<div class="set"><img src="./img/tin-aurore.webp" alt=""><img src="./img/tin-velours.webp" alt=""><img src="./img/tin-nuit.webp" alt="Nuit, Velours and Aurore tins"></div>':'<img class="im" src="./img/tin-'+p.id+'.webp" alt="'+p.n+' tin">'}
+function tile(p){return '<article class="tile" style="background:'+p.tint+'"><span class="tag">'+p.tag+'</span><h3 class="n D">'+p.n+'</h3>'+art(p)+'<div class="f"><span class="pr">$'+p.price+'</span><button class="add" type="button" data-add="'+p.n+'" aria-label="Add '+p.n+' to bag">'+PLUS+'</button></div></article>'}
+function rep(w){return '<div class="rep"><span>'+w+'</span><span>'+w+'</span><span>'+w+'</span></div>'}
+function T(cls,bg,fg,inner,cap,extra){return '<article class="tile tt '+cls+'" style="--fg:'+fg+';background:'+bg+';color:'+fg+(extra||'')+'">'+inner+(cap?'<span class="sm">'+cap+'</span>':'')+'</article>'}
+var V={
+t1:[T('fillt','#6E231D','#EEC453','<div class="w">SIP</div><div class="cof"><svg class="wave" viewBox="0 0 200 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 12Q25 0 50 12T100 12T150 12T200 12V24H0Z" fill="#5A2A14"/></svg><span class="sm">Fill to the line</span></div>',''),T('fillt','#B03A2B','#F5EEE8','<div class="w" style="color:#EEC453">SLOW</div><div class="cof"><svg class="wave" viewBox="0 0 200 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 12Q25 0 50 12T100 12T150 12T200 12V24H0Z" fill="#5A2A14"/></svg><span class="sm">Small lots</span></div>','')],
+t2:[T('rcpt','#F5EEE8','#3A1410','<h4>Valden brew bar</h4><div class="ln"><span>Small lots</span><i></i><b>1</b></div><div class="ln"><span>Hand-sealed</span><i></i><b>✓</b></div><div class="ln"><span>Roasted to order</span><i></i><b>✓</b></div><hr><div class="tot"><span>Total</span><span>1 morning</span></div>',''),T('rcpt','#EEC453','#3A1410','<h4>Order Nº 007</h4><div class="ln"><span>Pour-over</span><i></i><b>2</b></div><div class="ln"><span>Slow start</span><i></i><b>1</b></div><div class="ln"><span>Same time tomorrow</span><i></i><b>✓</b></div><hr><div class="tot"><span>Ready at</span><span>7:00 AM</span></div>','')],
+t3:[T('sealt','#6E231D','#EEC453','<svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="SID" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1 -160 0"/></defs><circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 5"/><text font-family="Mouse Memoirs" font-size="21" letter-spacing="3" fill="currentColor"><textPath href="#SID">SEE YOU AT SEVEN ✦ SAME TIME TOMORROW ✦ </textPath></text></svg><div class="ctr">7</div>'.replace(/SID/g,'s1'),''),T('sealt','#EEC453','#6E231D','<svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="SID" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1 -160 0"/></defs><circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 5"/><text font-family="Mouse Memoirs" font-size="21" letter-spacing="3" fill="currentColor"><textPath href="#SID">SMALL LOTS ✦ HAND-SEALED ✦ ROASTED TO ORDER ✦ </textPath></text></svg><div class="ctr">N°1</div>'.replace(/SID/g,'s2'),'')],
+t4:[T('slicet','#6E231D','#EEC453','<div class="wd"><span class="a">SLOW</span><span class="b">SLOW</span></div>','Slow mornings',';--alt:#F5EEE8'),T('slicet','#F5EEE8','#B03A2B','<div class="wd"><span class="a">SEVEN</span><span class="b">SEVEN</span></div>','See you at',';--alt:#6E231D')],
+t5:[T('blk','#6E231D','#6E231D','<div class="g"><b style="background:#EEC453;color:#6E231D">S</b><b style="background:#F5EEE8;color:#B03A2B">L</b><b style="background:#E9BFAE;color:#6E231D">O</b><b style="background:#B03A2B;color:#F5EEE8">W</b></div>',''),T('blk','#B03A2B','#6E231D','<div class="g"><b style="background:#F5EEE8;color:#B03A2B">S</b><b style="background:#EEC453;color:#6E231D">I</b><b style="background:#6E231D;color:#EEC453">P</b><b style="background:#E9BFAE;color:#6E231D">✦</b></div>','')]
+};
+function card(tiles){return '<div class="card"><img class="jar" src="./img/helios-jar.webp" alt="Helios jar"><div class="top"><span>valden.tins</span><i aria-hidden="true">✦</i></div><div class="pro"><span class="av" aria-hidden="true">V</span><div class="st"><div><b>4</b><small>tins</small></div><div><b>3</b><small>blends</small></div><div><b>1</b><small>gift box</small></div></div></div><p class="bio">Grand cru coffee, roasted in small lots and sealed by hand.<br><span>valden.coffee/tins</span></p><div class="tabs"><span class="on">All coffee</span><span>Blends</span><span>Gifts &amp; sets</span></div><div class="grid">'+P.map(tile).join('')+'TILES</div><p class="note"><span>4 tins to choose from.</span><span>Concept collection · Sample prices in USD</span></p></div>'}
+Object.keys(V).forEach(function(k){$('#'+k).innerHTML=card().replace('TILES',V[k].join(''))});
+var tt;document.addEventListener('click',function(e){var b=e.target.closest('[data-add]');if(!b)return;var t=$('#toast');t.textContent='✓ '+b.dataset.add+' added (demo)';t.hidden=false;clearTimeout(tt);tt=setTimeout(function(){t.hidden=true},2000)});
+</script>

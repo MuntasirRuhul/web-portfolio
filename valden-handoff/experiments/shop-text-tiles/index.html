@@ -1,0 +1,88 @@
+<title>Text Tile Variants</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:wght@400;700&display=swap">
+<style>
+:root{--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--mu:#EEC453;--cream:#F5EEE8;--or:#DE5F2E;--esp:#3A1410;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--esp);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:48px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}
+.lead{margin:8px 0 0;color:var(--muted);max-width:66ch}
+.cap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 10px}
+.cap b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}
+.cap span{font-size:14px;color:var(--muted);max-width:74ch}
+.stage{position:relative;padding:230px 8px 10px}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.D{font-family:'Titan One',sans-serif;font-weight:400;text-transform:uppercase}
+.card{position:relative;max-width:1000px;margin:0 auto;padding:34px 34px 26px;border-radius:34px;color:var(--cream);background:radial-gradient(120% 90% at 85% 0%,#8A2E24 0%,#6E231D 45%,#4A1712 100%);box-shadow:0 34px 60px rgba(58,20,16,.35)}
+.jar{position:absolute;right:-24px;top:-190px;width:175px;height:auto;transform:rotate(9deg);pointer-events:none;filter:drop-shadow(0 26px 22px rgba(58,20,16,.42));z-index:4}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:700}.top i{font-style:normal;color:var(--mu);margin-right:150px}
+.pro{display:flex;align-items:center;gap:26px;margin-top:18px}
+.av{flex:none;width:92px;height:92px;border-radius:50%;background:var(--mu);color:var(--ox);display:grid;place-items:center;font:400 48px/1 'Titan One',sans-serif}
+.st{display:flex;gap:32px}.st div{display:grid;justify-items:center;line-height:1.1}.st b{font:400 30px/1 'Titan One',sans-serif}.st small{font-size:12px;color:var(--blush);margin-top:3px}
+.bio{margin:14px 0 0;max-width:420px;font-size:15px;line-height:1.55}.bio span{font-weight:700;color:var(--mu)}
+.tabs{display:flex;gap:6px;margin-top:18px;border-bottom:1px solid rgba(245,238,232,.25)}
+.tabs span{padding:12px 18px 11px;color:var(--blush);font:400 15px 'Titan One',sans-serif;text-transform:uppercase;margin-bottom:-1px;border-bottom:3px solid transparent}.tabs .on{color:var(--cream);border-bottom-color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.note{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 0;font-size:12px;color:var(--blush)}
+.tile{position:relative;aspect-ratio:1/1.08;border-radius:6px;padding:14px;display:flex;flex-direction:column;overflow:hidden;min-width:0;color:var(--esp)}
+.tag{align-self:flex-start;padding:5px 9px 2px;background:var(--cream);color:var(--ox);font:400 17px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg);position:relative;z-index:2}
+.n{margin:8px 0 0;font-size:clamp(24px,2.6vw,34px);line-height:.95;color:var(--ox);position:relative;z-index:2}
+.im{position:absolute;right:4%;bottom:3%;width:46%;transform:rotate(6deg);filter:drop-shadow(0 16px 12px rgba(58,20,16,.3))}
+.f{margin-top:auto;display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.pr{font:400 26px/1 'Titan One',sans-serif;color:var(--ox)}
+.add{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--ox);color:var(--cream);display:grid;place-items:center;transition:background-color .2s,transform .2s}
+.add:hover{background:var(--red);transform:rotate(90deg)}.add svg{width:18px;height:18px}
+.set{position:absolute;right:0;bottom:0;width:56%;aspect-ratio:1/1}.set img{position:absolute;width:44%}
+.set img:nth-child(1){left:2%;top:24%;transform:rotate(-10deg)}.set img:nth-child(2){right:2%;top:22%;transform:rotate(9deg)}.set img:nth-child(3){left:26%;top:32%;width:48%}
+.sm{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;position:relative;z-index:2}
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ox);color:var(--cream);padding:12px 20px;border-radius:8px;font:400 22px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;z-index:9}
+/* text tiles */
+.tt{justify-content:space-between;padding:16px}
+/* 1 echo */
+.echo .rep{display:grid;font:400 clamp(26px,3.4vw,42px)/.86 'Titan One',sans-serif;text-transform:uppercase}.echo .rep span:nth-child(2){opacity:.65}.echo .rep span:nth-child(3){opacity:.3}
+/* 2 outline */
+.outl .rep{display:grid;font:400 clamp(34px,4.6vw,58px)/.84 'Titan One',sans-serif;text-transform:uppercase}.outl .rep span:nth-child(n+2){color:transparent;-webkit-text-stroke:2px var(--fg)}.outl .rep span:nth-child(3){-webkit-text-stroke-width:1.2px;opacity:.7}
+/* 3 numeral */
+.num .big{font:400 clamp(50px,6.6vw,86px)/.8 'Titan One',sans-serif;letter-spacing:-.02em;margin-top:auto;white-space:nowrap}.num .big small{font-size:.32em;letter-spacing:0;margin-left:4px}
+/* 4 vertical */
+.vert{padding:0;flex-direction:row;gap:0}.vert .col{flex:1;writing-mode:vertical-rl;white-space:nowrap;overflow:hidden;font:400 clamp(22px,2.6vw,32px)/1 'Titan One',sans-serif;text-transform:uppercase;display:flex;align-items:center;justify-content:flex-start;padding:10px 0}
+.vert .col:nth-child(2){transform:rotate(180deg);opacity:.55}.vert .col:nth-child(3){opacity:.3}
+/* 5 diagonal */
+.diag{padding:0}.diag .bands{position:absolute;left:-30%;right:-30%;top:50%;transform:translateY(-50%) rotate(-14deg);display:grid;gap:6px}
+.diag .bands div{white-space:nowrap;overflow:hidden;font:400 clamp(26px,3.2vw,40px)/1 'Titan One',sans-serif;text-transform:uppercase;padding:10px 0 7px;letter-spacing:.02em}
+.diag .bands div span{display:inline-block;padding-right:.5em}
+.diag .bands div:nth-child(2){margin-left:-30px;font-family:'Mouse Memoirs',sans-serif;font-size:clamp(26px,3vw,36px)}
+.diag .sm{position:absolute;left:14px;bottom:12px}
+@media (max-width:860px){.card{padding:22px 14px 18px;margin-top:0}.jar{width:130px;right:4px;top:-142px}.i{display:none}.stage{padding-top:190px}.av{width:70px;height:70px;font-size:36px}.st{gap:18px}.st b{font-size:24px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.n{font-size:20px}.stage{padding-bottom:10px}.top i{margin-right:110px}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+<div class="wrap">
+  <header><h1>Text tiles, 5 variations</h1><p class="lead">Your V3 pick: the same dark profile card and 3-column grid, with the two text posters in the second row. Each version below changes only how those two tiles are abstracted. Separate experiment, main page untouched.</p></header>
+  <section><p class="cap"><b>T1 · Echo</b><span>The V3 idea refined: the word repeats three times and fades out, like the "MATCHA MATCHA MATCHA" poster in your reference.</span></p><div class="stage" id="t1"></div></section>
+  <section><p class="cap"><b>T2 · Outline stack</b><span>One solid word, then the same word as outlines. It feels like an echo that's losing its fill.</span></p><div class="stage" id="t2"></div></section>
+  <section><p class="cap"><b>T3 · Giant numeral</b><span>One big number and a tiny caption. It's the most abstract: 7:00 and N°1 instead of words.</span></p><div class="stage" id="t3"></div></section>
+  <section><p class="cap"><b>T4 · Vertical run</b><span>Text runs down the tile in three columns, each fainter than the last, like a barcode made of letters.</span></p><div class="stage" id="t4"></div></section>
+  <section><p class="cap"><b>T5 · Diagonal bands</b><span>Tilted tape bands with words, like mini versions of the wave ribbons. It has the most movement.</span></p><div class="stage" id="t5"></div></section>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script>
+var P=[{id:'nuit',n:'Nuit',tag:'The signature',price:24,tint:'#E9BFAE'},{id:'velours',n:'Velours',tag:'The morning espresso',price:24,tint:'#F2D58A'},{id:'aurore',n:'Aurore',tag:'A brighter start',price:28,tint:'#F0B79A'},{id:'coffret',n:'Le Coffret',tag:'Better together',price:68,tint:'#D9C7D8',set:true}];
+var $=function(s){return document.querySelector(s)};
+var PLUS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+function art(p){return p.set?'<div class="set"><img src="./img/tin-aurore.webp" alt=""><img src="./img/tin-velours.webp" alt=""><img src="./img/tin-nuit.webp" alt="Nuit, Velours and Aurore tins"></div>':'<img class="im" src="./img/tin-'+p.id+'.webp" alt="'+p.n+' tin">'}
+function tile(p){return '<article class="tile" style="background:'+p.tint+'"><span class="tag">'+p.tag+'</span><h3 class="n D">'+p.n+'</h3>'+art(p)+'<div class="f"><span class="pr">$'+p.price+'</span><button class="add" type="button" data-add="'+p.n+'" aria-label="Add '+p.n+' to bag">'+PLUS+'</button></div></article>'}
+function rep(w){return '<div class="rep"><span>'+w+'</span><span>'+w+'</span><span>'+w+'</span></div>'}
+function T(cls,bg,fg,inner,cap,extra){return '<article class="tile tt '+cls+'" style="--fg:'+fg+';background:'+bg+';color:'+fg+(extra||'')+'">'+inner+(cap?'<span class="sm">'+cap+'</span>':'')+'</article>'}
+var V={
+t1:[T('echo','#6E231D','#EEC453',rep('SMALL LOTS'),'Roasted to order'),T('echo','#B03A2B','#F5EEE8',rep('HAND-SEALED'),'Every tin')],
+t2:[T('outl','#6E231D','#EEC453',rep('SLOW'),'Slow mornings'),T('outl','#F5EEE8','#B03A2B',rep('GRAND CRU'),'Small lots')],
+t3:[T('num','#6E231D','#EEC453','<div class="big">7:00<small>AM</small></div>','Same time tomorrow'),T('num','#EEC453','#6E231D','<div class="big">N°1</div>','The signature blend')],
+t4:[T('vert','#6E231D','#EEC453','<div class="col">ROASTED TO ORDER ✦</div><div class="col">ROASTED TO ORDER ✦</div><div class="col">ROASTED TO ORDER ✦</div>'),T('vert','#F5EEE8','#B03A2B','<div class="col">SEALED BY HAND ✦</div><div class="col">SEALED BY HAND ✦</div><div class="col">SEALED BY HAND ✦</div>')],
+t5:[T('diag','#6E231D','#6E231D','<div class="bands" style="color:#6E231D"><div style="background:#EEC453"><span>SMALL LOTS</span><span>SMALL LOTS</span></div><div style="background:#F5EEE8"><span>ROASTED TO ORDER</span><span>ROASTED TO ORDER</span></div><div style="background:#B03A2B;color:#F5EEE8"><span>SMALL LOTS</span><span>SMALL LOTS</span></div></div>',''),T('diag','#B03A2B','#6E231D','<div class="bands"><div style="background:#E9BFAE"><span>HAND-SEALED</span><span>HAND-SEALED</span></div><div style="background:#EEC453"><span>EVERY TIN</span><span>EVERY TIN</span></div><div style="background:#6E231D;color:#EEC453"><span>HAND-SEALED</span><span>HAND-SEALED</span></div></div>','')]
+};
+function card(tiles){return '<div class="card"><img class="jar" src="./img/helios-jar.webp" alt="Helios jar"><div class="top"><span>valden.tins</span><i aria-hidden="true">✦</i></div><div class="pro"><span class="av" aria-hidden="true">V</span><div class="st"><div><b>4</b><small>tins</small></div><div><b>3</b><small>blends</small></div><div><b>1</b><small>gift box</small></div></div></div><p class="bio">Grand cru coffee, roasted in small lots and sealed by hand.<br><span>valden.coffee/tins</span></p><div class="tabs"><span class="on">All coffee</span><span>Blends</span><span>Gifts &amp; sets</span></div><div class="grid">'+P.map(tile).join('')+'TILES</div><p class="note"><span>4 tins to choose from.</span><span>Concept collection · Sample prices in USD</span></p></div>'}
+Object.keys(V).forEach(function(k){$('#'+k).innerHTML=card().replace('TILES',V[k].join(''))});
+var tt;document.addEventListener('click',function(e){var b=e.target.closest('[data-add]');if(!b)return;var t=$('#toast');t.textContent='✓ '+b.dataset.add+' added (demo)';t.hidden=false;clearTimeout(tt);tt=setTimeout(function(){t.hidden=true},2000)});
+</script>

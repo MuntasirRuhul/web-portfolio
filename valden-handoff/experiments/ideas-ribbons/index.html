@@ -1,0 +1,89 @@
+<title>Ribbon Ideas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:wght@400;700&display=swap">
+<style>
+:root{--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--mu:#EEC453;--cream:#F5EEE8;--or:#DE5F2E;--esp:#3A1410;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--esp);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1200px;margin:0 auto;display:grid;gap:56px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}
+.lead{margin:8px 0 0;color:var(--muted);max-width:60ch}
+.cap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 12px}
+.cap b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}
+.cap span{font-size:14px;color:var(--muted);max-width:70ch}
+.panel{position:relative;background:var(--blush);border-radius:26px;overflow:hidden;min-height:380px;display:grid;place-items:center;padding:40px 0}
+.t{font-family:'Mouse Memoirs',sans-serif;line-height:1;display:inline-block;text-transform:uppercase}
+.tin{filter:drop-shadow(0 26px 24px rgba(110,35,29,.28));display:block}
+/* A */
+.a svg{width:100%;height:auto;display:block}
+.a .tags{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:-6px;padding:0 16px}
+.a .t{font-size:28px;padding:8px 16px 4px}
+/* B */
+.b{padding:0}
+.b .rot{width:120%;margin-left:-10%;transform:rotate(-2.5deg);display:grid;gap:14px;padding:70px 0}
+.band{overflow:hidden;white-space:nowrap}
+.band .in{display:inline-flex;animation:m 40s linear infinite}
+.band.rev .in{animation-direction:reverse;animation-duration:50s}
+.band span{padding-right:.5em}
+.b1{background:var(--mu);color:var(--ox);font:400 clamp(36px,5vw,56px)/1.5 'Titan One',sans-serif}
+.b2{background:var(--red);color:var(--cream);font:400 clamp(24px,3vw,32px)/2 'Mouse Memoirs',sans-serif;letter-spacing:.04em}
+@keyframes m{to{transform:translateX(-50%)}}
+/* C */
+.c{text-align:center;padding:56px 16px}
+.c h2{margin:0;font:400 clamp(44px,9vw,120px)/.9 'Titan One',sans-serif;color:var(--ox)}
+.c h2 em{font-style:normal;color:var(--red)}
+.stamps{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.stamp{width:128px;height:128px;border-radius:50%;border:2px dashed var(--ox);display:grid;place-items:center;font:400 24px/1 'Mouse Memoirs',sans-serif;color:var(--ox);text-transform:uppercase;background:rgba(245,238,232,.45)}
+.stamp:nth-child(1){transform:rotate(-7deg)}.stamp:nth-child(2){transform:rotate(4deg);background:var(--mu)}.stamp:nth-child(3){transform:rotate(-3deg)}
+/* D */
+.d{padding:0;min-height:440px}
+.d svg{position:absolute;inset:0;width:100%;height:100%}
+.d .tin{position:relative;z-index:2;width:min(21vw,190px);min-width:120px;transform:rotate(8deg);margin-top:-30px}
+.d .eb{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ox)}
+/* E */
+.e{padding:56px max(24px,4vw)}
+.e .g{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;width:100%;max-width:1000px}
+.e .stack{display:grid;gap:12px;justify-items:start}
+.e .t{padding:10px 20px 6px}
+.e .s1{background:var(--mu);color:var(--ox);font:400 clamp(30px,5vw,60px)/1 'Titan One',sans-serif;transform:rotate(-2deg);padding:14px 22px 10px}
+.e .s2{background:var(--ox);color:var(--cream);font:400 clamp(40px,7vw,92px)/1 'Titan One',sans-serif;transform:rotate(1.5deg);padding:14px 26px 10px}
+.e .s3{background:var(--red);color:var(--cream);font-size:clamp(20px,2.6vw,32px);transform:rotate(-1deg)}
+.e .tins{position:relative;height:340px}
+.e .tins img{position:absolute;width:46%}
+@media (max-width:760px){.e .g{grid-template-columns:1fr}.e .tins{height:260px}.stamp{width:104px;height:104px;font-size:20px}}
+@media (prefers-reduced-motion:reduce){.band .in{animation:none}}
+</style>
+<div class="wrap">
+  <header><h1>Ribbon section, 5 ideas</h1><p class="lead">Same content and palette, each calmer than the crossing ribbons. Section only; nothing here changes the live page.</p></header>
+
+  <section><p class="cap"><b>A · One ribbon</b><span>One gentle arc, said once. The three promises move to small tape labels underneath. No tins, no crossing.</span></p>
+    <div class="panel a"><div style="width:100%">
+      <svg viewBox="0 0 1440 300" aria-label="Dangerously smooth"><path id="pa" d="M -60 230 C 420 40 1020 40 1500 230" stroke="#EEC453" stroke-width="104" fill="none"/>
+        <text font-family="Titan One" font-size="60" fill="#6E231D" text-anchor="middle" dominant-baseline="central" letter-spacing="2"><textPath href="#pa" startOffset="50%">DANGEROUSLY SMOOTH</textPath></text></svg>
+      <div class="tags"><span class="t" style="background:var(--ox);color:var(--mu);transform:rotate(-3deg)">Small lots</span><span class="t" style="background:var(--red);color:var(--cream);transform:rotate(2deg)">Hand-sealed</span><span class="t" style="background:var(--cream);color:var(--ox);transform:rotate(-2deg)">Roasted to order</span></div>
+    </div></div></section>
+
+  <section><p class="cap"><b>B · Two straight tickers</b><span>Two parallel tapes at a slight tilt, scrolling in opposite directions. No crossing, no tins, the motion carries it.</span></p>
+    <div class="panel b"><div class="rot">
+      <div class="band b1"><div class="in"><span>DANGEROUSLY SMOOTH ✦</span><span>DANGEROUSLY SMOOTH ✦</span><span>DANGEROUSLY SMOOTH ✦</span><span>DANGEROUSLY SMOOTH ✦</span><span>DANGEROUSLY SMOOTH ✦</span><span>DANGEROUSLY SMOOTH ✦</span><span>DANGEROUSLY SMOOTH ✦</span><span>DANGEROUSLY SMOOTH ✦</span></div></div>
+      <div class="band b2 rev"><div class="in"><span>SMALL LOTS ✦ HAND-SEALED ✦ ROASTED TO ORDER ✦</span><span>SMALL LOTS ✦ HAND-SEALED ✦ ROASTED TO ORDER ✦</span><span>SMALL LOTS ✦ HAND-SEALED ✦ ROASTED TO ORDER ✦</span><span>SMALL LOTS ✦ HAND-SEALED ✦ ROASTED TO ORDER ✦</span><span>SMALL LOTS ✦ HAND-SEALED ✦ ROASTED TO ORDER ✦</span><span>SMALL LOTS ✦ HAND-SEALED ✦ ROASTED TO ORDER ✦</span></div></div>
+    </div></div></section>
+
+  <section><p class="cap"><b>C · Big words, three stamps</b><span>No ribbon at all. One big statement, then the promises as dashed stamps, the same dashed style as the review cards.</span></p>
+    <div class="panel c"><div><h2>DANGEROUSLY<br><em>SMOOTH.</em></h2>
+      <div class="stamps"><div class="stamp">Small<br>lots</div><div class="stamp">Hand-<br>sealed</div><div class="stamp">Roasted<br>to order</div></div></div></div></section>
+
+  <section><p class="cap"><b>D · One ribbon, one tin</b><span>A single wave with one tin riding it. The promises become one quiet caption line. One focal point instead of five.</span></p>
+    <div class="panel d">
+      <svg viewBox="0 0 1440 440" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path id="pd" d="M -40 300 C 360 120 700 380 1480 150" stroke="#B03A2B" stroke-width="86" fill="none"/></svg>
+      <svg viewBox="0 0 1440 440" preserveAspectRatio="xMidYMid meet" aria-label="Dangerously smooth"><path id="pd2" d="M -40 300 C 360 120 700 380 1480 150" fill="none"/>
+        <text font-family="Titan One" font-size="50" fill="#F5EEE8" dominant-baseline="central" letter-spacing="2"><textPath href="#pd2" startOffset="7%">DANGEROUSLY SMOOTH</textPath></text></svg>
+      <img class="tin" src="./img/tin-aurore.webp" alt="Aurore tin" style="margin-left:34%">
+      <p class="eb">Small lots ✦ Hand-sealed ✦ Roasted to order</p>
+    </div></section>
+
+  <section><p class="cap"><b>E · Pasted tapes</b><span>Three tape strips stacked like labels on a shelf, each slightly off-square. Two tins sit quietly on the right. Static, nothing runs off the edge.</span></p>
+    <div class="panel e"><div class="g">
+      <div class="stack"><span class="t s1">DANGEROUSLY</span><span class="t s2">SMOOTH.</span><span class="t s3">Small lots ✦ Hand-sealed ✦ Roasted to order</span></div>
+      <div class="tins"><img class="tin" src="./img/tin-nuit.webp" alt="Nuit tin" style="left:2%;top:10%;transform:rotate(-9deg)"><img class="tin" src="./img/tin-aurore.webp" alt="Aurore tin" style="right:0;top:0;transform:rotate(8deg)"></div>
+    </div></div></section>
+</div>
