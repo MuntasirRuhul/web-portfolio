@@ -120,3 +120,13 @@ Whole bean always, Brewed by weight): no invented proof. Next: user picks one, t
 Typography notes from Heist (for a possible type-token experiment): Inter body 400 / subheading 500 / heading 700,
 Adobe Fonts Aro (UI) + forma-djr-mono (labels); tokens for letter-spacing (-0.03/0/0.03/0.06/0.13/0.25em) and line-height
 (display 1/1.1/1.2, heading 1.15/1.25/1.35, body 1.2/1.4). Valden could add the same token scale + named roles.
+
+## 12. Latest iteration: bean panel with text background (added 2026-11-08)
+User picked **B3 (dark hill)** from the bean merge. Asked: bean placeholder should have **text as a background** like their
+"SMALL LOTS / SMALL LOTS / SMALL LOTS" fading poster, but more stylish; keep the (abstract) hill for now; wanted Pinterest research.
+Note: **no browser tool exists in this session** (only Figma + WebFetch, Pinterest needs login), so no Pinterest browsing was possible;
+styles were designed from standard typographic-poster techniques. If the user sends Pinterest screenshots, match them.
+Source: `experiments/bean-text-bg/index.html`: panel `.bp` with 4 switchable text styles: Echo fade (default, closest to the poster),
+Outline fade, Orbit rings (rotating SVG textPath), Tilted bands. Bean = `bean-crop.webp` split in two clipped halves (drop-shadow on the parent).
+Gotcha: a grid item with `margin:auto` and only absolute children collapses to 0 width; use `width:100%` + `justify-self:center`.
+Next: user picks a text style (or sends references), then fold this section into v2/main (replace or sit beside the Brew Bar).

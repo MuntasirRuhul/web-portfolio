@@ -1,0 +1,70 @@
+<title>Bean Text Background</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:opsz,wght@9..40,400..700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--cream:#F5EEE8;--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--deep:#3A1410;--gold:#EEC453;--or:#DE5F2E}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--deep);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+img{display:block;max-width:100%}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+h1{font:400 clamp(30px,4.6vw,52px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}.lead{margin:6px 0 0;color:#7A5A50;max-width:72ch}
+.sw{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.sw .lab{font:500 12px 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7A5A50}
+.sw button{min-height:40px;padding:0 16px;border-radius:999px;border:2px solid var(--ox);background:transparent;color:var(--ox);font:400 14px 'Titan One',sans-serif;text-transform:uppercase;transition:background-color .2s,color .2s}.sw button[aria-pressed=true]{background:var(--ox);color:var(--gold)}
+/* the section */
+.sec{position:relative;border-radius:26px;overflow:hidden;padding:64px 48px;background:var(--deep);color:var(--cream);isolation:isolate}
+.sec svg.hill{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.top{text-align:center}.tape{display:inline-block;padding:6px 12px 3px;background:var(--gold);color:var(--ox);font:400 22px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg)}
+.ttl{margin:14px 0 0;font:400 clamp(34px,5vw,68px)/.92 'Titan One',sans-serif;text-transform:uppercase;color:var(--blush)}
+.tri{display:grid;grid-template-columns:1fr minmax(240px,320px) 1fr;gap:38px;align-items:center;margin:34px 0}
+.cl{list-style:none;margin:0;padding:0;display:grid}.cl li{padding:20px 0;border-top:2px solid rgba(245,238,232,.28);font:400 clamp(22px,2.5vw,32px)/1.02 'Titan One',sans-serif;text-transform:uppercase}
+.cl li:last-child{border-bottom:2px solid rgba(245,238,232,.28)}.cl li small{display:block;margin-top:8px;font:500 11px/1.3 'DM Mono',monospace;letter-spacing:.12em;opacity:.75}.cl.R{text-align:right}
+/* bean panel with text background */
+.bp{position:relative;aspect-ratio:.8/1;border-radius:20px;overflow:hidden;background:#2E0E0A;box-shadow:inset 0 0 0 1px rgba(238,196,83,.3),0 30px 50px -20px rgba(0,0,0,.6);isolation:isolate}
+.bp .bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.bp .bean{position:absolute;left:23%;right:23%;top:15%;bottom:19%;z-index:2;filter:drop-shadow(0 22px 18px rgba(0,0,0,.6));transition:transform .5s cubic-bezier(.2,.8,.2,1);transform:scale(var(--s,1))}
+.bp .bean img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.bp .bean .t{clip-path:inset(0 0 48% 0)}.bp .bean .b{clip-path:inset(52% 0 0 0);transform:translateX(5%)}
+.bp .tg{position:absolute;right:12px;top:12px;z-index:3;background:var(--red);color:var(--cream);padding:5px 9px;font:500 10px/1 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+.bp .cap{position:absolute;left:12px;bottom:12px;z-index:3;padding:6px 9px;background:#2E0E0A;font:500 12px/1 'DM Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+/* A echo */
+.echo .bg{padding:7% 8%;color:var(--gold);-webkit-mask-image:linear-gradient(#000 0%,#000 28%,rgba(0,0,0,.18) 100%);mask-image:linear-gradient(#000 0%,#000 28%,rgba(0,0,0,.18) 100%)}
+.echo .bg div{font:400 clamp(44px,5.6vw,76px)/.84 'Titan One',sans-serif;text-transform:uppercase}
+/* B outline */
+.outl .bg{padding:7% 8%;color:var(--gold)}.outl .bg div{font:400 clamp(44px,5.6vw,76px)/.84 'Titan One',sans-serif;text-transform:uppercase}
+.outl .bg div:nth-child(n+3){color:transparent;-webkit-text-stroke:2px var(--gold)}.outl .bg div:nth-child(n+5){-webkit-text-stroke-width:1.2px;opacity:.6}
+/* C orbit */
+.orbit .bg svg{width:100%;height:100%}.orbit .r1{animation:spin 70s linear infinite;transform-origin:200px 250px}.orbit .r2{animation:spin 50s linear infinite reverse;transform-origin:200px 250px}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* D bands */
+.bands .bg{display:grid;align-content:center;overflow:hidden}.bands .bg .in{position:absolute;left:-40%;right:-40%;top:50%;transform:translateY(-50%) rotate(-14deg);display:grid;gap:8px}
+.bands .bg .in div{white-space:nowrap;overflow:hidden;font:400 clamp(30px,3.6vw,46px)/1 'Titan One',sans-serif;text-transform:uppercase;padding:8px 0 5px}
+.bands .bg .in div:nth-child(odd){background:var(--gold);color:var(--ox)}.bands .bg .in div:nth-child(even){color:var(--gold);box-shadow:inset 0 0 0 2px rgba(238,196,83,.5)}.bands .bg .in div span{padding-right:.4em}
+/* calculator */
+.calc{display:grid;gap:18px;justify-items:center;text-align:center}.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;color:var(--blush)}
+.mp{min-height:44px;padding:0 18px;border-radius:22px;border:2.5px solid currentColor;background:transparent;color:inherit;font:400 16px 'Titan One',sans-serif;text-transform:uppercase;transition:background-color .2s,color .2s}.mp[aria-pressed=true]{background:var(--gold);color:var(--ox);border-color:var(--gold)}
+.step{display:inline-flex;align-items:center;gap:6px;padding:5px;border-radius:999px;background:var(--cream);color:var(--ox)}.step button{width:42px;height:42px;border-radius:50%;border:0;font:400 22px 'Titan One',sans-serif;background:var(--blush);color:var(--ox)}.step button:last-of-type{background:var(--red);color:var(--cream)}
+.step output{min-width:40px;text-align:center;font:400 28px 'Titan One',sans-serif}.step span{padding-right:12px;font:700 13px 'DM Sans'}
+.nums{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;font:500 13px/1.3 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--blush)}.nums b{display:block;font:400 clamp(34px,4vw,56px)/1 'Titan One',sans-serif;color:var(--gold);letter-spacing:0;margin-bottom:4px}
+@media (max-width:860px){.sec{padding:40px 18px}.tri{grid-template-columns:1fr;gap:20px}.tri .bp{width:100%;max-width:290px;justify-self:center;order:-1}.cl.R{text-align:left}.nums{gap:18px}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}}
+</style>
+<div class="wrap">
+  <header><h1>Bean panel, text background</h1><p class="lead">The dark section (B3) with the bean on a panel that has stylish text behind it, like your "SMALL LOTS" poster. Pick a text style below. The hill stays as it is for now. Separate experiment, main page untouched.</p></header>
+  <div class="sw" role="group" aria-label="Background text style"><span class="lab">Text style</span><button type="button" data-s="echo" aria-pressed="true">Echo fade</button><button type="button" data-s="outl" aria-pressed="false">Outline fade</button><button type="button" data-s="orbit" aria-pressed="false">Orbit rings</button><button type="button" data-s="bands" aria-pressed="false">Tilted bands</button></div>
+  <section class="sec" id="sec"></section>
+</div>
+<script>
+var M=[{k:'Espresso',d:18,w:36,max:4,t:'25–30 s',tp:'93 °C',u:'shots'},{k:'Pour-over',d:15,w:250,max:4,t:'3 to 3½ min',tp:'94 °C',u:'cups'},{k:'French press',d:16,w:250,max:6,t:'4 min',tp:'95 °C',u:'cups'},{k:'Cold brew',d:20,w:250,max:6,t:'14 h',tp:'Cold',u:'glasses'}];
+var mi=1,cups=2,st='echo',$=function(s){return document.querySelector(s)};
+function cur(){var m=M[mi];if(cups>m.max)cups=m.max;return m}
+var CL=[['Grand cru coffee','Chosen bean by bean'],['Small lots','Never more than we can sell fresh'],['Roasted to order','Your tin starts as green coffee'],['Sealed by hand','Every tin, tied by hand'],['Whole bean, always','Grind it when you brew'],['Brewed by weight','Grams, not guesses']];
+function claims(side){var i=side==='L'?0:3;return '<ul class="cl '+side+'">'+CL.slice(i,i+3).map(function(c){return '<li>'+c[0]+'<small>'+c[1]+'</small></li>'}).join('')+'</ul>'}
+function bg(){
+ if(st==='echo'||st==='outl')return '<div class="bg" aria-hidden="true">'+'<div>SMALL<br>LOTS</div>'.repeat(3)+'</div>';
+ if(st==='orbit'){var w='SMALL LOTS ✦ ROASTED TO ORDER ✦ SMALL LOTS ✦ ROASTED TO ORDER ✦ ';return '<div class="bg" aria-hidden="true"><svg viewBox="0 0 400 500"><defs><path id="o1" d="M200 250m-168 0a168 168 0 1 1 336 0a168 168 0 1 1 -336 0"/><path id="o2" d="M200 250m-118 0a118 118 0 1 1 236 0a118 118 0 1 1 -236 0"/><path id="o3" d="M200 250m-210 0a210 210 0 1 1 420 0a210 210 0 1 1 -420 0"/></defs><g class="r1"><text font-family="Titan One" font-size="40" fill="#EEC453" letter-spacing="3"><textPath href="#o1">'+w+'</textPath></text></g><g class="r2"><text font-family="DM Mono" font-size="16" fill="#EEC453" opacity=".7" letter-spacing="6"><textPath href="#o2">'+w.replace(/✦/g,'·')+w+'</textPath></text></g><g class="r1"><text font-family="Titan One" font-size="30" fill="none" stroke="#EEC453" stroke-width="1.4" opacity=".6" letter-spacing="4"><textPath href="#o3">'+w+w+'</textPath></text></g></svg></div>'}
+ var row='<span>SMALL LOTS ✦</span><span>ROASTED TO ORDER ✦</span><span>SMALL LOTS ✦</span><span>ROASTED TO ORDER ✦</span>';return '<div class="bg" aria-hidden="true"><div class="in">'+('<div>'+row+'</div>').repeat(7)+'</div></div>'}
+function render(){var m=cur(),s=0.9+cups*0.05;
+ $('#sec').innerHTML='<svg class="hill" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-60 760V560C80 470 230 400 380 330C500 270 540 110 700 90C860 72 940 230 1040 340C1110 420 1240 520 1280 600V760Z" fill="#6E231D"/></svg><div class="top"><span class="tape">The bean</span><h2 class="ttl">Roasted in small lots.<br>Brewed to a number.</h2></div><div class="tri">'+claims('L')+'<div class="bp '+st+'">'+bg()+'<div class="bean" style="--s:'+s+'"><img class="t" src="./img/bean-crop.webp" alt="A roasted coffee bean"><img class="b" src="./img/bean-crop.webp" alt="" aria-hidden="true"></div><span class="tg">Whole bean</span><span class="cap">Roasted to order</span></div>'+claims('R')+'</div><div class="calc"><div class="pills" role="group" aria-label="Brew method">'+M.map(function(x,i){return '<button class="mp" type="button" data-m="'+i+'" aria-pressed="'+(i===mi)+'">'+x.k+'</button>'}).join('')+'</div><div class="step" role="group" aria-label="Number of '+m.u+'"><button type="button" data-c="-1" aria-label="Fewer">−</button><output aria-live="polite">'+cups+'</output><button type="button" data-c="1" aria-label="More">+</button><span>'+m.u+'</span></div><div class="nums"><div><b>'+m.d*cups+' g</b>coffee</div><div><b>'+m.w*cups+' g</b>water</div><div><b>'+m.t+'</b>time</div><div><b>'+m.tp+'</b>water temp</div></div></div>'}
+render();
+document.addEventListener('click',function(e){var b=e.target.closest('[data-s]');if(b){st=b.dataset.s;document.querySelectorAll('[data-s]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render();return}b=e.target.closest('[data-m]');if(b){mi=+b.dataset.m;cur();render();return}b=e.target.closest('[data-c]');if(b){var m=cur();cups=Math.max(1,Math.min(m.max,cups+(+b.dataset.c)));render()}});
+</script>
