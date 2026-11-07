@@ -173,3 +173,10 @@ User: "add this to the main home" (they meant the main homepage, not just the ex
 flat red + grain, Titan One "SLOW MORNINGS. YOUR PACE.", tape label, 5 Heist-structure tiles (2px dark border, coloured backdrops, mono N°0x tags), scroll parallax in `paint()`.
 Main now = v29 state (bean section without calculator or hill) + this section. Header/hero experiment (Shop now + cart hover card) is still NOT on main.
 Backup of build before this change: scratchpad `build_valden.before-statement.py`. `main-current/` holds the latest build + html.
+
+## 17. MAIN updated (2026-11-08): Heist-style header + cleaner hero now on main
+User asked "where is the update?" after seeing the old BAG pill. The hero-heist patch (section 14) is now applied to main:
+header = red SHOP NOW pill + mono CART (n) with a hover/focus card (empty message or line items + subtotal + Open bag; clicking CART still opens the drawer;
+no hover card on touch), hero body text + FIND YOUR TIN button removed, "LESS RUSH. MORE ROAST." kept. Backup: scratchpad `build_valden.before-header.py`.
+Main = bean section (no calculator/hill) + statement gallery after hero + this header. Lesson: when the user approves a direction, put it on main, do not just ask.
+Still open: what they marked on the calculator (`#brew > div:nth-of-type(3)`, "2 elements"); possible custom cursor on hover ("cursor pair"), unbuilt.

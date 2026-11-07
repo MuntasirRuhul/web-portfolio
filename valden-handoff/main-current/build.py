@@ -610,6 +610,45 @@ sub("    // ---------- the interlude scene draws itself ----------","""    // --
     }
     // ---------- the interlude scene draws itself ----------""")
 
+# ===== hero-heist: Shop now + Cart (hover card) in the header, cleaner hero =====
+bm=re.search(r'<button type="button" onClick="\{\{openBag\}\}" aria-label="\{\{bagLabel\}\}".*?</button>',markup,re.S); assert bm
+markup=markup.replace(bm.group(0),"""<div class="v-hr">
+      <a class="v-hshop" href="#shop">SHOP NOW</a>
+      <div class="v-cart">
+        <button class="v-cartb" type="button" onClick="{{openBag}}" aria-label="{{bagLabel}}" aria-haspopup="true">CART <span>({{bagCount}})</span></button>
+        <div class="v-cartcard">
+          <p class="v-cc-t">Your bag</p>
+          <sc-if value="{{bagEmpty}}" hint-placeholder-val="{{ true }}"><p class="v-cc-e">Nothing here yet. The tins are waiting.</p><a class="v-cc-l" href="#shop">Shop the tins</a></sc-if>
+          <sc-for list="{{lines}}" as="l" hint-placeholder-count="0"><div class="v-cc-r"><span>{{l.name}} × {{l.qty}}</span><b>{{l.lineTotal}}</b></div></sc-for>
+          <sc-if value="{{bagHasItems}}" hint-placeholder-val="{{ false }}"><div class="v-cc-s"><span>Subtotal</span><b>{{subtotal}}</b></div><button class="v-cc-b" type="button" onClick="{{openBag}}">Open bag</button></sc-if>
+        </div>
+      </div>
+    </div>""")
+hm=re.search(r'<div class="v-hc".*?</a>\s*</div>',markup,re.S); assert hm and 'FIND YOUR TIN' in hm.group(0)
+markup=markup.replace(hm.group(0),'')
+css+="""
+.v-hr{display:flex;align-items:center;gap:22px}
+.v-hshop{display:inline-flex;align-items:center;height:50px;padding:0 24px;border-radius:25px;background:#B03A2B;color:#F5EEE8;font-family:'Titan One',sans-serif;font-size:16px;text-decoration:none;letter-spacing:.02em;transition:transform .2s,box-shadow .2s,background-color .2s}
+.v-hshop:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(110,35,29,.25);background:#9E3326}
+.v-cart{position:relative}
+.v-cartb{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 6px;border:0;background:none;color:#3A1410;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.v-cartb span{color:#B03A2B}
+.v-cartb:hover{text-decoration:underline;text-underline-offset:5px}
+.v-cartcard{position:absolute;right:-6px;top:calc(100% + 14px);width:290px;padding:22px 22px 20px;border-radius:20px;background:#F5EEE8;color:#3A1410;box-shadow:0 26px 50px -12px rgba(58,20,16,.45),0 0 0 1px rgba(110,35,29,.12);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,transform .25s,visibility 0s .25s;pointer-events:none;text-align:left}
+.v-cartcard::before{content:"";position:absolute;right:30px;top:-7px;width:14px;height:14px;background:#F5EEE8;transform:rotate(45deg);box-shadow:-1px -1px 0 rgba(110,35,29,.1)}
+.v-cart:hover .v-cartcard,.v-cart:focus-within .v-cartcard{opacity:1;visibility:visible;transform:none;transition-delay:0s;pointer-events:auto}
+.v-cc-t{margin:0 0 12px;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#7A5A50}
+.v-cc-e{margin:0 0 14px;font-size:15px;line-height:1.5}
+.v-cc-l,.v-cc-b{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border:0;border-radius:22px;background:#6E231D;color:#F5EEE8;font-family:'Titan One',sans-serif;font-size:14px;text-decoration:none;cursor:pointer}
+.v-cc-r,.v-cc-s{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(110,35,29,.14);font-size:14px}
+.v-cc-r b,.v-cc-s b{font-family:'Titan One',sans-serif;font-weight:400;color:#B03A2B}
+.v-cc-s{margin-bottom:12px;font-weight:700}
+@media (hover:none){.v-cartcard{display:none}}
+@media (max-width:900px){.v-hr{gap:8px}.v-hshop{height:44px;padding:0 16px;font-size:14px}.v-cartb{padding:0 2px;letter-spacing:.08em;font-size:12px}}
+@media (prefers-reduced-motion:reduce){.v-cartcard,.v-hshop{transition-duration:.01ms!important}}
+"""
+
+
 shim=r"""
 class DCLogic{constructor(p){this.props=p||{}}setState(s){Object.assign(this.state,s);if(this._r)this._r()}}
 (function(){
