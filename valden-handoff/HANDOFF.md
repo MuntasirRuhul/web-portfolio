@@ -144,3 +144,12 @@ description in DM Sans sentence case, mono eyebrow/labels), then **put it on MAI
 
 - Update (2026-11-08): user commented "remove this part" on the hill shape. The abstract hill behind the bean section was REMOVED from main (flat dark #3A1410 background now).
 - Update (2026-11-08): user commented on the calculator block (`#brew > div:nth-of-type(3)`). The **calculator (method pills, cup stepper, 4 numbers) was REMOVED from the main bean section**. The page now has NO brew calculator on main. To restore it: use `scratchpad/build_valden.before-calc-removal.py` or the calculator markup in `main-current/build.py` history / `experiments/bean-merge`, `experiments/bean-text-bg`.
+
+## 14. Experiment: Heist-style header + cleaner hero (2026-11-08) - NOT on main
+User (dictated, a bit unclear): hero like Heist: "Shop now" button in the header, beside/instead of the bag; cart as a card shown on hover
+("special cursor pair" on hover/interaction); remove the hero body text and the FIND YOUR TIN button; keep "Less rush. More roast." for now.
+Built `experiments/hero-heist/` (build.py = main build + patch): header = red **SHOP NOW** pill + mono **CART (n)**; hovering/focusing CART shows a card
+(empty message + "Shop the tins", or line items + subtotal + "Open bag"); touch devices skip the hover card; hero body copy + CTA removed.
+Open question: "cursor pair" may mean a custom cursor that changes on hover (not built). Ask the user. Move to main only when approved.
+Also pending from comments: user said my removal of the calculator (v29) may not match the area they marked (`#brew > div:nth-of-type(3)`, "2 elements");
+ask what they marked or offer to restore v28 (before-calc-removal build kept in scratchpad `build_valden.before-calc-removal.py`).
