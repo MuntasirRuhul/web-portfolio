@@ -28,6 +28,7 @@ Product placeholders: Helios "First Light" instant jar (hero, shop corner), tins
 | Text-tile ideas | tiles QhpemctL9uz35CsoxiRfFK, tiles-2 H7BW9w5B8BCWvMcWF4NrFE |
 | Polished shop card | https://claude.ai/artifact/NP85kgT9tPXzpVuvhQxvj7 |
 | Background shapes / shop on shape | bg QxztbT7g6HnswaeUMDbVFM, shop-shapes 8GF3ziWJbTbbj3Jr3cNYp9 |
+| **Bean + Brew Bar merges (5 variants, Heist-style claims layout)** | source: `experiments/bean-merge/index.html` (link added in section 11) |
 | Earlier idea pages | ribbons 7myURUmnErY5u4SveJL6VV, shop Fi4ZivdGtrmJS6xJ6WLHho, brew Ad124JwiKjNtdF1WC1vtwf, closing JrvG94yTB3ccgv9XpcR8fj, invitation 1xzHb8YC2JjBKGDWn6kaPh |
 | Figma file | https://www.figma.com/design/LR0CyHXtwvuIzxqA42ccDc/coffee-briew (home frame node `40:32`) |
 All artifact links are private to the user (claude.ai/artifact/<id>). Republish = same `file_path` + `url`.
@@ -106,3 +107,16 @@ human, gift ladder tied to Le Coffret, review score, a dark contrast section.
 - Artifact watch limit: 10 webhook triggers per session already used, so new artifacts do not get comment wake-ups. Ask the user to reply in chat.
 - Figma MCP: call `create_session` first; load skills `figma-use` + `figma-generate-design` resources before `use_figma`.
 - The Stop hook asks to commit untracked files: commit + push to `claude/gifted-planck-eie5g2` (never open a PR unless asked).
+
+## 11. Latest iteration: bean + Brew Bar merge (added 2026-11-08)
+User screenshot compared our Brew Bar (left) with Heist's "Roasted in Small Batches with Big Standards" (right: 3 claims
+each side of one hero object, dividing lines, a red outlined image with a tag, a lab-report callout). Ask: merge them, use the
+**coffee bean** (our primary ingredient) as the hero, in Valden's style; 5 variants; keep separate.
+Built `experiments/bean-merge/index.html` (split bean = two clipped copies of `img/bean-crop.webp`, outlined, tagged "WHOLE BEAN"):
+B1 bean + claims, calculator strip below; B2 controls left / recipe tiles right, bean grows with cups; B3 dark hill section;
+B4 annotated bean with numbered leader lines; B5 poster bento. All have a working method/cups calculator.
+Claims are DRAFT copy from existing Valden content (Grand cru coffee, Small lots, Roasted to order, Sealed by hand,
+Whole bean always, Brewed by weight): no invented proof. Next: user picks one, then tighten it, then fold into v2/main.
+Typography notes from Heist (for a possible type-token experiment): Inter body 400 / subheading 500 / heading 700,
+Adobe Fonts Aro (UI) + forma-djr-mono (labels); tokens for letter-spacing (-0.03/0/0.03/0.06/0.13/0.25em) and line-height
+(display 1/1.1/1.2, heading 1.15/1.25/1.35, body 1.2/1.4). Valden could add the same token scale + named roles.

@@ -1,0 +1,94 @@
+<title>Bean Merge Ideas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Mouse+Memoirs&family=DM+Sans:opsz,wght@9..40,400..700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--cream:#F5EEE8;--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--deep:#3A1410;--gold:#EEC453;--or:#DE5F2E;--honey:#F2D58A;--muted:#7A5A50}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--deep);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+img{display:block;max-width:100%}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:56px}
+h1{font:400 clamp(32px,5vw,56px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}.lead{margin:8px 0 0;color:var(--muted);max-width:70ch}
+.cp{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:0 0 10px}.cp b{font:400 28px/1 'Titan One',sans-serif;color:var(--ox)}.cp span{font-size:14px;color:var(--muted);max-width:76ch}
+.D{font-family:'Titan One',sans-serif;font-weight:400;text-transform:uppercase}
+.sec{position:relative;border-radius:26px;overflow:hidden;padding:64px 48px;isolation:isolate}
+.tape{display:inline-block;padding:6px 12px 3px;background:var(--ox);color:var(--gold);font:400 22px/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg)}
+.ttl{margin:14px 0 0;font:400 clamp(34px,5vw,68px)/.92 'Titan One',sans-serif;text-transform:uppercase}
+.mono{font-family:'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+/* bean */
+.bean{position:relative;width:100%;aspect-ratio:.74/1;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.bean img{position:absolute;inset:7% 8%;width:84%;height:86%;object-fit:contain;filter:drop-shadow(0 24px 20px rgba(58,20,16,.4))}
+.bean .t{clip-path:inset(0 0 48% 0)}.bean .b{clip-path:inset(52% 0 0 0);transform:translateX(4%)}
+.bean::after{content:"";position:absolute;inset:3% 4%;border:1.5px solid var(--red);pointer-events:none}
+.bean .tg{position:absolute;right:6%;top:-1%;z-index:2;background:var(--red);color:var(--cream);padding:5px 9px;font:500 10px/1 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+/* controls */
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.mp{min-height:44px;padding:0 18px;border-radius:22px;border:2.5px solid currentColor;background:transparent;color:inherit;font:400 16px 'Titan One',sans-serif;text-transform:uppercase;transition:background-color .2s,color .2s}
+.mp[aria-pressed=true]{background:var(--ox);color:var(--gold);border-color:var(--ox)}
+.step{display:inline-flex;align-items:center;gap:6px;padding:5px;border-radius:999px;background:var(--cream);color:var(--ox)}
+.step button{width:42px;height:42px;border-radius:50%;border:0;font:400 22px 'Titan One',sans-serif;background:var(--blush);color:var(--ox)}.step button:last-of-type{background:var(--red);color:var(--cream)}
+.step output{min-width:40px;text-align:center;font:400 28px 'Titan One',sans-serif}.step span{padding-right:12px;font:700 13px 'DM Sans'}
+.tile{border-radius:18px;padding:18px 20px;display:grid;gap:8px;align-content:space-between;min-width:0}
+.tile i{font-style:normal;font:500 11px/1 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.tile b{font:400 clamp(40px,4.6vw,64px)/.9 'Titan One',sans-serif}.tile b small{font-size:.4em}.tile b{white-space:nowrap}.v2 .t1{box-shadow:inset 0 0 0 2px var(--blush);background:#fff7f1}
+.tile em{font:400 clamp(24px,2.6vw,32px)/1 'Mouse Memoirs',sans-serif;font-style:normal;text-transform:uppercase}
+.t1{background:var(--cream);color:var(--red)}.t2{background:var(--ox);color:var(--blush)}.t3{background:var(--or);color:var(--cream)}.t4{background:var(--blush);color:var(--ox)}
+/* claims */
+.cl{list-style:none;margin:0;padding:0;display:grid;align-content:center}
+.cl li{padding:20px 0;border-top:2px solid currentColor;font:400 clamp(22px,2.5vw,32px)/1.02 'Titan One',sans-serif;text-transform:uppercase}
+.cl li:last-child{border-bottom:2px solid currentColor}.cl li small{display:block;margin-top:8px;font:500 11px/1.3 'DM Mono',monospace;letter-spacing:.12em;opacity:.75}
+.cl.R{text-align:right}
+/* V1 */
+.v1{background:var(--gold);color:var(--ox)}.v1 .top{text-align:center}.v1 .tri{display:grid;grid-template-columns:1fr minmax(220px,300px) 1fr;gap:38px;align-items:center;margin:32px 0}
+.v1 .calc{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;padding-top:28px;border-top:2px solid var(--ox)}.v1 .calc .l{display:grid;gap:14px;justify-items:start}.v1 .calc .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.v1 .tile{aspect-ratio:auto;min-height:130px}.v1 .tile b{font-size:clamp(32px,3.4vw,48px)}.v1 .tile em{font-size:clamp(20px,2vw,26px)}
+/* V2 */
+.v2{background:var(--cream);box-shadow:inset 0 0 0 2px var(--blush);color:var(--ox)}.v2 .top{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}.v2 .chips{display:flex;gap:8px;flex-wrap:wrap}.v2 .chips span{padding:8px 12px;border:1.5px solid var(--ox);border-radius:999px}
+.v2 .tri{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,320px) minmax(0,1fr);gap:34px;align-items:center;margin-top:30px}.v2 .l{display:grid;gap:18px;justify-items:start}.v2 .pills{flex-direction:column;align-items:stretch}.v2 .mp{justify-content:flex-start;text-align:left;width:100%}.v2 .r{display:grid;grid-template-columns:1fr 1fr;gap:10px}.v2 .tile{min-height:140px}.v2 .bean{transform:scale(var(--s,1))}
+/* V3 dark */
+.v3{background:var(--deep);color:var(--cream)}.v3 svg.bg{position:absolute;inset:0;width:100%;height:100%;z-index:-1}.v3 .top{text-align:center}.v3 .tape{background:var(--gold);color:var(--ox)}.v3 .ttl{color:var(--blush)}
+.v3 .tri{display:grid;grid-template-columns:1fr minmax(220px,300px) 1fr;gap:38px;align-items:center;margin:30px 0}.v3 .cl li{border-color:rgba(245,238,232,.28)}
+.v3 .calc{display:grid;gap:18px;justify-items:center;text-align:center}.v3 .calc .pills{justify-content:center;color:var(--blush)}.v3 .mp[aria-pressed=true]{background:var(--gold);color:var(--ox);border-color:var(--gold)}
+.v3 .nums{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;font:500 13px/1.3 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--blush)}.v3 .nums b{display:block;font:400 clamp(34px,4vw,56px)/1 'Titan One',sans-serif;color:var(--gold);letter-spacing:0;margin-bottom:4px}
+/* V4 annotated */
+.v4{background:var(--blush);color:var(--ox)}.v4 .top{text-align:center}.v4 .ann{position:relative;display:grid;grid-template-columns:1fr minmax(220px,290px) 1fr;gap:70px;align-items:center;margin:34px 0}
+.v4 .nt{display:grid;gap:34px}.v4 .nt div{position:relative;font:400 clamp(20px,2.2vw,28px)/1.05 'Titan One',sans-serif;text-transform:uppercase}.v4 .nt div i{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:10px;border-radius:50%;background:var(--ox);color:var(--gold);font:500 12px 'DM Mono',monospace;font-style:normal;vertical-align:middle}
+.v4 .nt.R{text-align:right}.v4 .nt.R i{margin:0 0 0 10px;float:none}.v4 .nt div::after{content:"";position:absolute;top:50%;width:46px;border-top:2px dashed var(--ox)}.v4 .nt.L div::after{right:-58px}.v4 .nt.R div::after{left:-58px}
+.v4 .dots{position:absolute;inset:0;pointer-events:none}.v4 .calc{display:flex;gap:16px 24px;flex-wrap:wrap;justify-content:center;align-items:center}.v4 .mono b{color:var(--red);font:400 20px 'Titan One';margin-right:4px;letter-spacing:0}
+/* V5 bento */
+.v5{background:var(--ox);color:var(--cream);padding:40px 36px}
+.v5 .g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:10px}
+.v5 .hdr{grid-column:1/3;display:grid;align-content:center;gap:12px}.v5 .ttl{color:var(--gold)}.v5 .bt{grid-column:3/5;grid-row:span 2;background:var(--blush);border-radius:22px;padding:30px 36px;display:grid;place-items:center;color:var(--ox)}.v5 .bt .bean{max-width:300px}
+.v5 .pos{border-radius:18px;padding:18px;display:grid;align-content:space-between;color:var(--gold);background:#4A1712;min-width:0}
+.v5 .pos .rep{display:grid;font:400 clamp(26px,3vw,40px)/.86 'Titan One',sans-serif;text-transform:uppercase}.v5 .pos .rep span:nth-child(2){opacity:.6}.v5 .pos .rep span:nth-child(3){opacity:.26}
+.v5 .pos.alt{background:var(--cream);color:var(--red)}.v5 .pos.alt .rep span:nth-child(n+2){color:transparent;-webkit-text-stroke:2px var(--red);opacity:1}
+.v5 .ctl{grid-column:1/3;background:var(--cream);color:var(--ox);border-radius:18px;padding:20px;display:grid;gap:14px}.v5 .ctl .pills{color:var(--ox)}
+@media (max-width:860px){.sec{padding:40px 18px}.v1 .tri,.v3 .tri,.v2 .tri,.v4 .ann{grid-template-columns:1fr;gap:20px}.v1 .tri .bean,.v3 .tri .bean,.v4 .ann .bean,.v2 .tri .bean{max-width:260px;margin:0 auto;order:-1}.v1 .calc{grid-template-columns:1fr}.v1 .calc .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.cl.R{text-align:left}.v4 .nt div::after{display:none}.v4 .nt.R{text-align:left}.v5 .g{grid-template-columns:repeat(2,minmax(0,1fr))}.v5 .hdr,.v5 .bt,.v5 .ctl{grid-column:1/-1}.v5 .bt{grid-row:auto}.v2 .r{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+<div class="wrap">
+  <header><h1>Bean + Brew Bar, 5 merges</h1><p class="lead">The Brew Bar and Heist's "claims either side of one hero object" layout, merged. The coffee bean is the star, because it's our primary ingredient. Every version has a working calculator (pick a method, change the cups). Claims are draft copy taken from what Valden already says. Separate experiment, main page untouched.</p></header>
+  <section><p class="cp"><b>B1 · Bean and claims, calculator below</b><span>Closest to the Heist layout: three claims on each side of a split bean, and the Brew Bar becomes a strip underneath.</span></p><div class="sec v1" id="v1"></div></section>
+  <section><p class="cp"><b>B2 · Calculator around the bean</b><span>The controls sit on the left and the recipe tiles on the right. The bean grows as you add cups.</span></p><div class="sec v2" id="v2"></div></section>
+  <section><p class="cp"><b>B3 · Dark hill</b><span>A dark contrast section: a maroon hill behind the bean, claims in cream, and the recipe as big numbers.</span></p><div class="sec v3" id="v3"></div></section>
+  <section><p class="cp"><b>B4 · Annotated bean</b><span>Numbered callouts with dashed leader lines, like a diagram of the bean, with a compact brew line underneath.</span></p><div class="sec v4" id="v4"></div></section>
+  <section><p class="cp"><b>B5 · Poster bento</b><span>The poster-grid idea: a big bean tile, echo-type claim posters and the controls as tiles.</span></p><div class="sec v5" id="v5"></div></section>
+</div>
+<script>
+var M=[{k:'Espresso',d:18,w:36,max:4,t:'25–30 seconds',g:'Fine',tp:'93 °C',u:'shots'},{k:'Pour-over',d:15,w:250,max:4,t:'3 to 3½ minutes',g:'Medium-fine',tp:'94 °C',u:'cups'},{k:'French press',d:16,w:250,max:6,t:'4 minutes',g:'Coarse',tp:'95 °C',u:'cups'},{k:'Cold brew',d:20,w:250,max:6,t:'14 hours',g:'Extra coarse',tp:'Cold',u:'glasses'}];
+var mi=1,cups=2,$=function(s){return document.querySelector(s)};
+function cur(){var m=M[mi];if(cups>m.max)cups=m.max;return m}
+function pills(){return '<div class="pills" role="group" aria-label="Brew method">'+M.map(function(m,i){return '<button class="mp" type="button" data-m="'+i+'" aria-pressed="'+(i===mi)+'">'+m.k+'</button>'}).join('')+'</div>'}
+function step(){var m=cur();return '<div class="step" role="group" aria-label="Number of '+m.u+'"><button type="button" data-c="-1" aria-label="Fewer">−</button><output aria-live="polite">'+cups+'</output><button type="button" data-c="1" aria-label="More">+</button><span>'+m.u+'</span></div>'}
+function bean(tag){return '<div class="bean" style="--s:'+(0.86+cups*0.07)+'"><img class="t" src="./img/bean-crop.webp" alt="A roasted coffee bean"><img class="b" src="./img/bean-crop.webp" alt="" aria-hidden="true"><span class="tg">'+tag+'</span></div>'}
+function tiles(){var m=cur();return '<div class="tile t1"><i>Coffee</i><b>'+m.d*cups+'<small> g</small></b></div><div class="tile t2"><i>Water</i><b>'+m.w*cups+'<small> g</small></b></div><div class="tile t3"><i>Time</i><em>'+m.t+'</em></div><div class="tile t4"><i>Grind · water</i><em>'+m.g+' · '+m.tp+'</em></div>'}
+function L(a,b){return '<li>'+a+'<small>'+b+'</small></li>'}
+var CL=[['Grand cru coffee','Chosen bean by bean'],['Small lots','Never more than we can sell fresh'],['Roasted to order','Your tin starts as green coffee'],['Sealed by hand','Every tin, tied by hand'],['Whole bean, always','Grind it when you brew'],['Brewed by weight','Grams, not guesses']];
+function claims(side){var i=side==='L'?0:3;return '<ul class="cl '+side+'">'+CL.slice(i,i+3).map(function(c){return L(c[0],c[1])}).join('')+'</ul>'}
+function head(tape,title,cls){return '<div class="top"><span class="tape">'+tape+'</span><h2 class="ttl">'+title+'</h2></div>'}
+function r1(){$('#v1').innerHTML=head('The bean','One bean.<br>Slow roast. Your cup.')+'<div class="tri">'+claims('L')+bean('Whole bean')+claims('R')+'</div><div class="calc"><div class="l">'+pills()+step()+'</div><div class="tiles">'+tiles()+'</div></div>'}
+function r2(){var m=cur();$('#v2').innerHTML='<div class="top"><div><span class="tape">The bean</span><h2 class="ttl">How many cups?<br><span style="color:var(--red)">We’ll do the maths.</span></h2></div><div class="chips mono"><span>Small lots</span><span>Roasted to order</span><span>Sealed by hand</span></div></div><div class="tri"><div class="l">'+pills()+step()+'</div>'+bean('Whole bean')+'<div class="r">'+tiles()+'</div></div>';$('#v2 .bean').style.setProperty('--s',0.86+cups*0.07)}
+function r3(){var m=cur();$('#v3').innerHTML='<svg class="bg" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-60 760V560C80 470 230 400 380 330C500 270 540 110 700 90C860 72 940 230 1040 340C1110 420 1240 520 1280 600V760Z" fill="#6E231D"/></svg>'+head('The bean','Roasted in small lots.<br>Brewed to a number.')+'<div class="tri">'+claims('L')+bean('Whole bean')+claims('R')+'</div><div class="calc">'+pills()+step().replace('background:','background:')+'<div class="nums"><div><b>'+m.d*cups+' g</b>coffee</div><div><b>'+m.w*cups+' g</b>water</div><div><b>'+m.t.replace(' seconds',' s').replace(' minutes',' min')+'</b>time</div><div><b>'+m.tp+'</b>water temp</div></div></div>'}
+function r4(){var m=cur(),N=CL;$('#v4').innerHTML=head('Anatomy of a cup','What goes into<br>every tin.')+'<div class="ann"><div class="nt L">'+N.slice(0,3).map(function(c,i){return '<div><i>0'+(i+1)+'</i>'+c[0]+'</div>'}).join('')+'</div>'+bean('Whole bean')+'<div class="nt R">'+N.slice(3).map(function(c,i){return '<div>'+c[0]+'<i>0'+(i+4)+'</i></div>'}).join('')+'</div></div><div class="calc">'+pills()+step()+'<div class="mono"><b>'+m.d*cups+' g</b> coffee · <b>'+m.w*cups+' g</b> water · '+m.t+' · '+m.g+' grind · '+m.tp+'</div></div>'}
+function r5(){$('#v5').innerHTML='<div class="g"><div class="hdr"><span class="tape" style="background:var(--gold);color:var(--ox);width:max-content">The bean</span><h2 class="ttl">One bean.<br>Your cup.</h2></div><div class="bt">'+bean('Whole bean')+'</div><div class="pos"><div class="rep"><span>Small lots</span><span>Small lots</span><span>Small lots</span></div><span class="mono">Roasted to order</span></div><div class="pos alt"><div class="rep"><span>Sealed</span><span>Sealed</span><span>Sealed</span></div><span class="mono">By hand</span></div><div class="ctl">'+pills()+step()+'</div><div class="tile t1"><i>Coffee</i><b>'+cur().d*cups+'<small> g</small></b></div><div class="tile t2"><i>Water</i><b>'+cur().w*cups+'<small> g</small></b></div></div>'}
+function all(){r1();r2();r3();r4();r5()}all();
+document.addEventListener('click',function(e){var b=e.target.closest('[data-m]');if(b){mi=+b.dataset.m;cur();all();return}b=e.target.closest('[data-c]');if(b){var m=cur();cups=Math.max(1,Math.min(m.max,cups+(+b.dataset.c)));all()}});
+</script>
