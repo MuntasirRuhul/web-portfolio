@@ -161,3 +161,7 @@ the bottom) and asked for "a section like this". Built `experiments/statement-ga
 bean, Helios jar, Nuit), one dropped and cropped by the bottom edge, subtle scroll parallax (off for reduced motion), 2 headline types
 (Titan One brand / Instrument Serif editorial; serif is closer to Heist). Copy is DRAFT. Next: user picks headline type, supplies real photos,
 then place it on main (suggested spot: after the hero / before the blend showcase or before the closing ticket).
+- Update to section 15 (2026-11-08): user said "do not copy their taste": gradient, grain, serif headline and the long headline were Heist's look.
+  Rebuilt in Valden's own style: flat `#B03A2B` red, Titan One headline "SLOW MORNINGS. YOUR PACE." (2 short lines), Mouse Memoirs tape label,
+  rounded (22px) tiles in our tints (blush, honey, deep brown, gold, peach), no thin dark borders. Same staggered layout + subtle parallax.
+  RULE LEARNED: take structure/idea from references, never their visual taste (colours, fonts, textures). Keep Valden's own style.
