@@ -1,3 +1,29 @@
+# START HERE (2026-11-08, written right before a context compaction)
+
+**State of MAIN (published, version 31):** https://claude.ai/artifact/3UWzMufGStwAajWZPy9neE
+Order: Header (red SHOP NOW pill + mono CART (n) with hover card) > Hero (Helios jar, no body text/CTA, "LESS RUSH. MORE ROAST.") >
+**Statement gallery** (flat red + grain, "SLOW MORNINGS. YOUR PACE.", 5 Heist-style bordered tiles) > Interlude 6:58 drawing > Blend showcase
+(Velours, Aurore, Nuit) > wave > Review cards > Shop (sliding panels) > **Bean section** (dark #3A1410, headline "Roasted in small lots. Brewed to a
+number.", 3 claims | split outlined bean | 3 claims; NO hill, NO calculator) > Closing boarding-pass ticket > wave > Footer.
+Latest build + html: `valden-handoff/main-current/` (`build.py`, `index.html`, `img/`). Frozen older version: `snapshot-v1-main/`.
+
+**Do these first in the new session:**
+1. Read this file (sections 2 working rules, 5 how it is built, 13-17 latest changes). Rebuild per section 4 if the scratchpad is gone.
+2. Ask the user (still unanswered): **(a)** what exactly they marked on the calculator comment (`#brew > div:nth-of-type(3)`, "2 elements"): the main page has
+   NO brew calculator now; offer to restore it (e.g. in the v2 comparison-table form). **(b)** the "cursor pair" idea: custom cursor that grows with a label
+   ("SHOP", "VIEW") on hover: not built. **(c)** next Shop direction: sliding panels (on main) vs profile card (experiments/shop-polished, shop-shapes).
+3. Candidates not on main yet (experiments only): v2 facts strip / comparison table / FAQ (`v2/`), profile-card shop, Heist-style type tokens, mobile pass (390px), Figma sync.
+
+**RULES the user stated (follow strictly):**
+- Experiments are separate (own folder + own artifact link). Once the user APPROVES or says "add to main", put it on MAIN right away and tell them; do not just ask again.
+- Take structure/ideas from references (Heist, Agrumea), NEVER their visual taste (gradients, serif, colours). Keep Valden's own style. Heist TILE structure (thin dark border, 2px radius, coloured backdrop, mono N°0x tag) IS approved.
+- HTML first; Figma only when asked (Figma is far behind the HTML; final design will live in Figma later).
+- Token-friendly: short answers, one change at a time, one screenshot, avoid 5-option pages unless asked. Say what was not checked. Do not guess what a vague comment means: read the artifact comment's `[region of]` and ask.
+- Comments on the main artifact arrive as webhook notifications: call ReadNotifications, then ArtifactComments read/reply/resolve. New artifacts cannot be watched (limit 10): ask user to reply in chat.
+- Commit + push after every change to branch `claude/gifted-planck-eie5g2` (Stop hook demands it). Never open a PR unless asked.
+- The user writes casually; "test" = taste/style, "haste" = Heist, "bin" = bean. Mid-turn messages may correct me: address them.
+
+---
 # Valden handoff (read this first after a context compaction)
 
 Last updated: 2026-11-08. Written at the end of a long session so a fresh context can continue.
