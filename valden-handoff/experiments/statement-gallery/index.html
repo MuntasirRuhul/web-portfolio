@@ -1,0 +1,55 @@
+<title>Statement Gallery</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400..700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--cream:#F5EEE8;--blush:#E9BFAE;--red:#B03A2B;--ox:#6E231D;--deep:#3A1410;--gold:#EEC453;--or:#DE5F2E}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--deep);font-family:'DM Sans',system-ui,sans-serif;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+img{display:block;max-width:100%}figure{margin:0}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #2F5FA8;outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+h1{font:400 clamp(30px,4.6vw,52px)/1 'Titan One',sans-serif;margin:0;color:var(--ox)}.lead{margin:6px 0 0;color:#7A5A50;max-width:74ch}
+.sw{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.sw .lab{font:500 12px 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#7A5A50}
+.sw button{min-height:40px;padding:0 16px;border-radius:999px;border:2px solid var(--ox);background:transparent;color:var(--ox);font:400 14px 'Titan One',sans-serif;text-transform:uppercase;transition:background-color .2s,color .2s}.sw button[aria-pressed=true]{background:var(--ox);color:var(--gold)}
+/* the section */
+.sg{position:relative;border-radius:26px;overflow:hidden;isolation:isolate;padding:72px 56px 0;color:#F5EEE8;background:linear-gradient(180deg,#2E0E0A 0%,#5A1F18 34%,#A8452F 70%,#E08A65 100%)}
+.sg::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.55;mix-blend-mode:soft-light;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.eb{font:500 12px/1 'DM Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.stmt{margin:22px 0 0;max-width:19ch;font-size:clamp(40px,6.6vw,104px);line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+.stmt.brand{font-family:'Titan One',sans-serif;font-weight:400;max-width:15ch;font-size:clamp(34px,5.4vw,84px);line-height:1;letter-spacing:0;color:#F5EEE8}
+.stmt.edit{font-family:'Instrument Serif',serif;font-weight:400;max-width:21ch;color:#EFE3D6}
+.stmt em{font-style:normal;color:var(--gold)}.stmt.edit em{font-style:italic;color:#F6C9AE}
+.row{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:clamp(10px,1.6vw,22px);height:clamp(300px,34vw,470px);margin-top:clamp(44px,6vw,92px);overflow:hidden}
+.ph{position:relative;flex:none;border:2px solid #2A120D;border-radius:2px;overflow:hidden;box-shadow:0 20px 34px -18px rgba(0,0,0,.55);transform:translateY(var(--py,0px));transition:box-shadow .3s}
+.ph:hover{box-shadow:0 26px 40px -14px rgba(0,0,0,.65)}
+.ph img{position:absolute;filter:drop-shadow(0 18px 14px rgba(40,10,6,.45))}
+.ph .id{position:absolute;left:10px;top:9px;font:500 10px/1 'DM Mono',monospace;letter-spacing:.18em;color:rgba(255,255,255,.85);z-index:2}
+.p1{width:21%;aspect-ratio:.82/1;margin-top:8px;background:#2D3A2B}.p1 img{inset:0;width:100%;height:100%;object-fit:cover}
+.p2{width:14.5%;aspect-ratio:.72/1;margin-top:0;background:linear-gradient(180deg,#FF6A1A,#FFB347 70%,#F9D27D)}.p2 img{width:92%;left:4%;bottom:6%;transform:rotate(5deg)}
+.p3{width:14.5%;aspect-ratio:.72/1;margin-top:clamp(190px,23vw,330px);background:radial-gradient(circle at 50% 55%,#6B3A1E,#2A120D 75%)}.p3 img{width:84%;left:8%;top:12%}
+.p4{width:21%;aspect-ratio:.82/1;margin-top:-2px;background:linear-gradient(180deg,#1E2C8A,#3E62E0 60%,#F08A5D)}.p4 img{width:54%;left:23%;bottom:9%;transform:rotate(-4deg)}
+.p5{width:14.5%;aspect-ratio:.72/1;margin-top:4px;background:linear-gradient(180deg,#E9BFAE,#F0B79A)}.p5 img{width:80%;left:10%;bottom:8%;transform:rotate(-5deg)}
+@media (max-width:860px){.sg{padding:48px 18px 0}.row{display:grid;grid-template-columns:repeat(3,1fr);height:380px;gap:10px;margin-top:40px}.ph{width:auto!important;margin-top:0!important}.p3{margin-top:150px!important}.p4,.p5{display:none}}
+@media (prefers-reduced-motion:reduce){.ph{transform:none!important}}
+</style>
+<div class="wrap">
+  <header><h1>Statement gallery</h1><p class="lead">A big statement over a warm gradient with grain, and staggered framed tiles running off the bottom edge, like the Heist section you sent, in Valden's colours. The words are draft copy and the tiles use our renders (the first tile is the placeholder photo). Separate experiment, main page untouched.</p></header>
+  <div class="sw" role="group" aria-label="Headline type"><span class="lab">Headline type</span><button type="button" data-t="brand" aria-pressed="true">Brand (Titan One)</button><button type="button" data-t="edit" aria-pressed="false">Editorial (serif)</button></div>
+  <section class="sg" aria-labelledby="sg-t">
+    <span class="eb">For the slow ones</span>
+    <h2 class="stmt brand" id="sg-t">For the slow mornings, and anyone who’s been told coffee is a rush. <em>You set the pace.</em></h2>
+    <div class="row" id="row">
+      <figure class="ph p1" data-s="30" style="margin-block:8px 0"><span class="id">N°01</span><img src="./img/review-avatar.webp" alt="Placeholder portrait of a coffee lover"></figure>
+      <figure class="ph p2" data-s="-18"><span class="id">N°02</span><img src="./img/tin-velours.webp" alt="Velours tin"></figure>
+      <figure class="ph p3" data-s="46"><span class="id">N°03</span><img src="./img/bean-crop.webp" alt="A roasted coffee bean"></figure>
+      <figure class="ph p4" data-s="-26"><span class="id">N°04</span><img src="./img/helios-jar.webp" alt="Helios jar"></figure>
+      <figure class="ph p5" data-s="20"><span class="id">N°05</span><img src="./img/tin-nuit.webp" alt="Nuit tin"></figure>
+    </div>
+  </section>
+</div>
+<script>
+var st=document.querySelector('.stmt');
+document.addEventListener('click',function(e){var b=e.target.closest('[data-t]');if(!b)return;st.className='stmt '+b.dataset.t;document.querySelectorAll('[data-t]').forEach(function(x){x.setAttribute('aria-pressed',x===b)})});
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,tl=[].slice.call(document.querySelectorAll('.ph')),tk=false;
+function par(){tk=false;if(rm)return;var r=document.getElementById('row').getBoundingClientRect(),p=(innerHeight-r.top)/(innerHeight+r.height);p=Math.max(0,Math.min(1,p))-.5;tl.forEach(function(t){t.style.setProperty('--py',(p*(+t.dataset.s))+'px')})}
+addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(par)}},{passive:true});par();
+</script>

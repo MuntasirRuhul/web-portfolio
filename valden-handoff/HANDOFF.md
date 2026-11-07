@@ -153,3 +153,11 @@ Built `experiments/hero-heist/` (build.py = main build + patch): header = red **
 Open question: "cursor pair" may mean a custom cursor that changes on hover (not built). Ask the user. Move to main only when approved.
 Also pending from comments: user said my removal of the calculator (v29) may not match the area they marked (`#brew > div:nth-of-type(3)`, "2 elements");
 ask what they marked or offer to restore v28 (before-calc-removal build kept in scratchpad `build_valden.before-calc-removal.py`).
+
+## 15. Experiment: statement gallery section (2026-11-08) - NOT on main
+User sent a Heist screenshot (big light-serif statement over a dark-to-salmon grainy gradient; staggered thin-bordered photo tiles running off
+the bottom) and asked for "a section like this". Built `experiments/statement-gallery/index.html`: gradient + SVG-noise grain, draft statement
+("For the slow mornings, and anyone who's been told coffee is a rush. You set the pace."), 5 staggered framed tiles (placeholder portrait, Velours,
+bean, Helios jar, Nuit), one dropped and cropped by the bottom edge, subtle scroll parallax (off for reduced motion), 2 headline types
+(Titan One brand / Instrument Serif editorial; serif is closer to Heist). Copy is DRAFT. Next: user picks headline type, supplies real photos,
+then place it on main (suggested spot: after the hero / before the blend showcase or before the closing ticket).
