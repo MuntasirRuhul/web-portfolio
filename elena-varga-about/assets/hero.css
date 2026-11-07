@@ -1,0 +1,84 @@
+/* Elena Varga Atelier · inner-page hero.
+   Same parts as the homepage hero (night panel, nav row, guide line + ring, numbered label, bottom row),
+   at about two thirds of the height, with a different composition on every page.
+   Load after assets/tokens.css and assets/chrome.css. Every colour, size and space is a design-system token or text style. */
+
+.ih{
+  --ih-bg:var(--night);--ih-fg:var(--paper);--ih-dim:var(--dim);--ih-accent:var(--accent-lt);
+  --ih-label:var(--accent-lt);--ih-line:var(--night-2);--ih-ring:var(--dim);--ih-hand:var(--ochre);
+  position:relative;display:flex;flex-direction:column;gap:var(--space-8);min-height:560px;
+  padding:var(--space-5) var(--space-6) var(--space-8);overflow:hidden;background:var(--ih-bg);color:var(--ih-fg)
+}
+/* paper tone for utility pages: same parts, light ground */
+.ih-paper{
+  --ih-bg:var(--page);--ih-fg:var(--ink);--ih-dim:var(--muted);--ih-accent:var(--terra-text);
+  --ih-label:var(--terra-text);--ih-line:var(--rule);--ih-ring:var(--ink);--ih-hand:var(--terra)
+}
+
+/* the drawing's construction lines: one vertical guide and one ring, moved per page */
+.ih-guide{position:absolute;inset:0;pointer-events:none}
+.ih-line{position:absolute;top:0;bottom:0;left:var(--line-x,38%);width:1px;background:var(--ih-line)}
+.ih-ring{position:absolute;left:var(--ring-x,18%);top:var(--ring-y,80px);width:var(--ring-d,560px);height:var(--ring-d,560px);border:1px solid var(--ih-ring);border-radius:50%;opacity:.35}
+
+/* nav row, identical to the homepage hero */
+.ih-nav{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:var(--space-5)}
+.ih-brand{display:inline-flex;align-items:center;gap:var(--space-2);color:var(--ih-fg);text-decoration:none}
+.ih-brand span{color:var(--ih-dim)}
+.ih-links{display:flex;gap:var(--space-6)}
+.ih-links a{color:var(--ih-fg);text-decoration:none;transition:color .25s}
+.ih-links a:hover{color:var(--ih-accent)}
+.ih-links a:last-child{color:var(--ih-accent)}
+
+.ih-body{position:relative;z-index:1;flex:1}
+.ih-label{display:flex;align-items:center;gap:var(--space-3);color:var(--ih-dim);text-transform:uppercase}
+.ih-label b{font-weight:inherit;color:var(--ih-label)}
+.ih-label i{width:34px;height:1px;background:var(--ih-dim)}
+.ih-title{color:var(--ih-fg)}
+.ih-title span{display:block}
+.ih-title .soft{color:var(--ih-dim)}
+.ih-intro{color:var(--ih-dim);text-wrap:pretty}
+.ih-hand{color:var(--ih-hand)}
+
+/* bottom row: a little meta on the left, one link on the right */
+.ih-foot{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:var(--space-5);flex-wrap:wrap}
+.ih-cta{color:var(--ih-accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;transition:color .25s}
+.ih-cta:hover{color:var(--ih-fg)}
+.ih a:focus-visible{outline:2px solid var(--ih-accent);outline-offset:4px}
+
+/* pictures keep the homepage frame style: square corners, black and white */
+.ih-pic{position:relative;margin:0}
+.ih-pic img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+
+/* ---- About: the name large on the left, one tall portrait on the right, the ring behind it ---- */
+.ih-about{--line-x:58%;--ring-d:520px;--ring-x:calc(100% - 520px);--ring-y:30px}
+.ih-about .ih-body{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:var(--space-8);align-items:end}
+.ih-about .ih-text{display:flex;flex-direction:column;gap:var(--space-5);align-items:flex-start}
+.ih-about .ih-intro{max-width:480px}
+.ih-about .ih-pic{aspect-ratio:3/4}
+.ih-about .ih-pic figcaption{position:absolute;left:calc(var(--space-4) * -1);bottom:var(--space-5);transform:translateX(-100%) rotate(-4deg);white-space:nowrap}
+
+/* ---- Contact: type only; the facts that used to sit in a column move into the hero ---- */
+.ih-contact{--line-x:72%;--ring-d:520px;--ring-x:56%;--ring-y:30px}
+.ih-contact .ih-body{display:flex;flex-direction:column;justify-content:flex-end;gap:var(--space-5);align-items:flex-start}
+.ih-contact .ih-title{white-space:nowrap}
+.ih-contact .ih-hand{position:absolute;right:0;top:var(--space-3);transform:rotate(-4deg)}
+.ih-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-5);width:100%}
+.ih-facts > div{display:flex;flex-direction:column;gap:var(--space-2);padding-top:var(--space-3);border-top:1px solid var(--ih-line)}
+.ih-facts dt{color:var(--ih-dim);text-transform:uppercase}
+.ih-facts dd{color:var(--ih-fg)}
+
+@media (max-width:1180px){
+  .ih-contact .ih-title{font-family:var(--t-display-m-font);font-size:var(--t-display-m-size);line-height:var(--t-display-m-lh);letter-spacing:var(--t-display-m-ls);font-weight:var(--t-display-m-weight)}
+}
+@media (max-width:980px){
+  /* the phone bar already carries the brand and menu */
+  .ih{min-height:0;gap:var(--space-8);padding:var(--space-7) var(--gutter-phone) var(--space-7)}
+  .ih-nav,.ih-ring{display:none}
+  .ih-line{display:none}
+  .ih-about .ih-body{grid-template-columns:1fr;gap:var(--space-7)}
+  .ih-about .ih-pic{width:min(240px,70%)}
+  .ih-about .ih-pic figcaption{position:static;transform:rotate(-2deg);margin-top:var(--space-3);white-space:normal}
+  .ih-contact .ih-hand{position:static;transform:none}
+  .ih-contact .ih-title{white-space:normal}
+  .ih-facts{grid-template-columns:1fr}
+}
