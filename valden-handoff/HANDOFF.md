@@ -165,3 +165,5 @@ then place it on main (suggested spot: after the hero / before the blend showcas
   Rebuilt in Valden's own style: flat `#B03A2B` red, Titan One headline "SLOW MORNINGS. YOUR PACE." (2 short lines), Mouse Memoirs tape label,
   rounded (22px) tiles in our tints (blush, honey, deep brown, gold, peach), no thin dark borders. Same staggered layout + subtle parallax.
   RULE LEARNED: take structure/idea from references, never their visual taste (colours, fonts, textures). Keep Valden's own style.
+- Update 2 to section 15: user liked Heist's TILE STRUCTURE (placeholder/image vibe), not the rest. Final mix: Valden headline + tape + flat red with fine
+  grain (SVG noise, soft-light, no gradient), Heist-style tiles (2px dark border, 2px radius, per-tile coloured backdrop, mono "N°0x" tags). Not on main yet.
