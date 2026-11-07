@@ -514,7 +514,6 @@ for old,new in [("Velours shines here. Pull it short and taste before adding mil
 bm=re.search(r'<section class="v-sec" id="brew"[^>]*>.*?</section>',markup,re.S); assert bm
 _cl=lambda items:'<ul class="v-bn-cl">'+''.join(f'<li><b>{a}</b><span>{b}</span></li>' for a,b in items)+'</ul>'
 markup=markup.replace(bm.group(0),f"""<section class="v-sec v-bean" id="brew" aria-labelledby="brew-title">
-    <svg class="v-bn-hill" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><path d="M-60 900V640C80 540 230 460 380 380C500 315 540 110 700 90C860 72 940 260 1040 380C1110 465 1240 580 1280 680V900Z" fill="#6E231D"/></svg>
     <div class="v-bn-top"><span class="v-bn-eb">The bean</span><h2 id="brew-title" class="v-bn-h">Roasted in small lots.<br>Brewed to a number.</h2></div>
     <div class="v-bn-tri">
       {_cl([("Grand cru coffee","Chosen bean by bean."),("Small lots","Never more than we can sell fresh."),("Roasted to order","Your tin starts as green coffee.")])}

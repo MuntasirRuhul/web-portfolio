@@ -141,3 +141,5 @@ description in DM Sans sentence case, mono eyebrow/labels), then **put it on MAI
   (sliding-panel shop + profile-card Brew Bar). To go back, republish `snapshot-v1-main/index.html` (+ img) to the main link.
 - Not on main (still experiments): v2 facts strip / comparison table / FAQ, profile-card shop, text-background bean panel.
 - Open: user to review main; decide shop direction; v2 sections; mobile pass; sync to Figma.
+
+- Update (2026-11-08): user commented "remove this part" on the hill shape. The abstract hill behind the bean section was REMOVED from main (flat dark #3A1410 background now).
