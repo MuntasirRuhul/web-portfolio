@@ -167,3 +167,9 @@ then place it on main (suggested spot: after the hero / before the blend showcas
   RULE LEARNED: take structure/idea from references, never their visual taste (colours, fonts, textures). Keep Valden's own style.
 - Update 2 to section 15: user liked Heist's TILE STRUCTURE (placeholder/image vibe), not the rest. Final mix: Valden headline + tape + flat red with fine
   grain (SVG noise, soft-light, no gradient), Heist-style tiles (2px dark border, 2px radius, per-tile coloured backdrop, mono "N°0x" tags). Not on main yet.
+
+## 16. MAIN updated (2026-11-08): statement gallery added after the hero
+User: "add this to the main home" (they meant the main homepage, not just the experiment). `#slow` section is now on main directly after the hero:
+flat red + grain, Titan One "SLOW MORNINGS. YOUR PACE.", tape label, 5 Heist-structure tiles (2px dark border, coloured backdrops, mono N°0x tags), scroll parallax in `paint()`.
+Main now = v29 state (bean section without calculator or hill) + this section. Header/hero experiment (Shop now + cart hover card) is still NOT on main.
+Backup of build before this change: scratchpad `build_valden.before-statement.py`. `main-current/` holds the latest build + html.

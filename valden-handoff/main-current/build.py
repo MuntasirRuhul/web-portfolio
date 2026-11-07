@@ -563,6 +563,53 @@ a="cups: cups, unitPlural: M.units,"
 assert script.count(a)==1
 script=script.replace(a,"cups: cups, beanScale: (0.92 + cups * 0.04).toFixed(2), unitPlural: M.units,")
 
+
+# ---------- statement gallery section (after the hero) ----------
+_gal="""<section class="v-sec v-stg" id="slow" aria-labelledby="stg-t">
+    <span class="v-stg-tape">For the slow ones</span>
+    <h2 id="stg-t" class="v-stg-h">Slow mornings.<br><span>Your pace.</span></h2>
+    <div class="v-stg-row" id="vStgRow">
+      <figure class="v-ph v-p1" data-s="30"><span class="v-id">N°01</span><img src="./img/review-avatar.webp" alt="Placeholder portrait of a coffee lover"></figure>
+      <figure class="v-ph v-p2" data-s="-18"><span class="v-id">N°02</span><img src="./img/tin-velours.webp" alt="Velours tin"></figure>
+      <figure class="v-ph v-p3" data-s="46"><span class="v-id">N°03</span><img src="./img/bean-crop.webp" alt="A roasted coffee bean"></figure>
+      <figure class="v-ph v-p4" data-s="-26"><span class="v-id">N°04</span><img src="./img/helios-jar.webp" alt="Helios jar"></figure>
+      <figure class="v-ph v-p5" data-s="20"><span class="v-id">N°05</span><img src="./img/tin-nuit.webp" alt="Nuit tin"></figure>
+    </div>
+  </section>
+  """
+_mk='<!-- ================= INTERLUDE'
+assert markup.count(_mk)==1
+markup=markup.replace(_mk,_gal+_mk)
+css+="""
+.v-stg{position:relative;isolation:isolate;overflow:hidden;background:#B03A2B;color:#F5EEE8;padding:120px 64px 0}
+.v-stg::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;mix-blend-mode:soft-light;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.v-stg-tape{display:inline-block;padding:7px 13px 3px;background:#EEC453;color:#6E231D;font:400 clamp(20px,2vw,26px)/1 'Mouse Memoirs',sans-serif;text-transform:uppercase;transform:rotate(-3deg)}
+.v-stg-h{margin:26px 0 0;font:400 clamp(44px,7.4vw,118px)/.9 'Titan One',sans-serif;text-transform:uppercase;color:#E9BFAE}
+.v-stg-h span{color:#EEC453}
+.v-stg-row{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:clamp(10px,1.6vw,22px);height:clamp(300px,34vw,470px);margin-top:clamp(48px,6vw,96px);overflow:hidden}
+.v-ph{position:relative;flex:none;margin:0;border:2px solid #2A120D;border-radius:2px;overflow:hidden;box-shadow:0 20px 34px -18px rgba(0,0,0,.55);transform:translateY(var(--py,0px))}
+.v-ph img{position:absolute;filter:drop-shadow(0 18px 14px rgba(58,20,16,.35))}
+.v-id{position:absolute;left:10px;top:9px;z-index:2;font:500 10px/1 'DM Mono',monospace;letter-spacing:.18em;color:rgba(255,255,255,.85)}
+.v-p1{width:21%;aspect-ratio:.82/1;margin-top:8px;background:#2D3A2B}.v-p1 img{inset:0;width:100%;height:100%;object-fit:cover;filter:none}
+.v-p2{width:14.5%;aspect-ratio:.72/1;background:linear-gradient(180deg,#FF6A1A,#FFB347 70%,#F9D27D)}.v-p2 img{width:84%;left:8%;bottom:8%;transform:rotate(5deg)}
+.v-p3{width:14.5%;aspect-ratio:.72/1;margin-top:clamp(190px,23vw,330px);background:radial-gradient(circle at 50% 55%,#6B3A1E,#2A120D 75%)}.v-p3 img{width:78%;left:11%;top:14%}
+.v-p4{width:21%;aspect-ratio:.82/1;background:linear-gradient(180deg,#1E2C8A,#3E62E0 60%,#F08A5D)}.v-p4 img{width:54%;left:23%;bottom:9%;transform:rotate(-4deg)}
+.v-p5{width:14.5%;aspect-ratio:.72/1;margin-top:4px;background:linear-gradient(180deg,#E9BFAE,#F0B79A)}.v-p5 img{width:80%;left:10%;bottom:8%;transform:rotate(-5deg)}
+@media (max-width:900px){.v-stg{padding:80px 20px 0}.v-stg-row{display:grid;grid-template-columns:repeat(3,1fr);height:380px;gap:10px;margin-top:40px}.v-ph{width:auto!important;margin-top:0!important}.v-p3{margin-top:150px!important}.v-p4,.v-p5{display:none}}
+"""
+def sub(a,b):
+    global script
+    assert script.count(a)==1,a[:60]
+    script=script.replace(a,b)
+sub("    // ---------- the interlude scene draws itself ----------","""    // ---------- statement gallery: gentle parallax ----------
+    var sgr = $('vStgRow');
+    if (sgr) {
+      var gr = sgr.getBoundingClientRect(), gp = clamp((window.innerHeight - gr.top) / (window.innerHeight + gr.height)) - 0.5;
+      var gts = sgr.querySelectorAll('.v-ph');
+      for (var gi = 0; gi < gts.length; gi++) gts[gi].style.setProperty('--py', (this.state.cine ? gp * (+gts[gi].getAttribute('data-s')) : 0) + 'px');
+    }
+    // ---------- the interlude scene draws itself ----------""")
+
 shim=r"""
 class DCLogic{constructor(p){this.props=p||{}}setState(s){Object.assign(this.state,s);if(this._r)this._r()}}
 (function(){
