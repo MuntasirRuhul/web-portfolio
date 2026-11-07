@@ -130,3 +130,14 @@ Source: `experiments/bean-text-bg/index.html`: panel `.bp` with 4 switchable tex
 Outline fade, Orbit rings (rotating SVG textPath), Tilted bands. Bean = `bean-crop.webp` split in two clipped halves (drop-shadow on the parent).
 Gotcha: a grid item with `margin:auto` and only absolute children collapses to 0 width; use `width:100%` + `justify-self:center`.
 Next: user picks a text style (or sends references), then fold this section into v2/main (replace or sit beside the Brew Bar).
+
+## 13. MAIN page updated (2026-11-08): Brew Bar replaced by the bean section
+User feedback on the text-background panel: "too clumsy and busy, the placeholder competes with the text, hierarchy unclear, too tight".
+Decision: go back to the plain outlined bean frame, make the **bean bigger**, add space, clearer hierarchy (claim title in Titan One,
+description in DM Sans sentence case, mono eyebrow/labels), then **put it on MAIN** (user explicitly asked).
+- Main now has the new `#brew` section = "The bean": dark section with the abstract hill, headline "Roasted in small lots. Brewed to a number.",
+  3 claims left / split outlined bean centre (grows slightly with cups) / 3 claims right, calculator below (pills, stepper, 4 numbers).
+- `valden-handoff/main-current/` = the build script + published HTML of this version. `snapshot-v1-main/` is the frozen version BEFORE
+  (sliding-panel shop + profile-card Brew Bar). To go back, republish `snapshot-v1-main/index.html` (+ img) to the main link.
+- Not on main (still experiments): v2 facts strip / comparison table / FAQ, profile-card shop, text-background bean panel.
+- Open: user to review main; decide shop direction; v2 sections; mobile pass; sync to Figma.
