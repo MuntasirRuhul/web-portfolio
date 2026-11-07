@@ -99,21 +99,20 @@ if True:
     pass
 
 NAVROW = '''<nav class="ih-nav" aria-label="Main"><a class="ih-brand heading-5" href="#"><span class="strokes" aria-hidden="true"><i></i><i></i><i></i></span>Elena Varga <span>Atelier</span></a><span class="ih-links body-m"><a href="#">FAQ</a><a href="#">Free lesson</a><a href="#">Log in</a></span></nav>'''
-GUIDE = '<div class="ih-guide" aria-hidden="true"><i class="ih-line"></i><i class="ih-ring"></i></div>'
 
 # ------------------------------------------------------------------ About
 ABOUT_HERO = f'''<header class="ih ih-about">
-  {GUIDE}
+  <i class="ih-ring" aria-hidden="true"></i>
   {NAVROW}
-  <div class="ih-body">
-    <div class="ih-text">
-      <p class="ih-label label"><b>02</b>The artist<i></i></p>
+  <div class="ih-main">
+    <div class="ih-body">
+      <p class="ih-label label"><b>02</b>The artist</p>
       <h1 class="ih-title display-m"><span>Elena</span><span class="soft">Varga.</span></h1>
-      <p class="ih-intro body-l">Painter, illustrator and teacher. I film every lesson at my own table in Lisbon, at the speed I really work.</p>
+      <p class="ih-intro body-l">Painter, illustrator and teacher. I film every lesson at my own table in Lisbon.</p>
+      <a class="ih-btn button" href="#story">Read her story <span class="ar" aria-hidden="true">↓</span></a>
     </div>
-    <figure class="ih-pic"><img src="assets/img/portrait.jpg" alt="Elena Varga at her studio table" width="600" height="900"><figcaption class="ih-hand hand-s">at the table, Graça</figcaption></figure>
+    <figure class="ih-pic"><img src="assets/img/portrait.jpg" alt="Elena Varga at her studio table" width="600" height="900"></figure>
   </div>
-  <div class="ih-foot"><p class="body-l">Since 2006 · Graça, Lisbon</p><a class="ih-cta body-l" href="#story">Read her story ↓</a></div>
 </header>'''
 ABOUT_NEXT = '''<section class="ab-next" id="story">
   <p class="ab-label label"><b>02</b>The artist<i></i></p>
@@ -136,19 +135,20 @@ ABOUT_CSS = '''
 
 # ------------------------------------------------------------------ Contact
 CONTACT_HERO = f'''<header class="ih ih-contact">
-  {GUIDE}
+  <i class="ih-ring" aria-hidden="true"></i>
   {NAVROW}
   <div class="ih-body">
-    <span class="ih-hand hand-s">she answers every one</span>
-    <p class="ih-label label"><b>05</b>Contact<i></i></p>
+    <p class="ih-label label"><b>05</b>Contact</p>
     <h1 class="ih-title display-l"><span>Contact</span> <span class="soft">me.</span></h1>
-    <dl class="ih-facts body-l">
-      <div><dt class="label">The studio</dt><dd>Rua da Graça 4, 3º<br>1170-165 Lisboa</dd></div>
-      <div><dt class="label">Letters read</dt><dd>Tuesday and Friday<br>mornings</dd></div>
-      <div><dt class="label">She replies</dt><dd>Within two<br>working days</dd></div>
-    </dl>
+    <div class="ih-row">
+      <dl class="ih-facts body-l">
+        <div><dt class="label">The studio</dt><dd>Rua da Graça 4, 3º<br>1170-165 Lisboa</dd></div>
+        <div><dt class="label">Letters read</dt><dd>Tuesday and Friday<br>mornings</dd></div>
+        <div><dt class="label">She replies</dt><dd>Within two<br>working days</dd></div>
+      </dl>
+      <a class="ih-btn button" href="#write">Write to Elena <span class="ar" aria-hidden="true">↓</span></a>
+    </div>
   </div>
-  <div class="ih-foot"><p class="body-l">Since 2010 · Graça, Lisbon</p><a class="ih-cta body-l" href="#write">Write to Elena ↓</a></div>
 </header>'''
 cm = open(S + '/site/pages/contact.main.html').read()
 form = cm[cm.find('<div>\n      <form'):cm.rfind('</div>\n  </div>\n</main>')]
@@ -182,22 +182,22 @@ def thumb(n, alt):
 
 PARTS = [
     ('Nav row', 'The same brand and three links as the homepage hero. Hidden on phones, where the phone bar already carries them.', 'Same on every page'),
-    ('Guide line and ring', 'The drawing’s construction lines. The same two shapes on every page, moved and resized: that is what makes it one family without repeating the home composition.', 'Moves per page'),
-    ('Numbered label', 'The mono “02 · The artist” eyebrow, as in the section heads on the homepage.', 'Same on every page'),
+    ('Ring', 'The homepage’s construction circle, once per hero and placed by the page: behind the portrait on About, bleeding off the corner on Contact. The vertical guide line stays a homepage-only detail.', 'Moves per page'),
+    ('Numbered label', 'The small mono “02 The artist” eyebrow, as in the section heads on the homepage.', 'Same on every page'),
     ('Title', 'The only large type. Display on story pages (display-m, display-l), heading-1 on utility pages. Two tones: the first word in the main colour, the rest softer.', 'Size per page'),
     ('One picture, or none', 'Only in the homepage frame style: square corners, black and white. At most one, and not the wide photo the homepage uses.', 'Varies per page'),
-    ('Foot row', 'A little meta on the left, one link on the right, as in the homepage hero’s bottom row.', 'Content per page'),
+    ('One button', 'The site’s pill button, in the hero’s own colours. Everything else a visitor needs sits in the page below.', 'Label per page'),
 ]
 parts = ''.join(f'<li><span class="pt-n caption">{i + 1}</span><div><h3 class="heading-5">{e}</h3><p class="body-m">{d}</p></div><span class="pt-tag caption">{t}</span></li>' for i, (e, d, t) in enumerate(PARTS))
 PAGES = [
-    ('About', 'Night', 'display-m, name on two lines', 'One tall portrait', 'Since 2006 · Read her story'),
-    ('Contact', 'Night', 'display-l, “Contact me.”', 'None; three facts in the hero', 'Since 2010 · Write to Elena'),
-    ('Courses', 'Night', 'display-m, “Six courses.”', 'A strip of the six posters', 'Free lesson link'),
-    ('Course page', 'Night', 'heading-1, course title in its colour', 'The course poster', 'Price and Enrol'),
-    ('Lesson', 'Night', 'heading-1', 'The video, in the frame style', 'Lesson number · Next'),
-    ('Studio notes', 'Paper', 'heading-1, short hero (360px)', 'None', 'Topic filters'),
-    ('Login, Create account', 'Paper', 'heading-1', 'None (the form is the page)', 'Link to the other form'),
-    ('Terms, Privacy', 'Paper', 'heading-1, short hero (360px)', 'None', 'Last updated'),
+    ('About', 'Night', 'display-m, name on two lines', 'One tall portrait', 'Read her story'),
+    ('Contact', 'Night', 'display-l, “Contact me.”', 'None; three facts in the hero', 'Write to Elena'),
+    ('Courses', 'Night', 'display-m, “Six courses.”', 'A strip of the six posters', 'Free lesson'),
+    ('Course page', 'Night', 'heading-1, course title in its colour', 'The course poster', 'Enrol'),
+    ('Lesson', 'Night', 'heading-1', 'The video, in the frame style', 'Next lesson'),
+    ('Studio notes', 'Paper', 'heading-1, short hero (360px)', 'None', 'None'),
+    ('Login, Create account', 'Paper', 'heading-1', 'None (the form is the page)', 'None'),
+    ('Terms, Privacy', 'Paper', 'heading-1, short hero (360px)', 'None', 'None'),
 ]
 rows = ''.join(f'<li><span class="heading-5">{a}</span><span class="body-m">{b}</span><span class="body-m">{c}</span><span class="body-m">{d}</span><span class="body-m">{f}</span></li>' for a, b, c, d, f in PAGES)
 
@@ -219,10 +219,10 @@ OV_CSS = PROTO + '''
 .pt-n{color:var(--terra-text)}
 .pt p{margin-top:var(--space-1);color:var(--ink-2);max-width:620px}
 .pt-tag{color:var(--muted);text-align:right}
-.ex{list-style:none;align-items:start;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-7) var(--space-5);margin-top:var(--space-7)}
-.ex a{display:flex;flex-direction:column;gap:var(--space-3);color:inherit;text-decoration:none}
-.ex .pair{display:flex;flex-direction:column;gap:var(--space-2)}
-.ex .pair img{display:block;width:100%;aspect-ratio:1326/570;object-fit:cover;object-position:top;border:1px solid var(--rule)}
+.ex{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-7) var(--space-5);margin-top:var(--space-7)}
+.ex a{display:flex;flex-direction:column;gap:var(--space-3);height:100%;color:inherit;text-decoration:none}
+.ex .pair{display:flex;flex-direction:column;gap:var(--space-2);flex:1}
+.ex .pair img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
 .ex h3{color:var(--ink);transition:color .25s}
 .ex a:hover h3{color:var(--terra)}
 .ex p{color:var(--ink-2)}
@@ -248,9 +248,9 @@ ov = f'''<main class="vn">
   <section class="ov-sec">
     <p class="label">Anatomy</p>
     <h2 class="heading-2">Six parts, all taken from the homepage.</h2>
-    <p class="body-m">Every inner hero is these six parts. Keep all six and it belongs to the family; change only what the last column says.</p>
+    <p class="body-m">Every inner hero is these six parts. Keep all six and it belongs to the family; change only what the last column says. Nothing else goes in a hero.</p>
     <div class="ov-fig">{thumb('about-night', 'The About hero with its six parts numbered')}
-      <span class="mk caption" style="left:21.5%;top:6%">1</span><span class="mk caption" style="left:75%;top:9%">2</span><span class="mk caption" style="left:15%;top:19%">3</span><span class="mk caption" style="left:27%;top:33%">4</span><span class="mk caption" style="left:98%;top:21%">5</span><span class="mk caption" style="left:23.5%;top:87.5%">6</span>
+      <span class="mk caption" style="left:21.5%;top:6%">1</span><span class="mk caption" style="left:72.5%;top:58%">2</span><span class="mk caption" style="left:15%;top:20.5%">3</span><span class="mk caption" style="left:26%;top:38%">4</span><span class="mk caption" style="left:98%;top:30%">5</span><span class="mk caption" style="left:17.5%;top:85%">6</span>
     </div>
     <ol class="pt">{parts}</ol>
   </section>
@@ -270,7 +270,7 @@ ov = f'''<main class="vn">
     <h2 class="heading-2">Night to sell and tell, paper to get things done.</h2>
     <p class="body-m">Story and course pages get the night hero (about 560px). Utility pages get the same parts on paper and shorter (about 360px), so a visitor reaches the form or the list fast. The homepage stays the only 864px hero.</p>
     <ol class="rc">
-      <li class="rc-h caption"><span>Page</span><span>Tone</span><span>Title</span><span>Picture</span><span>Foot row</span></li>
+      <li class="rc-h caption"><span>Page</span><span>Tone</span><span>Title</span><span>Picture</span><span>Button</span></li>
       {rows}
     </ol>
     <p class="ov-note body-m">Not decided yet: whether Courses and Course pages should be night or paper. Night keeps them closest to the homepage; paper puts the colourful posters on a calmer ground.</p>
