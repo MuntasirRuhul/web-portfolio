@@ -143,3 +143,4 @@ description in DM Sans sentence case, mono eyebrow/labels), then **put it on MAI
 - Open: user to review main; decide shop direction; v2 sections; mobile pass; sync to Figma.
 
 - Update (2026-11-08): user commented "remove this part" on the hill shape. The abstract hill behind the bean section was REMOVED from main (flat dark #3A1410 background now).
+- Update (2026-11-08): user commented on the calculator block (`#brew > div:nth-of-type(3)`). The **calculator (method pills, cup stepper, 4 numbers) was REMOVED from the main bean section**. The page now has NO brew calculator on main. To restore it: use `scratchpad/build_valden.before-calc-removal.py` or the calculator markup in `main-current/build.py` history / `experiments/bean-merge`, `experiments/bean-text-bg`.

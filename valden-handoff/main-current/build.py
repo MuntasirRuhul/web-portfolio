@@ -523,14 +523,9 @@ markup=markup.replace(bm.group(0),f"""<section class="v-sec v-bean" id="brew" ar
       </div>
       {_cl([("Sealed by hand","Every tin, tied by hand."),("Whole bean, always","Grind it when you brew."),("Brewed by weight","Grams, not guesses.")])}
     </div>
-    <div class="v-bn-calc" aria-live="polite">
-      <div class="v-bn-pills" role="group" aria-label="Brew method"><sc-for list="{{{{methods}}}}" as="m" hint-placeholder-count="4"><button type="button" aria-pressed="{{{{m.pressed}}}}" onClick="{{{{m.pick}}}}">{{{{m.label}}}}</button></sc-for></div>
-      <div class="v-bn-step" role="group" aria-label="Number of cups"><button type="button" onClick="{{{{cupsDown}}}}" aria-label="Fewer">−</button><output>{{{{brew.cups}}}}</output><button type="button" onClick="{{{{cupsUp}}}}" aria-label="More">+</button><span>{{{{brew.unitPlural}}}}</span></div>
-      <div class="v-bn-nums"><div><b>{{{{brew.dose}}}} G</b><span>Coffee</span></div><div><b>{{{{brew.water}}}} G</b><span>{{{{brew.waterLabel}}}}</span></div><div><b>{{{{brew.time}}}}</b><span>Time</span></div><div><b>{{{{brew.temp}}}}</b><span>Water temp</span></div></div>
-    </div>
   </section>""")
 css+="""
-.v-bean{position:relative;isolation:isolate;overflow:hidden;background:#3A1410;color:#F5EEE8;padding:140px 64px 150px}
+.v-bean{position:relative;isolation:isolate;overflow:hidden;background:#3A1410;color:#F5EEE8;padding:140px 64px 130px}
 .v-bn-hill{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
 .v-bn-top{text-align:center;max-width:920px;margin:0 auto}
 .v-bn-eb{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#EEC453}

@@ -152,7 +152,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .v-pt-tip span{font-size:12px;line-height:1.35;font-weight:700}
 @media (max-width:900px){.v-br{grid-template-columns:1fr;gap:28px}.v-br-l{padding-top:0}.v-brc{margin-top:170px;padding:20px 16px 18px}.v-brj{width:140px;right:10px;top:-182px}.v-brc-top span{margin-right:110px}.v-brc-av{width:72px;height:72px;font-size:36px}.v-brc-st{gap:16px}.v-brc-st b{font-size:22px}.v-brc-tabs button{font-size:11px}.v-pt{padding:9px}.v-pt i{font-size:8px;letter-spacing:.12em}.v-pt-tip span{font-size:10px}.v-pt-rep{font-size:18px}}
 
-.v-bean{position:relative;isolation:isolate;overflow:hidden;background:#3A1410;color:#F5EEE8;padding:140px 64px 150px}
+.v-bean{position:relative;isolation:isolate;overflow:hidden;background:#3A1410;color:#F5EEE8;padding:140px 64px 130px}
 .v-bn-hill{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
 .v-bn-top{text-align:center;max-width:920px;margin:0 auto}
 .v-bn-eb{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#EEC453}
@@ -455,11 +455,6 @@ section.v-sec{padding-top:88px!important}
         <span class="v-bn-tag">Whole bean</span>
       </div>
       <ul class="v-bn-cl"><li><b>Sealed by hand</b><span>Every tin, tied by hand.</span></li><li><b>Whole bean, always</b><span>Grind it when you brew.</span></li><li><b>Brewed by weight</b><span>Grams, not guesses.</span></li></ul>
-    </div>
-    <div class="v-bn-calc" aria-live="polite">
-      <div class="v-bn-pills" role="group" aria-label="Brew method"><sc-for list="{{methods}}" as="m" hint-placeholder-count="4"><button type="button" aria-pressed="{{m.pressed}}" onClick="{{m.pick}}">{{m.label}}</button></sc-for></div>
-      <div class="v-bn-step" role="group" aria-label="Number of cups"><button type="button" onClick="{{cupsDown}}" aria-label="Fewer">−</button><output>{{brew.cups}}</output><button type="button" onClick="{{cupsUp}}" aria-label="More">+</button><span>{{brew.unitPlural}}</span></div>
-      <div class="v-bn-nums"><div><b>{{brew.dose}} G</b><span>Coffee</span></div><div><b>{{brew.water}} G</b><span>{{brew.waterLabel}}</span></div><div><b>{{brew.time}}</b><span>Time</span></div><div><b>{{brew.temp}}</b><span>Water temp</span></div></div>
     </div>
   </section>
 
