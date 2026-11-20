@@ -100,5 +100,8 @@ def page(key):
 '''
 
 for k in PAGES:
-    open(R + '/' + PAGES[k][0], 'w').write(page(k))
+    out = page(k)
+    if k == 'home':  # on the homepage, Questions and the brand stay on this page
+        out = out.replace('href="home.html#faq"', 'href="#faq"').replace('<a class="brand heading-5" href="home.html">', '<a class="brand heading-5" href="#">')
+    open(R + '/' + PAGES[k][0], 'w').write(out)
     print('built', PAGES[k][0])
