@@ -31,6 +31,7 @@ PAGES = {  # key: (output file, which nav link is current)
     'register': ('register.html', None),
     'terms': ('terms.html', None),
     'privacy': ('privacy.html', None),
+    'home': ('home-v2.html', None),
 }
 SHARED = {'login': 'auth', 'register': 'auth', 'terms': 'legal', 'privacy': 'legal'}  # pages that share one layout's CSS (and JS)
 src = lambda key, ext: f'{P}/{key}.{ext}' if os.path.exists(f'{P}/{key}.{ext}') else f'{P}/{SHARED[key]}.{ext}'
