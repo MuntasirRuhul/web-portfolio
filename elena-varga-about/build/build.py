@@ -33,6 +33,7 @@ PAGES = {  # key: (output file, which nav link is current)
     'privacy': ('privacy.html', None),
     'home': ('home-v2.html', None),
 }
+HERO_PAGES = {'contact'}  # pages that open with the inner-page hero (assets/hero.css)
 SHARED = {'login': 'auth', 'register': 'auth', 'terms': 'legal', 'privacy': 'legal'}  # pages that share one layout's CSS (and JS)
 src = lambda key, ext: f'{P}/{key}.{ext}' if os.path.exists(f'{P}/{key}.{ext}') else f'{P}/{SHARED[key]}.{ext}'
 NAV = [('courses.html', 'Courses'), ('about.html', 'About'), ('notes.html', 'Studio notes'), ('home.html#faq', 'Questions'), ('contact.html', 'Contact')]
@@ -41,6 +42,7 @@ def page(key):
     out, current = PAGES[key]
     title, desc = open(f'{P}/{key}.meta').read().strip().split('\n')
     css, main, js = (open(src(key, x)).read() for x in ('css', 'main.html', 'js'))
+    hero_css = '\n<link rel="stylesheet" href="assets/hero.css">' if key in HERO_PAGES else ''
     cur = lambda h: ' aria-current="page"' if h == current else ''
     nav = ''.join(f'<a href="{h}"{cur(h)}><small>0{i + 1}</small>{t}</a>' for i, (h, t) in enumerate(NAV))
     return f'''<!doctype html>
@@ -54,7 +56,7 @@ def page(key):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/chrome.css">
+<link rel="stylesheet" href="assets/chrome.css">{hero_css}
 <style>
 {css}
 </style>
